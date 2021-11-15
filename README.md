@@ -17,7 +17,7 @@ C# library and client (or high-level functions) for [RFEM 6](https://www.dlubal.
   * [Contribute](#contribute)
 
 ## Description
-This C# project is focused on opening RFEM 6 and RSTAB 9 to all our customers, enabling them to interact with RFEM on much higher level. If you are looking for tool to help you solve parametric models or optimization tasks, you are on the right place. This project and comunity will create support for all your projects. The goal is to create easily expandable C# library communicating instructions to RFEM / RSTAB through WS. WS anable you to access your local version of RFEM / RSTAB or remote via internet connection.
+This C# project is focused on opening RFEM 6 and RSTAB 9 to all our customers, enabling them to interact with RFEM on much higher level. If you are looking for tool to help you solve parametric models or optimization tasks, you are on the right place. This project and community will create support for all your projects. The goal is to create easily expandable C# library communicating instructions to RFEM / RSTAB through WS. WS enable you to access your local version of RFEM / RSTAB or remote via internet connection.
 
 ## Architecture
 ![image](https://user-images.githubusercontent.com/37547309/118119185-44a22f00-b3ee-11eb-9d60-3d74a4a96f81.png)
@@ -34,6 +34,6 @@ Examples can be found under [Examples](/examples) folder.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contribute
-Contributions are always welcome! Please ensure your pull request adheres to the following guidelines [Contributing](https://github.com/Dlubal-Software/Dlubal_CSharp_Client/blob/main/CONTRIBUTING.md)
+Contributions are always welcome! Please ensure your pull request adheres to the following guidelines [Contributing](/CONTRIBUTING.md)
 
 
