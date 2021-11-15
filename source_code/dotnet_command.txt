@@ -1,0 +1,10 @@
+dotnet build
+dotnet run
+
+dotnet build NAME
+dotnet run --project NAME
+
+
+dotnet new console -o NAME
+dotnet new classlib -o NAME
+

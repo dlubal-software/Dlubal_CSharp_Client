@@ -1,0 +1,16 @@
+{
+    "configurations": [
+    {
+        "name": ".NET Core Launch (console)",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "${workspaceFolder}/DotNetCoreClientTest/bin/Debug/net5.0/DotNetCoreClientTest.dll",
+        "args": ["run"],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": false,
+        "console": "internalConsole",
+      
+    }
+    ]
+}
