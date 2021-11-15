@@ -19,11 +19,17 @@ C# library and client (or high-level functions) for [RFEM 6](https://www.dlubal.
 ## Description
 This C# project is focused on opening RFEM 6 and RSTAB 9 to all our customers, enabling them to interact with RFEM on much higher level. If you are looking for tool to help you solve parametric models or optimization tasks, you are on the right place. This project and community will create support for all your projects. The goal is to create easily expandable C# library communicating instructions to RFEM / RSTAB through WS. WS enable you to access your local version of RFEM / RSTAB or remote via internet connection.
 
+## Getting started
+
+* Download [dotnet 5.0 sdk](https://dotnet.microsoft.com/download/dotnet/5.0) and install it
+* Download [Visual Studio 2019 Community](https://visualstudio.microsoft.com/cs/vs/older-downloads/#visual-studio-2019-and-other-products) and install it
+* Open Visual Studio and open Solution from [source_code\RfemSoapWsCoreClient.sln](source_code\RfemSoapWsCoreClient.sln) and compile it
+* Made your own project or use one from examples
+
 ## Architecture
 ![image](https://user-images.githubusercontent.com/37547309/118119185-44a22f00-b3ee-11eb-9d60-3d74a4a96f81.png)
 ### Data Structure
-## Getting started
-How to start?
+
 
 
 ### Dependencies
