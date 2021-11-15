@@ -23,6 +23,9 @@ This C# project is focused on opening RFEM 6 and RSTAB 9 to all our customers, e
 ![image](https://user-images.githubusercontent.com/37547309/118119185-44a22f00-b3ee-11eb-9d60-3d74a4a96f81.png)
 ### Data Structure
 ## Getting started
+How to start?
+
+
 ### Dependencies
 * .NET
 * RFEM 6 application
