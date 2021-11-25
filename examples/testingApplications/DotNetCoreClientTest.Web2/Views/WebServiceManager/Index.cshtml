@@ -1,0 +1,167 @@
+﻿@model DotNetCoreClientTest.Web2.Models.MainPageWSModel
+
+@{
+}
+
+<div class="">
+    <h1 class="display-4">Test manager</h1>
+
+    <div class="row mb-3">
+        <div class="col-sm-4 themed-grid-col"></div>
+        <div class="col-sm-4 themed-grid-col">
+            <button type="button" class="btn btn-primary" id="buttonRunTest" onclick="runMultiTest(false)">Run test</button>
+            <button type="button" class="btn btn-primary" id="buttonRunAllTest" onclick="runMultiTest(true)">Run test all</button>
+
+        </div>
+        <div class="col-sm-4 themed-grid-col">
+            <div id="loader" class="loadingDiv hidden">
+                <img src="~/img/loading.gif" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-sm-4 themed-grid-col">
+            @{
+                string[] lastItemTr = new string[10];
+                int lastPosition = -1;
+                int ulCount = 0;
+            }
+
+            <div>
+                <ul id="treeUL" class="ulnone">
+                    <li>
+                        <span class="caret caret-down">RFEM Web Service Tests</span>
+                        <ul class="nested active">
+                            @{foreach (var item in Model.WSlist)
+                                {
+                                    for (int i = 0; i < item.TreePathList.Count; i++)
+                                    {
+
+                                        if (lastItemTr[i] != item.TreePathList[i])
+                                        {
+
+                                            if (lastPosition != i && i < item.TreePathList.Count - 1)
+                                            {
+                                                if (lastPosition > i)
+                                                {
+                                                    for (int j = ulCount; ulCount > i; j--)
+                                                    {
+                                                        @Html.Raw($"</li></ul>");
+                                                        ulCount--;
+
+                                                    }
+                                                }
+
+                                                @Html.Raw($"<li><span class=\"caret\">{@item.TreePathList[i]}</span><ul class=\"nested\">");
+
+                                                ulCount++;
+
+                                            }
+                                            else
+                                            {
+                                                <li><input type="checkbox" id="checkbox-test-@item.ID" name="checkbox-test-@item.ID" data-id="@item.ID" class="checkbox-test">  @item.TreePathList[i] <i class="fas fa-play" onclick="runOneTest(@item.ID)"></i> </li>
+                                            }
+
+                                            lastPosition = i;
+                                        }
+
+                                        lastItemTr[i] = item.TreePathList[i];
+                                    }
+                                }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-8 themed-grid-col">
+            <div class="result-test-ws"></div>
+            <div class="result-test-ws-error"></div>
+            <div class="result-test-ws-messages"></div>
+        </div>
+    </div>
+
+    <div class="dev-test-info"></div>
+
+    <script>
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+
+        function componentPageDisable(val) {
+            $('#buttonRunTest').prop('disabled', val);
+            $('#buttonRunAllTest').prop('disabled', val);
+
+            if (val) {
+                $('#loader').removeClass('hidden');
+            }
+            else {
+                $('#loader').addClass('hidden');
+            }
+        }
+
+        function runOneTest(Id) {
+            componentPageDisable(true);
+
+            $.post("@Url.Action("RunTestAjax", "WebServiceManager")" + "/" + Id, function (data) {
+                $(".result-test-ws").html(data.Result);
+                $(".result-test-ws-error").html(data.Error);
+                $(".result-test-ws-messages").html(data.Messages);
+
+                componentPageDisable(false);
+            })
+            .fail(function (data) {
+                componentPageDisable(false);
+                $(".result-test-ws-error").html(data.responseJSON.Error);
+                alert("error");
+            });
+        }
+
+        function runMultiTest(allTest) {
+            var checked = $('.checkbox-test:checkbox:checked')
+            var dataid = '';
+            componentPageDisable(true);
+            $(".result-test-ws").html('');
+            $(".result-test-ws-error").html('');
+            $(".result-test-ws-messages").html('');
+            setTimeout(getInfo, 5000);
+
+            if (allTest == false) {
+                for (const element of checked) {
+                    console.log($('#' + element.id).data('id'));
+                    dataid += $('#' + element.id).data('id') + ',';
+                }
+            }
+            else {
+                dataid = 'ALL';
+            }
+            console.log(dataid);
+
+            $.post("@Url.Action("RunMultiTestAjax", "WebServiceManager")" + "/" + dataid, function (data) {
+               $(".result-test-ws").html(data);
+                componentPageDisable(false);
+            })
+            .fail(function (data) {
+                componentPageDisable(false);
+                $(".result-test-ws-error").html(data.responseJSON.Error);
+                alert("error");
+            });
+        };
+
+        function getInfo() {
+
+            $.post("@Url.Action("GetInfo", "WebServiceManager")", function (data) {
+
+               $(".result-test-ws").html(data);
+                setTimeout(getInfo, 1000);
+            });
+        };
+    </script>
+</div>

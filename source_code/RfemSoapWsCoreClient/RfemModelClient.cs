@@ -220,6 +220,18 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.generate_load_cases_and_combinationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).generate_load_cases_and_combinations(inValue);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.generate_parts_listsResponse Dlubal.WS.Rfem6.Model.IRfemModel.generate_parts_lists(Dlubal.WS.Rfem6.Model.generate_parts_listsRequest request)
+        {
+            return base.Channel.generate_parts_lists(request);
+        }
+        
+        public void generate_parts_lists()
+        {
+            Dlubal.WS.Rfem6.Model.generate_parts_listsRequest inValue = new Dlubal.WS.Rfem6.Model.generate_parts_listsRequest();
+            Dlubal.WS.Rfem6.Model.generate_parts_listsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).generate_parts_lists(inValue);
+        }
+        
         public Dlubal.WS.Rfem6.Model.action get_action(int no)
         {
             Dlubal.WS.Rfem6.Model.get_actionRequest inValue = new Dlubal.WS.Rfem6.Model.get_actionRequest();
@@ -403,6 +415,36 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_dimension(request);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_first_free_numberResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_first_free_number(Dlubal.WS.Rfem6.Model.get_first_free_numberRequest request)
+        {
+            return base.Channel.get_first_free_number(request);
+        }
+        
+        public int get_first_free_number(Dlubal.WS.Rfem6.Model.object_types type, int parent_no)
+        {
+            Dlubal.WS.Rfem6.Model.get_first_free_numberRequest inValue = new Dlubal.WS.Rfem6.Model.get_first_free_numberRequest();
+            inValue.type = type;
+            inValue.parent_no = parent_no;
+            Dlubal.WS.Rfem6.Model.get_first_free_numberResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_first_free_number(inValue);
+            return retVal.value;
+        }
+        
+        public Dlubal.WS.Rfem6.Model.formula_data get_formula(Dlubal.WS.Rfem6.Model.object_location object_location, Dlubal.WS.Rfem6.Model.object_parameter_location_type object_parameter_location)
+        {
+            Dlubal.WS.Rfem6.Model.get_formulaRequest inValue = new Dlubal.WS.Rfem6.Model.get_formulaRequest();
+            inValue.object_location = object_location;
+            inValue.object_parameter_location = object_parameter_location;
+            Dlubal.WS.Rfem6.Model.get_formulaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_formula(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_formulaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_formula(Dlubal.WS.Rfem6.Model.get_formulaRequest request)
+        {
+            return base.Channel.get_formula(request);
+        }
+        
         public Dlubal.WS.Rfem6.Model.free_circular_load get_free_circular_load(int no, int load_case_no)
         {
             Dlubal.WS.Rfem6.Model.get_free_circular_loadRequest inValue = new Dlubal.WS.Rfem6.Model.get_free_circular_loadRequest();
@@ -476,6 +518,20 @@ namespace Dlubal.WS.Rfem6.Model
         Dlubal.WS.Rfem6.Model.get_free_rectangular_loadResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_free_rectangular_load(Dlubal.WS.Rfem6.Model.get_free_rectangular_loadRequest request)
         {
             return base.Channel.get_free_rectangular_load(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_global_parameterResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_global_parameter(Dlubal.WS.Rfem6.Model.get_global_parameterRequest request)
+        {
+            return base.Channel.get_global_parameter(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.global_parameter get_global_parameter(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_global_parameterRequest inValue = new Dlubal.WS.Rfem6.Model.get_global_parameterRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_global_parameterResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_global_parameter(inValue);
+            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -661,6 +717,20 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_line_welded_jointRequest inValue = new Dlubal.WS.Rfem6.Model.get_line_welded_jointRequest();
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_line_welded_jointResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_line_welded_joint(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_list_of_parameters_formula_allowed_forResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_list_of_parameters_formula_allowed_for(Dlubal.WS.Rfem6.Model.get_list_of_parameters_formula_allowed_forRequest request)
+        {
+            return base.Channel.get_list_of_parameters_formula_allowed_for(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.object_parameter_location_type[] get_list_of_parameters_formula_allowed_for(Dlubal.WS.Rfem6.Model.object_location object_location)
+        {
+            Dlubal.WS.Rfem6.Model.get_list_of_parameters_formula_allowed_forRequest inValue = new Dlubal.WS.Rfem6.Model.get_list_of_parameters_formula_allowed_forRequest();
+            inValue.object_location = object_location;
+            Dlubal.WS.Rfem6.Model.get_list_of_parameters_formula_allowed_forResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_list_of_parameters_formula_allowed_for(inValue);
             return retVal.value;
         }
         
@@ -987,6 +1057,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_model_typeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_model_type(Dlubal.WS.Rfem6.Model.get_model_typeRequest request)
+        {
+            return base.Channel.get_model_type(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.model_type get_model_type()
+        {
+            Dlubal.WS.Rfem6.Model.get_model_typeRequest inValue = new Dlubal.WS.Rfem6.Model.get_model_typeRequest();
+            Dlubal.WS.Rfem6.Model.get_model_typeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_model_type(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_nodal_loadResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_nodal_load(Dlubal.WS.Rfem6.Model.get_nodal_loadRequest request)
         {
             return base.Channel.get_nodal_load(request);
@@ -1155,6 +1238,97 @@ namespace Dlubal.WS.Rfem6.Model
         {
             Dlubal.WS.Rfem6.Model.get_optimization_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_optimization_settingsRequest();
             Dlubal.WS.Rfem6.Model.get_optimization_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_optimization_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_all_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_all_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_all_by_material[] get_parts_list_all_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_all_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_member_representatives_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_member_representatives_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_member_representatives_by_material[] get_parts_list_member_representatives_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_member_representatives_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_member_set_representatives_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_member_set_representatives_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_member_set_representatives_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_member_set_representatives_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_member_set_representatives_by_material[] get_parts_list_member_set_representatives_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_member_set_representatives_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_member_set_representatives_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_member_set_representatives_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_member_set_representatives_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_member_sets_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_member_sets_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_member_sets_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_member_sets_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_member_sets_by_material[] get_parts_list_member_sets_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_member_sets_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_member_sets_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_member_sets_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_member_sets_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_members_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_members_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_members_by_material[] get_parts_list_members_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_members_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_solids_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_solids_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_solids_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_solids_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_solids_by_material[] get_parts_list_solids_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_solids_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_solids_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_solids_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_solids_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_surfaces_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_surfaces_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_surfaces_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_surfaces_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_surfaces_by_material[] get_parts_list_surfaces_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_surfaces_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_surfaces_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_surfaces_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_surfaces_by_material(inValue);
             return retVal.value;
         }
         
@@ -1766,6 +1940,21 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_formulaResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_formula(Dlubal.WS.Rfem6.Model.set_formulaRequest request)
+        {
+            return base.Channel.set_formula(request);
+        }
+        
+        public void set_formula(Dlubal.WS.Rfem6.Model.object_location object_location, Dlubal.WS.Rfem6.Model.object_parameter_location_type object_parameter_location, string formula)
+        {
+            Dlubal.WS.Rfem6.Model.set_formulaRequest inValue = new Dlubal.WS.Rfem6.Model.set_formulaRequest();
+            inValue.object_location = object_location;
+            inValue.object_parameter_location = object_parameter_location;
+            inValue.formula = formula;
+            Dlubal.WS.Rfem6.Model.set_formulaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_formula(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_free_circular_loadResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_free_circular_load(Dlubal.WS.Rfem6.Model.set_free_circular_loadRequest request)
         {
             return base.Channel.set_free_circular_load(request);
@@ -1833,6 +2022,19 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.load_case_no = load_case_no;
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_free_rectangular_loadResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_free_rectangular_load(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_global_parameterResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_global_parameter(Dlubal.WS.Rfem6.Model.set_global_parameterRequest request)
+        {
+            return base.Channel.set_global_parameter(request);
+        }
+        
+        public void set_global_parameter(Dlubal.WS.Rfem6.Model.global_parameter value)
+        {
+            Dlubal.WS.Rfem6.Model.set_global_parameterRequest inValue = new Dlubal.WS.Rfem6.Model.set_global_parameterRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_global_parameterResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_global_parameter(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2283,6 +2485,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_mesh_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_mesh_settingsRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_mesh_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_mesh_settings(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_model_typeResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_model_type(Dlubal.WS.Rfem6.Model.set_model_typeRequest request)
+        {
+            return base.Channel.set_model_type(request);
+        }
+        
+        public void set_model_type(Dlubal.WS.Rfem6.Model.model_type model_type)
+        {
+            Dlubal.WS.Rfem6.Model.set_model_typeRequest inValue = new Dlubal.WS.Rfem6.Model.set_model_typeRequest();
+            inValue.model_type = model_type;
+            Dlubal.WS.Rfem6.Model.set_model_typeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_model_type(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

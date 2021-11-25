@@ -1,0 +1,25 @@
+﻿@model DotNetCoreClientTest.Web2.Models.ResultTestModel
+
+@{
+    ViewData["Title"] = "RunOneTest";
+}
+
+<h1>Run one test</h1>
+
+<div><b>ID</b>: @Model.Id</div>
+<div><b>Name</b>: @Model.Name</div>
+<div><b>Result</b>: @Model.Result</div>
+<div><b>Desc</b>: @Model.Desc</div>
+<div><b>Error</b>: @Model.Error</div>
+
+<div><b>Messages</b>:</div>
+
+<ul>
+    @{ foreach (var item in Model.Messages)
+        {
+            <li>@item</li>
+        }}
+
+</ul>
+
+

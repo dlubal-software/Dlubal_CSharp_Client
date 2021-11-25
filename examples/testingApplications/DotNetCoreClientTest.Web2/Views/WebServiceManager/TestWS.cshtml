@@ -1,0 +1,30 @@
+﻿@model DotNetCoreClientTest.Web2.Models.TestWSModel
+
+@{
+    ViewData["Title"] = "TestWS";
+}
+
+<h1>Test web service</h1>
+<div style="text-align:center">
+    <button type="button" class="btn btn-secondary" onclick="location.href='@Url.Action("testWS", "WebServiceManager")'">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+</div>
+<h3>Test 1:</h3>
+<p>
+    @Model.Value1
+</p>
+<h3>Test 2:</h3>
+<p>
+    @Model.Value2
+</p>
+
+
+@{if (!String.IsNullOrEmpty(Model.ErrorMsg))
+    {
+        <h3>Error:</h3>
+        <p>
+            @Model.ErrorMsg
+        </p>
+    }
+}

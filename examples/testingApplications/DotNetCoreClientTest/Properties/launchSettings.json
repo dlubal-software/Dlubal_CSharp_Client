@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DotNetCoreClientTest": {
+      "commandName": "Project",
+      "commandLineArgs": "run 16"
+    }
+  }
+}

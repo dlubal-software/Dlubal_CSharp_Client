@@ -1,0 +1,32 @@
+﻿@model DotNetCoreClientTest.Web2.Models.ListWSModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List of methods</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tree path</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.WSlist)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.TreePath</td>
+                <td>@item.Name</td>
+                <td>
+                    <a class="link-not-underline" href="@Url.Action("RunOneTest", "WebServiceManager" , new { id = @item.ID })"> Run <i class="fas fa-play"></i> </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
