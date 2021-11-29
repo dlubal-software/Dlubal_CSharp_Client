@@ -1,7 +1,17 @@
 ﻿using System;
 using System.IO;
+#if RFEM
 using Dlubal.WS.Rfem6.Application;
+using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 using Dlubal.WS.Rfem6.Model;
+using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
+#elif RSTAB
+using Dlubal.WS.Rstab9.Application;
+using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
+using Dlubal.WS.Rstab9.Model;
+using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
+#endif
+
 using System.Net.Http;
 using NLog;
 using System.ServiceModel;
@@ -34,7 +44,9 @@ namespace Cantilever
                 return binding;
             }
         }
-        private static RfemApplicationClient application = null;
+
+        //private static RfemApplicationClient application = null;
+        private static ApplicationClient application = null;
 
         static void Main(string[] args)
         {
@@ -45,14 +57,14 @@ namespace Cantilever
             LogManager.Configuration = config;
             var logger = LogManager.GetCurrentClassLogger();
             string CurrentDirectory = Directory.GetCurrentDirectory();
-            #region RFEM Settings
+            #region Application Settings
             try
             {
-                application_information RFEMInfo;
+                application_information ApplicationInfo;
                 try
                 {
-                    // connects to RFEM6 application
-                    application = new RfemApplicationClient(Binding, Address);
+                    // connects to RFEM6 or RSTAB9 application
+                    application = new ApplicationClient(Binding, Address);
 
                 }
                 catch (Exception exception)
@@ -75,9 +87,9 @@ namespace Cantilever
                 }
                 finally
                 {
-                    RFEMInfo = application.get_information();
-                    logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                    Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
+                    ApplicationInfo = application.get_information();
+                    logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
+                    Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                 }
                 #endregion
 
@@ -86,8 +98,8 @@ namespace Cantilever
                 string modelUrl = application.new_model(modelName);
 
                 #region new model
-                // connects to RFEM6 model
-                RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(modelUrl));
+                // connects to RFEM6/RSTAB9 model
+                ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
                 #endregion
 
@@ -127,6 +139,7 @@ namespace Cantilever
                     comment = "concrete part"
                 };
 
+#if RFEM
                 line line = new()
                 {
                     no = 1,
@@ -135,13 +148,20 @@ namespace Cantilever
                     type = line_type.TYPE_POLYLINE,
                     typeSpecified = true,
                 };
-
+#endif
                 // create member
                 member member = new()
                 {
                     no = 1,
+#if RFEM
                     line = line.no,
                     lineSpecified = true,
+#elif RSTAB
+                    node_start = n1.no,
+                    node_startSpecified = true,
+                    node_end = n2.no,
+                    node_endSpecified = true,
+#endif
                     section_start = sectionRectangle.no,
                     section_startSpecified = true,
                     section_end = sectionRectangle.no,
@@ -164,7 +184,9 @@ namespace Cantilever
                     model.set_section(sectionRectangle);
                     model.set_node(n1);
                     model.set_node(n2);
+#if RFEM
                     model.set_line(line);
+#endif
                     model.set_member(member);
                     model.set_nodal_support(support);
                 }
@@ -239,38 +261,39 @@ namespace Cantilever
                 model.calculate_all(true);
                 #region Export Result XML / CSV
                 model.export_result_tables_with_detailed_members_results_to_csv(CurrentDirectory);
-               
+
 
                 model.export_result_tables_with_detailed_members_results_to_xml(CurrentDirectory + @"\Test.xml");
 
-                string XMLFile = File.ReadAllText(CurrentDirectory + @"\Test.xml");
-                XDocument doc = XDocument.Parse(XMLFile);
+                //string XMLFile = File.ReadAllText(CurrentDirectory + @"\Test.xml");
+                //XDocument doc = XDocument.Parse(XMLFile);
 
-                foreach (XElement loadcase in doc.Descendants("load_case"))
-                {
-                    //Console.WriteLine(loadcase);
-                    if(loadcase.Element("no").Value == "1")
-                    {
-                        var internalForces = loadcase.Descendants("E_MODEL_MEMBERS_INTERNAL_FORCES");
-                        var internalForcesItems = internalForces.Descendants("item");
-                        foreach (var item in internalForcesItems)
-                        {
-                            string My = item.Element("internal_force_my").Value.ToString();
-                            Console.WriteLine(My);
-                        }
+                //foreach (XElement loadcase in doc.Descendants("load_case"))
+                //{
+                //    //Console.WriteLine(loadcase);
+                //    if (loadcase.Element("no").Value == "1")
+                //    {
+                //        var internalForces = loadcase.Descendants("E_MODEL_MEMBERS_INTERNAL_FORCES");
+                //        var internalForcesItems = internalForces.Descendants("item");
+                //        foreach (var item in internalForcesItems)
+                //        {
+                //            string My = item.Element("internal_force_my").Value.ToString();
+                //            Console.WriteLine(My);
+                //        }
 
-                    }
-                }
-
-            
-
-                
-
-              
-
-              
+                //    }
+                //}
                 #endregion
+
+
+
+
+
+
+
+
                 application.close_model(0, false);//close model
+                application.close_application();
             }
             catch (Exception ex)
             {

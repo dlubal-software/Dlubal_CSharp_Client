@@ -5,6 +5,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RSTAB</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;RSTAB</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="NLog" Version="4.7.12" />
   </ItemGroup>
