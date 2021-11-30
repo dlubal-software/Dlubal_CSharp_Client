@@ -260,6 +260,19 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_action_combination(request);
         }
         
+        public Dlubal.WS.Rfem6.Model.addon_list_type get_addon_statuses()
+        {
+            Dlubal.WS.Rfem6.Model.get_addon_statusesRequest inValue = new Dlubal.WS.Rfem6.Model.get_addon_statusesRequest();
+            Dlubal.WS.Rfem6.Model.get_addon_statusesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_addon_statuses(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_addon_statusesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_addon_statuses(Dlubal.WS.Rfem6.Model.get_addon_statusesRequest request)
+        {
+            return base.Channel.get_addon_statuses(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_all_object_numbersResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_object_numbers(Dlubal.WS.Rfem6.Model.get_all_object_numbersRequest request)
         {
@@ -1807,6 +1820,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_action_combinationRequest inValue = new Dlubal.WS.Rfem6.Model.set_action_combinationRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_action_combinationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_action_combination(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_addon_statusesResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_addon_statuses(Dlubal.WS.Rfem6.Model.set_addon_statusesRequest request)
+        {
+            return base.Channel.set_addon_statuses(request);
+        }
+        
+        public void set_addon_statuses(Dlubal.WS.Rfem6.Model.addon_list_type addon_statuses)
+        {
+            Dlubal.WS.Rfem6.Model.set_addon_statusesRequest inValue = new Dlubal.WS.Rfem6.Model.set_addon_statusesRequest();
+            inValue.addon_statuses = addon_statuses;
+            Dlubal.WS.Rfem6.Model.set_addon_statusesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_addon_statuses(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

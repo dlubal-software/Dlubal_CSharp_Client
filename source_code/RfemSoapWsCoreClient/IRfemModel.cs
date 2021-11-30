@@ -86,6 +86,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_action_combinationResponse get_action_combination(Dlubal.WS.Rfem6.Model.get_action_combinationRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_addon_statuses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_addon_statusesResponse get_addon_statuses(Dlubal.WS.Rfem6.Model.get_addon_statusesRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_object_numbers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_all_object_numbersResponse get_all_object_numbers(Dlubal.WS.Rfem6.Model.get_all_object_numbersRequest request);
@@ -525,6 +529,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_action_combination", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_action_combinationResponse set_action_combination(Dlubal.WS.Rfem6.Model.set_action_combinationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_addon_statuses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_addon_statusesResponse set_addon_statuses(Dlubal.WS.Rfem6.Model.set_addon_statusesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_building_story", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

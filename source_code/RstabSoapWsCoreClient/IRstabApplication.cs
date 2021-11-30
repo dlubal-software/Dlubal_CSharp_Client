@@ -18,35 +18,35 @@ namespace Dlubal.WS.Rstab9.Application
     public interface IRstabApplication
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/close_application", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/close_application", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.close_applicationResponse close_application(Dlubal.WS.Rstab9.Application.close_applicationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/close_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/close_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.close_modelResponse close_model(Dlubal.WS.Rstab9.Application.close_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_active_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_active_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.get_active_modelResponse get_active_model(Dlubal.WS.Rstab9.Application.get_active_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_information", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_information", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.get_informationResponse get_information(Dlubal.WS.Rstab9.Application.get_informationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.get_modelResponse get_model(Dlubal.WS.Rstab9.Application.get_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_model_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_model_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.get_model_listResponse get_model_list(Dlubal.WS.Rstab9.Application.get_model_listRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/new_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/new_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.new_modelResponse new_model(Dlubal.WS.Rstab9.Application.new_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/open_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/open_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Application.open_modelResponse open_model(Dlubal.WS.Rstab9.Application.open_modelRequest request);
     }

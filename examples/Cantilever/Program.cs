@@ -265,24 +265,25 @@ namespace Cantilever
 
                 model.export_result_tables_with_detailed_members_results_to_xml(CurrentDirectory + @"\Test.xml");
 
-                //string XMLFile = File.ReadAllText(CurrentDirectory + @"\Test.xml");
-                //XDocument doc = XDocument.Parse(XMLFile);
+                string XMLFile = File.ReadAllText(CurrentDirectory + @"\Test.xml");
+                XDocument doc = XDocument.Parse(XMLFile);
 
-                //foreach (XElement loadcase in doc.Descendants("load_case"))
-                //{
-                //    //Console.WriteLine(loadcase);
-                //    if (loadcase.Element("no").Value == "1")
-                //    {
-                //        var internalForces = loadcase.Descendants("E_MODEL_MEMBERS_INTERNAL_FORCES");
-                //        var internalForcesItems = internalForces.Descendants("item");
-                //        foreach (var item in internalForcesItems)
-                //        {
-                //            string My = item.Element("internal_force_my").Value.ToString();
-                //            Console.WriteLine(My);
-                //        }
+                foreach (XElement loadcase in doc.Descendants("load_case"))
+                {
+                    
+                    if (loadcase.Element("no").Value == "1")
+                    {
+                        Console.WriteLine("My internal forces from LC 1");
+                        var internalForces = loadcase.Descendants("E_MODEL_MEMBERS_INTERNAL_FORCES");
+                        var internalForcesItems = internalForces.Descendants("item");
+                        foreach (var item in internalForcesItems)
+                        {
+                            string My = item.Element("internal_force_my").Value.ToString();
+                            Console.WriteLine(My);
+                        }
 
-                //    }
-                //}
+                    }
+                }
                 #endregion
 
 
@@ -293,7 +294,7 @@ namespace Cantilever
 
 
                 application.close_model(0, false);//close model
-                application.close_application();
+              //  application.close_application();
             }
             catch (Exception ex)
             {

@@ -220,6 +220,18 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.generate_load_cases_and_combinationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).generate_load_cases_and_combinations(inValue);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.generate_parts_listsResponse Dlubal.WS.Rstab9.Model.IRstabModel.generate_parts_lists(Dlubal.WS.Rstab9.Model.generate_parts_listsRequest request)
+        {
+            return base.Channel.generate_parts_lists(request);
+        }
+        
+        public void generate_parts_lists()
+        {
+            Dlubal.WS.Rstab9.Model.generate_parts_listsRequest inValue = new Dlubal.WS.Rstab9.Model.generate_parts_listsRequest();
+            Dlubal.WS.Rstab9.Model.generate_parts_listsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).generate_parts_lists(inValue);
+        }
+        
         public Dlubal.WS.Rstab9.Model.action get_action(int no)
         {
             Dlubal.WS.Rstab9.Model.get_actionRequest inValue = new Dlubal.WS.Rstab9.Model.get_actionRequest();
@@ -246,6 +258,19 @@ namespace Dlubal.WS.Rstab9.Model
         Dlubal.WS.Rstab9.Model.get_action_combinationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_action_combination(Dlubal.WS.Rstab9.Model.get_action_combinationRequest request)
         {
             return base.Channel.get_action_combination(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.addon_list_type get_addon_statuses()
+        {
+            Dlubal.WS.Rstab9.Model.get_addon_statusesRequest inValue = new Dlubal.WS.Rstab9.Model.get_addon_statusesRequest();
+            Dlubal.WS.Rstab9.Model.get_addon_statusesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_addon_statuses(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_addon_statusesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_addon_statuses(Dlubal.WS.Rstab9.Model.get_addon_statusesRequest request)
+        {
+            return base.Channel.get_addon_statuses(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -362,6 +387,50 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_first_free_numberResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_first_free_number(Dlubal.WS.Rstab9.Model.get_first_free_numberRequest request)
+        {
+            return base.Channel.get_first_free_number(request);
+        }
+        
+        public int get_first_free_number(Dlubal.WS.Rstab9.Model.object_types type, int parent_no)
+        {
+            Dlubal.WS.Rstab9.Model.get_first_free_numberRequest inValue = new Dlubal.WS.Rstab9.Model.get_first_free_numberRequest();
+            inValue.type = type;
+            inValue.parent_no = parent_no;
+            Dlubal.WS.Rstab9.Model.get_first_free_numberResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_first_free_number(inValue);
+            return retVal.value;
+        }
+        
+        public Dlubal.WS.Rstab9.Model.formula_data get_formula(Dlubal.WS.Rstab9.Model.object_location object_location, Dlubal.WS.Rstab9.Model.object_parameter_location_type object_parameter_location)
+        {
+            Dlubal.WS.Rstab9.Model.get_formulaRequest inValue = new Dlubal.WS.Rstab9.Model.get_formulaRequest();
+            inValue.object_location = object_location;
+            inValue.object_parameter_location = object_parameter_location;
+            Dlubal.WS.Rstab9.Model.get_formulaResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_formula(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_formulaResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_formula(Dlubal.WS.Rstab9.Model.get_formulaRequest request)
+        {
+            return base.Channel.get_formula(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_global_parameterResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_global_parameter(Dlubal.WS.Rstab9.Model.get_global_parameterRequest request)
+        {
+            return base.Channel.get_global_parameter(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.global_parameter get_global_parameter(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_global_parameterRequest inValue = new Dlubal.WS.Rstab9.Model.get_global_parameterRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_global_parameterResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_global_parameter(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_imperfection_caseResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_imperfection_case(Dlubal.WS.Rstab9.Model.get_imperfection_caseRequest request)
         {
             return base.Channel.get_imperfection_case(request);
@@ -401,6 +470,20 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_line_gridRequest inValue = new Dlubal.WS.Rstab9.Model.get_line_gridRequest();
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_line_gridResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_line_grid(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_list_of_parameters_formula_allowed_for(Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forRequest request)
+        {
+            return base.Channel.get_list_of_parameters_formula_allowed_for(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.object_parameter_location_type[] get_list_of_parameters_formula_allowed_for(Dlubal.WS.Rstab9.Model.object_location object_location)
+        {
+            Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forRequest inValue = new Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forRequest();
+            inValue.object_location = object_location;
+            Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_list_of_parameters_formula_allowed_for(inValue);
             return retVal.value;
         }
         
@@ -714,6 +797,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_model_typeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_model_type(Dlubal.WS.Rstab9.Model.get_model_typeRequest request)
+        {
+            return base.Channel.get_model_type(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.model_type get_model_type()
+        {
+            Dlubal.WS.Rstab9.Model.get_model_typeRequest inValue = new Dlubal.WS.Rstab9.Model.get_model_typeRequest();
+            Dlubal.WS.Rstab9.Model.get_model_typeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_model_type(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_nodal_loadResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_nodal_load(Dlubal.WS.Rstab9.Model.get_nodal_loadRequest request)
         {
             return base.Channel.get_nodal_load(request);
@@ -839,6 +935,97 @@ namespace Dlubal.WS.Rstab9.Model
         {
             Dlubal.WS.Rstab9.Model.get_optimization_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.get_optimization_settingsRequest();
             Dlubal.WS.Rstab9.Model.get_optimization_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_optimization_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_all_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_all_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_all_by_material[] get_parts_list_all_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_all_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_member_representatives_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_member_representatives_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_member_representatives_by_material[] get_parts_list_member_representatives_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_member_representatives_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_member_set_representatives_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_member_set_representatives_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_member_set_representatives_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_member_set_representatives_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_member_set_representatives_by_material[] get_parts_list_member_set_representatives_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_member_set_representatives_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_member_set_representatives_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_member_set_representatives_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_member_set_representatives_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_member_sets_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_member_sets_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_member_sets_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_member_sets_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_member_sets_by_material[] get_parts_list_member_sets_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_member_sets_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_member_sets_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_member_sets_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_member_sets_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_members_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_members_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_members_by_material[] get_parts_list_members_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_members_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_solids_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_solids_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_solids_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_solids_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_solids_by_material[] get_parts_list_solids_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_solids_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_solids_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_solids_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_solids_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_surfaces_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_surfaces_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_surfaces_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_surfaces_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_surfaces_by_material[] get_parts_list_surfaces_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_surfaces_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_surfaces_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_surfaces_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_surfaces_by_material(inValue);
             return retVal.value;
         }
         
@@ -978,6 +1165,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_addon_statusesResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_addon_statuses(Dlubal.WS.Rstab9.Model.set_addon_statusesRequest request)
+        {
+            return base.Channel.set_addon_statuses(request);
+        }
+        
+        public void set_addon_statuses(Dlubal.WS.Rstab9.Model.addon_list_type addon_statuses)
+        {
+            Dlubal.WS.Rstab9.Model.set_addon_statusesRequest inValue = new Dlubal.WS.Rstab9.Model.set_addon_statusesRequest();
+            inValue.addon_statuses = addon_statuses;
+            Dlubal.WS.Rstab9.Model.set_addon_statusesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_addon_statuses(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_clipping_boxResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_clipping_box(Dlubal.WS.Rstab9.Model.set_clipping_boxRequest request)
         {
             return base.Channel.set_clipping_box(request);
@@ -1066,6 +1266,34 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_dimensionRequest inValue = new Dlubal.WS.Rstab9.Model.set_dimensionRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_dimensionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_dimension(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_formulaResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_formula(Dlubal.WS.Rstab9.Model.set_formulaRequest request)
+        {
+            return base.Channel.set_formula(request);
+        }
+        
+        public void set_formula(Dlubal.WS.Rstab9.Model.object_location object_location, Dlubal.WS.Rstab9.Model.object_parameter_location_type object_parameter_location, string formula)
+        {
+            Dlubal.WS.Rstab9.Model.set_formulaRequest inValue = new Dlubal.WS.Rstab9.Model.set_formulaRequest();
+            inValue.object_location = object_location;
+            inValue.object_parameter_location = object_parameter_location;
+            inValue.formula = formula;
+            Dlubal.WS.Rstab9.Model.set_formulaResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_formula(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_global_parameterResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_global_parameter(Dlubal.WS.Rstab9.Model.set_global_parameterRequest request)
+        {
+            return base.Channel.set_global_parameter(request);
+        }
+        
+        public void set_global_parameter(Dlubal.WS.Rstab9.Model.global_parameter value)
+        {
+            Dlubal.WS.Rstab9.Model.set_global_parameterRequest inValue = new Dlubal.WS.Rstab9.Model.set_global_parameterRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_global_parameterResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_global_parameter(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1370,6 +1598,19 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_member_transverse_stiffenerRequest inValue = new Dlubal.WS.Rstab9.Model.set_member_transverse_stiffenerRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_member_transverse_stiffenerResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_member_transverse_stiffener(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_model_typeResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_model_type(Dlubal.WS.Rstab9.Model.set_model_typeRequest request)
+        {
+            return base.Channel.set_model_type(request);
+        }
+        
+        public void set_model_type(Dlubal.WS.Rstab9.Model.model_type model_type)
+        {
+            Dlubal.WS.Rstab9.Model.set_model_typeRequest inValue = new Dlubal.WS.Rstab9.Model.set_model_typeRequest();
+            inValue.model_type = model_type;
+            Dlubal.WS.Rstab9.Model.set_model_typeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_model_type(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
