@@ -6,6 +6,7 @@ Here are guidelines how to contribute:
 * Search previous suggestions before making a new one, as yours may be a duplicate.
 * Read [license](/LICENSE) of the project
 * Contact us to discuss your development so that we are aware of it
+* Fork this repository
 * Clone this repository
 * Make your branch  with specified naming - yourGitHubName_FeatureName - e.g. jarabroz_CacheImprovement
 * Make your development
