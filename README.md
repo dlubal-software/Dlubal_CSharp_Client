@@ -1,6 +1,6 @@
 # Dlubal CSharp library
 ![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.00-yellow) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![CodeFactor](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client/badge)](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client)
 <!-- ### Table of Contents
 - [RfemCSharpWsClient](#rfemcsharpwsclient)
   * [Description](#description)
