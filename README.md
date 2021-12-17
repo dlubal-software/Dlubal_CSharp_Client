@@ -1,6 +1,8 @@
 # Dlubal CSharp library
-![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.00-yellow) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.00-yellow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CodeFactor](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client/badge)](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client)
+[![codecov](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client/branch/main/graph/badge.svg?token=wQ4PBPY8XY)](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client)
 <!-- ### Table of Contents
 - [RfemCSharpWsClient](#rfemcsharpwsclient)
   * [Description](#description)
