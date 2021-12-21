@@ -35,6 +35,6 @@ These steps cloud be done once for the project
 * Your code will be reviewed and all issues needs to be resolved
 * Once Pull request is approved code is merged
 * Branch could be deleted
-* We will add you to the list of the contributors where we mention where you contributed
+* We will add you to the [list of the contributors](/ListOfContributors.md) where we mention where you contributed
 
 Please note we have a [code of conduct](/CODE_OF_CONDUCT.md) , please follow it in all your interactions with the project.
