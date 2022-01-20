@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;RSTAB</DefineConstants>
+    <DefineConstants>TRACE;RFEM</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

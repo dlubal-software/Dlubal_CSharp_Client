@@ -195,17 +195,18 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.finish_modificationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).finish_modification(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputResponse Dlubal.WS.Rfem6.Model.IRfemModel.generate_and_validate_xml_solver_input(Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputRequest request)
-        {
-            return base.Channel.generate_and_validate_xml_solver_input(request);
-        }
-        
-        public void generate_and_validate_xml_solver_input(string solver_input_file_path)
+        public Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_input_result generate_and_validate_xml_solver_input(string solver_input_file_path)
         {
             Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputRequest inValue = new Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputRequest();
             inValue.solver_input_file_path = solver_input_file_path;
             Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).generate_and_validate_xml_solver_input(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputResponse Dlubal.WS.Rfem6.Model.IRfemModel.generate_and_validate_xml_solver_input(Dlubal.WS.Rfem6.Model.generate_and_validate_xml_solver_inputRequest request)
+        {
+            return base.Channel.generate_and_validate_xml_solver_input(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1402,6 +1403,20 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_soil_massifResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_soil_massif(Dlubal.WS.Rfem6.Model.get_soil_massifRequest request)
+        {
+            return base.Channel.get_soil_massif(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.soil_massif get_soil_massif(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_soil_massifRequest inValue = new Dlubal.WS.Rfem6.Model.get_soil_massifRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_soil_massifResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_soil_massif(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_soil_sampleResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_soil_sample(Dlubal.WS.Rfem6.Model.get_soil_sampleRequest request)
         {
             return base.Channel.get_soil_sample(request);
@@ -1512,6 +1527,20 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.no = no;
             inValue.load_case_no = load_case_no;
             Dlubal.WS.Rfem6.Model.get_solid_set_loadResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_solid_set_load(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_spectral_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_spectral_analysis_settings(Dlubal.WS.Rfem6.Model.get_spectral_analysis_settingsRequest request)
+        {
+            return base.Channel.get_spectral_analysis_settings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_settings get_spectral_analysis_settings(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_spectral_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_spectral_analysis_settingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_spectral_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_spectral_analysis_settings(inValue);
             return retVal.value;
         }
         
@@ -1730,6 +1759,20 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_terrainResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_terrain(Dlubal.WS.Rfem6.Model.get_terrainRequest request)
+        {
+            return base.Channel.get_terrain(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.terrain get_terrain(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_terrainRequest inValue = new Dlubal.WS.Rfem6.Model.get_terrainRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_terrainResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_terrain(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_thicknessResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_thickness(Dlubal.WS.Rfem6.Model.get_thicknessRequest request)
         {
             return base.Channel.get_thickness(request);
@@ -1755,6 +1798,62 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_visual_objectResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_visual_object(inValue);
             return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_wind_profileResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_wind_profile(Dlubal.WS.Rfem6.Model.get_wind_profileRequest request)
+        {
+            return base.Channel.get_wind_profile(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.wind_profile get_wind_profile(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_wind_profileRequest inValue = new Dlubal.WS.Rfem6.Model.get_wind_profileRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_wind_profileResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_wind_profile(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_wind_simulationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_wind_simulation(Dlubal.WS.Rfem6.Model.get_wind_simulationRequest request)
+        {
+            return base.Channel.get_wind_simulation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.wind_simulation get_wind_simulation(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_wind_simulationRequest inValue = new Dlubal.WS.Rfem6.Model.get_wind_simulationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_wind_simulationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_wind_simulation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_wind_simulation_analysis_settings(Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsRequest request)
+        {
+            return base.Channel.get_wind_simulation_analysis_settings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.wind_simulation_analysis_settings get_wind_simulation_analysis_settings(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_wind_simulation_analysis_settings(inValue);
+            return retVal.value;
+        }
+        
+        public Dlubal.WS.Rfem6.Model.plausibility_check_result plausibility_check(bool skip_warnings)
+        {
+            Dlubal.WS.Rfem6.Model.plausibility_checkRequest inValue = new Dlubal.WS.Rfem6.Model.plausibility_checkRequest();
+            inValue.skip_warnings = skip_warnings;
+            Dlubal.WS.Rfem6.Model.plausibility_checkResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).plausibility_check(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.plausibility_checkResponse Dlubal.WS.Rfem6.Model.IRfemModel.plausibility_check(Dlubal.WS.Rfem6.Model.plausibility_checkRequest request)
+        {
+            return base.Channel.plausibility_check(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2698,6 +2797,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_soil_massifResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_soil_massif(Dlubal.WS.Rfem6.Model.set_soil_massifRequest request)
+        {
+            return base.Channel.set_soil_massif(request);
+        }
+        
+        public void set_soil_massif(Dlubal.WS.Rfem6.Model.soil_massif value)
+        {
+            Dlubal.WS.Rfem6.Model.set_soil_massifRequest inValue = new Dlubal.WS.Rfem6.Model.set_soil_massifRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_soil_massifResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_soil_massif(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_soil_sampleResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_soil_sample(Dlubal.WS.Rfem6.Model.set_soil_sampleRequest request)
         {
             return base.Channel.set_soil_sample(request);
@@ -2801,6 +2913,19 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.load_case_no = load_case_no;
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_solid_set_loadResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_solid_set_load(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_spectral_analysis_settings(Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsRequest request)
+        {
+            return base.Channel.set_spectral_analysis_settings(request);
+        }
+        
+        public void set_spectral_analysis_settings(Dlubal.WS.Rfem6.Model.spectral_analysis_settings value)
+        {
+            Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_spectral_analysis_settings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3003,6 +3128,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_terrainResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_terrain(Dlubal.WS.Rfem6.Model.set_terrainRequest request)
+        {
+            return base.Channel.set_terrain(request);
+        }
+        
+        public void set_terrain(Dlubal.WS.Rfem6.Model.terrain value)
+        {
+            Dlubal.WS.Rfem6.Model.set_terrainRequest inValue = new Dlubal.WS.Rfem6.Model.set_terrainRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_terrainResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_terrain(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_thicknessResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_thickness(Dlubal.WS.Rfem6.Model.set_thicknessRequest request)
         {
             return base.Channel.set_thickness(request);
@@ -3026,6 +3164,45 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_visual_objectRequest inValue = new Dlubal.WS.Rfem6.Model.set_visual_objectRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_visual_objectResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_visual_object(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_wind_profileResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_wind_profile(Dlubal.WS.Rfem6.Model.set_wind_profileRequest request)
+        {
+            return base.Channel.set_wind_profile(request);
+        }
+        
+        public void set_wind_profile(Dlubal.WS.Rfem6.Model.wind_profile value)
+        {
+            Dlubal.WS.Rfem6.Model.set_wind_profileRequest inValue = new Dlubal.WS.Rfem6.Model.set_wind_profileRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_wind_profileResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_wind_profile(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_wind_simulationResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_wind_simulation(Dlubal.WS.Rfem6.Model.set_wind_simulationRequest request)
+        {
+            return base.Channel.set_wind_simulation(request);
+        }
+        
+        public void set_wind_simulation(Dlubal.WS.Rfem6.Model.wind_simulation value)
+        {
+            Dlubal.WS.Rfem6.Model.set_wind_simulationRequest inValue = new Dlubal.WS.Rfem6.Model.set_wind_simulationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_wind_simulationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_wind_simulation(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_wind_simulation_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_wind_simulation_analysis_settings(Dlubal.WS.Rfem6.Model.set_wind_simulation_analysis_settingsRequest request)
+        {
+            return base.Channel.set_wind_simulation_analysis_settings(request);
+        }
+        
+        public void set_wind_simulation_analysis_settings(Dlubal.WS.Rfem6.Model.wind_simulation_analysis_settings value)
+        {
+            Dlubal.WS.Rfem6.Model.set_wind_simulation_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_wind_simulation_analysis_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_wind_simulation_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_wind_simulation_analysis_settings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
