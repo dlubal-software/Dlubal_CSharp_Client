@@ -345,6 +345,19 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_coordinate_system(request);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_design_overviewResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_design_overview(Dlubal.WS.Rstab9.Model.get_design_overviewRequest request)
+        {
+            return base.Channel.get_design_overview(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.design_overview[] get_design_overview()
+        {
+            Dlubal.WS.Rstab9.Model.get_design_overviewRequest inValue = new Dlubal.WS.Rstab9.Model.get_design_overviewRequest();
+            Dlubal.WS.Rstab9.Model.get_design_overviewResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_design_overview(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.Rstab9.Model.design_situation get_design_situation(int no)
         {
             Dlubal.WS.Rstab9.Model.get_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_design_situationRequest();
@@ -772,6 +785,20 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_modal_analysis_settingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_modal_analysis_settings(Dlubal.WS.Rstab9.Model.get_modal_analysis_settingsRequest request)
+        {
+            return base.Channel.get_modal_analysis_settings(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.modal_analysis_settings get_modal_analysis_settings(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_modal_analysis_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.get_modal_analysis_settingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_modal_analysis_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_modal_analysis_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_model_infoResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_model_info(Dlubal.WS.Rstab9.Model.get_model_infoRequest request)
         {
             return base.Channel.get_model_info(request);
@@ -1033,20 +1060,6 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_soil_massifResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_soil_massif(Dlubal.WS.Rstab9.Model.get_soil_massifRequest request)
-        {
-            return base.Channel.get_soil_massif(request);
-        }
-        
-        public Dlubal.WS.Rstab9.Model.soil_massif get_soil_massif(int no)
-        {
-            Dlubal.WS.Rstab9.Model.get_soil_massifRequest inValue = new Dlubal.WS.Rstab9.Model.get_soil_massifRequest();
-            inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_soil_massifResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_soil_massif(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_spectral_analysis_settingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_spectral_analysis_settings(Dlubal.WS.Rstab9.Model.get_spectral_analysis_settingsRequest request)
         {
             return base.Channel.get_spectral_analysis_settings(request);
@@ -1057,6 +1070,20 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_spectral_analysis_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.get_spectral_analysis_settingsRequest();
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_spectral_analysis_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_spectral_analysis_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_stability_analysis_settingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_stability_analysis_settings(Dlubal.WS.Rstab9.Model.get_stability_analysis_settingsRequest request)
+        {
+            return base.Channel.get_stability_analysis_settings(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.stability_analysis_settings get_stability_analysis_settings(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_stability_analysis_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.get_stability_analysis_settingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_stability_analysis_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_stability_analysis_settings(inValue);
             return retVal.value;
         }
         
@@ -1632,6 +1659,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_modal_analysis_settingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_modal_analysis_settings(Dlubal.WS.Rstab9.Model.set_modal_analysis_settingsRequest request)
+        {
+            return base.Channel.set_modal_analysis_settings(request);
+        }
+        
+        public void set_modal_analysis_settings(Dlubal.WS.Rstab9.Model.modal_analysis_settings value)
+        {
+            Dlubal.WS.Rstab9.Model.set_modal_analysis_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.set_modal_analysis_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_modal_analysis_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_modal_analysis_settings(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_model_typeResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_model_type(Dlubal.WS.Rstab9.Model.set_model_typeRequest request)
         {
             return base.Channel.set_model_type(request);
@@ -1750,19 +1790,6 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_soil_massifResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_soil_massif(Dlubal.WS.Rstab9.Model.set_soil_massifRequest request)
-        {
-            return base.Channel.set_soil_massif(request);
-        }
-        
-        public void set_soil_massif(Dlubal.WS.Rstab9.Model.soil_massif value)
-        {
-            Dlubal.WS.Rstab9.Model.set_soil_massifRequest inValue = new Dlubal.WS.Rstab9.Model.set_soil_massifRequest();
-            inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_soil_massifResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_soil_massif(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_spectral_analysis_settingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_spectral_analysis_settings(Dlubal.WS.Rstab9.Model.set_spectral_analysis_settingsRequest request)
         {
             return base.Channel.set_spectral_analysis_settings(request);
@@ -1773,6 +1800,19 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_spectral_analysis_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.set_spectral_analysis_settingsRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_spectral_analysis_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_spectral_analysis_settings(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_stability_analysis_settingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_stability_analysis_settings(Dlubal.WS.Rstab9.Model.set_stability_analysis_settingsRequest request)
+        {
+            return base.Channel.set_stability_analysis_settings(request);
+        }
+        
+        public void set_stability_analysis_settings(Dlubal.WS.Rstab9.Model.stability_analysis_settings value)
+        {
+            Dlubal.WS.Rstab9.Model.set_stability_analysis_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.set_stability_analysis_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_stability_analysis_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_stability_analysis_settings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -359,32 +359,17 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_coordinate_system(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.cutting_line_setting get_cutting_line_setting(int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_cutting_line_settingRequest inValue = new Dlubal.WS.Rfem6.Model.get_cutting_line_settingRequest();
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_cutting_line_settingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_cutting_line_setting(inValue);
-            return retVal.value;
-        }
-        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_cutting_line_settingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_cutting_line_setting(Dlubal.WS.Rfem6.Model.get_cutting_line_settingRequest request)
+        Dlubal.WS.Rfem6.Model.get_design_overviewResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_design_overview(Dlubal.WS.Rfem6.Model.get_design_overviewRequest request)
         {
-            return base.Channel.get_cutting_line_setting(request);
+            return base.Channel.get_design_overview(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.cutting_pattern get_cutting_pattern(int no)
+        public Dlubal.WS.Rfem6.Model.design_overview[] get_design_overview()
         {
-            Dlubal.WS.Rfem6.Model.get_cutting_patternRequest inValue = new Dlubal.WS.Rfem6.Model.get_cutting_patternRequest();
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_cutting_patternResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_cutting_pattern(inValue);
+            Dlubal.WS.Rfem6.Model.get_design_overviewRequest inValue = new Dlubal.WS.Rfem6.Model.get_design_overviewRequest();
+            Dlubal.WS.Rfem6.Model.get_design_overviewResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_design_overview(inValue);
             return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_cutting_patternResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_cutting_pattern(Dlubal.WS.Rfem6.Model.get_cutting_patternRequest request)
-        {
-            return base.Channel.get_cutting_pattern(request);
         }
         
         public Dlubal.WS.Rfem6.Model.design_situation get_design_situation(int no)
@@ -790,6 +775,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_main_objects_to_activateResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_main_objects_to_activate(Dlubal.WS.Rfem6.Model.get_main_objects_to_activateRequest request)
+        {
+            return base.Channel.get_main_objects_to_activate(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.main_objects_to_activate get_main_objects_to_activate()
+        {
+            Dlubal.WS.Rfem6.Model.get_main_objects_to_activateRequest inValue = new Dlubal.WS.Rfem6.Model.get_main_objects_to_activateRequest();
+            Dlubal.WS.Rfem6.Model.get_main_objects_to_activateResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_main_objects_to_activate(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_material(Dlubal.WS.Rfem6.Model.get_materialRequest request)
         {
             return base.Channel.get_material(request);
@@ -1041,6 +1039,20 @@ namespace Dlubal.WS.Rfem6.Model
         {
             Dlubal.WS.Rfem6.Model.get_mesh_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_mesh_settingsRequest();
             Dlubal.WS.Rfem6.Model.get_mesh_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_mesh_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_modal_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_modal_analysis_settings(Dlubal.WS.Rfem6.Model.get_modal_analysis_settingsRequest request)
+        {
+            return base.Channel.get_modal_analysis_settings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.modal_analysis_settings get_modal_analysis_settings(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_modal_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_modal_analysis_settingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_modal_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_modal_analysis_settings(inValue);
             return retVal.value;
         }
         
@@ -1545,6 +1557,20 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_stability_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_stability_analysis_settings(Dlubal.WS.Rfem6.Model.get_stability_analysis_settingsRequest request)
+        {
+            return base.Channel.get_stability_analysis_settings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_analysis_settings get_stability_analysis_settings(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_stability_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_stability_analysis_settingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_stability_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_stability_analysis_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_static_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_static_analysis_settings(Dlubal.WS.Rfem6.Model.get_static_analysis_settingsRequest request)
         {
             return base.Channel.get_static_analysis_settings(request);
@@ -2000,32 +2026,6 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_cutting_line_settingResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_cutting_line_setting(Dlubal.WS.Rfem6.Model.set_cutting_line_settingRequest request)
-        {
-            return base.Channel.set_cutting_line_setting(request);
-        }
-        
-        public void set_cutting_line_setting(Dlubal.WS.Rfem6.Model.cutting_line_setting value)
-        {
-            Dlubal.WS.Rfem6.Model.set_cutting_line_settingRequest inValue = new Dlubal.WS.Rfem6.Model.set_cutting_line_settingRequest();
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_cutting_line_settingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_cutting_line_setting(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_cutting_patternResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_cutting_pattern(Dlubal.WS.Rfem6.Model.set_cutting_patternRequest request)
-        {
-            return base.Channel.set_cutting_pattern(request);
-        }
-        
-        public void set_cutting_pattern(Dlubal.WS.Rfem6.Model.cutting_pattern value)
-        {
-            Dlubal.WS.Rfem6.Model.set_cutting_patternRequest inValue = new Dlubal.WS.Rfem6.Model.set_cutting_patternRequest();
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_cutting_patternResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_cutting_pattern(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_design_situation(Dlubal.WS.Rfem6.Model.set_design_situationRequest request)
         {
             return base.Channel.set_design_situation(request);
@@ -2375,6 +2375,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_main_objects_to_activateResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_main_objects_to_activate(Dlubal.WS.Rfem6.Model.set_main_objects_to_activateRequest request)
+        {
+            return base.Channel.set_main_objects_to_activate(request);
+        }
+        
+        public void set_main_objects_to_activate(Dlubal.WS.Rfem6.Model.main_objects_to_activate main_objects_to_activate)
+        {
+            Dlubal.WS.Rfem6.Model.set_main_objects_to_activateRequest inValue = new Dlubal.WS.Rfem6.Model.set_main_objects_to_activateRequest();
+            inValue.main_objects_to_activate = main_objects_to_activate;
+            Dlubal.WS.Rfem6.Model.set_main_objects_to_activateResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_main_objects_to_activate(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_material(Dlubal.WS.Rfem6.Model.set_materialRequest request)
         {
             return base.Channel.set_material(request);
@@ -2610,6 +2623,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_mesh_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_mesh_settingsRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_mesh_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_mesh_settings(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_modal_analysis_settings(Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsRequest request)
+        {
+            return base.Channel.set_modal_analysis_settings(request);
+        }
+        
+        public void set_modal_analysis_settings(Dlubal.WS.Rfem6.Model.modal_analysis_settings value)
+        {
+            Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_modal_analysis_settings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2926,6 +2952,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_spectral_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_spectral_analysis_settings(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_stability_analysis_settingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_stability_analysis_settings(Dlubal.WS.Rfem6.Model.set_stability_analysis_settingsRequest request)
+        {
+            return base.Channel.set_stability_analysis_settings(request);
+        }
+        
+        public void set_stability_analysis_settings(Dlubal.WS.Rfem6.Model.stability_analysis_settings value)
+        {
+            Dlubal.WS.Rfem6.Model.set_stability_analysis_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_stability_analysis_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_stability_analysis_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_stability_analysis_settings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
