@@ -118,7 +118,7 @@ namespace Cantilever
                     typeSpecified = true,
                     parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
-                    name = "R_M1 500/1000", // width/height as in RFEM
+                    name = "R_M1 0.5/1.0", // width/height as in RFEM
                 };
 
                 node n1 = new()
