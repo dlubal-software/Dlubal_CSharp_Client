@@ -67,6 +67,19 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.delete_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.delete_project(Dlubal.WS.Rfem6.Application.delete_projectRequest request)
+        {
+            return base.Channel.delete_project(request);
+        }
+        
+        public void delete_project(string project_path)
+        {
+            Dlubal.WS.Rfem6.Application.delete_projectRequest inValue = new Dlubal.WS.Rfem6.Application.delete_projectRequest();
+            inValue.project_path = project_path;
+            Dlubal.WS.Rfem6.Application.delete_projectResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).delete_project(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Application.get_active_modelResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_active_model(Dlubal.WS.Rfem6.Application.get_active_modelRequest request)
         {
             return base.Channel.get_active_model(request);
@@ -76,6 +89,45 @@ namespace Dlubal.WS.Rfem6.Application
         {
             Dlubal.WS.Rfem6.Application.get_active_modelRequest inValue = new Dlubal.WS.Rfem6.Application.get_active_modelRequest();
             Dlubal.WS.Rfem6.Application.get_active_modelResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_active_model(inValue);
+            return retVal.value;
+        }
+        
+        public Dlubal.WS.Rfem6.Application.ConversionTables get_conversion_tables()
+        {
+            Dlubal.WS.Rfem6.Application.get_conversion_tablesRequest inValue = new Dlubal.WS.Rfem6.Application.get_conversion_tablesRequest();
+            Dlubal.WS.Rfem6.Application.get_conversion_tablesResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_conversion_tables(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_conversion_tablesResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_conversion_tables(Dlubal.WS.Rfem6.Application.get_conversion_tablesRequest request)
+        {
+            return base.Channel.get_conversion_tables(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_current_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_current_project(Dlubal.WS.Rfem6.Application.get_current_projectRequest request)
+        {
+            return base.Channel.get_current_project(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.project_info get_current_project()
+        {
+            Dlubal.WS.Rfem6.Application.get_current_projectRequest inValue = new Dlubal.WS.Rfem6.Application.get_current_projectRequest();
+            Dlubal.WS.Rfem6.Application.get_current_projectResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_current_project(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_detailed_loggingResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_detailed_logging(Dlubal.WS.Rfem6.Application.get_detailed_loggingRequest request)
+        {
+            return base.Channel.get_detailed_logging(request);
+        }
+        
+        public bool get_detailed_logging()
+        {
+            Dlubal.WS.Rfem6.Application.get_detailed_loggingRequest inValue = new Dlubal.WS.Rfem6.Application.get_detailed_loggingRequest();
+            Dlubal.WS.Rfem6.Application.get_detailed_loggingResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_detailed_logging(inValue);
             return retVal.value;
         }
         
@@ -90,6 +142,32 @@ namespace Dlubal.WS.Rfem6.Application
         Dlubal.WS.Rfem6.Application.get_informationResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_information(Dlubal.WS.Rfem6.Application.get_informationRequest request)
         {
             return base.Channel.get_information(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_list_of_existing_projectsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_list_of_existing_projects(Dlubal.WS.Rfem6.Application.get_list_of_existing_projectsRequest request)
+        {
+            return base.Channel.get_list_of_existing_projects(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.project_info[] get_list_of_existing_projects()
+        {
+            Dlubal.WS.Rfem6.Application.get_list_of_existing_projectsRequest inValue = new Dlubal.WS.Rfem6.Application.get_list_of_existing_projectsRequest();
+            Dlubal.WS.Rfem6.Application.get_list_of_existing_projectsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_list_of_existing_projects(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_list_of_existing_templatesResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_list_of_existing_templates(Dlubal.WS.Rfem6.Application.get_list_of_existing_templatesRequest request)
+        {
+            return base.Channel.get_list_of_existing_templates(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.project_info[] get_list_of_existing_templates()
+        {
+            Dlubal.WS.Rfem6.Application.get_list_of_existing_templatesRequest inValue = new Dlubal.WS.Rfem6.Application.get_list_of_existing_templatesRequest();
+            Dlubal.WS.Rfem6.Application.get_list_of_existing_templatesResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_list_of_existing_templates(inValue);
+            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -120,6 +198,74 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_project(Dlubal.WS.Rfem6.Application.get_projectRequest request)
+        {
+            return base.Channel.get_project(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.project_info get_project(string project_path)
+        {
+            Dlubal.WS.Rfem6.Application.get_projectRequest inValue = new Dlubal.WS.Rfem6.Application.get_projectRequest();
+            inValue.project_path = project_path;
+            Dlubal.WS.Rfem6.Application.get_projectResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_project(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_saf_settingsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_saf_settings(Dlubal.WS.Rfem6.Application.get_saf_settingsRequest request)
+        {
+            return base.Channel.get_saf_settings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.SafConfiguration get_saf_settings()
+        {
+            Dlubal.WS.Rfem6.Application.get_saf_settingsRequest inValue = new Dlubal.WS.Rfem6.Application.get_saf_settingsRequest();
+            Dlubal.WS.Rfem6.Application.get_saf_settingsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_saf_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_settings_program_languageResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_settings_program_language(Dlubal.WS.Rfem6.Application.get_settings_program_languageRequest request)
+        {
+            return base.Channel.get_settings_program_language(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.settings_program_language get_settings_program_language()
+        {
+            Dlubal.WS.Rfem6.Application.get_settings_program_languageRequest inValue = new Dlubal.WS.Rfem6.Application.get_settings_program_languageRequest();
+            Dlubal.WS.Rfem6.Application.get_settings_program_languageResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_settings_program_language(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_templateResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_template(Dlubal.WS.Rfem6.Application.get_templateRequest request)
+        {
+            return base.Channel.get_template(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.project_info get_template(string template_path)
+        {
+            Dlubal.WS.Rfem6.Application.get_templateRequest inValue = new Dlubal.WS.Rfem6.Application.get_templateRequest();
+            inValue.template_path = template_path;
+            Dlubal.WS.Rfem6.Application.get_templateResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_template(inValue);
+            return retVal.value;
+        }
+        
+        public Dlubal.WS.Rfem6.Application.import_from_output import_from(string file_path)
+        {
+            Dlubal.WS.Rfem6.Application.import_fromRequest inValue = new Dlubal.WS.Rfem6.Application.import_fromRequest();
+            inValue.file_path = file_path;
+            Dlubal.WS.Rfem6.Application.import_fromResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).import_from(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.import_fromResponse Dlubal.WS.Rfem6.Application.IRfemApplication.import_from(Dlubal.WS.Rfem6.Application.import_fromRequest request)
+        {
+            return base.Channel.import_from(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Application.new_modelResponse Dlubal.WS.Rfem6.Application.IRfemApplication.new_model(Dlubal.WS.Rfem6.Application.new_modelRequest request)
         {
             return base.Channel.new_model(request);
@@ -134,6 +280,62 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.new_model_as_copyResponse Dlubal.WS.Rfem6.Application.IRfemApplication.new_model_as_copy(Dlubal.WS.Rfem6.Application.new_model_as_copyRequest request)
+        {
+            return base.Channel.new_model_as_copy(request);
+        }
+        
+        public string new_model_as_copy(string model_name, string file_path)
+        {
+            Dlubal.WS.Rfem6.Application.new_model_as_copyRequest inValue = new Dlubal.WS.Rfem6.Application.new_model_as_copyRequest();
+            inValue.model_name = model_name;
+            inValue.file_path = file_path;
+            Dlubal.WS.Rfem6.Application.new_model_as_copyResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).new_model_as_copy(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.new_model_from_templateResponse Dlubal.WS.Rfem6.Application.IRfemApplication.new_model_from_template(Dlubal.WS.Rfem6.Application.new_model_from_templateRequest request)
+        {
+            return base.Channel.new_model_from_template(request);
+        }
+        
+        public string new_model_from_template(string model_name, string file_path)
+        {
+            Dlubal.WS.Rfem6.Application.new_model_from_templateRequest inValue = new Dlubal.WS.Rfem6.Application.new_model_from_templateRequest();
+            inValue.model_name = model_name;
+            inValue.file_path = file_path;
+            Dlubal.WS.Rfem6.Application.new_model_from_templateResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).new_model_from_template(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.new_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.new_project(Dlubal.WS.Rfem6.Application.new_projectRequest request)
+        {
+            return base.Channel.new_project(request);
+        }
+        
+        public void new_project(Dlubal.WS.Rfem6.Application.project_info project_info)
+        {
+            Dlubal.WS.Rfem6.Application.new_projectRequest inValue = new Dlubal.WS.Rfem6.Application.new_projectRequest();
+            inValue.project_info = project_info;
+            Dlubal.WS.Rfem6.Application.new_projectResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).new_project(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.new_templateResponse Dlubal.WS.Rfem6.Application.IRfemApplication.new_template(Dlubal.WS.Rfem6.Application.new_templateRequest request)
+        {
+            return base.Channel.new_template(request);
+        }
+        
+        public void new_template(Dlubal.WS.Rfem6.Application.project_info template_info)
+        {
+            Dlubal.WS.Rfem6.Application.new_templateRequest inValue = new Dlubal.WS.Rfem6.Application.new_templateRequest();
+            inValue.template_info = template_info;
+            Dlubal.WS.Rfem6.Application.new_templateResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).new_template(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Application.open_modelResponse Dlubal.WS.Rfem6.Application.IRfemApplication.open_model(Dlubal.WS.Rfem6.Application.open_modelRequest request)
         {
             return base.Channel.open_model(request);
@@ -144,6 +346,85 @@ namespace Dlubal.WS.Rfem6.Application
             Dlubal.WS.Rfem6.Application.open_modelRequest inValue = new Dlubal.WS.Rfem6.Application.open_modelRequest();
             inValue.model_path = model_path;
             Dlubal.WS.Rfem6.Application.open_modelResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).open_model(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.save_modelResponse Dlubal.WS.Rfem6.Application.IRfemApplication.save_model(Dlubal.WS.Rfem6.Application.save_modelRequest request)
+        {
+            return base.Channel.save_model(request);
+        }
+        
+        public void save_model(int index)
+        {
+            Dlubal.WS.Rfem6.Application.save_modelRequest inValue = new Dlubal.WS.Rfem6.Application.save_modelRequest();
+            inValue.index = index;
+            Dlubal.WS.Rfem6.Application.save_modelResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).save_model(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_as_current_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_as_current_project(Dlubal.WS.Rfem6.Application.set_as_current_projectRequest request)
+        {
+            return base.Channel.set_as_current_project(request);
+        }
+        
+        public void set_as_current_project(string project_path)
+        {
+            Dlubal.WS.Rfem6.Application.set_as_current_projectRequest inValue = new Dlubal.WS.Rfem6.Application.set_as_current_projectRequest();
+            inValue.project_path = project_path;
+            Dlubal.WS.Rfem6.Application.set_as_current_projectResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_as_current_project(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_conversion_tablesResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_conversion_tables(Dlubal.WS.Rfem6.Application.set_conversion_tablesRequest request)
+        {
+            return base.Channel.set_conversion_tables(request);
+        }
+        
+        public void set_conversion_tables(Dlubal.WS.Rfem6.Application.ConversionTables value)
+        {
+            Dlubal.WS.Rfem6.Application.set_conversion_tablesRequest inValue = new Dlubal.WS.Rfem6.Application.set_conversion_tablesRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Application.set_conversion_tablesResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_conversion_tables(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_detailed_loggingResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_detailed_logging(Dlubal.WS.Rfem6.Application.set_detailed_loggingRequest request)
+        {
+            return base.Channel.set_detailed_logging(request);
+        }
+        
+        public void set_detailed_logging(bool value)
+        {
+            Dlubal.WS.Rfem6.Application.set_detailed_loggingRequest inValue = new Dlubal.WS.Rfem6.Application.set_detailed_loggingRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Application.set_detailed_loggingResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_detailed_logging(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_saf_settingsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_saf_settings(Dlubal.WS.Rfem6.Application.set_saf_settingsRequest request)
+        {
+            return base.Channel.set_saf_settings(request);
+        }
+        
+        public void set_saf_settings(Dlubal.WS.Rfem6.Application.SafConfiguration value)
+        {
+            Dlubal.WS.Rfem6.Application.set_saf_settingsRequest inValue = new Dlubal.WS.Rfem6.Application.set_saf_settingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Application.set_saf_settingsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_saf_settings(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_settings_program_languageResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_settings_program_language(Dlubal.WS.Rfem6.Application.set_settings_program_languageRequest request)
+        {
+            return base.Channel.set_settings_program_language(request);
+        }
+        
+        public string set_settings_program_language(Dlubal.WS.Rfem6.Application.settings_program_language settings_program_language)
+        {
+            Dlubal.WS.Rfem6.Application.set_settings_program_languageRequest inValue = new Dlubal.WS.Rfem6.Application.set_settings_program_languageRequest();
+            inValue.settings_program_language = settings_program_language;
+            Dlubal.WS.Rfem6.Application.set_settings_program_languageResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_settings_program_language(inValue);
             return retVal.value;
         }
     }

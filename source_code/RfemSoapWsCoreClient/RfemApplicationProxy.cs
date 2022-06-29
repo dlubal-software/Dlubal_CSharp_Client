@@ -40,6 +40,93 @@ namespace Dlubal.WS.Rfem6.Application
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public enum program_language_name_type
+    {
+        
+        /// <remarks/>
+        CHINESE,
+        
+        /// <remarks/>
+        CZECH,
+        
+        /// <remarks/>
+        DUTCH,
+        
+        /// <remarks/>
+        ENGLISH,
+        
+        /// <remarks/>
+        FRENCH,
+        
+        /// <remarks/>
+        GERMAN,
+        
+        /// <remarks/>
+        GREEK,
+        
+        /// <remarks/>
+        ITALIAN,
+        
+        /// <remarks/>
+        POLISH,
+        
+        /// <remarks/>
+        PORTUGUESE,
+        
+        /// <remarks/>
+        RUSSIAN,
+        
+        /// <remarks/>
+        SPANISH,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public enum region_type
+    {
+        
+        /// <remarks/>
+        DEFAULT,
+        
+        /// <remarks/>
+        EASTERN_EUROPE,
+        
+        /// <remarks/>
+        EAST_ASIA,
+        
+        /// <remarks/>
+        NORTH_AMERICA_CANADA,
+        
+        /// <remarks/>
+        NORTH_AMERICA_USA,
+        
+        /// <remarks/>
+        SOUTHEAST_ASIA,
+        
+        /// <remarks/>
+        WESTERN_EUROPE,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public enum unit_system_type
+    {
+        
+        /// <remarks/>
+        IMPERIAL,
+        
+        /// <remarks/>
+        METRIC,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
@@ -205,6 +292,133 @@ namespace Dlubal.WS.Rfem6.Application
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class ConversionTable : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string_and_string_pair[] property_conversion_tableField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public string_and_string_pair[] property_conversion_table
+        {
+            get
+            {
+                return this.property_conversion_tableField;
+            }
+            set
+            {
+                this.property_conversion_tableField = value;
+                this.RaisePropertyChanged("property_conversion_table");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class ConversionTables : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private MaterialConversionTablesManager materialConversionTablesManagerField;
+        
+        private SectionConversionTablesManager sectionConversionTablesManagerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public MaterialConversionTablesManager MaterialConversionTablesManager
+        {
+            get
+            {
+                return this.materialConversionTablesManagerField;
+            }
+            set
+            {
+                this.materialConversionTablesManagerField = value;
+                this.RaisePropertyChanged("MaterialConversionTablesManager");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public SectionConversionTablesManager SectionConversionTablesManager
+        {
+            get
+            {
+                return this.sectionConversionTablesManagerField;
+            }
+            set
+            {
+                this.sectionConversionTablesManagerField = value;
+                this.RaisePropertyChanged("SectionConversionTablesManager");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete_project", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class delete_projectRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string project_path;
+        
+        public delete_projectRequest()
+        {
+        }
+        
+        public delete_projectRequest(string project_path)
+        {
+            this.project_path = project_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete_projectResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class delete_projectResponse
+    {
+        
+        public delete_projectResponse()
+        {
+        }
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -241,6 +455,105 @@ namespace Dlubal.WS.Rfem6.Application
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_conversion_tables", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_conversion_tablesRequest
+    {
+        
+        public get_conversion_tablesRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_conversion_tablesResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_conversion_tablesResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.ConversionTables value;
+        
+        public get_conversion_tablesResponse()
+        {
+        }
+        
+        public get_conversion_tablesResponse(Dlubal.WS.Rfem6.Application.ConversionTables value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_current_project", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_current_projectRequest
+    {
+        
+        public get_current_projectRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_current_projectResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_current_projectResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.project_info value;
+        
+        public get_current_projectResponse()
+        {
+        }
+        
+        public get_current_projectResponse(Dlubal.WS.Rfem6.Application.project_info value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_detailed_logging", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_detailed_loggingRequest
+    {
+        
+        public get_detailed_loggingRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_detailed_loggingResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_detailed_loggingResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool value;
+        
+        public get_detailed_loggingResponse()
+        {
+        }
+        
+        public get_detailed_loggingResponse(bool value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_information", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
     public partial class get_informationRequest
     {
@@ -266,6 +579,74 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         public get_informationResponse(Dlubal.WS.Rfem6.Application.application_information value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_list_of_existing_projects", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_list_of_existing_projectsRequest
+    {
+        
+        public get_list_of_existing_projectsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_list_of_existing_projectsResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_list_of_existing_projectsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.Rfem6.Application.project_info[] value;
+        
+        public get_list_of_existing_projectsResponse()
+        {
+        }
+        
+        public get_list_of_existing_projectsResponse(Dlubal.WS.Rfem6.Application.project_info[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_list_of_existing_templates", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_list_of_existing_templatesRequest
+    {
+        
+        public get_list_of_existing_templatesRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_list_of_existing_templatesResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_list_of_existing_templatesResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.Rfem6.Application.project_info[] value;
+        
+        public get_list_of_existing_templatesResponse()
+        {
+        }
+        
+        public get_list_of_existing_templatesResponse(Dlubal.WS.Rfem6.Application.project_info[] value)
         {
             this.value = value;
         }
@@ -350,6 +731,475 @@ namespace Dlubal.WS.Rfem6.Application
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_project", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_projectRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string project_path;
+        
+        public get_projectRequest()
+        {
+        }
+        
+        public get_projectRequest(string project_path)
+        {
+            this.project_path = project_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_projectResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_projectResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.project_info value;
+        
+        public get_projectResponse()
+        {
+        }
+        
+        public get_projectResponse(Dlubal.WS.Rfem6.Application.project_info value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_saf_settings", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_saf_settingsRequest
+    {
+        
+        public get_saf_settingsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_saf_settingsResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_saf_settingsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.SafConfiguration value;
+        
+        public get_saf_settingsResponse()
+        {
+        }
+        
+        public get_saf_settingsResponse(Dlubal.WS.Rfem6.Application.SafConfiguration value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_settings_program_language", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_settings_program_languageRequest
+    {
+        
+        public get_settings_program_languageRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_settings_program_languageResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_settings_program_languageResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.settings_program_language value;
+        
+        public get_settings_program_languageResponse()
+        {
+        }
+        
+        public get_settings_program_languageResponse(Dlubal.WS.Rfem6.Application.settings_program_language value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_template", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_templateRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string template_path;
+        
+        public get_templateRequest()
+        {
+        }
+        
+        public get_templateRequest(string template_path)
+        {
+            this.template_path = template_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_templateResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class get_templateResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.project_info value;
+        
+        public get_templateResponse()
+        {
+        }
+        
+        public get_templateResponse(Dlubal.WS.Rfem6.Application.project_info value)
+        {
+            this.value = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class import_from_output : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string end_pointField;
+        
+        private string reportField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string end_point
+        {
+            get
+            {
+                return this.end_pointField;
+            }
+            set
+            {
+                this.end_pointField = value;
+                this.RaisePropertyChanged("end_point");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string report
+        {
+            get
+            {
+                return this.reportField;
+            }
+            set
+            {
+                this.reportField = value;
+                this.RaisePropertyChanged("report");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="import_from", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class import_fromRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string file_path;
+        
+        public import_fromRequest()
+        {
+        }
+        
+        public import_fromRequest(string file_path)
+        {
+            this.file_path = file_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="import_fromResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class import_fromResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.import_from_output value;
+        
+        public import_fromResponse()
+        {
+        }
+        
+        public import_fromResponse(Dlubal.WS.Rfem6.Application.import_from_output value)
+        {
+            this.value = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class MaterialConversionTablesManager : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int property_active_configField;
+        
+        private MaterialConversionTablesManager_config[] configsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int property_active_config
+        {
+            get
+            {
+                return this.property_active_configField;
+            }
+            set
+            {
+                this.property_active_configField = value;
+                this.RaisePropertyChanged("property_active_config");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("config", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public MaterialConversionTablesManager_config[] configs
+        {
+            get
+            {
+                return this.configsField;
+            }
+            set
+            {
+                this.configsField = value;
+                this.RaisePropertyChanged("configs");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class MaterialConversionTablesManager_config : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string property_config_user_nameField;
+        
+        private int property_config_idField;
+        
+        private ConversionTable conversionTableField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string property_config_user_name
+        {
+            get
+            {
+                return this.property_config_user_nameField;
+            }
+            set
+            {
+                this.property_config_user_nameField = value;
+                this.RaisePropertyChanged("property_config_user_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int property_config_id
+        {
+            get
+            {
+                return this.property_config_idField;
+            }
+            set
+            {
+                this.property_config_idField = value;
+                this.RaisePropertyChanged("property_config_id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public ConversionTable ConversionTable
+        {
+            get
+            {
+                return this.conversionTableField;
+            }
+            set
+            {
+                this.conversionTableField = value;
+                this.RaisePropertyChanged("ConversionTable");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_model_as_copy", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_model_as_copyRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string model_name;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string file_path;
+        
+        public new_model_as_copyRequest()
+        {
+        }
+        
+        public new_model_as_copyRequest(string model_name, string file_path)
+        {
+            this.model_name = model_name;
+            this.file_path = file_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_model_as_copyResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_model_as_copyResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value;
+        
+        public new_model_as_copyResponse()
+        {
+        }
+        
+        public new_model_as_copyResponse(string value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_model_from_template", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_model_from_templateRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string model_name;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string file_path;
+        
+        public new_model_from_templateRequest()
+        {
+        }
+        
+        public new_model_from_templateRequest(string model_name, string file_path)
+        {
+            this.model_name = model_name;
+            this.file_path = file_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_model_from_templateResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_model_from_templateResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value;
+        
+        public new_model_from_templateResponse()
+        {
+        }
+        
+        public new_model_from_templateResponse(string value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="new_model", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
     public partial class new_modelRequest
     {
@@ -392,6 +1242,72 @@ namespace Dlubal.WS.Rfem6.Application
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_project", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_projectRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.project_info project_info;
+        
+        public new_projectRequest()
+        {
+        }
+        
+        public new_projectRequest(Dlubal.WS.Rfem6.Application.project_info project_info)
+        {
+            this.project_info = project_info;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_projectResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_projectResponse
+    {
+        
+        public new_projectResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_template", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_templateRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.project_info template_info;
+        
+        public new_templateRequest()
+        {
+        }
+        
+        public new_templateRequest(Dlubal.WS.Rfem6.Application.project_info template_info)
+        {
+            this.template_info = template_info;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="new_templateResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class new_templateResponse
+    {
+        
+        public new_templateResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="open_model", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
     public partial class open_modelRequest
     {
@@ -428,6 +1344,799 @@ namespace Dlubal.WS.Rfem6.Application
         public open_modelResponse(string value)
         {
             this.value = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class project_info : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string nameField;
+        
+        private string descriptionField;
+        
+        private string parent_pathField;
+        
+        private string folder_pathField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string parent_path
+        {
+            get
+            {
+                return this.parent_pathField;
+            }
+            set
+            {
+                this.parent_pathField = value;
+                this.RaisePropertyChanged("parent_path");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string folder_path
+        {
+            get
+            {
+                return this.folder_pathField;
+            }
+            set
+            {
+                this.folder_pathField = value;
+                this.RaisePropertyChanged("folder_path");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class SafConfiguration : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private bool property_general_run_excel_applicationField;
+        
+        private bool property_import_surface_support_consolidate_importField;
+        
+        private bool property_import_edge_support_consolidate_importField;
+        
+        private bool property_import_show_conversion_tables_after_importField;
+        
+        private bool property_import_section_thin_walled_modelField;
+        
+        private bool property_export_set_unit_system_imperialField;
+        
+        private string property_export_set_gcsField;
+        
+        private string property_export_saf_versionField;
+        
+        private bool property_export_loadsField;
+        
+        private bool property_export_supportsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public bool property_general_run_excel_application
+        {
+            get
+            {
+                return this.property_general_run_excel_applicationField;
+            }
+            set
+            {
+                this.property_general_run_excel_applicationField = value;
+                this.RaisePropertyChanged("property_general_run_excel_application");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public bool property_import_surface_support_consolidate_import
+        {
+            get
+            {
+                return this.property_import_surface_support_consolidate_importField;
+            }
+            set
+            {
+                this.property_import_surface_support_consolidate_importField = value;
+                this.RaisePropertyChanged("property_import_surface_support_consolidate_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public bool property_import_edge_support_consolidate_import
+        {
+            get
+            {
+                return this.property_import_edge_support_consolidate_importField;
+            }
+            set
+            {
+                this.property_import_edge_support_consolidate_importField = value;
+                this.RaisePropertyChanged("property_import_edge_support_consolidate_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public bool property_import_show_conversion_tables_after_import
+        {
+            get
+            {
+                return this.property_import_show_conversion_tables_after_importField;
+            }
+            set
+            {
+                this.property_import_show_conversion_tables_after_importField = value;
+                this.RaisePropertyChanged("property_import_show_conversion_tables_after_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public bool property_import_section_thin_walled_model
+        {
+            get
+            {
+                return this.property_import_section_thin_walled_modelField;
+            }
+            set
+            {
+                this.property_import_section_thin_walled_modelField = value;
+                this.RaisePropertyChanged("property_import_section_thin_walled_model");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public bool property_export_set_unit_system_imperial
+        {
+            get
+            {
+                return this.property_export_set_unit_system_imperialField;
+            }
+            set
+            {
+                this.property_export_set_unit_system_imperialField = value;
+                this.RaisePropertyChanged("property_export_set_unit_system_imperial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string property_export_set_gcs
+        {
+            get
+            {
+                return this.property_export_set_gcsField;
+            }
+            set
+            {
+                this.property_export_set_gcsField = value;
+                this.RaisePropertyChanged("property_export_set_gcs");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string property_export_saf_version
+        {
+            get
+            {
+                return this.property_export_saf_versionField;
+            }
+            set
+            {
+                this.property_export_saf_versionField = value;
+                this.RaisePropertyChanged("property_export_saf_version");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public bool property_export_loads
+        {
+            get
+            {
+                return this.property_export_loadsField;
+            }
+            set
+            {
+                this.property_export_loadsField = value;
+                this.RaisePropertyChanged("property_export_loads");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public bool property_export_supports
+        {
+            get
+            {
+                return this.property_export_supportsField;
+            }
+            set
+            {
+                this.property_export_supportsField = value;
+                this.RaisePropertyChanged("property_export_supports");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="save_model", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class save_modelRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int index;
+        
+        public save_modelRequest()
+        {
+        }
+        
+        public save_modelRequest(int index)
+        {
+            this.index = index;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="save_modelResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class save_modelResponse
+    {
+        
+        public save_modelResponse()
+        {
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class SectionConversionTablesManager : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int property_active_configField;
+        
+        private SectionConversionTablesManager_config[] configsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int property_active_config
+        {
+            get
+            {
+                return this.property_active_configField;
+            }
+            set
+            {
+                this.property_active_configField = value;
+                this.RaisePropertyChanged("property_active_config");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("config", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public SectionConversionTablesManager_config[] configs
+        {
+            get
+            {
+                return this.configsField;
+            }
+            set
+            {
+                this.configsField = value;
+                this.RaisePropertyChanged("configs");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class SectionConversionTablesManager_config : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string property_config_user_nameField;
+        
+        private int property_config_idField;
+        
+        private ConversionTable conversionTableField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string property_config_user_name
+        {
+            get
+            {
+                return this.property_config_user_nameField;
+            }
+            set
+            {
+                this.property_config_user_nameField = value;
+                this.RaisePropertyChanged("property_config_user_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int property_config_id
+        {
+            get
+            {
+                return this.property_config_idField;
+            }
+            set
+            {
+                this.property_config_idField = value;
+                this.RaisePropertyChanged("property_config_id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public ConversionTable ConversionTable
+        {
+            get
+            {
+                return this.conversionTableField;
+            }
+            set
+            {
+                this.conversionTableField = value;
+                this.RaisePropertyChanged("ConversionTable");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_as_current_project", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_as_current_projectRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string project_path;
+        
+        public set_as_current_projectRequest()
+        {
+        }
+        
+        public set_as_current_projectRequest(string project_path)
+        {
+            this.project_path = project_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_as_current_projectResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_as_current_projectResponse
+    {
+        
+        public set_as_current_projectResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_conversion_tables", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_conversion_tablesRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.ConversionTables value;
+        
+        public set_conversion_tablesRequest()
+        {
+        }
+        
+        public set_conversion_tablesRequest(Dlubal.WS.Rfem6.Application.ConversionTables value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_conversion_tablesResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_conversion_tablesResponse
+    {
+        
+        public set_conversion_tablesResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_detailed_logging", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_detailed_loggingRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool value;
+        
+        public set_detailed_loggingRequest()
+        {
+        }
+        
+        public set_detailed_loggingRequest(bool value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_detailed_loggingResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_detailed_loggingResponse
+    {
+        
+        public set_detailed_loggingResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_saf_settings", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_saf_settingsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.SafConfiguration value;
+        
+        public set_saf_settingsRequest()
+        {
+        }
+        
+        public set_saf_settingsRequest(Dlubal.WS.Rfem6.Application.SafConfiguration value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_saf_settingsResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_saf_settingsResponse
+    {
+        
+        public set_saf_settingsResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_settings_program_language", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_settings_program_languageRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.Rfem6.Application.settings_program_language settings_program_language;
+        
+        public set_settings_program_languageRequest()
+        {
+        }
+        
+        public set_settings_program_languageRequest(Dlubal.WS.Rfem6.Application.settings_program_language settings_program_language)
+        {
+            this.settings_program_language = settings_program_language;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_settings_program_languageResponse", WrapperNamespace="http://www.dlubal.com/rfem.xsd", IsWrapped=true)]
+    public partial class set_settings_program_languageResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rfem.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value;
+        
+        public set_settings_program_languageResponse()
+        {
+        }
+        
+        public set_settings_program_languageResponse(string value)
+        {
+            this.value = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class settings_program_language : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private program_language_name_type program_languageField;
+        
+        private bool program_languageFieldSpecified;
+        
+        private region_type regionField;
+        
+        private bool regionFieldSpecified;
+        
+        private unit_system_type unit_systemField;
+        
+        private bool unit_systemFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public program_language_name_type program_language
+        {
+            get
+            {
+                return this.program_languageField;
+            }
+            set
+            {
+                this.program_languageField = value;
+                this.RaisePropertyChanged("program_language");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool program_languageSpecified
+        {
+            get
+            {
+                return this.program_languageFieldSpecified;
+            }
+            set
+            {
+                this.program_languageFieldSpecified = value;
+                this.RaisePropertyChanged("program_languageSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public region_type region
+        {
+            get
+            {
+                return this.regionField;
+            }
+            set
+            {
+                this.regionField = value;
+                this.RaisePropertyChanged("region");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool regionSpecified
+        {
+            get
+            {
+                return this.regionFieldSpecified;
+            }
+            set
+            {
+                this.regionFieldSpecified = value;
+                this.RaisePropertyChanged("regionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public unit_system_type unit_system
+        {
+            get
+            {
+                return this.unit_systemField;
+            }
+            set
+            {
+                this.unit_systemField = value;
+                this.RaisePropertyChanged("unit_system");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool unit_systemSpecified
+        {
+            get
+            {
+                return this.unit_systemFieldSpecified;
+            }
+            set
+            {
+                this.unit_systemFieldSpecified = value;
+                this.RaisePropertyChanged("unit_systemSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rfem.xsd")]
+    public partial class string_and_string_pair : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string firstField;
+        
+        private string secondField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string first
+        {
+            get
+            {
+                return this.firstField;
+            }
+            set
+            {
+                this.firstField = value;
+                this.RaisePropertyChanged("first");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string second
+        {
+            get
+            {
+                return this.secondField;
+            }
+            set
+            {
+                this.secondField = value;
+                this.RaisePropertyChanged("second");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

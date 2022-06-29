@@ -70,7 +70,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 imperfection_case imperfection_Case = new imperfection_case
                 {
                     no = IMPERFECTION_CASE_1_NO,
-                    type = imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY,
+                    //type = imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY,
                     typeSpecified = true
                 };
                 SoapModelClient.set_imperfection_case(imperfection_Case);

@@ -160,11 +160,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                     break;
                 }
-                case imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY:
-                {
-                    imperfectionCase = new imperfection_case().SetDefault(caseNo, type);
-                    break;
-                }
+                //case imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY:
+                //{
+                //    imperfectionCase = new imperfection_case().SetDefault(caseNo, type);
+                //    break;
+                //}
                 case imperfection_case_type.IMPERFECTION_TYPE_NOTIONAL_LOADS_FROM_LOAD_CASE:
                 {
                     imperfectionCase = new imperfection_case
@@ -283,7 +283,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SetImperfectionCase(IMPERFECTION_CASE_2_NO, imperfection_case_type.IMPERFECTION_TYPE_DYNAMIC_EIGENMODE);
                 SetImperfectionCase(IMPERFECTION_CASE_3_NO, imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_GROUP, 1);
                 SetImperfectionCase(IMPERFECTION_CASE_4_NO, imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE, 1);
-                SetImperfectionCase(IMPERFECTION_CASE_5_NO, imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY);
+                //SetImperfectionCase(IMPERFECTION_CASE_5_NO, imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY);
                 SetImperfectionCase(IMPERFECTION_CASE_6_NO, imperfection_case_type.IMPERFECTION_TYPE_NOTIONAL_LOADS_FROM_LOAD_CASE);
                 SetImperfectionCase(IMPERFECTION_CASE_7_NO, imperfection_case_type.IMPERFECTION_TYPE_STATIC_DEFORMATION);
 
