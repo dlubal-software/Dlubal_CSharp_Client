@@ -1,11 +1,11 @@
 # Dlubal CSharp library
-![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.02.018-yellow)![image](https://img.shields.io/badge/COMPATIBILITY-RSTAB%209.02.018-yellow)
+[![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.02.018-yellow)](https://www.dlubal.com/en-US/products/rfem-fea-software/what-is-rfem)[![image](https://img.shields.io/badge/COMPATIBILITY-RSTAB%209.02.018-yellow)](https://www.dlubal.com/en-US/products/rstab-beam-structures/what-is-rstab)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CodeFactor](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client/badge)](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client)
 [![codecov](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client/branch/main/graph/badge.svg?token=wQ4PBPY8XY)](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client)
-![Nuget](https://img.shields.io/nuget/v/Dlubal.RFEMWebServiceLibrary)
+[![Nuget](https://img.shields.io/nuget/v/Dlubal.RFEMWebServiceLibrary)](https://www.nuget.org/packages/Dlubal.RFEMWebServiceLibrary)
 ![Nuget](https://img.shields.io/nuget/dt/Dlubal.RFEMWebServiceLibrary)
-![Nuget](https://img.shields.io/nuget/v/Dlubal.RSTABWebServiceLibrary)
+[![Nuget](https://img.shields.io/nuget/v/Dlubal.RSTABWebServiceLibrary)](https://www.nuget.org/packages/Dlubal.RSTABWebServiceLibrary)
 ![Nuget](https://img.shields.io/nuget/dt/Dlubal.RSTABWebServiceLibrary)
 <!-- ### Table of Contents
 - [RfemCSharpWsClient](#rfemcsharpwsclient)
