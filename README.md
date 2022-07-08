@@ -3,6 +3,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CodeFactor](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client/badge)](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client)
 [![codecov](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client/branch/main/graph/badge.svg?token=wQ4PBPY8XY)](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client)
+![Nuget](https://img.shields.io/nuget/v/Dlubal.RFEMWebServiceLibrary)
+![Nuget](https://img.shields.io/nuget/dt/Dlubal.RFEMWebServiceLibrary)
+![Nuget](https://img.shields.io/nuget/v/Dlubal.RSTABWebServiceLibrary)
+![Nuget](https://img.shields.io/nuget/dt/Dlubal.RSTABWebServiceLibrary)
 <!-- ### Table of Contents
 - [RfemCSharpWsClient](#rfemcsharpwsclient)
   * [Description](#description)
@@ -33,6 +37,7 @@ You can download [actual release](https://github.com/Dlubal-Software/Dlubal_CSha
 * Reference them
 * Compile your project
 * Make application which uses our Web Services
+
 ### Steps for Visual Studio
 * Download [dotnet 5.0 sdk](https://dotnet.microsoft.com/download/dotnet/5.0) and install it
 * Download [Visual Studio 2019 Community](https://visualstudio.microsoft.com/cs/vs/older-downloads/#visual-studio-2019-and-other-products) and install it
@@ -61,11 +66,13 @@ You can download [actual release](https://github.com/Dlubal-Software/Dlubal_CSha
 * Made your own project or use one from [examples](/examples)
 
 
+
+
 <!-- ## Architecture
 ![image](https://user-images.githubusercontent.com/37547309/118119185-44a22f00-b3ee-11eb-9d60-3d74a4a96f81.png) -->
 <!-- ### Data Structure -->
 ## Dependencies
-* .NET 5.0 Core
+* .NET 5.0 Core or .NET 6.0 Core (depends on your choice, libraries are multi-target)
 * RFEM 6 or RSTAB9 application
 
 ### Examples
