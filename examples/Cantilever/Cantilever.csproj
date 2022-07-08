@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+	<TargetFramework>net6.0-windows</TargetFramework>
     <Configurations>Debug;Release;Debug RFEM;Debug RSTAB</Configurations>
+    <StartupObject>Cantilever.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
