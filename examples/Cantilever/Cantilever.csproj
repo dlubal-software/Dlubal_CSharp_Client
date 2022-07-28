@@ -28,7 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\source_code\RfemRstabSoapWsCoreLib\RfemRstabSoapWsCoreLib.csproj" />
+    <ProjectReference Include="..\..\source_code\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
+    <ProjectReference Include="..\..\source_code\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
