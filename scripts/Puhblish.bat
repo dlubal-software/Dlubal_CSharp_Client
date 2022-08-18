@@ -1,9 +1,9 @@
 REM generateFromRelease.bat tag message username token
-REM example: generateFromRelease.bat v1.0.10 "Library update" belyakov-igor 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
+REM example: generateFromRelease.bat v1.0.10 "Library update" xxx-xx ghp_xxx
 
 nuget pack ../RfemSoapWsClient/RFEMWebServiceLibrary.nuspec
 nuget pack ../RstabSoapWsClient/RSTABWebServiceLibrary.nuspec
-FOR %%I in (*.nupkg) DO nuget push %%I oy2ikjbilxhrhmj2w2vqwqk6vy3yai6eteweu45og2opkm -Source https://api.nuget.org/v3/index.json
+FOR %%I in (*.nupkg) DO nuget push %%I xxxx -Source https://api.nuget.org/v3/index.json
 del *.nupkg
 
 git clone https://github.com/Dlubal-Software/Dlubal_CSharp_Client.git
