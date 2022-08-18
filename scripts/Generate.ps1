@@ -144,4 +144,4 @@ Get-Application-Version
 Download-WSDL-File http://localhost:8081/wsdl  "D:/TEMP/RfemApplication.wsdl"
 $modelURL = Open-Model "http://localhost:8081/" "D:\OneDrive - Dlubal Software\MODELS\RFEM\RFEM6\AllAddOns.rf6"
 $modelURL = $modelURL + 'wsdl'
-Download-WSDL-File $modelURL  "D:/TEMP/RfemApplicationClient.wsdl"
+Download-WSDL-File $modelURL  "D:/TEMP/RfemModel.wsdl"

@@ -1,0 +1,75 @@
+﻿<Window x:Class="Dlubal.WS.Clients.DotNetClientTest.Dialogs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dlubal.WS.Clients.DotNetClientTest.Dialogs"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1500" Loaded="Window_Loaded" Closing="Window_Closing" Icon="../Icons/Icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="toolBar" Grid.Row="0" IsManipulationEnabled="False" Padding="6,0">
+            <MenuItem Name="menuItemConnect" IsEnabled="True" Header="Connect" Click="MenuItemConnect_Click" Padding="0,6,10,6">
+                <MenuItem.Icon>
+                    <Image Source="/Icons/Disconnected.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="menuItemRunSelectedTest" IsEnabled="False" Padding="0,6,10,6" Header="Run selected test" Click="MenuItemRunSelectedTest_Click">
+                <MenuItem.Icon>
+                    <Image Source="/Icons/RunOne.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="menuItemRunAllCheckedTests" IsEnabled="False" Padding="0,6,10,6" Header="Run all checked tests" Click="MenuItemRunAllCheckedTests_Click">
+                <MenuItem.Icon>
+                    <Image Source="/Icons/RunMultiple.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="menuItemExportTestList" IsEnabled="False" Padding="0,6,10,6" Header="Export test list" Click="MenuItemExportTestList_Click">
+                <MenuItem.Icon>
+                    <Image Source="/Icons/RunMultiple.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView Name="treeViewControl" Grid.Column="0" IsEnabled="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemContainerStyle="{DynamicResource TreeViewItemStyle1}">
+                <TreeView.Resources>
+                    <ResourceDictionary>
+                        <HierarchicalDataTemplate DataType="{x:Type local:TreeItemMethodInfo}" ItemsSource="{Binding Path=Items}">
+                            <Border Margin="2" Padding="2">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                    <CheckBox IsThreeState="{Binding Path=IsThreeState}" IsChecked="{Binding Path=IsChecked}"/>
+                                    <TextBlock Margin="5,0,0,0" Text="{Binding Path=Name}"/>
+                                </StackPanel>
+                            </Border>
+                        </HierarchicalDataTemplate>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="TreeViewStyles.xaml" />
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </TreeView.Resources>
+                <TreeView.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+                </TreeView.BorderBrush>
+            </TreeView>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <TextBox Name="logTextBox" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Consolas" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+        </Grid>
+        <StatusBar Grid.Row="2" Height="24">
+            <StatusBarItem x:Name="actionStatusBarItem" Width="352" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <TextBlock x:Name="actionTextBlock" TextWrapping="WrapWithOverflow" Text="Action" TextAlignment="Right"/>
+            </StatusBarItem>
+            <StatusBarItem VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                <ProgressBar Name="actionProgressBar" Margin="0,0,0,0"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

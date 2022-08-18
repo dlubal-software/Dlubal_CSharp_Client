@@ -1,0 +1,3679 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+
+using Dlubal.WS.Rfem6;
+
+namespace Dlubal.WS.Clients.RfemSoapWsClientTest
+{
+    public class Program
+    {
+        private static int partCount = 10;
+        private static double width = 1;
+        private static double length = 1;
+        private static double height = 1;
+
+        private static string materialSteel = "S 235 (EN 10025-2:2004-11)";
+        private static string materialTimber = "Hardwood Timber D30 (EN 338:2009-10)";
+        private static string sectionI = "IPE 100";
+        private static string section2UR = "2UR UPE 100-0 | - | -";
+        private static string sectionRectangle = "Rectangle 200/300";
+
+        private static RfemSoapPortTypeClient soapClient;
+
+        /// <summary>
+        /// Tests writing/reading nested tables.
+        /// </summary>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestTables(bool deleteAfterTest = true)
+        {
+            soapClient = new RfemSoapPortTypeClient();
+
+            Console.WriteLine("--- TABLES ---");
+
+            DeleteAll();
+
+            Console.Write("test NURBS tables...");
+
+            SetLineNurbs(11, 4); // pridani radku do tabulky
+            GetLineNurbs(11, 4);
+            SetLineNurbs(10, 3); // odebrani radku z tabulky
+            GetLineNurbs(10, 3);
+
+            if (deleteAfterTest)
+            {
+                DeleteLineNurbs();
+            }
+
+            Console.WriteLine("done");
+            Console.Write("test member result intermediate point ordinates table...");
+
+            SetMemberResultIntermediatePointOrdinates(3); // vytvoreni tabulky
+            GetMemberResultIntermediatePointOrdinates(3);
+            SetMemberResultIntermediatePointOrdinates(2); // zmenseni tabulky
+            GetMemberResultIntermediatePointOrdinates(2);
+            SetMemberResultIntermediatePointOrdinates(4); // zvetseni tabulky
+            GetMemberResultIntermediatePointOrdinates(4);
+
+            if (deleteAfterTest)
+            {
+                DeleteMemberResultIntermediatePointOrdinates();
+            }
+
+            Console.WriteLine("done");
+            Console.WriteLine("test imperfection tables...");
+
+            int imperfectionCaseId = SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE, 3); // vytvoreni tabulky
+            GetImperfectionCases(imperfectionCaseId, 3);
+            SetImperfectionCase(imperfectionCaseId, imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE, 2); // zmenseni tabulky
+            GetImperfectionCases(imperfectionCaseId, 2);
+            SetImperfectionCase(imperfectionCaseId, imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE, 4); // zvetseni tabulky
+            GetImperfectionCases(imperfectionCaseId, 4);
+            imperfectionCaseId = SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_SUM, 3); // vytvoreni tabulky
+            GetImperfectionCases(imperfectionCaseId, 3);
+            SetImperfectionCase(imperfectionCaseId, imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_SUM, 2); // zmenseni tabulky
+            GetImperfectionCases(imperfectionCaseId, 2);
+            SetImperfectionCase(imperfectionCaseId, imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_SUM, 4); // zvetseni tabulky
+            GetImperfectionCases(imperfectionCaseId, 4);
+
+            if (deleteAfterTest)
+            {
+                DeleteImperfectionCases();
+            }
+
+            Console.WriteLine("done");
+            Console.Write("test analysis case tables...");
+
+            SetAnalysisCase(2); // zapiseme stejny pocet faktoru jako je pocet objektu
+            GetAnalysisCase(2);
+            SetAnalysisCase(1); // zapiseme mensi pocet faktoru nez je pocet objektu
+            GetAnalysisCase(2);
+            SetAnalysisCase(3); // zapiseme vetsi pocet faktoru nez je pocet objektu
+            GetAnalysisCase(2);
+
+            if (deleteAfterTest)
+            {
+                DeleteAnalysisCases();
+            }
+
+            Console.WriteLine("done");
+            Console.Write("test line load tables...");
+
+            int caseId = SetLoadCase();
+            int loadId = SetLineLoad(caseId, 0, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 3);
+            GetLineLoads(caseId, loadId, 3);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 2);
+            GetLineLoads(caseId, loadId, 2);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 4);
+            GetLineLoads(caseId, loadId, 4);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 3);
+            GetLineLoads(caseId, loadId, 3);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 2);
+            GetLineLoads(caseId, loadId, 2);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 4);
+            GetLineLoads(caseId, loadId, 4);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 3);
+            GetLineLoads(caseId, loadId, 3);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 2);
+            GetLineLoads(caseId, loadId, 2);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetLineLoads(caseId, loadId, 4);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 3);
+            GetLineLoads(caseId, loadId, 3);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 2);
+            GetLineLoads(caseId, loadId, 2);
+            SetLineLoad(caseId, loadId, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetLineLoads(caseId, loadId, 4);
+
+            if (deleteAfterTest)
+            {
+                DeleteLineLoads(caseId);
+            }
+
+            Console.WriteLine("done");
+            Console.Write("test member load tables...");
+
+            loadId = SetMemberLoad(caseId, 0, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 3);
+            GetMemberLoads(caseId, loadId, 3);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 2);
+            GetMemberLoads(caseId, loadId, 2);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 4);
+            GetMemberLoads(caseId, loadId, 4);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 3);
+            GetMemberLoads(caseId, loadId, 3);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 2);
+            GetMemberLoads(caseId, loadId, 2);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetMemberLoads(caseId, loadId, 4);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_TEMPERATURE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 3);
+            GetMemberLoads(caseId, loadId, 3);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_TEMPERATURE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 2);
+            GetMemberLoads(caseId, loadId, 2);
+            SetMemberLoad(caseId, loadId, member_load_load_type.LOAD_TYPE_TEMPERATURE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetMemberLoads(caseId, loadId, 4);
+
+            if (deleteAfterTest)
+            {
+                DeleteMemberLoads(caseId);
+            }
+
+            Console.WriteLine("done");
+            Console.Write("test load combination tables...");
+
+            // vytvoreni tabulky
+            int combinationId = SetLoadCombination(0, 2);
+            GetLoadCombination(combinationId, 2);
+
+            // zvetseni tabulky
+            SetLoadCombination(combinationId, 4);
+            GetLoadCombination(combinationId, 4);
+
+            // zmensovani/vymazani tabulky zatim nefunguje ani ve skriptech
+
+            if (deleteAfterTest)
+            {
+                DeleteLoadCombinations();
+            }
+
+            Console.WriteLine("done");
+            Console.Write("test limit state tables...");
+
+            // vytvoreni tabulky
+            int stateId = SetLimitState(0, 2);
+            GetLimitState(stateId, 2);
+
+            // zvetseni tabulky
+            SetLimitState(stateId, 4);
+            GetLimitState(stateId, 4);
+
+            // zmensovani/vymazani tabulky zatim nefunguje ani ve skriptech
+
+            if (deleteAfterTest)
+            {
+                DeleteLimitStates();
+            }
+
+            Console.WriteLine("done");
+
+            soapClient = null;
+        }
+
+        #region External ID and Metadata
+        /// <summary>
+        /// Tests writing and reading an external id and metadata.
+        /// </summary>
+        private static void TestIdAndMetadata()
+        {
+            Console.WriteLine("--- ID AND METADATA ---");
+
+            WriteIdAndMetadata();
+            ReadIdAndMetadata();
+            ReadIdAndMetadataInAllAttributes();
+        }
+
+        /// <summary>
+        /// Reads external id and metadata.
+        /// </summary>
+        private static void ReadIdAndMetadata()
+        {
+            soapClient = new RfemSoapPortTypeClient();
+
+            Console.WriteLine("--- READING ID AND METADATA ---");
+            int[] numbers;
+            int[] cases;
+
+            // nodes
+            Console.WriteLine("--- NODES ---");
+            numbers = soapClient.get_all_node_numbers();
+
+            foreach (int id in numbers)
+            {
+                Console.WriteLine($"Node {id} id:       {soapClient.get_node_id_for_export_import(id)}");
+                Console.WriteLine($"Node {id} metadata: {soapClient.get_node_metadata_for_export_import(id)}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // lines
+            Console.WriteLine("--- LINES ---");
+            numbers = soapClient.get_all_line_numbers();
+
+            foreach (int id in numbers)
+            {
+                Console.WriteLine($"Line {id} id:       {soapClient.get_line_id_for_export_import(id)}");
+                Console.WriteLine($"Line {id} metadata: {soapClient.get_line_metadata_for_export_import(id)}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // members
+            Console.WriteLine("--- MEMBERS ---");
+            numbers = soapClient.get_all_member_numbers();
+
+            foreach (int id in numbers)
+            {
+                Console.WriteLine($"Member {id} id:       {soapClient.get_member_id_for_export_import(id)}");
+                Console.WriteLine($"Member {id} metadata: {soapClient.get_member_metadata_for_export_import(id)}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // surfaces
+            Console.WriteLine("--- SURFACES ---");
+            numbers = soapClient.get_all_surface_numbers();
+
+            foreach (int id in numbers)
+            {
+                Console.WriteLine($"Surface {id} id:       {soapClient.get_surface_id_for_export_import(id)}");
+                Console.WriteLine($"Surface {id} metadata: {soapClient.get_surface_metadata_for_export_import(id)}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // load cases
+            Console.WriteLine("--- LOAD CASES ---");
+            cases = soapClient.get_all_load_case_numbers();
+
+            foreach (int caseId in cases)
+            {
+                Console.WriteLine($"Load case {caseId} id:       {soapClient.get_load_case_id_for_export_import(caseId)}");
+                Console.WriteLine($"Load case {caseId} metadata: {soapClient.get_load_case_metadata_for_export_import(caseId)}");
+                Console.WriteLine(string.Empty);
+
+                // nodal loads
+                Console.WriteLine("--- NODAL LOADS ---");
+                numbers = soapClient.get_all_nodal_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    Console.WriteLine($"Nodal load {id} id:       {soapClient.get_nodal_load_id_for_export_import(caseId, id)}");
+                    Console.WriteLine($"Nodal load {id} metadata: {soapClient.get_nodal_load_metadata_for_export_import(caseId, id)}");
+                }
+
+                Console.WriteLine(string.Empty);
+
+                // line loads
+                Console.WriteLine("--- LINE LOADS ---");
+                numbers = soapClient.get_all_line_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    Console.WriteLine($"Line load {id} id:       {soapClient.get_line_load_id_for_export_import(caseId, id)}");
+                    Console.WriteLine($"Line load {id} metadata: {soapClient.get_line_load_metadata_for_export_import(caseId, id)}");
+                }
+
+                Console.WriteLine(string.Empty);
+
+                // member loads
+                Console.WriteLine("--- MEMBER LOADS ---");
+                numbers = soapClient.get_all_member_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    Console.WriteLine($"Member load {id} id:       {soapClient.get_member_load_id_for_export_import(caseId, id)}");
+                    Console.WriteLine($"Member load {id} metadata: {soapClient.get_member_load_metadata_for_export_import(caseId, id)}");
+                }
+
+                Console.WriteLine(string.Empty);
+
+                // surface loads
+                Console.WriteLine("--- SURFACE LOADS ---");
+                numbers = soapClient.get_all_surface_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    Console.WriteLine($"Surface load {id} id:       {soapClient.get_surface_load_id_for_export_import(caseId, id)}");
+                    Console.WriteLine($"Surface load {id} metadata: {soapClient.get_surface_load_metadata_for_export_import(caseId, id)}");
+                }
+            }
+
+            Console.WriteLine(string.Empty);
+            soapClient = null;
+        }
+
+        /// <summary>
+        /// Reads external id and metadata using all attributes.
+        /// </summary>
+        private static void ReadIdAndMetadataInAllAttributes()
+        {
+            soapClient = new RfemSoapPortTypeClient();
+
+            Console.WriteLine("--- READING ID AND METADATA IN ALL ATTRIBUTES ---");
+            int[] numbers;
+            int[] cases;
+
+            // nodes
+            Console.WriteLine("--- NODES ---");
+            numbers = soapClient.get_all_node_numbers();
+
+            foreach (int id in numbers)
+            {
+                node_all_attributes attributes = soapClient.get_node_all_attributes(id);
+                Console.WriteLine($"Node {id} id:       {attributes.id_for_export_import}");
+                Console.WriteLine($"Node {id} metadata: {attributes.metadata_for_export_import}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // lines
+            Console.WriteLine("--- LINES ---");
+            numbers = soapClient.get_all_line_numbers();
+
+            foreach (int id in numbers)
+            {
+                line_all_attributes attributes = soapClient.get_line_all_attributes(id);
+                Console.WriteLine($"Line {id} id:       {attributes.id_for_export_import}");
+                Console.WriteLine($"Line {id} metadata: {attributes.metadata_for_export_import}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // members
+            Console.WriteLine("--- MEMBERS ---");
+            numbers = soapClient.get_all_member_numbers();
+
+            foreach (int id in numbers)
+            {
+                member_all_attributes attributes = soapClient.get_member_all_attributes(id);
+                Console.WriteLine($"Member {id} id:       {attributes.id_for_export_import}");
+                Console.WriteLine($"Member {id} metadata: {attributes.metadata_for_export_import}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // surfaces
+            Console.WriteLine("--- SURFACES ---");
+            numbers = soapClient.get_all_surface_numbers();
+
+            foreach (int id in numbers)
+            {
+                surface_all_attributes attributes = soapClient.get_surface_all_attributes(id);
+                Console.WriteLine($"Surface {id} id:       {attributes.id_for_export_import}");
+                Console.WriteLine($"Surface {id} metadata: {attributes.metadata_for_export_import}");
+            }
+
+            Console.WriteLine(string.Empty);
+
+            // load cases
+            Console.WriteLine("--- LOAD CASES ---");
+            cases = soapClient.get_all_load_case_numbers();
+
+            foreach (int caseId in cases)
+            {
+                load_case_all_attributes attributesCase = soapClient.get_load_case_all_attributes(caseId);
+                Console.WriteLine($"Load case {caseId} id:       {attributesCase.id_for_export_import}");
+                Console.WriteLine($"Load case {caseId} metadata: {attributesCase.metadata_for_export_import}");
+                Console.WriteLine(string.Empty);
+
+                // nodal loads
+                Console.WriteLine("--- NODAL LOADS ---");
+                numbers = soapClient.get_all_nodal_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    nodal_load_all_attributes attributes = soapClient.get_nodal_load_all_attributes(caseId, id);
+                    Console.WriteLine($"Nodal load {id} id:       {attributes.id_for_export_import}");
+                    Console.WriteLine($"Nodal load {id} metadata: {attributes.metadata_for_export_import}");
+                }
+
+                Console.WriteLine(string.Empty);
+
+                // line loads
+                Console.WriteLine("--- LINE LOADS ---");
+                numbers = soapClient.get_all_line_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    line_load_all_attributes attributes = soapClient.get_line_load_all_attributes(caseId, id);
+                    Console.WriteLine($"Line load {id} id:       {attributes.id_for_export_import}");
+                    Console.WriteLine($"Line load {id} metadata: {attributes.metadata_for_export_import}");
+                }
+
+                Console.WriteLine(string.Empty);
+
+                // member loads
+                Console.WriteLine("--- MEMBER LOADS ---");
+                numbers = soapClient.get_all_member_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    member_load_all_attributes attributes = soapClient.get_member_load_all_attributes(caseId, id);
+                    Console.WriteLine($"Member load {id} id:       {attributes.id_for_export_import}");
+                    Console.WriteLine($"Member load {id} metadata: {attributes.metadata_for_export_import}");
+                }
+
+                Console.WriteLine(string.Empty);
+
+                // surface loads
+                Console.WriteLine("--- SURFACE LOADS ---");
+                numbers = soapClient.get_all_surface_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    surface_load_all_attributes attributes = soapClient.get_surface_load_all_attributes(caseId, id);
+                    Console.WriteLine($"Surface load {id} id:       {attributes.id_for_export_import}");
+                    Console.WriteLine($"Surface load {id} metadata: {attributes.metadata_for_export_import}");
+                }
+            }
+
+            Console.WriteLine(string.Empty);
+            soapClient = null;
+        }
+
+        /// <summary>
+        /// Writes external id and metadata.
+        /// </summary>
+        private static void WriteIdAndMetadata()
+        {
+            soapClient = new RfemSoapPortTypeClient();
+
+            Console.WriteLine("--- WRITING ID AND METADATA ---");
+
+            Console.Write("Writing id and metadata...");
+            int[] numbers;
+            int[] cases;
+            string text;
+
+            // nodes
+            numbers = soapClient.get_all_node_numbers();
+
+            foreach (int id in numbers)
+            {
+                text = $"node {id} ";
+                soapClient.set_node_id_for_export_import(id, text + "id");
+                soapClient.set_node_metadata_for_export_import(id, text + "metadata");
+            }
+
+            // lines
+            numbers = soapClient.get_all_line_numbers();
+
+            foreach (int id in numbers)
+            {
+                text = $"line {id} ";
+                soapClient.set_line_id_for_export_import(id, text + "id");
+                soapClient.set_line_metadata_for_export_import(id, text + "metadata");
+            }
+
+            // members
+            numbers = soapClient.get_all_member_numbers();
+
+            foreach (int id in numbers)
+            {
+                text = $"member {id} ";
+                soapClient.set_member_id_for_export_import(id, text + "id");
+                soapClient.set_member_metadata_for_export_import(id, text + "metadata");
+            }
+
+            // surfaces
+            numbers = soapClient.get_all_surface_numbers();
+
+            foreach (int id in numbers)
+            {
+                text = $"surface {id} ";
+                soapClient.set_surface_id_for_export_import(id, text + "id");
+                soapClient.set_surface_metadata_for_export_import(id, text + "metadata");
+            }
+
+            // load cases
+            cases = soapClient.get_all_load_case_numbers();
+
+            foreach (int caseId in cases)
+            {
+                text = $"load case {caseId} ";
+                soapClient.set_load_case_id_for_export_import(caseId, text + "id");
+                soapClient.set_load_case_metadata_for_export_import(caseId, text + "metadata");
+
+                // nodal loads
+                numbers = soapClient.get_all_nodal_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    text = $"nodal load {id} ";
+                    soapClient.set_nodal_load_id_for_export_import(caseId, id, text + "id");
+                    soapClient.set_nodal_load_metadata_for_export_import(caseId, id, text + "metadata");
+                }
+
+                // line loads
+                numbers = soapClient.get_all_line_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    text = $"line load {id} ";
+                    soapClient.set_line_load_id_for_export_import(caseId, id, text + "id");
+                    soapClient.set_line_load_metadata_for_export_import(caseId, id, text + "metadata");
+                }
+
+                // member loads
+                numbers = soapClient.get_all_member_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    text = $"member load {id} ";
+                    soapClient.set_member_load_id_for_export_import(caseId, id, text + "id");
+                    soapClient.set_member_load_metadata_for_export_import(caseId, id, text + "metadata");
+                }
+
+                // surface loads
+                numbers = soapClient.get_all_surface_load_numbers(caseId);
+
+                foreach (int id in numbers)
+                {
+                    text = $"surface load {id} ";
+                    soapClient.set_surface_load_id_for_export_import(caseId, id, text + "id");
+                    soapClient.set_surface_load_metadata_for_export_import(caseId, id, text + "metadata");
+                }
+            }
+
+            Console.WriteLine("done" + Environment.NewLine);
+            soapClient = null;
+        }
+        #endregion External ID and Metadata
+
+        #region Sections
+        private static void TestParametrizedSections()
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+
+            DeleteAll();
+
+            Console.WriteLine("Sections - set/get parametrization...");
+
+            SetParametrizedSection();
+            GetParametrizedSection();
+
+            Console.WriteLine("...done" + Environment.NewLine);
+        }
+
+        private static void GetParametrizedSection()
+        {
+            int sectionId = 2;
+
+            section_parametrization_type type = soapClient.get_section_parametrization_type(sectionId);
+            section_parametrization[] parameterization = soapClient.get_section_parametrization(sectionId);
+
+            section_built_up_parametrization_group_type groupType = soapClient.get_section_built_up_parametrization_group_type(sectionId);
+            section_built_up_parametrization[] builtUpParametrization = soapClient.get_section_built_up_parametrization(sectionId);
+        }
+
+        private static void SetParametrizedSection()
+        {
+            int materialId = 1;
+            int sectionId = 2;
+
+            soapClient.begin_modification("set section");
+
+            // create material
+            soapClient.create_material(materialId);
+            soapClient.set_material_name(materialId, materialSteel);
+
+            // create section
+            soapClient.create_section(sectionId);
+            soapClient.set_section_name(sectionId, sectionRectangle);
+            soapClient.set_section_material(sectionId, materialId);
+
+            soapClient.finish_modification();
+        }
+
+        private static void GetBuiltUpParametrizedSection()
+        {
+            int sectionId = 1;
+
+            section_built_up_parametrization_group_type groupType = soapClient.get_section_built_up_parametrization_group_type(sectionId);
+            section_built_up_parametrization[] builtUpParametrization = soapClient.get_section_built_up_parametrization(sectionId);
+        }
+
+        private static void SetBuiltUpParametrizedSection()
+        {
+            int materialId = 1;
+            int sectionId = 2;
+
+            soapClient.begin_modification("set section");
+
+            // create material
+            soapClient.create_material(materialId);
+            soapClient.set_material_name(materialId, materialSteel);
+
+            // create section
+            soapClient.create_section(sectionId);
+            soapClient.set_section_name(sectionId, section2UR);
+            soapClient.set_section_material(sectionId, materialId);
+
+            soapClient.finish_modification();
+        }
+        #endregion Sections
+
+        #region Nodes
+        /// <summary>
+        /// Tests creating, reading and deleting nodes.
+        /// </summary>
+        private static void TestNodes()
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- NODES ---");
+
+            DeleteAll();
+
+            Console.Write("test common...");
+
+            TestCommonNodes();
+
+            Console.WriteLine("done");
+            Console.WriteLine("set/get...");
+
+            SetNodes();
+            GetNodes();
+
+            Console.WriteLine("...done");
+            Console.Write("delete...");
+
+            DeleteNodes();
+
+            Console.WriteLine("done" + Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Tests common functions with nodes.
+        /// </summary>
+        private static void TestCommonNodes()
+        {
+            int node1 = soapClient.new_node();
+            int count = soapClient.get_node_count();
+            int[] numbers = soapClient.get_all_node_numbers();
+            int nth = soapClient.get_nth_node_number(0);
+
+            if (numbers.Count() != count && count != 1)
+            {
+                throw new Exception("Count does not match.");
+            }
+
+            if (numbers[0] != node1)
+            {
+                throw new Exception("Numbers does not match.");
+            }
+
+            if (nth != node1)
+            {
+                throw new Exception("Number on index does not match.");
+            }
+
+            int node2 = 4;
+            soapClient.create_node(node2);
+            count = soapClient.get_node_count();
+            numbers = soapClient.get_all_node_numbers();
+            nth = soapClient.get_nth_node_number(1);
+
+            if (numbers.Count() != count && count != 2)
+            {
+                throw new Exception("Count does not match.");
+            }
+
+            if (numbers[0] != node1 || numbers[1] != node2)
+            {
+                throw new Exception("Numbers does not match.");
+            }
+
+            if (nth != node2)
+            {
+                throw new Exception("Number on index does not match.");
+            }
+
+            soapClient.delete_node(node1);
+            soapClient.delete_node(node2);
+
+            if (soapClient.get_node_count() != 0)
+            {
+                throw new Exception("After delete does not match.");
+            }
+        }
+
+        /// <summary>
+        /// Gets nodes.
+        /// </summary>
+        private static void GetNodes()
+        {
+            int[] numbers = soapClient.get_all_node_numbers();
+
+            if (numbers.Count() != 6)
+            {
+                throw new Exception($"Count of nodes does not match - required = {6} : read = {numbers.Count()}");
+            }
+        }
+
+        /// <summary>
+        /// Sets nodes.
+        /// </summary>
+        private static void SetNodes()
+        {
+            int node1Id = 1;
+            int node2Id = 2;
+            int node3Id = 3;
+            int node4Id = 4;
+            int node5Id = 5;
+            int node6Id = 6;
+            int lineId = 7;
+            int materialId = 8;
+            int sectionId = 9;
+            int memberId = 10;
+
+            soapClient.begin_modification("set nodes");
+
+            // create standard nodes
+            Console.Write("set standard nodes...");
+            soapClient.create_node(node1Id);
+            soapClient.set_node_type(node1Id, node_type.TYPE_STANDARD);
+            soapClient.set_node_coordinates(node1Id, new vector_3d().SetCoordinates(1.0, 1.0, 0.0));
+
+            soapClient.create_node(node2Id);
+            soapClient.set_node_type(node2Id, node_type.TYPE_STANDARD);
+            soapClient.set_node_coordinates(node2Id, new vector_3d().SetCoordinates(5.0, 1.0, -1.0));
+            Console.WriteLine("done");
+
+            // create node between two points
+            Console.Write("set node between two points...");
+            soapClient.create_node(node3Id);
+            soapClient.set_node_type(node3Id, node_type.TYPE_BETWEEN_TWO_POINTS);
+            soapClient.set_node_between_two_points_start_point_coordinates(node3Id, new vector_3d().SetCoordinates(1.0, -3.0, 0.0));
+            soapClient.set_node_between_two_points_end_point_coordinates(node3Id, new vector_3d().SetCoordinates(5.0, -3.0, -1.0));
+            Console.WriteLine("done");
+
+            // create node between two nodes
+            Console.Write("set node between two nodes...");
+            soapClient.create_node(node4Id);
+            soapClient.set_node_type(node4Id, node_type.TYPE_BETWEEN_TWO_NODES);
+            soapClient.set_node_between_two_nodes_start_node(node4Id, node1Id);
+            soapClient.set_node_between_two_nodes_end_node(node4Id, node2Id);
+            Console.WriteLine("done");
+
+            // create node on line
+            Console.Write("set node on line...");
+            soapClient.create_line(lineId);
+            soapClient.set_line_type(lineId, line_type.TYPE_POLYLINE);
+            soapClient.set_line_definition_nodes(lineId, new int[] { node1Id, node2Id });
+
+            soapClient.create_node(node5Id);
+            soapClient.set_node_type(node5Id, node_type.TYPE_ON_LINE);
+            soapClient.set_node_on_line_reference_line(node5Id, lineId);
+            soapClient.set_node_reference_type(node5Id, node_reference_type.REFERENCE_TYPE_XY);
+            soapClient.set_node_distance_from_start_relative(node5Id, 0.3);
+            Console.WriteLine("done");
+
+            // create node on member
+            Console.Write("set node on member...");
+            soapClient.create_material(materialId);
+            soapClient.set_material_name(materialId, materialSteel);
+
+            soapClient.create_section(sectionId);
+            soapClient.set_section_name(sectionId, sectionI);
+
+            soapClient.create_member(memberId);
+            soapClient.set_member_section_start(memberId, sectionId);
+            soapClient.set_member_line(memberId, lineId);
+
+            soapClient.create_node(node6Id);
+            soapClient.set_node_type(node6Id, node_type.TYPE_ON_MEMBER);
+            soapClient.set_node_on_member_reference_member(node6Id, memberId);
+            soapClient.set_node_reference_type(node6Id, node_reference_type.REFERENCE_TYPE_XZ);
+            soapClient.set_node_distance_from_start_relative(node6Id, 0.4);
+            Console.WriteLine("done");
+
+            soapClient.finish_modification();
+        }
+
+        /// <summary>
+        /// Deletes all nodes.
+        /// </summary>
+        private static void DeleteNodes()
+        {
+            soapClient.begin_modification("delete nodes");
+
+            int[] numbers = soapClient.get_all_node_numbers();
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_node(id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_node_numbers();
+
+            int count = numbers.Count();
+
+            // two phantom nodes from line remains
+            if (count > 0 && count != 2)
+            {
+                throw new Exception("Nodes are not empty.");
+            }
+        }
+        #endregion Nodes
+
+        #region Lines
+        /// <summary>
+        /// Tests creating, reading and deleting NURBS data.
+        /// </summary>
+        private static void TestLineNurbs()
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- LINES ---");
+
+            DeleteAll();
+
+            Console.Write("set/get NURBS table parameters...");
+
+            SetLineNurbs(11, 4); // testuje pridani radku do tabulky
+            GetLineNurbs(11, 4);
+            SetLineNurbs(10, 3); // testuje odebrani radku z tabulky
+            GetLineNurbs(10, 3);
+
+            Console.WriteLine("done");
+            Console.Write("delete NURBS table parameters...");
+
+            DeleteLineNurbs();
+
+            Console.WriteLine("done" + Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Test creating, reading and deleting line welded joints using line table data.
+        /// </summary>
+        private static void TestLineWeldedJoints()
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- LINES ---");
+
+            DeleteAll();
+
+            Console.Write("set/get welded joints...");
+
+            SetWeldedJoints();
+
+            // otestuje vytvoreni tabulky
+            SetLineWeldedJointsAssignment(3);
+            GetLineWeldedJointsAssignment(3);
+
+            // otestuje zmenseni tabulky
+            SetLineWeldedJointsAssignment(2);
+            GetLineWeldedJointsAssignment(2);
+
+            // otestuje zvetseni tabulky
+            SetLineWeldedJointsAssignment(4);
+            GetLineWeldedJointsAssignment(4);
+
+            Console.WriteLine("done");
+            Console.Write("delete welded joints...");
+
+            DeleteLineWeldedJointsAssignment();
+
+            Console.WriteLine("done" + Environment.NewLine);
+        }
+
+        #region NURBS
+        /// <summary>
+        /// Gets NURBS and checks count of control points and order.
+        /// </summary>
+        /// <param name="controlPointCount">Number of control points.</param>
+        /// <param name="order">NURBS order.</param>
+        private static void GetLineNurbs(int controlPointCount, int order)
+        {
+            int lineId = 3;
+
+            int orderRead = soapClient.get_line_nurbs_order(lineId);
+            line_nurbs_control_points[] controlPoints = soapClient.get_line_nurbs_control_points(lineId);
+            double[] knots = soapClient.get_line_nurbs_knots(lineId);
+
+            if (controlPointCount != controlPoints.Count())
+            {
+                throw new Exception($"Count of NURBS control points does not match - required = {controlPointCount} : read = {controlPoints.Count()}");
+            }
+
+            if (order != orderRead)
+            {
+                throw new Exception($"Count of NURBS knots does not match - required = {order} : read = {orderRead}");
+            }
+        }
+
+        /// <summary>
+        /// Sets NURBS.
+        /// </summary>
+        /// <param name="controlPointCount">Number of control points.</param>
+        /// <param name="order">NURBS order.</param>
+        private static void SetLineNurbs(int controlPointCount, int order)
+        {
+            int node1Id = 1;
+            int node2Id = 2;
+            int lineId = 3;
+
+            soapClient.begin_modification("set line - NURBS");
+
+            // create nodes
+            soapClient.create_node(node1Id);
+            soapClient.set_node_coordinates(node1Id, new vector_3d().SetCoordinates(1.0, 1.0, 0.0));
+
+            soapClient.create_node(node2Id);
+            soapClient.set_node_coordinates(node2Id, new vector_3d().SetCoordinates(5.0, 1.0, 0.0));
+
+            // define NURBS control points
+            line_nurbs_control_points[] controlPoints =
+            {
+                new line_nurbs_control_points().SetNURBSControlPoint(3.000, -1.000, 0.000, 1.000),
+                new line_nurbs_control_points().SetNURBSControlPoint(1.205, -2.793, 0.000, 1.100),
+                new line_nurbs_control_points().SetNURBSControlPoint(1.000, -4.000, 0.000, 1.200),
+                new line_nurbs_control_points().SetNURBSControlPoint(3.000, -4.000, 0.000, 1.300),
+                new line_nurbs_control_points().SetNURBSControlPoint(2.000, -6.000, 0.000, 1.400),
+                new line_nurbs_control_points().SetNURBSControlPoint(1.000, -8.000, 0.000, 1.500),
+                new line_nurbs_control_points().SetNURBSControlPoint(3.000, -8.000, 0.000, 1.600),
+                new line_nurbs_control_points().SetNURBSControlPoint(5.000, -5.000, 0.000, 1.700),
+                new line_nurbs_control_points().SetNURBSControlPoint(4.000, -3.000, 0.000, 1.800),
+                new line_nurbs_control_points().SetNURBSControlPoint(6.000, -1.000, 0.000, 1.900),
+                new line_nurbs_control_points().SetNURBSControlPoint(4.000, -1.000, 0.000, 1.000),
+            };
+
+            // resize array according to settings
+            Debug.Assert(controlPointCount <= controlPoints.Count(), "Invalid count of control points!");
+
+            if (controlPointCount < controlPoints.Count())
+            {
+                Array.Resize(ref controlPoints, controlPointCount);
+            }
+
+            // define NURBS knots
+            Debug.Assert(order >= 2 && order <= 4, "Invalid order!");
+            double[] knots = null;
+
+            switch (order)
+            {
+                case 2:
+                    knots = new double[] { 0.0, 0.0, 0.111, 0.222, 0.333, 0.444, 0.555, 0.666, 0.777, 0.888, 0.999, 1.0, 1.0 };
+                break;
+                case 3:
+                    knots = new double[] { 0.0, 0.0, 0.0, 0.111, 0.222, 0.333, 0.444, 0.555, 0.666, 0.777, 0.888, 1.0, 1.0, 1.0 };
+                break;
+                case 4:
+                    knots = new double[] { 0.0, 0.0, 0.0, 0.0, 0.111, 0.222, 0.333, 0.444, 0.555, 0.666, 0.777, 1.0, 1.0, 1.0, 1.0 };
+                break;
+            }
+
+            // create line
+            soapClient.create_line(lineId);
+            soapClient.set_line_type(lineId, line_type.TYPE_NURBS);
+            soapClient.set_line_definition_nodes(lineId, new int[] { node1Id, node2Id });
+            soapClient.set_line_nurbs_control_points(lineId, controlPoints);
+            soapClient.set_line_nurbs_order(lineId, order);
+            soapClient.set_line_nurbs_knots(lineId, knots);
+
+            soapClient.finish_modification();
+        }
+
+        /// <summary>
+        /// Deletes NURBS
+        /// </summary>
+        private static void DeleteLineNurbs()
+        {
+            int lineId = 3;
+
+            soapClient.delete_line_nurbs_control_points(lineId);
+            soapClient.delete_line_nurbs_knots(lineId);
+
+            line_nurbs_control_points[] controlPoints = soapClient.get_line_nurbs_control_points(lineId);
+            double[] knots = soapClient.get_line_nurbs_knots(lineId);
+
+            // only two definition points have to remain
+            if (controlPoints.Count() != 2)
+            {
+                throw new Exception("NURBS control points are not empty.");
+            }
+
+            // order = 2 is a minimum -> 4 knots have to remain
+            if (knots.Count() != 4)
+            {
+                throw new Exception("NURBS knots are not empty.");
+            }
+        }
+        #endregion NURBS
+
+        #region Line Welded Joints
+        /// <summary>
+        /// Gets line welded joints assignment and checks count of welded joints with the specified value.
+        /// </summary>
+        /// <param name="jointCount">Count of welded lines to check.</param>
+        private static void GetLineWeldedJointsAssignment(int jointCount)
+        {
+            // docasne vyrazeno v RFEMu - commit c1a04204ff43bfd2004f35b785f5d1b89cbeab45
+            //int lineId = 8;
+
+            //line_line_weld_assignment[] data = WsClient.get_line_line_weld_assignment(lineId);
+
+            //if (jointCount != data.Count())
+            //{
+            //    Console.WriteLine("Error: count of welded joints - required = {0} : read = {1}", jointCount, data.Count());
+            //}
+        }
+
+        /// <summary>
+        /// Sets line welded joints assignment.
+        /// </summary>
+        /// <param name="jointCount">Count of welded joints.</param>
+        private static void SetLineWeldedJointsAssignment(int jointCount)
+        {
+            //int joint1Id = 1;
+            //int joint2Id = 2;
+
+            soapClient.begin_modification("set line welded joints in line");
+
+            SetSurface(2);
+
+            // define line welded joints
+            // docasne vyrazeno v RFEMu - commit c1a04204ff43bfd2004f35b785f5d1b89cbeab45
+            //line_line_weld_assignment[] data = new line_line_weld_assignment[4];
+
+            //data[0] = new line_line_weld_assignment();
+            //data[0].line = line2Id;
+            //data[0].weld = joint1Id;
+            //data[0].surface1 = surface1Id;
+            //data[0].surface2 = surface2Id;
+
+            //data[1] = new line_line_weld_assignment();
+            //data[1].line = line2Id;
+            //data[1].weld = joint2Id;
+            //data[1].surface1 = surface2Id;
+            //data[1].surface2 = surface1Id;
+
+            //data[2] = new line_line_weld_assignment();
+            //data[2].line = line2Id;
+            //data[2].weld = joint2Id;
+            //data[2].surface1 = surface1Id;
+            //data[2].surface2 = surface2Id;
+
+            //data[3] = new line_line_weld_assignment();
+            //data[3].line = line2Id;
+            //data[3].weld = joint1Id;
+            //data[3].surface1 = surface2Id;
+            //data[3].surface2 = surface1Id;
+
+            //// resize array according to settings
+            //Debug.Assert(jointCount <= data.Count());
+
+            //if (jointCount < data.Count())
+            //{
+            //    Array.Resize(ref data, jointCount);
+            //}
+
+            //WsClient.set_line_line_weld_assignment(line2Id, data);
+
+            soapClient.finish_modification();
+        }
+
+        /// <summary>
+        /// Deletes line welded joints assignment.
+        /// </summary>
+        private static void DeleteLineWeldedJointsAssignment()
+        {
+            // docasne vyrazeno v RFEMu - commit c1a04204ff43bfd2004f35b785f5d1b89cbeab45
+            //int lineId = 8;
+
+            //WsClient.delete_line_line_weld_assignment(lineId);
+
+            //line_line_weld_assignment[] data = WsClient.get_line_line_weld_assignment(lineId);
+
+            //if (data.Count() > 0)
+            //{
+            //    Console.WriteLine("Error: welded joints are not empty");
+            //}
+        }
+        #endregion Line Welded Joints
+        #endregion Lines
+
+        #region Surfaces
+        private static void SetSurface(int count)
+        {
+            int node1Id;
+            int node2Id;
+            int node3Id;
+            int node4Id;
+            int line1Id;
+            int line2Id;
+            int line3Id;
+            int line4Id;
+            int surfaceId;
+
+            for (int i = 0; i < count; i++)
+            {
+                // create nodes
+                node1Id = soapClient.new_node();
+                soapClient.set_node_coordinates(node1Id, new vector_3d().SetCoordinates(0.0 + i, 0.0, 0.0));
+
+                node2Id = soapClient.new_node();
+                soapClient.set_node_coordinates(node2Id, new vector_3d().SetCoordinates(1.0 + i, 0.0, 0.0));
+
+                node3Id = soapClient.new_node();
+                soapClient.set_node_coordinates(node3Id, new vector_3d().SetCoordinates(1.0 + i, -1.0, 0.0));
+
+                node4Id = soapClient.new_node();
+                soapClient.set_node_coordinates(node4Id, new vector_3d().SetCoordinates(0.0 + i, -1.0, 0.0));
+
+                // create lines
+                line1Id = soapClient.new_line();
+                soapClient.set_line_definition_nodes(line1Id, new int[] { node1Id, node2Id });
+                line2Id = soapClient.new_line();
+                soapClient.set_line_definition_nodes(line2Id, new int[] { node2Id, node3Id });
+                line3Id = soapClient.new_line();
+                soapClient.set_line_definition_nodes(line3Id, new int[] { node3Id, node4Id });
+                line4Id = soapClient.new_line();
+                soapClient.set_line_definition_nodes(line4Id, new int[] { node4Id, node1Id });
+
+                // create surface
+                surfaceId = soapClient.new_surface();
+                soapClient.set_surface_boundary_lines(surfaceId, new int[] { line1Id, line2Id, line3Id, line4Id });
+            }
+        }
+        #endregion Surfaces
+
+        #region Line Welded Joints
+        /// <summary>
+        /// Sets welded joints.
+        /// </summary>
+        private static void SetWeldedJoints()
+        {
+            int joint1Id = 1;
+            int joint2Id = 2;
+
+            soapClient.begin_modification("set line welded joints");
+
+            soapClient.create_line_welded_joint(joint1Id);
+            soapClient.set_line_welded_joint_joint_type(joint1Id, line_welded_joint_joint_type.BUTT_JOINT);
+            soapClient.set_line_welded_joint_weld_size_a1(joint1Id, 0.0041);
+
+            soapClient.create_line_welded_joint(joint2Id);
+            soapClient.set_line_welded_joint_joint_type(joint2Id, line_welded_joint_joint_type.BUTT_JOINT);
+            soapClient.set_line_welded_joint_weld_size_a1(joint2Id, 0.0042);
+
+            soapClient.finish_modification();
+        }
+        #endregion Line Welded Joints
+
+        #region Member Result Intermediate Point
+        /// <summary>
+        /// Tests creating, reading and deleting member result intermediate point ordinates.
+        /// </summary>
+        private static void TestMemberResultIntermediatePointOrdinates()
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- MEMBER RESULT INTERMEDIATE POINT ORDINATES ---");
+
+            DeleteAll();
+
+            Console.Write("set/get...");
+
+            // otestuje vytvoreni tabulky
+            SetMemberResultIntermediatePointOrdinates(3);
+            GetMemberResultIntermediatePointOrdinates(3);
+
+            // otestuje zmenseni tabulky
+            SetMemberResultIntermediatePointOrdinates(2);
+            GetMemberResultIntermediatePointOrdinates(2);
+
+            // otestuje zvetseni tabulky
+            SetMemberResultIntermediatePointOrdinates(4);
+            GetMemberResultIntermediatePointOrdinates(4);
+
+            Console.WriteLine("done");
+            Console.Write("delete...");
+
+            DeleteMemberResultIntermediatePointOrdinates();
+
+            Console.WriteLine("done" + Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Gets member result intermediate point ordinates.
+        /// </summary>
+        /// <param name="count">Count of object to check.</param>
+        private static void GetMemberResultIntermediatePointOrdinates(int count)
+        {
+            int resultIntermediatePointId = 7;
+
+            member_result_intermediate_point_distances[] table = soapClient.get_member_result_intermediate_point_distances(resultIntermediatePointId);
+
+            if (count != table.Count())
+            {
+                throw new Exception($"Count of member result intermediate point ordinates does not match - required = {count} : read = {table.Count()}");
+            }
+        }
+
+        /// <summary>
+        /// Sets member result intermediate point ordinates.
+        /// </summary>
+        /// <param name="count">Count of object to be set.</param>
+        private static void SetMemberResultIntermediatePointOrdinates(int count)
+        {
+            int materialId = 1;
+            int sectionId = 2;
+            int node1Id = 3;
+            int node2Id = 4;
+            int lineId = 5;
+            int memberId = 6;
+            int resultIntermediatePointId = 7;
+
+            soapClient.begin_modification("set member result intermediate point");
+
+            // create material
+            soapClient.create_material(materialId);
+            soapClient.set_material_name(materialId, materialSteel);
+
+            // create section
+            soapClient.create_section(sectionId);
+            soapClient.set_section_name(sectionId, sectionI);
+            soapClient.set_section_material(sectionId, materialId);
+
+            // create nodes
+            soapClient.create_node(node1Id);
+            soapClient.set_node_coordinates(node1Id, new vector_3d().SetCoordinates(1.0, 1.0, 0.0));
+
+            soapClient.create_node(node2Id);
+            soapClient.set_node_coordinates(node2Id, new vector_3d().SetCoordinates(5.0, 1.0, -1.0));
+
+            // create line
+            soapClient.create_line(lineId);
+            soapClient.set_line_definition_nodes(lineId, new int[] { node1Id, node2Id });
+
+            // create member
+            soapClient.create_member(memberId);
+            soapClient.set_member_type(memberId, member_type.TYPE_BEAM);
+            soapClient.set_member_line(memberId, lineId);
+            soapClient.set_member_section_start(memberId, sectionId);
+
+            // define division ordinates
+            member_result_intermediate_point_distances[] table = new member_result_intermediate_point_distances[4];
+
+            table[0] = new member_result_intermediate_point_distances();
+            table[0].value = 0.111;
+            table[0].note = "note1";
+            table[1] = new member_result_intermediate_point_distances();
+            table[1].value = 0.222;
+            table[1].note = "note2";
+            table[2] = new member_result_intermediate_point_distances();
+            table[2].value = 0.333;
+            table[2].note = "note3";
+            table[3] = new member_result_intermediate_point_distances();
+            table[3].value = 0.444;
+            table[3].note = "note4";
+
+            // resize array according to settings
+            Debug.Assert(count <= table.Count(), "Invalid count of items within table!");
+
+            if (count < table.Count())
+            {
+                Array.Resize(ref table, count);
+            }
+
+            // create member results intermediate point
+            soapClient.create_member_result_intermediate_point(resultIntermediatePointId);
+            soapClient.set_member_result_intermediate_point_uniform_distribution(resultIntermediatePointId, false);
+            soapClient.set_member_result_intermediate_point_distances(resultIntermediatePointId, table);
+
+            soapClient.finish_modification();
+        }
+
+        /// <summary>
+        /// Deletes member result intermediate point ordinates.
+        /// </summary>
+        /// <param name="objectId">User id of the object to be deleted. If zero then all objects are deleted.</param>
+        private static void DeleteMemberResultIntermediatePointOrdinates(int objectId = 0)
+        {
+            soapClient.begin_modification("delete member result intermediate point");
+
+            try
+            {
+                int[] numbers = null;
+
+                if (objectId > 0)
+                {
+                    numbers = new int[] { objectId };
+                }
+                else
+                {
+                    numbers = soapClient.get_all_member_result_intermediate_point_numbers();
+                }
+
+                foreach (int id in numbers)
+                {
+                    soapClient.delete_member_result_intermediate_point_distances(id);
+
+                    member_result_intermediate_point_distances[] table = soapClient.get_member_result_intermediate_point_distances(id);
+
+                    // one row remains
+                    if (table.Count() != 1)
+                    {
+                        throw new Exception("Member result intermediate point ordinates are not empty.");
+                    }
+
+                    soapClient.delete_member_result_intermediate_point(id);
+                }
+
+                if (soapClient.get_member_result_intermediate_point_count() != 0)
+                {
+                    throw new Exception("Member result intermediate points are not empty.");
+                }
+            }
+            finally
+            {
+                soapClient.finish_modification();
+            }
+        }
+        #endregion Member Result Intermediate Point
+
+        #region Imperfections
+        #region Imperfection Cases
+        /// <summary>
+        /// Tests imperfection cases.
+        /// </summary>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestImperfections(bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- IMPERFECTION CASES ---");
+
+            DeleteAll();
+
+            Console.WriteLine("set/get imperfection cases...");
+
+            // set node
+            soapClient.create_node(5);
+            soapClient.set_node_coordinates(5, new vector_3d().SetCoordinates(1.0, 1.0, 0.0));
+
+            // set 4 load cases
+            SetLoadCase();
+            SetLoadCase();
+            SetLoadCase();
+            SetLoadCase();
+
+            // set imperfection cases
+            SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_BUCKLING_MODE);
+            SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_DYNAMIC_EIGENMODE);
+            SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_SUM, 2);
+            int caseId = SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE, 2);
+            SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY);
+            SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_NOTIONAL_LOADS_FROM_LOAD_CASE);
+            SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_STATIC_DEFORMATION);
+
+            GetImperfectionCases(caseId, 2);
+            Console.WriteLine("done" + Environment.NewLine);
+
+            TestMemberImperfections(caseId, deleteAfterTest);
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete imperfection cases...");
+                DeleteImperfectionCases();
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Gets all imperfection cases.
+        /// </summary>
+        /// <param name="caseId">Imperfection case user id.</param>
+        /// <param name="tableRowCount">Count of rows in the table.</param>
+        private static void GetImperfectionCases(int caseId, int tableRowCount = 0)
+        {
+            int[] numbers = null;
+
+            if (caseId > 0)
+            {
+                numbers = new int[] { caseId };
+            }
+            else
+            {
+                numbers = soapClient.get_all_imperfection_case_numbers();
+            }
+
+            foreach (int id in numbers)
+            {
+                imperfection_case_all_attributes attributes = soapClient.get_imperfection_case_all_attributes(id);
+                if (attributes.type == imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_SUM)
+                {
+                    imperfection_case_imperfection_cases_items[] table = soapClient.get_imperfection_case_imperfection_cases_items(id);
+
+                    if (table.Count() != tableRowCount)
+                    {
+                        throw new Exception($"Count of items does not match - required = {tableRowCount} : read = {table.Count()}");
+                    }
+                }
+                else if (attributes.type == imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE)
+                {
+                    imperfection_case_level_imperfections[] table = soapClient.get_imperfection_case_level_imperfections(id);
+
+                    if (table.Count() != tableRowCount)
+                    {
+                        throw new Exception($"Count of items does not match - required = {tableRowCount} : read = {table.Count()}");
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets imperfection case of a specified type.
+        /// </summary>
+        /// <param name="caseId">Imperfection case user id.</param>
+        /// <param name="type">Type of imperfection case.</param>
+        /// <param name="tableRowCount">Count of rows in the table.</param>
+        /// <returns>User id of the imperfection case.</returns>
+        private static int SetImperfectionCase(int caseId, imperfection_case_type type, int tableRowCount = 0)
+        {
+            Console.Write("set imperfection case " + type.ToString() + "...");
+            soapClient.begin_modification("set imperfection case");
+
+            if (caseId == 0)
+            {
+                caseId = soapClient.new_imperfection_case();
+            }
+
+            soapClient.set_imperfection_case_type(caseId, type);
+            soapClient.set_imperfection_case_name(caseId, $"IC{caseId} name");
+            soapClient.set_imperfection_case_comment(caseId, $"IC{caseId} comment");
+
+            // read only
+            //WsClient.set_imperfection_case_is_generated(caseId, true);
+
+            // read only
+            //WsClient.set_imperfection_case_generating_object_info(caseId, "Test object info");
+
+            switch (type)
+            {
+                case imperfection_case_type.IMPERFECTION_TYPE_BUCKLING_MODE:
+                {
+                    soapClient.set_imperfection_case_source(caseId, imperfection_case_source.SOURCE_TYPE_LOAD_CASE);
+                    soapClient.set_imperfection_case_assigned_to(caseId, new int[] { 4 });
+                    soapClient.set_imperfection_case_shape_from_load_case(caseId, 1);
+                    soapClient.set_imperfection_case_buckling_shape(caseId, 3);
+                    soapClient.set_imperfection_case_magnitude_assignment_type(caseId, imperfection_case_magnitude_assignment_type.MAGNITUDE_ASSIGNMENT_SPECIFIC_NODE);
+                    soapClient.set_imperfection_case_reference_node(caseId, 5);
+                    soapClient.set_imperfection_case_coordinate_system(caseId, 1);
+                    soapClient.set_imperfection_case_direction(caseId, imperfection_case_direction.DIRECTION_X);
+                    soapClient.set_imperfection_case_delta_zero(caseId, 1.111);
+                    soapClient.set_imperfection_case_shifting_nodes_only(caseId, false);
+                    break;
+                }
+
+                case imperfection_case_type.IMPERFECTION_TYPE_DYNAMIC_EIGENMODE:
+                {
+                    soapClient.set_imperfection_case_source(caseId, imperfection_case_source.SOURCE_TYPE_LOAD_CASE);
+                    soapClient.set_imperfection_case_assigned_to(caseId, new int[] { 4 });
+                    soapClient.set_imperfection_case_shape_from_load_case(caseId, 2);
+                    soapClient.set_imperfection_case_buckling_shape(caseId, 1);
+                    soapClient.set_imperfection_case_magnitude_assignment_type(caseId, imperfection_case_magnitude_assignment_type.MAGNITUDE_ASSIGNMENT_LOCATION_WITH_LARGEST_DISPLACEMENT);
+                    soapClient.set_imperfection_case_coordinate_system(caseId, 1);
+                    soapClient.set_imperfection_case_direction(caseId, imperfection_case_direction.DIRECTION_Y);
+                    soapClient.set_imperfection_case_delta_zero(caseId, 2.222);
+                    soapClient.set_imperfection_case_shifting_nodes_only(caseId, true);
+                    break;
+                }
+
+                case imperfection_case_type.IMPERFECTION_TYPE_IMPERFECTION_CASES_SUM:
+                {
+                    int caseIdToAdd = 100;
+                    soapClient.create_imperfection_case(caseIdToAdd);
+
+                    imperfection_case_imperfection_cases_items[] table = new imperfection_case_imperfection_cases_items[tableRowCount];
+
+                    for (int i = 0; i < tableRowCount; i++)
+                    {
+                        table[i] = new imperfection_case_imperfection_cases_items();
+                        table[i].name = caseIdToAdd;
+                        table[i].factor = i + 1.1;
+                        table[i].comment = $"comment {i + 1}";
+                    }
+
+                    soapClient.set_imperfection_case_imperfection_cases_items(caseId, table);
+                    break;
+                }
+
+                case imperfection_case_type.IMPERFECTION_TYPE_INITIAL_SWAY_VIA_TABLE:
+                {
+                    imperfection_case_level_imperfections[] table = new imperfection_case_level_imperfections[tableRowCount];
+
+                    for (int i = 0; i < tableRowCount; i++)
+                    {
+                        table[i] = new imperfection_case_level_imperfections();
+                        table[i].level = i + 1.1;
+                        table[i].e_1 = ((i + 1) / 10.0) + 0.01;
+                        table[i].theta_1 = ((i + 1) / 10.0) + 0.02;
+                        table[i].e_2 = ((i + 1) / 10.0) + 0.03;
+                        table[i].theta_2 = ((i + 1) / 10.0) + 0.04;
+                        table[i].comment = $"comment row {i + 1}";
+                    }
+
+                    soapClient.set_imperfection_case_coordinate_system(caseId, 1);
+                    soapClient.set_imperfection_case_direction(caseId, imperfection_case_direction.DIRECTION_Y);
+                    soapClient.set_imperfection_case_sway_coefficients_reciprocal(caseId, false);
+                    soapClient.set_imperfection_case_level_imperfections(caseId, table);
+                    break;
+                }
+
+                case imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY:
+                {
+                    break;
+                }
+
+                case imperfection_case_type.IMPERFECTION_TYPE_NOTIONAL_LOADS_FROM_LOAD_CASE:
+                {
+                    soapClient.set_imperfection_case_load_case_for_notional_loads(caseId, 3);
+                    break;
+                }
+
+                case imperfection_case_type.IMPERFECTION_TYPE_STATIC_DEFORMATION:
+                {
+                    soapClient.set_imperfection_case_source(caseId, imperfection_case_source.SOURCE_TYPE_LOAD_CASE);
+                    soapClient.set_imperfection_case_assigned_to(caseId, new int[] { 4 });
+                    soapClient.set_imperfection_case_shape_from_load_case(caseId, 3);
+                    soapClient.set_imperfection_case_magnitude_assignment_type(caseId, imperfection_case_magnitude_assignment_type.MAGNITUDE_ASSIGNMENT_LOCATION_WITH_LARGEST_DISPLACEMENT);
+                    soapClient.set_imperfection_case_coordinate_system(caseId, 1);
+                    soapClient.set_imperfection_case_direction(caseId, imperfection_case_direction.DIRECTION_Z);
+                    soapClient.set_imperfection_case_delta_zero(caseId, 3.333);
+                    soapClient.set_imperfection_case_shifting_nodes_only(caseId, true);
+                    break;
+                }
+            }
+
+            soapClient.finish_modification();
+            Console.WriteLine("done");
+            return caseId;
+        }
+
+        /// <summary>
+        /// Deletes all imperfection cases.
+        /// </summary>
+        private static void DeleteImperfectionCases()
+        {
+            soapClient.begin_modification("delete imperfection cases");
+
+            int[] numbers = soapClient.get_all_imperfection_case_numbers();
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_imperfection_case(id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_imperfection_case_numbers();
+
+            if (numbers.Count() != 0)
+            {
+                throw new Exception("Imperfection cases are not empty.");
+            }
+        }
+        #endregion Imperfection Cases
+
+        #region Member Imperfections
+        /// <summary>
+        /// Tests member imperfections.
+        /// </summary>
+        /// <param name="caseId">Imperfection case user id.</param>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestMemberImperfections(int caseId, bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- MEMBER IMPERFECTIONS ---");
+            Console.WriteLine("test common...");
+
+            TestCommonMemberImperfections(caseId);
+
+            Console.WriteLine("...done");
+            Console.WriteLine("set/get...");
+
+            SetMemberImperfections(caseId);
+            GetMemberImperfections(caseId);
+
+            Console.WriteLine("...done");
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete...");
+
+                DeleteMemberImperfections(caseId);
+
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Tests common member imperfections functions.
+        /// </summary>
+        /// <param name="caseId">Imperfection case number.</param>
+        private static void TestCommonMemberImperfections(int caseId)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.Write("new object...");
+
+            int load1 = soapClient.new_member_imperfection(caseId);
+            int count = soapClient.get_member_imperfection_count(caseId);
+            int[] numbers = soapClient.get_all_member_imperfection_numbers(caseId);
+            int nth = soapClient.get_nth_member_imperfection_number(caseId, 0);
+
+            if (numbers.Count() != count && count != 1)
+            {
+                throw new Exception("Count does not match.");
+            }
+
+            if (numbers[0] != load1)
+            {
+                throw new Exception("Numbers does not match.");
+            }
+
+            if (nth != load1)
+            {
+                throw new Exception("Number on index does not match.");
+            }
+
+            Console.WriteLine("done");
+            Console.Write("create object...");
+
+            int load2 = 4;
+            soapClient.create_member_imperfection(caseId, load2);
+            count = soapClient.get_member_imperfection_count(caseId);
+            numbers = soapClient.get_all_member_imperfection_numbers(caseId);
+            nth = soapClient.get_nth_member_imperfection_number(caseId, 1);
+
+            if (numbers.Count() != count && count != 2)
+            {
+                throw new Exception("Count does not match.");
+            }
+
+            if (numbers[0] != load1 || numbers[1] != load2)
+            {
+                throw new Exception("Numbers does not match.");
+            }
+
+            if (nth != load2)
+            {
+                throw new Exception("Number on index does not match.");
+            }
+
+            Console.WriteLine("done");
+            Console.Write("delete imperfections...");
+
+            soapClient.begin_modification("delete imperfections");
+            soapClient.delete_member_imperfection(caseId, load1);
+            soapClient.delete_member_imperfection(caseId, load2);
+
+            if (soapClient.get_member_imperfection_count(caseId) != 0)
+            {
+                throw new Exception("Deleted imperfections does not match.");
+            }
+
+            soapClient.finish_modification();
+
+            Console.WriteLine("done");
+            Console.Write("test not existing case...");
+
+            caseId = 9;
+
+            try
+            {
+                soapClient.new_member_imperfection(caseId);
+                Console.WriteLine("No exception in new_member_imperfection()!");
+
+                soapClient.get_member_imperfection_count(caseId);
+                Console.WriteLine("No exception in get_member_imperfection_count()!");
+
+                soapClient.get_all_member_imperfection_numbers(caseId);
+                Console.WriteLine("No exception in get_all_member_imperfection_numbers()!");
+
+                soapClient.get_nth_member_imperfection_number(caseId, 0);
+                Console.WriteLine("No exception in get_nth_member_imperfection_number()!");
+
+                soapClient.delete_member_imperfection(caseId, 0);
+                Console.WriteLine("No exception in delete_member_imperfection()!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("failed");
+                return;
+            }
+
+            Console.WriteLine("done");
+        }
+
+        /// <summary>
+        /// Gets all member imperfections.
+        /// </summary>
+        /// <param name="caseId">Imperfection case number.</param>
+        private static void GetMemberImperfections(int caseId)
+        {
+            int count = soapClient.get_member_imperfection_count(caseId);
+            int[] numbers = soapClient.get_all_member_imperfection_numbers(caseId);
+
+            member_imperfection_all_attributes attributes = null;
+            string comment;
+
+            foreach (int number in numbers)
+            {
+                attributes = soapClient.get_member_imperfection_all_attributes(caseId, number);
+                comment = soapClient.get_member_imperfection_comment(caseId, number);
+            }
+        }
+
+        /// <summary>
+        /// Sets member imperfections.
+        /// </summary>
+        /// <param name="caseId">Imperfection case number.</param>
+        private static void SetMemberImperfections(int caseId)
+        {
+            soapClient.begin_modification("set member imperfections");
+
+            int memberId = SetMember();
+
+            int loadId = 0;
+
+            Console.Write("set initial bow...");
+            loadId = soapClient.new_member_imperfection(caseId);
+            soapClient.set_member_imperfection_imperfection_type(caseId, loadId, member_imperfection_imperfection_type.IMPERFECTION_TYPE_INITIAL_BOW);
+            soapClient.set_member_imperfection_basic_value_absolute(caseId, loadId, loadId / 100.0);
+            soapClient.set_member_imperfection_comment(caseId, loadId, $"IC{caseId} - member imperfection {loadId}");
+            soapClient.set_member_imperfection_members(caseId, loadId, new int[] { memberId });
+            Console.WriteLine("done");
+
+            Console.Write("set initial bow and criterion...");
+            loadId = soapClient.new_member_imperfection(caseId);
+            soapClient.set_member_imperfection_imperfection_type(caseId, loadId, member_imperfection_imperfection_type.IMPERFECTION_TYPE_INITIAL_BOW_AND_CRITERION);
+            soapClient.set_member_imperfection_basic_value_absolute(caseId, loadId, loadId / 100.0);
+            soapClient.set_member_imperfection_active_criterion(caseId, loadId, member_imperfection_active_criterion.ACTIVITY_CRITERION_EN_1999);
+            soapClient.set_member_imperfection_comment(caseId, loadId, $"IC{caseId} - member imperfection {loadId}");
+            Console.WriteLine("done");
+
+            Console.Write("set initial sway...");
+            loadId = soapClient.new_member_imperfection(caseId);
+            soapClient.set_member_imperfection_imperfection_type(caseId, loadId, member_imperfection_imperfection_type.IMPERFECTION_TYPE_INITIAL_SWAY);
+            soapClient.set_member_imperfection_basic_value_absolute(caseId, loadId, loadId / 100.0);
+            soapClient.set_member_imperfection_comment(caseId, loadId, $"IC{caseId} - member imperfection {loadId}");
+            Console.WriteLine("done");
+
+            soapClient.finish_modification();
+        }
+
+        /// <summary>
+        /// Deletes all member imperfections in specified imperfection case.
+        /// </summary>
+        /// <param name="caseId">Imperfection case number.</param>
+        private static void DeleteMemberImperfections(int caseId)
+        {
+            soapClient.begin_modification("delete member imperfections");
+
+            int[] numbers = soapClient.get_all_member_imperfection_numbers(caseId);
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_member_imperfection(caseId, id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_member_imperfection_numbers(caseId);
+
+            if (numbers.Count() != 0)
+            {
+                throw new Exception($"Member imperfections are not empty in IC{caseId}.");
+            }
+        }
+        #endregion Member Imperfections
+        #endregion Imperfections
+
+        #region Loads
+        #region Analysis Cases
+        /// <summary>
+        /// Tests creating, reading and deleting analysis case.
+        /// </summary>
+        private static void TestAnalysisCases()
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- ANALYSIS CASES ---");
+
+            DeleteAll();
+
+            Console.Write("set/get...");
+
+            // zapiseme stejny pocet faktoru jako je pocet objektu
+            SetAnalysisCase(2);
+            GetAnalysisCase(2);
+
+            // zapiseme mensi pocet faktoru nez je pocet objektu
+            SetAnalysisCase(1);
+            GetAnalysisCase(2);
+
+            // zapiseme vetsi pocet faktoru nez je pocet objektu
+            SetAnalysisCase(3);
+            GetAnalysisCase(2);
+
+            Console.WriteLine("done");
+            Console.Write("delete cases...");
+
+            DeleteAnalysisCases();
+
+            Console.WriteLine("done" + Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Sets analysis case.
+        /// </summary>
+        /// <param name="count">Count of objects to check individual stiffness factors.</param>
+        private static void GetAnalysisCase(int count)
+        {
+            int caseId = 1;
+
+            // gets individual modify stiffness factors
+            analysis_case_individual_modify_stiffness_factors_of_materials_table[] materialFactors = soapClient.get_analysis_case_individual_modify_stiffness_factors_of_materials_table(caseId);
+            analysis_case_individual_modify_stiffness_factors_of_sections_table[] sectionFactors = soapClient.get_analysis_case_individual_modify_stiffness_factors_of_sections_table(caseId);
+            analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table[] nodalSupportFactors = soapClient.get_analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table(caseId);
+            analysis_case_individual_modify_stiffness_factors_of_line_supports_table[] lineSupportFactors = soapClient.get_analysis_case_individual_modify_stiffness_factors_of_line_supports_table(caseId);
+            analysis_case_individual_modify_stiffness_factors_of_member_supports_table[] memberSupportFactors = soapClient.get_analysis_case_individual_modify_stiffness_factors_of_member_supports_table(caseId);
+            analysis_case_individual_modify_stiffness_factors_of_surface_supports_table[] surfaceSupportStiffness = soapClient.get_analysis_case_individual_modify_stiffness_factors_of_surface_supports_table(caseId);
+
+            if (materialFactors.Count() != count)
+            {
+                throw new Exception($"Material factors - required = {count} : read = {materialFactors.Count()}");
+            }
+
+            if (sectionFactors.Count() != count)
+            {
+                throw new Exception($"Section factors - required = {count} : read = {sectionFactors.Count()}");
+            }
+
+            if (nodalSupportFactors.Count() != count)
+            {
+                throw new Exception($"Nodal support factors - required = {count} : read = {nodalSupportFactors.Count()}");
+            }
+
+            if (lineSupportFactors.Count() != count)
+            {
+                throw new Exception($"Nodal support factors - required = {count} : read = {lineSupportFactors.Count()}");
+            }
+
+            if (memberSupportFactors.Count() != count)
+            {
+                throw new Exception($"Member support factors - required = {count} : read = {memberSupportFactors.Count()}");
+            }
+
+            if (surfaceSupportStiffness.Count() != count)
+            {
+                throw new Exception($"Surface support factors - required = {count} : read = {surfaceSupportStiffness.Count()}");
+            }
+        }
+
+        /// <summary>
+        /// Sets analysis case.
+        /// </summary>
+        /// <param name="count">Count of objects for setting individual stiffness factors.</param>
+        /// <returns>Id of analysis case.</returns>
+        private static int SetAnalysisCase(int count = 0)
+        {
+            // creates 2 object of each type - material, section, member hinge, line hinge, nodal support, line support, member support, surface support
+            int material1Id = 1;
+            int material2Id = 5;
+            int section1Id = 2;
+            int section2Id = 6;
+            int member1Id = 1;
+            int member2Id = 2;
+            int nodalSupport1Id = 3;
+            int nodalSupport2Id = 4;
+            int lineSupport1Id = 5;
+            int lineSupport2Id = 6;
+            int lineHinge1Id = 7;
+            int lineHinge2Id = 8;
+            int memberHinge1Id = 9;
+            int memberHinge2Id = 10;
+            int memberSupport1Id = 11;
+            int memberSupport2Id = 12;
+            int surfaceSupport1Id = 13;
+            int surfaceSupport2Id = 14;
+            int caseId = 1;
+
+            soapClient.begin_modification("set analysis case");
+
+            if (count > 0)
+            {
+                // create materials
+                soapClient.create_material(material1Id);
+                soapClient.set_material_name(material1Id, materialSteel);
+                soapClient.create_material(material2Id);
+                soapClient.set_material_name(material2Id, materialTimber);
+
+                // create sections
+                soapClient.create_section(section1Id);
+                soapClient.set_section_name(section1Id, sectionI);
+                soapClient.create_section(section2Id);
+                soapClient.set_section_name(section2Id, sectionRectangle);
+
+                // create surfaces
+                SetSurface(2);
+
+                // create nodal supports
+                soapClient.create_nodal_support(nodalSupport1Id);
+                soapClient.set_nodal_support_nodes(nodalSupport1Id, new int[] { 1 });
+                soapClient.create_nodal_support(nodalSupport2Id);
+                soapClient.set_nodal_support_nodes(nodalSupport2Id, new int[] { 3 });
+
+                // create line supports
+                soapClient.create_line_support(lineSupport1Id);
+                soapClient.set_line_support_lines(lineSupport1Id, new int[] { 1 });
+                soapClient.create_line_support(lineSupport2Id);
+                soapClient.set_line_support_lines(lineSupport2Id, new int[] { 3 });
+
+                // create member hinges
+                soapClient.create_member_hinge(memberHinge1Id);
+                soapClient.create_member_hinge(memberHinge2Id);
+
+                // create line hinges
+                soapClient.create_line_hinge(lineHinge1Id);
+                soapClient.create_line_hinge(lineHinge2Id);
+
+                // create members
+                soapClient.create_member(member1Id);
+                soapClient.set_member_line(member1Id, 1);
+                soapClient.set_member_member_hinge_start(member1Id, memberHinge1Id);
+                soapClient.create_member(member2Id);
+                soapClient.set_member_line(member2Id, 2);
+                soapClient.set_member_member_hinge_start(member2Id, memberHinge2Id);
+
+                // create member support
+                soapClient.create_member_support(memberSupport1Id);
+                soapClient.set_member_support_members(memberSupport1Id, new int[] { 1 });
+                soapClient.create_member_support(memberSupport2Id);
+                soapClient.set_member_support_members(memberSupport2Id, new int[] { 2 });
+
+                // create surface support
+                soapClient.create_surface_support(surfaceSupport1Id);
+                soapClient.set_surface_support_surfaces(surfaceSupport1Id, new int[] { 1 });
+                soapClient.create_surface_support(surfaceSupport2Id);
+                soapClient.set_surface_support_surfaces(surfaceSupport2Id, new int[] { 2 });
+            }
+
+            // create analysis case
+            soapClient.create_analysis_case(caseId);
+
+            if (count > 0)
+            {
+                SetMaterialFactors(caseId, count);
+                SetSectionFactors(caseId, count);
+                SetNodalSupportFactors(caseId, count);
+                SetLineSupportFactors(caseId, count);
+                SetMemberSupportFactors(caseId, count);
+                SetSurfaceSupportFactors(caseId, count);
+            }
+
+            soapClient.finish_modification();
+            return caseId;
+        }
+
+        /// <summary>
+        /// Sets individual modify stiffness factors for materials.
+        /// </summary>
+        /// <param name="caseId">Analysis case id.</param>
+        /// <param name="count">Count of material factors to be written.</param>
+        private static void SetMaterialFactors(int caseId, int count)
+        {
+            if (count > 0)
+            {
+                // define individual modify stiffness factors of materials
+                analysis_case_individual_modify_stiffness_factors_of_materials_table[] factors = new analysis_case_individual_modify_stiffness_factors_of_materials_table[count];
+                factors[0] = new analysis_case_individual_modify_stiffness_factors_of_materials_table();
+                factors[0].id = 101; //read only attribute
+                factors[0].material_name = "test material 1"; //read only attribute
+                factors[0].E_and_G = 1.11;
+
+                if (count > 1)
+                {
+                    factors[1] = new analysis_case_individual_modify_stiffness_factors_of_materials_table();
+                    factors[1].id = 102; //read only attribute
+                    factors[1].material_name = "test material 2"; //read only attribute
+                    factors[1].E_and_G = 1.21;
+                }
+
+                if (count > 2)
+                {
+                    factors[2] = new analysis_case_individual_modify_stiffness_factors_of_materials_table();
+                    factors[2].id = 103; //read only attribute
+                    factors[2].material_name = "test material 3"; //read only attribute
+                    factors[2].E_and_G = 1.31;
+                }
+
+                soapClient.set_analysis_case_modify_stiffness_of_materials_enabled(caseId, true);
+                soapClient.set_analysis_case_multiply_stiffness_of_materials_with_same_factor(caseId, analysis_case_multiply_stiffness_of_materials_with_same_factor.MODIFY_STIFFNESSES_TYPE_INDIVIDUALLY);
+                soapClient.set_analysis_case_individual_modify_stiffness_factors_of_materials_table(caseId, factors);
+            }
+        }
+
+        /// <summary>
+        /// Sets individual modify stiffness factors for sections.
+        /// </summary>
+        /// <param name="caseId">Analysis case id.</param>
+        /// <param name="count">Count of section factors to be written.</param>
+        private static void SetSectionFactors(int caseId, int count)
+        {
+            if (count > 0)
+            {
+                // define individual modify stiffness factors for sections
+                analysis_case_individual_modify_stiffness_factors_of_sections_table[] factors = new analysis_case_individual_modify_stiffness_factors_of_sections_table[count];
+                factors[0] = new analysis_case_individual_modify_stiffness_factors_of_sections_table();
+                factors[0].id = 201; //read only attribute
+                factors[0].section_name = "test section 1"; //read only attribute
+                factors[0].A = 2.11;
+                factors[0].A_y = 2.12;
+                factors[0].A_z = 2.13;
+                factors[0].J = 2.14;
+                factors[0].I_y = 2.15;
+                factors[0].I_z = 2.16;
+
+                if (count > 1)
+                {
+                    factors[1] = new analysis_case_individual_modify_stiffness_factors_of_sections_table();
+                    factors[1].id = 202; //read only attribute
+                    factors[1].section_name = "test section 2"; //read only attribute
+                    factors[1].A = 2.21;
+                    factors[1].A_y = 2.22;
+                    factors[1].A_z = 2.23;
+                    factors[1].J = 2.24;
+                    factors[1].I_y = 2.25;
+                    factors[1].I_z = 2.26;
+                }
+
+                if (count > 2)
+                {
+                    factors[2] = new analysis_case_individual_modify_stiffness_factors_of_sections_table();
+                    factors[2].id = 203; //read only attribute
+                    factors[2].section_name = "test section 3"; //read only attribute
+                    factors[2].A = 2.31;
+                    factors[2].A_y = 2.32;
+                    factors[2].A_z = 2.33;
+                    factors[2].J = 2.34;
+                    factors[2].I_y = 2.35;
+                    factors[2].I_z = 2.36;
+                }
+
+                soapClient.set_analysis_case_modify_stiffness_of_sections_enabled(caseId, true);
+                soapClient.set_analysis_case_multiply_stiffness_of_sections_with_same_factor(caseId, analysis_case_multiply_stiffness_of_sections_with_same_factor.MODIFY_STIFFNESSES_TYPE_INDIVIDUALLY);
+                soapClient.set_analysis_case_individual_modify_stiffness_factors_of_sections_table(caseId, factors);
+            }
+        }
+
+        /// <summary>
+        /// Sets individual modify stiffness factors for nodal supports.
+        /// </summary>
+        /// <param name="caseId">Analysis case id.</param>
+        /// <param name="count">Count of nodal support factors to be written.</param>
+        private static void SetNodalSupportFactors(int caseId, int count)
+        {
+            if (count > 0)
+            {
+                // define individual modify stiffness factors for nodal support
+                analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table[] factors = new analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table[count];
+                factors[0] = new analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table();
+                factors[0].id = 501; //read only attribute
+                factors[0].C_u_X = 5.11;
+                factors[0].C_u_Y = 5.12;
+                factors[0].C_u_Z = 5.13;
+                factors[0].C_phi_x = 5.14;
+                factors[0].C_phi_Y = 5.15;
+                factors[0].C_phi_Z = 5.16;
+
+                if (count > 1)
+                {
+                    factors[1] = new analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table();
+                    factors[1].id = 502; //read only attribute
+                    factors[1].C_u_X = 5.21;
+                    factors[1].C_u_Y = 5.22;
+                    factors[1].C_u_Z = 5.23;
+                    factors[1].C_phi_x = 5.24;
+                    factors[1].C_phi_Y = 5.25;
+                    factors[1].C_phi_Z = 5.26;
+                }
+
+                if (count > 2)
+                {
+                    factors[2] = new analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table();
+                    factors[2].id = 503; //read only attribute
+                    factors[2].C_u_X = 5.31;
+                    factors[2].C_u_Y = 5.32;
+                    factors[2].C_u_Z = 5.33;
+                    factors[2].C_phi_x = 5.34;
+                    factors[2].C_phi_Y = 5.35;
+                    factors[2].C_phi_Z = 5.36;
+                }
+
+                soapClient.set_analysis_case_modify_stiffness_of_nodal_supports_enabled(caseId, true);
+                soapClient.set_analysis_case_multiply_stiffness_of_nodal_supports_with_same_factor(caseId, analysis_case_multiply_stiffness_of_nodal_supports_with_same_factor.MODIFY_STIFFNESSES_TYPE_INDIVIDUALLY);
+                soapClient.set_analysis_case_individual_modify_stiffness_factors_of_nodal_supports_table(caseId, factors);
+            }
+        }
+
+        /// <summary>
+        /// Sets individual modify stiffness factors for line supports.
+        /// </summary>
+        /// <param name="caseId">Analysis case id.</param>
+        /// <param name="count">Count of line support factors to be written.</param>
+        private static void SetLineSupportFactors(int caseId, int count)
+        {
+            if (count > 0)
+            {
+                // define individual modify stiffness factors for line support
+                analysis_case_individual_modify_stiffness_factors_of_line_supports_table[] factors = new analysis_case_individual_modify_stiffness_factors_of_line_supports_table[count];
+                factors[0] = new analysis_case_individual_modify_stiffness_factors_of_line_supports_table();
+                factors[0].id = 601; //read only attribute
+                factors[0].C_u_X = 6.11;
+                factors[0].C_u_Y = 6.12;
+                factors[0].C_u_Z = 6.13;
+                factors[0].C_phi_x = 6.14;
+                factors[0].C_phi_Y = 6.15;
+                factors[0].C_phi_Z = 6.16;
+
+                if (count > 1)
+                {
+                    factors[1] = new analysis_case_individual_modify_stiffness_factors_of_line_supports_table();
+                    factors[1].id = 602; //read only attribute
+                    factors[1].C_u_X = 6.21;
+                    factors[1].C_u_Y = 6.22;
+                    factors[1].C_u_Z = 6.23;
+                    factors[1].C_phi_x = 6.24;
+                    factors[1].C_phi_Y = 6.25;
+                    factors[1].C_phi_Z = 6.26;
+                }
+
+                if (count > 2)
+                {
+                    factors[2] = new analysis_case_individual_modify_stiffness_factors_of_line_supports_table();
+                    factors[2].id = 603; //read only attribute
+                    factors[2].C_u_X = 6.31;
+                    factors[2].C_u_Y = 6.32;
+                    factors[2].C_u_Z = 6.33;
+                    factors[2].C_phi_x = 6.34;
+                    factors[2].C_phi_Y = 6.35;
+                    factors[2].C_phi_Z = 6.36;
+                }
+
+                soapClient.set_analysis_case_modify_stiffness_of_line_supports_enabled(caseId, true);
+                soapClient.set_analysis_case_multiply_stiffness_of_line_supports_with_same_factor(caseId, analysis_case_multiply_stiffness_of_line_supports_with_same_factor.MODIFY_STIFFNESSES_TYPE_INDIVIDUALLY);
+                soapClient.set_analysis_case_individual_modify_stiffness_factors_of_line_supports_table(caseId, factors);
+            }
+        }
+
+        /// <summary>
+        /// Sets individual modify stiffness factors for member supports.
+        /// </summary>
+        /// <param name="caseId">Analysis case id.</param>
+        /// <param name="count">Count of member support factors to be written.</param>
+        private static void SetMemberSupportFactors(int caseId, int count)
+        {
+            if (count > 0)
+            {
+                // define individual modify stiffness factors for member support
+                analysis_case_individual_modify_stiffness_factors_of_member_supports_table[] factors = new analysis_case_individual_modify_stiffness_factors_of_member_supports_table[count];
+                factors[0] = new analysis_case_individual_modify_stiffness_factors_of_member_supports_table();
+                factors[0].id = 701; //read only attribute
+                factors[0].C_u_x = 7.11;
+                factors[0].C_u_y = 7.12;
+                factors[0].C_u_z = 7.13;
+                factors[0].C_s_x = 7.14;
+                factors[0].C_s_y = 7.15;
+                factors[0].C_s_z = 7.16;
+                factors[0].C_phi_x = 7.17;
+
+                if (count > 1)
+                {
+                    factors[1] = new analysis_case_individual_modify_stiffness_factors_of_member_supports_table();
+                    factors[1].id = 702; //read only attribute
+                    factors[1].C_u_x = 7.21;
+                    factors[1].C_u_y = 7.22;
+                    factors[1].C_u_z = 7.23;
+                    factors[1].C_s_x = 7.24;
+                    factors[1].C_s_y = 7.25;
+                    factors[1].C_s_z = 7.26;
+                    factors[1].C_phi_x = 7.27;
+                }
+
+                if (count > 2)
+                {
+                    factors[2] = new analysis_case_individual_modify_stiffness_factors_of_member_supports_table();
+                    factors[2].id = 703; //read only attribute
+                    factors[2].C_u_x = 7.31;
+                    factors[2].C_u_y = 7.32;
+                    factors[2].C_u_z = 7.33;
+                    factors[2].C_s_x = 7.34;
+                    factors[2].C_s_y = 7.35;
+                    factors[2].C_s_z = 7.36;
+                    factors[2].C_phi_x = 7.37;
+                }
+
+                soapClient.set_analysis_case_modify_stiffness_of_member_supports_enabled(caseId, true);
+                soapClient.set_analysis_case_multiply_stiffness_of_member_supports_with_same_factor(caseId, analysis_case_multiply_stiffness_of_member_supports_with_same_factor.MODIFY_STIFFNESSES_TYPE_INDIVIDUALLY);
+                soapClient.set_analysis_case_individual_modify_stiffness_factors_of_member_supports_table(caseId, factors);
+            }
+        }
+
+        /// <summary>
+        /// Sets individual modify stiffness factors for surface supports.
+        /// </summary>
+        /// <param name="caseId">Analysis case id.</param>
+        /// <param name="count">Count of surface support factors to be written.</param>
+        private static void SetSurfaceSupportFactors(int caseId, int count)
+        {
+            if (count > 0)
+            {
+                // define individual modify stiffness factors for surface support
+                analysis_case_individual_modify_stiffness_factors_of_surface_supports_table[] factors = new analysis_case_individual_modify_stiffness_factors_of_surface_supports_table[count];
+                factors[0] = new analysis_case_individual_modify_stiffness_factors_of_surface_supports_table();
+                factors[0].id = 801; //read only attribute
+                factors[0].C_u_X = 8.11;
+                factors[0].C_u_Y = 8.12;
+                factors[0].C_u_Z = 8.13;
+                factors[0].C_v_xz = 8.14;
+                factors[0].C_v_yz = 8.15;
+
+                if (count > 1)
+                {
+                    factors[1] = new analysis_case_individual_modify_stiffness_factors_of_surface_supports_table();
+                    factors[1].id = 802; //read only attribute
+                    factors[1].C_u_X = 8.21;
+                    factors[1].C_u_Y = 8.22;
+                    factors[1].C_u_Z = 8.23;
+                    factors[1].C_v_xz = 8.24;
+                    factors[1].C_v_yz = 8.25;
+                }
+
+                if (count > 2)
+                {
+                    factors[2] = new analysis_case_individual_modify_stiffness_factors_of_surface_supports_table();
+                    factors[2].id = 803; //read only attribute
+                    factors[2].C_u_X = 8.31;
+                    factors[2].C_u_Y = 8.32;
+                    factors[2].C_u_Z = 8.33;
+                    factors[2].C_v_xz = 8.34;
+                    factors[2].C_v_yz = 8.35;
+                }
+
+                soapClient.set_analysis_case_modify_stiffness_of_surface_supports_enabled(caseId, true);
+                soapClient.set_analysis_case_multiply_stiffness_of_surface_supports_with_same_factor(caseId, analysis_case_multiply_stiffness_of_surface_supports_with_same_factor.MODIFY_STIFFNESSES_TYPE_INDIVIDUALLY);
+                soapClient.set_analysis_case_individual_modify_stiffness_factors_of_surface_supports_table(caseId, factors);
+            }
+        }
+
+        /// <summary>
+        /// Deletes all analysis cases.
+        /// </summary>
+        private static void DeleteAnalysisCases()
+        {
+            soapClient.begin_modification("delete analysis cases");
+
+            int[] numbers = soapClient.get_all_analysis_case_numbers();
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_analysis_case(id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_analysis_case_numbers();
+
+            if (numbers.Count() != 0)
+            {
+                throw new Exception("Analysis cases are not empty.");
+            }
+        }
+        #endregion Analysis Cases
+
+        #region Load Cases
+        /// <summary>
+        /// Tests load cases.
+        /// </summary>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestLoadCases(bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- LOAD CASES ---");
+
+            DeleteAll();
+
+            Console.WriteLine("set/get load cases...");
+
+            int caseId = SetLoadCase(0, false);
+            SetLoadCase(0, true);
+            GetLoadCases();
+
+            Console.WriteLine("done" + Environment.NewLine);
+
+            TestNodalLoads(caseId, deleteAfterTest);
+            TestLineLoads(caseId, deleteAfterTest);
+            TestMemberLoads(caseId, deleteAfterTest);
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete cases...");
+
+                DeleteLoadCases();
+
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Gets all load cases.
+        /// </summary>
+        private static void GetLoadCases()
+        {
+            int[] numbers = soapClient.get_all_load_case_numbers();
+
+            foreach (int id in numbers)
+            {
+                load_case_all_attributes attributes = soapClient.get_load_case_all_attributes(id);
+            }
+        }
+
+        /// <summary>
+        /// Sets load case.
+        /// </summary>
+        /// <param name="loadCaseId">Load case user id. If zero next free id will be used.</param>
+        /// <param name="withImperfectionCase">Create load case with imperfections?</param>
+        /// <returns>User id of the load case.</returns>
+        private static int SetLoadCase(int loadCaseId = 0, bool withImperfectionCase = false)
+        {
+            soapClient.begin_modification("set load case");
+
+            int analysisCaseId = SetAnalysisCase();
+
+            if (loadCaseId == 0)
+            {
+                loadCaseId = soapClient.new_load_case();
+            }
+            else
+            {
+                soapClient.create_load_case(loadCaseId);
+            }
+
+            soapClient.set_load_case_name(loadCaseId, $"load case {loadCaseId} name");
+            soapClient.set_load_case_to_solve(loadCaseId, true);
+            soapClient.set_load_case_comment(loadCaseId, $"load case {loadCaseId} comment");
+
+            soapClient.set_load_case_self_weight_active(loadCaseId, true);
+            soapClient.set_load_case_self_weight_factors(loadCaseId, new vector_3d().SetCoordinates(0.1, 0.2, 0.3));
+
+            soapClient.set_load_case_analysis_case(loadCaseId, analysisCaseId);
+
+            if (withImperfectionCase)
+            {
+                int imperfectionCaseId = SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY);
+
+                soapClient.set_load_case_consider_imperfection(loadCaseId, true);
+                soapClient.set_load_case_imperfection_case(loadCaseId, imperfectionCaseId);
+            }
+
+            soapClient.finish_modification();
+            return loadCaseId;
+        }
+
+        /// <summary>
+        /// Deletes all load cases.
+        /// </summary>
+        private static void DeleteLoadCases()
+        {
+            soapClient.begin_modification("delete load cases");
+
+            int[] numbers = soapClient.get_all_load_case_numbers();
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_load_case(id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_load_case_numbers();
+
+            if (numbers.Count() != 0)
+            {
+                throw new Exception("Load cases are not empty.");
+            }
+        }
+
+        #region Nodal Loads
+
+        /// <summary>
+        /// Tests common nodal loads functions.
+        /// </summary>
+        /// <param name="caseId">Load case user id.</param>
+        private static void TestCommonNodalLoads(int caseId)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.Write("new object...");
+
+            int load1 = soapClient.new_nodal_load(caseId);
+            int count = soapClient.get_nodal_load_count(caseId);
+            int[] numbers = soapClient.get_all_nodal_load_numbers(caseId);
+            int nth = soapClient.get_nth_nodal_load_number(caseId, 0);
+
+            if (numbers.Count() != count && count != 1)
+            {
+                throw new Exception("Count does not match.");
+            }
+
+            if (numbers[0] != load1)
+            {
+                throw new Exception("Numbers does not match.");
+            }
+
+            if (nth != load1)
+            {
+                throw new Exception("Number on index does not match.");
+            }
+
+            Console.WriteLine("done");
+            Console.Write("create object...");
+
+            int load2 = 4;
+            soapClient.create_nodal_load(caseId, load2);
+            count = soapClient.get_nodal_load_count(caseId);
+            numbers = soapClient.get_all_nodal_load_numbers(caseId);
+            nth = soapClient.get_nth_nodal_load_number(caseId, 1);
+
+            if (numbers.Count() != count && count != 2)
+            {
+                throw new Exception("Count does not match.");
+            }
+
+            if (numbers[0] != load1 || numbers[1] != load2)
+            {
+                throw new Exception("Numbers does not match.");
+            }
+
+            if (nth != load2)
+            {
+                throw new Exception("Number on index does not match.");
+            }
+
+            Console.WriteLine("done");
+            Console.Write("delete nodal loads...");
+
+            soapClient.begin_modification("delete nodal loads");
+            soapClient.delete_nodal_load(caseId, load1);
+            soapClient.delete_nodal_load(caseId, load2);
+
+            if (soapClient.get_nodal_load_count(caseId) != 0)
+            {
+                throw new Exception("Deleted loads does not match.");
+            }
+
+            soapClient.finish_modification();
+
+            Console.WriteLine("done");
+            Console.Write("test not existing case...");
+
+            caseId = 9;
+
+            try
+            {
+                soapClient.new_nodal_load(caseId);
+                Console.WriteLine("No exception in new_nodal_load()!");
+
+                soapClient.get_nodal_load_count(caseId);
+                Console.WriteLine("No exception in get_nodal_load_count()!");
+
+                soapClient.get_all_nodal_load_numbers(caseId);
+                Console.WriteLine("No exception in get_all_nodal_load_numbers()!");
+
+                soapClient.get_nth_nodal_load_number(caseId, 0);
+                Console.WriteLine("No exception in get_nth_nodal_load_number()!");
+
+                soapClient.delete_nodal_load(caseId, 0);
+                Console.WriteLine("No exception in delete_nodal_load()!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("failed");
+                return;
+            }
+
+            Console.WriteLine("done");
+        }
+
+        #endregion Nodal Loads
+
+        #region Line Loads
+        /// <summary>
+        /// Tests line loads.
+        /// </summary>
+        /// <param name="caseId">Load case user id. If zero then new load case is created.</param>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestLineLoads(int caseId = 0, bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- LINE LOADS ---");
+
+            if (caseId == 0)
+            {
+                Console.Write("create load case...");
+
+                caseId = SetLoadCase();
+
+                Console.WriteLine("...done");
+            }
+
+            Console.WriteLine("set/get...");
+
+            int loadId = 0;
+            loadId = SetLineLoad(caseId, 0, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 4);
+            GetLineLoads(caseId, loadId, 4);
+            loadId = SetLineLoad(caseId, 0, line_load_load_type.LOAD_TYPE_FORCE, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetLineLoads(caseId, loadId, 4);
+            loadId = SetLineLoad(caseId, 0, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 3);
+            GetLineLoads(caseId, loadId, 3);
+            loadId = SetLineLoad(caseId, 0, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 3);
+            GetLineLoads(caseId, loadId, 3);
+
+            Console.WriteLine("...done");
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete...");
+
+                DeleteNodalLoads(caseId);
+
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Get line loads.
+        /// </summary>
+        /// <param name="caseId">Load case user id.</param>
+        /// <param name="loadId">Load user id.</param>
+        /// <param name="tableRowCount">Count of rows in the varying load table.</param>
+        private static void GetLineLoads(int caseId, int loadId = 0, int tableRowCount = 0)
+        {
+            int[] numbers = null;
+
+            if (loadId > 0)
+            {
+                numbers = new int[] { loadId };
+            }
+            else
+            {
+                numbers = soapClient.get_all_line_load_numbers(caseId);
+            }
+
+            foreach (int id in numbers)
+            {
+                line_load_all_attributes attributes = soapClient.get_line_load_all_attributes(caseId, id);
+
+                if (attributes.load_distribution == line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING ||
+                    attributes.load_distribution == line_load_load_distribution.LOAD_DISTRIBUTION_VARYING)
+                {
+                    line_load_varying_load_parameters[] table = soapClient.get_line_load_varying_load_parameters(caseId, id);
+
+                    if (table.Count() != tableRowCount)
+                    {
+                        throw new Exception($"Count of items does not match - required = {tableRowCount} : read = {table.Count()}");
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets line load.
+        /// </summary>
+        /// <param name="caseId">Load case user id.</param>
+        /// <param name="loadId">Load user id. If zero then new load is created.</param>
+        /// <param name="type">Type of line load.</param>
+        /// <param name="distribution">Distribution of line load.</param>
+        /// <param name="tableRowCount">Count of rows in the varying load table.</param>
+        /// <returns>Id of line load.</returns>
+        private static int SetLineLoad(int caseId, int loadId, line_load_load_type type, line_load_load_distribution distribution, int tableRowCount = 0)
+        {
+            soapClient.begin_modification("set line load");
+
+            if (loadId == 0)
+            {
+                // create nodes
+                int node1Id = soapClient.new_node();
+                int node2Id = soapClient.new_node();
+
+                // create line
+                int lineId = soapClient.new_line();
+                soapClient.set_line_definition_nodes(lineId, new int[] { node1Id, node2Id });
+
+                // create line load
+                loadId = soapClient.new_line_load(caseId);
+                soapClient.set_node_coordinates(node1Id, new vector_3d().SetCoordinates(1.0, -loadId, 0));
+                soapClient.set_node_coordinates(node2Id, new vector_3d().SetCoordinates(5.0, -loadId, 0));
+                soapClient.set_line_load_lines(caseId, loadId, new int[] { lineId });
+            }
+
+            soapClient.set_line_load_load_type(caseId, loadId, type);
+            soapClient.set_line_load_load_distribution(caseId, loadId, distribution);
+
+            if (distribution == line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING || distribution == line_load_load_distribution.LOAD_DISTRIBUTION_VARYING)
+            {
+                line_load_varying_load_parameters[] table = new line_load_varying_load_parameters[tableRowCount];
+
+                for (int i = 0; i < tableRowCount; i++)
+                {
+                    table[i] = new line_load_varying_load_parameters();
+                    table[i].id = i + 1;
+                    table[i].distance = i * 1.1;
+                    table[i].delta_distance = i == 0 ? i * 0.1 : 1 + (i * 0.1);
+                    table[i].magnitude = (i + 1) * 1000;
+                    table[i].note = $"Note {i + 1}";
+                }
+
+                soapClient.set_line_load_varying_load_parameters(caseId, loadId, table);
+            }
+
+            soapClient.finish_modification();
+            return loadId;
+        }
+
+        /// <summary>
+        /// Deletes all line loads.
+        /// </summary>
+        /// <param name="caseId">Load case user id. If zero then all line loads in all load cases are deleted.</param>
+        private static void DeleteLineLoads(int caseId)
+        {
+            soapClient.begin_modification("delete line loads");
+
+            try
+            {
+                int[] caseNumbers = null;
+
+                if (caseId > 0)
+                {
+                    caseNumbers = new int[] { caseId };
+                }
+                else
+                {
+                    caseNumbers = soapClient.get_all_load_case_numbers();
+                }
+
+                foreach (int id in caseNumbers)
+                {
+                    int[] loadNumbers = soapClient.get_all_line_load_numbers(id);
+
+                    foreach (int loadId in loadNumbers)
+                    {
+                        line_load_load_distribution distribution = soapClient.get_line_load_load_distribution(id, loadId);
+
+                        if (distribution == line_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING || distribution == line_load_load_distribution.LOAD_DISTRIBUTION_VARYING)
+                        {
+                            soapClient.delete_line_load_varying_load_parameters(id, loadId);
+                        }
+
+                        line_load_varying_load_parameters[] table = soapClient.get_line_load_varying_load_parameters(id, loadId);
+
+                        if (table.Count() != 0)
+                        {
+                            throw new Exception("Line load varying load parameters are not empty.");
+                        }
+
+                        soapClient.delete_line_load(id, loadId);
+                    }
+
+                    if (soapClient.get_line_load_count(id) != 0)
+                    {
+                        throw new Exception("Line loads are not empty");
+                    }
+                }
+            }
+            finally
+            {
+                soapClient.finish_modification();
+            }
+        }
+        #endregion Line Loads
+
+        #region Member Loads
+        /// <summary>
+        /// Tests member loads.
+        /// </summary>
+        /// <param name="caseId">Load case user id. If zero then new load case is created.</param>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestMemberLoads(int caseId = 0, bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- MEMBER LOADS ---");
+
+            if (caseId == 0)
+            {
+                Console.Write("create load case...");
+
+                caseId = SetLoadCase();
+
+                Console.WriteLine("...done");
+            }
+
+            Console.WriteLine("set/get...");
+
+            int loadId = 0;
+            loadId = SetMemberLoad(caseId, 0, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING, 4);
+            GetMemberLoads(caseId, loadId, 4);
+            loadId = SetMemberLoad(caseId, 0, member_load_load_type.LOAD_TYPE_FORCE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetMemberLoads(caseId, loadId, 4);
+            loadId = SetMemberLoad(caseId, 0, member_load_load_type.LOAD_TYPE_TEMPERATURE, member_load_load_distribution.LOAD_DISTRIBUTION_VARYING, 4);
+            GetMemberLoads(caseId, loadId, 4);
+
+            Console.WriteLine("...done");
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete...");
+
+                DeleteNodalLoads(caseId);
+
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Get member loads.
+        /// </summary>
+        /// <param name="caseId">Load case user id.</param>
+        /// <param name="loadId">Load user id.</param>
+        /// <param name="tableRowCount">Count of rows in the varying load table.</param>
+        private static void GetMemberLoads(int caseId, int loadId = 0, int tableRowCount = 0)
+        {
+            int[] numbers = null;
+
+            if (loadId > 0)
+            {
+                numbers = new int[] { loadId };
+            }
+            else
+            {
+                numbers = soapClient.get_all_member_load_numbers(caseId);
+            }
+
+            foreach (int id in numbers)
+            {
+                member_load_all_attributes attributes = soapClient.get_member_load_all_attributes(caseId, id);
+
+                if (attributes.load_distribution == member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING ||
+                    attributes.load_distribution == member_load_load_distribution.LOAD_DISTRIBUTION_VARYING)
+                {
+                    member_load_varying_load_parameters[] table = soapClient.get_member_load_varying_load_parameters(caseId, id);
+
+                    if (table.Count() != tableRowCount)
+                    {
+                        throw new Exception($"Count of items does not match - required = {tableRowCount} : read = {table.Count()}");
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets member load.
+        /// </summary>
+        /// <param name="caseId">Load case user id.</param>
+        /// <param name="loadId">Load user id. If zero then new load is created.</param>
+        /// <param name="type">Type of member load.</param>
+        /// <param name="distribution">Distribution of member load.</param>
+        /// <param name="tableRowCount">Count of rows in the varying load table.</param>
+        /// <returns>Id of member load.</returns>
+        private static int SetMemberLoad(int caseId, int loadId, member_load_load_type type, member_load_load_distribution distribution, int tableRowCount = 0)
+        {
+            //...
+
+            soapClient.set_member_load_load_type(caseId, loadId, type);
+            soapClient.set_member_load_load_distribution(caseId, loadId, distribution);
+
+            if (distribution == member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING || distribution == member_load_load_distribution.LOAD_DISTRIBUTION_VARYING)
+            {
+                member_load_varying_load_parameters[] table = new member_load_varying_load_parameters[tableRowCount];
+
+                for (int i = 0; i < tableRowCount; i++)
+                {
+                    table[i] = new member_load_varying_load_parameters();
+                    table[i].id = i + 1;
+                    table[i].distance = i * 1.1;
+
+                    //table[i].delta_distance = i == 0 ? 0.1 : 1 + i * 0.1;
+
+                    table[i].magnitude = (i + 1) * 1000;
+                    table[i].magnitude_t_c = i * 10;
+                    table[i].magnitude_delta_t = i * 11;
+                    table[i].note = $"Note {i + 1}";
+                }
+
+                soapClient.set_member_load_varying_load_parameters(caseId, loadId, table);
+            }
+
+            soapClient.finish_modification();
+            return loadId;
+        }
+
+        /// <summary>
+        /// Deletes all member loads.
+        /// </summary>
+        /// <param name="caseId">Load case user id. If zero then all member loads in all load cases are deleted.</param>
+        private static void DeleteMemberLoads(int caseId)
+        {
+            soapClient.begin_modification("delete member loads");
+
+            try
+            {
+                int[] caseNumbers = null;
+
+                if (caseId > 0)
+                {
+                    caseNumbers = new int[] { caseId };
+                }
+                else
+                {
+                    caseNumbers = soapClient.get_all_load_case_numbers();
+                }
+
+                foreach (int id in caseNumbers)
+                {
+                    int[] loadNumbers = soapClient.get_all_member_load_numbers(id);
+
+                    foreach (int loadId in loadNumbers)
+                    {
+                        member_load_load_distribution distribution = soapClient.get_member_load_load_distribution(id, loadId);
+                        if (distribution == member_load_load_distribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING || distribution == member_load_load_distribution.LOAD_DISTRIBUTION_VARYING)
+                        {
+                            soapClient.delete_member_load_varying_load_parameters(id, loadId);
+                        }
+
+                        member_load_varying_load_parameters[] table = soapClient.get_member_load_varying_load_parameters(id, loadId);
+
+                        if (table.Count() != 0)
+                        {
+                            throw new Exception("Member load varying load parameters are not empty.");
+                        }
+
+                        soapClient.delete_member_load(id, loadId);
+                    }
+
+                    if (soapClient.get_member_load_count(id) != 0)
+                    {
+                        throw new Exception("Member loads are not empty");
+                    }
+                }
+            }
+            finally
+            {
+                soapClient.finish_modification();
+            }
+        }
+        #endregion Member Loads
+        #endregion Load Cases
+
+        #region Load Combinations
+        /// <summary>
+        /// Tests load combinations.
+        /// </summary>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestLoadCombinations(bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- LOAD COMBINATIONS ---");
+
+            DeleteAll();
+
+            Console.WriteLine("set/get load combinations...");
+
+            int combinationId = 0;
+            combinationId = SetLoadCombination(0, 4, false);
+            GetLoadCombination(combinationId, 4);
+            combinationId = SetLoadCombination(0, 5, true);
+            GetLoadCombination(combinationId, 5);
+
+            Console.WriteLine("done");
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete combinations...");
+
+                DeleteLoadCombinations();
+
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Gets all load combinations.
+        /// </summary>
+        /// <param name="combinationId">Load combination user id. If zero then gets all combinations.</param>
+        /// <param name="tableRowCount">Count of rows in the load cases table.</param>
+        private static void GetLoadCombination(int combinationId, int tableRowCount = 0)
+        {
+            int[] numbers = null;
+
+            if (combinationId > 0)
+            {
+                numbers = new int[] { combinationId };
+            }
+            else
+            {
+                numbers = soapClient.get_all_load_combination_numbers();
+                tableRowCount = 0;
+            }
+
+            foreach (int id in numbers)
+            {
+                load_combination_all_attributes attributes = soapClient.get_load_combination_all_attributes(id);
+                load_combination_items[] table = soapClient.get_load_combination_items(id);
+
+                if (tableRowCount > 0 && table.Count() != tableRowCount)
+                {
+                    throw new Exception($"Count of items does not match - required = {tableRowCount} : read = {table.Count()}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets load combination.
+        /// </summary>
+        /// <param name="combinationId">Load combination user id. If zero next free id will be used.</param>
+        /// <param name="caseCount">Count of load cases to be set to load combination.</param>
+        /// <param name="withImperfectionCase">Create load combination with imperfections?</param>
+        /// <returns>User id of the load combination.</returns>
+        private static int SetLoadCombination(int combinationId, int caseCount, bool withImperfectionCase = false)
+        {
+            soapClient.begin_modification("set load combination");
+
+            int analysisCaseId = SetAnalysisCase();
+
+            if (combinationId == 0)
+            {
+                combinationId = soapClient.new_load_combination();
+            }
+            else
+            {
+                soapClient.create_load_combination(combinationId);
+            }
+
+            soapClient.set_load_combination_user_defined_name_enabled(combinationId, true);
+            soapClient.set_load_combination_name(combinationId, $"load combination {combinationId} name");
+            soapClient.set_load_combination_to_solve(combinationId, true);
+            soapClient.set_load_combination_comment(combinationId, $"load combination {combinationId} comment");
+            soapClient.set_load_combination_analysis_case(combinationId, analysisCaseId);
+
+            load_combination_items[] table = new load_combination_items[caseCount];
+
+            for (int i = 0; i < caseCount; i++)
+            {
+                int caseId = i + 1;
+                SetLoadCase(caseId);
+
+                table[i] = new load_combination_items();
+                table[i].factor = 1.0 + (caseId / 10.0);
+                table[i].load_case = caseId;
+            }
+
+            soapClient.set_load_combination_items(combinationId, table);
+            soapClient.set_load_combination_analysis_case(combinationId, analysisCaseId);
+
+            if (withImperfectionCase)
+            {
+                int imperfectionCaseId = SetImperfectionCase(0, imperfection_case_type.IMPERFECTION_TYPE_LOCAL_IMPERFECTIONS_ONLY);
+
+                soapClient.set_load_combination_consider_imperfection(combinationId, true);
+                soapClient.set_load_combination_imperfection_case(combinationId, imperfectionCaseId);
+            }
+
+            soapClient.finish_modification();
+            return combinationId;
+        }
+
+        /// <summary>
+        /// Deletes all load combinations.
+        /// </summary>
+        private static void DeleteLoadCombinations()
+        {
+            soapClient.begin_modification("delete load combinations");
+
+            int[] numbers = soapClient.get_all_load_combination_numbers();
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_load_combination_items(id);
+                soapClient.delete_load_combination(id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_load_combination_numbers();
+
+            if (numbers.Count() != 0)
+            {
+                throw new Exception("Load combinations are not empty.");
+            }
+        }
+
+        #endregion Load Combinations
+
+        #region Limit States
+
+        /// <summary>
+        /// Tests limit states.
+        /// </summary>
+        /// <param name="deleteAfterTest">Delete objects after test.</param>
+        private static void TestLimitStates(bool deleteAfterTest = true)
+        {
+            Debug.Assert(soapClient != null, "Web service is not initialized.");
+            Console.WriteLine("--- LIMIT STATES ---");
+
+            DeleteAll();
+
+            Console.WriteLine("set/get limit states...");
+
+            int stateId = 0;
+            stateId = SetLimitState(0, 4);
+            GetLimitState(stateId, 4);
+            stateId = SetLimitState(0, 5);
+            GetLimitState(stateId, 5);
+
+            Console.WriteLine("done");
+
+            if (deleteAfterTest)
+            {
+                Console.Write("delete limit states...");
+
+                DeleteLimitStates();
+
+                Console.WriteLine("done");
+            }
+
+            Console.WriteLine(string.Empty);
+        }
+
+        /// <summary>
+        /// Gets all limit states.
+        /// </summary>
+        /// <param name="stateId">Limit state user id. If zero then gets all limit states.</param>
+        /// <param name="tableRowCount">Count of rows in the load cases table.</param>
+        private static void GetLimitState(int stateId, int tableRowCount = 0)
+        {
+            int[] numbers = null;
+
+            if (stateId > 0)
+            {
+                numbers = new int[] { stateId };
+            }
+            else
+            {
+                numbers = soapClient.get_all_limit_state_numbers();
+                tableRowCount = 0;
+            }
+
+            foreach (int id in numbers)
+            {
+                limit_state_all_attributes attributes = soapClient.get_limit_state_all_attributes(id);
+                int[] table = soapClient.get_limit_state_case_objects(id);
+
+                if (tableRowCount > 0 && table.Count() != tableRowCount)
+                {
+                    throw new Exception($"Count of items does not match - required = {tableRowCount} : read = {table.Count()}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets limit state.
+        /// </summary>
+        /// <param name="stateId">Limit state user id. If zero next free id will be used.</param>
+        /// <param name="caseCount">Count of load cases to be set to limit state.</param>
+        /// <returns>User id of the limit state.</returns>
+        private static int SetLimitState(int stateId, int caseCount)
+        {
+            soapClient.begin_modification("set limit state");
+
+            if (stateId == 0)
+            {
+                stateId = soapClient.new_limit_state();
+            }
+            else
+            {
+                soapClient.create_limit_state(stateId);
+            }
+
+            soapClient.set_limit_state_user_defined_name_enabled(stateId, true);
+            soapClient.set_limit_state_name(stateId, $"limit state {stateId} name");
+            soapClient.set_limit_state_comment(stateId, $"limit state {stateId} comment");
+
+            int[] table = new int[caseCount];
+
+            for (int i = 0; i < caseCount; i++)
+            {
+                table[i] = i + 1;
+                SetLoadCase(table[i]);
+            }
+
+            soapClient.set_limit_state_case_objects(stateId, table);
+
+            soapClient.finish_modification();
+            return stateId;
+        }
+
+        /// <summary>
+        /// Deletes all limit states.
+        /// </summary>
+        private static void DeleteLimitStates()
+        {
+            soapClient.begin_modification("delete limit states");
+
+            int[] numbers = soapClient.get_all_limit_state_numbers();
+
+            foreach (int id in numbers)
+            {
+                soapClient.delete_limit_state_case_objects(id);
+                soapClient.delete_limit_state(id);
+            }
+
+            soapClient.finish_modification();
+
+            numbers = soapClient.get_all_limit_state_numbers();
+
+            if (numbers.Count() != 0)
+            {
+                throw new Exception("Load limit states are not empty.");
+            }
+        }
+        #endregion Limit States
+        #endregion Loads
+
+        #region Test Models
+        private static void Rfem5ReadNodes()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModel model = System.Runtime.InteropServices.Marshal.GetActiveObject("RFEM5.Model") as global::Dlubal.RFEM5.IModel;
+            model.GetApplication().LockLicense();
+
+            stopWatch.Stop();
+            Console.WriteLine("Initialize COM server: " + stopWatch.Elapsed);
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModelData data = model.GetModelData();
+
+            int count = data.GetNodeCount();
+
+            List<global::Dlubal.RFEM5.Node> nodes = new List<global::Dlubal.RFEM5.Node>(count);
+
+            for (int i = 0; i < count; i++)
+            {
+                nodes.Add(data.GetNode(i, global::Dlubal.RFEM5.ItemAt.AtIndex).GetData());
+            }
+
+            stopWatch.Stop();
+            Console.WriteLine($"Reading {count} nodes one by one: {stopWatch.Elapsed - timeSpanLast}");
+            Console.WriteLine((count / (stopWatch.Elapsed - timeSpanLast).TotalSeconds) + " nodes per second");
+            Console.WriteLine(((stopWatch.Elapsed - timeSpanLast).TotalMilliseconds / count) + " milliseconds for one node");
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data = null;
+            model.GetApplication().UnlockLicense();
+            model = null;
+
+            System.GC.Collect();
+            System.GC.WaitForPendingFinalizers();
+
+            stopWatch.Stop();
+            Console.WriteLine("Release COM server: " + (stopWatch.Elapsed - timeSpanLast));
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem5ReadNodesBatch()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModel model = System.Runtime.InteropServices.Marshal.GetActiveObject("RFEM5.Model") as global::Dlubal.RFEM5.IModel;
+            model.GetApplication().LockLicense();
+
+            stopWatch.Stop();
+            Console.WriteLine("Initialize COM server: " + stopWatch.Elapsed);
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModelData data = model.GetModelData();
+            global::Dlubal.RFEM5.Node[] nodes = data.GetNodes();
+
+            stopWatch.Stop();
+            Console.WriteLine($"Reading {nodes.Count()} nodes at once: {stopWatch.Elapsed - timeSpanLast}");
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data = null;
+            model.GetApplication().UnlockLicense();
+            model = null;
+
+            System.GC.Collect();
+            System.GC.WaitForPendingFinalizers();
+
+            stopWatch.Stop();
+            Console.WriteLine("Release COM server: " + (stopWatch.Elapsed - timeSpanLast));
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem5WriteNodes()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+
+            int count = partCount * partCount * partCount;
+
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModel model = System.Runtime.InteropServices.Marshal.GetActiveObject("RFEM5.Model") as global::Dlubal.RFEM5.IModel;
+            model.GetApplication().LockLicense();
+
+            stopWatch.Stop();
+            Console.WriteLine("Initialize COM server: " + stopWatch.Elapsed);
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModelData data = model.GetModelData();
+            data.PrepareModification();
+
+            stopWatch.Stop();
+            Console.WriteLine("Begin modification: " + (stopWatch.Elapsed - timeSpanLast));
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            for (int i = 0; i < partCount; i++)
+            {
+                for (int j = 0; j < partCount; j++)
+                {
+                    for (int k = 0; k < partCount; k++)
+                    {
+                        global::Dlubal.RFEM5.Node node = new global::Dlubal.RFEM5.Node
+                        {
+                            X = i * length,
+                            Y = j * width,
+                            Z = k * height
+                        };
+
+                        data.SetNode(node);
+                    }
+                }
+            }
+
+            stopWatch.Stop();
+            Console.WriteLine($"Writing {count} nodes: {stopWatch.Elapsed - timeSpanLast}");
+            Console.WriteLine((partCount * partCount * partCount / (stopWatch.Elapsed - timeSpanLast).TotalSeconds) + " nodes per second");
+            Console.WriteLine(((stopWatch.Elapsed - timeSpanLast).TotalMilliseconds / partCount / partCount / partCount) + " milliseconds for one node");
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data.FinishModification();
+
+            stopWatch.Stop();
+            Console.WriteLine("Finish modification: " + (stopWatch.Elapsed - timeSpanLast));
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data = null;
+            model.GetApplication().UnlockLicense();
+            model = null;
+
+            System.GC.Collect();
+            System.GC.WaitForPendingFinalizers();
+
+            stopWatch.Stop();
+            Console.WriteLine("Release COM server: " + (stopWatch.Elapsed - timeSpanLast));
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem5WriteNodesBatch()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+
+            int count = partCount * partCount * partCount;
+
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModel model = System.Runtime.InteropServices.Marshal.GetActiveObject("RFEM5.Model") as global::Dlubal.RFEM5.IModel;
+            model.GetApplication().LockLicense();
+
+            stopWatch.Stop();
+            Console.WriteLine("Initialize COM server: " + stopWatch.Elapsed);
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            global::Dlubal.RFEM5.IModelData data = model.GetModelData();
+            data.PrepareModification();
+
+            stopWatch.Stop();
+            Console.WriteLine("Begin modification: " + (stopWatch.Elapsed - timeSpanLast));
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            List<global::Dlubal.RFEM5.Node> nodes = new List<global::Dlubal.RFEM5.Node>(count);
+
+            for (int i = 0; i < partCount; i++)
+            {
+                for (int j = 0; j < partCount; j++)
+                {
+                    for (int k = 0; k < partCount; k++)
+                    {
+                        global::Dlubal.RFEM5.Node node = new global::Dlubal.RFEM5.Node
+                        {
+                            X = i * length,
+                            Y = j * width,
+                            Z = k * height
+                        };
+
+                        nodes.Add(node);
+                    }
+                }
+            }
+
+            stopWatch.Stop();
+            Console.WriteLine($"Preparing {count} nodes: {stopWatch.Elapsed - timeSpanLast}");
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data.SetNodes(nodes.ToArray());
+
+            stopWatch.Stop();
+            Console.WriteLine($"Writing {count} nodes: {stopWatch.Elapsed - timeSpanLast}");
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data.FinishModification();
+
+            stopWatch.Stop();
+            Console.WriteLine("Finish modification: " + (stopWatch.Elapsed - timeSpanLast));
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            data = null;
+            model.GetApplication().UnlockLicense();
+            model = null;
+
+            System.GC.Collect();
+            System.GC.WaitForPendingFinalizers();
+
+            stopWatch.Stop();
+            Console.WriteLine("Release COM server: " + (stopWatch.Elapsed - timeSpanLast));
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem6ReadNodes1()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+            stopWatch.Start();
+
+            soapClient = new RfemSoapPortTypeClient();
+
+            stopWatch.Stop();
+            Console.WriteLine("Create instance of SOAP WS client: " + stopWatch.Elapsed);
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            int count = soapClient.get_node_count();
+            int id = 0;
+            node_all_attributes node;
+
+            for (int i = 0; i < count; i++)
+            {
+                id = soapClient.get_nth_node_number(i);
+                node = soapClient.get_node_all_attributes(id);
+            }
+
+            stopWatch.Stop();
+            Console.WriteLine($"Reading {count} nodes - method 1: {stopWatch.Elapsed - timeSpanLast}");
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem6ReadNodes2()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+            stopWatch.Start();
+
+            soapClient = new RfemSoapPortTypeClient();
+
+            stopWatch.Stop();
+            Console.WriteLine("Create instance of SOAP WS client: " + stopWatch.Elapsed);
+            timeSpanLast = stopWatch.Elapsed;
+
+            int[] ids = soapClient.get_all_node_numbers();
+
+            stopWatch.Start();
+
+            node_all_attributes node;
+
+            foreach (int id in ids)
+            {
+                node = soapClient.get_node_all_attributes(id);
+            }
+
+            stopWatch.Stop();
+            Console.WriteLine($"Reading {ids.Length} nodes - method 2: {stopWatch.Elapsed - timeSpanLast}");
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem6ReadNodesBatch()
+        {
+            //Stopwatch sw = new Stopwatch();
+            //TimeSpan tsLast = new TimeSpan(0);
+
+            //sw.Start();
+
+            //WsClient = new RfemSoapPortTypeClient();
+
+            //sw.Stop();
+            //tsLast = sw.Elapsed;
+            //Console.WriteLine("Create instance of SOAP WS client: " + sw.Elapsed);
+            //sw.Start();
+
+            //WsClient.begin_modification("Test - Create nodes");
+
+            //sw.Stop();
+            //Console.WriteLine("Begin modification: " + (sw.Elapsed - tsLast));
+            //tsLast = sw.Elapsed;
+            //sw.Start();
+
+            //List<Object> list = new List<object>();
+
+            //for (int i = 0; i < PARTCOUNT; i++)
+            //{
+            //    for (int j = 0; j < PARTCOUNT; j++)
+            //    {
+            //        for (int k = 0; k < PARTCOUNT; k++)
+            //        {
+            //            set_node_coordinates coordinates = new set_node_coordinates();
+            //            coordinates.object_id = WsClient.new_node();
+            //            coordinates.coordinates = new vector_3d().SetCoordinates(i * LENGTH, j * WIDTH, k * HEIGHT);
+            //            list.Add(coordinates);
+            //        }
+            //    }
+            //}
+
+            //sw.Stop();
+            //Console.WriteLine(string.Format("Creating {0} nodes one by one: {1}", PARTCOUNT * PARTCOUNT * PARTCOUNT, sw.Elapsed - tsLast));
+            //tsLast = sw.Elapsed;
+            //sw.Start();
+
+            //WsClient.finish_modification();
+
+            //sw.Stop();
+            //Console.WriteLine("Finish modification: " + (sw.Elapsed - tsLast));
+            //tsLast = sw.Elapsed;
+            //sw.Start();
+
+            //WsClient.run_batch_operation(list.ToArray());
+
+            //sw.Stop();
+            //Console.WriteLine("Writing all coordinates in batch: " + (sw.Elapsed - tsLast));
+            //Console.WriteLine("TOTAL time: " + sw.Elapsed);
+            //Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            //Console.ReadKey(true);
+        }
+
+        private static void Rfem6WriteNodes()
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+
+            int count = partCount * partCount * partCount;
+
+            stopWatch.Start();
+
+            soapClient = new RfemSoapPortTypeClient();
+
+            stopWatch.Stop();
+            timeSpanLast = stopWatch.Elapsed;
+            Console.WriteLine("Create instance of SOAP WS client: " + stopWatch.Elapsed);
+            stopWatch.Start();
+
+            soapClient.begin_modification("Test - Create nodes");
+
+            stopWatch.Stop();
+            Console.WriteLine("Begin modification: " + (stopWatch.Elapsed - timeSpanLast));
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            for (int i = 0; i < partCount; i++)
+            {
+                for (int j = 0; j < partCount; j++)
+                {
+                    for (int k = 0; k < partCount; k++)
+                    {
+                        int nodeNo = soapClient.new_node();
+                        soapClient.set_node_coordinates(nodeNo, new vector_3d().SetCoordinates(i * length, j * width, k * height));
+                    }
+                }
+            }
+
+            stopWatch.Stop();
+            Console.WriteLine($"Writing {count} nodes: {stopWatch.Elapsed - timeSpanLast}");
+            Console.WriteLine((count / (stopWatch.Elapsed - timeSpanLast).TotalSeconds) + " nodes per second");
+            Console.WriteLine(((stopWatch.Elapsed - timeSpanLast).TotalMilliseconds / partCount / partCount / partCount) + " milliseconds for one node");
+            timeSpanLast = stopWatch.Elapsed;
+            stopWatch.Start();
+
+            soapClient.finish_modification();
+
+            stopWatch.Stop();
+            Console.WriteLine("Finish modification: " + (stopWatch.Elapsed - timeSpanLast));
+            Console.WriteLine("TOTAL time: " + stopWatch.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+
+        private static void Rfem6WriteNodesBatch()
+        {
+            Stopwatch sw = new Stopwatch();
+            TimeSpan timeSpanLast = new TimeSpan(0);
+
+            int count = partCount * partCount * partCount;
+
+            sw.Start();
+
+            soapClient = new RfemSoapPortTypeClient();
+
+            sw.Stop();
+            timeSpanLast = sw.Elapsed;
+            Console.WriteLine("Create instance of SOAP WS client: " + sw.Elapsed);
+            sw.Start();
+
+            soapClient.begin_modification("Test - Create nodes");
+
+            sw.Stop();
+            Console.WriteLine("Begin modification: " + (sw.Elapsed - timeSpanLast));
+            timeSpanLast = sw.Elapsed;
+            sw.Start();
+
+            List<object> list = new List<object>();
+
+            for (int i = 0; i < partCount; i++)
+            {
+                for (int j = 0; j < partCount; j++)
+                {
+                    for (int k = 0; k < partCount; k++)
+                    {
+                        int id = soapClient.new_node();
+
+                        set_node_coordinates coordinates = new set_node_coordinates
+                        {
+                            object_id = id,
+                            coordinates = new vector_3d().SetCoordinates(i * length, j * width, k * height)
+                        };
+
+                        list.Add(coordinates);
+
+                        set_node_type type = new set_node_type
+                        {
+                            object_id = id,
+                            type = node_type.TYPE_STANDARD
+                        };
+
+                        list.Add(type);
+
+                        set_node_comment comment = new set_node_comment
+                        {
+                            object_id = id,
+                            comment = $"comment {i} {j} {k}"
+                        };
+
+                        list.Add(comment);
+                    }
+                }
+            }
+
+            sw.Stop();
+            Console.WriteLine($"Creating {count} nodes one by one: {sw.Elapsed - timeSpanLast}");
+            timeSpanLast = sw.Elapsed;
+            sw.Start();
+
+            soapClient.finish_modification();
+
+            sw.Stop();
+            Console.WriteLine("Finish modification: " + (sw.Elapsed - timeSpanLast));
+            timeSpanLast = sw.Elapsed;
+            sw.Start();
+
+            soapClient.run_batch_operation(list.ToArray());
+
+            sw.Stop();
+            Console.WriteLine("Writing all parameters in batch: " + (sw.Elapsed - timeSpanLast));
+            Console.WriteLine("TOTAL time: " + sw.Elapsed);
+            Console.WriteLine(Environment.NewLine + "Press any key to continue ");
+            Console.ReadKey(true);
+        }
+        #endregion Test Models
+    }
+}

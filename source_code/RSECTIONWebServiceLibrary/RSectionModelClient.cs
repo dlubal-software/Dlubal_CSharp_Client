@@ -59,27 +59,11 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.calculate_all(request);
         }
         
-        public Dlubal.WS.RSection1.Model.calculation_message[] calculate_all(bool generateXmlSolverInput)
+        public void calculate_all(bool generateXmlSolverInput)
         {
             Dlubal.WS.RSection1.Model.calculate_allRequest inValue = new Dlubal.WS.RSection1.Model.calculate_allRequest();
             inValue.generateXmlSolverInput = generateXmlSolverInput;
             Dlubal.WS.RSection1.Model.calculate_allResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).calculate_all(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.calculate_specificResponse Dlubal.WS.RSection1.Model.IRSectionModel.calculate_specific(Dlubal.WS.RSection1.Model.calculate_specificRequest request)
-        {
-            return base.Channel.calculate_specific(request);
-        }
-        
-        public Dlubal.WS.RSection1.Model.calculation_message[] calculate_specific(Dlubal.WS.RSection1.Model.calculate_specific_loading[] loadings, bool skip_warnings)
-        {
-            Dlubal.WS.RSection1.Model.calculate_specificRequest inValue = new Dlubal.WS.RSection1.Model.calculate_specificRequest();
-            inValue.loadings = loadings;
-            inValue.skip_warnings = skip_warnings;
-            Dlubal.WS.RSection1.Model.calculate_specificResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).calculate_specific(inValue);
-            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -92,6 +76,18 @@ namespace Dlubal.WS.RSection1.Model
         {
             Dlubal.WS.RSection1.Model.cancel_modificationRequest inValue = new Dlubal.WS.RSection1.Model.cancel_modificationRequest();
             Dlubal.WS.RSection1.Model.cancel_modificationResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).cancel_modification(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.clear_selectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.clear_selection(Dlubal.WS.RSection1.Model.clear_selectionRequest request)
+        {
+            return base.Channel.clear_selection(request);
+        }
+        
+        public void clear_selection()
+        {
+            Dlubal.WS.RSection1.Model.clear_selectionRequest inValue = new Dlubal.WS.RSection1.Model.clear_selectionRequest();
+            Dlubal.WS.RSection1.Model.clear_selectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).clear_selection(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -253,6 +249,19 @@ namespace Dlubal.WS.RSection1.Model
             return retVal.value;
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_all_selected_objectsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_all_selected_objects(Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest request)
+        {
+            return base.Channel.get_all_selected_objects(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.object_location[] get_all_selected_objects()
+        {
+            Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest inValue = new Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest();
+            Dlubal.WS.RSection1.Model.get_all_selected_objectsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_all_selected_objects(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.RSection1.Model.element get_element(int no)
         {
             Dlubal.WS.RSection1.Model.get_elementRequest inValue = new Dlubal.WS.RSection1.Model.get_elementRequest();
@@ -282,7 +291,7 @@ namespace Dlubal.WS.RSection1.Model
             return retVal.value;
         }
         
-        public Dlubal.WS.RSection1.Model.formula_data get_formula(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location_type object_parameter_location)
+        public Dlubal.WS.RSection1.Model.formula_data get_formula(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location object_parameter_location)
         {
             Dlubal.WS.RSection1.Model.get_formulaRequest inValue = new Dlubal.WS.RSection1.Model.get_formulaRequest();
             inValue.object_location = object_location;
@@ -317,7 +326,7 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.get_list_of_parameters_formula_allowed_for(request);
         }
         
-        public Dlubal.WS.RSection1.Model.object_parameter_location_type[] get_list_of_parameters_formula_allowed_for(Dlubal.WS.RSection1.Model.object_location object_location)
+        public Dlubal.WS.RSection1.Model.object_parameter_location[] get_list_of_parameters_formula_allowed_for(Dlubal.WS.RSection1.Model.object_location object_location)
         {
             Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forRequest inValue = new Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forRequest();
             inValue.object_location = object_location;
@@ -656,7 +665,7 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.set_formula(request);
         }
         
-        public void set_formula(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location_type object_parameter_location, string formula)
+        public void set_formula(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location object_parameter_location, string formula)
         {
             Dlubal.WS.RSection1.Model.set_formulaRequest inValue = new Dlubal.WS.RSection1.Model.set_formulaRequest();
             inValue.object_location = object_location;
@@ -702,6 +711,19 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.set_materialRequest inValue = new Dlubal.WS.RSection1.Model.set_materialRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_materialResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_material(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.set_model_historyResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_model_history(Dlubal.WS.RSection1.Model.set_model_historyRequest request)
+        {
+            return base.Channel.set_model_history(request);
+        }
+        
+        public void set_model_history(Dlubal.WS.RSection1.Model.model_history_row[] table_values)
+        {
+            Dlubal.WS.RSection1.Model.set_model_historyRequest inValue = new Dlubal.WS.RSection1.Model.set_model_historyRequest();
+            inValue.table_values = table_values;
+            Dlubal.WS.RSection1.Model.set_model_historyResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_model_history(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -806,6 +828,19 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.set_sectionRequest inValue = new Dlubal.WS.RSection1.Model.set_sectionRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_section(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.set_selected_objectsResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_selected_objects(Dlubal.WS.RSection1.Model.set_selected_objectsRequest request)
+        {
+            return base.Channel.set_selected_objects(request);
+        }
+        
+        public void set_selected_objects(Dlubal.WS.RSection1.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.RSection1.Model.set_selected_objectsRequest inValue = new Dlubal.WS.RSection1.Model.set_selected_objectsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.RSection1.Model.set_selected_objectsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_selected_objects(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

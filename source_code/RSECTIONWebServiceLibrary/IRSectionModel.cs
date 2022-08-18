@@ -26,13 +26,13 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.calculate_allResponse calculate_all(Dlubal.WS.RSection1.Model.calculate_allRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/calculate_specific", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.calculate_specificResponse calculate_specific(Dlubal.WS.RSection1.Model.calculate_specificRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/cancel_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.cancel_modificationResponse cancel_modification(Dlubal.WS.RSection1.Model.cancel_modificationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/clear_selection", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.clear_selectionResponse clear_selection(Dlubal.WS.RSection1.Model.clear_selectionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/close_connection", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -81,6 +81,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_all_object_numbers_by_type", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_all_object_numbers_by_typeResponse get_all_object_numbers_by_type(Dlubal.WS.RSection1.Model.get_all_object_numbers_by_typeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_all_selected_objects", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_all_selected_objectsResponse get_all_selected_objects(Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_element", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -214,6 +218,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_materialResponse set_material(Dlubal.WS.RSection1.Model.set_materialRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_history", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.set_model_historyResponse set_model_history(Dlubal.WS.RSection1.Model.set_model_historyRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_parameters", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_model_parametersResponse set_model_parameters(Dlubal.WS.RSection1.Model.set_model_parametersRequest request);
@@ -245,6 +253,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_sectionResponse set_section(Dlubal.WS.RSection1.Model.set_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_selected_objects", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.set_selected_objectsResponse set_selected_objects(Dlubal.WS.RSection1.Model.set_selected_objectsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_stress_point", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

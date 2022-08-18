@@ -1690,6 +1690,9 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2,
         
         /// <remarks/>
+        PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_A_VERTICAL_CONNECTION_LINE__V_M2,
+        
+        /// <remarks/>
         PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1,
         
         /// <remarks/>
@@ -1993,6 +1996,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         TYPE_PARAMETRIC_BARS,
+        
+        /// <remarks/>
+        TYPE_PARAMETRIC_BRIDGES,
         
         /// <remarks/>
         TYPE_PARAMETRIC_MASSIVE_I,
@@ -2302,122 +2308,8 @@ namespace Dlubal.WS.RSection1.Model
     public partial class calculate_allResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("message", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public Dlubal.WS.RSection1.Model.calculation_message[] value;
-        
         public calculate_allResponse()
         {
-        }
-        
-        public calculate_allResponse(Dlubal.WS.RSection1.Model.calculation_message[] value)
-        {
-            this.value = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public partial class calculate_specific_loading : object, System.ComponentModel.INotifyPropertyChanged
-    {
-        
-        private string typeField;
-        
-        private int noField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string type
-        {
-            get
-            {
-                return this.typeField;
-            }
-            set
-            {
-                this.typeField = value;
-                this.RaisePropertyChanged("type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int no
-        {
-            get
-            {
-                return this.noField;
-            }
-            set
-            {
-                this.noField = value;
-                this.RaisePropertyChanged("no");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="calculate_specific", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
-    public partial class calculate_specificRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("loading", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public Dlubal.WS.RSection1.Model.calculate_specific_loading[] loadings;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool skip_warnings;
-        
-        public calculate_specificRequest()
-        {
-        }
-        
-        public calculate_specificRequest(Dlubal.WS.RSection1.Model.calculate_specific_loading[] loadings, bool skip_warnings)
-        {
-            this.loadings = loadings;
-            this.skip_warnings = skip_warnings;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="calculate_specificResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
-    public partial class calculate_specificResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("message", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public Dlubal.WS.RSection1.Model.calculation_message[] value;
-        
-        public calculate_specificResponse()
-        {
-        }
-        
-        public calculate_specificResponse(Dlubal.WS.RSection1.Model.calculation_message[] value)
-        {
-            this.value = value;
         }
     }
     
@@ -2581,6 +2473,30 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         public cancel_modificationResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="clear_selection", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class clear_selectionRequest
+    {
+        
+        public clear_selectionRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="clear_selectionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class clear_selectionResponse
+    {
+        
+        public clear_selectionResponse()
         {
         }
     }
@@ -4492,7 +4408,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private element_nurbs_control_points_by_components rowField;
         
@@ -4512,22 +4428,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public element_nurbs_control_points_by_components row
         {
             get
@@ -4564,7 +4480,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private element_nurbs_control_points rowField;
         
@@ -4584,22 +4500,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public element_nurbs_control_points row
         {
             get
@@ -4636,7 +4552,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private double rowField;
         
@@ -4658,22 +4574,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public double row
         {
             get
@@ -5213,6 +5129,40 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_all_selected_objects", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_all_selected_objectsRequest
+    {
+        
+        public get_all_selected_objectsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_all_selected_objectsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_all_selected_objectsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.object_location[] value;
+        
+        public get_all_selected_objectsResponse()
+        {
+        }
+        
+        public get_all_selected_objectsResponse(Dlubal.WS.RSection1.Model.object_location[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_element", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_elementRequest
     {
@@ -5312,13 +5262,13 @@ namespace Dlubal.WS.RSection1.Model
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Dlubal.WS.RSection1.Model.object_parameter_location_type object_parameter_location;
+        public Dlubal.WS.RSection1.Model.object_parameter_location object_parameter_location;
         
         public get_formulaRequest()
         {
         }
         
-        public get_formulaRequest(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location_type object_parameter_location)
+        public get_formulaRequest(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location object_parameter_location)
         {
             this.object_location = object_location;
             this.object_parameter_location = object_parameter_location;
@@ -5418,14 +5368,14 @@ namespace Dlubal.WS.RSection1.Model
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("object_parameter_location", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public Dlubal.WS.RSection1.Model.object_parameter_location_type[] value;
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.object_parameter_location[] value;
         
         public get_list_of_parameters_formula_allowed_forResponse()
         {
         }
         
-        public get_list_of_parameters_formula_allowed_forResponse(Dlubal.WS.RSection1.Model.object_parameter_location_type[] value)
+        public get_list_of_parameters_formula_allowed_forResponse(Dlubal.WS.RSection1.Model.object_parameter_location[] value)
         {
             this.value = value;
         }
@@ -7703,7 +7653,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private line_nurbs_control_points_by_components rowField;
         
@@ -7723,22 +7673,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public line_nurbs_control_points_by_components row
         {
             get
@@ -7775,7 +7725,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private line_nurbs_control_points rowField;
         
@@ -7795,22 +7745,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public line_nurbs_control_points row
         {
             get
@@ -7847,7 +7797,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private double rowField;
         
@@ -7869,22 +7819,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public double row
         {
             get
@@ -12865,7 +12815,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private model_history rowField;
         
@@ -12885,22 +12835,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public model_history row
         {
             get
@@ -13289,7 +13239,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private model_parameters_location rowField;
         
@@ -13309,22 +13259,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public model_parameters_location row
         {
             get
@@ -13361,7 +13311,7 @@ namespace Dlubal.WS.RSection1.Model
         
         private int noField;
         
-        private bool noFieldSpecified;
+        private string descriptionField;
         
         private model_parameters rowField;
         
@@ -13381,22 +13331,22 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool noSpecified
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
         {
             get
             {
-                return this.noFieldSpecified;
+                return this.descriptionField;
             }
             set
             {
-                this.noFieldSpecified = value;
-                this.RaisePropertyChanged("noSpecified");
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public model_parameters row
         {
             get
@@ -14711,7 +14661,7 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public partial class node_of_parameter_path_in_nested_models_hierarchy_type : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class node_of_parameter_path_in_nested_models_hierarchy : object, System.ComponentModel.INotifyPropertyChanged
     {
         
         private string row_pathField;
@@ -14928,12 +14878,12 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public partial class object_parameter_location_type : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class object_parameter_location : object, System.ComponentModel.INotifyPropertyChanged
     {
         
         private string attributeField;
         
-        private node_of_parameter_path_in_nested_models_hierarchy_type[] parameter_path_in_nested_models_hierarchyField;
+        private node_of_parameter_path_in_nested_models_hierarchy[] parameter_path_in_nested_models_hierarchyField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -14953,7 +14903,7 @@ namespace Dlubal.WS.RSection1.Model
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         [System.Xml.Serialization.XmlArrayItemAttribute("node", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public node_of_parameter_path_in_nested_models_hierarchy_type[] parameter_path_in_nested_models_hierarchy
+        public node_of_parameter_path_in_nested_models_hierarchy[] parameter_path_in_nested_models_hierarchy
         {
             get
             {
@@ -15389,6 +15339,8 @@ namespace Dlubal.WS.RSection1.Model
         
         private optimizationSettingsConfig_general_optimize_on_type general_optimize_onField;
         
+        private string general_optimize_on_parameterField;
+        
         private optimizationSettingsConfig_general_optimizer_type general_optimizerField;
         
         private double general_number_random_mutationsField;
@@ -15440,6 +15392,21 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string general_optimize_on_parameter
+        {
+            get
+            {
+                return this.general_optimize_on_parameterField;
+            }
+            set
+            {
+                this.general_optimize_on_parameterField = value;
+                this.RaisePropertyChanged("general_optimize_on_parameter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public optimizationSettingsConfig_general_optimizer_type general_optimizer
         {
             get
@@ -15454,7 +15421,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public double general_number_random_mutations
         {
             get
@@ -18729,7 +18696,7 @@ namespace Dlubal.WS.RSection1.Model
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Dlubal.WS.RSection1.Model.object_parameter_location_type object_parameter_location;
+        public Dlubal.WS.RSection1.Model.object_parameter_location object_parameter_location;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -18739,7 +18706,7 @@ namespace Dlubal.WS.RSection1.Model
         {
         }
         
-        public set_formulaRequest(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location_type object_parameter_location, string formula)
+        public set_formulaRequest(Dlubal.WS.RSection1.Model.object_location object_location, Dlubal.WS.RSection1.Model.object_parameter_location object_parameter_location, string formula)
         {
             this.object_location = object_location;
             this.object_parameter_location = object_parameter_location;
@@ -18854,6 +18821,40 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         public set_materialResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_model_history", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_model_historyRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("model_history", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.model_history_row[] table_values;
+        
+        public set_model_historyRequest()
+        {
+        }
+        
+        public set_model_historyRequest(Dlubal.WS.RSection1.Model.model_history_row[] table_values)
+        {
+            this.table_values = table_values;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_model_historyResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_model_historyResponse
+    {
+        
+        public set_model_historyResponse()
         {
         }
     }
@@ -19120,6 +19121,40 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         public set_sectionResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_selected_objects", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_selected_objectsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.object_location[] object_locations;
+        
+        public set_selected_objectsRequest()
+        {
+        }
+        
+        public set_selected_objectsRequest(Dlubal.WS.RSection1.Model.object_location[] object_locations)
+        {
+            this.object_locations = object_locations;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_selected_objectsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_selected_objectsResponse
+    {
+        
+        public set_selected_objectsResponse()
         {
         }
     }

@@ -15,9 +15,15 @@
     <RepositoryUrl>https://github.com/Dlubal-Software/Dlubal_CSharp_Client/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>6.0.2</AssemblyVersion>
+    <AssemblyVersion>6.02.25</AssemblyVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <FileVersion>6.02.25</FileVersion>
+    <Version>6.02.25</Version>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageId>Dlubal.$(AssemblyName)</PackageId>
+    <PackageIcon>rfem.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -42,6 +48,13 @@
   <ItemGroup>
     <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="rfem.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   
 </Project>

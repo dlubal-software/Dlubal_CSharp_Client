@@ -34,6 +34,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.cancel_modificationResponse cancel_modification(Dlubal.WS.Rfem6.Model.cancel_modificationRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/clear_selection", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.clear_selectionResponse clear_selection(Dlubal.WS.Rfem6.Model.clear_selectionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/close_connection", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.close_connectionResponse close_connection(Dlubal.WS.Rfem6.Model.close_connectionRequest request);
@@ -129,6 +133,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_object_numbers_by_type", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_all_object_numbers_by_typeResponse get_all_object_numbers_by_type(Dlubal.WS.Rfem6.Model.get_all_object_numbers_by_typeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_selected_objects", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_all_selected_objectsResponse get_all_selected_objects(Dlubal.WS.Rfem6.Model.get_all_selected_objectsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_effective_lengths", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -958,6 +966,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsResponse set_modal_analysis_settings(Dlubal.WS.Rfem6.Model.set_modal_analysis_settingsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_history", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_model_historyResponse set_model_history(Dlubal.WS.Rfem6.Model.set_model_historyRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_parameters", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_model_parametersResponse set_model_parameters(Dlubal.WS.Rfem6.Model.set_model_parametersRequest request);
@@ -1033,6 +1045,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_sectionResponse set_section(Dlubal.WS.Rfem6.Model.set_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_selected_objects", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_selected_objectsResponse set_selected_objects(Dlubal.WS.Rfem6.Model.set_selected_objectsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_soil_massif", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
