@@ -1998,9 +1998,6 @@ namespace Dlubal.WS.RSection1.Model
         TYPE_PARAMETRIC_BARS,
         
         /// <remarks/>
-        TYPE_PARAMETRIC_BRIDGES,
-        
-        /// <remarks/>
         TYPE_PARAMETRIC_MASSIVE_I,
         
         /// <remarks/>

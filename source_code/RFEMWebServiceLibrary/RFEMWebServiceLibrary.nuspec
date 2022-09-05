@@ -15,7 +15,7 @@
         <dependencies>
             <group targetFramework=".NETFramework4.6.1" />
         </dependencies>
-        <icon>images/icon.png</icon>
+        <icon>rfem.png</icon>
     </metadata>
 
     <files>

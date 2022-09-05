@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5</TargetFramework>
+    <Configurations>Debug;Release;Release RFEM;Release RSTAB</Configurations>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -13,6 +14,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\source_code\RSECTIONWebServiceLibrary\RSECTIONWebServiceLibrary.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>

@@ -5,13 +5,13 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION</Configurations>
+    <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <FileVersion>1.02.25</FileVersion>
     <AssemblyVersion>1.02.25</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
-    <Version>1.02.25</Version>
+    <Version>1.02.26</Version>
     <Company>DlubalSoftware</Company>
     <Product>DlubalSoftware</Product>
     <Description>C# library for development of tools based on RSECTION WebService technology</Description>
@@ -29,6 +29,14 @@
     <DefineConstants>TRACE;RSECTION</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;RSECTION</DefineConstants>
   </PropertyGroup>
@@ -42,11 +50,15 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+    <None Include="..\img\rsection.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
   </ItemGroup>
 
   <ItemGroup>

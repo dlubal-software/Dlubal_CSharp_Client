@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"e630b712-7698-41ee-9fbe-fa7f11ccfbaa,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"982ed128-a1b2-456e-b73a-9c203ccd1fec,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -2808,7 +2808,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_STEEL: s = @"TYPE_BUILT_UP_STEEL"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_TIMBER: s = @"TYPE_BUILT_UP_TIMBER"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BARS: s = @"TYPE_PARAMETRIC_BARS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BRIDGES: s = @"TYPE_PARAMETRIC_BRIDGES"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_I: s = @"TYPE_PARAMETRIC_MASSIVE_I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_II: s = @"TYPE_PARAMETRIC_MASSIVE_II"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_THIN_WALLED: s = @"TYPE_PARAMETRIC_THIN_WALLED"; break;
@@ -14737,7 +14736,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"TYPE_BUILT_UP_STEEL": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_STEEL;
                 case @"TYPE_BUILT_UP_TIMBER": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_TIMBER;
                 case @"TYPE_PARAMETRIC_BARS": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BARS;
-                case @"TYPE_PARAMETRIC_BRIDGES": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BRIDGES;
                 case @"TYPE_PARAMETRIC_MASSIVE_I": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_I;
                 case @"TYPE_PARAMETRIC_MASSIVE_II": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_II;
                 case @"TYPE_PARAMETRIC_THIN_WALLED": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_THIN_WALLED;

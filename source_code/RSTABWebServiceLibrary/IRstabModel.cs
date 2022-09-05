@@ -406,6 +406,313 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_result_combinationResponse get_result_combination(Dlubal.WS.Rstab9.Model.get_result_combinationRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_calculation_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse get_results_for_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_critical_load_factors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsResponse get_results_for_critical_load_factors(Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_efeective_lengths_and_critical_loads_by_eig" +
+            "envector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_efeective_lengths_and_critical_loads_by_eigenvectorResponse get_results_for_efeective_lengths_and_critical_loads_by_eigenvector(Dlubal.WS.Rstab9.Model.get_results_for_efeective_lengths_and_critical_loads_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_efeective_lengths_and_critical_loads_by_mem" +
+            "ber", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_efeective_lengths_and_critical_loads_by_memberResponse get_results_for_efeective_lengths_and_critical_loads_by_member(Dlubal.WS.Rstab9.Model.get_results_for_efeective_lengths_and_critical_loads_by_memberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_member", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_memberResponse get_results_for_eigenvectors_by_member(Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_memberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeResponse get_results_for_eigenvectors_by_node(Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_errors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_errorsResponse get_results_for_errors(Dlubal.WS.Rstab9.Model.get_results_for_errorsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_by_eigenvector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_by_eigenvectorResponse get_results_for_members_by_eigenvector(Dlubal.WS.Rstab9.Model.get_results_for_members_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_contact_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesResponse get_results_for_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_global_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_global_deformationsResponse get_results_for_members_global_deformations(Dlubal.WS.Rstab9.Model.get_results_for_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_hinge_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_deformationsResponse get_results_for_members_hinge_deformations(Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_forcesResponse get_results_for_members_hinge_forces(Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesResponse get_results_for_members_internal_forces(Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_internal_forces_by_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setResponse get_results_for_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_internal_forces_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionResponse get_results_for_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_local_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsResponse get_results_for_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_strainsResponse get_results_for_members_strains(Dlubal.WS.Rstab9.Model.get_results_for_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_effective_modal_masses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_effective_modal_massesResponse get_results_for_modal_analysis_effective_modal_masses(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_effective_modal_massesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_masses_in_locations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_masses_in_locationsResponse get_results_for_modal_analysis_masses_in_locations(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_masses_in_locationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_members_by_mode_shape", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_members_by_mode_shapeResponse get_results_for_modal_analysis_members_by_mode_shape(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_members_by_mode_shapeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_mode_shapes_by_member", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_memberResponse get_results_for_modal_analysis_mode_shapes_by_member(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_memberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_mode_shapes_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_nodeResponse get_results_for_modal_analysis_mode_shapes_by_node(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_natural_frequencies", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_natural_frequenciesResponse get_results_for_modal_analysis_natural_frequencies(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_natural_frequenciesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_nodes_by_mode_shape", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_nodes_by_mode_shapeResponse get_results_for_modal_analysis_nodes_by_mode_shape(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_nodes_by_mode_shapeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_participation_factors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_participation_factorsResponse get_results_for_modal_analysis_participation_factors(Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_participation_factorsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_by_eigenvector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_nodes_by_eigenvectorResponse get_results_for_nodes_by_eigenvector(Dlubal.WS.Rstab9.Model.get_results_for_nodes_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_nodes_deformationsResponse get_results_for_nodes_deformations(Dlubal.WS.Rstab9.Model.get_results_for_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forcesResponse get_results_for_nodes_support_forces(Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_contact_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesResponse get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_global_deformatio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsResponse get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_hinge_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsResponse get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesResponse get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesResponse get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_internal_forces_b" +
+            "y_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setResponse get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_internal_forces_b" +
+            "y_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionResponse get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_local_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsResponse get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsResponse get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsResponse get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_pseudo_acceleration" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsResponse get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_pseudo_velocities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesResponse get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesResponse get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_summaryResponse get_results_for_spectral_analysis_summary(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_calculation_" +
+            "diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_cont" +
+            "act_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesResponse get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_glob" +
+            "al_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_global_deformationsResponse get_results_for_stability_incremental_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_hing" +
+            "e_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsResponse get_results_for_stability_incremental_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_hing" +
+            "e_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesResponse get_results_for_stability_incremental_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_inte" +
+            "rnal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesResponse get_results_for_stability_incremental_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_inte" +
+            "rnal_forces_by_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setResponse get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_inte" +
+            "rnal_forces_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionResponse get_results_for_stability_incremental_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_loca" +
+            "l_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsResponse get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_stra" +
+            "ins", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsResponse get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodes_deform" +
+            "ations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_deformationsResponse get_results_for_stability_incremental_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodes_suppor" +
+            "t_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesResponse get_results_for_stability_incremental_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_summaryResponse get_results_for_stability_incremental_analysis_summary(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_summaryResponse get_results_for_summary(Dlubal.WS.Rstab9.Model.get_results_for_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_contact_force" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesResponse get_results_for_time_history_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_global_deform" +
+            "ations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_global_deformationsResponse get_results_for_time_history_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_hinge_deforma" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_deformationsResponse get_results_for_time_history_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_forcesResponse get_results_for_time_history_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_internal_forc" +
+            "es", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesResponse get_results_for_time_history_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_internal_forc" +
+            "es_by_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setResponse get_results_for_time_history_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_internal_forc" +
+            "es_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionResponse get_results_for_time_history_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_local_deforma" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsResponse get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsResponse get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_accelerations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_accelerationsResponse get_results_for_time_history_analysis_nodes_accelerations(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_accelerationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_deformationsResponse get_results_for_time_history_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forcesResponse get_results_for_time_history_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_velocities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_velocitiesResponse get_results_for_time_history_analysis_nodes_velocities(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_velocitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_summaryResponse get_results_for_time_history_analysis_summary(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_summaryRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_sectionResponse get_section(Dlubal.WS.Rstab9.Model.get_sectionRequest request);
@@ -485,6 +792,14 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_visual_object", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_visual_objectResponse get_visual_object(Dlubal.WS.Rstab9.Model.get_visual_objectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_any_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.has_any_resultsResponse has_any_results(Dlubal.WS.Rstab9.Model.has_any_resultsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.has_resultsResponse has_results(Dlubal.WS.Rstab9.Model.has_resultsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/plausibility_check", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -813,6 +1128,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/unite_nodes_and_supports", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.unite_nodes_and_supportsResponse unite_nodes_and_supports(Dlubal.WS.Rstab9.Model.unite_nodes_and_supportsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/use_detailed_member_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.use_detailed_member_resultsResponse use_detailed_member_results(Dlubal.WS.Rstab9.Model.use_detailed_member_resultsRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

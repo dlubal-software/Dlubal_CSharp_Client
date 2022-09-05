@@ -1,12 +1,28 @@
-# Dlubal CSharp library
-[![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.02.018-yellow)](https://www.dlubal.com/en-US/products/rfem-fea-software/what-is-rfem)[![image](https://img.shields.io/badge/COMPATIBILITY-RSTAB%209.02.018-yellow)](https://www.dlubal.com/en-US/products/rstab-beam-structures/what-is-rstab)
+# Dlubal Software GmbH
+<!-- ![image](/source_code/img/logo.png {width=180px height=180px}) -->
+
+<!-- <img src="/source_code/img/logo.png" width="180" height="180"  alt="Dlubal Software" /> -->
+
+[![image](https://img.shields.io/twitter/follow/dlubal_en?style=social)](https://twitter.com/dlubal_en "Twitter Follow")
+[![image](https://img.shields.io/badge/GitHub-Dlubal_Software-darkblue?logo=github&amp;)](https://github.com/Dlubal-Software "Github Follow")
+[![image](https://img.shields.io/badge/http://-dlubal.com-darkblue)](https://www.dlubal.com/en-US "RFEM Latest")
+[![image](https://img.shields.io/badge/docs-API-darkblue?logo=read-the-docs&amp;logoColor=white)](https://dlubal-software.github.io/.github/ "RFEM Latest")
+
+# Welcome to Dlubal CSharp library
+
+[![image](https://img.shields.io/badge/COMPATIBILITY-RFEM%206.02.025-yellow)](https://www.dlubal.com/en-US/products/rfem-fea-software/what-is-rfem)
+[![image](https://img.shields.io/badge/COMPATIBILITY-RSTAB%209.02.025-yellow)](https://www.dlubal.com/en-US/products/rstab-beam-structures/what-is-rstab)
+[![image](https://img.shields.io/badge/COMPATIBILITY-RSECTION%201.02.025-yellow)](https://www.dlubal.com/en-US/products/cross-section-properties-software/rsection)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CodeFactor](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client/badge)](https://www.codefactor.io/repository/github/dlubal-software/dlubal_csharp_client)
-[![codecov](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client/branch/main/graph/badge.svg?token=wQ4PBPY8XY)](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client)
+<!-- [![codecov](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client/branch/main/graph/badge.svg?token=wQ4PBPY8XY)](https://codecov.io/gh/jarabroz/Dlubal_CSharp_Client) -->
 [![Nuget](https://img.shields.io/nuget/v/Dlubal.RFEMWebServiceLibrary)](https://www.nuget.org/packages/Dlubal.RFEMWebServiceLibrary)
 ![Nuget](https://img.shields.io/nuget/dt/Dlubal.RFEMWebServiceLibrary)
 [![Nuget](https://img.shields.io/nuget/v/Dlubal.RSTABWebServiceLibrary)](https://www.nuget.org/packages/Dlubal.RSTABWebServiceLibrary)
 ![Nuget](https://img.shields.io/nuget/dt/Dlubal.RSTABWebServiceLibrary)
+[![Nuget](https://img.shields.io/nuget/v/Dlubal.RSECTIONWebServiceLibrary)]((https://www.nuget.org/packages/Dlubal.RSECTIONWebServiceLibrary))
+![Nuget](https://img.shields.io/nuget/dt/Dlubal.RSECTIONWebServiceLibrary)
+[![Build Status](https://dev.azure.com/Dlubal-Software/Dlubal%20CSharp%20WebService%20library/_apis/build/status/Dlubal-Software.Dlubal_CSharp_Client?branchName=main)](https://dev.azure.com/Dlubal-Software/Dlubal%20CSharp%20WebService%20library/_build/latest?definitionId=7&branchName=main)
 <!-- ### Table of Contents
 - [RfemCSharpWsClient](#rfemcsharpwsclient)
   * [Description](#description)
@@ -22,12 +38,22 @@
 ## Description
 
 This C# project is focused on opening [**RFEM 6**](https://www.dlubal.com/en/products/rfem-fea-software/what-is-rfem), [**RSTAB 9**](https://www.dlubal.com/en/products/rstab-beam-structures/what-is-rstab) and [**RSCETION 1**](https://www.dlubal.com/en/products/cross-section-properties-software/rsection) to all our customers, enabling them to interact with our applications on much higher level. If you are looking for tool to help you solve parametric models or optimization tasks, you are on the right place. This project and community will create support for all your projects. The goal is to create easily expandable C# library communicating instructions to RFEM / RSTAB through [Web Services](https://en.wikipedia.org/wiki/Web_service) (WS), [SOAP](https://cs.wikipedia.org/wiki/SOAP) and [WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language) technology.
-![image](https://user-images.githubusercontent.com/37547309/118759006-6711cd80-b870-11eb-8019-da3312a75e64.png).
+![image](https://user-images.githubusercontent.com/37547309/118759006-6711cd80-b870-11eb-8019-da3312a75e64.png)
 WS enable you to access your local version of RFEM / RSTAB / RSECTION or remote via internet connection.
 
 ## Getting started
 
-You can download [actual release](https://github.com/Dlubal-Software/Dlubal_CSharp_Client/releases/latest) of our C# library and the use it for your project or you can clone / fork our repository and compile our library by yourself following steps below.
+<!-- You can download [actual release](https://github.com/Dlubal-Software/Dlubal_CSharp_Client/releases/latest) of our C# library and the use it for your project or you can clone / fork our repository and compile our library by yourself following steps below. -->
+
+### Geting started with Visual Studio Code
+
+
+### Getting started with Visual Studio
+
+* Download [dotnet 6.0 sdk](https://dotnet.microsoft.com/download/dotnet/6.0) and install it
+* Download [Visual Studio 2022 Community](https://visualstudio.microsoft.com/cs/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false) and install it
+* Create new project
+* Go to Nuget Package manager and search for Dlubal. Install one of the selected packages
 
 ### Steps for downloaded release
 * Go to [release location](https://github.com/Dlubal-Software/Dlubal_CSharp_Client/releases/latest)
@@ -39,8 +65,7 @@ You can download [actual release](https://github.com/Dlubal-Software/Dlubal_CSha
 * Make application which uses our Web Services
 
 ### Steps for Visual Studio
-* Download [dotnet 6.0 sdk](https://dotnet.microsoft.com/download/dotnet/6.0) and install it
-* Download [Visual Studio 2022 Community](https://visualstudio.microsoft.com/cs/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false) and install it
+
     * Install [GitHub Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.GitHubExtensionforVisualStudio)
 * Download [GitHub Desktop](https://desktop.github.com/)
 * Clone / fork this repository

@@ -514,6 +514,1179 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_result_sectionResponse get_result_section(Dlubal.WS.Rfem6.Model.get_result_sectionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_centres_mass_rigidity", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_centres_mass_rigidityResponse get_results_for_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_centres_mass_rigidityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_forces_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsResponse get_results_for_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_forces_in_spandrels", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsResponse get_results_for_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_interstory_drifts", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_interstory_driftsResponse get_results_for_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_interstory_driftsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_story_actions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_story_actionsResponse get_results_for_building_stories_story_actions(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_story_actionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_calculation_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_calculation_diagramsResponse get_results_for_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_critical_load_factors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_critical_load_factorsResponse get_results_for_critical_load_factors(Dlubal.WS.Rfem6.Model.get_results_for_critical_load_factorsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_efeective_lengths_and_critical_loads_by_eig" +
+            "envector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_efeective_lengths_and_critical_loads_by_eigenvectorResponse get_results_for_efeective_lengths_and_critical_loads_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_efeective_lengths_and_critical_loads_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_efeective_lengths_and_critical_loads_by_mem" +
+            "ber", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_efeective_lengths_and_critical_loads_by_memberResponse get_results_for_efeective_lengths_and_critical_loads_by_member(Dlubal.WS.Rfem6.Model.get_results_for_efeective_lengths_and_critical_loads_by_memberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_member", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_memberResponse get_results_for_eigenvectors_by_member(Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_memberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_nodeResponse get_results_for_eigenvectors_by_node(Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_solid", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_solidResponse get_results_for_eigenvectors_by_solid(Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_solidRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_surface", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_surfaceResponse get_results_for_eigenvectors_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_surfaceRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_errors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_errorsResponse get_results_for_errors(Dlubal.WS.Rfem6.Model.get_results_for_errorsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_line_hinges_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_line_hinges_deformationsResponse get_results_for_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_line_hinges_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_line_hinges_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_line_hinges_forcesResponse get_results_for_line_hinges_forces(Dlubal.WS.Rfem6.Model.get_results_for_line_hinges_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_lines_slab_wall_connections", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_lines_slab_wall_connectionsResponse get_results_for_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_lines_slab_wall_connectionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_lines_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_lines_support_forcesResponse get_results_for_lines_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_lines_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_by_eigenvector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_by_eigenvectorResponse get_results_for_members_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_members_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_contact_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_contact_forcesResponse get_results_for_members_contact_forces(Dlubal.WS.Rfem6.Model.get_results_for_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_global_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_global_deformationsResponse get_results_for_members_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_hinge_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_hinge_deformationsResponse get_results_for_members_hinge_deformations(Dlubal.WS.Rfem6.Model.get_results_for_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_hinge_forcesResponse get_results_for_members_hinge_forces(Dlubal.WS.Rfem6.Model.get_results_for_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forcesResponse get_results_for_members_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_internal_forces_by_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_by_member_setResponse get_results_for_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_internal_forces_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_by_sectionResponse get_results_for_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_local_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_local_deformationsResponse get_results_for_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_strainsResponse get_results_for_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_effective_modal_masses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_effective_modal_massesResponse get_results_for_modal_analysis_effective_modal_masses(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_effective_modal_massesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_masses_in_locations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_masses_in_locationsResponse get_results_for_modal_analysis_masses_in_locations(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_masses_in_locationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_members_by_mode_shape", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_members_by_mode_shapeResponse get_results_for_modal_analysis_members_by_mode_shape(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_members_by_mode_shapeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_mode_shapes_by_member", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_memberResponse get_results_for_modal_analysis_mode_shapes_by_member(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_memberRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_mode_shapes_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_nodeResponse get_results_for_modal_analysis_mode_shapes_by_node(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_mode_shapes_by_solid", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_solidResponse get_results_for_modal_analysis_mode_shapes_by_solid(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_solidRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_mode_shapes_by_surface", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_surfaceResponse get_results_for_modal_analysis_mode_shapes_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_mode_shapes_by_surfaceRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_natural_frequencies", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_natural_frequenciesResponse get_results_for_modal_analysis_natural_frequencies(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_natural_frequenciesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_nodes_by_mode_shape", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_nodes_by_mode_shapeResponse get_results_for_modal_analysis_nodes_by_mode_shape(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_nodes_by_mode_shapeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_participation_factors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_participation_factorsResponse get_results_for_modal_analysis_participation_factors(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_participation_factorsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_solids_by_mode_shape", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_solids_by_mode_shapeResponse get_results_for_modal_analysis_solids_by_mode_shape(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_solids_by_mode_shapeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_modal_analysis_surfaces_by_mode_shape", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_surfaces_by_mode_shapeResponse get_results_for_modal_analysis_surfaces_by_mode_shape(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_surfaces_by_mode_shapeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_by_eigenvector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nodes_by_eigenvectorResponse get_results_for_nodes_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_nodes_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nodes_deformationsResponse get_results_for_nodes_deformations(Dlubal.WS.Rfem6.Model.get_results_for_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nodes_support_forcesResponse get_results_for_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_basic_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_basic_plastic_strainsResponse get_results_for_solids_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_basic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_basic_stressesResponse get_results_for_solids_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_solids_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_basic_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_basic_total_strainsResponse get_results_for_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_by_eigenvector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_by_eigenvectorResponse get_results_for_solids_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_solids_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_deformationsResponse get_results_for_solids_deformations(Dlubal.WS.Rfem6.Model.get_results_for_solids_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_equivalent_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_equivalent_plastic_strainsResponse get_results_for_solids_equivalent_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_equivalent_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_equivalent_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_equivalent_stressesResponse get_results_for_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.get_results_for_solids_equivalent_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_equivalent_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_equivalent_total_strainsResponse get_results_for_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_equivalent_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_gas_quantities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_gas_quantitiesResponse get_results_for_solids_gas_quantities(Dlubal.WS.Rfem6.Model.get_results_for_solids_gas_quantitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_principal_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_plastic_strainsResponse get_results_for_solids_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_principal_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_stressesResponse get_results_for_solids_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_principal_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_total_strainsResponse get_results_for_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_centres_" +
+            "mass_rigidity", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityResponse get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_forces_i" +
+            "n_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_forces_i" +
+            "n_spandrels", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsResponse get_results_for_spectral_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_intersto" +
+            "ry_drifts", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsResponse get_results_for_spectral_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_story_ac" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_story_actionsResponse get_results_for_spectral_analysis_building_stories_story_actions(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_story_actionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_line_hinges_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_deformationsResponse get_results_for_spectral_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_line_hinges_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_forcesResponse get_results_for_spectral_analysis_line_hinges_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_lines_slab_wall_connectio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsResponse get_results_for_spectral_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_lines_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_support_forcesResponse get_results_for_spectral_analysis_lines_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_contact_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_contact_forcesResponse get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_global_deformatio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_global_deformationsResponse get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_hinge_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_deformationsResponse get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_forcesResponse get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forcesResponse get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_internal_forces_b" +
+            "y_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setResponse get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_internal_forces_b" +
+            "y_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionResponse get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_local_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsResponse get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsResponse get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsResponse get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_pseudo_acceleration" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsResponse get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_pseudo_velocities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesResponse get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_support_forcesResponse get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_basic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_stressesResponse get_results_for_spectral_analysis_solids_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_basic_total_strain" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_total_strainsResponse get_results_for_spectral_analysis_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_deformationsResponse get_results_for_spectral_analysis_solids_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_equivalent_stresse" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_stressesResponse get_results_for_spectral_analysis_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_equivalent_total_s" +
+            "trains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_total_strainsResponse get_results_for_spectral_analysis_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_gas_quantities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_gas_quantitiesResponse get_results_for_spectral_analysis_solids_gas_quantities(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_gas_quantitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_principal_stresses" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_stressesResponse get_results_for_spectral_analysis_solids_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_solids_principal_total_st" +
+            "rains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_total_strainsResponse get_results_for_spectral_analysis_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_summaryResponse get_results_for_spectral_analysis_summary(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_basic_internal_f" +
+            "orces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forcesResponse get_results_for_spectral_analysis_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_basic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesResponse get_results_for_spectral_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_basic_total_stra" +
+            "ins", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsResponse get_results_for_spectral_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_contact_stresses" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesResponse get_results_for_spectral_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_design_internal_" +
+            "forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forcesResponse get_results_for_spectral_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_elastic_stress_c" +
+            "omponents", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsResponse get_results_for_spectral_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_stres" +
+            "ses_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bachResponse get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_stres" +
+            "ses_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesResponse get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_stres" +
+            "ses_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankineResponse get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_stres" +
+            "ses_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaResponse get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_total" +
+            "_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachResponse get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_total" +
+            "_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesResponse get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_total" +
+            "_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineResponse get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_equivalent_total" +
+            "_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaResponse get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_global_deformati" +
+            "ons", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformationsResponse get_results_for_spectral_analysis_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_local_deformatio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsResponse get_results_for_spectral_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_maximum_total_st" +
+            "rains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsResponse get_results_for_spectral_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_principal_intern" +
+            "al_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forcesResponse get_results_for_spectral_analysis_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_principal_stress" +
+            "es", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesResponse get_results_for_spectral_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_surfaces_principal_total_" +
+            "strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsResponse get_results_for_spectral_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
+            "ries_centres_mass_rigidity", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidityResponse get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
+            "ries_forces_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
+            "ries_forces_in_spandrels", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsResponse get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
+            "ries_interstory_drifts", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_interstory_driftsResponse get_results_for_stability_incremental_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_interstory_driftsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
+            "ries_story_actions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_story_actionsResponse get_results_for_stability_incremental_analysis_building_stories_story_actions(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_story_actionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_calculation_" +
+            "diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_line_hinges_" +
+            "deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_hinges_deformationsResponse get_results_for_stability_incremental_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_hinges_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_line_hinges_" +
+            "forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_hinges_forcesResponse get_results_for_stability_incremental_analysis_line_hinges_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_hinges_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_lines_slab_w" +
+            "all_connections", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_lines_slab_wall_connectionsResponse get_results_for_stability_incremental_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_lines_slab_wall_connectionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_lines_suppor" +
+            "t_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_lines_support_forcesResponse get_results_for_stability_incremental_analysis_lines_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_lines_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_cont" +
+            "act_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_contact_forcesResponse get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_glob" +
+            "al_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_global_deformationsResponse get_results_for_stability_incremental_analysis_members_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_hing" +
+            "e_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsResponse get_results_for_stability_incremental_analysis_members_hinge_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_hing" +
+            "e_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesResponse get_results_for_stability_incremental_analysis_members_hinge_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_inte" +
+            "rnal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forcesResponse get_results_for_stability_incremental_analysis_members_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_inte" +
+            "rnal_forces_by_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setResponse get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_inte" +
+            "rnal_forces_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionResponse get_results_for_stability_incremental_analysis_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_loca" +
+            "l_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_local_deformationsResponse get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_stra" +
+            "ins", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_strainsResponse get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodes_deform" +
+            "ations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodes_deformationsResponse get_results_for_stability_incremental_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodes_suppor" +
+            "t_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesResponse get_results_for_stability_incremental_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_basic" +
+            "_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_basic_plastic_strainsResponse get_results_for_stability_incremental_analysis_solids_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_basic" +
+            "_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_basic_stressesResponse get_results_for_stability_incremental_analysis_solids_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_basic" +
+            "_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_basic_total_strainsResponse get_results_for_stability_incremental_analysis_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_defor" +
+            "mations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_deformationsResponse get_results_for_stability_incremental_analysis_solids_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_equiv" +
+            "alent_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_equivalent_plastic_strainsResponse get_results_for_stability_incremental_analysis_solids_equivalent_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_equivalent_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_equiv" +
+            "alent_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_equivalent_stressesResponse get_results_for_stability_incremental_analysis_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_equivalent_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_equiv" +
+            "alent_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_equivalent_total_strainsResponse get_results_for_stability_incremental_analysis_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_equivalent_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_gas_q" +
+            "uantities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_gas_quantitiesResponse get_results_for_stability_incremental_analysis_solids_gas_quantities(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_gas_quantitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_princ" +
+            "ipal_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_principal_plastic_strainsResponse get_results_for_stability_incremental_analysis_solids_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_princ" +
+            "ipal_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_principal_stressesResponse get_results_for_stability_incremental_analysis_solids_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_solids_princ" +
+            "ipal_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_principal_total_strainsResponse get_results_for_stability_incremental_analysis_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_solids_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_summaryResponse get_results_for_stability_incremental_analysis_summary(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_bas" +
+            "ic_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_internal_forcesResponse get_results_for_stability_incremental_analysis_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_bas" +
+            "ic_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_plastic_strainsResponse get_results_for_stability_incremental_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_bas" +
+            "ic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_stressesResponse get_results_for_stability_incremental_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_bas" +
+            "ic_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_total_strainsResponse get_results_for_stability_incremental_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_con" +
+            "tact_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_contact_stressesResponse get_results_for_stability_incremental_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_contact_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_des" +
+            "ign_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_design_internal_forcesResponse get_results_for_stability_incremental_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_design_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_ela" +
+            "stic_stress_components", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_elastic_stress_componentsResponse get_results_for_stability_incremental_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_elastic_stress_componentsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_plastic_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_bachResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_plastic_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_misesResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_plastic_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_rankineResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_plastic_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_trescaResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_plastic_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_stresses_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_bachResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_stresses_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_misesResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_stresses_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_rankineResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_stresses_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_trescaResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_stresses_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_total_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_bachResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_total_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_misesResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_total_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_rankineResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_equ" +
+            "ivalent_total_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_trescaResponse get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_equivalent_total_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_glo" +
+            "bal_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_global_deformationsResponse get_results_for_stability_incremental_analysis_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_loc" +
+            "al_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_local_deformationsResponse get_results_for_stability_incremental_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_max" +
+            "imum_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_maximum_plastic_strainsResponse get_results_for_stability_incremental_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_maximum_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_max" +
+            "imum_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_maximum_total_strainsResponse get_results_for_stability_incremental_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_maximum_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_pri" +
+            "ncipal_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_internal_forcesResponse get_results_for_stability_incremental_analysis_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_pri" +
+            "ncipal_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_plastic_strainsResponse get_results_for_stability_incremental_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_pri" +
+            "ncipal_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_stressesResponse get_results_for_stability_incremental_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_surfaces_pri" +
+            "ncipal_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_total_strainsResponse get_results_for_stability_incremental_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_surfaces_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_summaryResponse get_results_for_summary(Dlubal.WS.Rfem6.Model.get_results_for_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_basic_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_internal_forcesResponse get_results_for_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_basic_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_plastic_strainsResponse get_results_for_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_basic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_stressesResponse get_results_for_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_basic_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_total_strainsResponse get_results_for_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_by_eigenvector", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_by_eigenvectorResponse get_results_for_surfaces_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_by_eigenvectorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_contact_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_contact_stressesResponse get_results_for_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_contact_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_design_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_design_internal_forcesResponse get_results_for_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_design_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_elastic_stress_components", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_elastic_stress_componentsResponse get_results_for_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_elastic_stress_componentsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_plastic_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_bachResponse get_results_for_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_plastic_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_misesResponse get_results_for_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_plastic_strains_rankine" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_rankineResponse get_results_for_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_plastic_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_trescaResponse get_results_for_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_plastic_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_stresses_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_bachResponse get_results_for_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_stresses_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_misesResponse get_results_for_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_stresses_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_rankineResponse get_results_for_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_stresses_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_trescaResponse get_results_for_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_stresses_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_total_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_bachResponse get_results_for_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_total_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_misesResponse get_results_for_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_total_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_rankineResponse get_results_for_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_equivalent_total_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_trescaResponse get_results_for_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_equivalent_total_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_global_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_global_deformationsResponse get_results_for_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_local_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_local_deformationsResponse get_results_for_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_maximum_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_maximum_plastic_strainsResponse get_results_for_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_maximum_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_maximum_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_maximum_total_strainsResponse get_results_for_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_maximum_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_principal_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_internal_forcesResponse get_results_for_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_principal_plastic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_plastic_strainsResponse get_results_for_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_principal_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_stressesResponse get_results_for_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_surfaces_principal_total_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_total_strainsResponse get_results_for_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_surfaces_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_cent" +
+            "res_mass_rigidity", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_centres_mass_rigidityResponse get_results_for_time_history_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_centres_mass_rigidityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_forc" +
+            "es_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_time_history_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_forc" +
+            "es_in_spandrels", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsResponse get_results_for_time_history_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_inte" +
+            "rstory_drifts", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_interstory_driftsResponse get_results_for_time_history_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_interstory_driftsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_stor" +
+            "y_actions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_story_actionsResponse get_results_for_time_history_analysis_building_stories_story_actions(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_story_actionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_line_hinges_deformati" +
+            "ons", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_hinges_deformationsResponse get_results_for_time_history_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_hinges_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_line_hinges_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_hinges_forcesResponse get_results_for_time_history_analysis_line_hinges_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_hinges_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_lines_slab_wall_conne" +
+            "ctions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_lines_slab_wall_connectionsResponse get_results_for_time_history_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_lines_slab_wall_connectionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_lines_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_lines_support_forcesResponse get_results_for_time_history_analysis_lines_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_lines_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_contact_force" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_contact_forcesResponse get_results_for_time_history_analysis_members_contact_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_global_deform" +
+            "ations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_global_deformationsResponse get_results_for_time_history_analysis_members_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_hinge_deforma" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_hinge_deformationsResponse get_results_for_time_history_analysis_members_hinge_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_hinge_forcesResponse get_results_for_time_history_analysis_members_hinge_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_internal_forc" +
+            "es", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forcesResponse get_results_for_time_history_analysis_members_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_internal_forc" +
+            "es_by_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setResponse get_results_for_time_history_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_internal_forc" +
+            "es_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionResponse get_results_for_time_history_analysis_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_local_deforma" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_local_deformationsResponse get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_strainsResponse get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_accelerations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_accelerationsResponse get_results_for_time_history_analysis_nodes_accelerations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_accelerationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_deformationsResponse get_results_for_time_history_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_support_forcesResponse get_results_for_time_history_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_velocities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_velocitiesResponse get_results_for_time_history_analysis_nodes_velocities(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodes_velocitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_basic_plastic_" +
+            "strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_basic_plastic_strainsResponse get_results_for_time_history_analysis_solids_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_basic_stresses" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_basic_stressesResponse get_results_for_time_history_analysis_solids_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_basic_total_st" +
+            "rains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_basic_total_strainsResponse get_results_for_time_history_analysis_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_deformationsResponse get_results_for_time_history_analysis_solids_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_equivalent_pla" +
+            "stic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_equivalent_plastic_strainsResponse get_results_for_time_history_analysis_solids_equivalent_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_equivalent_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_equivalent_str" +
+            "esses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_equivalent_stressesResponse get_results_for_time_history_analysis_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_equivalent_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_equivalent_tot" +
+            "al_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_equivalent_total_strainsResponse get_results_for_time_history_analysis_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_equivalent_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_gas_quantities" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_gas_quantitiesResponse get_results_for_time_history_analysis_solids_gas_quantities(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_gas_quantitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_principal_plas" +
+            "tic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_principal_plastic_strainsResponse get_results_for_time_history_analysis_solids_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_principal_stre" +
+            "sses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_principal_stressesResponse get_results_for_time_history_analysis_solids_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_solids_principal_tota" +
+            "l_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_principal_total_strainsResponse get_results_for_time_history_analysis_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_solids_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_summaryResponse get_results_for_time_history_analysis_summary(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_basic_intern" +
+            "al_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forcesResponse get_results_for_time_history_analysis_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_basic_plasti" +
+            "c_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsResponse get_results_for_time_history_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_basic_stress" +
+            "es", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stressesResponse get_results_for_time_history_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_basic_total_" +
+            "strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsResponse get_results_for_time_history_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_contact_stre" +
+            "sses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stressesResponse get_results_for_time_history_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_design_inter" +
+            "nal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forcesResponse get_results_for_time_history_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_elastic_stre" +
+            "ss_components", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_componentsResponse get_results_for_time_history_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_componentsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_p" +
+            "lastic_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachResponse get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_p" +
+            "lastic_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesResponse get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_p" +
+            "lastic_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineResponse get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_p" +
+            "lastic_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaResponse get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_s" +
+            "tresses_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bachResponse get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_s" +
+            "tresses_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_misesResponse get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_s" +
+            "tresses_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankineResponse get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_s" +
+            "tresses_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_trescaResponse get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_t" +
+            "otal_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachResponse get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_t" +
+            "otal_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesResponse get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_t" +
+            "otal_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineResponse get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_equivalent_t" +
+            "otal_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaResponse get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_global_defor" +
+            "mations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformationsResponse get_results_for_time_history_analysis_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_local_deform" +
+            "ations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformationsResponse get_results_for_time_history_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_maximum_plas" +
+            "tic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsResponse get_results_for_time_history_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_maximum_tota" +
+            "l_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsResponse get_results_for_time_history_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_principal_in" +
+            "ternal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forcesResponse get_results_for_time_history_analysis_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_principal_pl" +
+            "astic_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsResponse get_results_for_time_history_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_principal_st" +
+            "resses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stressesResponse get_results_for_time_history_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_surfaces_principal_to" +
+            "tal_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsResponse get_results_for_time_history_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_rigid_link", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_rigid_linkResponse get_rigid_link(Dlubal.WS.Rfem6.Model.get_rigid_linkRequest request);
@@ -697,6 +1870,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_wind_simulation_analysis_settings", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsResponse get_wind_simulation_analysis_settings(Dlubal.WS.Rfem6.Model.get_wind_simulation_analysis_settingsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_any_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.has_any_resultsResponse has_any_results(Dlubal.WS.Rfem6.Model.has_any_resultsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.has_resultsResponse has_results(Dlubal.WS.Rfem6.Model.has_resultsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/plausibility_check", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1229,6 +2410,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/unite_nodes_and_supports", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.unite_nodes_and_supportsResponse unite_nodes_and_supports(Dlubal.WS.Rfem6.Model.unite_nodes_and_supportsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/use_detailed_member_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.use_detailed_member_resultsResponse use_detailed_member_results(Dlubal.WS.Rfem6.Model.use_detailed_member_resultsRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
