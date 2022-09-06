@@ -37,7 +37,7 @@ steps:
     repositoryName: 'Dlubal-Software/Dlubal_CSharp_Client'
     action: 'create'
     target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
+    tagSource: $(ReleaseTag)
     isDraft: true
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
