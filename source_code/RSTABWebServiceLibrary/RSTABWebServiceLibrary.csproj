@@ -14,8 +14,8 @@
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en</NeutralLanguage>
     <AssemblyVersion>9.02.26</AssemblyVersion>
-    <FileVersion>9.02.25</FileVersion>
-    <Version>9.02.25</Version>
+    <FileVersion>9.02.26</FileVersion>
+    <Version>9.02.26</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageId>Dlubal.$(AssemblyName)</PackageId>

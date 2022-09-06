@@ -7,8 +7,8 @@
     <StartupObject />
     <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.02.25</FileVersion>
-    <AssemblyVersion>1.02.25</AssemblyVersion>
+    <FileVersion>1.02.26</FileVersion>
+    <AssemblyVersion>1.02.26</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
     <Version>1.02.26</Version>

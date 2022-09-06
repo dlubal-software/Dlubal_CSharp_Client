@@ -19,11 +19,12 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <FileVersion>6.02.25</FileVersion>
-    <Version>6.02.25</Version>
+    <FileVersion>6.02.26</FileVersion>
+    <Version>6.02.26</Version>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageId>Dlubal.$(AssemblyName)</PackageId>
     <PackageIcon>rfem.png</PackageIcon>
+    <PackageTags>RFEM;WebService;DLUBAL</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
