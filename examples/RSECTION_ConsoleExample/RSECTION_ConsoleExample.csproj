@@ -18,6 +18,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\source_code\RSECTIONWebServiceLibrary\RSECTIONWebServiceLibrary.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
