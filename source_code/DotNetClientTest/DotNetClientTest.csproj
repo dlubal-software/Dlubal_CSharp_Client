@@ -274,18 +274,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
-      if "$(ConfigurationName)" == "Release RFEM" (
-          copy "$(TargetDir)*.exe*" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRFEM\*.*"
-          copy "$(TargetDir)*.dll" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRFEM\*.*"
-      )
-      if "$(ConfigurationName)" == "Release RSTAB" (
-          copy "$(TargetDir)*.exe*" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSTAB\*.*"
-          copy "$(TargetDir)*.dll" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSTAB\*.*"
-      )
-      if "$(ConfigurationName)" == "Release RSECTION" (
-          copy "$(TargetDir)*.exe*" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSECTION\*.*"
-          copy "$(TargetDir)*.dll" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSECTION\*.*"
-      )
     </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
