@@ -32,9 +32,16 @@ steps:
 #     platform: '$(buildPlatform)'
 #     configuration: '$(buildConfiguration)'
 - task: CopyFiles@2
-  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy nupkg Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     Contents: |
-      **\bin\**\*.dll
       **\bin\**\*.nupkg
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/NugetPackages'
+    CleanTargetFolder: true
+    flattenFolders: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)/NugetPackages
+    artifactName: NugetPackages
+    
+    
