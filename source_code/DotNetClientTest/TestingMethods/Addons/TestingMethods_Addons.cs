@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Common.Tools;
 using System;
 
 #if RFEM
@@ -45,18 +47,26 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 {
                     analysis = new addon_list_analysis_list_type
                     {
+                        structure_stability_active = true,
+                        structure_stability_activeSpecified = true,
+#if !RSTAB
                         material_nonlinear_analysis_active = true,
                         material_nonlinear_analysis_activeSpecified = true,
                         form_finding_active = true,
                         form_finding_activeSpecified = true,
+#endif
                     }
                 };
 
                 SoapModelClient.set_addon_statuses(addons);
 
                 addons = SoapModelClient.get_addon_statuses();
-                if (addons.analysis.material_nonlinear_analysis_active != true ||
-                    addons.analysis.form_finding_active != true)
+                if (addons.analysis.structure_stability_active != true
+#if !RSTAB
+                    || addons.analysis.material_nonlinear_analysis_active != true
+                    || addons.analysis.form_finding_active != true
+#endif
+                    )
                 {
                     throw new Exception("At least one of activated modules is not active.");
                 }
@@ -113,6 +123,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
+#if !RSTAB
         public static bool Test_Addons_Set\u2040Special\u2040Solution\u2040Addons\u2040Active()
         {
             DataLogger.AddLogStart("Set special solution addons active...");
@@ -153,6 +164,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             return true;
         }
+#endif // !RSTAB
 
         public static bool Test_Addons_Set\u2040Design\u2040Addons\u2040Active()
         {
@@ -202,3 +214,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

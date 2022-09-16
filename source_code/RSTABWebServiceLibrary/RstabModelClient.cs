@@ -171,6 +171,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.delete_printout_reportsResponse Dlubal.WS.Rstab9.Model.IRstabModel.delete_printout_reports(Dlubal.WS.Rstab9.Model.delete_printout_reportsRequest request)
+        {
+            return base.Channel.delete_printout_reports(request);
+        }
+        
+        public void delete_printout_reports(int[] printout_report_id_list)
+        {
+            Dlubal.WS.Rstab9.Model.delete_printout_reportsRequest inValue = new Dlubal.WS.Rstab9.Model.delete_printout_reportsRequest();
+            inValue.printout_report_id_list = printout_report_id_list;
+            Dlubal.WS.Rstab9.Model.delete_printout_reportsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).delete_printout_reports(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.divide_by_intersectionsResponse Dlubal.WS.Rstab9.Model.IRstabModel.divide_by_intersections(Dlubal.WS.Rstab9.Model.divide_by_intersectionsRequest request)
         {
             return base.Channel.divide_by_intersections(request);
@@ -194,6 +207,34 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.export_details_of_design_to_csvRequest inValue = new Dlubal.WS.Rstab9.Model.export_details_of_design_to_csvRequest();
             inValue.targetDirectoryPath = targetDirectoryPath;
             Dlubal.WS.Rstab9.Model.export_details_of_design_to_csvResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).export_details_of_design_to_csv(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.export_printout_report_to_htmlResponse Dlubal.WS.Rstab9.Model.IRstabModel.export_printout_report_to_html(Dlubal.WS.Rstab9.Model.export_printout_report_to_htmlRequest request)
+        {
+            return base.Channel.export_printout_report_to_html(request);
+        }
+        
+        public void export_printout_report_to_html(int printout_report_id, string file_path)
+        {
+            Dlubal.WS.Rstab9.Model.export_printout_report_to_htmlRequest inValue = new Dlubal.WS.Rstab9.Model.export_printout_report_to_htmlRequest();
+            inValue.printout_report_id = printout_report_id;
+            inValue.file_path = file_path;
+            Dlubal.WS.Rstab9.Model.export_printout_report_to_htmlResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).export_printout_report_to_html(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.export_printout_report_to_pdfResponse Dlubal.WS.Rstab9.Model.IRstabModel.export_printout_report_to_pdf(Dlubal.WS.Rstab9.Model.export_printout_report_to_pdfRequest request)
+        {
+            return base.Channel.export_printout_report_to_pdf(request);
+        }
+        
+        public void export_printout_report_to_pdf(int printout_report_id, string file_path)
+        {
+            Dlubal.WS.Rstab9.Model.export_printout_report_to_pdfRequest inValue = new Dlubal.WS.Rstab9.Model.export_printout_report_to_pdfRequest();
+            inValue.printout_report_id = printout_report_id;
+            inValue.file_path = file_path;
+            Dlubal.WS.Rstab9.Model.export_printout_report_to_pdfResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).export_printout_report_to_pdf(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -437,6 +478,34 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_all_selected_objectsRequest inValue = new Dlubal.WS.Rstab9.Model.get_all_selected_objectsRequest();
             Dlubal.WS.Rstab9.Model.get_all_selected_objectsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_all_selected_objects(inValue);
             return retVal.value;
+        }
+        
+        public Dlubal.WS.Rstab9.Model.aluminum_design_sls_configuration get_aluminum_design_sls_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_aluminum_design_sls_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_aluminum_design_sls_configuration(Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationRequest request)
+        {
+            return base.Channel.get_aluminum_design_sls_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.aluminum_design_uls_configuration get_aluminum_design_uls_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_aluminum_design_uls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_aluminum_design_uls_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_aluminum_design_uls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_aluminum_design_uls_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_aluminum_design_uls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_aluminum_design_uls_configuration(Dlubal.WS.Rstab9.Model.get_aluminum_design_uls_configurationRequest request)
+        {
+            return base.Channel.get_aluminum_design_uls_configuration(request);
         }
         
         public Dlubal.WS.Rstab9.Model.aluminum_effective_lengths get_aluminum_effective_lengths(int no)
@@ -747,6 +816,19 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forRequest inValue = new Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forRequest();
             inValue.object_location = object_location;
             Dlubal.WS.Rstab9.Model.get_list_of_parameters_formula_allowed_forResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_list_of_parameters_formula_allowed_for(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_list_of_printout_reportsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_list_of_printout_reports(Dlubal.WS.Rstab9.Model.get_list_of_printout_reportsRequest request)
+        {
+            return base.Channel.get_list_of_printout_reports(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.printout_report_info[] get_list_of_printout_reports()
+        {
+            Dlubal.WS.Rstab9.Model.get_list_of_printout_reportsRequest inValue = new Dlubal.WS.Rstab9.Model.get_list_of_printout_reportsRequest();
+            Dlubal.WS.Rstab9.Model.get_list_of_printout_reportsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_list_of_printout_reports(inValue);
             return retVal.value;
         }
         
@@ -1167,6 +1249,34 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_nodal_releaseResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_nodal_release(Dlubal.WS.Rstab9.Model.get_nodal_releaseRequest request)
+        {
+            return base.Channel.get_nodal_release(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.nodal_release get_nodal_release(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_nodal_releaseRequest inValue = new Dlubal.WS.Rstab9.Model.get_nodal_releaseRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_nodal_releaseResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_nodal_release(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_nodal_release_typeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_nodal_release_type(Dlubal.WS.Rstab9.Model.get_nodal_release_typeRequest request)
+        {
+            return base.Channel.get_nodal_release_type(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.nodal_release_type get_nodal_release_type(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_nodal_release_typeRequest inValue = new Dlubal.WS.Rstab9.Model.get_nodal_release_typeRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_nodal_release_typeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_nodal_release_type(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_nodal_supportResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_nodal_support(Dlubal.WS.Rstab9.Model.get_nodal_supportRequest request)
         {
             return base.Channel.get_nodal_support(request);
@@ -1386,6 +1496,22 @@ namespace Dlubal.WS.Rstab9.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_calculation_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.convergence_diagrams_row[] get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_convergence_diagrams(inValue);
             return retVal.value;
         }
         
@@ -2061,6 +2187,22 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_convergence_diagrams_row[] get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_convergence_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest request)
         {
             return base.Channel.get_results_for_stability_incremental_analysis_members_contact_forces(request);
@@ -2560,6 +2702,62 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_steel_design_fr_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_design_fr_configuration(Dlubal.WS.Rstab9.Model.get_steel_design_fr_configurationRequest request)
+        {
+            return base.Channel.get_steel_design_fr_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.steel_design_fr_configuration get_steel_design_fr_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_steel_design_fr_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_design_fr_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_steel_design_fr_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_design_fr_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_steel_design_seismic_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_design_seismic_configuration(Dlubal.WS.Rstab9.Model.get_steel_design_seismic_configurationRequest request)
+        {
+            return base.Channel.get_steel_design_seismic_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.steel_design_seismic_configuration get_steel_design_seismic_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_steel_design_seismic_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_design_seismic_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_steel_design_seismic_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_design_seismic_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_steel_design_sls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_design_sls_configuration(Dlubal.WS.Rstab9.Model.get_steel_design_sls_configurationRequest request)
+        {
+            return base.Channel.get_steel_design_sls_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.steel_design_sls_configuration get_steel_design_sls_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_steel_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_design_sls_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_steel_design_sls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_design_sls_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_steel_design_uls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_design_uls_configuration(Dlubal.WS.Rstab9.Model.get_steel_design_uls_configurationRequest request)
+        {
+            return base.Channel.get_steel_design_uls_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.steel_design_uls_configuration get_steel_design_uls_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_steel_design_uls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_design_uls_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_steel_design_uls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_design_uls_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_steel_effective_lengthsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_effective_lengths(Dlubal.WS.Rstab9.Model.get_steel_effective_lengthsRequest request)
         {
             return base.Channel.get_steel_effective_lengths(request);
@@ -2653,6 +2851,48 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_terrainRequest inValue = new Dlubal.WS.Rstab9.Model.get_terrainRequest();
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_terrainResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_terrain(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_timber_design_fr_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_design_fr_configuration(Dlubal.WS.Rstab9.Model.get_timber_design_fr_configurationRequest request)
+        {
+            return base.Channel.get_timber_design_fr_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.timber_design_fr_configuration get_timber_design_fr_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_timber_design_fr_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_timber_design_fr_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_timber_design_fr_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_design_fr_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_timber_design_sls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_design_sls_configuration(Dlubal.WS.Rstab9.Model.get_timber_design_sls_configurationRequest request)
+        {
+            return base.Channel.get_timber_design_sls_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.timber_design_sls_configuration get_timber_design_sls_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_timber_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_timber_design_sls_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_timber_design_sls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_design_sls_configuration(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_timber_design_uls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_design_uls_configuration(Dlubal.WS.Rstab9.Model.get_timber_design_uls_configurationRequest request)
+        {
+            return base.Channel.get_timber_design_uls_configuration(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.timber_design_uls_configuration get_timber_design_uls_configuration(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_timber_design_uls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_timber_design_uls_configurationRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_timber_design_uls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_design_uls_configuration(inValue);
             return retVal.value;
         }
         
@@ -2811,6 +3051,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.print_printout_reportResponse Dlubal.WS.Rstab9.Model.IRstabModel.print_printout_report(Dlubal.WS.Rstab9.Model.print_printout_reportRequest request)
+        {
+            return base.Channel.print_printout_report(request);
+        }
+        
+        public void print_printout_report(int printout_report_id)
+        {
+            Dlubal.WS.Rstab9.Model.print_printout_reportRequest inValue = new Dlubal.WS.Rstab9.Model.print_printout_reportRequest();
+            inValue.printout_report_id = printout_report_id;
+            Dlubal.WS.Rstab9.Model.print_printout_reportResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).print_printout_report(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.resetResponse Dlubal.WS.Rstab9.Model.IRstabModel.reset(Dlubal.WS.Rstab9.Model.resetRequest request)
         {
             return base.Channel.reset(request);
@@ -2886,6 +3139,32 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_addon_statusesRequest inValue = new Dlubal.WS.Rstab9.Model.set_addon_statusesRequest();
             inValue.addon_statuses = addon_statuses;
             Dlubal.WS.Rstab9.Model.set_addon_statusesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_addon_statuses(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_aluminum_design_sls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_aluminum_design_sls_configuration(Dlubal.WS.Rstab9.Model.set_aluminum_design_sls_configurationRequest request)
+        {
+            return base.Channel.set_aluminum_design_sls_configuration(request);
+        }
+        
+        public void set_aluminum_design_sls_configuration(Dlubal.WS.Rstab9.Model.aluminum_design_sls_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_aluminum_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_aluminum_design_sls_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_aluminum_design_sls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_aluminum_design_sls_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_aluminum_design_uls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_aluminum_design_uls_configuration(Dlubal.WS.Rstab9.Model.set_aluminum_design_uls_configurationRequest request)
+        {
+            return base.Channel.set_aluminum_design_uls_configuration(request);
+        }
+        
+        public void set_aluminum_design_uls_configuration(Dlubal.WS.Rstab9.Model.aluminum_design_uls_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_aluminum_design_uls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_aluminum_design_uls_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_aluminum_design_uls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_aluminum_design_uls_configuration(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3496,6 +3775,32 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_nodal_releaseResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_nodal_release(Dlubal.WS.Rstab9.Model.set_nodal_releaseRequest request)
+        {
+            return base.Channel.set_nodal_release(request);
+        }
+        
+        public void set_nodal_release(Dlubal.WS.Rstab9.Model.nodal_release value)
+        {
+            Dlubal.WS.Rstab9.Model.set_nodal_releaseRequest inValue = new Dlubal.WS.Rstab9.Model.set_nodal_releaseRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_nodal_releaseResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_nodal_release(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_nodal_release_typeResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_nodal_release_type(Dlubal.WS.Rstab9.Model.set_nodal_release_typeRequest request)
+        {
+            return base.Channel.set_nodal_release_type(request);
+        }
+        
+        public void set_nodal_release_type(Dlubal.WS.Rstab9.Model.nodal_release_type value)
+        {
+            Dlubal.WS.Rstab9.Model.set_nodal_release_typeRequest inValue = new Dlubal.WS.Rstab9.Model.set_nodal_release_typeRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_nodal_release_typeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_nodal_release_type(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_nodal_supportResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_nodal_support(Dlubal.WS.Rstab9.Model.set_nodal_supportRequest request)
         {
             return base.Channel.set_nodal_support(request);
@@ -3665,6 +3970,58 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_steel_design_fr_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_design_fr_configuration(Dlubal.WS.Rstab9.Model.set_steel_design_fr_configurationRequest request)
+        {
+            return base.Channel.set_steel_design_fr_configuration(request);
+        }
+        
+        public void set_steel_design_fr_configuration(Dlubal.WS.Rstab9.Model.steel_design_fr_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_steel_design_fr_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_design_fr_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_steel_design_fr_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_design_fr_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_steel_design_seismic_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_design_seismic_configuration(Dlubal.WS.Rstab9.Model.set_steel_design_seismic_configurationRequest request)
+        {
+            return base.Channel.set_steel_design_seismic_configuration(request);
+        }
+        
+        public void set_steel_design_seismic_configuration(Dlubal.WS.Rstab9.Model.steel_design_seismic_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_steel_design_seismic_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_design_seismic_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_steel_design_seismic_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_design_seismic_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_steel_design_sls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_design_sls_configuration(Dlubal.WS.Rstab9.Model.set_steel_design_sls_configurationRequest request)
+        {
+            return base.Channel.set_steel_design_sls_configuration(request);
+        }
+        
+        public void set_steel_design_sls_configuration(Dlubal.WS.Rstab9.Model.steel_design_sls_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_steel_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_design_sls_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_steel_design_sls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_design_sls_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_steel_design_uls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_design_uls_configuration(Dlubal.WS.Rstab9.Model.set_steel_design_uls_configurationRequest request)
+        {
+            return base.Channel.set_steel_design_uls_configuration(request);
+        }
+        
+        public void set_steel_design_uls_configuration(Dlubal.WS.Rstab9.Model.steel_design_uls_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_steel_design_uls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_design_uls_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_steel_design_uls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_design_uls_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_steel_effective_lengthsResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_effective_lengths(Dlubal.WS.Rstab9.Model.set_steel_effective_lengthsRequest request)
         {
             return base.Channel.set_steel_effective_lengths(request);
@@ -3753,6 +4110,45 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_terrainRequest inValue = new Dlubal.WS.Rstab9.Model.set_terrainRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_terrainResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_terrain(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_timber_design_fr_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_design_fr_configuration(Dlubal.WS.Rstab9.Model.set_timber_design_fr_configurationRequest request)
+        {
+            return base.Channel.set_timber_design_fr_configuration(request);
+        }
+        
+        public void set_timber_design_fr_configuration(Dlubal.WS.Rstab9.Model.timber_design_fr_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_timber_design_fr_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_timber_design_fr_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_timber_design_fr_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_design_fr_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_timber_design_sls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_design_sls_configuration(Dlubal.WS.Rstab9.Model.set_timber_design_sls_configurationRequest request)
+        {
+            return base.Channel.set_timber_design_sls_configuration(request);
+        }
+        
+        public void set_timber_design_sls_configuration(Dlubal.WS.Rstab9.Model.timber_design_sls_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_timber_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_timber_design_sls_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_timber_design_sls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_design_sls_configuration(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_timber_design_uls_configurationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_design_uls_configuration(Dlubal.WS.Rstab9.Model.set_timber_design_uls_configurationRequest request)
+        {
+            return base.Channel.set_timber_design_uls_configuration(request);
+        }
+        
+        public void set_timber_design_uls_configuration(Dlubal.WS.Rstab9.Model.timber_design_uls_configuration value)
+        {
+            Dlubal.WS.Rstab9.Model.set_timber_design_uls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.set_timber_design_uls_configurationRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_timber_design_uls_configurationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_design_uls_configuration(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

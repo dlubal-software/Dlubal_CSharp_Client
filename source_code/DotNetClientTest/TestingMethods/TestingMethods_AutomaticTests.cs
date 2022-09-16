@@ -8,6 +8,8 @@ using static Dlubal.WS.Common.Tools.DataLogger;
 using Dlubal.WS.Rfem6.Model;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -26,7 +28,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
             bool succeeded = false;
 
+#if RFEM || RSTAB
             _ = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_NODE, 0);
+#elif RSECTION
+            _ = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_POINT, 0);
+#endif
 
             try
             {
@@ -80,6 +86,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             {
                 SoapApplicationClient.new_model("Test");
             }
+
+#if RFEM || RSTAB
+            SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_NODE, 0);
+#elif RSECTION
+            SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_POINT, 0);
+#endif
 
             if (SoapModelClient == null)
             {

@@ -81,10 +81,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating NURBS surface...");
             DataLogger.InitializeProgressBar(0, 60, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -292,20 +291,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_surface(surface);
 
                 DataLogger.SetProgressBarValue(60);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -313,8 +315,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Basic\u2040Objects_Surfaces_Create\u2040Surface()
@@ -334,10 +335,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating surface...");
             DataLogger.InitializeProgressBar(0, 60, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -410,20 +410,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_surface(surface);
 
                 DataLogger.SetProgressBarValue(60);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -431,8 +434,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Basic\u2040Objects_Surfaces_Create\u2040NURBS\u2040Surface\u2040Global\u2040CS()

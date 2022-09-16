@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Common.Tools;
 using System;
 
 #if RFEM
@@ -56,7 +58,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 loadCombination.items[i] = new load_combination_items_row
                 {
                     no = i + 1,
-                    noSpecified = true,
                     row = new load_combination_items
                     {
                         factor = 1.0 + (caseId / 10.0),
@@ -99,10 +100,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating load combinations...");
             DataLogger.InitializeProgressBar(0, 30, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -119,20 +119,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SetLoadCombination(LOAD_COMBINATION_2_ID, 4, true);
 
                 DataLogger.SetProgressBarValue(30);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -140,8 +143,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         /// <summary>
@@ -154,10 +156,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating load combination...");
             DataLogger.InitializeProgressBar(0, 50, 0);
 
-            bool succeeded = Test_General_Delete⁀All();
-            if (!succeeded || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -200,20 +201,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 succeeded &= ValidateItemCount(LOAD_COMBINATION_1_ID, 3);
 
                 DataLogger.SetProgressBarValue(50);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -221,8 +225,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(succeeded ? DataLogger.LogResultType.DONE : DataLogger.LogResultType.FAILED);
             return succeeded;
         }
     }
 }
+
+#endif // RFEM RSTAB

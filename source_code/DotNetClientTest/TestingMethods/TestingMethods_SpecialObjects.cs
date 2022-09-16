@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if !RSECTION
+
+using Dlubal.WS.Common.Tools;
 using System;
 
 #if RFEM
@@ -88,3 +90,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #endif
     }
 }
+
+#endif // !RSECTION

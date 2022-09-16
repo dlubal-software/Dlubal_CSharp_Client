@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 using System.Collections.Generic;
@@ -28,10 +30,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating nodal loads...");
             DataLogger.InitializeProgressBar(0, 70, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -118,20 +119,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_nodal_load(LOAD_CASE_NO, nodalLoad4);
 
                 DataLogger.SetProgressBarValue(70);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -139,8 +143,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Loads_Nodal\u2040Loads_Get()
@@ -190,3 +193,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

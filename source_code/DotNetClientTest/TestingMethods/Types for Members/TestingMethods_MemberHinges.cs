@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 
@@ -23,11 +25,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating member hinges...");
             DataLogger.InitializeProgressBar(0, 50, 0);
 
-            bool result = Test_General_Delete⁀All();
-
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -84,20 +84,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_member_hinge(memberHinge3);
 
                 DataLogger.SetProgressBarValue(50);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -105,8 +108,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Types\u2040for\u2040Members_Member\u2040Hinges_Get()
@@ -156,3 +158,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

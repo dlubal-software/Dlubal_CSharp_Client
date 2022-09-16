@@ -10,51 +10,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
-        public static bool Test_Wind⁀Calculations_Profile_Get()
-        {
-            DataLogger.AddText("Reading wind profile...");
-            try
-            {
-                ReadWindProfile();
-            }
-            catch (Exception exception)
-            {
-                ModelWsExceptionHandler(exception);
-                return false;
-            }
-            return true;
-        }
-
-        public static bool Test_Wind⁀Calculations_Simulation_Get()
-        {
-            DataLogger.AddText("Reading wind simulation...");
-            try
-            {
-                ReadWindSimulation();
-            }
-            catch (Exception exception)
-            {
-                ModelWsExceptionHandler(exception);
-                return false;
-            }
-            return true;
-        }
-
-        public static bool Test_Wind⁀Calculations_Simulation⁀Analysis⁀Settings_Get()
-        {
-            DataLogger.AddText("Reading wind simulation analysis settings...");
-            try
-            {
-                ReadWindSimulationAnalysisSettings();
-            }
-            catch (Exception exception)
-            {
-                ModelWsExceptionHandler(exception);
-                return false;
-            }
-            return true;
-        }
-
         public static bool Test_Wind⁀Calculations_Profile_Create()
         {
             DataLogger.AddText("Creating wind profile...");
@@ -139,6 +94,51 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
+        public static bool Test_Wind⁀Calculations_Profile_Get()
+        {
+            DataLogger.AddText("Reading wind profile...");
+            try
+            {
+                ReadWindProfile();
+            }
+            catch (Exception exception)
+            {
+                ModelWsExceptionHandler(exception);
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Test_Wind⁀Calculations_Simulation_Get()
+        {
+            DataLogger.AddText("Reading wind simulation...");
+            try
+            {
+                ReadWindSimulation();
+            }
+            catch (Exception exception)
+            {
+                ModelWsExceptionHandler(exception);
+                return false;
+            }
+            return true;
+        }
+
+        public static bool Test_Wind⁀Calculations_Simulation⁀Analysis⁀Settings_Get()
+        {
+            DataLogger.AddText("Reading wind simulation analysis settings...");
+            try
+            {
+                ReadWindSimulationAnalysisSettings();
+            }
+            catch (Exception exception)
+            {
+                ModelWsExceptionHandler(exception);
+                return false;
+            }
+            return true;
+        }
+
         public static bool Test_Wind⁀Calculations_Profile_Delete()
         {
             DataLogger.AddText("Deleting wind profile...");
@@ -187,8 +187,24 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             }
         }
 
+        private static void ActivateAddonWindSimulation()
+        {
+            addon_list_type addon = new addon_list_type
+            {
+                special_solutions = new addon_list_special_solutions_list_type
+                {
+                    wind_simulation_active = true,
+                    wind_simulation_activeSpecified = true
+                }
+            };
+
+            SoapModelClient.set_addon_statuses(addon);
+        }
+
         private static void CreateWindProfile()
         {
+            ActivateAddonWindSimulation();
+
             SoapModelClient.begin_modification(nameof(CreateWindProfile));
             DataLogger.SetProgressBarValue(20);
             DataLogger.AddText("Generating wind profile...");
@@ -219,7 +235,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 rows[i] = new wind_profile_user_defined_wind_profile_row()
                 {
                     no = i + 1,
-                    noSpecified = true,
                     row = new wind_profile_user_defined_wind_profile
                     {
                         height = i * heightMultiplier,
@@ -252,6 +267,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void CreateWindSimulation()
         {
+            ActivateAddonWindSimulation();
+
             SoapModelClient.begin_modification(nameof(CreateWindSimulation));
             DataLogger.SetProgressBarValue(20);
             DataLogger.AddText("Generating wind simulation...");
@@ -276,6 +293,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void CreateWindSimulationAnalysisSettings()
         {
+            ActivateAddonWindSimulation();
+
             SoapModelClient.begin_modification(nameof(CreateWindSimulationAnalysisSettings));
             DataLogger.SetProgressBarValue(20);
             DataLogger.AddText("Generating wind simulation analysis settings...");
@@ -383,7 +402,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddText($"Step angle: {simulation.uniform_wind_direction_step}");
             DataLogger.AddText($"Start angle: {simulation.uniform_wind_direction_range_start}");
             DataLogger.AddText($"End angle: {simulation.uniform_wind_direction_range_end}");
-            foreach(var loadCase in simulation.generate_into_load_cases)
+            foreach (var loadCase in simulation.generate_into_load_cases)
             {
                 LogWindSimulationGenerateIntoLoadCasesRow(loadCase);
             }
@@ -413,7 +432,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.IncrementOffset();
             DataLogger.AddText($"Name: {profile.name}");
             DataLogger.AddText($"Comment: {profile.comment}");
-            foreach(var userWindProfileRow in profile.user_defined_wind_profile)
+            foreach (var userWindProfileRow in profile.user_defined_wind_profile)
             {
                 LogWindUserProfileRow(userWindProfileRow);
             }

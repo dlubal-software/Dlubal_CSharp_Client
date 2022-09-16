@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if !RSECTION
+
+using Dlubal.WS.Common.Tools;
 using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -12,12 +14,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
-        public static bool Test_Analysis⁀Settings_Static_Get()
+        public static bool Test_Analysis⁀Settings_Static_Create()
         {
-            DataLogger.AddLogStart("Reading static analysis settings...");
+            DataLogger.AddLogStart("Creating static analysis settings...");
             try
             {
-                ReadStaticAnalysisSettings();
+                CreateStaticSimulationAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -28,12 +30,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
-        public static bool Test_Analysis⁀Settings_Static_Create()
+        public static bool Test_Analysis⁀Settings_Static_Get()
         {
-            DataLogger.AddLogStart("Creating static analysis settings...");
+            DataLogger.AddLogStart("Reading static analysis settings...");
             try
             {
-                CreateStaticSimulationAnalysisSettings();
+                ReadStaticAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -126,3 +128,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

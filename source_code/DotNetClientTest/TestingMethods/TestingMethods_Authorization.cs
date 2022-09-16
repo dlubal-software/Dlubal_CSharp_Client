@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if RFEM || RSTAB
+
+using System;
 using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 
@@ -16,7 +18,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         {
             DataLogger.AddLogStart("Set members under demo limit...");
 
-            if (!InitializeTest())
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
                 return false;
             }
@@ -43,21 +46,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 };
                 SetDefaultSurface( nodes, 1);
 #endif
-
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -65,15 +70,15 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Authorization_Set\u2040Objects\u2040Over\u2040Demo\u2040Limit()
         {
             DataLogger.AddLogStart("Set members over demo limit...");
 
-            if (!InitializeTest())
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
                 return false;
             }
@@ -118,21 +123,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 };
                 SetDefaultSurface(nodes, 3);
 #endif
-
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -140,8 +147,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
     }
 }
+
+#endif // RFEM RSTAB

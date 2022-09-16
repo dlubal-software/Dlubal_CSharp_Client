@@ -4,6 +4,8 @@
 using Dlubal.WS.Rfem6.Model;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest.Tools
@@ -68,6 +70,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest.Tools
 
 #endif // RFEM
 
+#if RFEM || RSTAB
+
         public static member_result_intermediate_point_distances SetDistance(this member_result_intermediate_point_distances distance, double value, string note)
         {
             distance.value = value;
@@ -91,5 +95,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest.Tools
 
             return imperfectionCase;
         }
+
+#endif // RFEM RSTAB
+
     }
 }

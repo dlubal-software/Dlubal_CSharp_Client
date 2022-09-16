@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 using System.Collections.Generic;
@@ -108,7 +110,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
             DataLogger.AddLogStart("Adding member...");
 
-            if (!InitializeTest())
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
                 return false;
             }
@@ -192,20 +195,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_member(member);
 
                 DataLogger.SetProgressBarValue(50);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -213,8 +219,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Basic\u2040Objects_Members_Delete\u2040All\u2040Members\u2040One\u2040by\u2040One()
@@ -226,6 +231,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             }
 
             DataLogger.AddLogStart("Deleting all members one by one...");
+
+            bool succeeded = false;
 
             try
             {
@@ -241,20 +248,24 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                     DataLogger.SetProgressBarValue(i + 1);
                 }
+
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -262,8 +273,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Basic\u2040Objects_Members_Delete\u2040All\u2040Members\u2040at\u2040Once()
@@ -277,6 +287,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Deleting all members at once...");
             DataLogger.InitializeProgressBar(0, 10, 0);
 
+            bool succeeded = false;
+
             try
             {
                 SoapModelClient.begin_modification("Deleting all members");
@@ -285,20 +297,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.delete_object(object_types.E_OBJECT_TYPE_MEMBER, 0, 0);
 
                 DataLogger.SetProgressBarValue(10);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -306,8 +321,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
     }
 }
+
+#endif // RFEM RSTAB

@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if !RSECTION
+
+using Dlubal.WS.Common.Tools;
 using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -12,12 +14,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
-        public static bool Test_Analysis⁀Settings_Spectral_Get()
+        public static bool Test_Analysis⁀Settings_Spectral_Create()
         {
-            DataLogger.AddLogStart("Reading spectral analysis settings...");
+            DataLogger.AddLogStart("Creating spectral analysis settings...");
             try
             {
-                ReadSpectralAnalysisSettings();
+                CreateSpectralSimulationAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -28,12 +30,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
-        public static bool Test_Analysis⁀Settings_Spectral_Create()
+        public static bool Test_Analysis⁀Settings_Spectral_Get()
         {
-            DataLogger.AddLogStart("Creating spectral analysis settings...");
+            DataLogger.AddLogStart("Reading spectral analysis settings...");
             try
             {
-                CreateSpectralSimulationAnalysisSettings();
+                ReadSpectralAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -92,6 +94,17 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void CreateSpectralSimulationAnalysisSettings()
         {
+            addon_list_type addon = new addon_list_type
+            {
+                dynamic_analysis_settings = new addon_list_dynamic_analysis_settings_list_type
+                {
+                    spectral_active = true,
+                    spectral_activeSpecified = true
+                }
+            };
+
+            SoapModelClient.set_addon_statuses(addon);
+
             SoapModelClient.begin_modification(nameof(CreateSpectralSimulationAnalysisSettings));
             DataLogger.AddText("Generating spectral analysis settings...");
             var settings = GetSpectralSimulationAnalysisSettings();
@@ -116,3 +129,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

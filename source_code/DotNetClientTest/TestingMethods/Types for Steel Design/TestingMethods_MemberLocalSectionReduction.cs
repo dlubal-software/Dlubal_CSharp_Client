@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !RSECTION
+
+using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
 #if RFEM
@@ -145,7 +147,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new steel_member_local_section_reduction_components_row
                 {
                     no = 1,
-                    noSpecified = true,
                     row = new steel_member_local_section_reduction_components
                     {
                         reduction_area = 54,
@@ -158,7 +159,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new steel_member_local_section_reduction_components_row
                 {
                     no = 2,
-                    noSpecified = true,
                     row = new steel_member_local_section_reduction_components
                     {
                         reduction_area = 1.5,
@@ -171,7 +171,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new steel_member_local_section_reduction_components_row
                 {
                     no = 3,
-                    noSpecified = true,
                     row = new steel_member_local_section_reduction_components
                     {
                         reduction_area = 1.5,
@@ -200,3 +199,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
     }
 }
+
+#endif // !RSECTION

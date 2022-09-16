@@ -8,6 +8,9 @@ using Dlubal.WS.Rfem6.Model;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Application;
 using Dlubal.WS.Rstab9.Model;
+#elif RSECTION
+using Dlubal.WS.RSection1.Application;
+using Dlubal.WS.RSection1.Model;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -57,6 +60,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
+#if !RSECTION
         public static bool Test_Manage⁀Project_Create⁀New⁀Model⁀From⁀Template()
         {
 #if RFEM
@@ -103,6 +107,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogEnd(LogResultType.DONE);
             return true;
         }
+#endif // !RSECTION
 
         public static bool Test_Manage⁀Project_Create⁀New⁀Project()
         {

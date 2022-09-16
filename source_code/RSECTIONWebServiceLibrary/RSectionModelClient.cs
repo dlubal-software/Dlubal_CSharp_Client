@@ -155,6 +155,19 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.delete_printout_reportsResponse Dlubal.WS.RSection1.Model.IRSectionModel.delete_printout_reports(Dlubal.WS.RSection1.Model.delete_printout_reportsRequest request)
+        {
+            return base.Channel.delete_printout_reports(request);
+        }
+        
+        public void delete_printout_reports(int[] printout_report_id_list)
+        {
+            Dlubal.WS.RSection1.Model.delete_printout_reportsRequest inValue = new Dlubal.WS.RSection1.Model.delete_printout_reportsRequest();
+            inValue.printout_report_id_list = printout_report_id_list;
+            Dlubal.WS.RSection1.Model.delete_printout_reportsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).delete_printout_reports(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.export_details_of_design_to_csvResponse Dlubal.WS.RSection1.Model.IRSectionModel.export_details_of_design_to_csv(Dlubal.WS.RSection1.Model.export_details_of_design_to_csvRequest request)
         {
             return base.Channel.export_details_of_design_to_csv(request);
@@ -165,6 +178,34 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.export_details_of_design_to_csvRequest inValue = new Dlubal.WS.RSection1.Model.export_details_of_design_to_csvRequest();
             inValue.targetDirectoryPath = targetDirectoryPath;
             Dlubal.WS.RSection1.Model.export_details_of_design_to_csvResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).export_details_of_design_to_csv(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.export_printout_report_to_htmlResponse Dlubal.WS.RSection1.Model.IRSectionModel.export_printout_report_to_html(Dlubal.WS.RSection1.Model.export_printout_report_to_htmlRequest request)
+        {
+            return base.Channel.export_printout_report_to_html(request);
+        }
+        
+        public void export_printout_report_to_html(int printout_report_id, string file_path)
+        {
+            Dlubal.WS.RSection1.Model.export_printout_report_to_htmlRequest inValue = new Dlubal.WS.RSection1.Model.export_printout_report_to_htmlRequest();
+            inValue.printout_report_id = printout_report_id;
+            inValue.file_path = file_path;
+            Dlubal.WS.RSection1.Model.export_printout_report_to_htmlResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).export_printout_report_to_html(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.export_printout_report_to_pdfResponse Dlubal.WS.RSection1.Model.IRSectionModel.export_printout_report_to_pdf(Dlubal.WS.RSection1.Model.export_printout_report_to_pdfRequest request)
+        {
+            return base.Channel.export_printout_report_to_pdf(request);
+        }
+        
+        public void export_printout_report_to_pdf(int printout_report_id, string file_path)
+        {
+            Dlubal.WS.RSection1.Model.export_printout_report_to_pdfRequest inValue = new Dlubal.WS.RSection1.Model.export_printout_report_to_pdfRequest();
+            inValue.printout_report_id = printout_report_id;
+            inValue.file_path = file_path;
+            Dlubal.WS.RSection1.Model.export_printout_report_to_pdfResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).export_printout_report_to_pdf(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -331,6 +372,19 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forRequest inValue = new Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forRequest();
             inValue.object_location = object_location;
             Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_list_of_parameters_formula_allowed_for(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_list_of_printout_reportsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_list_of_printout_reports(Dlubal.WS.RSection1.Model.get_list_of_printout_reportsRequest request)
+        {
+            return base.Channel.get_list_of_printout_reports(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.printout_report_info[] get_list_of_printout_reports()
+        {
+            Dlubal.WS.RSection1.Model.get_list_of_printout_reportsRequest inValue = new Dlubal.WS.RSection1.Model.get_list_of_printout_reportsRequest();
+            Dlubal.WS.RSection1.Model.get_list_of_printout_reportsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_list_of_printout_reports(inValue);
             return retVal.value;
         }
         
@@ -553,6 +607,214 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_effective_widthsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_effective_widths(Dlubal.WS.RSection1.Model.get_results_for_effective_widthsRequest request)
+        {
+            return base.Channel.get_results_for_effective_widths(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_effective_widths_and_child_items[] get_results_for_effective_widths()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_effective_widthsRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_effective_widthsRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_effective_widthsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_effective_widths(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_section_classificationResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_section_classification(Dlubal.WS.RSection1.Model.get_results_for_section_classificationRequest request)
+        {
+            return base.Channel.get_results_for_section_classification(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_section_classification_and_child_items[] get_results_for_section_classification()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_section_classificationRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_section_classificationRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_section_classificationResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_section_classification(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_section_propertiesResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_section_properties(Dlubal.WS.RSection1.Model.get_results_for_section_propertiesRequest request)
+        {
+            return base.Channel.get_results_for_section_properties(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_section_properties_and_child_items[] get_results_for_section_properties()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_section_propertiesRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_section_propertiesRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_section_propertiesResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_section_properties(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_section_properties_effective(Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveRequest request)
+        {
+            return base.Channel.get_results_for_section_properties_effective(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_section_properties_effective_and_child_items[] get_results_for_section_properties_effective()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_section_properties_effective(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_statical_moments_and_warping(Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingRequest request)
+        {
+            return base.Channel.get_results_for_statical_moments_and_warping(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_statical_moments_and_warping_row[] get_results_for_statical_moments_and_warping()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_statical_moments_and_warping(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_all_by_stress_points(Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsRequest request)
+        {
+            return base.Channel.get_results_for_stresses_all_by_stress_points(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_all_by_stress_points_row[] get_results_for_stresses_all_by_stress_points()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_all_by_stress_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_loading(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_loading(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_loading_row[] get_results_for_stresses_by_loading()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_loading_effective(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_loading_effective(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_loading_effective_row[] get_results_for_stresses_by_loading_effective()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_loading_effective(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_location(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_location(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_location_row[] get_results_for_stresses_by_location()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_material(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_material(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_material_row[] get_results_for_stresses_by_material()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_material_effective(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_material_effective(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_material_effective_row[] get_results_for_stresses_by_material_effective()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_material_effective(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_member(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_member(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_member_row[] get_results_for_stresses_by_member()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_member(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_stress_points(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_stress_points(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_stress_points_row[] get_results_for_stresses_by_stress_points()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_stress_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_stresses_by_stress_points_effective(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveRequest request)
+        {
+            return base.Channel.get_results_for_stresses_by_stress_points_effective(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_stress_points_effective_row[] get_results_for_stresses_by_stress_points_effective()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_stresses_by_stress_points_effective(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_unit_stressesResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_unit_stresses(Dlubal.WS.RSection1.Model.get_results_for_unit_stressesRequest request)
+        {
+            return base.Channel.get_results_for_unit_stresses(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_unit_stresses_row[] get_results_for_unit_stresses()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_unit_stressesRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_unit_stressesRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_unit_stressesResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_unit_stresses(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_unit_stresses_by_material(Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_unit_stresses_by_material(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_unit_stresses_by_material_row[] get_results_for_unit_stresses_by_material()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_unit_stresses_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.get_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_section(Dlubal.WS.RSection1.Model.get_sectionRequest request)
         {
             return base.Channel.get_section(request);
@@ -605,6 +867,32 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest inValue = new Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest();
             Dlubal.WS.RSection1.Model.get_table_export_config_managerResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_table_export_config_manager(inValue);
             return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.has_any_resultsResponse Dlubal.WS.RSection1.Model.IRSectionModel.has_any_results(Dlubal.WS.RSection1.Model.has_any_resultsRequest request)
+        {
+            return base.Channel.has_any_results(request);
+        }
+        
+        public bool has_any_results()
+        {
+            Dlubal.WS.RSection1.Model.has_any_resultsRequest inValue = new Dlubal.WS.RSection1.Model.has_any_resultsRequest();
+            Dlubal.WS.RSection1.Model.has_any_resultsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).has_any_results(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.print_printout_reportResponse Dlubal.WS.RSection1.Model.IRSectionModel.print_printout_report(Dlubal.WS.RSection1.Model.print_printout_reportRequest request)
+        {
+            return base.Channel.print_printout_report(request);
+        }
+        
+        public void print_printout_report(int printout_report_id)
+        {
+            Dlubal.WS.RSection1.Model.print_printout_reportRequest inValue = new Dlubal.WS.RSection1.Model.print_printout_reportRequest();
+            inValue.printout_report_id = printout_report_id;
+            Dlubal.WS.RSection1.Model.print_printout_reportResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).print_printout_report(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if !RSECTION
+
+using Dlubal.WS.Common.Tools;
 using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -12,12 +14,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
-        public static bool Test_Analysis⁀Settings_Modal_Get()
+        public static bool Test_Analysis⁀Settings_Modal_Create()
         {
-            DataLogger.AddLogStart("Reading modal analysis settings...");
+            DataLogger.AddLogStart("Creating modal analysis settings...");
             try
             {
-                ReadModalAnalysisSettings();
+                CreateModalSimulationAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -28,12 +30,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
-        public static bool Test_Analysis⁀Settings_Modal_Create()
+        public static bool Test_Analysis⁀Settings_Modal_Get()
         {
-            DataLogger.AddLogStart("Creating modal analysis settings...");
+            DataLogger.AddLogStart("Reading modal analysis settings...");
             try
             {
-                CreateModalSimulationAnalysisSettings();
+                ReadModalAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -96,6 +98,17 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void CreateModalSimulationAnalysisSettings()
         {
+            addon_list_type addon = new addon_list_type
+            {
+                dynamic_analysis_settings = new addon_list_dynamic_analysis_settings_list_type
+                {
+                    modal_active = true,
+                    modal_activeSpecified = true
+                }
+            };
+
+            SoapModelClient.set_addon_statuses(addon);
+
             SoapModelClient.begin_modification(nameof(CreateModalSimulationAnalysisSettings));
             DataLogger.AddText("Generating modal analysis settings...");
             var settings = GetModalSimulationAnalysisSettings();
@@ -117,11 +130,18 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 number_of_modes_methodSpecified = true,
                 maxmimum_natural_frequency = 3200,
                 maxmimum_natural_frequencySpecified = true,
+#if RFEM
                 solution_method = modal_analysis_settings_solution_method.METHOD_LANCZOS,
                 solution_methodSpecified = true,
+#elif RSTAB
+                solution_method = modal_analysis_settings_solution_method.METHOD_SUBSPACE_ITERATION,
+                solution_methodSpecified = true,
+#endif
 
             };
             return settings;
         }
     }
 }
+
+#endif // !RSECTION

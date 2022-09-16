@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 
@@ -27,11 +29,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating boundary conditionals...");
             DataLogger.InitializeProgressBar(0, 50, 0);
 
-            bool result = Test_General_Delete⁀All();
-
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -59,7 +59,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 steel_boundary_conditions_nodal_supports_row steelBCNodalSupports1 = new steel_boundary_conditions_nodal_supports_row()
                 {
                     no = NODAL_SUPPORTS_FIXED_IN_Y_AND_TORSION_1_NO,
-                    noSpecified = true,
                     row = new steel_boundary_conditions_nodal_supports
                     {
                         nodes = new int[] { 2, 3, 20 },
@@ -86,7 +85,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 steel_boundary_conditions_nodal_supports_row steelBCNodalSupports2 = new steel_boundary_conditions_nodal_supports_row()
                 {
                     no = NODAL_SUPPORTS_FIXED_IN_Y_AND_TORSION_2_NO,
-                    noSpecified = true,
                     row = new steel_boundary_conditions_nodal_supports
                     {
                         nodes = new int[] { 3, 21 },
@@ -115,7 +113,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 steel_boundary_conditions_nodal_supports_row steelBCNodalSupports3 = new steel_boundary_conditions_nodal_supports_row()
                 {
                     no = NODAL_SUPPORTS_FIXED_IN_Y_1_NO,
-                    noSpecified = true,
                     row = new steel_boundary_conditions_nodal_supports
                     {
                         support_type = steel_boundary_conditions_nodal_supports_support_type.SUPPORT_TYPE_FIXED_IN_Y,
@@ -149,7 +146,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 steel_boundary_conditions_nodal_supports_row steelBCNodalSupports4 = new steel_boundary_conditions_nodal_supports_row()
                 {
                     no = NODAL_SUPPORTS_INDIVIDUALLY_1_NO,
-                    noSpecified = true,
                     row = new steel_boundary_conditions_nodal_supports
                     {
                         support_type = steel_boundary_conditions_nodal_supports_support_type.SUPPORT_TYPE_INDIVIDUALLY,
@@ -187,7 +183,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 steel_boundary_conditions_member_hinges_row startSteelBCMemberHinges = new steel_boundary_conditions_member_hinges_row()
                 {
                     no = MEMBER_HINGES_1_NO,
-                    noSpecified = true,
                     row = new steel_boundary_conditions_member_hinges
                     {
                         node_seq_no = "Start",
@@ -205,7 +200,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 steel_boundary_conditions_member_hinges_row endSteelBCMemberHinges = new steel_boundary_conditions_member_hinges_row()
                 {
                     no = MEMBER_HINGES_2_NO,
-                    noSpecified = true,
                     row = new steel_boundary_conditions_member_hinges
                     {
                         node_seq_no = "End",
@@ -254,20 +248,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_steel_boundary_conditions(boundaryConditionals2);
 
                 DataLogger.SetProgressBarValue(50);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -275,8 +272,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Types\u2040for\u2040Steel\u2040Design_Boundary\u2040Conditionals_Get()
@@ -339,3 +335,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM || RSTAB

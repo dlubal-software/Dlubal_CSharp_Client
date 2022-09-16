@@ -45,10 +45,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating line welded joint...");
             DataLogger.InitializeProgressBar(0, 80, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -152,6 +151,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 {
                     new line_line_weld_assignment_row
                     {
+                        no = 1,
                         row = new line_line_weld_assignment
                         {
                             weld = LINE_WELDED_JOINT_NO,
@@ -164,20 +164,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_line(lineToAssign);
 
                 DataLogger.SetProgressBarValue(80);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -185,8 +188,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
     }
 }

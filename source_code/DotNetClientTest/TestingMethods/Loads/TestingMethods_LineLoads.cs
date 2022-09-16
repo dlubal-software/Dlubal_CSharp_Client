@@ -45,7 +45,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     line_Load.varying_load_parameters[i] = new line_load_varying_load_parameters_row
                     {
                         no = i + 1,
-                        noSpecified = true,
                         row = new line_load_varying_load_parameters
                         {
                             distance = i * 1.1,
@@ -78,10 +77,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating line loads...");
             DataLogger.InitializeProgressBar(0, 70, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -122,9 +120,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SetLineLoad(LOAD_CASE_1_NO, OBJECT_4_NO, line_load_load_type.LOAD_TYPE_MOMENT, line_load_load_distribution.LOAD_DISTRIBUTION_VARYING, line_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE, 3);
 
                 DataLogger.SetProgressBarValue(70);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
                 return false;
             }
@@ -133,9 +133,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -143,8 +145,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
     }
 }

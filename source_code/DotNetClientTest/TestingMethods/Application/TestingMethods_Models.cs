@@ -8,6 +8,9 @@ using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
 using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
+using ModelClient = Dlubal.WS.RSection1.Model.RSectionModelClient;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -93,6 +96,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #elif RSTAB
                     DefaultExt = ".rs9",
                     Filter = "RSTAB9 Files (*.rs9)|*.rs9|Other Files (*.*)|*.*"
+#elif RSECTION
+                    DefaultExt = ".rsc",
+                    Filter = "RSECTION1 Files (*.rsc)|*.rsc|Other Files (*.*)|*.*"
 #endif
                 };
 
@@ -293,8 +299,13 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     try
                     {
                         temporarySoapModelClient = new ModelClient(Session.Binding, new System.ServiceModel.EndpointAddress(endpoint));
+#if RFEM || RSTAB
                         int count = temporarySoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_NODE, 0);
                         DataLogger.AddText($"Node count = {count}");
+#elif RSECTION
+                        int count = temporarySoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_POINT, 0);
+                        DataLogger.AddText($"Point count = {count}");
+#endif
                     }
                     catch (Exception exception)
                     {
@@ -384,6 +395,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #elif RSTAB
                     DefaultExt = ".rs9",
                     Filter = "RSTAB Files (*.rs9; *.rs8)|*.rs9; *.rs8|Other Files (*.*)|*.*"
+#elif RSECTION
+                    DefaultExt = ".rsc",
+                    Filter = "RSECTION1 Files (*.rsc)|*.rsc|Other Files (*.*)|*.*"
 #endif
                 };
 
@@ -405,12 +419,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     SoapModelClient.calculate_all(false);
                     DataLogger.SetProgressBarValue(20);
                     DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-
+#if !RSECTION
                     DataLogger.AddLogStart("Export results...");
                     SoapModelClient.export_result_tables_to_csv(GetDataPath());
                     DataLogger.SetProgressBarValue(30);
                     DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-
+#endif
                     DataLogger.AddLogStart("Closing model connection...");
                     Session.CloseModelClient();
                     DataLogger.SetProgressBarValue(40);

@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 
@@ -32,10 +34,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating nodes...");
             DataLogger.InitializeProgressBar(0, 100, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -187,20 +188,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_node(node6);
 
                 DataLogger.SetProgressBarValue(100);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -208,8 +212,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
 #if RFEM
@@ -218,10 +221,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         {
             DataLogger.AddLogStart("Creating nodes and lines...");
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -274,11 +276,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 WriteObjects(5);
 
                 DataLogger.AddText("...done");
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
@@ -290,6 +293,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -308,20 +312,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.AddText($"Nodes = {SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_NODE, 0)}");
                 DataLogger.AddText($"Lines = {SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_LINE, 0)}");
+
+                DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Basic\u2040Objects_Nodes_Copy\u2040\u2040Nodes()
         {
             DataLogger.AddLogStart("Copying objects...");
+
+            bool succeeded = false;
 
             try
             {
@@ -370,11 +377,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.SetProgressBarValue(30);
 
                 DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
@@ -383,9 +391,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     DataLogger.AddText("Finishing modification...");
                     SoapModelClient.finish_modification();
                     DataLogger.AddText("...done");
+
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -393,8 +404,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
 #endif // RFEM
@@ -529,3 +539,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

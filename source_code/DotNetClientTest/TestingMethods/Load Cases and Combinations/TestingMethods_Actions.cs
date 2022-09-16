@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Common.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -285,7 +287,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     new action_items_row()
                     {
                         no = 1,
-                        noSpecified = true,
                         row = new action_items
                         {
                             load_case_item = LOAD_CASE_1_NO,
@@ -304,11 +305,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 action.items = new action_items_row[]
                 {
-                    new action_items_row() { no = 1, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_1_NO, load_case_itemSpecified = true }},
-                    new action_items_row() { no = 2, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_2_NO, load_case_itemSpecified = true }},
-                    new action_items_row() { no = 3, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_3_NO, load_case_itemSpecified = true }},
-                    new action_items_row() { no = 4, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_4_NO, load_case_itemSpecified = true }},
-                    new action_items_row() { no = 5, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_5_NO, load_case_itemSpecified = true }}
+                    new action_items_row() { no = 1, row = new action_items{load_case_item = LOAD_CASE_1_NO, load_case_itemSpecified = true }},
+                    new action_items_row() { no = 2, row = new action_items{load_case_item = LOAD_CASE_2_NO, load_case_itemSpecified = true }},
+                    new action_items_row() { no = 3, row = new action_items{load_case_item = LOAD_CASE_3_NO, load_case_itemSpecified = true }},
+                    new action_items_row() { no = 4, row = new action_items{load_case_item = LOAD_CASE_4_NO, load_case_itemSpecified = true }},
+                    new action_items_row() { no = 5, row = new action_items{load_case_item = LOAD_CASE_5_NO, load_case_itemSpecified = true }}
                 };
 
                 DataLogger.AddText($"Set action No.{action.no} with {action.items.Length} items");
@@ -324,9 +325,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 action.items = new action_items_row[]
                 {
-                    new action_items_row() { no = 1, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_1_NO, load_case_itemSpecified = true }},
-                    new action_items_row() { no = 2, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_2_NO, load_case_itemSpecified = true }},
-                    new action_items_row() { no = 2, noSpecified = true, row = new action_items{load_case_item = LOAD_CASE_3_NO, load_case_itemSpecified = true }}
+                    new action_items_row() { no = 1, row = new action_items{load_case_item = LOAD_CASE_1_NO, load_case_itemSpecified = true }},
+                    new action_items_row() { no = 2, row = new action_items{load_case_item = LOAD_CASE_2_NO, load_case_itemSpecified = true }},
+                    new action_items_row() { no = 2, row = new action_items{load_case_item = LOAD_CASE_3_NO, load_case_itemSpecified = true }}
                 };
 
                 DataLogger.AddText($"Set action No.{action.no} with {action.items.Length} items");
@@ -363,3 +364,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

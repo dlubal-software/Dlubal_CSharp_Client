@@ -1,8 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "./"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"dotnet-test-explorer.testProjectPath": "source_code\\UTWebServiceLibraries"
+	}
 }

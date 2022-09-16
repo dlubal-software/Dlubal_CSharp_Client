@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !RSECTION
+
+using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
 #if RFEM
@@ -136,3 +138,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

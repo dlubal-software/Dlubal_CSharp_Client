@@ -12,6 +12,10 @@ using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
 using Dlubal.WS.Rstab9.Model;
 using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
 using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
+using ApplicationClient = Dlubal.WS.RSection1.Application.RSectionApplicationClient;
+using ModelClient = Dlubal.WS.RSection1.Model.RSectionModelClient;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -51,8 +55,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         // Shared objects and parameters of tests should be placed here.
         private const string MATERIAL_STEEL = "S235"; // (EN 10025-2:2004-11) - zatim bez pouziti normy, aplikace s tim ma problemy
-        private const string SECTION_I = "IPE 100";
-        private const string SECTION_RECTANGLE = "R_M1 200/300"; // Rectangle 200/300
+        private const string SECTION_I = "IPE 100 | -- | British Steel";
+        private const string SECTION_RECTANGLE = "R_M1 0.2/0.3"; // Rectangle 200/300
 
         //private static string materialTimber = "Hardwood Timber D30";
 
@@ -196,7 +200,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 ;
             }
 
-            public void AssertEqual(in object lhs, in object rhs)
+            public void AssertEqual(object lhs, object rhs)
             {
                 var objectType = lhs.GetType();
                 Debug.Assert(objectType == rhs.GetType());
@@ -277,7 +281,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 }
             }
 
-            public static void AssertArraysEqual(object helpersWrapper, in object lhs, in object rhs)
+            public static void AssertArraysEqual(object helpersWrapper, object lhs, object rhs)
             {
                 Debug.Assert(helpersWrapper.GetType().IsArray);
                 Debug.Assert(helpersWrapper.GetType().GetElementType() == typeof(PropertiesHelper<T>));
@@ -366,6 +370,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return ret;
         }
 
+#if !RSECTION
         private class AddonEnabler
         {
             private addon_list_type backup = null;
@@ -446,11 +451,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_addon_statuses(backup);
             }
         }
+#endif // !RSECTION
 
         private static bool RunSetterGetterTest<T>(
             PropertiesHelper<T> setterTest1Helper
             , PropertiesHelper<T> setterTest2Helper
-            , in string[] addonsUsed = null
+            , string[] addonsUsed = null
         ) where T : class, new()
         {
             Debug.Assert(setterTest1Helper.Properties[0].name == "no");
@@ -476,15 +482,17 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             object_types objectType =
                 Enum.Parse(typeof(object_types), "E_OBJECT_TYPE_" + type.Name.ToUpper())
                     as object_types?
-                ?? object_types.E_OBJECT_TYPE_ACTION
+                ?? 0
             ;
 
+#if !RSECTION
             var addonEnabler = new AddonEnabler();
-
+#endif // !RSECTION
             try
             {
+#if !RSECTION
                 addonEnabler.EnableAddons(addonsUsed);
-
+#endif // !RSECTION
                 if (Array.Exists(SoapModelClient.get_all_object_numbers(type: objectType, parent_no: 0), id_ => id_ == id))
                 {
                     DataLogger.AddText("Make a backup.");
@@ -534,7 +542,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     DataLogger.AddText("Delete temporary object.");
                     SoapModelClient.delete_object(type: objectType, no: id, parent_no: 0);
                 }
+#if !RSECTION
                 addonEnabler.RestoreBackup();
+#endif // !RSECTION
                 DataLogger.SetProgressBarValue(3);
                 DataLogger.ResetProgressBar();
             }

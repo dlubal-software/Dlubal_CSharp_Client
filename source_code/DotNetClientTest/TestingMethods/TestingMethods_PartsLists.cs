@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if !RSECTION
+
+using Dlubal.WS.Common.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,6 @@ using Dlubal.WS.Rfem6.Model;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
 #endif
-
 
 namespace Dlubal.WS.Clients.DotNetClientTest
 {
@@ -79,3 +80,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif

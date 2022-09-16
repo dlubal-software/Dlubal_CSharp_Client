@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !RSECTION
+
+using System;
 using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -179,7 +181,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new aluminum_effective_lengths_factors_row
                 {
                     no = 1,
-                    noSpecified = true,
                     row = new aluminum_effective_lengths_factors
                     {
                         torsional_buckling = 10,
@@ -203,7 +204,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new aluminum_effective_lengths_nodal_supports_row()
                 {
                     no = 1,
-                    noSpecified = true,
                     row = new aluminum_effective_lengths_nodal_supports()
                     {
                         support_type = support_type.SUPPORT_TYPE_FIXED_ALL,
@@ -213,7 +213,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new aluminum_effective_lengths_nodal_supports_row()
                 {
                     no = 2,
-                    noSpecified = true,
                     row = new aluminum_effective_lengths_nodal_supports()
                     {
                         support_type = support_type.SUPPORT_TYPE_NONE,
@@ -242,3 +241,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

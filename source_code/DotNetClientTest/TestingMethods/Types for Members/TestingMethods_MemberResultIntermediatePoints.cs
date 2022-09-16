@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 
@@ -17,7 +19,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             var ret = new member_result_intermediate_point_distances_row[distances.Length];
             for (int i = 0; i != distances.Length; ++i)
             {
-                ret[i] = new member_result_intermediate_point_distances_row { row = distances[i] };
+                ret[i] = new member_result_intermediate_point_distances_row
+                {
+                    no = i + 1,
+                    row = distances[i]
+                };
             }
             return ret;
         }
@@ -36,11 +42,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Adding member result intermediate point...");
             DataLogger.InitializeProgressBar(0, 70, 0);
 
-            bool result = Test_General_Delete⁀All();
-
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -147,20 +151,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_member_result_intermediate_point(point);
 
                 DataLogger.SetProgressBarValue(70);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -168,8 +175,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Types\u2040for\u2040Members_Member\u2040Result\u2040Intermediate\u2040Points_Get()
@@ -220,11 +226,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Adding member result intermediate point...");
             DataLogger.InitializeProgressBar(0, 90, 0);
 
-            bool result = Test_General_Delete⁀All();
-
-            if (!result || (SoapModelClient == null))
+            if (!InitializeTest())
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -401,3 +404,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

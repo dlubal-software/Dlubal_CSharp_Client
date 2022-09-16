@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if !RSECTION
+
+using Dlubal.WS.Common.Tools;
 using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -12,12 +14,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
-        public static bool Test_Analysis⁀Settings_Stability_Get()
+        public static bool Test_Analysis⁀Settings_Stability_Create()
         {
-            DataLogger.AddLogStart("Reading stability analysis settings...");
+            DataLogger.AddLogStart("Creating stability analysis settings...");
             try
             {
-                ReadStabilityAnalysisSettings();
+                CreateStabiltiySimulationAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -28,12 +30,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
-        public static bool Test_Analysis⁀Settings_Stability_Create()
+        public static bool Test_Analysis⁀Settings_Stability_Get()
         {
-            DataLogger.AddLogStart("Creating stability analysis settings...");
+            DataLogger.AddLogStart("Reading stability analysis settings...");
             try
             {
-                CreateStabiltiySimulationAnalysisSettings();
+                ReadStabilityAnalysisSettings();
                 DataLogger.AddLogEnd(LogResultType.DONE);
             }
             catch (Exception exception)
@@ -85,7 +87,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddText($"No: {settings.no}");
             DataLogger.IncrementOffset();
             DataLogger.AddText($"Name: {settings.name}");
-            DataLogger.AddText($"Stabiltiy analysis type: {settings.analysis_type}");
+            DataLogger.AddText($"Stability analysis type: {settings.analysis_type}");
             DataLogger.AddText($"Number of lowest eigenvalues: {settings.number_of_lowest_eigenvalues}");
             DataLogger.AddText($"Critical load factor: {settings.critical_load_factor}");
             DataLogger.DecrementOffset();
@@ -93,6 +95,17 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void CreateStabiltiySimulationAnalysisSettings()
         {
+            addon_list_type addon = new addon_list_type
+            {
+                analysis = new addon_list_analysis_list_type
+                {
+                    structure_stability_active = true,
+                    structure_stability_activeSpecified = true
+                }
+            };
+
+            SoapModelClient.set_addon_statuses(addon);
+
             SoapModelClient.begin_modification(nameof(CreateStabiltiySimulationAnalysisSettings));
             DataLogger.AddText("Generating stability analysis settings...");
             var settings = GetStabilitySimulationAnalysisSettings();
@@ -119,3 +132,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

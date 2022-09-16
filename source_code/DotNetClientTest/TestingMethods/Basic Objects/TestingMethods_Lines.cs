@@ -15,7 +15,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             var ret = new line_nurbs_control_points_row[pts.Length];
             for (int i = 0; i != pts.Length; ++i)
             {
-                ret[i] = new line_nurbs_control_points_row { row = pts[i] };
+                ret[i] = new line_nurbs_control_points_row
+                {
+                    no = i + 1,
+                    row = pts[i]
+                };
             }
             return ret;
         }
@@ -24,7 +28,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             var ret = new line_nurbs_knots_row[doubles.Length];
             for (int i = 0; i != doubles.Length; ++i)
             {
-                ret[i] = new line_nurbs_knots_row { row = doubles[i] };
+                ret[i] = new line_nurbs_knots_row
+                {
+                    no = i + 1,
+                    row = doubles[i]
+                };
             }
             return ret;
         }
@@ -39,11 +47,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating NURBS line...");
             DataLogger.InitializeProgressBar(0, 50, 0);
 
-            bool result = Test_General_Delete⁀All();
-
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -165,20 +171,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.AddText($"  control points count = {line3.nurbs_control_points.Length}, order = {line3.nurbs_order}, knots count = {line3.nurbs_knots.Length}");
                 DataLogger.SetProgressBarValue(50);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -186,8 +195,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Basic\u2040Objects_Lines_Nurbs_Get()
@@ -235,11 +243,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Modify NURBS line...");
             DataLogger.InitializeProgressBar(0, 50, 0);
 
-            bool result = Test_General_Delete⁀All();
-
-            if (!result || (SoapModelClient == null))
+            if (!InitializeTest())
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 

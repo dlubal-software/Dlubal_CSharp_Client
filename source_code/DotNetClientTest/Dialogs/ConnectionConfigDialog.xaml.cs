@@ -9,6 +9,9 @@ using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Application;
 using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
+#elif RSECTION
+using Dlubal.WS.RSection1.Application;
+using ApplicationClient = Dlubal.WS.RSection1.Application.RSectionApplicationClient;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest.Dialogs

@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Clients.DotNetClientTest.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using Dlubal.WS.Common.Tools;
 using System;
 
@@ -112,7 +114,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         imperfectionCase.imperfection_cases_items[i] = new imperfection_case_imperfection_cases_items_row
                         {
                             no = i + 1,
-                            noSpecified = true,
                             row = new imperfection_case_imperfection_cases_items
                             {
                                 name = i + 1,
@@ -237,10 +238,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Creating imperfection cases...");
             DataLogger.InitializeProgressBar(0, 60, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -310,20 +310,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 }
 
                 DataLogger.SetProgressBarValue(60);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
-                return false;
             }
             finally
             {
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -331,8 +334,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
     }
 }
+
+#endif // RFEM RSTAB

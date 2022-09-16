@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !RSECTION
+
+using System;
 using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -131,3 +133,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

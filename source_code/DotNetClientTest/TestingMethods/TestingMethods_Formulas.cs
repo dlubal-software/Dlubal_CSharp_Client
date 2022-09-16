@@ -5,12 +5,16 @@ using System;
 using Dlubal.WS.Rfem6.Model;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
+
+#if RFEM || RSTAB
         public static bool Test_Formulas_Get\u2040Global\u2040Parameters()
         {
             DataLogger.AddLogStart("Getting global parameters...");
@@ -62,6 +66,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return succeeded;
         }
 
+#endif //RFEM RSTAB
+
         public static bool Test_Formulas_Get\u2040List\u2040Of\u2040Parameters\u2040Formula\u2040Allowed()
         {
             DataLogger.AddLogStart("Getting list of parameters formula allowed...");
@@ -95,8 +101,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                         string attributes = string.Empty;
 
-                        object_parameter_location_type[] parameters = SoapModelClient.get_list_of_parameters_formula_allowed_for(location);
-                        foreach (object_parameter_location_type parameter in parameters)
+                        object_parameter_location[] parameters = SoapModelClient.get_list_of_parameters_formula_allowed_for(location);
+                        foreach (object_parameter_location parameter in parameters)
                         {
                             if (!string.IsNullOrEmpty(attributes))
                             {
@@ -153,12 +159,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                             type = type,
                         };
 
-                        object_parameter_location_type[] parameters = SoapModelClient.get_list_of_parameters_formula_allowed_for(location);
+                        object_parameter_location[] parameters = SoapModelClient.get_list_of_parameters_formula_allowed_for(location);
                         if (parameters.Length > 0)
                         {
                             DataLogger.AddLogStart($"Getting {type} No.{location.no} parameters...");
 
-                            foreach (object_parameter_location_type parameter in parameters)
+                            foreach (object_parameter_location parameter in parameters)
                             {
                                 DataLogger.AddLogStart($"Attribute {parameter.attribute}");
 

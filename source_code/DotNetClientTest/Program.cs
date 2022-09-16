@@ -17,6 +17,9 @@ using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Application;
 using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
+#elif RSECTION
+using Dlubal.WS.RSection1.Application;
+using ApplicationClient = Dlubal.WS.RSection1.Application.RSectionApplicationClient;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -27,7 +30,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         public const string ApplicationName = "RFEM6";
 #elif RSTAB
         public const string ApplicationName = "RSTAB9";
+#elif RSECTION
+        public const string ApplicationName = "RSECTION1";
 #endif
+        private const int ResultOk = 0;
+        private const int ResultTestFailed = 1;
+        private const int ResultException = 2;
 
         [DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true)]
         static extern bool FreeConsole();
@@ -42,8 +50,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         /// -results=PATH     - Path to output file containing results of tests.
         /// </remarks>
         [STAThread]
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
+            int result = ResultOk;
             IsConsoleApplication = args.Length > 0;
 
             if (!IsConsoleApplication)
@@ -158,7 +167,10 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                             string line;
                             while ((line = streamReader.ReadLine()) != null)
                             {
-                                testNameList.Add(line);
+                                if (!line.Trim().StartsWith("//"))
+                                {
+                                    testNameList.Add(line);
+                                }
                             }
                             streamReader.Close();
                         }
@@ -210,16 +222,16 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         Session.DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
 
                         Console.WriteLine($"Connected to application server {information.name}");
+                        Console.WriteLine();
 
                         bool succeeded = Session.RunTests(selectedMethods, out string textResult, Console.WriteLine, getTextResult: true);
+                        result = succeeded ? ResultOk : ResultTestFailed;
 
                         using (StreamWriter streamWriter = new StreamWriter(resultFilePath))
                         {
                             streamWriter.Write(textResult + (succeeded ? "Succeeded" : "Failed"));
                             streamWriter.Close();
                         }
-
-                        Console.WriteLine(succeeded ? "Succeeded" : "Failed");
                     }
                     catch (Exception ex)
                     {
@@ -237,6 +249,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                             Session.SoapApplicationClient = null;
                         }
 
+                        result = ResultException;
                         Console.WriteLine($"FAILED: {ex.Message}");
                         Session.DataLogger.ReportError(ex, true);
                         Session.DataLogger.AddSeparator();
@@ -254,6 +267,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     }
                 }
             }
+
+            return result;
         }
 
         public static bool IsConsoleApplication { get; private set; }

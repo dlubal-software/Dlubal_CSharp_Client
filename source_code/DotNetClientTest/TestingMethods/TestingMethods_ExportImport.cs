@@ -11,6 +11,9 @@ using Dlubal.WS.Rfem6.Application;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
 using Dlubal.WS.Rstab9.Application;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
+using Dlubal.WS.RSection1.Application;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -85,7 +88,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogEnd(succeeded ? DataLogger.LogResultType.DONE : DataLogger.LogResultType.FAILED);
             return succeeded;
         }
-
+#if !RSECTION
         public static bool Test_Export\u2040and\u2040Import_Export\u2040Result\u2040Tables\u2040to\u2040CSV()
         {
             DataLogger.AddLogStart("Exporting result tables to CSV...");
@@ -103,7 +106,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             return true;
         }
-
         public static bool Test_Export\u2040and\u2040Import_Export\u2040Result\u2040Tables\u2040With\u2040Detailed\u2040Members\u2040Results\u2040to\u2040CSV()
         {
             DataLogger.AddLogStart("Exporting result tables with detailed members results to CSV...");
@@ -157,6 +159,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             return true;
         }
+#endif
 
         public static bool Test_Export\u2040and\u2040Import_Export\u2040Model()
         {
@@ -167,7 +170,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             {
                 DataLogger.SetProgressBarValue(DataLogger.ProgressBar.Value + 1);
             }
-
+#if !RSECTION
             void closeModel(string name)
             {
                 var modelList = SoapApplicationClient.get_model_list();
@@ -181,9 +184,10 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 }
                 throw new Exception($"Closing model failed: no model '{name}' is found");
             }
-
+#endif
             try
             {
+#if !RSECTION
                 DataLogger.AddText("Export to gltf");
                 SoapModelClient.export_to(Path.Combine(GetDataPath(), "exported_model.gltf"));
                 incrementProgress();
@@ -414,7 +418,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 );
                 */
                 incrementProgress();
-
+#endif // !RSECTION
                 DataLogger.AddText("Export to tables");
                 {
                     var tableExportConfigManager = SoapModelClient.get_table_export_config_manager(); // this config is huge, so testing setter/getter for it is going to be painful...

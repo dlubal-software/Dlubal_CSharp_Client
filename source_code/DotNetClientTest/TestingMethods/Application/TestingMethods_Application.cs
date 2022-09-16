@@ -5,6 +5,8 @@ using System;
 using Dlubal.WS.Rfem6.Application;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Application;
+#elif RSECTION
+using Dlubal.WS.RSection1.Application;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest

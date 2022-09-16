@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !RSECTION
+
+using System;
 using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
@@ -128,7 +130,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new aluminum_member_transverse_weld_components_row
                 {
                     no = 1,
-                    noSpecified = true,
                     row = new aluminum_member_transverse_weld_components
                     {
                         weld_type = weld_type.WELD_COMPONENT_TYPE_BUTT,
@@ -168,3 +169,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

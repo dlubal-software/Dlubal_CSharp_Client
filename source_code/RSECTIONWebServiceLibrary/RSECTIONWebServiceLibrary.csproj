@@ -7,11 +7,11 @@
     <StartupObject />
     <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.02.26</FileVersion>
-    <AssemblyVersion>1.02.26</AssemblyVersion>
+    <FileVersion>1.02.30</FileVersion>
+    <AssemblyVersion>1.02.30</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
-    <Version>1.02.26</Version>
+    <Version>1.02.30</Version>
     <Company>DlubalSoftware</Company>
     <Product>DlubalSoftware</Product>
     <Description>C# library for development of tools based on RSECTION WebService technology</Description>

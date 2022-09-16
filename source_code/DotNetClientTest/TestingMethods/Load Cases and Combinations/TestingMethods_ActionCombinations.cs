@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Common.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -211,6 +213,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     {
                         new action_combination_items_row()
                         {
+                            no = 1,
                             row = new action_combination_items
                             {
                                 action_item = 7,
@@ -221,6 +224,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         },
                         new action_combination_items_row()
                         {
+                            no = 2,
                             row = new action_combination_items
                             {
                                 action_item = 8,
@@ -242,6 +246,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     {
                         new action_combination_items_row()
                         {
+                            no = 1,
                             row = new action_combination_items
                             {
                                 action_item = 7,
@@ -260,6 +265,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         },
                         new action_combination_items_row()
                         {
+                            no = 2,
                             row = new action_combination_items
                             {
                                 action_item = 8,
@@ -274,6 +280,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         },
                         new action_combination_items_row()
                         {
+                            no = 3,
                             row = new action_combination_items
                             {
                                 action_item  = 7,
@@ -300,6 +307,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_action_combination(actionCombination);
 
                 DataLogger.SetProgressBarValue(100);
+                succeeded = true;
             }
             catch (Exception ex)
             {
@@ -353,3 +361,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

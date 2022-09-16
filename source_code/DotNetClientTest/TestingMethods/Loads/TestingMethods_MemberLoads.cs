@@ -1,4 +1,6 @@
-﻿using Dlubal.WS.Common.Tools;
+﻿#if RFEM || RSTAB
+
+using Dlubal.WS.Common.Tools;
 using System;
 
 #if RFEM
@@ -27,10 +29,9 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Create member loads...");
             DataLogger.InitializeProgressBar(0, 70, 0);
 
-            bool result = Test_General_Delete⁀All();
-            if (!result || (SoapModelClient == null))
+            bool succeeded = InitializeTest();
+            if (!succeeded)
             {
-                DataLogger.AddLogEnd(DataLogger.LogResultType.FAILED);
                 return false;
             }
 
@@ -105,9 +106,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 SoapModelClient.set_member_load(LOAD_CASE_NO, memberLoad4);
 
                 DataLogger.SetProgressBarValue(70);
+                succeeded = true;
             }
             catch (Exception exception)
             {
+                succeeded = false;
                 ModelWsExceptionHandler(exception);
                 return false;
             }
@@ -116,9 +119,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 try
                 {
                     SoapModelClient.finish_modification();
+                    DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                 }
                 catch (Exception exception)
                 {
+                    succeeded = false;
                     ModelWsExceptionHandler(exception);
                     SoapModelClient.reset();
                 }
@@ -126,8 +131,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
-            return true;
+            return succeeded;
         }
 
         public static bool Test_Loads_Member\u2040Loads_Get()
@@ -177,3 +181,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // RFEM RSTAB

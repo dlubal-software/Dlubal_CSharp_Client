@@ -17,6 +17,10 @@ using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
 using Dlubal.WS.Rstab9.Model;
 using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
 using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
+using ApplicationClient = Dlubal.WS.RSection1.Application.RSectionApplicationClient;
+using ModelClient = Dlubal.WS.RSection1.Model.RSectionModelClient;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
@@ -33,6 +37,10 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         private const string SOAP_APPLICATION_WSDL_NAME = "RstabApplication.wsdl";
         private const int SOAP_PORT_FIRST_NUMBER = 8091;
         private const int SOAP_PORT_LAST_NUMBER = 8099;
+#elif RSECTION
+        private const string SOAP_APPLICATION_WSDL_NAME = "RSectionApplication.wsdl";
+        private const int SOAP_PORT_FIRST_NUMBER = 8101;
+        private const int SOAP_PORT_LAST_NUMBER = 8109;
 #endif
 
         public static EndpointAddress Address { get; set; } = new EndpointAddress(DEFAULT_ADDRESS);
@@ -70,7 +78,13 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     try
                     {
                         soapModelClient = new ModelClient(Binding, new EndpointAddress(endpoint));
+
+#if RFEM || RSTAB
                         soapModelClient.get_object_count(object_types.E_OBJECT_TYPE_NODE, 0);
+#elif RSECTION
+                        soapModelClient.get_object_count(object_types.E_OBJECT_TYPE_POINT, 0);
+#endif
+
                         DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
                     }
                     catch (Exception exception)
@@ -242,6 +256,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     SoapApplicationClient = new ApplicationClient(Binding, Address);
                 }
 
+                Console.Error.WriteLine(Utilities.ParseException(exception));
                 DataLogger.ReportError(exception, true);
             }
             else if (exception is CommunicationException)
@@ -252,6 +267,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     SoapApplicationClient = null;
                 }
 
+                Console.Error.WriteLine(Utilities.ParseException(exception));
                 DataLogger.ReportError(exception, true);
             }
             else
@@ -262,6 +278,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     SoapApplicationClient = null;
                 }
 
+                Console.Error.WriteLine(Utilities.ParseException(exception));
                 DataLogger.ReportError(exception, true);
             }
         }
@@ -276,6 +293,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     soapModelClient = null;
                 }
 
+                Console.Error.WriteLine(Utilities.ParseException(exception));
                 DataLogger.ReportError(exception, true);
             }
             else if (exception is CommunicationException)
@@ -286,6 +304,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     soapModelClient = null;
                 }
 
+                Console.Error.WriteLine(Utilities.ParseException(exception));
                 DataLogger.ReportError(exception, true);
             }
             else
@@ -296,6 +315,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     soapModelClient = null;
                 }
 
+                Console.Error.WriteLine(Utilities.ParseException(exception));
                 DataLogger.ReportError(exception, true);
             }
         }
@@ -331,9 +351,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     continue;
                 }
 
-                reportMethod?.Invoke("Test: " + methodName);
+                reportMethod?.Invoke($"Testing method '{methodName}'...");
 
                 bool result = (bool)method.Invoke(null, null);
+
+                reportMethod?.Invoke("..." + (result ? TestingMethods.TestResultType.PASSED : TestingMethods.TestResultType.FAILED));
+
                 resultDictionary.Add(methodName, result ? TestingMethods.TestResultType.PASSED : TestingMethods.TestResultType.FAILED);
 
                 maxLength = Math.Max(maxLength, methodName.Length);

@@ -10,14 +10,19 @@ using System.ServiceModel;
 using Dlubal.WS.Rfem6.Model;
 #elif RSTAB
 using Dlubal.WS.Rstab9.Model;
+#elif RSECTION
+using Dlubal.WS.RSection1.Model;
 #endif
 
 namespace Dlubal.WS.Clients.DotNetClientTest
 {
     public static partial class TestingMethods
     {
+        const double DefaultDoubleComparisonTolerance = 0.000000001;
+
         static List<object_types> TypesWithParent = new List<object_types>()
         {
+#if RFEM || RSTAB
             object_types.E_OBJECT_TYPE_DXF_MODEL_OBJECT,
             object_types.E_OBJECT_TYPE_IMPOSED_NODAL_DEFORMATION,
             object_types.E_OBJECT_TYPE_MEMBER_IMPERFECTION,
@@ -25,6 +30,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             object_types.E_OBJECT_TYPE_MEMBER_SET_IMPERFECTION,
             object_types.E_OBJECT_TYPE_MEMBER_SET_LOAD,
             object_types.E_OBJECT_TYPE_NODAL_LOAD,
+#endif
 #if RFEM
             object_types.E_OBJECT_TYPE_FREE_CIRCULAR_LOAD,
             object_types.E_OBJECT_TYPE_FREE_CONCENTRATED_LOAD,
@@ -252,6 +258,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
+#if RFEM || RSTAB
         public static bool Test_General_Get\u2040First\u2040Free\u2040UserId()
         {
             bool succeeded = true;
@@ -318,6 +325,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             }
             return succeeded;
         }
+#endif
 
 #if RFEM
         public static bool Test_General_Get\u2040Main\u2040Objects()
@@ -429,7 +437,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             return true;
         }
-#endif
+#endif //RFEM
 
         #region Model data comparison
 
@@ -477,6 +485,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         {
                             try
                             {
+
+#if RFEM || RSTAB
                                 void AddNewModificationBlock(object_types objectType)
                                 {
                                     if (!NewModificationBlock.Contains(objectType))
@@ -484,11 +494,13 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                                         NewModificationBlock.Add(objectType);
                                     }
                                 }
+#endif // RFEM RSTAB
 
                                 int GetPriority(object_types objectType)
                                 {
                                     switch (objectType)
                                     {
+#if RFEM || RSTAB
                                         case object_types.E_OBJECT_TYPE_MEMBER:
                                         case object_types.E_OBJECT_TYPE_DESIGN_SITUATION:
                                         {
@@ -504,6 +516,20 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                                             AddNewModificationBlock(objectType);
                                             return 3;
                                         }
+#elif RSECTION
+                                        case object_types.E_OBJECT_TYPE_LINE:
+                                        {
+                                            return 1;
+                                        }
+                                        case object_types.E_OBJECT_TYPE_PART:
+                                        {
+                                            return 2;
+                                        }
+                                        case object_types.E_OBJECT_TYPE_STRESS_POINT:
+                                        {
+                                            return 3;
+                                        }
+#endif
                                         default:
                                         {
                                             return 0;
@@ -535,12 +561,21 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             Array objectTypes = Enum.GetValues(typeof(object_types));
             foreach (object_types type in objectTypes)
             {
+#if RFEM || RSTAB
+                // ToDo: Steel Design: Enable E_OBJECT_TYPE_STEEL_DESIGN_SEISMIC_CONFIGURATION after add support for work with standards.
+                // Steel design seismic configuration is available only for some standards, e.g US and Canadian.
+                if (type == object_types.E_OBJECT_TYPE_STEEL_DESIGN_SEISMIC_CONFIGURATION)
+                {
+                    continue;
+                }
+#endif
                 if (!TypesWithParent.Contains(type))
                 {
                     ReadObject(type, 0);
                 }
             }
 
+#if RFEM || RSTAB
             // read objects with parent
             foreach (object_types type in TypesWithParent)
             {
@@ -551,7 +586,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                         ReadObject(type, o.No);
                     });
                 }
-                else if(type.ToString().EndsWith("_IMPERFECTION", StringComparison.OrdinalIgnoreCase))
+                else if (type.ToString().EndsWith("_IMPERFECTION", StringComparison.OrdinalIgnoreCase))
                 {
                     readObjects.Where(o => o.Type == object_types.E_OBJECT_TYPE_IMPERFECTION_CASE).ToList().ForEach(o =>
                     {
@@ -566,6 +601,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     });
                 }
             }
+#endif
 
             return readObjects;
         }
@@ -577,7 +613,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void SetObjects(List<WsObjectClass> objects)
         {
+#if RFEM || RSTAB
             bool combinationWizardExists = false;
+#endif
+
+            bool canceledModification = false;
 
             try
             {
@@ -603,11 +643,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                                    return;
                                }
                            }
-
+#if RFEM || RSTAB
                            if (wsObject.Type == object_types.E_OBJECT_TYPE_COMBINATION_WIZARD)
                            {
                                combinationWizardExists = true;
                            }
+#endif
 
                            try
                            {
@@ -629,20 +670,26 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             }
             catch
             {
+                canceledModification = true;
                 SoapModelClient.cancel_modification();
                 throw;
             }
             finally
             {
-                SoapModelClient.finish_modification();
+                if (!canceledModification)
+                {
+                    SoapModelClient.finish_modification();
+                }
             }
 
+#if !RSECTION
             if (combinationWizardExists)
             {
                 DataLogger.AddLogStart("Generating load cases and combinations...");
                 SoapModelClient.generate_load_cases_and_combinations();
                 DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             }
+#endif
         }
 
         private static bool IsAssignableFrom(Type type)
@@ -658,7 +705,18 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         private static bool AreListsEqual(List<WsObjectClass> list1, List<WsObjectClass> list2)
         {
             bool equals = true;
-            string[] ignorePropertiesList = new string[] { "id_for_export_import" };
+
+            /* modify_stiffness_timber_members_due_moisture_classSpecified
+             * -----------------------------------------------------------
+             * If we choose standard "EN 1990 | Timber" then it creates Structure Modification object with a special internal flag "Default".
+             * This flag has some special internal usage and means "True if this is default modification created by the program for certain standards".
+             * It causes e.g. that attribute modify_stiffness_timber_members_due_moisture_class is available although add-on Timber Design is not activated.
+             * When we create new Structure Modification (via GUI or WS) this flag is not active and the attribute is not available.
+             * It is causing problem in read/write test because after we run loadCasesAndCombinationsPrepare.js there is activated standard "EN 1990 | Timber"
+             * and Structure Modification object contains atribute modify_stiffness_timber_members_due_moisture_class but after we delete the model and write
+             * the object again via WS then this attribute is not available.
+             */
+            string[] ignorePropertiesList = new string[] { "id_for_export_import", "modify_stiffness_timber_members_due_moisture_classSpecified" };
 
             foreach (WsObjectClass object1 in list1)
             {
@@ -755,7 +813,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
             if (value1 is IComparable selfValueComparer)
             {
-                return selfValueComparer.CompareTo(value2) == 0;
+                bool equals = selfValueComparer.CompareTo(value2) == 0;
+                if (!equals && value1 is double doubleValue1 && value2 is double doubleValue2)
+                {
+                    equals = Math.Abs(doubleValue1 - doubleValue2) < DefaultDoubleComparisonTolerance;
+                }
+                return equals;
             }
 
             return Equals(value1, value2);
@@ -806,6 +869,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             return true;
         }
 
-        #endregion Model data comparison
+#endregion Model data comparison
     }
 }

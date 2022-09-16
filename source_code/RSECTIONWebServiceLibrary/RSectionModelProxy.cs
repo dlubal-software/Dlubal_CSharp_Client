@@ -705,6 +705,9 @@ namespace Dlubal.WS.RSection1.Model
         MODEL_ISOTROPIC_PLASTIC_2D_3D,
         
         /// <remarks/>
+        MODEL_ISOTROPIC_ROCK_PLASTIC_HOEK_BROWN_3D,
+        
+        /// <remarks/>
         MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D,
         
         /// <remarks/>
@@ -1998,6 +2001,9 @@ namespace Dlubal.WS.RSection1.Model
         TYPE_PARAMETRIC_BARS,
         
         /// <remarks/>
+        TYPE_PARAMETRIC_BRIDGES,
+        
+        /// <remarks/>
         TYPE_PARAMETRIC_MASSIVE_I,
         
         /// <remarks/>
@@ -2642,6 +2648,74 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         public delete_objectResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete_printout_reports", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class delete_printout_reportsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("printout_report_id_list", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string printout_report_id_list_string;
+
+        [System.Xml.Serialization.XmlIgnore]
+        public int[] printout_report_id_list
+        {
+            get
+            {
+                if (printout_report_id_list_string == null)
+                    printout_report_id_list_string = string.Empty;
+
+                System.Collections.Generic.List<int> items = new System.Collections.Generic.List<int>();
+
+                string[] stringItems = printout_report_id_list_string.Split(' ');
+                foreach (string stringItem in stringItems)
+                {
+                    int result;
+                    if (int.TryParse(stringItem, out result))
+                    {
+                        items.Add(result);
+                    }
+                }
+
+                return items.ToArray();
+            }
+            set
+            {
+                if (value?.Length > 0)
+                {
+                    printout_report_id_list_string = string.Join(" ", value);
+                }
+                else
+                {
+                    printout_report_id_list_string = string.Empty;
+                }
+            }
+        }
+        
+        public delete_printout_reportsRequest()
+        {
+        }
+        
+        public delete_printout_reportsRequest(int[] printout_report_id_list)
+        {
+            this.printout_report_id_list = printout_report_id_list;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete_printout_reportsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class delete_printout_reportsResponse
+    {
+        
+        public delete_printout_reportsResponse()
         {
         }
     }
@@ -4663,6 +4737,82 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="export_printout_report_to_html", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class export_printout_report_to_htmlRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int printout_report_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string file_path;
+        
+        public export_printout_report_to_htmlRequest()
+        {
+        }
+        
+        public export_printout_report_to_htmlRequest(int printout_report_id, string file_path)
+        {
+            this.printout_report_id = printout_report_id;
+            this.file_path = file_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="export_printout_report_to_htmlResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class export_printout_report_to_htmlResponse
+    {
+        
+        public export_printout_report_to_htmlResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="export_printout_report_to_pdf", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class export_printout_report_to_pdfRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int printout_report_id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string file_path;
+        
+        public export_printout_report_to_pdfRequest()
+        {
+        }
+        
+        public export_printout_report_to_pdfRequest(int printout_report_id, string file_path)
+        {
+            this.printout_report_id = printout_report_id;
+            this.file_path = file_path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="export_printout_report_to_pdfResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class export_printout_report_to_pdfResponse
+    {
+        
+        public export_printout_report_to_pdfResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="export_to_tables", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class export_to_tablesRequest
     {
@@ -5381,6 +5531,40 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_list_of_printout_reports", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_list_of_printout_reportsRequest
+    {
+        
+        public get_list_of_printout_reportsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_list_of_printout_reportsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_list_of_printout_reportsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.printout_report_info[] value;
+        
+        public get_list_of_printout_reportsResponse()
+        {
+        }
+        
+        public get_list_of_printout_reportsResponse(Dlubal.WS.RSection1.Model.printout_report_info[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_load_cases_and_combinations", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_load_cases_and_combinationsRequest
     {
@@ -5990,6 +6174,550 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_effective_widths", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_effective_widthsRequest
+    {
+        
+        public get_results_for_effective_widthsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_effective_widthsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_effective_widthsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_effective_widths_and_child_items[] value;
+        
+        public get_results_for_effective_widthsResponse()
+        {
+        }
+        
+        public get_results_for_effective_widthsResponse(Dlubal.WS.RSection1.Model.results_for_effective_widths_and_child_items[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_section_classification", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_section_classificationRequest
+    {
+        
+        public get_results_for_section_classificationRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_section_classificationResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_section_classificationResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_section_classification_and_child_items[] value;
+        
+        public get_results_for_section_classificationResponse()
+        {
+        }
+        
+        public get_results_for_section_classificationResponse(Dlubal.WS.RSection1.Model.results_for_section_classification_and_child_items[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_section_properties_effective", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_section_properties_effectiveRequest
+    {
+        
+        public get_results_for_section_properties_effectiveRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_section_properties_effectiveResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_section_properties_effectiveResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_section_properties_effective_and_child_items[] value;
+        
+        public get_results_for_section_properties_effectiveResponse()
+        {
+        }
+        
+        public get_results_for_section_properties_effectiveResponse(Dlubal.WS.RSection1.Model.results_for_section_properties_effective_and_child_items[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_section_properties", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_section_propertiesRequest
+    {
+        
+        public get_results_for_section_propertiesRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_section_propertiesResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_section_propertiesResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_section_properties_and_child_items[] value;
+        
+        public get_results_for_section_propertiesResponse()
+        {
+        }
+        
+        public get_results_for_section_propertiesResponse(Dlubal.WS.RSection1.Model.results_for_section_properties_and_child_items[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_statical_moments_and_warping", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_statical_moments_and_warpingRequest
+    {
+        
+        public get_results_for_statical_moments_and_warpingRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_statical_moments_and_warpingResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_statical_moments_and_warpingResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_statical_moments_and_warping", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_statical_moments_and_warping_row[] value;
+        
+        public get_results_for_statical_moments_and_warpingResponse()
+        {
+        }
+        
+        public get_results_for_statical_moments_and_warpingResponse(Dlubal.WS.RSection1.Model.results_for_statical_moments_and_warping_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_all_by_stress_points", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_all_by_stress_pointsRequest
+    {
+        
+        public get_results_for_stresses_all_by_stress_pointsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_all_by_stress_pointsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_all_by_stress_pointsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_all_by_stress_points", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_all_by_stress_points_row[] value;
+        
+        public get_results_for_stresses_all_by_stress_pointsResponse()
+        {
+        }
+        
+        public get_results_for_stresses_all_by_stress_pointsResponse(Dlubal.WS.RSection1.Model.results_for_stresses_all_by_stress_points_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_loading_effective", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_loading_effectiveRequest
+    {
+        
+        public get_results_for_stresses_by_loading_effectiveRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_loading_effectiveResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_loading_effectiveResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_loading_effective", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_loading_effective_row[] value;
+        
+        public get_results_for_stresses_by_loading_effectiveResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_loading_effectiveResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_loading_effective_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_loading", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_loadingRequest
+    {
+        
+        public get_results_for_stresses_by_loadingRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_loadingResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_loadingResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_loading", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_loading_row[] value;
+        
+        public get_results_for_stresses_by_loadingResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_loadingResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_loading_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_location", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_locationRequest
+    {
+        
+        public get_results_for_stresses_by_locationRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_locationResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_locationResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_location", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_location_row[] value;
+        
+        public get_results_for_stresses_by_locationResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_locationResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_location_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_material_effective", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_material_effectiveRequest
+    {
+        
+        public get_results_for_stresses_by_material_effectiveRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_material_effectiveResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_material_effectiveResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_material_effective", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_material_effective_row[] value;
+        
+        public get_results_for_stresses_by_material_effectiveResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_material_effectiveResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_material_effective_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_material", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_materialRequest
+    {
+        
+        public get_results_for_stresses_by_materialRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_materialResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_materialResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_material", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_material_row[] value;
+        
+        public get_results_for_stresses_by_materialResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_materialResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_material_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_member", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_memberRequest
+    {
+        
+        public get_results_for_stresses_by_memberRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_memberResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_memberResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_member", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_member_row[] value;
+        
+        public get_results_for_stresses_by_memberResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_memberResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_member_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_stress_points_effective", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_stress_points_effectiveRequest
+    {
+        
+        public get_results_for_stresses_by_stress_points_effectiveRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_stress_points_effectiveResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_stress_points_effectiveResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_stress_points_effective", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_stress_points_effective_row[] value;
+        
+        public get_results_for_stresses_by_stress_points_effectiveResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_stress_points_effectiveResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_stress_points_effective_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_stress_points", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_stress_pointsRequest
+    {
+        
+        public get_results_for_stresses_by_stress_pointsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_stresses_by_stress_pointsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_stresses_by_stress_pointsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_stresses_by_stress_points", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_stresses_by_stress_points_row[] value;
+        
+        public get_results_for_stresses_by_stress_pointsResponse()
+        {
+        }
+        
+        public get_results_for_stresses_by_stress_pointsResponse(Dlubal.WS.RSection1.Model.results_for_stresses_by_stress_points_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_unit_stresses_by_material", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_unit_stresses_by_materialRequest
+    {
+        
+        public get_results_for_unit_stresses_by_materialRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_unit_stresses_by_materialResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_unit_stresses_by_materialResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_unit_stresses_by_material", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_unit_stresses_by_material_row[] value;
+        
+        public get_results_for_unit_stresses_by_materialResponse()
+        {
+        }
+        
+        public get_results_for_unit_stresses_by_materialResponse(Dlubal.WS.RSection1.Model.results_for_unit_stresses_by_material_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_unit_stresses", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_unit_stressesRequest
+    {
+        
+        public get_results_for_unit_stressesRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_results_for_unit_stressesResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_results_for_unit_stressesResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("results_for_unit_stresses", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.results_for_unit_stresses_row[] value;
+        
+        public get_results_for_unit_stressesResponse()
+        {
+        }
+        
+        public get_results_for_unit_stressesResponse(Dlubal.WS.RSection1.Model.results_for_unit_stresses_row[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_sectionRequest
     {
@@ -6141,6 +6869,39 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         public get_table_export_config_managerResponse(Dlubal.WS.RSection1.Model.TableExportConfigManager value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="has_any_results", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class has_any_resultsRequest
+    {
+        
+        public has_any_resultsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="has_any_resultsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class has_any_resultsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool value;
+        
+        public has_any_resultsResponse()
+        {
+        }
+        
+        public has_any_resultsResponse(bool value)
         {
             this.value = value;
         }
@@ -13845,6 +14606,8 @@ namespace Dlubal.WS.RSection1.Model
         
         private string property_geotechnical_analysisField;
         
+        private int property_model_typeField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public int property_node_count
@@ -14637,6 +15400,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.property_geotechnical_analysisField = value;
                 this.RaisePropertyChanged("property_geotechnical_analysis");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=53)]
+        public int property_model_type
+        {
+            get
+            {
+                return this.property_model_typeField;
+            }
+            set
+            {
+                this.property_model_typeField = value;
+                this.RaisePropertyChanged("property_model_type");
             }
         }
         
@@ -17068,6 +17846,111 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="print_printout_report", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class print_printout_reportRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int printout_report_id;
+        
+        public print_printout_reportRequest()
+        {
+        }
+        
+        public print_printout_reportRequest(int printout_report_id)
+        {
+            this.printout_report_id = printout_report_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="print_printout_reportResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class print_printout_reportResponse
+    {
+        
+        public print_printout_reportResponse()
+        {
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class printout_report_info : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        private string root_directoryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string root_directory
+        {
+            get
+            {
+                return this.root_directoryField;
+            }
+            set
+            {
+                this.root_directoryField = value;
+                this.RaisePropertyChanged("root_directory");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="reset", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class resetRequest
     {
@@ -17086,6 +17969,5577 @@ namespace Dlubal.WS.RSection1.Model
         
         public resetResponse()
         {
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_effective_widths : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private variant descriptionField;
+        
+        private variant symbolField;
+        
+        private variant valueField;
+        
+        private variant unitField;
+        
+        private variant noticeField;
+        
+        private variant equationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public variant description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public variant symbol
+        {
+            get
+            {
+                return this.symbolField;
+            }
+            set
+            {
+                this.symbolField = value;
+                this.RaisePropertyChanged("symbol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public variant value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public variant unit
+        {
+            get
+            {
+                return this.unitField;
+            }
+            set
+            {
+                this.unitField = value;
+                this.RaisePropertyChanged("unit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public variant notice
+        {
+            get
+            {
+                return this.noticeField;
+            }
+            set
+            {
+                this.noticeField = value;
+                this.RaisePropertyChanged("notice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public variant equation
+        {
+            get
+            {
+                return this.equationField;
+            }
+            set
+            {
+                this.equationField = value;
+                this.RaisePropertyChanged("equation");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_effective_widths_and_child_items : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private results_for_effective_widths_row results_for_effective_widthsField;
+        
+        private results_for_effective_widths_and_child_items[] child_itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public results_for_effective_widths_row results_for_effective_widths
+        {
+            get
+            {
+                return this.results_for_effective_widthsField;
+            }
+            set
+            {
+                this.results_for_effective_widthsField = value;
+                this.RaisePropertyChanged("results_for_effective_widths");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public results_for_effective_widths_and_child_items[] child_items
+        {
+            get
+            {
+                return this.child_itemsField;
+            }
+            set
+            {
+                this.child_itemsField = value;
+                this.RaisePropertyChanged("child_items");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_effective_widths_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private results_for_effective_widths rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public results_for_effective_widths row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_classification : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private variant descriptionField;
+        
+        private variant symbolField;
+        
+        private variant valueField;
+        
+        private variant unitField;
+        
+        private variant noticeField;
+        
+        private variant equationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public variant description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public variant symbol
+        {
+            get
+            {
+                return this.symbolField;
+            }
+            set
+            {
+                this.symbolField = value;
+                this.RaisePropertyChanged("symbol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public variant value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public variant unit
+        {
+            get
+            {
+                return this.unitField;
+            }
+            set
+            {
+                this.unitField = value;
+                this.RaisePropertyChanged("unit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public variant notice
+        {
+            get
+            {
+                return this.noticeField;
+            }
+            set
+            {
+                this.noticeField = value;
+                this.RaisePropertyChanged("notice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public variant equation
+        {
+            get
+            {
+                return this.equationField;
+            }
+            set
+            {
+                this.equationField = value;
+                this.RaisePropertyChanged("equation");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_classification_and_child_items : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private results_for_section_classification_row results_for_section_classificationField;
+        
+        private results_for_section_classification_and_child_items[] child_itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public results_for_section_classification_row results_for_section_classification
+        {
+            get
+            {
+                return this.results_for_section_classificationField;
+            }
+            set
+            {
+                this.results_for_section_classificationField = value;
+                this.RaisePropertyChanged("results_for_section_classification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public results_for_section_classification_and_child_items[] child_items
+        {
+            get
+            {
+                return this.child_itemsField;
+            }
+            set
+            {
+                this.child_itemsField = value;
+                this.RaisePropertyChanged("child_items");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_classification_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private results_for_section_classification rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public results_for_section_classification row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_properties : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private variant captionField;
+        
+        private variant symbolField;
+        
+        private variant valueField;
+        
+        private variant unitField;
+        
+        private variant commentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public variant caption
+        {
+            get
+            {
+                return this.captionField;
+            }
+            set
+            {
+                this.captionField = value;
+                this.RaisePropertyChanged("caption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public variant symbol
+        {
+            get
+            {
+                return this.symbolField;
+            }
+            set
+            {
+                this.symbolField = value;
+                this.RaisePropertyChanged("symbol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public variant value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public variant unit
+        {
+            get
+            {
+                return this.unitField;
+            }
+            set
+            {
+                this.unitField = value;
+                this.RaisePropertyChanged("unit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public variant comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+                this.RaisePropertyChanged("comment");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_properties_and_child_items : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private results_for_section_properties_row results_for_section_propertiesField;
+        
+        private results_for_section_properties_and_child_items[] child_itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public results_for_section_properties_row results_for_section_properties
+        {
+            get
+            {
+                return this.results_for_section_propertiesField;
+            }
+            set
+            {
+                this.results_for_section_propertiesField = value;
+                this.RaisePropertyChanged("results_for_section_properties");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public results_for_section_properties_and_child_items[] child_items
+        {
+            get
+            {
+                return this.child_itemsField;
+            }
+            set
+            {
+                this.child_itemsField = value;
+                this.RaisePropertyChanged("child_items");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_properties_effective : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private variant captionField;
+        
+        private variant symbolField;
+        
+        private variant valueField;
+        
+        private variant unitField;
+        
+        private variant commentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public variant caption
+        {
+            get
+            {
+                return this.captionField;
+            }
+            set
+            {
+                this.captionField = value;
+                this.RaisePropertyChanged("caption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public variant symbol
+        {
+            get
+            {
+                return this.symbolField;
+            }
+            set
+            {
+                this.symbolField = value;
+                this.RaisePropertyChanged("symbol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public variant value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public variant unit
+        {
+            get
+            {
+                return this.unitField;
+            }
+            set
+            {
+                this.unitField = value;
+                this.RaisePropertyChanged("unit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public variant comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+                this.RaisePropertyChanged("comment");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_properties_effective_and_child_items : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private results_for_section_properties_effective_row results_for_section_properties_effectiveField;
+        
+        private results_for_section_properties_effective_and_child_items[] child_itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public results_for_section_properties_effective_row results_for_section_properties_effective
+        {
+            get
+            {
+                return this.results_for_section_properties_effectiveField;
+            }
+            set
+            {
+                this.results_for_section_properties_effectiveField = value;
+                this.RaisePropertyChanged("results_for_section_properties_effective");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public results_for_section_properties_effective_and_child_items[] child_items
+        {
+            get
+            {
+                return this.child_itemsField;
+            }
+            set
+            {
+                this.child_itemsField = value;
+                this.RaisePropertyChanged("child_items");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_properties_effective_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private results_for_section_properties_effective rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public results_for_section_properties_effective row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_section_properties_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private results_for_section_properties rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public results_for_section_properties row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_statical_moments_and_warping : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int point_noField;
+        
+        private bool point_noFieldSpecified;
+        
+        private double absolute_distanceField;
+        
+        private bool absolute_distanceFieldSpecified;
+        
+        private double coordinate_yField;
+        
+        private bool coordinate_yFieldSpecified;
+        
+        private double coordinate_zField;
+        
+        private bool coordinate_zFieldSpecified;
+        
+        private double coordinate_uField;
+        
+        private bool coordinate_uFieldSpecified;
+        
+        private double coordinate_vField;
+        
+        private bool coordinate_vFieldSpecified;
+        
+        private double statical_moment_of_area_yField;
+        
+        private bool statical_moment_of_area_yFieldSpecified;
+        
+        private double statical_moment_of_area_zField;
+        
+        private bool statical_moment_of_area_zFieldSpecified;
+        
+        private double statical_moment_of_area_uField;
+        
+        private bool statical_moment_of_area_uFieldSpecified;
+        
+        private double statical_moment_of_area_vField;
+        
+        private bool statical_moment_of_area_vFieldSpecified;
+        
+        private double warping_wField;
+        
+        private bool warping_wFieldSpecified;
+        
+        private double warping_sField;
+        
+        private bool warping_sFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int point_no
+        {
+            get
+            {
+                return this.point_noField;
+            }
+            set
+            {
+                this.point_noField = value;
+                this.RaisePropertyChanged("point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool point_noSpecified
+        {
+            get
+            {
+                return this.point_noFieldSpecified;
+            }
+            set
+            {
+                this.point_noFieldSpecified = value;
+                this.RaisePropertyChanged("point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double absolute_distance
+        {
+            get
+            {
+                return this.absolute_distanceField;
+            }
+            set
+            {
+                this.absolute_distanceField = value;
+                this.RaisePropertyChanged("absolute_distance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool absolute_distanceSpecified
+        {
+            get
+            {
+                return this.absolute_distanceFieldSpecified;
+            }
+            set
+            {
+                this.absolute_distanceFieldSpecified = value;
+                this.RaisePropertyChanged("absolute_distanceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public double coordinate_y
+        {
+            get
+            {
+                return this.coordinate_yField;
+            }
+            set
+            {
+                this.coordinate_yField = value;
+                this.RaisePropertyChanged("coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_ySpecified
+        {
+            get
+            {
+                return this.coordinate_yFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_yFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public double coordinate_z
+        {
+            get
+            {
+                return this.coordinate_zField;
+            }
+            set
+            {
+                this.coordinate_zField = value;
+                this.RaisePropertyChanged("coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_zSpecified
+        {
+            get
+            {
+                return this.coordinate_zFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_zFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_zSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double coordinate_u
+        {
+            get
+            {
+                return this.coordinate_uField;
+            }
+            set
+            {
+                this.coordinate_uField = value;
+                this.RaisePropertyChanged("coordinate_u");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_uSpecified
+        {
+            get
+            {
+                return this.coordinate_uFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_uFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_uSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double coordinate_v
+        {
+            get
+            {
+                return this.coordinate_vField;
+            }
+            set
+            {
+                this.coordinate_vField = value;
+                this.RaisePropertyChanged("coordinate_v");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_vSpecified
+        {
+            get
+            {
+                return this.coordinate_vFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_vFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_vSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double statical_moment_of_area_y
+        {
+            get
+            {
+                return this.statical_moment_of_area_yField;
+            }
+            set
+            {
+                this.statical_moment_of_area_yField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statical_moment_of_area_ySpecified
+        {
+            get
+            {
+                return this.statical_moment_of_area_yFieldSpecified;
+            }
+            set
+            {
+                this.statical_moment_of_area_yFieldSpecified = value;
+                this.RaisePropertyChanged("statical_moment_of_area_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public double statical_moment_of_area_z
+        {
+            get
+            {
+                return this.statical_moment_of_area_zField;
+            }
+            set
+            {
+                this.statical_moment_of_area_zField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statical_moment_of_area_zSpecified
+        {
+            get
+            {
+                return this.statical_moment_of_area_zFieldSpecified;
+            }
+            set
+            {
+                this.statical_moment_of_area_zFieldSpecified = value;
+                this.RaisePropertyChanged("statical_moment_of_area_zSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public double statical_moment_of_area_u
+        {
+            get
+            {
+                return this.statical_moment_of_area_uField;
+            }
+            set
+            {
+                this.statical_moment_of_area_uField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_u");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statical_moment_of_area_uSpecified
+        {
+            get
+            {
+                return this.statical_moment_of_area_uFieldSpecified;
+            }
+            set
+            {
+                this.statical_moment_of_area_uFieldSpecified = value;
+                this.RaisePropertyChanged("statical_moment_of_area_uSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public double statical_moment_of_area_v
+        {
+            get
+            {
+                return this.statical_moment_of_area_vField;
+            }
+            set
+            {
+                this.statical_moment_of_area_vField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_v");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool statical_moment_of_area_vSpecified
+        {
+            get
+            {
+                return this.statical_moment_of_area_vFieldSpecified;
+            }
+            set
+            {
+                this.statical_moment_of_area_vFieldSpecified = value;
+                this.RaisePropertyChanged("statical_moment_of_area_vSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public double warping_w
+        {
+            get
+            {
+                return this.warping_wField;
+            }
+            set
+            {
+                this.warping_wField = value;
+                this.RaisePropertyChanged("warping_w");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool warping_wSpecified
+        {
+            get
+            {
+                return this.warping_wFieldSpecified;
+            }
+            set
+            {
+                this.warping_wFieldSpecified = value;
+                this.RaisePropertyChanged("warping_wSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public double warping_s
+        {
+            get
+            {
+                return this.warping_sField;
+            }
+            set
+            {
+                this.warping_sField = value;
+                this.RaisePropertyChanged("warping_s");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool warping_sSpecified
+        {
+            get
+            {
+                return this.warping_sFieldSpecified;
+            }
+            set
+            {
+                this.warping_sFieldSpecified = value;
+                this.RaisePropertyChanged("warping_sSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_statical_moments_and_warping_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_statical_moments_and_warping rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_statical_moments_and_warping row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_all_by_stress_points : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string memberField;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_all_by_stress_points_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_all_by_stress_points rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_all_by_stress_points row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_loading : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string memberField;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_loading_effective : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int memberField;
+        
+        private bool memberFieldSpecified;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_loading_effective_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_loading_effective rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_loading_effective row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_loading_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_loading rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_loading row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_location : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string locationField;
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_location_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_location rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_location row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_material : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string memberField;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_material_effective : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int memberField;
+        
+        private bool memberFieldSpecified;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_material_effective_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_material_effective rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_material_effective row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_material_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_material rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_material row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_member : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string locationField;
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_member_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_member rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_member row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_stress_points : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string memberField;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_stress_points_effective : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int memberField;
+        
+        private bool memberFieldSpecified;
+        
+        private double locationField;
+        
+        private bool locationFieldSpecified;
+        
+        private string loadingField;
+        
+        private string stress_typeField;
+        
+        private double stress_existingField;
+        
+        private bool stress_existingFieldSpecified;
+        
+        private double stress_limitField;
+        
+        private bool stress_limitFieldSpecified;
+        
+        private double stress_ratioField;
+        
+        private bool stress_ratioFieldSpecified;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int member
+        {
+            get
+            {
+                return this.memberField;
+            }
+            set
+            {
+                this.memberField = value;
+                this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public double location
+        {
+            get
+            {
+                return this.locationField;
+            }
+            set
+            {
+                this.locationField = value;
+                this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string loading
+        {
+            get
+            {
+                return this.loadingField;
+            }
+            set
+            {
+                this.loadingField = value;
+                this.RaisePropertyChanged("loading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string stress_type
+        {
+            get
+            {
+                return this.stress_typeField;
+            }
+            set
+            {
+                this.stress_typeField = value;
+                this.RaisePropertyChanged("stress_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double stress_existing
+        {
+            get
+            {
+                return this.stress_existingField;
+            }
+            set
+            {
+                this.stress_existingField = value;
+                this.RaisePropertyChanged("stress_existing");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_existingSpecified
+        {
+            get
+            {
+                return this.stress_existingFieldSpecified;
+            }
+            set
+            {
+                this.stress_existingFieldSpecified = value;
+                this.RaisePropertyChanged("stress_existingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double stress_limit
+        {
+            get
+            {
+                return this.stress_limitField;
+            }
+            set
+            {
+                this.stress_limitField = value;
+                this.RaisePropertyChanged("stress_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_limitSpecified
+        {
+            get
+            {
+                return this.stress_limitFieldSpecified;
+            }
+            set
+            {
+                this.stress_limitFieldSpecified = value;
+                this.RaisePropertyChanged("stress_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double stress_ratio
+        {
+            get
+            {
+                return this.stress_ratioField;
+            }
+            set
+            {
+                this.stress_ratioField = value;
+                this.RaisePropertyChanged("stress_ratio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_ratioSpecified
+        {
+            get
+            {
+                return this.stress_ratioFieldSpecified;
+            }
+            set
+            {
+                this.stress_ratioFieldSpecified = value;
+                this.RaisePropertyChanged("stress_ratioSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_stress_points_effective_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_stress_points_effective rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_stress_points_effective row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_stresses_by_stress_points_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_stresses_by_stress_points rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_stresses_by_stress_points row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_unit_stresses : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int stress_point_noField;
+        
+        private bool stress_point_noFieldSpecified;
+        
+        private string coordinate_yField;
+        
+        private string coordinate_zField;
+        
+        private string coordinate_uField;
+        
+        private string coordinate_vField;
+        
+        private string thicknessField;
+        
+        private string statical_moment_of_area_yField;
+        
+        private string statical_moment_of_area_zField;
+        
+        private string statical_moment_of_area_uField;
+        
+        private string statical_moment_of_area_vField;
+        
+        private string warping_wField;
+        
+        private string warping_sField;
+        
+        private string core_areaField;
+        
+        private string unit_sigma_nField;
+        
+        private string unit_sigma_myField;
+        
+        private string unit_sigma_mzField;
+        
+        private string unit_sigma_muField;
+        
+        private string unit_sigma_mvField;
+        
+        private string unit_sigma_momegaField;
+        
+        private string unit_tau_y_vyField;
+        
+        private string unit_tau_z_vyField;
+        
+        private string unit_tau_y_vzField;
+        
+        private string unit_tau_z_vzField;
+        
+        private string unit_tau_u_vuField;
+        
+        private string unit_tau_v_vuField;
+        
+        private string unit_tau_u_vvField;
+        
+        private string unit_tau_v_vvField;
+        
+        private string unit_tau_y_mxpriField;
+        
+        private string unit_tau_z_mxpriField;
+        
+        private string unit_tau_y_mxsecField;
+        
+        private string unit_tau_z_mxsecField;
+        
+        private string noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stress_point_noSpecified
+        {
+            get
+            {
+                return this.stress_point_noFieldSpecified;
+            }
+            set
+            {
+                this.stress_point_noFieldSpecified = value;
+                this.RaisePropertyChanged("stress_point_noSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string coordinate_y
+        {
+            get
+            {
+                return this.coordinate_yField;
+            }
+            set
+            {
+                this.coordinate_yField = value;
+                this.RaisePropertyChanged("coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string coordinate_z
+        {
+            get
+            {
+                return this.coordinate_zField;
+            }
+            set
+            {
+                this.coordinate_zField = value;
+                this.RaisePropertyChanged("coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string coordinate_u
+        {
+            get
+            {
+                return this.coordinate_uField;
+            }
+            set
+            {
+                this.coordinate_uField = value;
+                this.RaisePropertyChanged("coordinate_u");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string coordinate_v
+        {
+            get
+            {
+                return this.coordinate_vField;
+            }
+            set
+            {
+                this.coordinate_vField = value;
+                this.RaisePropertyChanged("coordinate_v");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string thickness
+        {
+            get
+            {
+                return this.thicknessField;
+            }
+            set
+            {
+                this.thicknessField = value;
+                this.RaisePropertyChanged("thickness");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string statical_moment_of_area_y
+        {
+            get
+            {
+                return this.statical_moment_of_area_yField;
+            }
+            set
+            {
+                this.statical_moment_of_area_yField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string statical_moment_of_area_z
+        {
+            get
+            {
+                return this.statical_moment_of_area_zField;
+            }
+            set
+            {
+                this.statical_moment_of_area_zField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string statical_moment_of_area_u
+        {
+            get
+            {
+                return this.statical_moment_of_area_uField;
+            }
+            set
+            {
+                this.statical_moment_of_area_uField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_u");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string statical_moment_of_area_v
+        {
+            get
+            {
+                return this.statical_moment_of_area_vField;
+            }
+            set
+            {
+                this.statical_moment_of_area_vField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_v");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string warping_w
+        {
+            get
+            {
+                return this.warping_wField;
+            }
+            set
+            {
+                this.warping_wField = value;
+                this.RaisePropertyChanged("warping_w");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string warping_s
+        {
+            get
+            {
+                return this.warping_sField;
+            }
+            set
+            {
+                this.warping_sField = value;
+                this.RaisePropertyChanged("warping_s");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string core_area
+        {
+            get
+            {
+                return this.core_areaField;
+            }
+            set
+            {
+                this.core_areaField = value;
+                this.RaisePropertyChanged("core_area");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        public string unit_sigma_n
+        {
+            get
+            {
+                return this.unit_sigma_nField;
+            }
+            set
+            {
+                this.unit_sigma_nField = value;
+                this.RaisePropertyChanged("unit_sigma_n");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        public string unit_sigma_my
+        {
+            get
+            {
+                return this.unit_sigma_myField;
+            }
+            set
+            {
+                this.unit_sigma_myField = value;
+                this.RaisePropertyChanged("unit_sigma_my");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        public string unit_sigma_mz
+        {
+            get
+            {
+                return this.unit_sigma_mzField;
+            }
+            set
+            {
+                this.unit_sigma_mzField = value;
+                this.RaisePropertyChanged("unit_sigma_mz");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        public string unit_sigma_mu
+        {
+            get
+            {
+                return this.unit_sigma_muField;
+            }
+            set
+            {
+                this.unit_sigma_muField = value;
+                this.RaisePropertyChanged("unit_sigma_mu");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public string unit_sigma_mv
+        {
+            get
+            {
+                return this.unit_sigma_mvField;
+            }
+            set
+            {
+                this.unit_sigma_mvField = value;
+                this.RaisePropertyChanged("unit_sigma_mv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public string unit_sigma_momega
+        {
+            get
+            {
+                return this.unit_sigma_momegaField;
+            }
+            set
+            {
+                this.unit_sigma_momegaField = value;
+                this.RaisePropertyChanged("unit_sigma_momega");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        public string unit_tau_y_vy
+        {
+            get
+            {
+                return this.unit_tau_y_vyField;
+            }
+            set
+            {
+                this.unit_tau_y_vyField = value;
+                this.RaisePropertyChanged("unit_tau_y_vy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        public string unit_tau_z_vy
+        {
+            get
+            {
+                return this.unit_tau_z_vyField;
+            }
+            set
+            {
+                this.unit_tau_z_vyField = value;
+                this.RaisePropertyChanged("unit_tau_z_vy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        public string unit_tau_y_vz
+        {
+            get
+            {
+                return this.unit_tau_y_vzField;
+            }
+            set
+            {
+                this.unit_tau_y_vzField = value;
+                this.RaisePropertyChanged("unit_tau_y_vz");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        public string unit_tau_z_vz
+        {
+            get
+            {
+                return this.unit_tau_z_vzField;
+            }
+            set
+            {
+                this.unit_tau_z_vzField = value;
+                this.RaisePropertyChanged("unit_tau_z_vz");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        public string unit_tau_u_vu
+        {
+            get
+            {
+                return this.unit_tau_u_vuField;
+            }
+            set
+            {
+                this.unit_tau_u_vuField = value;
+                this.RaisePropertyChanged("unit_tau_u_vu");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        public string unit_tau_v_vu
+        {
+            get
+            {
+                return this.unit_tau_v_vuField;
+            }
+            set
+            {
+                this.unit_tau_v_vuField = value;
+                this.RaisePropertyChanged("unit_tau_v_vu");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        public string unit_tau_u_vv
+        {
+            get
+            {
+                return this.unit_tau_u_vvField;
+            }
+            set
+            {
+                this.unit_tau_u_vvField = value;
+                this.RaisePropertyChanged("unit_tau_u_vv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        public string unit_tau_v_vv
+        {
+            get
+            {
+                return this.unit_tau_v_vvField;
+            }
+            set
+            {
+                this.unit_tau_v_vvField = value;
+                this.RaisePropertyChanged("unit_tau_v_vv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        public string unit_tau_y_mxpri
+        {
+            get
+            {
+                return this.unit_tau_y_mxpriField;
+            }
+            set
+            {
+                this.unit_tau_y_mxpriField = value;
+                this.RaisePropertyChanged("unit_tau_y_mxpri");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        public string unit_tau_z_mxpri
+        {
+            get
+            {
+                return this.unit_tau_z_mxpriField;
+            }
+            set
+            {
+                this.unit_tau_z_mxpriField = value;
+                this.RaisePropertyChanged("unit_tau_z_mxpri");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        public string unit_tau_y_mxsec
+        {
+            get
+            {
+                return this.unit_tau_y_mxsecField;
+            }
+            set
+            {
+                this.unit_tau_y_mxsecField = value;
+                this.RaisePropertyChanged("unit_tau_y_mxsec");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        public string unit_tau_z_mxsec
+        {
+            get
+            {
+                return this.unit_tau_z_mxsecField;
+            }
+            set
+            {
+                this.unit_tau_z_mxsecField = value;
+                this.RaisePropertyChanged("unit_tau_z_mxsec");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_unit_stresses_by_material : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string stress_point_noField;
+        
+        private string coordinate_yField;
+        
+        private string coordinate_zField;
+        
+        private string coordinate_uField;
+        
+        private string coordinate_vField;
+        
+        private string thicknessField;
+        
+        private string statical_moment_of_area_yField;
+        
+        private string statical_moment_of_area_zField;
+        
+        private string statical_moment_of_area_uField;
+        
+        private string statical_moment_of_area_vField;
+        
+        private string warping_wField;
+        
+        private string warping_sField;
+        
+        private string core_areaField;
+        
+        private string unit_sigma_nField;
+        
+        private string unit_sigma_myField;
+        
+        private string unit_sigma_mzField;
+        
+        private string unit_sigma_muField;
+        
+        private string unit_sigma_mvField;
+        
+        private string unit_sigma_momegaField;
+        
+        private string unit_tau_y_vyField;
+        
+        private string unit_tau_z_vyField;
+        
+        private string unit_tau_y_vzField;
+        
+        private string unit_tau_z_vzField;
+        
+        private string unit_tau_u_vuField;
+        
+        private string unit_tau_v_vuField;
+        
+        private string unit_tau_u_vvField;
+        
+        private string unit_tau_v_vvField;
+        
+        private string unit_tau_y_mxpriField;
+        
+        private string unit_tau_z_mxpriField;
+        
+        private string unit_tau_y_mxsecField;
+        
+        private string unit_tau_z_mxsecField;
+        
+        private string noteField;
+        
+        private int material_noField;
+        
+        private bool material_noFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string stress_point_no
+        {
+            get
+            {
+                return this.stress_point_noField;
+            }
+            set
+            {
+                this.stress_point_noField = value;
+                this.RaisePropertyChanged("stress_point_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string coordinate_y
+        {
+            get
+            {
+                return this.coordinate_yField;
+            }
+            set
+            {
+                this.coordinate_yField = value;
+                this.RaisePropertyChanged("coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string coordinate_z
+        {
+            get
+            {
+                return this.coordinate_zField;
+            }
+            set
+            {
+                this.coordinate_zField = value;
+                this.RaisePropertyChanged("coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string coordinate_u
+        {
+            get
+            {
+                return this.coordinate_uField;
+            }
+            set
+            {
+                this.coordinate_uField = value;
+                this.RaisePropertyChanged("coordinate_u");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string coordinate_v
+        {
+            get
+            {
+                return this.coordinate_vField;
+            }
+            set
+            {
+                this.coordinate_vField = value;
+                this.RaisePropertyChanged("coordinate_v");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string thickness
+        {
+            get
+            {
+                return this.thicknessField;
+            }
+            set
+            {
+                this.thicknessField = value;
+                this.RaisePropertyChanged("thickness");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string statical_moment_of_area_y
+        {
+            get
+            {
+                return this.statical_moment_of_area_yField;
+            }
+            set
+            {
+                this.statical_moment_of_area_yField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string statical_moment_of_area_z
+        {
+            get
+            {
+                return this.statical_moment_of_area_zField;
+            }
+            set
+            {
+                this.statical_moment_of_area_zField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string statical_moment_of_area_u
+        {
+            get
+            {
+                return this.statical_moment_of_area_uField;
+            }
+            set
+            {
+                this.statical_moment_of_area_uField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_u");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string statical_moment_of_area_v
+        {
+            get
+            {
+                return this.statical_moment_of_area_vField;
+            }
+            set
+            {
+                this.statical_moment_of_area_vField = value;
+                this.RaisePropertyChanged("statical_moment_of_area_v");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string warping_w
+        {
+            get
+            {
+                return this.warping_wField;
+            }
+            set
+            {
+                this.warping_wField = value;
+                this.RaisePropertyChanged("warping_w");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string warping_s
+        {
+            get
+            {
+                return this.warping_sField;
+            }
+            set
+            {
+                this.warping_sField = value;
+                this.RaisePropertyChanged("warping_s");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string core_area
+        {
+            get
+            {
+                return this.core_areaField;
+            }
+            set
+            {
+                this.core_areaField = value;
+                this.RaisePropertyChanged("core_area");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        public string unit_sigma_n
+        {
+            get
+            {
+                return this.unit_sigma_nField;
+            }
+            set
+            {
+                this.unit_sigma_nField = value;
+                this.RaisePropertyChanged("unit_sigma_n");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        public string unit_sigma_my
+        {
+            get
+            {
+                return this.unit_sigma_myField;
+            }
+            set
+            {
+                this.unit_sigma_myField = value;
+                this.RaisePropertyChanged("unit_sigma_my");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        public string unit_sigma_mz
+        {
+            get
+            {
+                return this.unit_sigma_mzField;
+            }
+            set
+            {
+                this.unit_sigma_mzField = value;
+                this.RaisePropertyChanged("unit_sigma_mz");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        public string unit_sigma_mu
+        {
+            get
+            {
+                return this.unit_sigma_muField;
+            }
+            set
+            {
+                this.unit_sigma_muField = value;
+                this.RaisePropertyChanged("unit_sigma_mu");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public string unit_sigma_mv
+        {
+            get
+            {
+                return this.unit_sigma_mvField;
+            }
+            set
+            {
+                this.unit_sigma_mvField = value;
+                this.RaisePropertyChanged("unit_sigma_mv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public string unit_sigma_momega
+        {
+            get
+            {
+                return this.unit_sigma_momegaField;
+            }
+            set
+            {
+                this.unit_sigma_momegaField = value;
+                this.RaisePropertyChanged("unit_sigma_momega");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        public string unit_tau_y_vy
+        {
+            get
+            {
+                return this.unit_tau_y_vyField;
+            }
+            set
+            {
+                this.unit_tau_y_vyField = value;
+                this.RaisePropertyChanged("unit_tau_y_vy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        public string unit_tau_z_vy
+        {
+            get
+            {
+                return this.unit_tau_z_vyField;
+            }
+            set
+            {
+                this.unit_tau_z_vyField = value;
+                this.RaisePropertyChanged("unit_tau_z_vy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        public string unit_tau_y_vz
+        {
+            get
+            {
+                return this.unit_tau_y_vzField;
+            }
+            set
+            {
+                this.unit_tau_y_vzField = value;
+                this.RaisePropertyChanged("unit_tau_y_vz");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        public string unit_tau_z_vz
+        {
+            get
+            {
+                return this.unit_tau_z_vzField;
+            }
+            set
+            {
+                this.unit_tau_z_vzField = value;
+                this.RaisePropertyChanged("unit_tau_z_vz");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        public string unit_tau_u_vu
+        {
+            get
+            {
+                return this.unit_tau_u_vuField;
+            }
+            set
+            {
+                this.unit_tau_u_vuField = value;
+                this.RaisePropertyChanged("unit_tau_u_vu");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        public string unit_tau_v_vu
+        {
+            get
+            {
+                return this.unit_tau_v_vuField;
+            }
+            set
+            {
+                this.unit_tau_v_vuField = value;
+                this.RaisePropertyChanged("unit_tau_v_vu");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        public string unit_tau_u_vv
+        {
+            get
+            {
+                return this.unit_tau_u_vvField;
+            }
+            set
+            {
+                this.unit_tau_u_vvField = value;
+                this.RaisePropertyChanged("unit_tau_u_vv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        public string unit_tau_v_vv
+        {
+            get
+            {
+                return this.unit_tau_v_vvField;
+            }
+            set
+            {
+                this.unit_tau_v_vvField = value;
+                this.RaisePropertyChanged("unit_tau_v_vv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        public string unit_tau_y_mxpri
+        {
+            get
+            {
+                return this.unit_tau_y_mxpriField;
+            }
+            set
+            {
+                this.unit_tau_y_mxpriField = value;
+                this.RaisePropertyChanged("unit_tau_y_mxpri");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        public string unit_tau_z_mxpri
+        {
+            get
+            {
+                return this.unit_tau_z_mxpriField;
+            }
+            set
+            {
+                this.unit_tau_z_mxpriField = value;
+                this.RaisePropertyChanged("unit_tau_z_mxpri");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        public string unit_tau_y_mxsec
+        {
+            get
+            {
+                return this.unit_tau_y_mxsecField;
+            }
+            set
+            {
+                this.unit_tau_y_mxsecField = value;
+                this.RaisePropertyChanged("unit_tau_y_mxsec");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        public string unit_tau_z_mxsec
+        {
+            get
+            {
+                return this.unit_tau_z_mxsecField;
+            }
+            set
+            {
+                this.unit_tau_z_mxsecField = value;
+                this.RaisePropertyChanged("unit_tau_z_mxsec");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        public string note
+        {
+            get
+            {
+                return this.noteField;
+            }
+            set
+            {
+                this.noteField = value;
+                this.RaisePropertyChanged("note");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
+        public int material_no
+        {
+            get
+            {
+                return this.material_noField;
+            }
+            set
+            {
+                this.material_noField = value;
+                this.RaisePropertyChanged("material_no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool material_noSpecified
+        {
+            get
+            {
+                return this.material_noFieldSpecified;
+            }
+            set
+            {
+                this.material_noFieldSpecified = value;
+                this.RaisePropertyChanged("material_noSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_unit_stresses_by_material_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_unit_stresses_by_material rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_unit_stresses_by_material row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class results_for_unit_stresses_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private results_for_unit_stresses rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public results_for_unit_stresses row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -21271,6 +27725,61 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.property_export_import_check_state_of_items_result_tableField = value;
                 this.RaisePropertyChanged("property_export_import_check_state_of_items_result_table");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class variant : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int typeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
             }
         }
         

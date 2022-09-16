@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if !RSECTION
+
+using System;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
 #if RFEM
@@ -142,7 +144,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new timber_member_local_section_reduction_components_row
                 {
                     no = 1,
-                    noSpecified = true,
                     row = new timber_member_local_section_reduction_components
                     {
                         // ToDo: Timber Design: Enable REDUCTION_COMPONENT_TYPE_RECTANGLE_OPENING after publish from pre-release mode.
@@ -160,7 +161,6 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 new timber_member_local_section_reduction_components_row
                 {
                     no = 2,
-                    noSpecified = true,
                     row = new timber_member_local_section_reduction_components
                     {
                         // ToDo: Timber Design: Enable REDUCTION_COMPONENT_TYPE_CIRCLE_OPENING after publish from pre-release mode.
@@ -197,3 +197,5 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         }
     }
 }
+
+#endif // !RSECTION

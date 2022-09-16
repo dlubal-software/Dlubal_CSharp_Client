@@ -103,7 +103,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest.Dialogs
                     currentItem.Items.Add(newItem);
                     currentItem = newItem;
 
-                    if (partIndex == 1)
+                    if (partIndex == 0)
                     {
                         currentItem.IsExpanded = true;
                     }
