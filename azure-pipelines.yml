@@ -27,7 +27,21 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+# - task: VSTest@2
+#   inputs:
+#     platform: '$(buildPlatform)'
+#     configuration: '$(buildConfiguration)'
+- task: CopyFiles@2
+  displayName: 'Copy nupkg Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    Contents: |
+      **\bin\**\*.nupkg
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/NugetPackages'
+    CleanTargetFolder: true
+    flattenFolders: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)/NugetPackages
+    artifactName: NugetPackages
+    
+    
