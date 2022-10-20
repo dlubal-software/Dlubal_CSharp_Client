@@ -23,6 +23,9 @@
 [![Nuget](https://img.shields.io/nuget/v/Dlubal.RSECTIONWebServiceLibrary)]((https://www.nuget.org/packages/Dlubal.RSECTIONWebServiceLibrary))
 ![Nuget](https://img.shields.io/nuget/dt/Dlubal.RSECTIONWebServiceLibrary)
 [![Build Status](https://dev.azure.com/Dlubal-Software/Dlubal%20CSharp%20WebService%20library/_apis/build/status/Dlubal-Software.Dlubal_CSharp_Client?branchName=main)](https://dev.azure.com/Dlubal-Software/Dlubal%20CSharp%20WebService%20library/_build/latest?definitionId=7&branchName=main)
+[![Deployment Status](https://vsrm.dev.azure.com/Dlubal-Software/_apis/public/Release/badge/679c7705-1a5c-446b-940c-2791dc987d88/2/2)](https://vsrm.dev.azure.com/Dlubal-Software/_apis/public/Release/badge/679c7705-1a5c-446b-940c-2791dc987d88/2/2)
+
+
 <!-- ### Table of Contents
 - [RfemCSharpWsClient](#rfemcsharpwsclient)
   * [Description](#description)
