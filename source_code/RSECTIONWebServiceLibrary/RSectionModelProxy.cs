@@ -15,6 +15,23 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum amplitude_function_type
+    {
+        
+        /// <remarks/>
+        CONSTANT,
+        
+        /// <remarks/>
+        LINEAR,
+        
+        /// <remarks/>
+        QUADRATIC,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public enum calculation_message_type
     {
         
@@ -29,6 +46,131 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         WARNING,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_angular_quadrant
+    {
+        
+        /// <remarks/>
+        ANGULAR_QUADRANT_LEFT,
+        
+        /// <remarks/>
+        ANGULAR_QUADRANT_NEGATIVE,
+        
+        /// <remarks/>
+        ANGULAR_QUADRANT_POSITIVE,
+        
+        /// <remarks/>
+        ANGULAR_QUADRANT_RIGHT,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_custom_horizontal_position
+    {
+        
+        /// <remarks/>
+        HORIZONTAL_POSITION_CENTER,
+        
+        /// <remarks/>
+        HORIZONTAL_POSITION_LEFT,
+        
+        /// <remarks/>
+        HORIZONTAL_POSITION_RIGHT,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_custom_vertical_position
+    {
+        
+        /// <remarks/>
+        VERTICAL_POSITION_ABOVE,
+        
+        /// <remarks/>
+        VERTICAL_POSITION_CENTER,
+        
+        /// <remarks/>
+        VERTICAL_POSITION_UNDER,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_linear_reference
+    {
+        
+        /// <remarks/>
+        REFERENCE_LENGTH,
+        
+        /// <remarks/>
+        REFERENCE_PROJECTION_Y,
+        
+        /// <remarks/>
+        REFERENCE_PROJECTION_Z,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_slope_direction
+    {
+        
+        /// <remarks/>
+        SLOPE_DIRECTION_DOWNWARD,
+        
+        /// <remarks/>
+        SLOPE_DIRECTION_UPWARD,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_slope_plane
+    {
+        
+        /// <remarks/>
+        SLOPE_REFERENCE_PROJECTION_IN_X,
+        
+        /// <remarks/>
+        SLOPE_REFERENCE_PROJECTION_IN_Y,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum dimension_type
+    {
+        
+        /// <remarks/>
+        DIMENSION_TYPE_ANGULAR,
+        
+        /// <remarks/>
+        DIMENSION_TYPE_ARC_LENGTH,
+        
+        /// <remarks/>
+        DIMENSION_TYPE_DIAMETER,
+        
+        /// <remarks/>
+        DIMENSION_TYPE_LINEAR,
+        
+        /// <remarks/>
+        DIMENSION_TYPE_RADIUS,
+        
+        /// <remarks/>
+        DIMENSION_TYPE_SLOPE,
     }
     
     /// <remarks/>
@@ -705,9 +847,6 @@ namespace Dlubal.WS.RSection1.Model
         MODEL_ISOTROPIC_PLASTIC_2D_3D,
         
         /// <remarks/>
-        MODEL_ISOTROPIC_ROCK_PLASTIC_HOEK_BROWN_3D,
-        
-        /// <remarks/>
         MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D,
         
         /// <remarks/>
@@ -1208,10 +1347,19 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         /// <remarks/>
+        E_OBJECT_TYPE_DIMENSION,
+        
+        /// <remarks/>
         E_OBJECT_TYPE_ELEMENT,
         
         /// <remarks/>
         E_OBJECT_TYPE_LINE,
+        
+        /// <remarks/>
+        E_OBJECT_TYPE_LOAD_CASE,
+        
+        /// <remarks/>
+        E_OBJECT_TYPE_LOAD_COMBINATION,
         
         /// <remarks/>
         E_OBJECT_TYPE_MATERIAL,
@@ -1356,6 +1504,32 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         TYPE_STANDARD,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum reference_object_type
+    {
+        
+        /// <remarks/>
+        REFERENCE_TYPE_CONTROL_POINT,
+        
+        /// <remarks/>
+        REFERENCE_TYPE_LINE,
+        
+        /// <remarks/>
+        REFERENCE_TYPE_LOCATION,
+        
+        /// <remarks/>
+        REFERENCE_TYPE_POINT,
+        
+        /// <remarks/>
+        REFERENCE_TYPE_POINT_ON_LINE,
+        
+        /// <remarks/>
+        REFERENCE_TYPE_STRESS_POINT,
     }
     
     /// <remarks/>
@@ -1627,7 +1801,7 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2,
         
         /// <remarks/>
-        PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_A_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2,
+        PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2,
         
         /// <remarks/>
         PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2,
@@ -1681,7 +1855,7 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2,
         
         /// <remarks/>
-        PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_A_HORIZONTAL_CONNECTION_LINE__TH_M2,
+        PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2,
         
         /// <remarks/>
         PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2,
@@ -1693,7 +1867,7 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2,
         
         /// <remarks/>
-        PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_A_VERTICAL_CONNECTION_LINE__V_M2,
+        PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2,
         
         /// <remarks/>
         PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1,
@@ -1819,6 +1993,15 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1,
         
         /// <remarks/>
+        PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB,
+        
+        /// <remarks/>
+        PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB,
+        
+        /// <remarks/>
+        PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB,
+        
+        /// <remarks/>
         PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX,
         
         /// <remarks/>
@@ -1874,6 +2057,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS,
+        
+        /// <remarks/>
+        PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA,
         
         /// <remarks/>
         PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2FB,
@@ -1975,6 +2161,9 @@ namespace Dlubal.WS.RSection1.Model
         STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S,
         
         /// <remarks/>
+        STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S,
+        
+        /// <remarks/>
         STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S,
         
         /// <remarks/>
@@ -1999,9 +2188,6 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         TYPE_PARAMETRIC_BARS,
-        
-        /// <remarks/>
-        TYPE_PARAMETRIC_BRIDGES,
         
         /// <remarks/>
         TYPE_PARAMETRIC_MASSIVE_I,
@@ -2113,6 +2299,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         E_EXPORT_TARGET_XLSX_FILE,
+        
+        /// <remarks/>
+        E_EXPORT_TARGET_XML,
         
         /// <remarks/>
         E_EXPORT_TARGET__BEGIN,
@@ -2717,6 +2906,2279 @@ namespace Dlubal.WS.RSection1.Model
         
         public delete_printout_reportsResponse()
         {
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private dimension_type typeField;
+        
+        private bool typeFieldSpecified;
+        
+        private bool user_defined_name_enabledField;
+        
+        private bool user_defined_name_enabledFieldSpecified;
+        
+        private string nameField;
+        
+        private int display_properties_indexField;
+        
+        private bool display_properties_indexFieldSpecified;
+        
+        private double dimension_line_offsetField;
+        
+        private bool dimension_line_offsetFieldSpecified;
+        
+        private bool is_custom_vertical_positionField;
+        
+        private bool is_custom_vertical_positionFieldSpecified;
+        
+        private dimension_custom_vertical_position custom_vertical_positionField;
+        
+        private bool custom_vertical_positionFieldSpecified;
+        
+        private bool is_custom_horizontal_positionField;
+        
+        private bool is_custom_horizontal_positionFieldSpecified;
+        
+        private dimension_custom_horizontal_position custom_horizontal_positionField;
+        
+        private bool custom_horizontal_positionFieldSpecified;
+        
+        private string symbolField;
+        
+        private string commentField;
+        
+        private dimension_linear_reference_table_row[] linear_reference_tableField;
+        
+        private dimension_angular_reference_table_row[] angular_reference_tableField;
+        
+        private double measured_lengthField;
+        
+        private bool measured_lengthFieldSpecified;
+        
+        private int[] measured_lengthsField;
+        
+        private double measured_angleField;
+        
+        private bool measured_angleFieldSpecified;
+        
+        private int[] measured_anglesField;
+        
+        private double measured_slopeField;
+        
+        private bool measured_slopeFieldSpecified;
+        
+        private bool is_global_dimension_line_offsetField;
+        
+        private bool is_global_dimension_line_offsetFieldSpecified;
+        
+        private int linear_coordinate_systemField;
+        
+        private bool linear_coordinate_systemFieldSpecified;
+        
+        private dimension_linear_reference linear_referenceField;
+        
+        private bool linear_referenceFieldSpecified;
+        
+        private double linear_global_dimension_line_offset_yField;
+        
+        private bool linear_global_dimension_line_offset_yFieldSpecified;
+        
+        private double linear_global_dimension_line_offset_zField;
+        
+        private bool linear_global_dimension_line_offset_zFieldSpecified;
+        
+        private vector_3d linear_global_dimension_line_offsetField;
+        
+        private int arc_length_reference_lineField;
+        
+        private bool arc_length_reference_lineFieldSpecified;
+        
+        private dimension_arc_length_reference_table_row[] arc_length_reference_tableField;
+        
+        private bool arc_length_angle_greater_than_180Field;
+        
+        private bool arc_length_angle_greater_than_180FieldSpecified;
+        
+        private dimension_angular_quadrant angular_quadrantField;
+        
+        private bool angular_quadrantFieldSpecified;
+        
+        private bool angular_angle_greater_than_180Field;
+        
+        private bool angular_angle_greater_than_180FieldSpecified;
+        
+        private int radius_diameter_reference_lineField;
+        
+        private bool radius_diameter_reference_lineFieldSpecified;
+        
+        private bool radius_diameter_is_target_pointField;
+        
+        private bool radius_diameter_is_target_pointFieldSpecified;
+        
+        private double radius_diameter_target_point_coordinate_yField;
+        
+        private bool radius_diameter_target_point_coordinate_yFieldSpecified;
+        
+        private double radius_diameter_target_point_coordinate_zField;
+        
+        private bool radius_diameter_target_point_coordinate_zFieldSpecified;
+        
+        private vector_3d radius_diameter_target_point_coordinatesField;
+        
+        private double radius_diameter_position_on_lineField;
+        
+        private bool radius_diameter_position_on_lineFieldSpecified;
+        
+        private int slope_coordinate_systemField;
+        
+        private bool slope_coordinate_systemFieldSpecified;
+        
+        private dimension_slope_plane slope_planeField;
+        
+        private bool slope_planeFieldSpecified;
+        
+        private int slope_reference_lineField;
+        
+        private bool slope_reference_lineFieldSpecified;
+        
+        private dimension_slope_direction slope_directionField;
+        
+        private bool slope_directionFieldSpecified;
+        
+        private bool slope_refer_distance_from_line_endField;
+        
+        private bool slope_refer_distance_from_line_endFieldSpecified;
+        
+        private double slope_position_absoluteField;
+        
+        private bool slope_position_absoluteFieldSpecified;
+        
+        private double slope_position_relativeField;
+        
+        private bool slope_position_relativeFieldSpecified;
+        
+        private bool slope_position_is_relativeField;
+        
+        private bool slope_position_is_relativeFieldSpecified;
+        
+        private bool is_generatedField;
+        
+        private bool is_generatedFieldSpecified;
+        
+        private string generating_object_infoField;
+        
+        private string id_for_export_importField;
+        
+        private string metadata_for_export_importField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public dimension_type type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool typeSpecified
+        {
+            get
+            {
+                return this.typeFieldSpecified;
+            }
+            set
+            {
+                this.typeFieldSpecified = value;
+                this.RaisePropertyChanged("typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public bool user_defined_name_enabled
+        {
+            get
+            {
+                return this.user_defined_name_enabledField;
+            }
+            set
+            {
+                this.user_defined_name_enabledField = value;
+                this.RaisePropertyChanged("user_defined_name_enabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool user_defined_name_enabledSpecified
+        {
+            get
+            {
+                return this.user_defined_name_enabledFieldSpecified;
+            }
+            set
+            {
+                this.user_defined_name_enabledFieldSpecified = value;
+                this.RaisePropertyChanged("user_defined_name_enabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public int display_properties_index
+        {
+            get
+            {
+                return this.display_properties_indexField;
+            }
+            set
+            {
+                this.display_properties_indexField = value;
+                this.RaisePropertyChanged("display_properties_index");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool display_properties_indexSpecified
+        {
+            get
+            {
+                return this.display_properties_indexFieldSpecified;
+            }
+            set
+            {
+                this.display_properties_indexFieldSpecified = value;
+                this.RaisePropertyChanged("display_properties_indexSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double dimension_line_offset
+        {
+            get
+            {
+                return this.dimension_line_offsetField;
+            }
+            set
+            {
+                this.dimension_line_offsetField = value;
+                this.RaisePropertyChanged("dimension_line_offset");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool dimension_line_offsetSpecified
+        {
+            get
+            {
+                return this.dimension_line_offsetFieldSpecified;
+            }
+            set
+            {
+                this.dimension_line_offsetFieldSpecified = value;
+                this.RaisePropertyChanged("dimension_line_offsetSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public bool is_custom_vertical_position
+        {
+            get
+            {
+                return this.is_custom_vertical_positionField;
+            }
+            set
+            {
+                this.is_custom_vertical_positionField = value;
+                this.RaisePropertyChanged("is_custom_vertical_position");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool is_custom_vertical_positionSpecified
+        {
+            get
+            {
+                return this.is_custom_vertical_positionFieldSpecified;
+            }
+            set
+            {
+                this.is_custom_vertical_positionFieldSpecified = value;
+                this.RaisePropertyChanged("is_custom_vertical_positionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public dimension_custom_vertical_position custom_vertical_position
+        {
+            get
+            {
+                return this.custom_vertical_positionField;
+            }
+            set
+            {
+                this.custom_vertical_positionField = value;
+                this.RaisePropertyChanged("custom_vertical_position");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool custom_vertical_positionSpecified
+        {
+            get
+            {
+                return this.custom_vertical_positionFieldSpecified;
+            }
+            set
+            {
+                this.custom_vertical_positionFieldSpecified = value;
+                this.RaisePropertyChanged("custom_vertical_positionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public bool is_custom_horizontal_position
+        {
+            get
+            {
+                return this.is_custom_horizontal_positionField;
+            }
+            set
+            {
+                this.is_custom_horizontal_positionField = value;
+                this.RaisePropertyChanged("is_custom_horizontal_position");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool is_custom_horizontal_positionSpecified
+        {
+            get
+            {
+                return this.is_custom_horizontal_positionFieldSpecified;
+            }
+            set
+            {
+                this.is_custom_horizontal_positionFieldSpecified = value;
+                this.RaisePropertyChanged("is_custom_horizontal_positionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public dimension_custom_horizontal_position custom_horizontal_position
+        {
+            get
+            {
+                return this.custom_horizontal_positionField;
+            }
+            set
+            {
+                this.custom_horizontal_positionField = value;
+                this.RaisePropertyChanged("custom_horizontal_position");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool custom_horizontal_positionSpecified
+        {
+            get
+            {
+                return this.custom_horizontal_positionFieldSpecified;
+            }
+            set
+            {
+                this.custom_horizontal_positionFieldSpecified = value;
+                this.RaisePropertyChanged("custom_horizontal_positionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string symbol
+        {
+            get
+            {
+                return this.symbolField;
+            }
+            set
+            {
+                this.symbolField = value;
+                this.RaisePropertyChanged("symbol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+                this.RaisePropertyChanged("comment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("dimension_linear_reference_table", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public dimension_linear_reference_table_row[] linear_reference_table
+        {
+            get
+            {
+                return this.linear_reference_tableField;
+            }
+            set
+            {
+                this.linear_reference_tableField = value;
+                this.RaisePropertyChanged("linear_reference_table");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("dimension_angular_reference_table", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public dimension_angular_reference_table_row[] angular_reference_table
+        {
+            get
+            {
+                return this.angular_reference_tableField;
+            }
+            set
+            {
+                this.angular_reference_tableField = value;
+                this.RaisePropertyChanged("angular_reference_table");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        public double measured_length
+        {
+            get
+            {
+                return this.measured_lengthField;
+            }
+            set
+            {
+                this.measured_lengthField = value;
+                this.RaisePropertyChanged("measured_length");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool measured_lengthSpecified
+        {
+            get
+            {
+                return this.measured_lengthFieldSpecified;
+            }
+            set
+            {
+                this.measured_lengthFieldSpecified = value;
+                this.RaisePropertyChanged("measured_lengthSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("measured_lengths", Form=System.Xml.Schema.XmlSchemaForm.Unqualified,Order=15)]
+        public string measured_lengths_string {
+            get {
+                if (this.measured_lengthsField?.Length > 0)
+                {
+                    return string.Join(" ", this.measured_lengthsField);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            set {
+                if (value == null)
+                {
+                    value = string.Empty;
+                }
+				
+                System.Collections.Generic.List<int> items = new System.Collections.Generic.List<int>();
+
+                string[] stringItems = value.Split(' ');
+                foreach (string stringItem in stringItems)
+                {
+                    int result;
+                    if (int.TryParse(stringItem, out result))
+                    {
+                        items.Add(result);
+                    }
+                }
+                
+                this.measured_lengthsField = items.ToArray();
+                this.RaisePropertyChanged("measured_lengths");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore]
+        public int[] measured_lengths {
+            get {
+                return this.measured_lengthsField;
+            }
+            set {
+                this.measured_lengthsField = value;
+                this.RaisePropertyChanged("measured_lengths");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        public double measured_angle
+        {
+            get
+            {
+                return this.measured_angleField;
+            }
+            set
+            {
+                this.measured_angleField = value;
+                this.RaisePropertyChanged("measured_angle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool measured_angleSpecified
+        {
+            get
+            {
+                return this.measured_angleFieldSpecified;
+            }
+            set
+            {
+                this.measured_angleFieldSpecified = value;
+                this.RaisePropertyChanged("measured_angleSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("measured_angles", Form=System.Xml.Schema.XmlSchemaForm.Unqualified,Order=17)]
+        public string measured_angles_string {
+            get {
+                if (this.measured_anglesField?.Length > 0)
+                {
+                    return string.Join(" ", this.measured_anglesField);
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            set {
+                if (value == null)
+                {
+                    value = string.Empty;
+                }
+				
+                System.Collections.Generic.List<int> items = new System.Collections.Generic.List<int>();
+
+                string[] stringItems = value.Split(' ');
+                foreach (string stringItem in stringItems)
+                {
+                    int result;
+                    if (int.TryParse(stringItem, out result))
+                    {
+                        items.Add(result);
+                    }
+                }
+                
+                this.measured_anglesField = items.ToArray();
+                this.RaisePropertyChanged("measured_angles");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnore]
+        public int[] measured_angles {
+            get {
+                return this.measured_anglesField;
+            }
+            set {
+                this.measured_anglesField = value;
+                this.RaisePropertyChanged("measured_angles");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public double measured_slope
+        {
+            get
+            {
+                return this.measured_slopeField;
+            }
+            set
+            {
+                this.measured_slopeField = value;
+                this.RaisePropertyChanged("measured_slope");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool measured_slopeSpecified
+        {
+            get
+            {
+                return this.measured_slopeFieldSpecified;
+            }
+            set
+            {
+                this.measured_slopeFieldSpecified = value;
+                this.RaisePropertyChanged("measured_slopeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        public bool is_global_dimension_line_offset
+        {
+            get
+            {
+                return this.is_global_dimension_line_offsetField;
+            }
+            set
+            {
+                this.is_global_dimension_line_offsetField = value;
+                this.RaisePropertyChanged("is_global_dimension_line_offset");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool is_global_dimension_line_offsetSpecified
+        {
+            get
+            {
+                return this.is_global_dimension_line_offsetFieldSpecified;
+            }
+            set
+            {
+                this.is_global_dimension_line_offsetFieldSpecified = value;
+                this.RaisePropertyChanged("is_global_dimension_line_offsetSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        public int linear_coordinate_system
+        {
+            get
+            {
+                return this.linear_coordinate_systemField;
+            }
+            set
+            {
+                this.linear_coordinate_systemField = value;
+                this.RaisePropertyChanged("linear_coordinate_system");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool linear_coordinate_systemSpecified
+        {
+            get
+            {
+                return this.linear_coordinate_systemFieldSpecified;
+            }
+            set
+            {
+                this.linear_coordinate_systemFieldSpecified = value;
+                this.RaisePropertyChanged("linear_coordinate_systemSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        public dimension_linear_reference linear_reference
+        {
+            get
+            {
+                return this.linear_referenceField;
+            }
+            set
+            {
+                this.linear_referenceField = value;
+                this.RaisePropertyChanged("linear_reference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool linear_referenceSpecified
+        {
+            get
+            {
+                return this.linear_referenceFieldSpecified;
+            }
+            set
+            {
+                this.linear_referenceFieldSpecified = value;
+                this.RaisePropertyChanged("linear_referenceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        public double linear_global_dimension_line_offset_y
+        {
+            get
+            {
+                return this.linear_global_dimension_line_offset_yField;
+            }
+            set
+            {
+                this.linear_global_dimension_line_offset_yField = value;
+                this.RaisePropertyChanged("linear_global_dimension_line_offset_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool linear_global_dimension_line_offset_ySpecified
+        {
+            get
+            {
+                return this.linear_global_dimension_line_offset_yFieldSpecified;
+            }
+            set
+            {
+                this.linear_global_dimension_line_offset_yFieldSpecified = value;
+                this.RaisePropertyChanged("linear_global_dimension_line_offset_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        public double linear_global_dimension_line_offset_z
+        {
+            get
+            {
+                return this.linear_global_dimension_line_offset_zField;
+            }
+            set
+            {
+                this.linear_global_dimension_line_offset_zField = value;
+                this.RaisePropertyChanged("linear_global_dimension_line_offset_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool linear_global_dimension_line_offset_zSpecified
+        {
+            get
+            {
+                return this.linear_global_dimension_line_offset_zFieldSpecified;
+            }
+            set
+            {
+                this.linear_global_dimension_line_offset_zFieldSpecified = value;
+                this.RaisePropertyChanged("linear_global_dimension_line_offset_zSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        public vector_3d linear_global_dimension_line_offset
+        {
+            get
+            {
+                return this.linear_global_dimension_line_offsetField;
+            }
+            set
+            {
+                this.linear_global_dimension_line_offsetField = value;
+                this.RaisePropertyChanged("linear_global_dimension_line_offset");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        public int arc_length_reference_line
+        {
+            get
+            {
+                return this.arc_length_reference_lineField;
+            }
+            set
+            {
+                this.arc_length_reference_lineField = value;
+                this.RaisePropertyChanged("arc_length_reference_line");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool arc_length_reference_lineSpecified
+        {
+            get
+            {
+                return this.arc_length_reference_lineFieldSpecified;
+            }
+            set
+            {
+                this.arc_length_reference_lineFieldSpecified = value;
+                this.RaisePropertyChanged("arc_length_reference_lineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("dimension_arc_length_reference_table", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public dimension_arc_length_reference_table_row[] arc_length_reference_table
+        {
+            get
+            {
+                return this.arc_length_reference_tableField;
+            }
+            set
+            {
+                this.arc_length_reference_tableField = value;
+                this.RaisePropertyChanged("arc_length_reference_table");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        public bool arc_length_angle_greater_than_180
+        {
+            get
+            {
+                return this.arc_length_angle_greater_than_180Field;
+            }
+            set
+            {
+                this.arc_length_angle_greater_than_180Field = value;
+                this.RaisePropertyChanged("arc_length_angle_greater_than_180");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool arc_length_angle_greater_than_180Specified
+        {
+            get
+            {
+                return this.arc_length_angle_greater_than_180FieldSpecified;
+            }
+            set
+            {
+                this.arc_length_angle_greater_than_180FieldSpecified = value;
+                this.RaisePropertyChanged("arc_length_angle_greater_than_180Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        public dimension_angular_quadrant angular_quadrant
+        {
+            get
+            {
+                return this.angular_quadrantField;
+            }
+            set
+            {
+                this.angular_quadrantField = value;
+                this.RaisePropertyChanged("angular_quadrant");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool angular_quadrantSpecified
+        {
+            get
+            {
+                return this.angular_quadrantFieldSpecified;
+            }
+            set
+            {
+                this.angular_quadrantFieldSpecified = value;
+                this.RaisePropertyChanged("angular_quadrantSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        public bool angular_angle_greater_than_180
+        {
+            get
+            {
+                return this.angular_angle_greater_than_180Field;
+            }
+            set
+            {
+                this.angular_angle_greater_than_180Field = value;
+                this.RaisePropertyChanged("angular_angle_greater_than_180");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool angular_angle_greater_than_180Specified
+        {
+            get
+            {
+                return this.angular_angle_greater_than_180FieldSpecified;
+            }
+            set
+            {
+                this.angular_angle_greater_than_180FieldSpecified = value;
+                this.RaisePropertyChanged("angular_angle_greater_than_180Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        public int radius_diameter_reference_line
+        {
+            get
+            {
+                return this.radius_diameter_reference_lineField;
+            }
+            set
+            {
+                this.radius_diameter_reference_lineField = value;
+                this.RaisePropertyChanged("radius_diameter_reference_line");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool radius_diameter_reference_lineSpecified
+        {
+            get
+            {
+                return this.radius_diameter_reference_lineFieldSpecified;
+            }
+            set
+            {
+                this.radius_diameter_reference_lineFieldSpecified = value;
+                this.RaisePropertyChanged("radius_diameter_reference_lineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        public bool radius_diameter_is_target_point
+        {
+            get
+            {
+                return this.radius_diameter_is_target_pointField;
+            }
+            set
+            {
+                this.radius_diameter_is_target_pointField = value;
+                this.RaisePropertyChanged("radius_diameter_is_target_point");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool radius_diameter_is_target_pointSpecified
+        {
+            get
+            {
+                return this.radius_diameter_is_target_pointFieldSpecified;
+            }
+            set
+            {
+                this.radius_diameter_is_target_pointFieldSpecified = value;
+                this.RaisePropertyChanged("radius_diameter_is_target_pointSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
+        public double radius_diameter_target_point_coordinate_y
+        {
+            get
+            {
+                return this.radius_diameter_target_point_coordinate_yField;
+            }
+            set
+            {
+                this.radius_diameter_target_point_coordinate_yField = value;
+                this.RaisePropertyChanged("radius_diameter_target_point_coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool radius_diameter_target_point_coordinate_ySpecified
+        {
+            get
+            {
+                return this.radius_diameter_target_point_coordinate_yFieldSpecified;
+            }
+            set
+            {
+                this.radius_diameter_target_point_coordinate_yFieldSpecified = value;
+                this.RaisePropertyChanged("radius_diameter_target_point_coordinate_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
+        public double radius_diameter_target_point_coordinate_z
+        {
+            get
+            {
+                return this.radius_diameter_target_point_coordinate_zField;
+            }
+            set
+            {
+                this.radius_diameter_target_point_coordinate_zField = value;
+                this.RaisePropertyChanged("radius_diameter_target_point_coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool radius_diameter_target_point_coordinate_zSpecified
+        {
+            get
+            {
+                return this.radius_diameter_target_point_coordinate_zFieldSpecified;
+            }
+            set
+            {
+                this.radius_diameter_target_point_coordinate_zFieldSpecified = value;
+                this.RaisePropertyChanged("radius_diameter_target_point_coordinate_zSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=34)]
+        public vector_3d radius_diameter_target_point_coordinates
+        {
+            get
+            {
+                return this.radius_diameter_target_point_coordinatesField;
+            }
+            set
+            {
+                this.radius_diameter_target_point_coordinatesField = value;
+                this.RaisePropertyChanged("radius_diameter_target_point_coordinates");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=35)]
+        public double radius_diameter_position_on_line
+        {
+            get
+            {
+                return this.radius_diameter_position_on_lineField;
+            }
+            set
+            {
+                this.radius_diameter_position_on_lineField = value;
+                this.RaisePropertyChanged("radius_diameter_position_on_line");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool radius_diameter_position_on_lineSpecified
+        {
+            get
+            {
+                return this.radius_diameter_position_on_lineFieldSpecified;
+            }
+            set
+            {
+                this.radius_diameter_position_on_lineFieldSpecified = value;
+                this.RaisePropertyChanged("radius_diameter_position_on_lineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=36)]
+        public int slope_coordinate_system
+        {
+            get
+            {
+                return this.slope_coordinate_systemField;
+            }
+            set
+            {
+                this.slope_coordinate_systemField = value;
+                this.RaisePropertyChanged("slope_coordinate_system");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_coordinate_systemSpecified
+        {
+            get
+            {
+                return this.slope_coordinate_systemFieldSpecified;
+            }
+            set
+            {
+                this.slope_coordinate_systemFieldSpecified = value;
+                this.RaisePropertyChanged("slope_coordinate_systemSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=37)]
+        public dimension_slope_plane slope_plane
+        {
+            get
+            {
+                return this.slope_planeField;
+            }
+            set
+            {
+                this.slope_planeField = value;
+                this.RaisePropertyChanged("slope_plane");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_planeSpecified
+        {
+            get
+            {
+                return this.slope_planeFieldSpecified;
+            }
+            set
+            {
+                this.slope_planeFieldSpecified = value;
+                this.RaisePropertyChanged("slope_planeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=38)]
+        public int slope_reference_line
+        {
+            get
+            {
+                return this.slope_reference_lineField;
+            }
+            set
+            {
+                this.slope_reference_lineField = value;
+                this.RaisePropertyChanged("slope_reference_line");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_reference_lineSpecified
+        {
+            get
+            {
+                return this.slope_reference_lineFieldSpecified;
+            }
+            set
+            {
+                this.slope_reference_lineFieldSpecified = value;
+                this.RaisePropertyChanged("slope_reference_lineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=39)]
+        public dimension_slope_direction slope_direction
+        {
+            get
+            {
+                return this.slope_directionField;
+            }
+            set
+            {
+                this.slope_directionField = value;
+                this.RaisePropertyChanged("slope_direction");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_directionSpecified
+        {
+            get
+            {
+                return this.slope_directionFieldSpecified;
+            }
+            set
+            {
+                this.slope_directionFieldSpecified = value;
+                this.RaisePropertyChanged("slope_directionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=40)]
+        public bool slope_refer_distance_from_line_end
+        {
+            get
+            {
+                return this.slope_refer_distance_from_line_endField;
+            }
+            set
+            {
+                this.slope_refer_distance_from_line_endField = value;
+                this.RaisePropertyChanged("slope_refer_distance_from_line_end");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_refer_distance_from_line_endSpecified
+        {
+            get
+            {
+                return this.slope_refer_distance_from_line_endFieldSpecified;
+            }
+            set
+            {
+                this.slope_refer_distance_from_line_endFieldSpecified = value;
+                this.RaisePropertyChanged("slope_refer_distance_from_line_endSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=41)]
+        public double slope_position_absolute
+        {
+            get
+            {
+                return this.slope_position_absoluteField;
+            }
+            set
+            {
+                this.slope_position_absoluteField = value;
+                this.RaisePropertyChanged("slope_position_absolute");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_position_absoluteSpecified
+        {
+            get
+            {
+                return this.slope_position_absoluteFieldSpecified;
+            }
+            set
+            {
+                this.slope_position_absoluteFieldSpecified = value;
+                this.RaisePropertyChanged("slope_position_absoluteSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=42)]
+        public double slope_position_relative
+        {
+            get
+            {
+                return this.slope_position_relativeField;
+            }
+            set
+            {
+                this.slope_position_relativeField = value;
+                this.RaisePropertyChanged("slope_position_relative");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_position_relativeSpecified
+        {
+            get
+            {
+                return this.slope_position_relativeFieldSpecified;
+            }
+            set
+            {
+                this.slope_position_relativeFieldSpecified = value;
+                this.RaisePropertyChanged("slope_position_relativeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=43)]
+        public bool slope_position_is_relative
+        {
+            get
+            {
+                return this.slope_position_is_relativeField;
+            }
+            set
+            {
+                this.slope_position_is_relativeField = value;
+                this.RaisePropertyChanged("slope_position_is_relative");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool slope_position_is_relativeSpecified
+        {
+            get
+            {
+                return this.slope_position_is_relativeFieldSpecified;
+            }
+            set
+            {
+                this.slope_position_is_relativeFieldSpecified = value;
+                this.RaisePropertyChanged("slope_position_is_relativeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=44)]
+        public bool is_generated
+        {
+            get
+            {
+                return this.is_generatedField;
+            }
+            set
+            {
+                this.is_generatedField = value;
+                this.RaisePropertyChanged("is_generated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool is_generatedSpecified
+        {
+            get
+            {
+                return this.is_generatedFieldSpecified;
+            }
+            set
+            {
+                this.is_generatedFieldSpecified = value;
+                this.RaisePropertyChanged("is_generatedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=45)]
+        public string generating_object_info
+        {
+            get
+            {
+                return this.generating_object_infoField;
+            }
+            set
+            {
+                this.generating_object_infoField = value;
+                this.RaisePropertyChanged("generating_object_info");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=46)]
+        public string id_for_export_import
+        {
+            get
+            {
+                return this.id_for_export_importField;
+            }
+            set
+            {
+                this.id_for_export_importField = value;
+                this.RaisePropertyChanged("id_for_export_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=47)]
+        public string metadata_for_export_import
+        {
+            get
+            {
+                return this.metadata_for_export_importField;
+            }
+            set
+            {
+                this.metadata_for_export_importField = value;
+                this.RaisePropertyChanged("metadata_for_export_import");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension_angular_reference_table : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private reference_object_type reference_object_typeField;
+        
+        private bool reference_object_typeFieldSpecified;
+        
+        private int reference_objectField;
+        
+        private bool reference_objectFieldSpecified;
+        
+        private double line_relative_distanceField;
+        
+        private bool line_relative_distanceFieldSpecified;
+        
+        private double coordinate_yField;
+        
+        private bool coordinate_yFieldSpecified;
+        
+        private double coordinate_zField;
+        
+        private bool coordinate_zFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public reference_object_type reference_object_type
+        {
+            get
+            {
+                return this.reference_object_typeField;
+            }
+            set
+            {
+                this.reference_object_typeField = value;
+                this.RaisePropertyChanged("reference_object_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reference_object_typeSpecified
+        {
+            get
+            {
+                return this.reference_object_typeFieldSpecified;
+            }
+            set
+            {
+                this.reference_object_typeFieldSpecified = value;
+                this.RaisePropertyChanged("reference_object_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int reference_object
+        {
+            get
+            {
+                return this.reference_objectField;
+            }
+            set
+            {
+                this.reference_objectField = value;
+                this.RaisePropertyChanged("reference_object");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reference_objectSpecified
+        {
+            get
+            {
+                return this.reference_objectFieldSpecified;
+            }
+            set
+            {
+                this.reference_objectFieldSpecified = value;
+                this.RaisePropertyChanged("reference_objectSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public double line_relative_distance
+        {
+            get
+            {
+                return this.line_relative_distanceField;
+            }
+            set
+            {
+                this.line_relative_distanceField = value;
+                this.RaisePropertyChanged("line_relative_distance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool line_relative_distanceSpecified
+        {
+            get
+            {
+                return this.line_relative_distanceFieldSpecified;
+            }
+            set
+            {
+                this.line_relative_distanceFieldSpecified = value;
+                this.RaisePropertyChanged("line_relative_distanceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public double coordinate_y
+        {
+            get
+            {
+                return this.coordinate_yField;
+            }
+            set
+            {
+                this.coordinate_yField = value;
+                this.RaisePropertyChanged("coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_ySpecified
+        {
+            get
+            {
+                return this.coordinate_yFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_yFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double coordinate_z
+        {
+            get
+            {
+                return this.coordinate_zField;
+            }
+            set
+            {
+                this.coordinate_zField = value;
+                this.RaisePropertyChanged("coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_zSpecified
+        {
+            get
+            {
+                return this.coordinate_zFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_zFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_zSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension_angular_reference_table_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private dimension_angular_reference_table rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public dimension_angular_reference_table row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension_arc_length_reference_table : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private reference_object_type reference_object_typeField;
+        
+        private bool reference_object_typeFieldSpecified;
+        
+        private int reference_objectField;
+        
+        private bool reference_objectFieldSpecified;
+        
+        private double line_relative_distanceField;
+        
+        private bool line_relative_distanceFieldSpecified;
+        
+        private double coordinate_yField;
+        
+        private bool coordinate_yFieldSpecified;
+        
+        private double coordinate_zField;
+        
+        private bool coordinate_zFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public reference_object_type reference_object_type
+        {
+            get
+            {
+                return this.reference_object_typeField;
+            }
+            set
+            {
+                this.reference_object_typeField = value;
+                this.RaisePropertyChanged("reference_object_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reference_object_typeSpecified
+        {
+            get
+            {
+                return this.reference_object_typeFieldSpecified;
+            }
+            set
+            {
+                this.reference_object_typeFieldSpecified = value;
+                this.RaisePropertyChanged("reference_object_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int reference_object
+        {
+            get
+            {
+                return this.reference_objectField;
+            }
+            set
+            {
+                this.reference_objectField = value;
+                this.RaisePropertyChanged("reference_object");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reference_objectSpecified
+        {
+            get
+            {
+                return this.reference_objectFieldSpecified;
+            }
+            set
+            {
+                this.reference_objectFieldSpecified = value;
+                this.RaisePropertyChanged("reference_objectSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public double line_relative_distance
+        {
+            get
+            {
+                return this.line_relative_distanceField;
+            }
+            set
+            {
+                this.line_relative_distanceField = value;
+                this.RaisePropertyChanged("line_relative_distance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool line_relative_distanceSpecified
+        {
+            get
+            {
+                return this.line_relative_distanceFieldSpecified;
+            }
+            set
+            {
+                this.line_relative_distanceFieldSpecified = value;
+                this.RaisePropertyChanged("line_relative_distanceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public double coordinate_y
+        {
+            get
+            {
+                return this.coordinate_yField;
+            }
+            set
+            {
+                this.coordinate_yField = value;
+                this.RaisePropertyChanged("coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_ySpecified
+        {
+            get
+            {
+                return this.coordinate_yFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_yFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double coordinate_z
+        {
+            get
+            {
+                return this.coordinate_zField;
+            }
+            set
+            {
+                this.coordinate_zField = value;
+                this.RaisePropertyChanged("coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_zSpecified
+        {
+            get
+            {
+                return this.coordinate_zFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_zFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_zSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension_arc_length_reference_table_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private dimension_arc_length_reference_table rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public dimension_arc_length_reference_table row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension_linear_reference_table : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private reference_object_type reference_object_typeField;
+        
+        private bool reference_object_typeFieldSpecified;
+        
+        private int reference_objectField;
+        
+        private bool reference_objectFieldSpecified;
+        
+        private double line_relative_distanceField;
+        
+        private bool line_relative_distanceFieldSpecified;
+        
+        private double coordinate_yField;
+        
+        private bool coordinate_yFieldSpecified;
+        
+        private double coordinate_zField;
+        
+        private bool coordinate_zFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public reference_object_type reference_object_type
+        {
+            get
+            {
+                return this.reference_object_typeField;
+            }
+            set
+            {
+                this.reference_object_typeField = value;
+                this.RaisePropertyChanged("reference_object_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reference_object_typeSpecified
+        {
+            get
+            {
+                return this.reference_object_typeFieldSpecified;
+            }
+            set
+            {
+                this.reference_object_typeFieldSpecified = value;
+                this.RaisePropertyChanged("reference_object_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int reference_object
+        {
+            get
+            {
+                return this.reference_objectField;
+            }
+            set
+            {
+                this.reference_objectField = value;
+                this.RaisePropertyChanged("reference_object");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reference_objectSpecified
+        {
+            get
+            {
+                return this.reference_objectFieldSpecified;
+            }
+            set
+            {
+                this.reference_objectFieldSpecified = value;
+                this.RaisePropertyChanged("reference_objectSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public double line_relative_distance
+        {
+            get
+            {
+                return this.line_relative_distanceField;
+            }
+            set
+            {
+                this.line_relative_distanceField = value;
+                this.RaisePropertyChanged("line_relative_distance");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool line_relative_distanceSpecified
+        {
+            get
+            {
+                return this.line_relative_distanceFieldSpecified;
+            }
+            set
+            {
+                this.line_relative_distanceFieldSpecified = value;
+                this.RaisePropertyChanged("line_relative_distanceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public double coordinate_y
+        {
+            get
+            {
+                return this.coordinate_yField;
+            }
+            set
+            {
+                this.coordinate_yField = value;
+                this.RaisePropertyChanged("coordinate_y");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_ySpecified
+        {
+            get
+            {
+                return this.coordinate_yFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_yFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_ySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double coordinate_z
+        {
+            get
+            {
+                return this.coordinate_zField;
+            }
+            set
+            {
+                this.coordinate_zField = value;
+                this.RaisePropertyChanged("coordinate_z");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool coordinate_zSpecified
+        {
+            get
+            {
+                return this.coordinate_zFieldSpecified;
+            }
+            set
+            {
+                this.coordinate_zFieldSpecified = value;
+                this.RaisePropertyChanged("coordinate_zSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class dimension_linear_reference_table_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private dimension_linear_reference_table rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public dimension_linear_reference_table row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -5310,6 +7772,48 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_dimension", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_dimensionRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int no;
+        
+        public get_dimensionRequest()
+        {
+        }
+        
+        public get_dimensionRequest(int no)
+        {
+            this.no = no;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_dimensionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_dimensionResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.dimension value;
+        
+        public get_dimensionResponse()
+        {
+        }
+        
+        public get_dimensionResponse(Dlubal.WS.RSection1.Model.dimension value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_element", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_elementRequest
     {
@@ -5565,6 +8069,48 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_load_case", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_load_caseRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int no;
+        
+        public get_load_caseRequest()
+        {
+        }
+        
+        public get_load_caseRequest(int no)
+        {
+            this.no = no;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_load_caseResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_load_caseResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.load_case value;
+        
+        public get_load_caseResponse()
+        {
+        }
+        
+        public get_load_caseResponse(Dlubal.WS.RSection1.Model.load_case value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_load_cases_and_combinations", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_load_cases_and_combinationsRequest
     {
@@ -5590,6 +8136,48 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         public get_load_cases_and_combinationsResponse(Dlubal.WS.RSection1.Model.load_cases_and_combinations value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_load_combination", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_load_combinationRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int no;
+        
+        public get_load_combinationRequest()
+        {
+        }
+        
+        public get_load_combinationRequest(int no)
+        {
+            this.no = no;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_load_combinationResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_load_combinationResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.load_combination value;
+        
+        public get_load_combinationResponse()
+        {
+        }
+        
+        public get_load_combinationResponse(Dlubal.WS.RSection1.Model.load_combination value)
         {
             this.value = value;
         }
@@ -8639,8 +11227,1300 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class load_case : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string nameField;
+        
+        private bool to_solveField;
+        
+        private bool to_solveFieldSpecified;
+        
+        private string action_categoryField;
+        
+        private string commentField;
+        
+        private string id_for_export_importField;
+        
+        private string metadata_for_export_importField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public bool to_solve
+        {
+            get
+            {
+                return this.to_solveField;
+            }
+            set
+            {
+                this.to_solveField = value;
+                this.RaisePropertyChanged("to_solve");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool to_solveSpecified
+        {
+            get
+            {
+                return this.to_solveFieldSpecified;
+            }
+            set
+            {
+                this.to_solveFieldSpecified = value;
+                this.RaisePropertyChanged("to_solveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string action_category
+        {
+            get
+            {
+                return this.action_categoryField;
+            }
+            set
+            {
+                this.action_categoryField = value;
+                this.RaisePropertyChanged("action_category");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+                this.RaisePropertyChanged("comment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string id_for_export_import
+        {
+            get
+            {
+                return this.id_for_export_importField;
+            }
+            set
+            {
+                this.id_for_export_importField = value;
+                this.RaisePropertyChanged("id_for_export_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string metadata_for_export_import
+        {
+            get
+            {
+                return this.metadata_for_export_importField;
+            }
+            set
+            {
+                this.metadata_for_export_importField = value;
+                this.RaisePropertyChanged("metadata_for_export_import");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public partial class load_cases_and_combinations : object, System.ComponentModel.INotifyPropertyChanged
     {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class load_combination : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private bool user_defined_name_enabledField;
+        
+        private bool user_defined_name_enabledFieldSpecified;
+        
+        private string nameField;
+        
+        private bool to_solveField;
+        
+        private bool to_solveFieldSpecified;
+        
+        private string commentField;
+        
+        private load_combination_items_row[] itemsField;
+        
+        private string id_for_export_importField;
+        
+        private string metadata_for_export_importField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public bool user_defined_name_enabled
+        {
+            get
+            {
+                return this.user_defined_name_enabledField;
+            }
+            set
+            {
+                this.user_defined_name_enabledField = value;
+                this.RaisePropertyChanged("user_defined_name_enabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool user_defined_name_enabledSpecified
+        {
+            get
+            {
+                return this.user_defined_name_enabledFieldSpecified;
+            }
+            set
+            {
+                this.user_defined_name_enabledFieldSpecified = value;
+                this.RaisePropertyChanged("user_defined_name_enabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public bool to_solve
+        {
+            get
+            {
+                return this.to_solveField;
+            }
+            set
+            {
+                this.to_solveField = value;
+                this.RaisePropertyChanged("to_solve");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool to_solveSpecified
+        {
+            get
+            {
+                return this.to_solveFieldSpecified;
+            }
+            set
+            {
+                this.to_solveFieldSpecified = value;
+                this.RaisePropertyChanged("to_solveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+                this.RaisePropertyChanged("comment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("load_combination_items", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public load_combination_items_row[] items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+                this.RaisePropertyChanged("items");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string id_for_export_import
+        {
+            get
+            {
+                return this.id_for_export_importField;
+            }
+            set
+            {
+                this.id_for_export_importField = value;
+                this.RaisePropertyChanged("id_for_export_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string metadata_for_export_import
+        {
+            get
+            {
+                return this.metadata_for_export_importField;
+            }
+            set
+            {
+                this.metadata_for_export_importField = value;
+                this.RaisePropertyChanged("metadata_for_export_import");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class load_combination_items : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private double factorField;
+        
+        private bool factorFieldSpecified;
+        
+        private int load_caseField;
+        
+        private bool load_caseFieldSpecified;
+        
+        private int actionField;
+        
+        private bool actionFieldSpecified;
+        
+        private bool is_leadingField;
+        
+        private bool is_leadingFieldSpecified;
+        
+        private double gammaField;
+        
+        private bool gammaFieldSpecified;
+        
+        private double psiField;
+        
+        private bool psiFieldSpecified;
+        
+        private double xiField;
+        
+        private bool xiFieldSpecified;
+        
+        private double k_fiField;
+        
+        private bool k_fiFieldSpecified;
+        
+        private double c_eslField;
+        
+        private bool c_eslFieldSpecified;
+        
+        private double k_defField;
+        
+        private bool k_defFieldSpecified;
+        
+        private double psi_0Field;
+        
+        private bool psi_0FieldSpecified;
+        
+        private double psi_1Field;
+        
+        private bool psi_1FieldSpecified;
+        
+        private double psi_2Field;
+        
+        private bool psi_2FieldSpecified;
+        
+        private double fiField;
+        
+        private bool fiFieldSpecified;
+        
+        private double gamma_0Field;
+        
+        private bool gamma_0FieldSpecified;
+        
+        private double alfaField;
+        
+        private bool alfaFieldSpecified;
+        
+        private double k_fField;
+        
+        private bool k_fFieldSpecified;
+        
+        private double phiField;
+        
+        private bool phiFieldSpecified;
+        
+        private double rhoField;
+        
+        private bool rhoFieldSpecified;
+        
+        private double omega_0Field;
+        
+        private bool omega_0FieldSpecified;
+        
+        private double gamma_l_1Field;
+        
+        private bool gamma_l_1FieldSpecified;
+        
+        private double k_creepField;
+        
+        private bool k_creepFieldSpecified;
+        
+        private double gamma_nField;
+        
+        private bool gamma_nFieldSpecified;
+        
+        private double shiftField;
+        
+        private bool shiftFieldSpecified;
+        
+        private amplitude_function_type amplitude_function_typeField;
+        
+        private bool amplitude_function_typeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public double factor
+        {
+            get
+            {
+                return this.factorField;
+            }
+            set
+            {
+                this.factorField = value;
+                this.RaisePropertyChanged("factor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool factorSpecified
+        {
+            get
+            {
+                return this.factorFieldSpecified;
+            }
+            set
+            {
+                this.factorFieldSpecified = value;
+                this.RaisePropertyChanged("factorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int load_case
+        {
+            get
+            {
+                return this.load_caseField;
+            }
+            set
+            {
+                this.load_caseField = value;
+                this.RaisePropertyChanged("load_case");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool load_caseSpecified
+        {
+            get
+            {
+                return this.load_caseFieldSpecified;
+            }
+            set
+            {
+                this.load_caseFieldSpecified = value;
+                this.RaisePropertyChanged("load_caseSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int action
+        {
+            get
+            {
+                return this.actionField;
+            }
+            set
+            {
+                this.actionField = value;
+                this.RaisePropertyChanged("action");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool actionSpecified
+        {
+            get
+            {
+                return this.actionFieldSpecified;
+            }
+            set
+            {
+                this.actionFieldSpecified = value;
+                this.RaisePropertyChanged("actionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public bool is_leading
+        {
+            get
+            {
+                return this.is_leadingField;
+            }
+            set
+            {
+                this.is_leadingField = value;
+                this.RaisePropertyChanged("is_leading");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool is_leadingSpecified
+        {
+            get
+            {
+                return this.is_leadingFieldSpecified;
+            }
+            set
+            {
+                this.is_leadingFieldSpecified = value;
+                this.RaisePropertyChanged("is_leadingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double gamma
+        {
+            get
+            {
+                return this.gammaField;
+            }
+            set
+            {
+                this.gammaField = value;
+                this.RaisePropertyChanged("gamma");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool gammaSpecified
+        {
+            get
+            {
+                return this.gammaFieldSpecified;
+            }
+            set
+            {
+                this.gammaFieldSpecified = value;
+                this.RaisePropertyChanged("gammaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double psi
+        {
+            get
+            {
+                return this.psiField;
+            }
+            set
+            {
+                this.psiField = value;
+                this.RaisePropertyChanged("psi");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool psiSpecified
+        {
+            get
+            {
+                return this.psiFieldSpecified;
+            }
+            set
+            {
+                this.psiFieldSpecified = value;
+                this.RaisePropertyChanged("psiSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public double xi
+        {
+            get
+            {
+                return this.xiField;
+            }
+            set
+            {
+                this.xiField = value;
+                this.RaisePropertyChanged("xi");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool xiSpecified
+        {
+            get
+            {
+                return this.xiFieldSpecified;
+            }
+            set
+            {
+                this.xiFieldSpecified = value;
+                this.RaisePropertyChanged("xiSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public double k_fi
+        {
+            get
+            {
+                return this.k_fiField;
+            }
+            set
+            {
+                this.k_fiField = value;
+                this.RaisePropertyChanged("k_fi");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool k_fiSpecified
+        {
+            get
+            {
+                return this.k_fiFieldSpecified;
+            }
+            set
+            {
+                this.k_fiFieldSpecified = value;
+                this.RaisePropertyChanged("k_fiSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public double c_esl
+        {
+            get
+            {
+                return this.c_eslField;
+            }
+            set
+            {
+                this.c_eslField = value;
+                this.RaisePropertyChanged("c_esl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool c_eslSpecified
+        {
+            get
+            {
+                return this.c_eslFieldSpecified;
+            }
+            set
+            {
+                this.c_eslFieldSpecified = value;
+                this.RaisePropertyChanged("c_eslSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public double k_def
+        {
+            get
+            {
+                return this.k_defField;
+            }
+            set
+            {
+                this.k_defField = value;
+                this.RaisePropertyChanged("k_def");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool k_defSpecified
+        {
+            get
+            {
+                return this.k_defFieldSpecified;
+            }
+            set
+            {
+                this.k_defFieldSpecified = value;
+                this.RaisePropertyChanged("k_defSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public double psi_0
+        {
+            get
+            {
+                return this.psi_0Field;
+            }
+            set
+            {
+                this.psi_0Field = value;
+                this.RaisePropertyChanged("psi_0");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool psi_0Specified
+        {
+            get
+            {
+                return this.psi_0FieldSpecified;
+            }
+            set
+            {
+                this.psi_0FieldSpecified = value;
+                this.RaisePropertyChanged("psi_0Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public double psi_1
+        {
+            get
+            {
+                return this.psi_1Field;
+            }
+            set
+            {
+                this.psi_1Field = value;
+                this.RaisePropertyChanged("psi_1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool psi_1Specified
+        {
+            get
+            {
+                return this.psi_1FieldSpecified;
+            }
+            set
+            {
+                this.psi_1FieldSpecified = value;
+                this.RaisePropertyChanged("psi_1Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public double psi_2
+        {
+            get
+            {
+                return this.psi_2Field;
+            }
+            set
+            {
+                this.psi_2Field = value;
+                this.RaisePropertyChanged("psi_2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool psi_2Specified
+        {
+            get
+            {
+                return this.psi_2FieldSpecified;
+            }
+            set
+            {
+                this.psi_2FieldSpecified = value;
+                this.RaisePropertyChanged("psi_2Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        public double fi
+        {
+            get
+            {
+                return this.fiField;
+            }
+            set
+            {
+                this.fiField = value;
+                this.RaisePropertyChanged("fi");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fiSpecified
+        {
+            get
+            {
+                return this.fiFieldSpecified;
+            }
+            set
+            {
+                this.fiFieldSpecified = value;
+                this.RaisePropertyChanged("fiSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        public double gamma_0
+        {
+            get
+            {
+                return this.gamma_0Field;
+            }
+            set
+            {
+                this.gamma_0Field = value;
+                this.RaisePropertyChanged("gamma_0");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool gamma_0Specified
+        {
+            get
+            {
+                return this.gamma_0FieldSpecified;
+            }
+            set
+            {
+                this.gamma_0FieldSpecified = value;
+                this.RaisePropertyChanged("gamma_0Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        public double alfa
+        {
+            get
+            {
+                return this.alfaField;
+            }
+            set
+            {
+                this.alfaField = value;
+                this.RaisePropertyChanged("alfa");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool alfaSpecified
+        {
+            get
+            {
+                return this.alfaFieldSpecified;
+            }
+            set
+            {
+                this.alfaFieldSpecified = value;
+                this.RaisePropertyChanged("alfaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        public double k_f
+        {
+            get
+            {
+                return this.k_fField;
+            }
+            set
+            {
+                this.k_fField = value;
+                this.RaisePropertyChanged("k_f");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool k_fSpecified
+        {
+            get
+            {
+                return this.k_fFieldSpecified;
+            }
+            set
+            {
+                this.k_fFieldSpecified = value;
+                this.RaisePropertyChanged("k_fSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public double phi
+        {
+            get
+            {
+                return this.phiField;
+            }
+            set
+            {
+                this.phiField = value;
+                this.RaisePropertyChanged("phi");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool phiSpecified
+        {
+            get
+            {
+                return this.phiFieldSpecified;
+            }
+            set
+            {
+                this.phiFieldSpecified = value;
+                this.RaisePropertyChanged("phiSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public double rho
+        {
+            get
+            {
+                return this.rhoField;
+            }
+            set
+            {
+                this.rhoField = value;
+                this.RaisePropertyChanged("rho");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool rhoSpecified
+        {
+            get
+            {
+                return this.rhoFieldSpecified;
+            }
+            set
+            {
+                this.rhoFieldSpecified = value;
+                this.RaisePropertyChanged("rhoSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        public double omega_0
+        {
+            get
+            {
+                return this.omega_0Field;
+            }
+            set
+            {
+                this.omega_0Field = value;
+                this.RaisePropertyChanged("omega_0");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool omega_0Specified
+        {
+            get
+            {
+                return this.omega_0FieldSpecified;
+            }
+            set
+            {
+                this.omega_0FieldSpecified = value;
+                this.RaisePropertyChanged("omega_0Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        public double gamma_l_1
+        {
+            get
+            {
+                return this.gamma_l_1Field;
+            }
+            set
+            {
+                this.gamma_l_1Field = value;
+                this.RaisePropertyChanged("gamma_l_1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool gamma_l_1Specified
+        {
+            get
+            {
+                return this.gamma_l_1FieldSpecified;
+            }
+            set
+            {
+                this.gamma_l_1FieldSpecified = value;
+                this.RaisePropertyChanged("gamma_l_1Specified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        public double k_creep
+        {
+            get
+            {
+                return this.k_creepField;
+            }
+            set
+            {
+                this.k_creepField = value;
+                this.RaisePropertyChanged("k_creep");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool k_creepSpecified
+        {
+            get
+            {
+                return this.k_creepFieldSpecified;
+            }
+            set
+            {
+                this.k_creepFieldSpecified = value;
+                this.RaisePropertyChanged("k_creepSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        public double gamma_n
+        {
+            get
+            {
+                return this.gamma_nField;
+            }
+            set
+            {
+                this.gamma_nField = value;
+                this.RaisePropertyChanged("gamma_n");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool gamma_nSpecified
+        {
+            get
+            {
+                return this.gamma_nFieldSpecified;
+            }
+            set
+            {
+                this.gamma_nFieldSpecified = value;
+                this.RaisePropertyChanged("gamma_nSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        public double shift
+        {
+            get
+            {
+                return this.shiftField;
+            }
+            set
+            {
+                this.shiftField = value;
+                this.RaisePropertyChanged("shift");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool shiftSpecified
+        {
+            get
+            {
+                return this.shiftFieldSpecified;
+            }
+            set
+            {
+                this.shiftFieldSpecified = value;
+                this.RaisePropertyChanged("shiftSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        public amplitude_function_type amplitude_function_type
+        {
+            get
+            {
+                return this.amplitude_function_typeField;
+            }
+            set
+            {
+                this.amplitude_function_typeField = value;
+                this.RaisePropertyChanged("amplitude_function_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool amplitude_function_typeSpecified
+        {
+            get
+            {
+                return this.amplitude_function_typeFieldSpecified;
+            }
+            set
+            {
+                this.amplitude_function_typeFieldSpecified = value;
+                this.RaisePropertyChanged("amplitude_function_typeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class load_combination_items_row : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int noField;
+        
+        private string descriptionField;
+        
+        private load_combination_items rowField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int no
+        {
+            get
+            {
+                return this.noField;
+            }
+            set
+            {
+                this.noField = value;
+                this.RaisePropertyChanged("no");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string description
+        {
+            get
+            {
+                return this.descriptionField;
+            }
+            set
+            {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public load_combination_items row
+        {
+            get
+            {
+                return this.rowField;
+            }
+            set
+            {
+                this.rowField = value;
+                this.RaisePropertyChanged("row");
+            }
+        }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -19401,7 +23281,9 @@ namespace Dlubal.WS.RSection1.Model
     public partial class results_for_stresses_all_by_stress_points : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private string memberField;
+        private int memberField;
+        
+        private bool memberFieldSpecified;
         
         private double locationField;
         
@@ -19427,7 +23309,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string member
+        public int member
         {
             get
             {
@@ -19437,6 +23319,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.memberField = value;
                 this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
             }
         }
         
@@ -19698,7 +23595,9 @@ namespace Dlubal.WS.RSection1.Model
     public partial class results_for_stresses_by_loading : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private string memberField;
+        private int memberField;
+        
+        private bool memberFieldSpecified;
         
         private double locationField;
         
@@ -19726,7 +23625,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string member
+        public int member
         {
             get
             {
@@ -19736,6 +23635,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.memberField = value;
                 this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
             }
         }
         
@@ -20343,7 +24257,9 @@ namespace Dlubal.WS.RSection1.Model
     public partial class results_for_stresses_by_location : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private string locationField;
+        private double locationField;
+        
+        private bool locationFieldSpecified;
         
         private int stress_point_noField;
         
@@ -20369,7 +24285,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string location
+        public double location
         {
             get
             {
@@ -20379,6 +24295,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.locationField = value;
                 this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
             }
         }
         
@@ -20640,7 +24571,9 @@ namespace Dlubal.WS.RSection1.Model
     public partial class results_for_stresses_by_material : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private string memberField;
+        private int memberField;
+        
+        private bool memberFieldSpecified;
         
         private double locationField;
         
@@ -20670,7 +24603,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string member
+        public int member
         {
             get
             {
@@ -20680,6 +24613,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.memberField = value;
                 this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
             }
         }
         
@@ -21319,7 +25267,9 @@ namespace Dlubal.WS.RSection1.Model
     public partial class results_for_stresses_by_member : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private string locationField;
+        private double locationField;
+        
+        private bool locationFieldSpecified;
         
         private int stress_point_noField;
         
@@ -21345,7 +25295,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string location
+        public double location
         {
             get
             {
@@ -21355,6 +25305,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.locationField = value;
                 this.RaisePropertyChanged("location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool locationSpecified
+        {
+            get
+            {
+                return this.locationFieldSpecified;
+            }
+            set
+            {
+                this.locationFieldSpecified = value;
+                this.RaisePropertyChanged("locationSpecified");
             }
         }
         
@@ -21616,7 +25581,9 @@ namespace Dlubal.WS.RSection1.Model
     public partial class results_for_stresses_by_stress_points : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private string memberField;
+        private int memberField;
+        
+        private bool memberFieldSpecified;
         
         private double locationField;
         
@@ -21642,7 +25609,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string member
+        public int member
         {
             get
             {
@@ -21652,6 +25619,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.memberField = value;
                 this.RaisePropertyChanged("member");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool memberSpecified
+        {
+            get
+            {
+                return this.memberFieldSpecified;
+            }
+            set
+            {
+                this.memberFieldSpecified = value;
+                this.RaisePropertyChanged("memberSpecified");
             }
         }
         
@@ -25104,6 +29086,39 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_dimension", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_dimensionRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.dimension value;
+        
+        public set_dimensionRequest()
+        {
+        }
+        
+        public set_dimensionRequest(Dlubal.WS.RSection1.Model.dimension value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_dimensionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_dimensionResponse
+    {
+        
+        public set_dimensionResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="set_element", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class set_elementRequest
     {
@@ -25213,6 +29228,39 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_load_case", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_load_caseRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.load_case value;
+        
+        public set_load_caseRequest()
+        {
+        }
+        
+        public set_load_caseRequest(Dlubal.WS.RSection1.Model.load_case value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_load_caseResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_load_caseResponse
+    {
+        
+        public set_load_caseResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="set_load_cases_and_combinations", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class set_load_cases_and_combinationsRequest
     {
@@ -25239,6 +29287,39 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         public set_load_cases_and_combinationsResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_load_combination", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_load_combinationRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.load_combination value;
+        
+        public set_load_combinationRequest()
+        {
+        }
+        
+        public set_load_combinationRequest(Dlubal.WS.RSection1.Model.load_combination value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_load_combinationResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_load_combinationResponse
+    {
+        
+        public set_load_combinationResponse()
         {
         }
     }
@@ -27492,6 +31573,8 @@ namespace Dlubal.WS.RSection1.Model
         
         private bool property_export_as_plain_textField;
         
+        private bool property_export_xml_single_fileField;
+        
         private bool property_export_select_loadingField;
         
         /// <remarks/>
@@ -27676,6 +31759,21 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public bool property_export_xml_single_file
+        {
+            get
+            {
+                return this.property_export_xml_single_fileField;
+            }
+            set
+            {
+                this.property_export_xml_single_fileField = value;
+                this.RaisePropertyChanged("property_export_xml_single_file");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public bool property_export_select_loading
         {
             get

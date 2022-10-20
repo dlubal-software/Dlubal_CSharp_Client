@@ -126,6 +126,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.generate_parts_listsResponse generate_parts_lists(Dlubal.WS.Rstab9.Model.generate_parts_listsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_accelerogram", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_accelerogramResponse get_accelerogram(Dlubal.WS.Rstab9.Model.get_accelerogramRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_actionResponse get_action(Dlubal.WS.Rstab9.Model.get_actionRequest request);
@@ -189,6 +193,14 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_combination_wizard", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_combination_wizardResponse get_combination_wizard(Dlubal.WS.Rstab9.Model.get_combination_wizardRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_concrete_durability", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_concrete_durabilityResponse get_concrete_durability(Dlubal.WS.Rstab9.Model.get_concrete_durabilityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_concrete_effective_lengths", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_concrete_effective_lengthsResponse get_concrete_effective_lengths(Dlubal.WS.Rstab9.Model.get_concrete_effective_lengthsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_coordinate_system", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -410,6 +422,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_optimization_settingsResponse get_optimization_settings(Dlubal.WS.Rstab9.Model.get_optimization_settingsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_optimized_values", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_optimized_valuesResponse get_optimized_values(Dlubal.WS.Rstab9.Model.get_optimized_valuesRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_all_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialResponse get_parts_list_all_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialRequest request);
@@ -434,6 +450,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_relationship_between_load_casesResponse get_relationship_between_load_cases(Dlubal.WS.Rstab9.Model.get_relationship_between_load_casesRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_response_spectrum", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_response_spectrumResponse get_response_spectrum(Dlubal.WS.Rstab9.Model.get_response_spectrumRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_result_combination", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_result_combinationResponse get_result_combination(Dlubal.WS.Rstab9.Model.get_result_combinationRequest request);
@@ -441,10 +461,6 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_calculation_diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse get_results_for_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_convergence_diagrams", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_critical_load_factors", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -507,6 +523,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_local_deformations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsResponse get_results_for_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_local_plastic_deformation_ratios", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_members_local_plastic_deformation_ratiosResponse get_results_for_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.get_results_for_members_local_plastic_deformation_ratiosRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -593,6 +613,11 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsResponse get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_local_plastic_def" +
+            "ormation_ratios", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosResponse get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_members_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsResponse get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsRequest request);
@@ -622,11 +647,6 @@ namespace Dlubal.WS.Rstab9.Model
             "diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_convergence_" +
-            "diagrams", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_cont" +
             "act_forces", ReplyAction="*")]
@@ -668,6 +688,11 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsResponse get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_loca" +
+            "l_plastic_deformation_ratios", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratiosResponse get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratiosRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_members_stra" +
             "ins", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -690,6 +715,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_summary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_summaryResponse get_results_for_summary(Dlubal.WS.Rstab9.Model.get_results_for_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_calculation_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsResponse get_results_for_time_history_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_contact_force" +
             "s", ReplyAction="*")]
@@ -729,6 +758,11 @@ namespace Dlubal.WS.Rstab9.Model
             "tions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsResponse get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_local_plastic" +
+            "_deformation_ratios", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_plastic_deformation_ratiosResponse get_results_for_time_history_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_plastic_deformation_ratiosRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -890,6 +924,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.saveResponse save(Dlubal.WS.Rstab9.Model.saveRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_accelerogram", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_accelerogramResponse set_accelerogram(Dlubal.WS.Rstab9.Model.set_accelerogramRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_action", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_actionResponse set_action(Dlubal.WS.Rstab9.Model.set_actionRequest request);
@@ -941,6 +979,14 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_combination_wizard", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_combination_wizardResponse set_combination_wizard(Dlubal.WS.Rstab9.Model.set_combination_wizardRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_concrete_durability", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_concrete_durabilityResponse set_concrete_durability(Dlubal.WS.Rstab9.Model.set_concrete_durabilityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_concrete_effective_lengths", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_concrete_effective_lengthsResponse set_concrete_effective_lengths(Dlubal.WS.Rstab9.Model.set_concrete_effective_lengthsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_coordinate_system", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1125,6 +1171,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_relationship_between_load_cases", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_relationship_between_load_casesResponse set_relationship_between_load_cases(Dlubal.WS.Rstab9.Model.set_relationship_between_load_casesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_response_spectrum", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_response_spectrumResponse set_response_spectrum(Dlubal.WS.Rstab9.Model.set_response_spectrumRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_result_combination", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

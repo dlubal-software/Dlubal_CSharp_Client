@@ -303,6 +303,20 @@ namespace Dlubal.WS.RSection1.Model
             return retVal.value;
         }
         
+        public Dlubal.WS.RSection1.Model.dimension get_dimension(int no)
+        {
+            Dlubal.WS.RSection1.Model.get_dimensionRequest inValue = new Dlubal.WS.RSection1.Model.get_dimensionRequest();
+            inValue.no = no;
+            Dlubal.WS.RSection1.Model.get_dimensionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_dimension(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_dimensionResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_dimension(Dlubal.WS.RSection1.Model.get_dimensionRequest request)
+        {
+            return base.Channel.get_dimension(request);
+        }
+        
         public Dlubal.WS.RSection1.Model.element get_element(int no)
         {
             Dlubal.WS.RSection1.Model.get_elementRequest inValue = new Dlubal.WS.RSection1.Model.get_elementRequest();
@@ -389,6 +403,20 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_load_caseResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_load_case(Dlubal.WS.RSection1.Model.get_load_caseRequest request)
+        {
+            return base.Channel.get_load_case(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.load_case get_load_case(int no)
+        {
+            Dlubal.WS.RSection1.Model.get_load_caseRequest inValue = new Dlubal.WS.RSection1.Model.get_load_caseRequest();
+            inValue.no = no;
+            Dlubal.WS.RSection1.Model.get_load_caseResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_load_case(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_load_cases_and_combinations(Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsRequest request)
         {
             return base.Channel.get_load_cases_and_combinations(request);
@@ -398,6 +426,20 @@ namespace Dlubal.WS.RSection1.Model
         {
             Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsRequest inValue = new Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsRequest();
             Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_load_cases_and_combinations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_load_combinationResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_load_combination(Dlubal.WS.RSection1.Model.get_load_combinationRequest request)
+        {
+            return base.Channel.get_load_combination(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.load_combination get_load_combination(int no)
+        {
+            Dlubal.WS.RSection1.Model.get_load_combinationRequest inValue = new Dlubal.WS.RSection1.Model.get_load_combinationRequest();
+            inValue.no = no;
+            Dlubal.WS.RSection1.Model.get_load_combinationResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_load_combination(inValue);
             return retVal.value;
         }
         
@@ -935,6 +977,19 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.set_dimensionResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_dimension(Dlubal.WS.RSection1.Model.set_dimensionRequest request)
+        {
+            return base.Channel.set_dimension(request);
+        }
+        
+        public void set_dimension(Dlubal.WS.RSection1.Model.dimension value)
+        {
+            Dlubal.WS.RSection1.Model.set_dimensionRequest inValue = new Dlubal.WS.RSection1.Model.set_dimensionRequest();
+            inValue.value = value;
+            Dlubal.WS.RSection1.Model.set_dimensionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_dimension(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.set_elementResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_element(Dlubal.WS.RSection1.Model.set_elementRequest request)
         {
             return base.Channel.set_element(request);
@@ -976,6 +1031,19 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.set_load_caseResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_load_case(Dlubal.WS.RSection1.Model.set_load_caseRequest request)
+        {
+            return base.Channel.set_load_case(request);
+        }
+        
+        public void set_load_case(Dlubal.WS.RSection1.Model.load_case value)
+        {
+            Dlubal.WS.RSection1.Model.set_load_caseRequest inValue = new Dlubal.WS.RSection1.Model.set_load_caseRequest();
+            inValue.value = value;
+            Dlubal.WS.RSection1.Model.set_load_caseResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_load_case(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_load_cases_and_combinations(Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsRequest request)
         {
             return base.Channel.set_load_cases_and_combinations(request);
@@ -986,6 +1054,19 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsRequest inValue = new Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_load_cases_and_combinations(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.set_load_combinationResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_load_combination(Dlubal.WS.RSection1.Model.set_load_combinationRequest request)
+        {
+            return base.Channel.set_load_combination(request);
+        }
+        
+        public void set_load_combination(Dlubal.WS.RSection1.Model.load_combination value)
+        {
+            Dlubal.WS.RSection1.Model.set_load_combinationRequest inValue = new Dlubal.WS.RSection1.Model.set_load_combinationRequest();
+            inValue.value = value;
+            Dlubal.WS.RSection1.Model.set_load_combinationResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_load_combination(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

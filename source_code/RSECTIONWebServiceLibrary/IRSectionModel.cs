@@ -98,6 +98,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_all_selected_objectsResponse get_all_selected_objects(Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_dimension", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_dimensionResponse get_dimension(Dlubal.WS.RSection1.Model.get_dimensionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_element", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_elementResponse get_element(Dlubal.WS.RSection1.Model.get_elementRequest request);
@@ -122,9 +126,17 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_list_of_printout_reportsResponse get_list_of_printout_reports(Dlubal.WS.RSection1.Model.get_list_of_printout_reportsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_load_case", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_load_caseResponse get_load_case(Dlubal.WS.RSection1.Model.get_load_caseRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_load_cases_and_combinations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsResponse get_load_cases_and_combinations(Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_load_combination", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_load_combinationResponse get_load_combination(Dlubal.WS.RSection1.Model.get_load_combinationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -286,6 +298,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.saveResponse save(Dlubal.WS.RSection1.Model.saveRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_dimension", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.set_dimensionResponse set_dimension(Dlubal.WS.RSection1.Model.set_dimensionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_element", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_elementResponse set_element(Dlubal.WS.RSection1.Model.set_elementRequest request);
@@ -298,9 +314,17 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_lineResponse set_line(Dlubal.WS.RSection1.Model.set_lineRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_load_case", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.set_load_caseResponse set_load_case(Dlubal.WS.RSection1.Model.set_load_caseRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_load_cases_and_combinations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsResponse set_load_cases_and_combinations(Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_load_combination", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.set_load_combinationResponse set_load_combination(Dlubal.WS.RSection1.Model.set_load_combinationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
