@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContinuousBeam", "ContinuousBeam.csproj", "{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug RFEM|Any CPU = Debug RFEM|Any CPU
+		Debug RSTAB|Any CPU = Debug RSTAB|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release RFEM|Any CPU = Release RFEM|Any CPU
+		Release RSTAB|Any CPU = Release RSTAB|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Debug RFEM|Any CPU.ActiveCfg = Debug RFEM|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Debug RFEM|Any CPU.Build.0 = Debug RFEM|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Debug RSTAB|Any CPU.ActiveCfg = Debug RSTAB|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Debug RSTAB|Any CPU.Build.0 = Debug RSTAB|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Release RFEM|Any CPU.ActiveCfg = Release RFEM|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Release RFEM|Any CPU.Build.0 = Release RFEM|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Release RSTAB|Any CPU.ActiveCfg = Release RSTAB|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Release RSTAB|Any CPU.Build.0 = Release RSTAB|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7CF73A-C7A2-497B-A3D5-91652D7A761D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F410A293-AB1A-42BD-85CA-733819EF3275}
+	EndGlobalSection
+EndGlobal
