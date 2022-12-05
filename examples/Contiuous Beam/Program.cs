@@ -18,6 +18,7 @@ using System.ServiceModel;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Description;
 
 namespace ContinuousBeam
 {
@@ -43,9 +44,25 @@ namespace ContinuousBeam
 
         //private static RfemApplicationClient application = null;
         private static ApplicationClient application = null;
+        private static nodal_support support1;
+        private static nodal_support support2;
 
         static void Main(string[] args)
         {
+            //welcome message
+            Console.WriteLine("Welcome to Continuous Beam Application for Dlubal Software");
+
+            //get user input
+            Console.Write("Number of fields: ");
+            int fieldNumber = Int32.Parse(Console.ReadLine());
+            Console.Write("Span [m]: ");
+            double span = Convert.ToDouble(Console.ReadLine());
+            //Console.Write("Section Width [m]: ");
+            //double width = ToDouble(Console.Readline());
+            //Console.Write("Section Height [m]: ");
+            //double height = ToDouble(Console.Readline());
+            Console.Write("continuous member load [kN/m]: ");
+            double memberLoad = Convert.ToDouble(Console.ReadLine());
 
             var config = new NLog.Config.LoggingConfiguration();
             var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
@@ -118,38 +135,85 @@ namespace ContinuousBeam
                     name = "R_M1 0.5/1.0", // width/height as in RFEM
                 };
 
-                node node1 = new()
-                {
-                    no = 1,
-                    coordinates = new vector_3d() { x = 0.0, y = 0.0, z = 0.0 },
-                    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                    coordinate_system_typeSpecified = true,
-                    comment = "concrete part"
-                };
+                SortedList<int, node> nodes = new SortedList<int, node>();
+                //SortedList<int, nodal_support> nodalSupports = new SortedList<int, nodal_support> ();
+                List<int> lineDefinitionNodes = new List<int>();
+                int nodeId = 1;
+                double xVector = 0.0;
 
-                node node2 = new()
+                for (int i = 0; i < fieldNumber; i++)
                 {
-                    no = 2,
-                    coordinates = new vector_3d() { x = 5.0, y = 0.0, z = 0.0 },
-                    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                    coordinate_system_typeSpecified = true,
-                    comment = "concrete part"
-                };
+                    node newNode = new()
+                    {
+                        no = nodeId,
+                        coordinates = new vector_3d() { x = xVector, y = 0.0, z = 0.0 },
+                        coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
+                        coordinate_system_typeSpecified = true,
+                        comment = "concrete part"
+                    };
 
-                node node3 = new()
-                {
-                    no = 3,
-                    coordinates = new vector_3d() { x = 10.0, y = 0.0, z = 0.0 },
-                    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                    coordinate_system_typeSpecified = true,
-                    comment = "concrete part"
-                };
+                    nodes.Add(nodeId, newNode);
+                    Console.WriteLine(nodes[1]);
+                    lineDefinitionNodes.Add(nodeId);
+                    
+                    xVector = xVector + span;
+
+                    //if (nodeId == 1)
+                    //{
+                    //    nodal_support support1 = new()
+                    //    {
+                    //        no = 1,
+                    //        nodes = new int[] { newNode.no },
+                    //        spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                    //        rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
+                    //    };
+                    //}
+                    //else
+                    //{
+                    //    nodal_support support2 = new()
+                    //    {
+                    //        no = 2,
+                    //        nodes = new int[] { newNode.no },
+                    //        spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                    //        rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
+                    //    };
+                    //}
+
+                    nodeId++;
+
+                }
+                //node node1 = new()
+                //{
+                //    no = 1,
+                //    coordinates = new vector_3d() { x = 0.0, y = 0.0, z = 0.0 },
+                //    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
+                //    coordinate_system_typeSpecified = true,
+                //    comment = "concrete part"
+                //};
+
+                //node node2 = new()
+                //{
+                //    no = 2,
+                //    coordinates = new vector_3d() { x = 5.0, y = 0.0, z = 0.0 },
+                //    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
+                //    coordinate_system_typeSpecified = true,
+                //    comment = "concrete part"
+                //};
+
+                //node node3 = new()
+                //{
+                //    no = 3,
+                //    coordinates = new vector_3d() { x = 10.0, y = 0.0, z = 0.0 },
+                //    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
+                //    coordinate_system_typeSpecified = true,
+                //    comment = "concrete part"
+                //};
 
 #if RFEM
                 line line = new()
                 {
                     no = 1,
-                    definition_nodes = new int[] { node1.no, node2.no, node3.no },
+                    definition_nodes = lineDefinitionNodes.ToArray(),
                     comment = "lines for beams",
                     type = line_type.TYPE_POLYLINE,
                     typeSpecified = true,
@@ -163,9 +227,9 @@ namespace ContinuousBeam
                     line = line.no,
                     lineSpecified = true,
 #elif RSTAB
-                    node_start = node1.no,
+                    node_start = lineDefinitionNode[0],
                     node_startSpecified = true,
-                    node_end = node3.no,
+                    node_end = lineDefinitionNode[fieldNumber-1],
                     node_endSpecified = true,
 #endif
                     section_start = sectionRectangle.no,
@@ -175,36 +239,54 @@ namespace ContinuousBeam
                     comment = "concrete beam"
                 };
 
+                List<node> supportedNodes = new();
+                
+                //for (int i = 0; i < fieldNumber; i++)
+                //{
+                //    int[] supportedNodes = new int[] { i };
+                //}
+
+                foreach (KeyValuePair<int, node> nodeItem in nodes)
+                {
+                    supportedNodes.Add(nodeItem.Value);
+                }
                 nodal_support support1 = new()
                 {
                     no = 1,
-                    nodes = new int[] { node1.no },
+                    nodes = new int[] { supportedNodes.no },
                     spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
                     rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
                 };
+                
+                //nodal_support support2 = new()
+                //{
+                //    no = 2,
+                //    nodes = new int[] { node2.no, node3.no },
+                //    spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                //    rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
+                //};
 
-                nodal_support support2 = new()
-                {
-                    no = 2,
-                    nodes = new int[] { node2.no, node3.no },
-                    spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                    rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
-                };
 
                 try
                 {
                     model.begin_modification("Geometry");
                     model.set_material(materialConcrete);
                     model.set_section(sectionRectangle);
-                    model.set_node(node1);
-                    model.set_node(node2);
-                    model.set_node(node3);
+
+                    foreach (KeyValuePair<int, node> nodeItem in nodes)
+                    {
+                        model.set_node(nodeItem.Value);
+                    }
+                
+                    //model.set_node(node1);
+                    //model.set_node(node2);
+                    //model.set_node(node3);
 #if RFEM
                     model.set_line(line);
 #endif
                     model.set_member(member);
                     model.set_nodal_support(support1);
-                    model.set_nodal_support(support2);
+                    //model.set_nodal_support(support2);
                 }
                 catch (Exception exception)
                 {
@@ -361,7 +443,7 @@ namespace ContinuousBeam
                     members = new int[] { member.no },
                     load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
                     load_distributionSpecified = true,
-                    magnitude = 30000,
+                    magnitude = memberLoad,
                     magnitudeSpecified = true,
                     //magnitude_1 = 10000,
                     //magnitude_1Specified = true,
