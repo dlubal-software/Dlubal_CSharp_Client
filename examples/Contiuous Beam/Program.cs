@@ -54,7 +54,8 @@ namespace ContinuousBeam
 
             //get user input
             Console.Write("Number of fields: ");
-            int fieldNumber = Int32.Parse(Console.ReadLine());
+            int fieldNumber = int.Parse(Console.ReadLine());      
+                        
             Console.Write("Span [m]: ");
             double span = Convert.ToDouble(Console.ReadLine());
             //Console.Write("Section Width [m]: ");
@@ -141,7 +142,7 @@ namespace ContinuousBeam
                 int nodeId = 1;
                 double xVector = 0.0;
 
-                for (int i = 0; i < fieldNumber; i++)
+                for (int i = 0; i < fieldNumber + 1; i++)
                 {
                     node newNode = new()
                     {
@@ -158,57 +159,10 @@ namespace ContinuousBeam
                     
                     xVector = xVector + span;
 
-                    //if (nodeId == 1)
-                    //{
-                    //    nodal_support support1 = new()
-                    //    {
-                    //        no = 1,
-                    //        nodes = new int[] { newNode.no },
-                    //        spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                    //        rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
-                    //    };
-                    //}
-                    //else
-                    //{
-                    //    nodal_support support2 = new()
-                    //    {
-                    //        no = 2,
-                    //        nodes = new int[] { newNode.no },
-                    //        spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                    //        rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
-                    //    };
-                    //}
-
                     nodeId++;
 
                 }
-                //node node1 = new()
-                //{
-                //    no = 1,
-                //    coordinates = new vector_3d() { x = 0.0, y = 0.0, z = 0.0 },
-                //    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                //    coordinate_system_typeSpecified = true,
-                //    comment = "concrete part"
-                //};
-
-                //node node2 = new()
-                //{
-                //    no = 2,
-                //    coordinates = new vector_3d() { x = 5.0, y = 0.0, z = 0.0 },
-                //    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                //    coordinate_system_typeSpecified = true,
-                //    comment = "concrete part"
-                //};
-
-                //node node3 = new()
-                //{
-                //    no = 3,
-                //    coordinates = new vector_3d() { x = 10.0, y = 0.0, z = 0.0 },
-                //    coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                //    coordinate_system_typeSpecified = true,
-                //    comment = "concrete part"
-                //};
-
+                
 #if RFEM
                 line line = new()
                 {
@@ -240,6 +194,10 @@ namespace ContinuousBeam
                 };
 
                 List<node> supportedNodes = new();
+                List<node> supportedNodes2 = new();
+                List<nodal_support> nodalSupports = new();
+                //int [] supportedNodeNumbers2 = new int[10];
+                int[] nodes2 = new int[10];
                 
                 //for (int i = 0; i < fieldNumber; i++)
                 //{
@@ -250,23 +208,43 @@ namespace ContinuousBeam
                 {
                     supportedNodes.Add(nodeItem.Value);
                 }
-                nodal_support support1 = new()
-                {
-                    no = 1,
-                    nodes = new int[] { supportedNodes.no },
-                    spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                    rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
-                };
-                
-                //nodal_support support2 = new()
+
+                //for (int j = 1; j < fieldNumber + 1; j++)
                 //{
-                //    no = 2,
-                //    nodes = new int[] { node2.no, node3.no },
-                //    spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                //    rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
-                //};
+                //    //supportedNodeNumbers2.SetValue(value: supportedNodes[j].no, index:j-1);
+                //    nodes2.SetValue(value: supportedNodes[j].no, index: j - 1);
+                //}
 
+                
+               
 
+                foreach (var supportNode in supportedNodes)
+                {
+                    if (supportNode.no == 1)
+                    {
+                        nodal_support support1 = new()
+                        {
+                            no = supportNode.no,
+                            nodes = new int[] { supportNode.no },
+                            spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                            rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
+                        };
+                        nodalSupports.Add(support1);
+                    }
+                    else
+                    {
+                        nodal_support support2 = new()
+                        {
+                            no = supportNode.no,
+                            nodes = new int[] { supportNode.no },
+                            spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                            rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
+                        };
+                        nodalSupports.Add(support2);
+                    }
+                }
+
+                                
                 try
                 {
                     model.begin_modification("Geometry");
@@ -278,15 +256,16 @@ namespace ContinuousBeam
                         model.set_node(nodeItem.Value);
                     }
                 
-                    //model.set_node(node1);
-                    //model.set_node(node2);
-                    //model.set_node(node3);
-#if RFEM
+                    #if RFEM
                     model.set_line(line);
 #endif
                     model.set_member(member);
-                    model.set_nodal_support(support1);
-                    //model.set_nodal_support(support2);
+
+                    foreach (var nodalSupport in nodalSupports)
+                    {
+                        model.set_nodal_support(nodalSupport);
+                    }
+
                 }
                 catch (Exception exception)
                 {
@@ -443,7 +422,7 @@ namespace ContinuousBeam
                     members = new int[] { member.no },
                     load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
                     load_distributionSpecified = true,
-                    magnitude = memberLoad,
+                    magnitude = memberLoad * 1000,
                     magnitudeSpecified = true,
                     //magnitude_1 = 10000,
                     //magnitude_1Specified = true,
