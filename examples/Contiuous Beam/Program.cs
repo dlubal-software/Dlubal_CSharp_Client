@@ -33,7 +33,8 @@ namespace ContinuousBeam
             {
                 BasicHttpBinding binding = new BasicHttpBinding
                 {
-                    // Send timeout is set to 180 seconds.
+                    // define timespan to send timeout
+
                     SendTimeout = new TimeSpan(0, 0, 180),
                     UseDefaultWebProxy = true,
                 };
@@ -42,26 +43,22 @@ namespace ContinuousBeam
             }
         }
 
-        //private static RfemApplicationClient application = null;
         private static ApplicationClient application = null;
         private static nodal_support support1;
         private static nodal_support support2;
 
         static void Main(string[] args)
         {
-            //welcome message
+            // welcome message
             Console.WriteLine("Welcome to Continuous Beam Application for Dlubal Software");
 
-            //get user input
+            // get user input
             Console.Write("Number of fields: ");
             int fieldNumber = int.Parse(Console.ReadLine());      
                         
             Console.Write("Span [m]: ");
             double span = Convert.ToDouble(Console.ReadLine());
-            //Console.Write("Section Width [m]: ");
-            //double width = ToDouble(Console.Readline());
-            //Console.Write("Section Height [m]: ");
-            //double height = ToDouble(Console.Readline());
+
             Console.Write("continuous member load [kN/m]: ");
             double memberLoad = Convert.ToDouble(Console.ReadLine());
 
@@ -77,7 +74,7 @@ namespace ContinuousBeam
                 application_information ApplicationInfo;
                 try
                 {
-                    // connects to RFEM6 or RSTAB9 application
+                    // connect to RFEM6 or RSTAB9 application
                     application = new ApplicationClient(Binding, Address);
 
                 }
@@ -107,13 +104,13 @@ namespace ContinuousBeam
                 }
                 #endregion
 
-                // creates new model
                 string modelName = "MyTestModel";
                 string modelUrl = application.new_model(modelName);
 
 
                 #region new model
-                // connects to RFEM6/RSTAB9 model
+                // connect to RFEM6/RSTAB9 model
+                
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
                 #endregion
@@ -133,11 +130,11 @@ namespace ContinuousBeam
                     typeSpecified = true,
                     parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
-                    name = "R_M1 0.5/1.0", // width/height as in RFEM
+                    // width/height as in RFEM
+                    name = "R_M1 0.5/1.0" 
                 };
 
                 SortedList<int, node> nodes = new SortedList<int, node>();
-                //SortedList<int, nodal_support> nodalSupports = new SortedList<int, nodal_support> ();
                 List<int> lineDefinitionNodes = new List<int>();
                 int nodeId = 1;
                 double xVector = 0.0;
@@ -163,7 +160,7 @@ namespace ContinuousBeam
 
                 }
                 
-#if RFEM
+#if RFEM        // create line
                 line line = new()
                 {
                     no = 1,
@@ -194,30 +191,15 @@ namespace ContinuousBeam
                 };
 
                 List<node> supportedNodes = new();
-                List<node> supportedNodes2 = new();
                 List<nodal_support> nodalSupports = new();
-                //int [] supportedNodeNumbers2 = new int[10];
                 int[] nodes2 = new int[10];
                 
-                //for (int i = 0; i < fieldNumber; i++)
-                //{
-                //    int[] supportedNodes = new int[] { i };
-                //}
-
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
                 {
                     supportedNodes.Add(nodeItem.Value);
                 }
-
-                //for (int j = 1; j < fieldNumber + 1; j++)
-                //{
-                //    //supportedNodeNumbers2.SetValue(value: supportedNodes[j].no, index:j-1);
-                //    nodes2.SetValue(value: supportedNodes[j].no, index: j - 1);
-                //}
-
-                
-               
-
+                              
+                // assign nodes to support
                 foreach (var supportNode in supportedNodes)
                 {
                     if (supportNode.no == 1)
@@ -244,7 +226,8 @@ namespace ContinuousBeam
                     }
                 }
 
-                                
+                // transfer objects to RFEM
+                
                 try
                 {
                     model.begin_modification("Geometry");
@@ -270,7 +253,7 @@ namespace ContinuousBeam
                 catch (Exception exception)
                 {
                     model.cancel_modification();
-                    logger.Error(exception, "Something happen when creation of geometry" + exception.Message);
+                    logger.Error(exception, "Something happened while creation of geometry" + exception.Message);
                     throw;
                 }
                 finally
@@ -281,11 +264,12 @@ namespace ContinuousBeam
                     }
                     catch (Exception exception)
                     {
-                        logger.Error(exception, "Something wrong in finish modification of geometry\n" + exception.Message + "\n");
+                        logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
                         model.reset();
                     }
                 }
 
+                // define static analysis settings
 
                 static_analysis_settings analysis = new()
                 {
@@ -294,6 +278,7 @@ namespace ContinuousBeam
                     analysis_typeSpecified = true,
                 };
 
+                // define load cases
 
                 load_case selfWeightLC = new()
                 {
@@ -327,6 +312,8 @@ namespace ContinuousBeam
                     action_category = "ACTION_CATEGORY_PERMANENT_IMPOSED_GQ",
                 };
 
+                // define design-situation
+
                 design_situation design_Situation = new design_situation()
                 {
                     no = 1,
@@ -340,7 +327,7 @@ namespace ContinuousBeam
                     consider_inclusive_exclusive_load_casesSpecified = true,
                 };
 
-
+                // define settings for load combination
 
                 load_combination_items_row load_Combination_SW = new load_combination_items_row()
                 {
@@ -369,7 +356,7 @@ namespace ContinuousBeam
                 };
                 load_combination_items_row[] loadCombinationItems = new load_combination_items_row[] { load_Combination_SW, load_Combination_lcData };
 
-
+                // define load combinations
 
                 load_combination load_Combination = new load_combination()
                 {
@@ -385,6 +372,9 @@ namespace ContinuousBeam
                     design_situation = 1,
                     design_situationSpecified = true,
                 };
+
+                // transfer analysis settings to RFEM
+
                 try
                 {
                     model.begin_modification("Load");
@@ -399,7 +389,7 @@ namespace ContinuousBeam
                 catch (Exception exception)
                 {
                     model.cancel_modification();
-                    logger.Error(exception, "Something happen when creation of load" + exception.Message);
+                    logger.Error(exception, "Something happened while creation of analysis settings" + exception.Message);
                     throw;
                 }
                 finally
@@ -410,10 +400,12 @@ namespace ContinuousBeam
                     }
                     catch (Exception exception)
                     {
-                        logger.Error(exception, "Something wrong in finish modification of load\n" + exception.Message + "\n");
+                        logger.Error(exception, "Something went wrong while finishing creation of analysis settings\n" + exception.Message + "\n");
                         model.reset();
                     }
                 }
+
+                // define member load
 
                 member_load memberLoadonBeam = new()
                 {
@@ -424,13 +416,12 @@ namespace ContinuousBeam
                     load_distributionSpecified = true,
                     magnitude = memberLoad * 1000,
                     magnitudeSpecified = true,
-                    //magnitude_1 = 10000,
-                    //magnitude_1Specified = true,
-                    //magnitude_2 = 20000,
-                    //magnitude_2Specified = true,
                     load_is_over_total_length = true,
                     load_is_over_total_lengthSpecified = true,
                 };
+
+                // transfer loads to RFEM
+
                 try
                 {
                     model.begin_modification("Set loads");
@@ -439,7 +430,7 @@ namespace ContinuousBeam
                 catch (Exception exception)
                 {
                     model.cancel_modification();
-                    logger.Error(exception, "Something happen when creation of load" + exception.Message);
+                    logger.Error(exception, "Something happened while load transfer" + exception.Message);
                     throw;
                 }
                 finally
@@ -450,7 +441,7 @@ namespace ContinuousBeam
                     }
                     catch (Exception exception)
                     {
-                        logger.Error(exception, "Something wrong in finish modification of load\n" + exception.Message + "\n");
+                        logger.Error(exception, "Something went wrong while finishing load transfer\n" + exception.Message + "\n");
                         model.reset();
                     }
                 }
@@ -479,6 +470,8 @@ namespace ContinuousBeam
                     Console.WriteLine("Calculation finished successfully");
                 }
 
+                // printout result messages
+
                 #region Results
                 bool modelHasAnyResults = model.has_any_results();
 
@@ -501,7 +494,11 @@ namespace ContinuousBeam
                     Console.WriteLine("Model has no LC2 results");
                 }
 
-                model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
+                // activate display of results along the length of the member, by default false -> results just at the beginning and end of the member + extremes
+
+                model.use_detailed_member_results(true); 
+
+                // printout internal forces
 
                 members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
                 Console.WriteLine("Internal forces for member");
@@ -513,6 +510,8 @@ namespace ContinuousBeam
 
                 }
 
+                // printout member deformations
+
                 Console.WriteLine("Global deformations for member");
                 members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
                 foreach (var item in globalDeformationsMember1)
@@ -523,6 +522,8 @@ namespace ContinuousBeam
 
                 }
 
+                // printout node deformations
+
                 nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
                 Console.WriteLine("Node deformations");
                 foreach (var item in nodeDeformations)
@@ -531,6 +532,9 @@ namespace ContinuousBeam
                     Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
 
                 }
+
+                // printout support forces
+
                 nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
                 Console.WriteLine("Node reactions");
                 foreach (var item in nodeReactions)
@@ -541,17 +545,19 @@ namespace ContinuousBeam
                 }
                 #endregion
 
-                #region Generate part list
+                // printout parts list
+
+                #region Generate parts list
                 model.generate_parts_lists();
                 parts_list_all_by_material_row[] partListByAllMaterial = model.get_parts_list_all_by_material();
                 foreach (var item in partListByAllMaterial)
                 {
                     if (!item.description.Contains("Total"))
-                    {//material no
+                    {
                         Console.WriteLine("Material no: {0}\t Material name: {1}\t object type: {2}\t coating:{3}\t volume: {4}\t mass: {5}", item.description, item.row.material_name, item.row.object_type, item.row.total_coating, item.row.volume, item.row.mass);
                     }
                     else
-                    {//material no total
+                    {
                         Console.WriteLine("Material total\t \t \t coating:{0}\t volume: {1}\t mass: {2}", item.row.total_coating, item.row.volume, item.row.mass);
                     }
 
@@ -602,15 +608,9 @@ namespace ContinuousBeam
                 //}
                 #endregion
 
+                // close RFEM - model
 
-
-
-
-
-
-
-                application.close_model(0, false);//close model
-                                                  //  application.close_application();
+                application.close_model(0, false);
             }
             catch (Exception ex)
             {
