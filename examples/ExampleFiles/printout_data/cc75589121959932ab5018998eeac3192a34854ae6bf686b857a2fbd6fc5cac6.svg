@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35.2778mm" height="35.2778mm"
+ viewBox="0 0 100 100"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+<rect x="0" y="0" width="100" height="100"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#b4b4b4" fill-opacity="1" stroke="#464646" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M94.814,4.59358 L94.814,40.5936 L58.814,40.5936 L58.814,94.5936 L31.814,94.5936 L31.814,40.5936 L4.81396,40.5936 L4.81396,4.59358 L94.814,4.59358 M32.4765,19.8058 L32.4337,20.5328 L32.3469,21.0663 L32.214,21.5903 L32.0359,22.1007 L31.814,22.5936 L31.5499,23.0653 L31.2458,23.5122 L30.9039,23.9309 L30.5267,24.3182 L30.1173,24.6711 L29.6787,24.987 L29.2142,25.2635 L28.7273,25.4985 L28.2219,25.6901 L27.7016,25.8369 L27.1706,25.9379 L26.6327,25.9922 L26.0922,25.9994 L25.5531,25.9594 L25.0196,25.8726 L24.4956,25.7397 L23.9852,25.5616 L23.4923,25.3397 L23.0206,25.0756 L22.5737,24.7715 L22.155,24.4296 L21.7677,24.0525 L21.4148,23.643 L21.0989,23.2044 L20.8224,22.7399 L20.5874,22.253 L20.3958,21.7476 L20.2489,21.2273 L20.148,20.6963 L20.0937,20.1584 L20.0865,19.6179 L20.1265,19.0788 L20.2133,18.5453 L20.3462,18.0213 L20.5243,17.5109 L20.7462,17.018 L21.0102,16.5463 L21.3144,16.0994 L21.6563,15.6807 L22.0334,15.2935 L22.4429,14.9405 L22.8815,14.6246 L23.346,14.3481 L23.8329,14.1131 L24.3383,13.9215 L24.8586,13.7747 L25.3896,13.6737 L25.9274,13.6194 L26.468,13.6122 L27.0071,13.6522 L27.5406,13.739 L28.0646,13.8719 L28.575,14.05 L29.0679,14.2719 L29.5396,14.536 L29.9865,14.8401 L30.4051,15.182 L30.7924,15.5591 L31.1454,15.9686 L31.4613,16.4072 L31.7378,16.8717 L31.9728,17.3586 L32.1644,17.864 L32.3112,18.3843 L32.4122,18.9153 L32.4664,19.4532 L32.4765,19.8058"/>
+</g>
+
+<g fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d="M58.814,85.8484 L58.814,87.2626 L51.483,94.5936 L50.0688,94.5936 L58.814,85.8484"/>
+<path vector-effect="none" fill-rule="evenodd" d="M94.814,38.5347 L94.814,39.9489 L94.1693,40.5936 L92.7551,40.5936 L94.814,38.5347 M58.814,74.5347 L58.814,75.9489 L40.1693,94.5936 L38.7551,94.5936 L58.814,74.5347"/>
+<path vector-effect="none" fill-rule="evenodd" d="M94.814,27.221 L94.814,28.6352 L82.8556,40.5936 L81.4414,40.5936 L94.814,27.221 M58.814,63.221 L58.814,64.6352 L31.814,91.6352 L31.814,90.221 L58.814,63.221"/>
+<path vector-effect="none" fill-rule="evenodd" d="M94.814,15.9073 L94.814,17.3215 L71.5419,40.5936 L70.1277,40.5936 L94.814,15.9073 M58.814,51.9073 L58.814,53.3215 L31.814,80.3215 L31.814,78.9073 L58.814,51.9073"/>
+<path vector-effect="none" fill-rule="evenodd" d="M94.814,4.59358 L94.814,6.0078 L60.2282,40.5936 L58.814,40.5936 L94.814,4.59358 M58.814,40.5936 L58.814,42.0078 L31.814,69.0078 L31.814,67.5936 L58.814,40.5936"/>
+<path vector-effect="none" fill-rule="evenodd" d="M31.814,57.6941 L31.814,56.2799 L83.5002,4.59358 L84.9145,4.59358 L31.814,57.6941"/>
+<path vector-effect="none" fill-rule="evenodd" d="M31.814,46.3804 L31.814,44.9662 L72.1865,4.59358 L73.6008,4.59358 L31.814,46.3804"/>
+<path vector-effect="none" fill-rule="evenodd" d="M26.287,40.5936 L24.8728,40.5936 L60.8728,4.59358 L62.287,4.59358 L26.287,40.5936"/>
+<path vector-effect="none" fill-rule="evenodd" d="M14.9733,40.5936 L13.5591,40.5936 L28.6096,25.5431 L28.7273,25.4985 L29.2142,25.2635 L29.6787,24.987 L30.1173,24.6711 L30.5267,24.3182 L30.9039,23.9309 L31.2458,23.5122 L31.5499,23.0653 L31.814,22.5936 L32.0226,22.1301 L49.5591,4.59358 L50.9733,4.59358 L14.9733,40.5936"/>
+<path vector-effect="none" fill-rule="evenodd" d="M4.81396,39.4393 L4.81396,38.025 L20.587,22.252 L20.5874,22.253 L20.8224,22.7399 L21.0802,23.173 L4.81396,39.4393 M38.2454,4.59358 L39.6596,4.59358 L29.6453,14.6079 L29.5396,14.536 L29.0679,14.2719 L28.7225,14.1165 L38.2454,4.59358"/>
+<path vector-effect="none" fill-rule="evenodd" d="M4.81396,28.1255 L4.81396,26.7113 L26.9317,4.59358 L28.3459,4.59358 L4.81396,28.1255"/>
+<path vector-effect="none" fill-rule="evenodd" d="M4.81396,16.8118 L4.81396,15.3976 L15.618,4.59358 L17.0322,4.59358 L4.81396,16.8118"/>
+<path vector-effect="none" fill-rule="evenodd" d="M4.81396,5.49813 L4.81396,4.59358 L5.7185,4.59358 L4.81396,5.49813"/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+</g>
+
+<g fill="none" stroke="#464646" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M94.814,4.59358 L94.814,40.5936 L58.814,40.5936 L58.814,94.5936 L31.814,94.5936 L31.814,40.5936 L4.81396,40.5936 L4.81396,4.59358 L94.814,4.59358 M32.4765,19.8058 L32.4337,20.5328 L32.3469,21.0663 L32.214,21.5903 L32.0359,22.1007 L31.814,22.5936 L31.5499,23.0653 L31.2458,23.5122 L30.9039,23.9309 L30.5267,24.3182 L30.1173,24.6711 L29.6787,24.987 L29.2142,25.2635 L28.7273,25.4985 L28.2219,25.6901 L27.7016,25.8369 L27.1706,25.9379 L26.6327,25.9922 L26.0922,25.9994 L25.5531,25.9594 L25.0196,25.8726 L24.4956,25.7397 L23.9852,25.5616 L23.4923,25.3397 L23.0206,25.0756 L22.5737,24.7715 L22.155,24.4296 L21.7677,24.0525 L21.4148,23.643 L21.0989,23.2044 L20.8224,22.7399 L20.5874,22.253 L20.3958,21.7476 L20.2489,21.2273 L20.148,20.6963 L20.0937,20.1584 L20.0865,19.6179 L20.1265,19.0788 L20.2133,18.5453 L20.3462,18.0213 L20.5243,17.5109 L20.7462,17.018 L21.0102,16.5463 L21.3144,16.0994 L21.6563,15.6807 L22.0334,15.2935 L22.4429,14.9405 L22.8815,14.6246 L23.346,14.3481 L23.8329,14.1131 L24.3383,13.9215 L24.8586,13.7747 L25.3896,13.6737 L25.9274,13.6194 L26.468,13.6122 L27.0071,13.6522 L27.5406,13.739 L28.0646,13.8719 L28.575,14.05 L29.0679,14.2719 L29.5396,14.536 L29.9865,14.8401 L30.4051,15.182 L30.7924,15.5591 L31.1454,15.9686 L31.4613,16.4072 L31.7378,16.8717 L31.9728,17.3586 L32.1644,17.864 L32.3112,18.3843 L32.4122,18.9153 L32.4664,19.4532 L32.4765,19.8058"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="8.25" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>

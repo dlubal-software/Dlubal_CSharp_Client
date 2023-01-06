@@ -1,8 +1,34 @@
 {
 	"folders": [
 		{
-			"path": "./"
+			"name": "RFEM WebService library",
+			"path": "source_code/RFEMWebServiceLibrary"
 		}
+		,
+		{
+			"name": "RSTAB WebService library",
+			"path": "source_code/RSTABWebServiceLibrary"
+		}
+		,
+		{
+			"name": "RSECTION WebService library",
+			"path": "source_code/RSECTIONWebServiceLibrary"
+		}
+		,
+		{
+			"name": "Examples",
+			"path": "Examples"
+		}
+		,
+		{
+			"name": "Unit tests",
+			"path": "source_code/UTWebServiceLibraries"
+		}
+		,
+		{
+			"name" :"Root",
+			"path": "./"
+		},
 	],
 	"settings": {
 		"dotnet-test-explorer.testProjectPath": "source_code\\UTWebServiceLibraries"

@@ -34,6 +34,18 @@
             "console": "internalConsole"
         },
         {
+            "name": "Launch RFEM Hall",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Debug RFEM",
+            "program": "${workspaceFolder}/examples/Hall/bin/Debug RFEM/net6.0-windows10.0.22621.0/Hall.exe",
+            "args": ["WebServicesExamples"],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+       
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
