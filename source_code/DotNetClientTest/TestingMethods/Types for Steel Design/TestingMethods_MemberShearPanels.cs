@@ -40,18 +40,18 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 // member shear panel trapezoidal sheeting
                 DataLogger.AddText($"Set member shear panel No.{MEMBER_SHEAR_PANEL_1_NO} - trapezoidal sheeting");
-                steel_member_shear_panel memberShearPanel1 = new steel_member_shear_panel
+                member_shear_panel memberShearPanel1 = new member_shear_panel
                 {
                     no = MEMBER_SHEAR_PANEL_1_NO,
-                    definition_type = steel_member_shear_panel_definition_type.DEFINITION_TYPE_TRAPEZOIDAL_SHEETING,
+                    definition_type = member_shear_panel_definition_type.DEFINITION_TYPE_TRAPEZOIDAL_SHEETING,
                     definition_typeSpecified = true,
-                    position_on_section = steel_member_shear_panel_position_on_section.POSITION_ON_UPPER_FLANGE,
+                    position_on_section = member_shear_panel_position_on_section.POSITION_ON_UPPER_FLANGE,
                     position_on_sectionSpecified = true,
                     panel_length = 4,
                     panel_lengthSpecified = true,
                     beam_spacing = 1.5,
                     beam_spacingSpecified = true,
-                    fastening_arrangement = steel_member_shear_panel_fastening_arrangement.FASTENING_ARRANGEMENT_EVERY_RIB,
+                    fastening_arrangement = member_shear_panel_fastening_arrangement.FASTENING_ARRANGEMENT_EVERY_RIB,
                     fastening_arrangementSpecified = true,
                     coefficient_k1 = 0.000247,
                     coefficient_k1Specified = true,
@@ -59,18 +59,18 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     coefficient_k2Specified = true,
                     sheeting_name = "FI (+) 35/207 - 0.63 (b: 1) | DIN 18807 | Fischer Profil"
                 };
-                SoapModelClient.set_steel_member_shear_panel(memberShearPanel1);
+                SoapModelClient.set_member_shear_panel(memberShearPanel1);
 
                 DataLogger.SetProgressBarValue(30);
 
                 // member shear panel branching
                 DataLogger.AddText($"Set member shear panel No.{MEMBER_SHEAR_PANEL_2_NO} - bracing");
-                steel_member_shear_panel memberShearPanel2 = new steel_member_shear_panel
+                member_shear_panel memberShearPanel2 = new member_shear_panel
                 {
                     no = MEMBER_SHEAR_PANEL_2_NO,
-                    definition_type = steel_member_shear_panel_definition_type.DEFINITION_TYPE_BRACING,
+                    definition_type = member_shear_panel_definition_type.DEFINITION_TYPE_BRACING,
                     definition_typeSpecified = true,
-                    position_on_section = steel_member_shear_panel_position_on_section.POSITION_ON_UPPER_FLANGE,
+                    position_on_section = member_shear_panel_position_on_section.POSITION_ON_UPPER_FLANGE,
                     position_on_sectionSpecified = true,
                     panel_length = 3,
                     panel_lengthSpecified = true,
@@ -87,23 +87,23 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     diagonals_section_name = "ASB 280 - 74 | BS EN 10365:2017 | British Steel",
                     posts_section_name = "UKB 1016x305x487 | BS 4-1:2005 | Tata Steel"
                 };
-                SoapModelClient.set_steel_member_shear_panel(memberShearPanel2);
+                SoapModelClient.set_member_shear_panel(memberShearPanel2);
                 DataLogger.SetProgressBarValue(40);
 
                 // member shear panel trapezoidal sheeting and bracing
                 DataLogger.AddText($"Set member shear panel No.{MEMBER_SHEAR_PANEL_3_NO} - trapezoidal sheeting and bracing");
-                steel_member_shear_panel memberShearPanel3 = new steel_member_shear_panel
+                member_shear_panel memberShearPanel3 = new member_shear_panel
                 {
                     no = MEMBER_SHEAR_PANEL_3_NO,
-                    definition_type = steel_member_shear_panel_definition_type.DEFINITION_TYPE_TRAPEZOIDAL_SHEETING_AND_BRACING,
+                    definition_type = member_shear_panel_definition_type.DEFINITION_TYPE_TRAPEZOIDAL_SHEETING_AND_BRACING,
                     definition_typeSpecified = true,
-                    position_on_section = steel_member_shear_panel_position_on_section.POSITION_IN_CENTROID,
+                    position_on_section = member_shear_panel_position_on_section.POSITION_IN_CENTROID,
                     position_on_sectionSpecified = true,
                     panel_length = 4,
                     panel_lengthSpecified = true,
                     beam_spacing = 1.5,
                     beam_spacingSpecified = true,
-                    fastening_arrangement = steel_member_shear_panel_fastening_arrangement.FASTENING_ARRANGEMENT_EVERY_SECOND_RIB,
+                    fastening_arrangement = member_shear_panel_fastening_arrangement.FASTENING_ARRANGEMENT_EVERY_SECOND_RIB,
                     fastening_arrangementSpecified = true,
                     coefficient_k1 = 0.5,
                     coefficient_k1Specified = true,
@@ -121,22 +121,22 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     diagonals_section_name = "L 100x65x7 | EN 10056-1:1998; ... | ArcelorMittal",
                     posts_section_name = "IPE 100 | Euronorm 19-57 | ArcelorMittal (2011)"
                 };
-                SoapModelClient.set_steel_member_shear_panel(memberShearPanel3);
+                SoapModelClient.set_member_shear_panel(memberShearPanel3);
                 DataLogger.SetProgressBarValue(50);
 
                 // member shear panel define s prov
                 DataLogger.AddText($"Set member shear panel No.{MEMBER_SHEAR_PANEL_4_NO} - define s prov");
-                steel_member_shear_panel memberShearPanel4 = new steel_member_shear_panel
+                member_shear_panel memberShearPanel4 = new member_shear_panel
                 {
                     no = MEMBER_SHEAR_PANEL_4_NO,
-                    definition_type = steel_member_shear_panel_definition_type.DEFINITION_TYPE_DEFINE_S_PROV,
+                    definition_type = member_shear_panel_definition_type.DEFINITION_TYPE_DEFINE_S_PROV,
                     definition_typeSpecified = true,
-                    position_on_section = steel_member_shear_panel_position_on_section.POSITION_DEFINE,
+                    position_on_section = member_shear_panel_position_on_section.POSITION_DEFINE,
                     position_on_sectionSpecified = true,
                     stiffness = 2.5,
                     stiffnessSpecified = true
                 };
-                SoapModelClient.set_steel_member_shear_panel(memberShearPanel4);
+                SoapModelClient.set_member_shear_panel(memberShearPanel4);
                 DataLogger.SetProgressBarValue(50);
             }
             catch (Exception exception)
@@ -169,8 +169,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
             try
             {
-                int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_STEEL_MEMBER_SHEAR_PANEL, 0);
-                int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_STEEL_MEMBER_SHEAR_PANEL, 0);
+                int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0);
+                int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0);
 
                 if (count != numbers.Length)
                 {
@@ -182,7 +182,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 for (int i = 0; i < count; i++)
                 {
-                    steel_member_shear_panel shearPanel = SoapModelClient.get_steel_member_shear_panel(numbers[i]);
+                    member_shear_panel shearPanel = SoapModelClient.get_member_shear_panel(numbers[i]);
 
                     DataLogger.AddText($"Member shear panel No.{numbers[i]}");
                     DataLogger.AddText($"Type = {shearPanel.definition_type.ToString()}");
@@ -205,7 +205,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         public static bool Test_Types\u2040for\u2040Steel\u2040Design_Member\u2040Shear\u2040Panels_Delete()
         {
-            return DeleteObjects(object_types.E_OBJECT_TYPE_STEEL_MEMBER_SHEAR_PANEL, 0, "member shear panel");
+            return DeleteObjects(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0, "member shear panel");
         }
     }
 }

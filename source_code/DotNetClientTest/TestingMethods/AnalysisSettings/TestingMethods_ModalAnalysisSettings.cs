@@ -124,14 +124,12 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             {
                 no = 1,
                 name = "Generated",
-                number_of_modes = 15,
-                number_of_modesSpecified = true,
                 number_of_modes_method = modal_analysis_settings_number_of_modes_method.NUMBER_OF_MODES_METHOD_MAXIMUM_FREQUENCY,
                 number_of_modes_methodSpecified = true,
                 maxmimum_natural_frequency = 3200,
                 maxmimum_natural_frequencySpecified = true,
 #if RFEM
-                solution_method = modal_analysis_settings_solution_method.METHOD_LANCZOS,
+                solution_method = modal_analysis_settings_solution_method.METHOD_ROOT_OF_CHARACTERISTIC_POLYNOMIAL,
                 solution_methodSpecified = true,
 #elif RSTAB
                 solution_method = modal_analysis_settings_solution_method.METHOD_SUBSPACE_ITERATION,

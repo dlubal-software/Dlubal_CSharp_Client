@@ -806,6 +806,39 @@ namespace Dlubal.WS.Rstab9.Application
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_session_id", WrapperNamespace="http://www.dlubal.com/rstab.xsd", IsWrapped=true)]
+    public partial class get_session_idRequest
+    {
+        
+        public get_session_idRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_session_idResponse", WrapperNamespace="http://www.dlubal.com/rstab.xsd", IsWrapped=true)]
+    public partial class get_session_idResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rstab.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value;
+        
+        public get_session_idResponse()
+        {
+        }
+        
+        public get_session_idResponse(string value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_settings_program_language", WrapperNamespace="http://www.dlubal.com/rstab.xsd", IsWrapped=true)]
     public partial class get_settings_program_languageRequest
     {
@@ -1445,7 +1478,7 @@ namespace Dlubal.WS.Rstab9.Application
     public partial class SafConfiguration : object, System.ComponentModel.INotifyPropertyChanged
     {
         
-        private bool property_general_run_excel_applicationField;
+        private bool property_general_open_spreadsheet_applicationField;
         
         private bool property_import_surface_support_consolidate_importField;
         
@@ -1467,16 +1500,16 @@ namespace Dlubal.WS.Rstab9.Application
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public bool property_general_run_excel_application
+        public bool property_general_open_spreadsheet_application
         {
             get
             {
-                return this.property_general_run_excel_applicationField;
+                return this.property_general_open_spreadsheet_applicationField;
             }
             set
             {
-                this.property_general_run_excel_applicationField = value;
-                this.RaisePropertyChanged("property_general_run_excel_application");
+                this.property_general_open_spreadsheet_applicationField = value;
+                this.RaisePropertyChanged("property_general_open_spreadsheet_application");
             }
         }
         

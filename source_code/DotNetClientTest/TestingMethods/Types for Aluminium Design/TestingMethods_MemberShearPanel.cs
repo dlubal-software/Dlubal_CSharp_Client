@@ -1,7 +1,6 @@
 ﻿#if !RSECTION
 
 using System;
-using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
 #if RFEM
@@ -34,8 +33,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         private static void ReadAluminiumMemberShearPanel()
         {
             DataLogger.AddLogStart("Reading...");
-            int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_ALUMINUM_MEMBER_SHEAR_PANEL, 0);
-            int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_ALUMINUM_MEMBER_SHEAR_PANEL, 0);
+            int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0);
+            int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0);
             if (count != numbers.Length)
             {
                 throw new Exception("Object count does not match object number count.");
@@ -45,7 +44,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.InitializeProgressBar(0, numbers.Length, 0);
             for (int i = 0; i < count; i++)
             {
-                aluminum_member_shear_panel objectToRead = SoapModelClient.get_aluminum_member_shear_panel(numbers[i]);
+                member_shear_panel objectToRead = SoapModelClient.get_member_shear_panel(numbers[i]);
                 DataLogger.IncrementOffset();
                 LogAluminiumMemberShearPanel(objectToRead);
                 DataLogger.DecrementOffset();
@@ -53,7 +52,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             }
         }
 
-        private static void LogAluminiumMemberShearPanel(aluminum_member_shear_panel panel)
+        private static void LogAluminiumMemberShearPanel(member_shear_panel panel)
         {
             DataLogger.IncrementOffset();
             DataLogger.AddText($"Name: {panel.name}");
@@ -98,7 +97,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             SoapModelClient.begin_modification(nameof(CreateAluminiumMemberShearPanel));
             DataLogger.SetProgressBarValue(20);
             DataLogger.AddText("Generating...");
-            var panel = new aluminum_member_shear_panel
+            var panel = new member_shear_panel
             {
                 no = 1,
                 name = "Generated shear panel",
@@ -112,7 +111,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 coefficient_k1Specified = true,
                 coefficient_k2Specified = true,
             };
-            SoapModelClient.set_aluminum_member_shear_panel(panel);
+            SoapModelClient.set_member_shear_panel(panel);
             DataLogger.AddText("Generated");
             SoapModelClient.finish_modification();
             DataLogger.SetProgressBarValue(50);
@@ -123,7 +122,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Deleting...");
             try
             {
-                bool result = DeleteObjects(object_types.E_OBJECT_TYPE_ALUMINUM_MEMBER_SHEAR_PANEL, 0, "Member shear panel");
+                bool result = DeleteObjects(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0, "Member shear panel");
                 DataLogger.AddLogEnd(LogResultType.DONE);
                 return result;
             }

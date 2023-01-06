@@ -62,7 +62,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Deleting steel member shear panel...");
             try
             {
-                bool result = DeleteObjects(object_types.E_OBJECT_TYPE_STEEL_MEMBER_SHEAR_PANEL, 0, "Steel member shear panel");
+                bool result = DeleteObjects(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0, "Steel member shear panel");
                 DataLogger.AddLogEnd(LogResultType.DONE);
                 return result;
             }
@@ -75,8 +75,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
         private static void ReadMemberShearPanels()
         {
-            int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_STEEL_MEMBER_SHEAR_PANEL, 0);
-            int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_STEEL_MEMBER_SHEAR_PANEL, 0);
+            int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0);
+            int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_MEMBER_SHEAR_PANEL, 0);
 
             if (count != numbers.Length)
             {
@@ -88,7 +88,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
             for (int i = 0; i < count; i++)
             {
-                steel_member_shear_panel steel_member_shear_panel = SoapModelClient.get_steel_member_shear_panel(numbers[i]);
+                member_shear_panel steel_member_shear_panel = SoapModelClient.get_member_shear_panel(numbers[i]);
                 DataLogger.IncrementOffset();
                 DataLogger.AddText($"Shear panel No.{numbers[i]}");
                 LogSteelShearPanelInfo(steel_member_shear_panel);
@@ -97,7 +97,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             }
         }
 
-        private static void LogSteelShearPanelInfo(steel_member_shear_panel panel)
+        private static void LogSteelShearPanelInfo(member_shear_panel panel)
         {
             DataLogger.IncrementOffset();
             DataLogger.AddText($"Name: {panel.name}");
@@ -117,7 +117,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             SoapModelClient.set_coordinate_system(coordinateSystem);
             DataLogger.SetProgressBarValue(20);
             DataLogger.AddText("Generating steel member shear panel...");
-            var panel = new steel_member_shear_panel
+            var panel = new member_shear_panel
             {
                 no = 1,
                 name = "Generated shear panel",
@@ -131,7 +131,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 coefficient_k1Specified = true,
                 coefficient_k2Specified = true,
             };
-            SoapModelClient.set_steel_member_shear_panel(panel);
+            SoapModelClient.set_member_shear_panel(panel);
             DataLogger.AddText("Generated steel member shear panel");
             SoapModelClient.finish_modification();
             DataLogger.SetProgressBarValue(50);

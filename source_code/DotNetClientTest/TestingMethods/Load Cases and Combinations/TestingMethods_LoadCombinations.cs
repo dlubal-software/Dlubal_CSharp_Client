@@ -30,7 +30,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             // set design situation
             design_situation designSituation = new design_situation
             {
-                no = DESIGN_SITUATION_NO
+                no = DESIGN_SITUATION_NO,
+                design_situation_type = "DESIGN_SITUATION_TYPE_EQU_PERMANENT_AND_TRANSIENT" // ULS (EQU) - Permanent and transient
             };
             SoapModelClient.set_design_situation(designSituation);
 

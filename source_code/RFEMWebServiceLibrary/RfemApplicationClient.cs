@@ -225,6 +225,19 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_session_idResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_session_id(Dlubal.WS.Rfem6.Application.get_session_idRequest request)
+        {
+            return base.Channel.get_session_id(request);
+        }
+        
+        public string get_session_id()
+        {
+            Dlubal.WS.Rfem6.Application.get_session_idRequest inValue = new Dlubal.WS.Rfem6.Application.get_session_idRequest();
+            Dlubal.WS.Rfem6.Application.get_session_idResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_session_id(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Application.get_settings_program_languageResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_settings_program_language(Dlubal.WS.Rfem6.Application.get_settings_program_languageRequest request)
         {
             return base.Channel.get_settings_program_language(request);

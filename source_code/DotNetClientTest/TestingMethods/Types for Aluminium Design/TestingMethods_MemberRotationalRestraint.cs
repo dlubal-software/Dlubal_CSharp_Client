@@ -1,7 +1,6 @@
 ﻿#if !RSECTION
 
 using System;
-using Dlubal.WS.Clients.DotNetClientTest.Tools;
 using static Dlubal.WS.Common.Tools.DataLogger;
 
 #if RFEM
@@ -34,8 +33,8 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         private static void ReadAluminiumMemberRotationalRestraint()
         {
             DataLogger.AddLogStart("Reading...");
-            int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_ALUMINUM_MEMBER_ROTATIONAL_RESTRAINT, 0);
-            int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_ALUMINUM_MEMBER_ROTATIONAL_RESTRAINT, 0);
+            int count = SoapModelClient.get_object_count(object_types.E_OBJECT_TYPE_MEMBER_ROTATIONAL_RESTRAINT, 0);
+            int[] numbers = SoapModelClient.get_all_object_numbers(object_types.E_OBJECT_TYPE_MEMBER_ROTATIONAL_RESTRAINT, 0);
             if (count != numbers.Length)
             {
                 throw new Exception("Object count does not match object number count.");
@@ -45,13 +44,13 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.InitializeProgressBar(0, numbers.Length, 0);
             for (int i = 0; i < count; i++)
             {
-                aluminum_member_rotational_restraint objectToRead = SoapModelClient.get_aluminum_member_rotational_restraint(numbers[i]);
+                member_rotational_restraint objectToRead = SoapModelClient.get_member_rotational_restraint(numbers[i]);
                 LogAluminiumMemberRotationalRestraint(objectToRead);
                 DataLogger.SetProgressBarValue(i);
             }
         }
 
-        private static void LogAluminiumMemberRotationalRestraint(aluminum_member_rotational_restraint restraint)
+        private static void LogAluminiumMemberRotationalRestraint(member_rotational_restraint restraint)
         {
             DataLogger.IncrementOffset();
             DataLogger.AddText($"Member Rotational Restraints No.{restraint.no}");
@@ -113,11 +112,11 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             SoapModelClient.begin_modification(nameof(CreateAluminiumMemberRotationalRestraint));
             DataLogger.SetProgressBarValue(20);
             DataLogger.AddText("Generating...");
-            var restraint = new aluminum_member_rotational_restraint
+            var restraint = new member_rotational_restraint
             {
                 no = 1,
                 name = "Generated restrain",
-                type = aluminum_member_rotational_restraint_type.TYPE_CONTINUOUS,
+                type = member_rotational_restraint_type.TYPE_CONTINUOUS,
                 total_rotational_spring_stiffness = 0.45,
                 spring_stiffnessSpecified = true,
                 spring_stiffness = 0.45,
@@ -126,7 +125,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 beam_spacing = 1.0005,
                 beam_spacingSpecified = true,
             };
-            SoapModelClient.set_aluminum_member_rotational_restraint(restraint);
+            SoapModelClient.set_member_rotational_restraint(restraint);
             DataLogger.AddText("Generated");
             SoapModelClient.finish_modification();
             DataLogger.SetProgressBarValue(50);
@@ -137,7 +136,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             DataLogger.AddLogStart("Deleting...");
             try
             {
-                bool result = DeleteObjects(object_types.E_OBJECT_TYPE_ALUMINUM_MEMBER_ROTATIONAL_RESTRAINT, 0, "Member rotational restraint");
+                bool result = DeleteObjects(object_types.E_OBJECT_TYPE_MEMBER_ROTATIONAL_RESTRAINT, 0, "Member rotational restraint");
                 DataLogger.AddLogEnd(LogResultType.DONE);
                 return result;
             }

@@ -186,6 +186,19 @@ namespace Dlubal.WS.RSection1.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Application.get_session_idResponse Dlubal.WS.RSection1.Application.IRSectionApplication.get_session_id(Dlubal.WS.RSection1.Application.get_session_idRequest request)
+        {
+            return base.Channel.get_session_id(request);
+        }
+        
+        public string get_session_id()
+        {
+            Dlubal.WS.RSection1.Application.get_session_idRequest inValue = new Dlubal.WS.RSection1.Application.get_session_idRequest();
+            Dlubal.WS.RSection1.Application.get_session_idResponse retVal = ((Dlubal.WS.RSection1.Application.IRSectionApplication)(this)).get_session_id(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Application.get_settings_program_languageResponse Dlubal.WS.RSection1.Application.IRSectionApplication.get_settings_program_language(Dlubal.WS.RSection1.Application.get_settings_program_languageRequest request)
         {
             return base.Channel.get_settings_program_language(request);

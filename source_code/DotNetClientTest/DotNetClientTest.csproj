@@ -228,6 +228,24 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup Condition="$(DefineConstants.Contains('RFEM'))">
+    <ProjectReference Include="..\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj">
+      <Project>{0056c09c-969d-4201-974a-04358e27351a}</Project>
+      <Name>RFEMWebServiceLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup Condition="$(DefineConstants.Contains('RSTAB'))">
+    <ProjectReference Include="..\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj">
+      <Project>{5105197F-FDCD-4609-8B0F-8D4337BD85A8}</Project>
+      <Name>RSTABWebServiceLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup Condition="$(DefineConstants.Contains('RSECTION'))">
+    <ProjectReference Include="..\RSECTIONWebServiceLibrary\RSECTIONWebServiceLibrary.csproj">
+      <Project>{c497f6d5-fb24-44d2-91c5-d4ac73a62f4d}</Project>
+      <Name>RSECTIONWebServiceLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Connected.png" />
     <Resource Include="Icons\Disconnected.png" />
@@ -257,23 +275,21 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj">
-      <Project>{24f8558d-0e3a-4add-84a2-fb471b5efa8e}</Project>
-      <Name>RFEMWebServiceLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RSECTIONWebServiceLibrary\RSECTIONWebServiceLibrary.csproj">
-      <Project>{7b49e986-abd2-495d-80c7-c0c9940ceac3}</Project>
-      <Name>RSECTIONWebServiceLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj">
-      <Project>{8acadb5b-66fa-467b-9d86-12bd923252cb}</Project>
-      <Name>RSTABWebServiceLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
+      if "$(ConfigurationName)" == "Release RFEM" (
+          copy "$(TargetDir)*.exe*" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRFEM\*.*"
+          copy "$(TargetDir)*.dll" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRFEM\*.*"
+      )
+      if "$(ConfigurationName)" == "Release RSTAB" (
+          copy "$(TargetDir)*.exe*" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSTAB\*.*"
+          copy "$(TargetDir)*.dll" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSTAB\*.*"
+      )
+      if "$(ConfigurationName)" == "Release RSECTION" (
+          copy "$(TargetDir)*.exe*" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSECTION\*.*"
+          copy "$(TargetDir)*.dll" "$(ProjectDir)..\..\..\Tests\suite_RFEM6 AT\shared\tools\DotNetClientTestForRSECTION\*.*"
+      )
     </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

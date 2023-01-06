@@ -74,6 +74,10 @@ namespace Dlubal.WS.Rfem6.Application
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Application.get_saf_settingsResponse get_saf_settings(Dlubal.WS.Rfem6.Application.get_saf_settingsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_session_id", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Application.get_session_idResponse get_session_id(Dlubal.WS.Rfem6.Application.get_session_idRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_settings_program_language", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Application.get_settings_program_languageResponse get_settings_program_language(Dlubal.WS.Rfem6.Application.get_settings_program_languageRequest request);

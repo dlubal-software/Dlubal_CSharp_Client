@@ -211,7 +211,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.AddText("Change SAF settings");
                 {
                     var safSettings = SoapApplicationClient.get_saf_settings();
-                    safSettings.property_general_run_excel_application = false;
+                    safSettings.property_general_open_spreadsheet_application = false;
                     bool imperial = safSettings.property_export_set_unit_system_imperial;
                     safSettings.property_export_set_unit_system_imperial = !imperial;
                     SoapApplicationClient.set_saf_settings(safSettings);

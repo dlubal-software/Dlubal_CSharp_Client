@@ -1,23 +1,44 @@
 {
     "configurations": [
-    {
-        "name": "PowerShell Launch Current File",
-        "type": "PowerShell",
-        "request": "launch",
-        "script": "${file}",
-        "cwd": "${file}"
-    },
-    {
-        "name": ".NET Core Launch (console)",
-        "type": "coreclr",
-        "request": "launch",
-        "preLaunchTask": "build",
-        "program": "${workspaceFolder}/DotNetCoreClientTest/bin/Debug/net5.0/DotNetCoreClientTest.dll",
-        "args": ["run"],
-        "cwd": "${workspaceFolder}",
-        "stopAtEntry": false,
-        "console": "internalConsole",
-      
-    }
+        {
+            "name": "Launch RFEM Cantilever",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Debug RFEM",
+            "program": "${workspaceFolder}/examples/Cantilever/bin/Debug RFEM/net6.0-windows10.0.22621.0/Cantilever.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Launch RSTAB Cantilever",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Debug RSTAB",
+            "program": "${workspaceFolder}/examples/Cantilever/bin/Debug RSTAB/net6.0-windows10.0.22621.0/Cantilever.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Launch RSECTION Console Example",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build Debug RSECTION",
+            "program": "${workspaceFolder}/examples/RSECTION_ConsoleExample/bin/Debug/net6.0-windows10.0.22621.0/RSECTION_ConsoleExample.exe",
+            "args": ["CreateNewModel"],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+
     ]
 }

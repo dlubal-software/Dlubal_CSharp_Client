@@ -225,6 +225,19 @@ namespace Dlubal.WS.Rstab9.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Application.get_session_idResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_session_id(Dlubal.WS.Rstab9.Application.get_session_idRequest request)
+        {
+            return base.Channel.get_session_id(request);
+        }
+        
+        public string get_session_id()
+        {
+            Dlubal.WS.Rstab9.Application.get_session_idRequest inValue = new Dlubal.WS.Rstab9.Application.get_session_idRequest();
+            Dlubal.WS.Rstab9.Application.get_session_idResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).get_session_id(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Application.get_settings_program_languageResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_settings_program_language(Dlubal.WS.Rstab9.Application.get_settings_program_languageRequest request)
         {
             return base.Channel.get_settings_program_language(request);

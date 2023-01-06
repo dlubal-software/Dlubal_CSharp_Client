@@ -529,6 +529,10 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                                         {
                                             return 3;
                                         }
+                                        case object_types.E_OBJECT_TYPE_DIMENSION:
+                                        {
+                                            return 4;
+                                        }
 #endif
                                         default:
                                         {

@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0;net48;net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net48;net6.0-windows</TargetFrameworks>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.02.34</FileVersion>
-    <AssemblyVersion>1.02.34</AssemblyVersion>
+    <FileVersion>1.02.46</FileVersion>
+    <AssemblyVersion>1.02.46</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
-    <Version>1.02.34</Version>
+    <Version>1.02.46</Version>
     <Company>DlubalSoftware</Company>
     <Product>DlubalSoftware</Product>
     <Description>C# library for development of tools based on RSECTION WebService technology</Description>

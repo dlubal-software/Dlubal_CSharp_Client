@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 namespace UTWebServiceLibraries
 {
     [TestClass]
-    public class RFEMApplicationGenral
+    public class RFEMApplicationGeneral
     {
 
         public static EndpointAddress Address { get; set; } = new EndpointAddress("http://localhost:8081");
@@ -64,15 +64,15 @@ namespace UTWebServiceLibraries
                 {
                     ApplicationInfo = application.get_information();
                 }
-                Assert.IsNotNull(ApplicationInfo,"ApplicationInfo is null. It seems to be that UT is runned in different application");
+                Assert.IsNotNull(ApplicationInfo, "ApplicationInfo is null. It seems to be that UT is runned in different application");
                 Assert.AreEqual(ApplicationInfo.type.ToString(), "RFEM6", "Application type is incorrect");
-                Assert.AreEqual(ApplicationInfo.language_name, "English", "Application langauge is incorrect");
+                Assert.AreEqual(ApplicationInfo.language_name, "English", "Application language is incorrect");
             }
             catch (Exception ex)
             {
                 Console.Error.WriteLine(ex);
             }
-           
+
         }
 
 

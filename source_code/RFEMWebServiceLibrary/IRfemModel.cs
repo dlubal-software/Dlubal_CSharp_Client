@@ -18,6 +18,10 @@ namespace Dlubal.WS.Rfem6.Model
     public interface IRfemModel
     {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/add_section_to_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.add_section_to_my_section_listResponse add_section_to_my_section_list(Dlubal.WS.Rfem6.Model.add_section_to_my_section_listRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/begin_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.begin_modificationResponse begin_modification(Dlubal.WS.Rfem6.Model.begin_modificationRequest request);
@@ -42,6 +46,18 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.close_connectionResponse close_connection(Dlubal.WS.Rfem6.Model.close_connectionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/create_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.create_my_section_listResponse create_my_section_list(Dlubal.WS.Rfem6.Model.create_my_section_listRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/create_section_by_name", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.create_section_by_nameResponse create_section_by_name(Dlubal.WS.Rfem6.Model.create_section_by_nameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/create_section_from_rsection_file", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.create_section_from_rsection_fileResponse create_section_from_rsection_file(Dlubal.WS.Rfem6.Model.create_section_from_rsection_fileRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_all", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.delete_allResponse delete_all(Dlubal.WS.Rfem6.Model.delete_allRequest request);
@@ -54,6 +70,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.delete_all_resultsResponse delete_all_results(Dlubal.WS.Rfem6.Model.delete_all_resultsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.delete_my_section_listResponse delete_my_section_list(Dlubal.WS.Rfem6.Model.delete_my_section_listRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_object", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.delete_objectResponse delete_object(Dlubal.WS.Rfem6.Model.delete_objectRequest request);
@@ -61,6 +81,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_printout_reports", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.delete_printout_reportsResponse delete_printout_reports(Dlubal.WS.Rfem6.Model.delete_printout_reportsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_section_from_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.delete_section_from_my_section_listResponse delete_section_from_my_section_list(Dlubal.WS.Rfem6.Model.delete_section_from_my_section_listRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/divide_by_intersections", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -170,14 +194,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionResponse get_aluminum_member_local_section_reduction(Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_rotational_restraint", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_aluminum_member_rotational_restraintResponse get_aluminum_member_rotational_restraint(Dlubal.WS.Rfem6.Model.get_aluminum_member_rotational_restraintRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_shear_panel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_aluminum_member_shear_panelResponse get_aluminum_member_shear_panel(Dlubal.WS.Rfem6.Model.get_aluminum_member_shear_panelRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_aluminum_member_transverse_weldResponse get_aluminum_member_transverse_weld(Dlubal.WS.Rfem6.Model.get_aluminum_member_transverse_weldRequest request);
@@ -190,6 +206,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_building_storyResponse get_building_story(Dlubal.WS.Rfem6.Model.get_building_storyRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_calculation_diagram", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_calculation_diagramResponse get_calculation_diagram(Dlubal.WS.Rfem6.Model.get_calculation_diagramRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_clipping_box", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_clipping_boxResponse get_clipping_box(Dlubal.WS.Rfem6.Model.get_clipping_boxRequest request);
@@ -201,6 +221,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_combination_wizard", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_combination_wizardResponse get_combination_wizard(Dlubal.WS.Rfem6.Model.get_combination_wizardRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_concrete_design_sls_configuration", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_concrete_design_sls_configurationResponse get_concrete_design_sls_configuration(Dlubal.WS.Rfem6.Model.get_concrete_design_sls_configurationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_concrete_design_uls_configuration", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_concrete_design_uls_configurationResponse get_concrete_design_uls_configuration(Dlubal.WS.Rfem6.Model.get_concrete_design_uls_configurationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_concrete_durability", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -398,6 +426,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_member_result_intermediate_pointResponse get_member_result_intermediate_point(Dlubal.WS.Rfem6.Model.get_member_result_intermediate_pointRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_rotational_restraint", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_member_rotational_restraintResponse get_member_rotational_restraint(Dlubal.WS.Rfem6.Model.get_member_rotational_restraintRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_set", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_member_setResponse get_member_set(Dlubal.WS.Rfem6.Model.get_member_setRequest request);
@@ -413,6 +445,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_set_representative", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_member_set_representativeResponse get_member_set_representative(Dlubal.WS.Rfem6.Model.get_member_set_representativeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_shear_panel", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_member_shear_panelResponse get_member_shear_panel(Dlubal.WS.Rfem6.Model.get_member_shear_panelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_stiffness_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -465,6 +501,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_type", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_model_typeResponse get_model_type(Dlubal.WS.Rfem6.Model.get_model_typeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_my_section_lists", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_my_section_listsResponse get_my_section_lists(Dlubal.WS.Rfem6.Model.get_my_section_listsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_nodal_load", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -755,6 +795,296 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_support_forces", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_nodes_support_forcesResponse get_results_for_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_centres_" +
+            "mass_rigidity", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_centres_mass_rigidityResponse get_results_for_pushover_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_centres_mass_rigidityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_forces_i" +
+            "n_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_pushover_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_forces_i" +
+            "n_spandrels", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsResponse get_results_for_pushover_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_intersto" +
+            "ry_drifts", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_interstory_driftsResponse get_results_for_pushover_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_interstory_driftsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_story_ac" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_story_actionsResponse get_results_for_pushover_analysis_building_stories_story_actions(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_story_actionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_calculation_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_calculation_diagramsResponse get_results_for_pushover_analysis_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_line_hinges_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_deformationsResponse get_results_for_pushover_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_line_hinges_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_forcesResponse get_results_for_pushover_analysis_line_hinges_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_lines_slab_wall_connectio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_lines_slab_wall_connectionsResponse get_results_for_pushover_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_lines_slab_wall_connectionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_lines_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_lines_support_forcesResponse get_results_for_pushover_analysis_lines_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_lines_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_contact_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_contact_forcesResponse get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_contact_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_global_deformatio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_global_deformationsResponse get_results_for_pushover_analysis_members_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_hinge_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_hinge_deformationsResponse get_results_for_pushover_analysis_members_hinge_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_hinge_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_hinge_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_hinge_forcesResponse get_results_for_pushover_analysis_members_hinge_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_hinge_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_internal_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forcesResponse get_results_for_pushover_analysis_members_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_internal_forces_b" +
+            "y_member_set", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setResponse get_results_for_pushover_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_internal_forces_b" +
+            "y_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionResponse get_results_for_pushover_analysis_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_local_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_local_deformationsResponse get_results_for_pushover_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_local_plastic_def" +
+            "ormation_ratios", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_local_plastic_deformation_ratiosResponse get_results_for_pushover_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_local_plastic_deformation_ratiosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_strainsResponse get_results_for_pushover_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_nodes_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_deformationsResponse get_results_for_pushover_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_nodes_support_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_support_forcesResponse get_results_for_pushover_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_basic_plastic_stra" +
+            "ins", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_basic_plastic_strainsResponse get_results_for_pushover_analysis_solids_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_basic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_basic_stressesResponse get_results_for_pushover_analysis_solids_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_basic_total_strain" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_basic_total_strainsResponse get_results_for_pushover_analysis_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_deformationsResponse get_results_for_pushover_analysis_solids_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_equivalent_plastic" +
+            "_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_equivalent_plastic_strainsResponse get_results_for_pushover_analysis_solids_equivalent_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_equivalent_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_equivalent_stresse" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_equivalent_stressesResponse get_results_for_pushover_analysis_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_equivalent_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_equivalent_total_s" +
+            "trains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_equivalent_total_strainsResponse get_results_for_pushover_analysis_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_equivalent_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_gas_quantities", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_gas_quantitiesResponse get_results_for_pushover_analysis_solids_gas_quantities(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_gas_quantitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_principal_plastic_" +
+            "strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_principal_plastic_strainsResponse get_results_for_pushover_analysis_solids_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_principal_stresses" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_principal_stressesResponse get_results_for_pushover_analysis_solids_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_principal_total_st" +
+            "rains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_principal_total_strainsResponse get_results_for_pushover_analysis_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_solids_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_summary", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_summaryResponse get_results_for_pushover_analysis_summary(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_basic_internal_f" +
+            "orces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forcesResponse get_results_for_pushover_analysis_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_basic_plastic_st" +
+            "rains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsResponse get_results_for_pushover_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_basic_stresses", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stressesResponse get_results_for_pushover_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_basic_total_stra" +
+            "ins", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsResponse get_results_for_pushover_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_contact_stresses" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stressesResponse get_results_for_pushover_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_design_internal_" +
+            "forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forcesResponse get_results_for_pushover_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_elastic_stress_c" +
+            "omponents", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_componentsResponse get_results_for_pushover_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_componentsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_plast" +
+            "ic_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachResponse get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_plast" +
+            "ic_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesResponse get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_plast" +
+            "ic_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineResponse get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_plast" +
+            "ic_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaResponse get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_stres" +
+            "ses_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bachResponse get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_stres" +
+            "ses_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_misesResponse get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_stres" +
+            "ses_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankineResponse get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_stres" +
+            "ses_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_trescaResponse get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_total" +
+            "_strains_bach", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachResponse get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_total" +
+            "_strains_mises", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesResponse get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_total" +
+            "_strains_rankine", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineResponse get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_equivalent_total" +
+            "_strains_tresca", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaResponse get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_global_deformati" +
+            "ons", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformationsResponse get_results_for_pushover_analysis_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_local_deformatio" +
+            "ns", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformationsResponse get_results_for_pushover_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_maximum_plastic_" +
+            "strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsResponse get_results_for_pushover_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_maximum_total_st" +
+            "rains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsResponse get_results_for_pushover_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_principal_intern" +
+            "al_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forcesResponse get_results_for_pushover_analysis_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_principal_plasti" +
+            "c_strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsResponse get_results_for_pushover_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_principal_stress" +
+            "es", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stressesResponse get_results_for_pushover_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stressesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_surfaces_principal_total_" +
+            "strains", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsResponse get_results_for_pushover_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_basic_plastic_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1782,6 +2112,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_sectionResponse get_section(Dlubal.WS.Rfem6.Model.get_sectionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_session_id", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_session_idResponse get_session_id(Dlubal.WS.Rfem6.Model.get_session_idRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_soil_massif", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_soil_massifResponse get_soil_massif(Dlubal.WS.Rfem6.Model.get_soil_massifRequest request);
@@ -1853,14 +2187,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_steel_member_local_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionResponse get_steel_member_local_section_reduction(Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_steel_member_rotational_restraint", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_steel_member_rotational_restraintResponse get_steel_member_rotational_restraint(Dlubal.WS.Rfem6.Model.get_steel_member_rotational_restraintRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_steel_member_shear_panel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_steel_member_shear_panelResponse get_steel_member_shear_panel(Dlubal.WS.Rfem6.Model.get_steel_member_shear_panelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_structure_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1962,14 +2288,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionResponse get_timber_member_local_section_reduction(Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_timber_member_rotational_restraint", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_timber_member_rotational_restraintResponse get_timber_member_rotational_restraint(Dlubal.WS.Rfem6.Model.get_timber_member_rotational_restraintRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_timber_member_shear_panel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_timber_member_shear_panelResponse get_timber_member_shear_panel(Dlubal.WS.Rfem6.Model.get_timber_member_shear_panelRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_timber_moisture_class", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_timber_moisture_classResponse get_timber_moisture_class(Dlubal.WS.Rfem6.Model.get_timber_moisture_classRequest request);
@@ -2058,14 +2376,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionResponse set_aluminum_member_local_section_reduction(Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_rotational_restraint", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_aluminum_member_rotational_restraintResponse set_aluminum_member_rotational_restraint(Dlubal.WS.Rfem6.Model.set_aluminum_member_rotational_restraintRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_shear_panel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_aluminum_member_shear_panelResponse set_aluminum_member_shear_panel(Dlubal.WS.Rfem6.Model.set_aluminum_member_shear_panelRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldResponse set_aluminum_member_transverse_weld(Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldRequest request);
@@ -2078,6 +2388,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_building_storyResponse set_building_story(Dlubal.WS.Rfem6.Model.set_building_storyRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_calculation_diagram", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_calculation_diagramResponse set_calculation_diagram(Dlubal.WS.Rfem6.Model.set_calculation_diagramRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_clipping_box", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_clipping_boxResponse set_clipping_box(Dlubal.WS.Rfem6.Model.set_clipping_boxRequest request);
@@ -2089,6 +2403,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_combination_wizard", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_combination_wizardResponse set_combination_wizard(Dlubal.WS.Rfem6.Model.set_combination_wizardRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_concrete_design_sls_configuration", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_concrete_design_sls_configurationResponse set_concrete_design_sls_configuration(Dlubal.WS.Rfem6.Model.set_concrete_design_sls_configurationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_concrete_design_uls_configuration", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_concrete_design_uls_configurationResponse set_concrete_design_uls_configuration(Dlubal.WS.Rfem6.Model.set_concrete_design_uls_configurationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_concrete_durability", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2270,6 +2592,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_member_result_intermediate_pointResponse set_member_result_intermediate_point(Dlubal.WS.Rfem6.Model.set_member_result_intermediate_pointRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_rotational_restraint", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_member_rotational_restraintResponse set_member_rotational_restraint(Dlubal.WS.Rfem6.Model.set_member_rotational_restraintRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_set", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_member_setResponse set_member_set(Dlubal.WS.Rfem6.Model.set_member_setRequest request);
@@ -2285,6 +2611,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_set_representative", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_member_set_representativeResponse set_member_set_representative(Dlubal.WS.Rfem6.Model.set_member_set_representativeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_shear_panel", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_member_shear_panelResponse set_member_shear_panel(Dlubal.WS.Rfem6.Model.set_member_shear_panelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_stiffness_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2478,14 +2808,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionResponse set_steel_member_local_section_reduction(Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_steel_member_rotational_restraint", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_steel_member_rotational_restraintResponse set_steel_member_rotational_restraint(Dlubal.WS.Rfem6.Model.set_steel_member_rotational_restraintRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_steel_member_shear_panel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_steel_member_shear_panelResponse set_steel_member_shear_panel(Dlubal.WS.Rfem6.Model.set_steel_member_shear_panelRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_structure_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_structure_modificationResponse set_structure_modification(Dlubal.WS.Rfem6.Model.set_structure_modificationRequest request);
@@ -2585,14 +2907,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_member_local_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionResponse set_timber_member_local_section_reduction(Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_member_rotational_restraint", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_timber_member_rotational_restraintResponse set_timber_member_rotational_restraint(Dlubal.WS.Rfem6.Model.set_timber_member_rotational_restraintRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_member_shear_panel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_timber_member_shear_panelResponse set_timber_member_shear_panel(Dlubal.WS.Rfem6.Model.set_timber_member_shear_panelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_moisture_class", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
