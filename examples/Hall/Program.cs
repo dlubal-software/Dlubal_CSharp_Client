@@ -39,8 +39,6 @@ namespace Hall
     {
 
         public static EndpointAddress Address { get; set; } = new EndpointAddress("http://localhost:8081");
-        // public static EndpointAddress Address { get; set; } = new EndpointAddress("http://192.168.4.105:8081");
-
 
         private static BasicHttpBinding Binding
         {
@@ -58,6 +56,20 @@ namespace Hall
             }
         }
         private static RfemApplicationClient application = null;
+
+        static string DecodeHtmlString(string myEncodedString)
+        {
+            StringWriter myWriter = new StringWriter();
+            // Decode the encoded string.
+            System.Net.WebUtility.HtmlDecode(myEncodedString, myWriter);
+            string myDecodedString = myWriter.ToString();
+
+            return myDecodedString;
+
+
+
+            //Console.Write($"Decoded string of the above encoded string is: {myDecodedString}");
+        }
 
         public static void TestingExample(RfemModelClient model, Logger logger)
         {
@@ -138,113 +150,6 @@ namespace Hall
                     logger.Error(exception, "Something wrong in finish modification of creation of AddOns\n" + exception.Message + "\n");
                 }
             }
-            #endregion
-
-            #region Options and Settings
-            // model_settings_and_options model_Settings_And_Options = model.get_model_settings_and_options();
-            // Console.WriteLine("Zero date: " + model_Settings_And_Options.date_of_zero_day.ToLongDateString());
-            // Console.WriteLine("Tolerance for directions: " + model_Settings_And_Options.tolerance_for_directions.ToString());
-            // Console.WriteLine("Tolerance for lines: " + model_Settings_And_Options.tolerance_for_lines.ToString());
-            // Console.WriteLine("Tolerance for nodes: " + model_Settings_And_Options.tolerance_for_nodes.ToString());
-            // Console.WriteLine("Tolerance for surfaces: " + model_Settings_And_Options.tolerance_for_surfaces_and_planes.ToString());
-            // Console.WriteLine("Acceleration: " + model_Settings_And_Options.gravitational_acceleration.ToString());
-            // Console.WriteLine("Global axes orientation: " + model_Settings_And_Options.global_axes_orientation.ToString());
-            // Console.WriteLine("Local axes orientation: " + model_Settings_And_Options.local_axes_orientation.ToString());
-            // Console.WriteLine("Member representative active {0}", model_Settings_And_Options.member_representatives_active ? "Yes" : "No");
-            // Console.WriteLine("Member set representative active {0}", model_Settings_And_Options.member_set_representatives_active ? "Yes" : "No");
-            #endregion
-
-
-
-            #region units
-            // unit_category_type[] units = model.get_units_and_decimal_places();
-            // foreach (unit_category_type category in units)
-            // {
-            //     Console.WriteLine("Category - Id: {0}\t Name: {1}", category.id, category.name);
-            //     foreach (var subcategory in category.subcategories)
-            //     {
-            //         Console.WriteLine("\t Subcategory - Id: {0}\t Name: {1}", subcategory.id, subcategory.name);
-            //         foreach (current_unit_in_unit_group_type unit in subcategory.unit_groups)
-            //         {
-            //             Console.WriteLine("\t\t Unit - Group id: {0}\t Current unit index: {1}\t Current unit symbol: {2}\t Decimal places: {3}", unit.unit_group_string_id, unit.current_unit_index, unit.current_unit_symbol, unit.decimal_places);
-            //         }
-            //     }
-            // }
-
-            // get_unit_groupunit_group_type unitGroup = model.get_unit_group("EG_MODULE");
-            // Console.WriteLine("Unit for EG_MODULE Name: {0}", unitGroup.name);
-            // foreach (unit_type unit in unitGroup.units)
-            // {
-            //     Console.WriteLine("Unit - Id: {0}\t Symbol: {1}\tMin decimal places: {2}\tMax decimal places: {3}", unit.string_id, unit.symbol, unit.min_decimal_places, unit.max_decimal_places);
-            // }
-
-            // model.set_current_unit_in_unit_group("EG_MODULE", "MN/m2", 4);
-            // model.save_current_unit_config_as_template("mytemplate2");
-
-            // unit_config_template[] listofTemplates = model.get_list_of_unit_config_templates();
-            // foreach (unit_config_template template in listofTemplates)
-            // {
-            //     Console.WriteLine(@"Template - Id: {0}	 Name: {1},Is default {2}", template.index, template.name,template.is_default ? "Yes" : "No");
-
-            // }
-            // model.load_unit_config_from_template(listofTemplates[2].index);
-            // model.set_unit_config_template_as_default(listofTemplates[0].index);
-            // model.load_unit_config_from_template(listofTemplates[0].index);
-            // model.delete_unit_config_template(listofTemplates[2].index);
-            #endregion
-
-            #region Standards
-            // base_standards standards = model.get_standards();
-            // Console.WriteLine("Aluminum design Standard - {0}\t Annex and edition: {1}", standards.aluminum_design.standard.ToString(), standards.aluminum_design.annex_and_edition.ToString());
-            // Console.WriteLine("Combination wizard Standard - {0}\t Annex and edition: : {1}", standards.combination_wizard.standard.ToString(), standards.combination_wizard.annex_and_edition.ToString());
-            // Console.WriteLine("Concrete design Standard - {0}\t Annex and edition: : {1}", standards.concrete_design.standard.ToString(), standards.concrete_design.annex_and_edition.ToString());
-            // Console.WriteLine("Concrete foundation design Standard - {0}\t Annex and edition: : {1}", standards.concrete_foundation_design.standard.ToString(), standards.concrete_foundation_design.annex_and_edition.ToString());
-            // Console.WriteLine("Dynamic analysis Standard - {0}\t Annex and edition: : {1}", standards.dynamic_analysis.standard.ToString(), standards.dynamic_analysis.annex_and_edition.ToString());
-            // Console.WriteLine("Geotechnical analysis Standard - {0}\t Annex and edition: : {1}", standards.geotechnical_analysis.standard.ToString(), standards.geotechnical_analysis.annex_and_edition.ToString());
-            // Console.WriteLine("Glass design Standard - {0}\t Annex and edition: : {1}", standards.glass_design.standard.ToString(), standards.glass_design.annex_and_edition.ToString());
-            // Console.WriteLine("Load wizard Standard - {0}\t Annex and edition: : {1}", standards.load_wizard.standard.ToString(), standards.load_wizard.annex_and_edition.ToString());
-            // Console.WriteLine("Masonry desing Standard - {0}\t Annex and edition: : {1}", standards.masonry_design.standard.ToString(), standards.masonry_design.annex_and_edition.ToString());
-            // Console.WriteLine("Piping desing Standard - {0}\t Annex and edition: : {1}", standards.piping_design.standard.ToString(), standards.piping_design.annex_and_edition.ToString());
-            // Console.WriteLine("Steel desing Standard - {0}\t Annex and edition: : {1}", standards.steel_design.standard.ToString(), standards.steel_design.annex_and_edition.ToString());
-            // Console.WriteLine("Steel joint desing Standard - {0}\t Annex and edition: : {1}", standards.steel_joint_design.standard.ToString(), standards.steel_joint_design.annex_and_edition.ToString());
-            // Console.WriteLine("Timber design Standard - {0}\t Annex and edition: : {1}", standards.timber_design.standard.ToString(), standards.timber_design.annex_and_edition.ToString());
-            // Console.WriteLine("Timber joint desing Standard - {0}\t Annex and edition: : {1}", standards.timber_joint_design.standard.ToString(), standards.timber_joint_design.annex_and_edition.ToString());
-            // Console.WriteLine("Tower desing Standard - {0}\t Annex and edition: : {1}", standards.tower_design.standard.ToString(), standards.tower_design.annex_and_edition.ToString());
-
-
-
-            // base_standards newStandard = new base_standards();
-            // newStandard.concrete_design = new base_standards_row();
-            // newStandard.concrete_design.annex_and_edition = annex_and_edition_type.NATIONAL_ANNEX_AND_EDITION_EN_1992_CSN_2016_05;
-            // newStandard.concrete_design.standard = standard_type.STANDARD_GROUP_EN_1992;
-            // model.set_standards(newStandard);
-
-
-            // standards_and_editions_combination_wizard combinationWizardPossibleStandards = model.get_all_standards_and_editions_combination_wizard();
-
-            // standards_and_editions_concrete_design concreteDesignPossibleStandards = model.get_all_standards_and_editions_concrete_design();
-
-            // foreach (var annex in concreteDesignPossibleStandards.concrete_design_standard_group_en_1992.annex_and_edition_array_concrete_design_733)
-            // {
-            //     Console.WriteLine(annex.ToString());
-            // }
-            // foreach (var annex in concreteDesignPossibleStandards.concrete_design_standard_group_aci_318_concrete_design.annex_and_edition_array_concrete_design_5616)
-            // {
-            //     Console.WriteLine(annex.ToString());
-            // }
-            // foreach (var annex in concreteDesignPossibleStandards.concrete_design_standard_group_csa_a23_3.annex_and_edition_array_concrete_design_5617)
-            // {
-            //     Console.WriteLine(annex.ToString());
-            // }
-            // foreach (var annex in concreteDesignPossibleStandards.concrete_design_standard_group_sp_63_13330.annex_and_edition_array_concrete_design_5618)
-            // {
-            //     Console.WriteLine(annex.ToString());
-            // }
-
-
-            // standards_and_editions_load_wizard loadWizardPossibleStandards = model.get_all_standards_and_editions_load_wizard();
-            // standards_and_editions_timber_design steelDesignPossibleStandards = model.get_all_standards_and_editions_timber_design();
-
             #endregion
 
             #region Model parameters - Location
@@ -373,7 +278,7 @@ namespace Hall
             terrain terrainModel = new terrain()
             {
                 no = 1,
-                type = terrain_type.HORIZONTAL_PLANE,
+                type = terrain_type.BOREHOLES,
                 coordinate_system = 0,
                 coordinate_systemSpecified = true,
                 typeSpecified = true,
@@ -385,9 +290,9 @@ namespace Hall
                 center_of_terrain_zSpecified = true,
                 rotation_around_Z = 0.0,
                 rotation_around_ZSpecified = true,
-                // comment = "Terrain 1",
-                // consider_boreholes = false,
-                // consider_boreholesSpecified = true,
+                comment = "Terrain 1",
+                consider_boreholes = false,
+                consider_boreholesSpecified = true,
             };
             try
             {
@@ -444,7 +349,7 @@ namespace Hall
                     soil_materialSpecified = true,
                     thickness = 2.0,
                     thicknessSpecified = true,
-                    bottom_ordinate = -1.0,
+                    bottom_ordinate = 1.0,
                     bottom_ordinateSpecified = true,
                 }
             };
@@ -491,7 +396,7 @@ namespace Hall
                 coordinate_0Specified = true,
                 coordinate_1 = 2.0,
                 coordinate_1Specified = true,
-                coordinate_2 = -3.0,
+                coordinate_2 = 0.0,
                 coordinate_2Specified = true,
                 groundwater = true,
                 groundwaterSpecified = true,
@@ -529,8 +434,6 @@ namespace Hall
             #endregion
 
             #region Soil massif
-            // soil_massif soilMassif = model.get_soil_massif(1);
-            // soilMassif.no = 2;
             soil_massif soilMassif = new soil_massif()
             {
                 no = 1,
@@ -544,7 +447,7 @@ namespace Hall
                 topology_typeSpecified = true,
                 analysis_type = soil_massif_analysis_type.ANALYSIS_TYPE_NONLINEAR_SOIL_3D,
                 analysis_typeSpecified = true,
-                // assigned_to_boreholes = new int[] { soilSampleModel.no },
+                assigned_to_boreholes = new int[] { soilSampleModel.no },
                 assigned_to_type = soil_massif_assigned_to_type.ASSIGNED_TO_TYPE_BOREHOLES,
                 assigned_to_typeSpecified = true,
                 center_x = 1.0,
@@ -581,7 +484,7 @@ namespace Hall
             try
             {
                 model.begin_modification("Soilmassif 1");
-                // model.set_soil_massif(soilMassif); // bug
+                // model.set_soil_massif(soilMassif); // to long for calculation
             }
             catch (Exception exception)
             {
@@ -615,8 +518,6 @@ namespace Hall
             Console.WriteLine("Project id: " + model_Main_Parameters.project_id);
             Console.WriteLine("Project description: " + model_Main_Parameters.project_description);
             #endregion
-
-
 
             #region Materials, sections and thicknesses
             // create material
@@ -661,47 +562,6 @@ namespace Hall
                 material_type = material_material_type.TYPE_ALUMINUM,
                 material_typeSpecified = true
             };
-
-            #region Material Library
-            // standard_material_series_filter_parameters_type materialSelectionFilters = model.get_standard_material_series_filter_parameter_ids();
-            // var regionId = materialSelectionFilters.regions.Where(item => item.description == "European Union").FirstOrDefault().id;
-            // var materialType = materialSelectionFilters.types.Where(item => item.description == "Concrete").FirstOrDefault().id;
-            // var materialSubType = materialSelectionFilters.subtypes.Where(item => item.description == "Concrete").FirstOrDefault().id;
-            // var standardId = materialSelectionFilters.standards.Where(item => item.description == "EN 1992-1-1:2004/A1:2014").FirstOrDefault().id;
-            // var species_Iid = materialSelectionFilters.species_I.Where(item => item.description == "--").FirstOrDefault().id;
-            // var species_IIid = materialSelectionFilters.species_II.Where(item => item.description == "--").FirstOrDefault().id;
-            // var species_IIIid = materialSelectionFilters.species_III.Where(item => item.description == "--").FirstOrDefault().id;
-            // var species_IVid = materialSelectionFilters.species_IV.Where(item => item.description == "--").FirstOrDefault().id;
-            // standard_material_series_description_type[] materialSeries = model.get_standard_material_series_descriptions(regionId, materialType, materialSubType, standardId, species_Iid, species_IIid, species_IIIid, species_IVid);
-            // foreach (var item in materialSeries)
-            // {
-            //     string[] materialNames = model.get_standard_material_descriptions(item.id);
-            //     foreach (var materialName in materialNames)
-            //     {
-            //         Console.WriteLine("Material name: " + materialName);
-            //     }
-            // }
-            #endregion
-
-
-            #region steel section library
-            // standard_section_series_filter_parameters_type selectionFilters = model.get_standard_section_series_filter_parameter_ids();
-            // var regionId = selectionFilters.regions.Where(item => item.description == "European Union").FirstOrDefault().id;
-            // var manufacturerId = selectionFilters.manufacturers.Where(item => item.description == "ArcelorMittal (2011)").FirstOrDefault().id;
-            // var standardId = selectionFilters.standards.Where(item => item.description == "Euronorm 19-57").FirstOrDefault().id;
-            // var sourceId = selectionFilters.sources.Where(item => item.description == "--").FirstOrDefault().id; //-- means all
-            // standard_section_series_description_type[] series = model.get_standard_section_series_descriptions(standard_section_series_manufacturing_method_type.HOT_ROLLED, regionId, manufacturerId, standardId, standard_section_series_shape_type.PARALLEL_FLANGE_I_SECTIONS, sourceId);
-
-
-            // foreach (var item in series)
-            // {
-            //     string[] sectionNames = model.get_standard_section_descriptions(item.id);
-            //     foreach (var sectionName in sectionNames)
-            //     {
-            //         Console.WriteLine("Section name: " + sectionName);// name can be use in operation model.create_section_by_name(6, materialSteel.no, sectionName);
-            //     }
-            // }
-            #endregion
 
             // create section
             section sectionSteelCSBeam = new section
@@ -1054,7 +914,7 @@ namespace Hall
 
             };
 
-            // concrete_durability concrete_Durability = model.get_concrete_durability(1);
+
             concrete_durability concrete_Durability = new concrete_durability()
             {
                 no = 1,
@@ -1225,59 +1085,6 @@ namespace Hall
             }
             #endregion
 
-            #region punching reinforcement
-            punching_reinforcement punchingReinforcement = new punching_reinforcement()
-            {
-                no = 1,
-                type = punching_reinforcement_type.TYPE_VERTICAL,
-                typeSpecified = true,
-                name = "Punching reinforcement",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                placement_type = punching_reinforcement_placement_type.PLACEMENT_TYPE_AUTOMATICALLY,
-                nodes = new int[] { 23 },
-                material = materialReinforcementBars.no,
-                materialSpecified = true,
-                loading_area_for_single_forces_enabled = false,
-                loading_area_for_single_forces_enabledSpecified = true,
-                longitudinal_reinforcement_from_surface_enabled = true,
-                longitudinal_reinforcement_from_surface_enabledSpecified = true,
-                bend_up_diameter = 0.01,
-                bend_up_diameterSpecified = true,
-                bend_up_diameter_set_automatically_enabled = false,
-                bend_up_diameter_set_automatically_enabledSpecified = true,
-                perimeter_area = 0,
-                perimeter_areaSpecified = true,
-                total_area = 0,
-                total_areaSpecified = true,
-            };
-
-            try
-            {
-                model.begin_modification("Set concrete punching");
-                model.set_punching_reinforcement(punchingReinforcement);
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something wrong in setting concrete design input data\n" + exception.Message + "\n");
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of creation of concrete design input data\n" + exception.Message + "\n");
-
-                }
-            }
-            #endregion
-
             #region Geometry definition
             // number of bays in x direction
             int nx = 5;
@@ -1294,7 +1101,8 @@ namespace Hall
 
             #region nodes
             SortedList<int, node> nodes = new();
-            int nodeID = 1;
+            int nodeID = model.get_first_free_number(object_types.E_OBJECT_TYPE_NODE, 0);
+            int FirstNodeID = nodeID;
             for (int i = 0; i <= ny; i++)
             {
                 for (int j = 0; j <= nx; j++)
@@ -1338,12 +1146,66 @@ namespace Hall
             }
             #endregion
 
+
+            #region punching reinforcement
+            punching_reinforcement punchingReinforcement = new punching_reinforcement()
+            {
+                no = 1,
+                type = punching_reinforcement_type.TYPE_VERTICAL,
+                typeSpecified = true,
+                name = "Punching reinforcement",
+                user_defined_name_enabled = true,
+                user_defined_name_enabledSpecified = true,
+                placement_type = punching_reinforcement_placement_type.PLACEMENT_TYPE_AUTOMATICALLY,
+                nodes = new int[] { FirstNodeID + 22 },
+                material = materialReinforcementBars.no,
+                materialSpecified = true,
+                loading_area_for_single_forces_enabled = false,
+                loading_area_for_single_forces_enabledSpecified = true,
+                longitudinal_reinforcement_from_surface_enabled = true,
+                longitudinal_reinforcement_from_surface_enabledSpecified = true,
+                bend_up_diameter = 0.01,
+                bend_up_diameterSpecified = true,
+                bend_up_diameter_set_automatically_enabled = false,
+                bend_up_diameter_set_automatically_enabledSpecified = true,
+                perimeter_area = 0,
+                perimeter_areaSpecified = true,
+                total_area = 0,
+                total_areaSpecified = true,
+            };
+
+            try
+            {
+                model.begin_modification("Set concrete punching");
+                model.set_punching_reinforcement(punchingReinforcement);
+
+            }
+            catch (Exception exception)
+            {
+                model.cancel_modification();
+                logger.Error(exception, "Something wrong in setting concrete design input data\n" + exception.Message + "\n");
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    model.finish_modification();
+                }
+                catch (Exception exception)
+                {
+                    logger.Error(exception, "Something wrong in finish modification of creation of concrete design input data\n" + exception.Message + "\n");
+
+                }
+            }
+            #endregion
+
             #region lines & members
             SortedList<int, line> lines = new();
             SortedList<int, member> members = new();
-            int lineID = 1;
-            int nodeStart = 1;
-            int memberID = 1;
+            int lineID = model.get_first_free_number(object_types.E_OBJECT_TYPE_LINE, 0);
+            int nodeStart = FirstNodeID;
+            int memberID = model.get_first_free_number(object_types.E_OBJECT_TYPE_MEMBER, 0);
 
             for (int i = 0; i <= ny; i++)
             {
@@ -1423,7 +1285,7 @@ namespace Hall
                     memberID++;
                 }
             }
-            nodeStart = 2;
+            nodeStart = FirstNodeID + 1;
             for (int i = 0; i < ny; i++)
             {
                 for (int j = 0; j <= nx; j++)
@@ -1884,7 +1746,7 @@ namespace Hall
             line lineAluminum = new()
             {
                 no = lineID,
-                definition_nodes = new int[] { 3, 24 },
+                definition_nodes = new int[] { FirstNodeID + 2, FirstNodeID + 23 },
                 comment = "lines for aluminum beam",
                 type = line_type.TYPE_POLYLINE,
                 typeSpecified = true,
@@ -1904,12 +1766,6 @@ namespace Hall
                 comment = "timber beam",
                 timber_service_class = serviceClass.no,
                 timber_service_classSpecified = true,
-                // timber_member_shear_panel = timberShearPanel.no,
-                // timber_member_shear_panelSpecified = true,
-                // member_rotational_restraint = timberRotationalRestrain.no,
-                // member_rotational_restraintSpecified = true,
-                // timber_member_local_section_reduction = timberLocalRecution.no,
-                // timber_member_local_section_reductionSpecified = true,
             };
             members.Add(memberID, memberTimberOne);
             memberID++;
@@ -1963,7 +1819,7 @@ namespace Hall
             // surface
             surface concreteSlab = new()
             {
-                no = 1,
+                no = model.get_first_free_number(object_types.E_OBJECT_TYPE_SURFACE, 0),
                 material = materialConcrete.no,
                 materialSpecified = true,
                 thickness = slabThickness.no,
@@ -2344,239 +2200,387 @@ namespace Hall
                 partial_activity_around_x_positive_slippageSpecified = true,
             };
 
-            //  member_hinge hingePlastic = new member_hinge()
-            // {
-            //     no = 1,
-            //     user_defined_name_enabled = true,
-            //     user_defined_name_enabledSpecified = true,
-            //     name = "scriptedPlasticHinge",
-            //     members = "", 
-            //     coordinate_system = "Local",
-            //     axial_release_n = double.PositiveInfinity,
-            //     axial_release_nSpecified = true,
-            //     axial_release_vy = double.PositiveInfinity, 
-            //     axial_release_vySpecified = true,
-            //     axial_release_vz = double.PositiveInfinity,
-            //     axial_release_vzSpecified = true,
-            //     moment_release_mt = 0, 
-            //     moment_release_my = 0,
-            //     moment_release_mz = 0,
-            //     axial_release_n_nonlinearity = NONLINEARITY_TYPE_NONE</axial_release_n_nonlinearity = 
-            //     axial_release_vy_nonlinearity = NONLINEARITY_TYPE_NONE</axial_release_vy_nonlinearity = 
-            //     axial_release_vz_nonlinearity = NONLINEARITY_TYPE_NONE</axial_release_vz_nonlinearity = 
-            //     moment_release_mt_nonlinearity = NONLINEARITY_TYPE_NONE</moment_release_mt_nonlinearity = 
-            //     moment_release_my_nonlinearity = NONLINEARITY_TYPE_PLASTIC_FEMA_356_ELASTIC</moment_release_my_nonlinearity = 
-            //     moment_release_mz_nonlinearity = NONLINEARITY_TYPE_NONE</moment_release_mz_nonlinearity = 
-            //     partial_activity_along_x_negative_slippage = 0</partial_activity_along_x_negative_slippage = 
-            //     partial_activity_along_x_positive_slippage = 0</partial_activity_along_x_positive_slippage = 
-            //     partial_activity_along_y_negative_slippage = 0</partial_activity_along_y_negative_slippage = 
-            //     partial_activity_along_y_positive_slippage = 0</partial_activity_along_y_positive_slippage = 
-            //     partial_activity_along_z_negative_slippage = 0</partial_activity_along_z_negative_slippage = 
-            //     partial_activity_along_z_positive_slippage = 0</partial_activity_along_z_positive_slippage = 
-            //     diagram_along_x_ac_yield_minus = 0.0010000000474974513</diagram_along_x_ac_yield_minus = 
-            //     diagram_along_y_ac_yield_minus = 0.0010000000474974513</diagram_along_y_ac_yield_minus = 
-            //     diagram_along_z_ac_yield_minus = 0.0010000000474974513</diagram_along_z_ac_yield_minus = 
-            //     diagram_around_x_ac_yield_minus = 0.0010000000474974513</diagram_around_x_ac_yield_minus = 
-            //     diagram_around_y_ac_yield_minus = 0.0010000000474974513</diagram_around_y_ac_yield_minus = 
-            //     diagram_around_z_ac_yield_minus = 0.0010000000474974513</diagram_around_z_ac_yield_minus = 
-            //     diagram_along_x_ac_yield_plus = 0.0010000000474974513</diagram_along_x_ac_yield_plus = 
-            //     diagram_along_y_ac_yield_plus = 0.0010000000474974513</diagram_along_y_ac_yield_plus = 
-            //     diagram_along_z_ac_yield_plus = 0.0010000000474974513</diagram_along_z_ac_yield_plus = 
-            //     diagram_around_x_ac_yield_plus = 0.0010000000474974513</diagram_around_x_ac_yield_plus = 
-            //     diagram_around_y_ac_yield_plus = 0.0010000000474974513</diagram_around_y_ac_yield_plus = 
-            //     diagram_around_z_ac_yield_plus = 0.0010000000474974513</diagram_around_z_ac_yield_plus = 
-            //     diagram_along_x_minus_color_one = #a0a0a4</diagram_along_x_minus_color_one = 
-            //     diagram_along_y_minus_color_one = #a0a0a4</diagram_along_y_minus_color_one = 
-            //     diagram_along_z_minus_color_one = #a0a0a4</diagram_along_z_minus_color_one = 
-            //     diagram_around_x_minus_color_one = #a0a0a4</diagram_around_x_minus_color_one = 
-            //     diagram_around_y_minus_color_one = #a0a0a4</diagram_around_y_minus_color_one = 
-            //     diagram_around_z_minus_color_one = #a0a0a4</diagram_around_z_minus_color_one = 
-            //     diagram_along_x_minus_color_two = #0000ff</diagram_along_x_minus_color_two = 
-            //     diagram_along_y_minus_color_two = #0000ff</diagram_along_y_minus_color_two = 
-            //     diagram_along_z_minus_color_two = #0000ff</diagram_along_z_minus_color_two = 
-            //     diagram_around_x_minus_color_two = #0000ff</diagram_around_x_minus_color_two = 
-            //     diagram_around_y_minus_color_two = #0000ff</diagram_around_y_minus_color_two = 
-            //     diagram_around_z_minus_color_two = #0000ff</diagram_around_z_minus_color_two = 
-            //     diagram_along_x_plus_color_one = #a0a0a4</diagram_along_x_plus_color_one = 
-            //     diagram_along_y_plus_color_one = #a0a0a4</diagram_along_y_plus_color_one = 
-            //     diagram_along_z_plus_color_one = #a0a0a4</diagram_along_z_plus_color_one = 
-            //     diagram_around_x_plus_color_one = #a0a0a4</diagram_around_x_plus_color_one = 
-            //     diagram_around_y_plus_color_one = #a0a0a4</diagram_around_y_plus_color_one = 
-            //     diagram_around_z_plus_color_one = #a0a0a4</diagram_around_z_plus_color_one = 
-            //     diagram_along_x_plus_color_two = #ff0000</diagram_along_x_plus_color_two = 
-            //     diagram_along_y_plus_color_two = #ff0000</diagram_along_y_plus_color_two = 
-            //     diagram_along_z_plus_color_two = #ff0000</diagram_along_z_plus_color_two = 
-            //     diagram_around_x_plus_color_two = #ff0000</diagram_around_x_plus_color_two = 
-            //     diagram_around_y_plus_color_two = #ff0000</diagram_around_y_plus_color_two = 
-            //     diagram_around_z_plus_color_two = #ff0000</diagram_around_z_plus_color_two = 
-            //     <plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 1</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = -0.6</force_ratio = 
-            //                 <deflection_ratio = -12</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 2</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = -0.6</force_ratio = 
-            //                 <deflection_ratio = -10</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 3</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = -1.27</force_ratio = 
-            //                 <deflection_ratio = -10</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 4</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = -1</force_ratio = 
-            //                 <deflection_ratio = -1</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 5</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = 0</force_ratio = 
-            //                 <deflection_ratio = 0</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 6</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = 1</force_ratio = 
-            //                 <deflection_ratio = 1</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 7</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = 1.27</force_ratio = 
-            //                 <deflection_ratio = 10</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 8</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = 0.6</force_ratio = 
-            //                 <deflection_ratio = 10</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //         <member_hinge_plastic_diagram_around_y_table = 
-            //             <no = 9</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <force_ratio = 0.6</force_ratio = 
-            //                 <deflection_ratio = 12</deflection_ratio = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_table = 
-            //     </plastic_diagram_around_y_table = 
-            //     <plastic_diagram_around_y_antimetric = true</plastic_diagram_around_y_antimetric = 
-            //     <plastic_diagram_around_y_force_interaction = false</plastic_diagram_around_y_force_interaction = 
-            //     <plastic_diagram_around_y_user_defined = true</plastic_diagram_around_y_user_defined = 
-            //     <plastic_diagram_around_y_is_user_defined_member_length = false</plastic_diagram_around_y_is_user_defined_member_length = 
-            //     <plastic_diagram_around_y_attached_members_min_max_length/ = 
-            //     <plastic_diagram_around_y_io_negative = 1</plastic_diagram_around_y_io_negative = 
-            //     <plastic_diagram_around_y_io_positive = 1</plastic_diagram_around_y_io_positive = 
-            //     <plastic_diagram_around_y_ls_negative = 6</plastic_diagram_around_y_ls_negative = 
-            //     <plastic_diagram_around_y_ls_positive = 6</plastic_diagram_around_y_ls_positive = 
-            //     <plastic_diagram_around_y_cp_negative = 8</plastic_diagram_around_y_cp_negative = 
-            //     <plastic_diagram_around_y_cp_positive = 8</plastic_diagram_around_y_cp_positive = 
-            //     <plastic_diagram_around_y_minus_color_one = #a0a0a4</plastic_diagram_around_y_minus_color_one = 
-            //     <plastic_diagram_around_y_minus_color_two = #008000</plastic_diagram_around_y_minus_color_two = 
-            //     <plastic_diagram_around_y_minus_color_three = #ffff00</plastic_diagram_around_y_minus_color_three = 
-            //     <plastic_diagram_around_y_minus_color_four = #ff0000</plastic_diagram_around_y_minus_color_four = 
-            //     <plastic_diagram_around_y_plus_color_one = #a0a0a4</plastic_diagram_around_y_plus_color_one = 
-            //     <plastic_diagram_around_y_plus_color_two = #008000</plastic_diagram_around_y_plus_color_two = 
-            //     <plastic_diagram_around_y_plus_color_three = #ffff00</plastic_diagram_around_y_plus_color_three = 
-            //     <plastic_diagram_around_y_plus_color_four = #ff0000</plastic_diagram_around_y_plus_color_four = 
-            //     <plastic_diagram_around_y_component_type = COMPONENT_TYPE_PRIMARY</plastic_diagram_around_y_component_type = 
-            //     <plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 1</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ff0000</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 2</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #bf40bf</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 3</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ffb6c1</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 4</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ffa500</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 5</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #000000</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 6</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ffff00</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 7</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ffa500</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 8</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ffb6c1</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 9</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #bf40bf</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //         <member_hinge_plastic_diagram_around_y_color_table = 
-            //             <no = 10</no = 
-            //             <description = </description = 
-            //             <row = 
-            //                 <color = #ff0000</color = 
-            //             </row = 
-            //         </member_hinge_plastic_diagram_around_y_color_table = 
-            //     </plastic_diagram_around_y_color_table = 
-            //     <comment = </comment = 
-            // };
+            member_hinge hingePlastic = new member_hinge()
+            {
+                no = 1,
+                user_defined_name_enabled = true,
+                user_defined_name_enabledSpecified = true,
+                name = "scriptedPlasticHinge",
+                members = "",
+                coordinate_system = "Local",
+                axial_release_n = double.PositiveInfinity,
+                axial_release_nSpecified = true,
+                axial_release_vy = double.PositiveInfinity,
+                axial_release_vySpecified = true,
+                axial_release_vz = double.PositiveInfinity,
+                axial_release_vzSpecified = true,
+                moment_release_mt = 0,
+                moment_release_my = 0,
+                moment_release_mz = 0,
+                //     axial_release_n_nonlinearity = NONLINEARITY_TYPE_NONE </ axial_release_n_nonlinearity =
+                //    axial_release_vy_nonlinearity = NONLINEARITY_TYPE_NONE </ axial_release_vy_nonlinearity =
+                //    axial_release_vz_nonlinearity = NONLINEARITY_TYPE_NONE </ axial_release_vz_nonlinearity =
+                //    moment_release_mt_nonlinearity = NONLINEARITY_TYPE_NONE </ moment_release_mt_nonlinearity =
+                //    moment_release_my_nonlinearity = NONLINEARITY_TYPE_PLASTIC_FEMA_356_ELASTIC </ moment_release_my_nonlinearity =
+                //    moment_release_mz_nonlinearity = NONLINEARITY_TYPE_NONE </ moment_release_mz_nonlinearity =
+                //    partial_activity_along_x_negative_slippage = 0 </ partial_activity_along_x_negative_slippage =
+                //    partial_activity_along_x_positive_slippage = 0 </ partial_activity_along_x_positive_slippage =
+                //    partial_activity_along_y_negative_slippage = 0 </ partial_activity_along_y_negative_slippage =
+                //    partial_activity_along_y_positive_slippage = 0 </ partial_activity_along_y_positive_slippage =
+                //    partial_activity_along_z_negative_slippage = 0 </ partial_activity_along_z_negative_slippage =
+                //    partial_activity_along_z_positive_slippage = 0 </ partial_activity_along_z_positive_slippage =
+                //    diagram_along_x_ac_yield_minus = 0.0010000000474974513 </ diagram_along_x_ac_yield_minus =
+                //    diagram_along_y_ac_yield_minus = 0.0010000000474974513 </ diagram_along_y_ac_yield_minus =
+                //    diagram_along_z_ac_yield_minus = 0.0010000000474974513 </ diagram_along_z_ac_yield_minus =
+                //    diagram_around_x_ac_yield_minus = 0.0010000000474974513 </ diagram_around_x_ac_yield_minus =
+                //    diagram_around_y_ac_yield_minus = 0.0010000000474974513 </ diagram_around_y_ac_yield_minus =
+                //    diagram_around_z_ac_yield_minus = 0.0010000000474974513 </ diagram_around_z_ac_yield_minus =
+                //    diagram_along_x_ac_yield_plus = 0.0010000000474974513 </ diagram_along_x_ac_yield_plus =
+                //    diagram_along_y_ac_yield_plus = 0.0010000000474974513 </ diagram_along_y_ac_yield_plus =
+                //    diagram_along_z_ac_yield_plus = 0.0010000000474974513 </ diagram_along_z_ac_yield_plus =
+                //    diagram_around_x_ac_yield_plus = 0.0010000000474974513 </ diagram_around_x_ac_yield_plus =
+                //    diagram_around_y_ac_yield_plus = 0.0010000000474974513 </ diagram_around_y_ac_yield_plus =
+                //    diagram_around_z_ac_yield_plus = 0.0010000000474974513 </ diagram_around_z_ac_yield_plus =
+                //    diagram_along_x_minus_color_one = #a0a0a4</diagram_along_x_minus_color_one = 
+                //     diagram_along_y_minus_color_one = #a0a0a4</diagram_along_y_minus_color_one = 
+                //     diagram_along_z_minus_color_one = #a0a0a4</diagram_along_z_minus_color_one = 
+                //     diagram_around_x_minus_color_one = #a0a0a4</diagram_around_x_minus_color_one = 
+                //     diagram_around_y_minus_color_one = #a0a0a4</diagram_around_y_minus_color_one = 
+                //     diagram_around_z_minus_color_one = #a0a0a4</diagram_around_z_minus_color_one = 
+                //     diagram_along_x_minus_color_two = #0000ff</diagram_along_x_minus_color_two = 
+                //     diagram_along_y_minus_color_two = #0000ff</diagram_along_y_minus_color_two = 
+                //     diagram_along_z_minus_color_two = #0000ff</diagram_along_z_minus_color_two = 
+                //     diagram_around_x_minus_color_two = #0000ff</diagram_around_x_minus_color_two = 
+                //     diagram_around_y_minus_color_two = #0000ff</diagram_around_y_minus_color_two = 
+                //     diagram_around_z_minus_color_two = #0000ff</diagram_around_z_minus_color_two = 
+                //     diagram_along_x_plus_color_one = #a0a0a4</diagram_along_x_plus_color_one = 
+                //     diagram_along_y_plus_color_one = #a0a0a4</diagram_along_y_plus_color_one = 
+                //     diagram_along_z_plus_color_one = #a0a0a4</diagram_along_z_plus_color_one = 
+                //     diagram_around_x_plus_color_one = #a0a0a4</diagram_around_x_plus_color_one = 
+                //     diagram_around_y_plus_color_one = #a0a0a4</diagram_around_y_plus_color_one = 
+                //     diagram_around_z_plus_color_one = #a0a0a4</diagram_around_z_plus_color_one = 
+                //     diagram_along_x_plus_color_two = #ff0000</diagram_along_x_plus_color_two = 
+                //     diagram_along_y_plus_color_two = #ff0000</diagram_along_y_plus_color_two = 
+                //     diagram_along_z_plus_color_two = #ff0000</diagram_along_z_plus_color_two = 
+                //     diagram_around_x_plus_color_two = #ff0000</diagram_around_x_plus_color_two = 
+                //     diagram_around_y_plus_color_two = #ff0000</diagram_around_y_plus_color_two = 
+                //     diagram_around_z_plus_color_two = #ff0000</diagram_around_z_plus_color_two = 
+                //     < plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 1 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = -0.6 </ force_ratio =
+
+                //                < deflection_ratio = -12 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 2 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = -0.6 </ force_ratio =
+
+                //                < deflection_ratio = -10 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 3 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = -1.27 </ force_ratio =
+
+                //                < deflection_ratio = -10 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 4 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = -1 </ force_ratio =
+
+                //                < deflection_ratio = -1 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 5 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = 0 </ force_ratio =
+
+                //                < deflection_ratio = 0 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 6 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = 1 </ force_ratio =
+
+                //                < deflection_ratio = 1 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 7 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = 1.27 </ force_ratio =
+
+                //                < deflection_ratio = 10 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 8 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = 0.6 </ force_ratio =
+
+                //                < deflection_ratio = 10 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //        < member_hinge_plastic_diagram_around_y_table =
+
+                //            < no = 9 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < force_ratio = 0.6 </ force_ratio =
+
+                //                < deflection_ratio = 12 </ deflection_ratio =
+
+                //            </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_table =
+
+                //    </ plastic_diagram_around_y_table =
+
+                //    < plastic_diagram_around_y_antimetric = true </ plastic_diagram_around_y_antimetric =
+
+                //    < plastic_diagram_around_y_force_interaction = false </ plastic_diagram_around_y_force_interaction =
+
+                //    < plastic_diagram_around_y_user_defined = true </ plastic_diagram_around_y_user_defined =
+
+                //    < plastic_diagram_around_y_is_user_defined_member_length = false </ plastic_diagram_around_y_is_user_defined_member_length =
+
+                //    < plastic_diagram_around_y_attached_members_min_max_length / =
+
+                //    < plastic_diagram_around_y_io_negative = 1 </ plastic_diagram_around_y_io_negative =
+
+                //    < plastic_diagram_around_y_io_positive = 1 </ plastic_diagram_around_y_io_positive =
+
+                //    < plastic_diagram_around_y_ls_negative = 6 </ plastic_diagram_around_y_ls_negative =
+
+                //    < plastic_diagram_around_y_ls_positive = 6 </ plastic_diagram_around_y_ls_positive =
+
+                //    < plastic_diagram_around_y_cp_negative = 8 </ plastic_diagram_around_y_cp_negative =
+
+                //    < plastic_diagram_around_y_cp_positive = 8 </ plastic_diagram_around_y_cp_positive =
+
+                //    < plastic_diagram_around_y_minus_color_one = #a0a0a4</plastic_diagram_around_y_minus_color_one = 
+                //     < plastic_diagram_around_y_minus_color_two = #008000</plastic_diagram_around_y_minus_color_two = 
+                //     < plastic_diagram_around_y_minus_color_three = #ffff00</plastic_diagram_around_y_minus_color_three = 
+                //     < plastic_diagram_around_y_minus_color_four = #ff0000</plastic_diagram_around_y_minus_color_four = 
+                //     < plastic_diagram_around_y_plus_color_one = #a0a0a4</plastic_diagram_around_y_plus_color_one = 
+                //     < plastic_diagram_around_y_plus_color_two = #008000</plastic_diagram_around_y_plus_color_two = 
+                //     < plastic_diagram_around_y_plus_color_three = #ffff00</plastic_diagram_around_y_plus_color_three = 
+                //     < plastic_diagram_around_y_plus_color_four = #ff0000</plastic_diagram_around_y_plus_color_four = 
+                //     < plastic_diagram_around_y_component_type = COMPONENT_TYPE_PRIMARY </ plastic_diagram_around_y_component_type =
+
+                //    < plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 1 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ff0000</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 2 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #bf40bf</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 3 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ffb6c1</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 4 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ffa500</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 5 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #000000</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 6 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ffff00</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 7 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ffa500</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 8 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ffb6c1</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 9 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #bf40bf</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //        < member_hinge_plastic_diagram_around_y_color_table =
+
+                //            < no = 10 </ no =
+
+                //            < description = </ description =
+
+                //            < row =
+
+                //                < color = #ff0000</color = 
+                //             </ row =
+
+                //        </ member_hinge_plastic_diagram_around_y_color_table =
+
+                //    </ plastic_diagram_around_y_color_table =
+
+                //    < comment = </ comment =
+            };
 
             line_hinge lineHinge = new line_hinge()
             {
@@ -2661,66 +2665,66 @@ namespace Hall
                 diagram_around_x_startSpecified = true,
                 diagram_around_x_end = line_hinge_diagram_around_x_end.DIAGRAM_ENDING_TYPE_CONTINUOUS,
                 diagram_around_x_endSpecified = true,
-                // diagram_along_x_ac_yield_minus = 0.0010000000474974513,
-                // diagram_along_x_ac_yield_minusSpecified = true,
-                // diagram_along_y_ac_yield_minus = 0.0010000000474974513,
-                // diagram_along_y_ac_yield_minusSpecified = true,
-                // diagram_along_z_ac_yield_minus = 0.0010000000474974513,
-                // diagram_along_z_ac_yield_minusSpecified = true,
-                // diagram_around_x_ac_yield_minus = 0.0010000000474974513,
-                // diagram_around_x_ac_yield_minusSpecified = true,
-                // diagram_along_x_ac_yield_plus = 0.0010000000474974513,
-                // diagram_along_x_ac_yield_plusSpecified = true,
-                // diagram_along_y_ac_yield_plus = 0.0010000000474974513,
-                // diagram_along_y_ac_yield_plusSpecified = true,
-                // diagram_along_z_ac_yield_plus = 0.0010000000474974513,
-                // diagram_along_z_ac_yield_plusSpecified = true,
-                // diagram_around_x_ac_yield_plus = 0.0010000000474974513,
-                // diagram_around_x_ac_yield_plusSpecified = true,
-                // diagram_around_x_acceptance_criteria_active = true,
-                // diagram_around_x_acceptance_criteria_activeSpecified = true,
-                // diagram_along_x_minus_color_one = "#ead1dc",
-                // diagram_along_y_minus_color_one = "#a0a0a4",
-                // diagram_along_z_minus_color_one = "#a0a0a4",
-                // diagram_around_x_minus_color_one = "#a0a0a4",
-                // diagram_along_x_minus_color_two = "#ffff00",
-                // diagram_along_y_minus_color_two = "#ffff00",
-                // diagram_along_z_minus_color_two = "#ffff00",
-                // diagram_around_x_minus_color_two = "#ffff00",
-                // diagram_along_x_plus_color_one = "#a0a0a4",
-                // diagram_along_y_plus_color_one = "#a0a0a4",
-                // diagram_along_z_plus_color_one = "#a0a0a4",
-                // diagram_around_x_plus_color_one = "#ead1dc",
-                // diagram_along_x_plus_color_two = "#ff0000",
-                // diagram_along_y_plus_color_two = "#ff0000",
-                // diagram_along_z_plus_color_two = "#ff0000",
-                // diagram_around_x_plus_color_two = "#ff0000",
-                // diagram_around_x_color_table = new line_hinge_diagram_around_x_color_table_row[]{
-                //     new line_hinge_diagram_around_x_color_table_row(){
-                //         no = 1,
-                //         row = new line_hinge_diagram_around_x_color_table(){
-                //             color = "#800000",
-                //         }
-                //     },
-                //       new line_hinge_diagram_around_x_color_table_row(){
-                //         no = 2,
-                //         row = new line_hinge_diagram_around_x_color_table(){
-                //              color = "#ead1dc",
-                //        }
-                //     },
-                //       new line_hinge_diagram_around_x_color_table_row(){
-                //         no = 3,
-                //         row = new line_hinge_diagram_around_x_color_table(){
-                //               color = "#b97171",
-                //        }
-                //     },
-                //       new line_hinge_diagram_around_x_color_table_row(){
-                //         no = 4,
-                //         row = new line_hinge_diagram_around_x_color_table(){
-                //               color = "#243700",
-                //        }
-                //     }
-                // },
+                diagram_along_x_ac_yield_minus = 0.0010000000474974513,
+                diagram_along_x_ac_yield_minusSpecified = true,
+                diagram_along_y_ac_yield_minus = 0.0010000000474974513,
+                diagram_along_y_ac_yield_minusSpecified = true,
+                diagram_along_z_ac_yield_minus = 0.0010000000474974513,
+                diagram_along_z_ac_yield_minusSpecified = true,
+                diagram_around_x_ac_yield_minus = 0.0010000000474974513,
+                diagram_around_x_ac_yield_minusSpecified = true,
+                diagram_along_x_ac_yield_plus = 0.0010000000474974513,
+                diagram_along_x_ac_yield_plusSpecified = true,
+                diagram_along_y_ac_yield_plus = 0.0010000000474974513,
+                diagram_along_y_ac_yield_plusSpecified = true,
+                diagram_along_z_ac_yield_plus = 0.0010000000474974513,
+                diagram_along_z_ac_yield_plusSpecified = true,
+                diagram_around_x_ac_yield_plus = 0.0010000000474974513,
+                diagram_around_x_ac_yield_plusSpecified = true,
+                diagram_around_x_acceptance_criteria_active = true,
+                diagram_around_x_acceptance_criteria_activeSpecified = true,
+                diagram_along_x_minus_color_one = "#ead1dc",
+                diagram_along_y_minus_color_one = "#a0a0a4",
+                diagram_along_z_minus_color_one = "#a0a0a4",
+                diagram_around_x_minus_color_one = "#a0a0a4",
+                diagram_along_x_minus_color_two = "#ffff00",
+                diagram_along_y_minus_color_two = "#ffff00",
+                diagram_along_z_minus_color_two = "#ffff00",
+                diagram_around_x_minus_color_two = "#ffff00",
+                diagram_along_x_plus_color_one = "#a0a0a4",
+                diagram_along_y_plus_color_one = "#a0a0a4",
+                diagram_along_z_plus_color_one = "#a0a0a4",
+                diagram_around_x_plus_color_one = "#ead1dc",
+                diagram_along_x_plus_color_two = "#ff0000",
+                diagram_along_y_plus_color_two = "#ff0000",
+                diagram_along_z_plus_color_two = "#ff0000",
+                diagram_around_x_plus_color_two = "#ff0000",
+                diagram_around_x_color_table = new line_hinge_diagram_around_x_color_table_row[]{
+                    new line_hinge_diagram_around_x_color_table_row(){
+                        no = 1,
+                        row = new line_hinge_diagram_around_x_color_table(){
+                            color = "#800000",
+                        }
+                    },
+                      new line_hinge_diagram_around_x_color_table_row(){
+                        no = 2,
+                        row = new line_hinge_diagram_around_x_color_table(){
+                             color = "#ead1dc",
+                       }
+                    },
+                      new line_hinge_diagram_around_x_color_table_row(){
+                        no = 3,
+                        row = new line_hinge_diagram_around_x_color_table(){
+                              color = "#b97171",
+                       }
+                    },
+                      new line_hinge_diagram_around_x_color_table_row(){
+                        no = 4,
+                        row = new line_hinge_diagram_around_x_color_table(){
+                              color = "#243700",
+                       }
+                    }
+                },
                 slab_wall_connection = false,
                 slab_wall_connectionSpecified = true,
             };
@@ -3134,46 +3138,7 @@ namespace Hall
             #endregion
 
             #region Steel 
-            // moved as member opening to types for members
-            // steel_member_local_section_reduction_components_row steelMemberLocalReductionComponentOpening = new steel_member_local_section_reduction_components_row()
-            // {
-            //     no = 1,
-            //     row = new steel_member_local_section_reduction_components()
-            //     {
-            //         // reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_CIRCLE_OPENING,
-            //         // reduction_typeSpecified = true,
-            //         position = 1,
-            //         positionSpecified = true,
-            //         multiple = false,
-            //         multipleSpecified = true,
-            //         //note = 
-            //         multiple_number = 0,
-            //         multiple_numberSpecified = true,
-            //         multiple_offset_definition_type = multiple_offset_definition_type.OFFSET_DEFINITION_TYPE_ABSOLUTE,
-            //         multiple_offset_definition_typeSpecified = true,
-            //         multiple_offset = 0,
-            //         multiple_offsetSpecified = true,
-            //         // z_axis_reference_type = z_axis_reference_type.E_POSITION_REFERENCE_CENTER,
-            //         // z_axis_reference_typeSpecified = true,
-            //         // distance = 0,
-            //         // distanceSpecified = true,
-            //         // diameter = 0.05,
-            //         // diameterSpecified = true,
-            //         definition_type = definition_type.DEFINITION_TYPE_ABSOLUTE,
-            //         definition_typeSpecified = true,
-            //         fastener_definition_type = fastener_definition_type.DEFINITION_TYPE_ABSOLUTE,
-            //         fastener_definition_typeSpecified = true,
-            //     }
-            // };
-            // steel_member_local_section_reduction steelMemberLocalReductionOpening = new steel_member_local_section_reduction()
-            // {
-            //     no = 1,
-            //     user_defined_name_enabled = true,
-            //     user_defined_name_enabledSpecified = true,
-            //     name = "1 Reduction(s) | Circle Opening (Members : 26)",
-            //     members = new int[] { 26 },
-            //     components = new steel_member_local_section_reduction_components_row[] { steelMemberLocalReductionComponentOpening },
-            // };
+
             steel_member_local_section_reduction_components_row steelMemberLocalReductionDesignParams = new steel_member_local_section_reduction_components_row()
             {
                 no = 1,
@@ -3940,9 +3905,7 @@ namespace Hall
                 analysis_typeSpecified = true,
                 action_category = "ACTION_CATEGORY_PERMANENT_IMPOSED_GQ",
             };
-            // ACTION_CATEGORY_PRESTRESS_P - prestress
-            // ACTION_CATEGORY_IMPOSED_LOADS_CATEGORY_A_DOMESTIC_RESIDENTIAL_AREAS_QI_A - imposed Cat A
-            // ACTION_CATEGORY_WIND_QW - wind
+
 
             //Snow / Ice loads - H &lt;= 1000 m | Qs
             load_case lcSnow1 = new()
@@ -4410,96 +4373,6 @@ namespace Hall
 
             #endregion
 
-            #region Snow load wizard
-            //
-            // snow_load snowLoad = model.get_snow_load(1);
-            // snowLoad.no = 2;
-            // snow_load snowLoad = new snow_load(){
-            //     no = 1,
-            //     type = snow_load_type.TYPE_MONOPITCH,
-            //     typeSpecified = true,
-            //     definition_type = snow_load_definition_type.E_DEFINITION_TYPE_PARAMETERS_FROM_MAP,
-            //     definition_typeSpecified = true,
-            //     load_zone = snow_load_load_zone.E_LOAD_ZONE_TYPE_1,
-            //     load_zoneSpecified = true,
-            //     roof_corner_nodes = new int[] { 8,2,5,11 },
-            //     generate_into_load_cases =  new snow_load_generate_into_load_cases[]{
-            //         new snow_load_generate_into_load_cases(){
-            //             no = 1,
-            //             noSpecified = true,
-            //             load_case = lcSnow1.no,
-            //             load_caseSpecified = true,
-            //             @checked = true,
-            //             checkedSpecified = true,
-            //         }
-            //     },
-            //     load_distribution_type = snow_load_load_distribution_type.E_LOAD_DISTRIBUTION_TYPE_TRAPEZOIDAL,
-            //     snow_guard = false,
-            //     snow_guardSpecified = true,
-            //     snow_overhang = false,
-            //     snow_overhangSpecified = true,
-            //     lock_for_new_objects = false,
-            //     load_distribution_typeSpecified = true,
-            //     consider_member_eccentricity = false,
-            //     consider_member_eccentricitySpecified = true,
-            //     consider_section_distribution = false,
-            //     consider_section_distributionSpecified = true,
-
-            // };
-
-            // try
-            // {
-            //     model.begin_modification("Set snow load");
-            //     model.set_snow_load(snowLoad);
-            // }
-            // catch (Exception exception)
-            // {
-            //     model.cancel_modification();
-            //     logger.Error(exception, "Something happen when creation of load" + exception.Message);
-            //     throw;
-            // }
-            // finally
-            // {
-            //     try
-            //     {
-            //         model.finish_modification();
-            //     }
-            //     catch (Exception exception)
-            //     {
-            //         logger.Error(exception, "Something wrong in finish modification of load\n" + exception.Message + "\n");
-            //         
-            //     }
-            // }
-            #endregion
-
-            #region wind load wizard
-            // wind_load windLoad = model.get_wind_load(1);
-            // windLoad.no = 2;
-
-            // try
-            // {
-            //     model.begin_modification("Set wind load");
-            //     model.set_wind_load(windLoad);
-            // }
-            // catch (Exception exception)
-            // {
-            //     model.cancel_modification();
-            //     logger.Error(exception, "Something happen when creation of load" + exception.Message);
-            //     throw;
-            // }
-            // finally
-            // {
-            //     try
-            //     {
-            //         model.finish_modification();
-            //     }
-            //     catch (Exception exception)
-            //     {
-            //         logger.Error(exception, "Something wrong in finish modification of load\n" + exception.Message + "\n");
-            //         
-            //     }
-            // }
-            #endregion
 
             // object info - information about "columns" in table in Web services - name / units ....
             // object_information objectInfo = model.get_object_information(object_types.E_OBJECT_TYPE_NODE);
@@ -5026,6 +4899,183 @@ namespace Hall
             }
             #endregion
 
+            load_cases_and_combinations loadCasesAndCombinations = model.get_load_cases_and_combinations();
+            loadCasesAndCombinations.result_combinations_active = true;
+            loadCasesAndCombinations.result_combinations_activeSpecified = true;
+            try
+            {
+                model.begin_modification("Result combinations");
+                model.set_load_cases_and_combinations(loadCasesAndCombinations);
+
+            }
+            catch (Exception exception)
+            {
+                model.cancel_modification();
+                logger.Error(exception, "Something happen when creation of Result combinations" + exception.Message);
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    model.finish_modification();
+                }
+                catch (Exception exception)
+                {
+                    logger.Error(exception, "Something wrong in finish modification of Result combinations" + exception.Message + "\n");
+
+                }
+            }
+            result_combination resultCombination = new result_combination()
+            {
+                no = 1,
+                design_situation = design_Situation.no,
+                design_situationSpecified = true,
+                user_defined_name_enabled = true,
+                user_defined_name_enabledSpecified = true,
+                name = "LC1 + LC2 + LC3 + LC4 + LC5 + LC6 + LC20 + CO1",
+                to_solve = true,
+                to_solveSpecified = true,
+                comment = "scripted result combination",
+                combination_type = result_combination_combination_type.COMBINATION_TYPE_GENERAL,
+                combination_typeSpecified = true,
+                srss_combination = false,
+                srss_combinationSpecified = true,
+                items = new result_combination_items_row[]{
+                    new result_combination_items_row(){
+                        no = 1,
+                        description = "",
+                        row = new  result_combination_items(){
+                             case_object_item = 1,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                        }
+                    },
+                    new result_combination_items_row(){
+                        no = 2,
+                        description = "",
+                        row = new  result_combination_items(){
+                            case_object_item = 2,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                        }
+                    },
+                    new result_combination_items_row(){
+                        no = 3,
+                        description = "",
+                        row = new  result_combination_items(){
+                            case_object_item = 3,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                         }
+                    },
+                    new result_combination_items_row(){
+                        no = 4,
+                        description = "",
+                        row = new  result_combination_items(){
+                             case_object_item = 4,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                        }
+                   },
+                    new result_combination_items_row(){
+                        no = 5,
+                        description = "",
+                        row = new  result_combination_items(){
+                             case_object_item = 5,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                         }
+                   },
+                    new result_combination_items_row(){
+                        no = 6,
+                        description = "",
+                        row = new  result_combination_items(){
+                           case_object_item = 6,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                         }
+                   },
+                    new result_combination_items_row(){
+                        no = 7,
+                        description = "",
+                        row = new  result_combination_items(){
+                            case_object_item = 20,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_AND,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                         }
+                   },
+                    new result_combination_items_row(){
+                        no = 8,
+                        description = "",
+                        row = new  result_combination_items(){
+                             case_object_item = 1,
+                            case_object_itemSpecified = true,
+                            operator_type = operator_type.OPERATOR_NONE,
+                            operator_typeSpecified = true,
+                            case_object_factor= 1,
+                            case_object_load_type = case_object_load_type.LOAD_TYPE_TRANSIENT,
+                            case_object_load_typeSpecified = true,
+                        }
+                    }
+                },
+                generate_subcombinations = false,
+                generate_subcombinationsSpecified = true,
+                load_duration = "LOAD_DURATION_PERMANENT",
+            };
+            try
+            {
+                model.begin_modification("Set Result combinations");
+                model.set_result_combination(resultCombination);
+
+            }
+            catch (Exception exception)
+            {
+                model.cancel_modification();
+                logger.Error(exception, "Something happen when creation of Set Result combinations" + exception.Message);
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    model.finish_modification();
+                }
+                catch (Exception exception)
+                {
+                    logger.Error(exception, "Something wrong in finish modification of Set Result combinations" + exception.Message + "\n");
+
+                }
+            }
+
             // calculation_message[] calculationMesagesAll = model.calculate_all(false);
 
             // if (calculationMesagesAll.Length != 0)
@@ -5049,32 +5099,6 @@ namespace Hall
             Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
 
             #endregion
-
-            #region Get FE mesh
-            // Console.WriteLine("FE nodes");
-            // int[] pointIndexes = model.get_fe_mesh_indices(mesh_element_type.POINT);
-            // foreach (var index in pointIndexes)
-            // {
-            //     vector_3d meshPointCoordinates = model.get_fe_mesh_point(index);
-            //     Console.WriteLine("Mesh point: {0}\tX:{1}\tX:{2}\tZ:{3}", index.ToString(), meshPointCoordinates.x, meshPointCoordinates.y, meshPointCoordinates.z);
-
-            // }
-            // Console.WriteLine("1D elements");
-            // int[] element1DIndexes = model.get_fe_mesh_indices(mesh_element_type.ELEMENT_1D);
-            // foreach (var index in element1DIndexes)
-            // {
-            //     fe_mesh_element_1d meshElement1D = model.get_fe_mesh_element_1d(index);
-            //     Console.WriteLine("Mesh 1D element: {0}\t Member:{1}\tNode1:{2}\tNode2:{3}", index.ToString(), meshElement1D.member_no, meshElement1D.node_1, meshElement1D.node_2);
-            // }
-            // Console.WriteLine("Surface elements");
-            // int[] element2DIndexes = model.get_fe_mesh_indices(mesh_element_type.ELEMENT_2D);
-            // foreach (var index in element2DIndexes)
-            // {
-            //     fe_mesh_element_2d meshElement2D = model.get_fe_mesh_element_2d(index);
-            //     Console.WriteLine("Mesh 2D element: {0}\t Surface:{1}\tNode1:{2}\tNode2:{3}\tNode3:{4}\tNode4:{5}", index.ToString(), meshElement2D.surface_no, meshElement2D.node_1, meshElement2D.node_2, meshElement2D.node_3, meshElement2D.node_4);
-            // }
-            #endregion
-
 
             #region  Calculate specific cases
             // calculate_specific_objects_element
@@ -5167,6 +5191,22 @@ namespace Hall
 
 
             model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
+
+            // #region DesignOverview
+            // try
+            // {
+            //     design_overview_row[] designOverview = model.get_design_overview();
+            //     foreach (var item in designOverview)
+            //     {
+            //         Console.WriteLine("Row main no: {0}\tAddOn: {1}\tobject type:{2}\tobjects:{3}\tlocation:{4}\tDS:{5}\tloading:{6}\tdesign ratio:{7}\tdesign type:{8}\tdescription: {9}\t", item.no, item.row.addon, item.row.object_type.ToString(), item.row.objects_no_string, item.row.location, item.row.design_situation, item.row.loading, item.row.design_ratio, item.row.design_check_type, item.row.description);
+            //     }
+            // }
+            // catch (Exception exception)
+            // {
+            //     logger.Error(exception, "Something wrong in get overview table\n" + exception.Message + "\n");
+            // }
+            // #endregion
+
 
             summary_row[] staticAnalysisSummary = model.get_results_for_summary(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
             Console.WriteLine("Summary static analysis");
@@ -5405,644 +5445,10 @@ namespace Hall
             // }.Start();
             #endregion
 
-            #region Export Result XML / CSV
-            // model.export_result_tables_with_detailed_members_results_to_csv(@"D:\TEMP\");
-            // using (var reader = new StreamReader(@"D:\TEMP\MyTestModel\LC1_static_analysis_members_internal_forces.csv"))
-            // using (CsvReader csv = new(reader, CultureInfo.InvariantCulture))
-            // {
-            //     IEnumerable<dynamic =  records = csv.GetRecords<dynamic = ();
-            // }
-
-
-            // model.export_result_tables_with_detailed_members_results_to_xml(@"D:\TEMP\Test.xml");
-
-            // string XMLFile = File.ReadAllText(@"D:\TEMP\Test.xml");
-            // XDocument doc = XDocument.Parse(XMLFile);
-
-            // IEnumerable<XElement =  LoadCaseList =
-            //     from el in doc.Elements().Elements().Elements() //document - results - loadcases
-            //         select el;
-
-            // var LC = from loadcase in LoadCaseList where loadcase.Element("no").Value == "1" select loadcase;
-
-            // var internalForces = LC.Descendants("E_MODEL_MEMBERS_INTERNAL_FORCES");
-
-            // var internalForcesItems = internalForces.Descendants("item");
-
-            // foreach (var item in internalForcesItems)
-            // {
-            //     string N = item.Element("node_number").Value.ToString();
-            //     Console.WriteLine(N);
-            // }
-
-
-            // TextWriter writer = new StreamWriter(@"D:\TEMP\pokusLine.Xml");
-            // List <line> entries = new List<line>(lines.Count);
-            // foreach (KeyValuePair<int, line> lineItem in lines)
-            // {
-            //      entries.Add(lineItem.Value);
-            // }
-            // XmlSerializer serializerLine = new XmlSerializer(typeof(List<line>));
-            // serializerLine.Serialize(writer, entries);
-            // writer.Close();
-            #endregion
-
-            #region center of gravity and objects info
-            // List<get_center_of_gravity_and_objects_info_element_type =  selection = new List<get_center_of_gravity_and_objects_info_element_type = ();
-            // foreach (var member in members)
-            // {
-            //     get_center_of_gravity_and_objects_info_element_type item = new get_center_of_gravity_and_objects_info_element_type()
-            //     {
-            //         parent_no = 0,
-            //         no = member.Value.no,
-            //         type = object_types.E_OBJECT_TYPE_MEMBER,
-            //     };
-            //     selection.Add(item);
-            // }
-            // get_center_of_gravity_and_objects_info_element_type surfaceItem = new get_center_of_gravity_and_objects_info_element_type()
-            // {
-            //     parent_no = 0,
-            //     no = concreteSlab.no,
-            //     type = object_types.E_OBJECT_TYPE_SURFACE,
-            // };
-            // selection.Add(surfaceItem);
-            // get_center_of_gravity_and_objects_info_response_section_type[] CoGInfo = model.get_center_of_gravity_and_objects_info(selection.ToArray());
-
-            // foreach (var item in CoGInfo)
-            // {
-            //     Console.WriteLine(item.title);
-            //     foreach (var row in item.rows)
-            //     {
-            //         Console.WriteLine(row.name + " " + row.symbol + " " + row.value + " " + row.unit);
-            //     }
-            // }
-
-            #endregion
-
-            // save_operation_settings saveSettingsAsVersion = new save_operation_settings()
-            // {
-            //     save_results = true,
-            //     save_fe_mesh = true,
-            //     save_printouts = false,
-            //     save_preview_from_current_view = false,
-            //     save_as_copy = false,
-            //     save_as_version = false,
-            // };
             // model.save(@"D:\TEMP\Mymodel.rf6", saveSettingsAsVersion);
             // application.close_model(0, false);
         }
 
-        public static void TestingGlobalParameters(RfemModelClient model, Logger logger)
-        {
-
-            addon_list_type addon = model.get_addon_statuses();
-            Console.WriteLine("Cost estimation active?: {0}", addon.analysis.cost_estimation_active ? "Yes" : "No");
-
-            addon.analysis.cost_estimation_active = true;
-            addon.analysis.cost_estimation_activeSpecified = true;
-
-            try
-            {
-                model.begin_modification("Set AddOns");
-                model.set_addon_statuses(addon);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something wrong in setting AddOns\n" + exception.Message + "\n");
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of creation of AddOns\n" + exception.Message + "\n");
-
-                }
-            }
-
-
-            material materialConcrete = new material
-            {
-                no = 1,
-                name = "C20/25 | EN 1992-1-1:2004/A1:2014"
-            };
-
-            section sectionRectangle = new section
-            {
-                no = 1,
-                material = materialConcrete.no,
-                materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
-                typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
-                parametrization_typeSpecified = true,
-                name = "R_M1 0.5/1.0", // width/height as in RFEM
-            };
-
-            node n1 = new()
-            {
-                no = 1,
-                coordinates = new vector_3d() { x = 0.0, y = 0.0, z = 0.0 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                comment = "concrete part"
-            };
-
-            node n2 = new()
-            {
-                no = 2,
-                coordinates = new vector_3d() { x = 5.0, y = 0.0, z = 0.0 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                comment = "concrete part"
-            };
-
-            // node n3 = new()
-            // {
-            //     no = 3,
-            //     coordinates = new vector_3d() { x = 5.0, y = 5.0, z = 0.0 },
-            //     coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-            //     coordinate_system_typeSpecified = true,
-            //     comment = "concrete part"
-            // };
-
-            line line = new()
-            {
-                no = 1,
-                definition_nodes = new int[] { n1.no, n2.no },
-                comment = "lines for beams",
-                type = line_type.TYPE_POLYLINE,
-                typeSpecified = true,
-            };
-
-            // line line2 = new()
-            // {
-            //     no = 2,
-            //     definition_nodes = new int[] { n2.no, n3.no },
-            //     comment = "lines for beams",
-            //     type = line_type.TYPE_POLYLINE,
-            //     typeSpecified = true,
-            // };
-
-            // create member
-            member member = new()
-            {
-                no = 1,
-                line = line.no,
-                lineSpecified = true,
-                section_start = sectionRectangle.no,
-                section_startSpecified = true,
-                section_end = sectionRectangle.no,
-                section_endSpecified = true,
-                comment = "concrete beam"
-            };
-
-            // member_eccentricity member_Eccentricity = new member_eccentricity()
-            // {
-            //     no = 1,
-            //     transverse_offset_reference_type = member_eccentricity_transverse_offset_reference_type.TRANSVERSE_OFFSET_TYPE_FROM_MEMBER_SECTION,
-            //     transverse_offset_reference_typeSpecified = true,
-            //     transverse_offset_reference_member = 1,
-            //     transverse_offset_reference_memberSpecified = true,
-            //     transverse_offset_member_reference_node = 2,
-            //     transverse_offset_member_reference_nodeSpecified = true,
-            //     transverse_offset_horizontal_alignment = member_eccentricity_transverse_offset_horizontal_alignment.ALIGN_LEFT,
-            //     transverse_offset_horizontal_alignmentSpecified = true,
-            //     transverse_offset_vertical_alignment = member_eccentricity_transverse_offset_vertical_alignment.ALIGN_BOTTOM,
-            //     transverse_offset_vertical_alignmentSpecified = true,
-            // };
-            // member member2 = new()
-            // {
-            //     no = 2,
-            //     line = line2.no,
-            //     lineSpecified = true,
-            //     section_start = sectionRectangle.no,
-            //     section_startSpecified = true,
-            //     section_end = sectionRectangle.no,
-            //     section_endSpecified = true,
-            //     comment = "concrete beam",
-            //     member_eccentricity_start = member_Eccentricity.no,
-            //     member_eccentricity_startSpecified = true,
-            // };
-
-            nodal_support support = new()
-            {
-                no = 1,
-                nodes = new int[] { n1.no },
-                spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity }
-            };
-
-            try
-            {
-                model.begin_modification("Geometry");
-                model.set_material(materialConcrete);
-                model.set_section(sectionRectangle);
-                model.set_node(n1);
-                model.set_node(n2);
-                // model.set_node(n3);
-                model.set_line(line);
-                // model.set_line(line2);
-                model.set_member(member);
-                // model.set_member_eccentricity(member_Eccentricity);
-                // model.set_member(member2);
-                model.set_nodal_support(support);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of geometry" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of geometry\n" + exception.Message + "\n");
-
-                }
-            }
-
-            // Global Parameter
-            #region global parameters
-            global_parameter H = new global_parameter()
-            {
-                no = 1,
-                name = "H",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                symbol = "<b> Height</b>",
-                value = 0.5,
-                valueSpecified = true,
-                definition_type = global_parameter_definition_type.DEFINITION_TYPE_OPTIMIZATION,
-                definition_typeSpecified = true,
-                unit_group = global_parameter_unit_group.SECTION_DIMENSION,
-                unit_groupSpecified = true,
-                min = 0.5,
-                minSpecified = true,
-                max = 1.0,
-                maxSpecified = true,
-                increment = 0.15,
-                incrementSpecified = true,
-            };
-
-            global_parameter B = new global_parameter()
-            {
-                no = 2,
-                name = "B",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                symbol = "<b> Width</b> ",
-                value = 0.5,
-                valueSpecified = true,
-                definition_type = global_parameter_definition_type.DEFINITION_TYPE_OPTIMIZATION,
-                definition_typeSpecified = true,
-                unit_group = global_parameter_unit_group.SECTION_DIMENSION,
-                unit_groupSpecified = true,
-                min = 0.5,
-                minSpecified = true,
-                max = 0.75,
-                maxSpecified = true,
-                increment = 0.25,
-                incrementSpecified = true,
-            };
-
-            global_parameter L = new global_parameter()
-            {
-                no = 3,
-                name = "L",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                symbol = "<b> Length</b>",
-                value = 1.5,
-                valueSpecified = true,
-                definition_type = global_parameter_definition_type.DEFINITION_TYPE_VALUE,
-                definition_typeSpecified = true,
-                unit_group = global_parameter_unit_group.SECTION_DIMENSION,
-                unit_groupSpecified = true,
-            };
-
-            global_parameter HB = new global_parameter()
-            {
-                no = 4,
-                name = "HB",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                symbol = "<b>HB</b>",
-                formula = "H+B",
-                definition_type = global_parameter_definition_type.DEFINITION_TYPE_FORMULA,
-                definition_typeSpecified = true,
-                unit_group = global_parameter_unit_group.SECTION_DIMENSION,
-                unit_groupSpecified = true,
-            };
-
-            global_parameter LBA = new global_parameter()
-            {
-                no = 5,
-                name = "LBA",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                symbol = "<b>LB optimization ascending</b>",
-                value = 0.300,
-                valueSpecified = true,
-                definition_type = global_parameter_definition_type.DEFINITION_TYPE_OPTIMIZATION_ASCENDING,
-                definition_typeSpecified = true,
-                unit_group = global_parameter_unit_group.SECTION_DIMENSION,
-                unit_groupSpecified = true,
-                min = 0.250,
-                minSpecified = true,
-                max = 1.000,
-                maxSpecified = true,
-                increment = 0.050,
-                incrementSpecified = true,
-            };
-            global_parameter LBD = new global_parameter()
-            {
-                no = 6,
-                name = "LBD",
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                symbol = "<b>LB optimization descending</b>",
-                value = 0.251,
-                valueSpecified = true,
-                definition_type = global_parameter_definition_type.DEFINITION_TYPE_OPTIMIZATION_DESCENDING,
-                definition_typeSpecified = true,
-                unit_group = global_parameter_unit_group.SECTION_DIMENSION,
-                unit_groupSpecified = true,
-                min = 0.25,
-                minSpecified = true,
-                max = 1.0,
-                maxSpecified = true,
-                increment = 0.05,
-                incrementSpecified = true,
-            };
-
-
-            #endregion
-            try
-            {
-                model.begin_modification("Global parameters");
-                model.set_global_parameter(H);
-                model.set_global_parameter(B);
-                model.set_global_parameter(L);
-                model.set_global_parameter(HB);
-                // model.set_global_parameter(LBA); // unable to set it rigth - seems to be some weired control
-                // model.set_global_parameter(LBD);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of load" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of load\n" + exception.Message + "\n");
-                    //
-                }
-            }
-
-
-            #region Set formulas
-            object_location objectLocationNode = new object_location()
-            {
-                type = object_types.E_OBJECT_TYPE_NODE,
-                no = n2.no,
-                parent_no = 0,
-                parent_noSpecified = true,
-            };
-            object_parameter_location[] allowedAtributes = model.get_list_of_parameters_formula_allowed_for(objectLocationNode);
-            foreach (object_parameter_location item in allowedAtributes)
-            {
-                Console.WriteLine(item.attribute.ToString());
-            }
-
-            object_parameter_location objectParameterLocation = new object_parameter_location()
-            {
-                attribute = "coordinate_1",
-            };
-
-
-            object_location objectLocationSection = new object_location()
-            {
-                type = object_types.E_OBJECT_TYPE_SECTION,
-                no = sectionRectangle.no,
-                parent_no = 0,
-                parent_noSpecified = true,
-            };
-            object_parameter_location[] allowedAtributesSection = model.get_list_of_parameters_formula_allowed_for(objectLocationSection);
-            foreach (object_parameter_location item in allowedAtributesSection)
-            {
-                Console.WriteLine(item.attribute.ToString());
-            }
-            object_parameter_location objectParameterLocationSectionH = new object_parameter_location()
-            {
-                attribute = "parametrization",
-                parameter_path_in_nested_models_hierarchy = new node_of_parameter_path_in_nested_models_hierarchy[]{
-                    new node_of_parameter_path_in_nested_models_hierarchy()
-                    {
-                        row_path = "0, 1",
-                        column_string_id = "section_parameter_value",
-                    },
-                 },
-
-            };
-
-            object_parameter_location objectParameterLocationSectionB = new object_parameter_location()
-            {
-                attribute = "parametrization",
-                parameter_path_in_nested_models_hierarchy = new node_of_parameter_path_in_nested_models_hierarchy[]{
-                    new node_of_parameter_path_in_nested_models_hierarchy()
-                    {
-                        row_path = "0, 0",
-                        column_string_id = "section_parameter_value",
-                    },
-                 },
-
-            };
-
-
-
-            try
-            {
-                model.begin_modification("SetFormuals");
-                model.set_formula(objectLocationNode, objectParameterLocation, "L+1");
-                model.set_formula(objectLocationSection, objectParameterLocationSectionH, "H");
-                model.set_formula(objectLocationSection, objectParameterLocationSectionB, "B");
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when set formulas" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification  set formulas\n" + exception.Message + "\n");
-
-                }
-            }
-
-            formula_data formula_Data = model.get_formula(objectLocationNode, objectParameterLocation);
-            Console.WriteLine(formula_Data.formula);
-            Console.WriteLine(formula_Data.calculated_value.ToString());
-            Console.WriteLine(formula_Data.is_valid);
-            #endregion
-
-            #region Optimization settings
-            optimizationSettingsConfig optimizationSettings = new optimizationSettingsConfig()
-            {
-                general_optimization_active = true,
-                general_keep_best_number_model_mutations = 20,
-                general_number_random_mutations = 0.2,
-                general_optimize_on = optimizationSettingsConfig_general_optimize_on_type.E_OPTIMIZE_ON_TYPE_MIN_MEMBER_DEFORMATION,
-                general_optimizer = optimizationSettingsConfig_general_optimizer_type.E_OPTIMIZER_TYPE_PARTICLE_SWARM,
-
-            };
-            try
-            {
-                model.begin_modification("SetOptimizationSetting");
-                model.set_optimization_settings(optimizationSettings);
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when SetOptimizationSetting" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification  SetOptimizationSetting\n" + exception.Message + "\n");
-
-                }
-            }
-            #endregion
-
-            static_analysis_settings analysis = new()
-            {
-                no = 1,
-                analysis_type = static_analysis_settings_analysis_type.GEOMETRICALLY_LINEAR,
-                analysis_typeSpecified = true,
-
-            };
-
-
-            load_case selfWeightLC = new()
-            {
-                no = 1,
-                name = "SelfWeight",
-                static_analysis_settings = analysis.no,
-                analysis_type = load_case_analysis_type.ANALYSIS_TYPE_STATIC,
-                analysis_typeSpecified = true,
-                static_analysis_settingsSpecified = true,
-                self_weight_active = true,
-                self_weight_activeSpecified = true,
-                self_weight_factor_z = 1.0,
-                self_weight_factor_zSpecified = true,
-                action_category = "ACTION_CATEGORY_PERMANENT_G",
-
-            };
-            try
-            {
-                model.begin_modification("Load");
-                model.set_static_analysis_settings(analysis);
-                model.set_load_case(selfWeightLC);
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of load" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of load\n" + exception.Message + "\n");
-
-                }
-            }
-
-
-            calculation_message[] calculationMesagesAll = model.calculate_all(false);
-
-            if (calculationMesagesAll.Length != 0)
-            {
-            }
-            else
-            {
-                Console.WriteLine("Calculation finished successfully");
-            }
-
-            #region Optimization result table
-
-            table_model_content_row_section[][] OptimizationResultTable = model.get_optimized_values();
-
-            foreach (table_model_content_row_section[] row in OptimizationResultTable)
-            {
-                foreach (table_model_content_row_section subrow in row)
-                {
-                    if (subrow.top_text != null)
-                    {
-                        Console.WriteLine("{0}", DecodeHtmlString(subrow.top_text));
-                    }
-                    foreach (table_model_content_row_section_element element in subrow.elements)
-                    {
-                        Console.WriteLine("{0} {1}", DecodeHtmlString(element.column_name), element.value);
-                    }
-                }
-            }
-            #endregion
-
-        }
-
-        static string DecodeHtmlString(string myEncodedString)
-        {
-            StringWriter myWriter = new StringWriter();
-            // Decode the encoded string.
-            System.Net.WebUtility.HtmlDecode(myEncodedString, myWriter);
-            string myDecodedString = myWriter.ToString();
-
-            return myDecodedString;
-
-
-
-            //Console.Write($"Decoded string of the above encoded string is: {myDecodedString}");
-        }
 
         static void WebServicesExamples()
         {
@@ -6183,2103 +5589,10 @@ namespace Hall
             }
         }
 
-        static void OpenImportExamples()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
 
-            // check if RFEM6 is running
-            // Process[] RFEM6Process = Process.GetProcessesByName("RFEM6");
-            // if (RFEM6Process.Length == 0)
-            // {
-            //     ProcessStartInfo start = new ProcessStartInfo();
-            //     // start.Arguments = arguments;
-            //     start.FileName = @"D:\RFEM-TestingVersions\master\bin\RFEM6.exe";// hardcoded
-            //     start.WindowStyle = ProcessWindowStyle.Hidden;
-            //     start.CreateNoWindow = true;
-            //     int exitCode;
-            //     Process proc = Process.Start(start);
-            // }
-
-            #region RFEM Settings
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-
-            #region Open existing RFEM6 model
-            string openedModelUrl = application.open_model(ExamplesDirectory + @"\BusStation.rf6");
-            Console.WriteLine(openedModelUrl);
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrl));
-            // application.close_model(0, false);
-            #endregion
-
-            #region PrintOut report
-            printout_report_info[] reportsList = model.get_list_of_printout_reports();
-            foreach (var item in reportsList)
-            {
-                Console.WriteLine("Printout id: " + item.id.ToString());
-                Console.WriteLine("Printout name: " + item.name.ToString());
-                Console.WriteLine("Printout root directory: " + item.root_directory.ToString());
-            }
-            // model.export_printout_report_to_pdf(1, ExamplesDirectory + @"\printout.pdf");
-            // new Process
-            // {
-            //     StartInfo = new ProcessStartInfo(ExamplesDirectory + @"\printout.pdf")
-            //     {
-            //         UseShellExecute = true
-            //     }
-            // }.Start();
-            // model.export_printout_report_to_html(1, ExamplesDirectory + @"\printout.html");
-            // new Process
-            // {
-            //     StartInfo = new ProcessStartInfo(ExamplesDirectory + @"\printout.html")
-            //     {
-            //         UseShellExecute = true
-            //     }
-            // }.Start();
-            // model.delete_printout_reports(new int[1] { 2 });
-            // // print printout report on default
-            // // model.print_printout_report(1); 
-            #endregion
-
-            #region Model history
-            model_history_row[] modelHistory = model.get_model_history();
-            foreach (var item in modelHistory)
-            {
-                Console.WriteLine("Item No: {0}\t Time: {1}\t User: {2}\t Status: {3}\t Comment: {4}", item.no, item.row.time, item.row.user, item.row.history_status_type.ToString(), item.row.comment);
-            }
-
-            #endregion
-
-            #region Model history - delete all history
-            // model.delete_all_history();
-            #endregion
-
-
-
-            #region set history
-
-            List<model_history_row> modelHistoryRows = new List<model_history_row>();
-            model_history_row modelHistoryRow = new model_history_row
-            {
-                no = 24,
-                row = new model_history
-                {
-                    time = DateTime.Now.ToString(),
-                    comment = "Coded by C#",
-                    user = "Jarda",
-                    history_status_type = history_status_type.E_HISTORY_RECORD_STATUS_MODIFIED,
-                },
-            };
-            modelHistoryRows.Add(modelHistoryRow);
-            try
-            {
-                model.begin_modification("History model");
-                model.set_model_history(modelHistoryRows.ToArray());
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of History model" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of construction phases\n" + exception.Message + "\n");
-
-                }
-            }
-
-            application.close_model(0, false);
-            #endregion
-
-            #region region and language
-            settings_program_language settingsProgramLanguage = application.get_settings_program_language();
-            Console.WriteLine("Program language: {0}", settingsProgramLanguage.program_language.ToString());
-            Console.WriteLine("Program region: {0}", settingsProgramLanguage.region.ToString());
-            Console.WriteLine("Program unit system: {0}", settingsProgramLanguage.unit_system.ToString());
-
-            // settingsProgramLanguage.program_language_name = program_language_name.German;
-            // settingsProgramLanguage.region = region.Default;
-            // settingsProgramLanguage.unit_system = unit_system.IMPERIAL;
-
-            // try
-            // {
-            //     string resultOperation = application.set_settings_program_language(settingsProgramLanguage);
-            //     Console.WriteLine(resultOperation);
-            // }
-            // catch (Exception exception)
-            // {
-            //     logger.Error(exception, "Something wrong in setting of region etc." + exception.Message + "\n");
-            // }
-            #endregion
-
-            #region Program options
-            // program_options ProgramOptions = application.get_program_options();
-            // Console.WriteLine("Automatically connect lines and elements {0}", ProgramOptions.auto_connect_lines_element ? "Yes" : "No");
-            // Console.WriteLine("Automatically connect lines and elements by internal nodes on line ... {0}", ProgramOptions.by_internal_nodes_on_line_element ? "Yes" : "No");
-            // Console.WriteLine("Automatic generation of representatives {0}", ProgramOptions.automatic_generation_of_representatives ? "Yes" : "No");
-            // Console.WriteLine("Do not automatically gererate representatives member count {0}", ProgramOptions.do_not_automatic_generation_of_representatives_members_count.ToString());
-            // Console.WriteLine("Calculate object information from generated mesh {0}", ProgramOptions.calculate_object_information_from_generated_mesh ? "Yes" : "No");
-            // Console.WriteLine("Delete useless nodes during import {0}", ProgramOptions.delete_useless_nodes_during_import ? "Yes" : "No");
-            // Console.WriteLine("Load last opened models when program restarts{0}", ProgramOptions.load_last_opened_models_when_program_restart ? "Yes" : "No");
-            // Console.WriteLine("Load last saved basic objects in new model {0}", ProgramOptions.load_last_saved_basic_objects_in_a_new_model ? "Yes" : "No");
-            // Console.WriteLine("Validate objects in graphics {0}", ProgramOptions.validate_objects_when_selecting_in_graphics ? "Yes" : "No");
-            // Console.WriteLine("Animate view changes {0}", ProgramOptions.animate_view_changes ? "Yes" : "No");
-            // Console.WriteLine("Multisamplinng {0}", ProgramOptions.multisampling ? "Yes" : "No");
-
-            // ProgramOptions.auto_connect_lines_element = false;
-            // ProgramOptions.auto_connect_lines_elementSpecified = true;
-            // ProgramOptions.do_not_automatic_generation_of_representatives_members_count = 1001;
-            // ProgramOptions.do_not_automatic_generation_of_representatives_members_countSpecified = true;
-            // ProgramOptions.animate_view_changes = false;
-            // ProgramOptions.animate_view_changesSpecified = true;
-            // ProgramOptions.multisampling = false;
-            // ProgramOptions.multisamplingSpecified = true;
-            // try
-            // {
-            //     application.set_program_options(ProgramOptions);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.WriteLine(exception.Message);
-            //     logger.Error(exception, "Something wrong in setting of main objects to activate\n" + exception.Message + "\n");
-            //     throw;
-            // }
-            #endregion
-
-            #region  Program settings
-            // program_settings ProgramSettings = application.get_program_settings();
-            // Console.WriteLine("Max number of undo steps {0}", ProgramSettings.max_number_of_undo_steps.ToString());
-            // Console.WriteLine("Formula evaluation time limit {0}", ProgramSettings.formula_evaluation_time_limit.ToString());
-            // Console.WriteLine("Date format {0}", ProgramSettings.date_format.ToString());
-            // Console.WriteLine("Max cpount of recent blocks {0}", ProgramSettings.max_count_of_recent_blocks.ToString());
-            // Console.WriteLine("Max cpount of recent files {0}", ProgramSettings.max_count_of_recent_files.ToString());
-            // Console.WriteLine("Max cpount of recent templates {0}", ProgramSettings.max_count_of_recent_templates.ToString());
-
-            // ProgramSettings.max_number_of_undo_steps = 110;
-            // ProgramSettings.max_number_of_undo_stepsSpecified = true;
-            // try
-            // {
-            //     application.set_program_settings(ProgramSettings);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.WriteLine(exception.Message);
-            //     logger.Error(exception, "Something wrong in setting of main objects to activate\n" + exception.Message + "\n");
-            //     throw;
-            // }
-            #endregion
-
-            #region Main objects to activate
-            // string openedModelUrl = application.open_model(ExamplesDirectory + @"\BusStation.rf6");
-            // RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrl));
-            // main_objects_to_activate mainObjectsToActivate = model.get_main_objects_to_activate();
-            // Console.WriteLine("Are members activated? {0}", mainObjectsToActivate.activate_members ? "Yes" : "No");
-            // Console.WriteLine("Are surfaces activated? {0}", mainObjectsToActivate.activate_surfaces ? "Yes" : "No");
-            // Console.WriteLine("Are solid activated? {0}", mainObjectsToActivate.activate_solids ? "Yes" : "No");
-
-            // //deactivate surfaces
-            // mainObjectsToActivate.activate_surfaces = false;
-            // mainObjectsToActivate.activate_surfacesSpecified = true;
-            // mainObjectsToActivate.activate_solids = false;
-            // mainObjectsToActivate.activate_solidsSpecified = true;
-            // try
-            // {
-            //     model.begin_modification("Change of main object activated");
-            //     model.set_main_objects_to_activate(mainObjectsToActivate);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.WriteLine(exception.Message);
-            //     logger.Error(exception, "Something wrong in setting of main objects to activate\n" + exception.Message + "\n");
-            //     throw;
-            // }
-            // finally
-            // {
-            //     try
-            //     {
-            //         model.finish_modification();
-            //     }
-            //     catch (Exception exception)
-            //     {
-            //         logger.Error(exception, "Something wrong insetting of main objects to activate\n" + exception.Message + "\n");
-            //     }
-            // }
-            // application.close_model(0, false);
-            #endregion
-
-
-            #region Example of running javaScript 
-            // string BusStation = "JavaScript-BusStation";
-            // string modelJSUrl = application.new_model(BusStation);
-            // Console.WriteLine(modelJSUrl);
-            // RfemModelClient modelJS = new RfemModelClient(Binding, new EndpointAddress(modelJSUrl));
-            // modelJS.reset();
-            // modelJS.run_script(ExamplesDirectory + @"\Demo-004 Bus Station-Concrete Design.js");
-            // application.close_model(0, false);
-            #endregion
-
-
-            #region Import from file
-            // XML
-            // import_from_output modelImportXML_result = application.import_from(ExamplesDirectory + @"\Mymodel.xml");
-            // Console.WriteLine("Import was {0} and  model URL is {1} ", modelImportXML_result.report, modelImportXML_result.end_point);
-            // application.close_model(0, false);
-            // // //SAF
-            // import_from_output modelImportSAF_result = application.import_from(ExamplesDirectory + @"\BusStation.saf");
-            // Console.WriteLine("Import was {0} and  model URL is {1} ", modelImportSAF_result.report, modelImportSAF_result.end_point);
-            // application.close_model(0, false);
-
-            // import_from_output modelImportSAFXLSX_result = application.import_from(ExamplesDirectory + @"\BusStation.xlsx");
-            // Console.WriteLine("Import was {0} and  model URL is {1} ", modelImportSAFXLSX_result.report, modelImportSAFXLSX_result.end_point);
-            // application.close_model(0, false);
-
-            // SafConfiguration safConfiguration = application.get_saf_settings();
-            // Console.WriteLine(safConfiguration.property_export_saf_version.ToString());
-            // ConversionTables conversionTables = application.get_conversion_tables();
-            // MaterialConversionTablesManager materialtable = conversionTables.MaterialConversionTablesManager;
-            // for (int i = 0; i < materialtable.property_active_config; i++)
-            // {
-            //     Console.WriteLine("Material Mapping table: " + materialtable.configs[i].property_config_user_name);
-            //     foreach (var item in materialtable.configs[i].ConversionTable.property_conversion_table)
-            //     {
-            //         Console.WriteLine("Item {0} is mapped as {1}", item.first, item.second);
-            //     }
-
-            // }
-            // SectionConversionTablesManager sectionTable = conversionTables.SectionConversionTablesManager;
-            // for (int i = 0; i < sectionTable.property_active_config; i++)
-            // {
-            //     Console.WriteLine("Section Mapping table: " + sectionTable.configs[i].property_config_user_name);
-            //     foreach (var item in sectionTable.configs[i].ConversionTable.property_conversion_table)
-            //     {
-            //         Console.WriteLine("Item {0} is mapped as {1}", item.first, item.second);
-            //     }
-
-            // }
-            #endregion
-
-            #region Import from IFC
-            // import if no model is opened
-            // import_from_IFC_settings IFCImportSettings = new import_from_IFC_settings()
-            // {
-            //     axis_rotation_sequence = import_from_IFC_axis_rotation_sequence_type.X_Y_Z,
-            //     mirror_axis_x = false,
-            //     mirror_axis_y = false,
-            //     mirror_axis_z = true,
-            //     origin_coordinate_x = 0.0,
-            //     origin_coordinate_y = 0.0,
-            //     origin_coordinate_z = 0.0,
-            //     rotation_angle_0 = 0.0,
-            //     rotation_angle_1 = 0.0,
-            //     rotation_angle_2 = 0.0,
-            //     switch_axis_x = import_from_IFC_axis_type.X,
-            //     switch_axis_y = import_from_IFC_axis_type.Y,
-            //     switch_axis_z = import_from_IFC_axis_type.Z,
-            // };
-            // import_from_ifc_output modelImportIFC_result = application.import_from_IFC(ExamplesDirectory + @"\Mymodel.ifc", IFCImportSettings);
-            // Console.WriteLine("Import was {0} and  model URL is {1} ", modelImportIFC_result.report, modelImportIFC_result.end_point);
-            // foreach (var log in modelImportIFC_result.import_log)
-            // {
-            //     Console.WriteLine("Message number {0}\tMessage: {1}", log.number_od_entities, log.messange_type);
-            // }
-            // application.close_model(0, false);
-
-            #endregion
-
-            #region Import from DXF
-            // import_from_DXF_settings DXFImportSettings = new import_from_DXF_settings()
-            // {
-            //     mirror_axis_x = false,
-            //     mirror_axis_y = false,
-            //     mirror_axis_z = false,
-            //     origin_coordinate_x = 0.0,
-            //     origin_coordinate_y = 0.0,
-            //     origin_coordinate_z = 0.0,
-            //     axis_rotation_sequence = import_from_DXF_axis_rotation_sequence_type.X_Y_Z,
-            //     rotation_angle_0 = 0.0,
-            //     rotation_angle_1 = 0.0,
-            //     rotation_angle_2 = 0.0,
-            //     switch_axis_x = import_from_DXF_axis_type.X,
-            //     switch_axis_y = import_from_DXF_axis_type.Y,
-            //     switch_axis_z = import_from_DXF_axis_type.Z,
-            // };
-            // import_from_DXF_options DXFImportOptions = new import_from_DXF_options()
-            // {
-            //     minimize_tolerance_in_model = false,
-            //     generate_members = false,
-            //     import_layers_as_visibilities = false,
-            //     import_3d_face_as_surface = false,
-            //     length_units = import_from_DXF_length_units_type.cm,
-            //     selected_layers = new string[] { @"0", @"HEB 220 $S235", @"IPE 240 $S235", @"IPE 100 $S235", @"L 20x20x3 $S235" },
-            // };
-            // application.import_from_DXF(ExamplesDirectory + @"\Hall.dxf", DXFImportSettings, DXFImportOptions);
-            #endregion
-
-            #region Open model with logger info
-            // open_model_response_type openedModelOne = application.open_model(ExamplesDirectory + @"\2Dmembers.rf5");
-            // Console.WriteLine(openedModelOne.end_point);
-            // Console.WriteLine(openedModelOne.messages);
-            // application.close_model(0, false);
-            // open_model_response_type openedModelTwo = application.open_model(ExamplesDirectory + @"\RFEM-Example-04.rf5");
-            // Console.WriteLine(openedModelTwo.end_point);
-            // Console.WriteLine(openedModelTwo.messages);
-            // application.close_model(0, false);
-            #endregion
-
-            #region IFC
-            // string modelImportedIFCUrl = application.open_model(ExamplesDirectory + @"\MymodelIFC.rf6");
-            // Console.WriteLine(modelImportedIFCUrl);
-            // RfemModelClient modelIFC = new RfemModelClient(Binding, new EndpointAddress(modelImportedIFCUrl));
-            #region IFC file model object and IFC model object
-            // int[] IFCFileIds = modelIFC.get_all_object_numbers(object_types.E_OBJECT_TYPE_IFC_FILE_MODEL_OBJECT, 0);
-            // int FileID = 0;
-            // foreach (var id in IFCFileIds)
-            // {
-            //     Console.WriteLine("IFC File Model Object ID: {0}", id);
-            //     ifc_file_model_object fileModel = modelIFC.get_ifc_file_model_object(id);
-            //     FileID = fileModel.no;
-            //     Console.WriteLine("File name: {0} \t type: {1} \t no: {2}", fileModel.file_name, fileModel.type.ToString(), fileModel.no);
-
-            // }
-            // int[] IFCModelObjectIds = modelIFC.get_all_object_numbers(object_types.E_OBJECT_TYPE_IFC_MODEL_OBJECT, FileID);
-            // foreach (var id in IFCModelObjectIds)
-            // {
-            //     Console.WriteLine("IFC Model Object ID: {0}", id);
-            //     ifc_model_object modelObject = modelIFC.get_ifc_model_object(id, FileID);
-            //     Console.WriteLine("no: {0} \t type: {1} \t name: {2} \t objectType: {3}", modelObject.no, modelObject.type.ToString(), modelObject.name, modelObject.object_type);
-            //     Console.WriteLine("globalID: {0} \t parentGlobalID: {1} \t idImportExport: {2} \t metadata: {3}", modelObject.global_id, modelObject.parent_object_global_id, modelObject.id_for_export_import, modelObject.metadata_for_export_import);
-            // }
-            #endregion
-            #region IFC conversion objects
-            // object_location[] objectLocationsSurface = new object_location[2];
-            // objectLocationsSurface[0] = new object_location()
-            // {
-            //     type = object_types.E_OBJECT_TYPE_IFC_MODEL_OBJECT,
-            //     no = 2,
-            //     parent_no = 1,
-            //     parent_noSpecified = true,
-            // };
-            // try
-            // {
-            //     modelIFC.convert_ifc_object(objectLocationsSurface, ifc_convertion_type.TO_SURFACE);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.Error.WriteLine(exception);
-            //     logger.Error(exception, "Stopped program because of exception :" + exception.Message);
-            // }
-            // object_location[] objectLocationsMembers = new object_location[2];
-            // objectLocationsMembers[0] = new object_location()
-            // {
-            //     type = object_types.E_OBJECT_TYPE_IFC_MODEL_OBJECT,
-            //     no = 3,
-            //     parent_no = 1,
-            //     parent_noSpecified = true,
-            // };
-            // objectLocationsMembers[1] = new object_location()
-            // {
-            //     type = object_types.E_OBJECT_TYPE_IFC_MODEL_OBJECT,
-            //     no = 4,
-            //     parent_no = 1,
-            //     parent_noSpecified = true,
-            // };
-            // try
-            // {
-            //     modelIFC.convert_ifc_object(objectLocationsMembers, ifc_convertion_type.TO_MEMBER_STRAIGHT);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.Error.WriteLine(exception);
-            //     logger.Error(exception, "Stopped program because of exception :" + exception.Message);
-            // }
-            #endregion
-            #endregion
-
-            #region Background layers - DXF
-            // string DXFBGModelURL = application.new_model("DXF-BG");
-            // RfemModelClient DXFBGModel = new RfemModelClient(Binding, new EndpointAddress(DXFBGModelURL));
-            // Dxf_file_model_object BGLayer = new Dxf_file_model_object()
-            // {
-            //     no = 1,
-            //     name = "MyBGlayer",
-            //     user_defined_name_enabled = true,
-            //     user_defined_name_enabledSpecified = true,
-            //     filename = ExamplesDirectory + @"\Hall.dxf",
-            //     rotation_angles_sequence = Dxf_file_model_object_rotation_angles_sequence.SEQUENCE_XYZ,
-            //     rotation_angles_sequenceSpecified = true,
-            //     rotation_angle_1 = 0.0,
-            //     rotation_angle_1Specified = true,
-            //     rotation_angle_2 = 0.0,
-            //     rotation_angle_2Specified = true,
-            //     rotation_angle_3 = 0.0,
-            //     rotation_angle_3Specified = true,
-            //     coordinate_system = 1,
-            //     coordinate_systemSpecified = true,
-            //     origin_coordinate_x = 0.0,
-            //     origin_coordinate_xSpecified = true,
-            //     origin_coordinate_y = 0.0,
-            //     origin_coordinate_ySpecified = true,
-            //     origin_coordinate_z = 0.0,
-            //     origin_coordinate_zSpecified = true,
-            //     insert_point = Dxf_file_model_object_insert_point.INSERT_CENTER,
-            //     insert_pointSpecified = true,
-            //     scale_is_nonuniform = false,
-            //     scale_is_nonuniformSpecified = true,
-            //     scale_relative = 1.0,
-            //     scale_relativeSpecified = true,
-            //     scale_is_defined_as_relative = true,
-            //     scale_is_defined_as_relativeSpecified = true,
-            // };
-            // visual_object vs = new visual_object() // it does not work
-            // {
-            //     no = 1,
-            //     name = "Mazda",
-            //     user_defined_name_enabled = true,
-            //     user_defined_name_enabledSpecified = true,
-            //     filename = @"D:\Sources\R20\3dsmodel\mazda3.3ds",// cannot be modified - read only property
-            //     rotation_angles_sequence = visual_object_rotation_angles_sequence.SEQUENCE_XYZ,
-            //     rotation_angles_sequenceSpecified = true,
-            //     rotation_angle_1 = 0.0,
-            //     rotation_angle_1Specified = true,
-            //     rotation_angle_2 = 0.0,
-            //     rotation_angle_2Specified = true,
-            //     rotation_angle_3 = 0.0,
-            //     rotation_angle_3Specified = true,
-            //     coordinate_system = 1,
-            //     coordinate_systemSpecified = true,
-            //     origin_coordinate_x = 0.0,
-            //     origin_coordinate_xSpecified = true,
-            //     origin_coordinate_y = 0.0,
-            //     origin_coordinate_ySpecified = true,
-            //     origin_coordinate_z = 0.0,
-            //     origin_coordinate_zSpecified = true,
-            //     insert_point = visual_object_insert_point.INSERT_CENTER,
-            //     insert_pointSpecified = true,
-            //     scale_is_nonuniform = false,
-            //     scale_is_nonuniformSpecified = true,
-            //     scale_relative = 1.0,
-            //     scale_relativeSpecified = true,
-            //     scale_is_defined_as_relative = true,
-            //     scale_is_defined_as_relativeSpecified = true,
-            // };
-
-            // try
-            // {
-            //     DXFBGModel.begin_modification("DXF-BG");
-            //     DXFBGModel.set_Dxf_file_model_object(BGLayer);
-            //     // DXFBGModel.set_visual_object(vs);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.WriteLine(exception.Message);
-            //     logger.Error(exception, "Something wrong in setting of main objects to activate\n" + exception.Message + "\n");
-            //     throw;
-            // }
-            // finally
-            // {
-            //     try
-            //     {
-            //         DXFBGModel.finish_modification();
-            //     }
-            //     catch (Exception exception)
-            //     {
-            //         logger.Error(exception, "Something wrong insetting of main objects to activate\n" + exception.Message + "\n");
-            //     }
-            // }
-            #endregion
-
-            #region Export model
-            string openedModelUrlExport = application.open_model(ExamplesDirectory + @"\BusStation.rf6");
-            RfemModelClient modelExport = new RfemModelClient(Binding, new EndpointAddress(openedModelUrlExport));
-            // string export = modelExport.export_to(ExamplesDirectory + @"\Mymodel.gltf");
-            // Console.WriteLine(export);
-            // export = modelExport.export_to(ExamplesDirectory + @"\Mymodel.glb");
-            // Console.WriteLine(export);
-            // export = modelExport.export_to(ExamplesDirectory + @"\Mymodel.vtm");
-            // Console.WriteLine(export);
-            // export = modelExport.export_to(ExamplesDirectory + @"\Mymodel.xml");
-            // Console.WriteLine(export);
-
-            // // SafConfiguration safConfiguration = application.get_saf_settings();
-
-            // modelExport.export_to(ExamplesDirectory + @"\Mymodel.saf");
-            // modelExport.export_to(ExamplesDirectory + @"\Mymodel.xlsx");
-            // export_to_ifc_object_location[] ifcLocation = null; // whole model will be exported
-            // export_to_ifc_settings ifcSettings = new export_to_ifc_settings()
-            // {
-            //     axis_rotation_sequence = export_to_ifc_axis_rotation_sequence_type.X_Y_Z,
-            //     mirror_axis_x = false,
-            //     mirror_axis_y = false,
-            //     mirror_axis_z = true,
-            //     origin_coordinate_x = 0.0,
-            //     origin_coordinate_y = 0.0,
-            //     origin_coordinate_z = 0.0,
-            //     export_type = export_to_ifc_export_type.E_EXPORT_IFC4_REFERENCE_VIEW,
-            //     rotation_angle_0 = 0.0,
-            //     rotation_angle_1 = 0.0,
-            //     rotation_angle_2 = 0.0,
-            //     switch_axis_x = export_to_ifc_axis_type.X,
-            //     switch_axis_y = export_to_ifc_axis_type.Y,
-            //     switch_axis_z = export_to_ifc_axis_type.Z,
-            //     remove_accents = false,
-            // };
-            // modelExport.export_to_ifc(ExamplesDirectory + @"\Mymodel.ifc", ifcSettings, ifcLocation);
-
-            TableExportConfigManager tableConfigManager = modelExport.get_table_export_config_manager();
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_target = TableExportMainConfig_property_export_target_type.E_EXPORT_TARGET_XLSX_FILE;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_rewrite_existing_worksheet = false;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_table_header = true;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_table_to_active_workbook = false;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_table_to_active_worksheet = false;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_as_plain_text = false;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_filled_rows_only = true;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_filled_tables_only = true;
-            tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_selected_objects_only = false;
-
-            var inputTableDef = tableConfigManager.configs[0].TableExportConfigBase.TableExportInputTablesConfig.property_check_state_of_items_input_table;
-            foreach (var item in inputTableDef)
-            {
-                Console.WriteLine("{0} is {1}", item.first.ToString(), item.second.ToString());
-                item.second = false;
-            }
-            inputTableDef[0].second = true;
-            var resultTableDef = tableConfigManager.configs[0].TableExportConfigBase.TableExportResultTablesConfig.property_export_import_check_state_of_items_result_table;
-            foreach (var item in resultTableDef)
-            {
-                Console.WriteLine("{0} is {1}", item.first.ToString(), item.second.ToString());
-                item.second = false;
-            }
-            resultTableDef[5].second = true;
-            //modelExport.set_table_export_config_manager(tableConfigManager);
-            modelExport.export_to_tables(ExamplesDirectory + @"\Mymodel-tables.xlsx");
-            // application.close_model(0, false);
-            #endregion
-
-            #region Export to DXF
-            // export_to_dxf_settings exportDXFSettings = new export_to_dxf_settings()
-            // {
-            //     axis_rotation_sequence = export_to_dxf_axis_rotation_sequence_type.X_Y_Z,
-            //     mirror_axis_x = false,
-            //     mirror_axis_y = false,
-            //     mirror_axis_z = false,
-            //     origin_coordinate_x = 0.0,
-            //     origin_coordinate_y = 0.0,
-            //     origin_coordinate_z = 0.0,
-            //     rotation_angle_0 = 0.0,
-            //     rotation_angle_1 = 0.0,
-            //     rotation_angle_2 = 0.0,
-            //     switch_axis_x = export_to_dxf_axis_type.X,
-            //     switch_axis_y = export_to_dxf_axis_type.Y,
-            //     switch_axis_z = export_to_dxf_axis_type.Z,
-            //     surfaces_as_3D = false,
-            // };
-            // modelExport.export_to_dxf(ExamplesDirectory + @"\Mymodel.dxf", exportDXFSettings);
-            #endregion
-
-            #region Create as copy of existing model and create from template
-            // copy needs to be located in the project path
-            // string ModelCopyUrl = application.new_model_as_copy("CopiedModel", @"D:\OneDrive - Dlubal Software\MODELS\RFEM\RFEM6\TESTING_PROJECTS\3D frame.rf6");//path to actual project
-            // RfemModelClient copiedModel = new RfemModelClient(Binding, new EndpointAddress(ModelCopyUrl));
-            // modelInfo modelInfoModelCopy = copiedModel.get_model_info();
-            // Console.WriteLine("Number of nodes in model: {0}", modelInfoModelCopy.property_node_count.ToString());
-            // Console.WriteLine("Number of lines in model: {0}", modelInfoModelCopy.property_line_count.ToString());
-            // Console.WriteLine("Number of members in model: {0}", modelInfoModelCopy.property_member_count.ToString());
-            // Console.WriteLine("Number of surfaces in model: {0}", modelInfoModelCopy.property_surface_count.ToString());
-            // Console.WriteLine("Number of solids in model: {0}", modelInfoModelCopy.property_solid_count.ToString());
-            // Console.WriteLine("Weight of model: {0}", modelInfoModelCopy.property_weight.ToString());
-            // Console.WriteLine("Number of load cases: {0}", modelInfoModelCopy.property_lc_count.ToString());
-            // Console.WriteLine("Number of load cases: {0}", modelInfoModelCopy.property_co_count.ToString());
-            // Console.WriteLine("Number of result classes: {0}", modelInfoModelCopy.property_rc_count.ToString());
-            // Console.WriteLine("Is model calculated?: {0}", modelInfoModelCopy.property_has_results ? "Yes" : "No");
-            // Console.WriteLine("Has model printout report?: {0}", modelInfoModelCopy.property_has_printout_report ? "Yes" : "No");
-            // Console.WriteLine("Dimensions: {0} , {1}, {2}", modelInfoModelCopy.property_dimensions.x.ToString(), modelInfoModelCopy.property_dimensions.y.ToString(), modelInfoModelCopy.property_dimensions.z.ToString());
-            // application.close_model(0, false);
-
-            // template have to be in the expected path
-            // string ModelTemolateTUrl = application.new_model_from_template("ModelFromTemplate", @"D:\OneDrive - Dlubal Software\MODELS\RFEM\RFEM6\TESTING_PROJECTS\TestTemplate.ft6");
-            // RfemModelClient TemplatedModel = new RfemModelClient(Binding, new EndpointAddress(ModelTemolateTUrl));
-            // modelInfo TemplatemodelInfo = TemplatedModel.get_model_info();
-            // Console.WriteLine("Number of nodes in model: {0}", TemplatemodelInfo.property_node_count.ToString());
-            // Console.WriteLine("Number of lines in model: {0}", TemplatemodelInfo.property_line_count.ToString());
-            // Console.WriteLine("Number of members in model: {0}", TemplatemodelInfo.property_member_count.ToString());
-            // Console.WriteLine("Number of surfaces in model: {0}", TemplatemodelInfo.property_surface_count.ToString());
-            // Console.WriteLine("Number of solids in model: {0}", TemplatemodelInfo.property_solid_count.ToString());
-            // Console.WriteLine("Weight of model: {0}", TemplatemodelInfo.property_weight.ToString());
-            // Console.WriteLine("Number of load cases: {0}", TemplatemodelInfo.property_lc_count.ToString());
-            // Console.WriteLine("Number of load cases: {0}", TemplatemodelInfo.property_co_count.ToString());
-            // Console.WriteLine("Number of result classes: {0}", TemplatemodelInfo.property_rc_count.ToString());
-            // Console.WriteLine("Is model calculated?: {0}", TemplatemodelInfo.property_has_results ? "Yes" : "No");
-            // Console.WriteLine("Has model printout report?: {0}", TemplatemodelInfo.property_has_printout_report ? "Yes" : "No");
-            // Console.WriteLine("Dimensions: {0} , {1}, {2}", TemplatemodelInfo.property_dimensions.x.ToString(), TemplatemodelInfo.property_dimensions.y.ToString(), TemplatemodelInfo.property_dimensions.z.ToString());
-            // application.close_model(0, false);
-            #endregion
-
-            #region Management of Projects and Templates
-            // project_info[] listOfExistingProjects = application.get_list_of_existing_projects();
-            // foreach (project_info project in listOfExistingProjects)
-            // {
-            //     Console.WriteLine("Project name: {0}\t Project description: {1}\t Project folder: {2}\t Parent path: {3}", project.name, project.description, project.folder_path, project.parent_path);
-            // }
-            // project_info[] listOfTemplates = application.get_list_of_existing_templates();
-            // foreach (project_info template in listOfTemplates)
-            // {
-            //     Console.WriteLine("Template name: {0}\t Template description: {1}\t Template parent: {2}\t Template folder: {3}", template.name, template.description, template.parent_path, template.folder_path);
-            // }
-
-            // project_info currentProject = application.get_current_project();
-            // Console.WriteLine("Current project name: {0}\t Current project description: {1}\t Current project parent path: {2}\t Current project folder: {3}", currentProject.name, currentProject.description, currentProject.parent_path, currentProject.folder_path);
-            // application.set_as_current_project(@"D:\OneDrive - Dlubal Software\MODELS\RSTAB\");
-            // currentProject = application.get_current_project();
-            // Console.WriteLine("Current Project changed to: {0}\t Current project description: {1}\t Current project parent path: {2}\t Current project folder: {3}", currentProject.name, currentProject.description, currentProject.parent_path, currentProject.folder_path);
-
-            // project_info newProject = new project_info()
-            // {
-            //     name = "NewTestingProjectForDeleting",
-            //     description = "Testing project to be deleted soon",
-            //     parent_path = "",
-            //     folder_path = @"D:\OneDrive - Dlubal Software\MODELS\RFEM\TESTProjectFolder\",
-            // };
-            // try
-            // {
-            //     application.new_project(newProject);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.WriteLine(exception.Message);
-            //     logger.Error(exception, "Something wrong in creation of project\n" + exception.Message + "\n");
-            //     throw;
-            // }
-            // project_info GetNewProject = application.get_project(newProject.folder_path);
-            // Console.WriteLine("GetNew Project changed to: {0}\t GetNew project description: {1}\t GetNew project parent path: {2}\t GetNew project folder: {3}", GetNewProject.name, GetNewProject.description, GetNewProject.parent_path, GetNewProject.folder_path);
-            // application.delete_project(GetNewProject.folder_path);
-            // listOfExistingProjects = application.get_list_of_existing_projects();
-            // foreach (project_info project in listOfExistingProjects)
-            // {
-            //     Console.WriteLine("Project name: {0}\t Project description: {1}\t Project parent folder: {2}\t Project folder: {3}", project.name, project.description, project.parent_path, project.folder_path);
-            // }
-            // var rand = new Random();
-            // string newTemplateName = "NewTemplate" + rand.Next(1, 100).ToString();
-            // project_info newTemplate = new project_info()
-            // {
-            //     name = newTemplateName,
-            //     description = "Testing project to be deleted soon",
-            //     parent_path = "",
-            //     folder_path = @"D:\OneDrive - Dlubal Software\MODELS\RFEM\",
-            // };
-            // try
-            // {
-            //     application.new_template(newTemplate);
-            // }
-            // catch (Exception exception)
-            // {
-            //     Console.WriteLine(exception.Message);
-            //     logger.Error(exception, "Something wrong in creation of project\n" + exception.Message + "\n");
-            //     throw;
-            // }
-            // project_info GetNewTemplate = application.get_template(newTemplate.folder_path);
-            // Console.WriteLine("GetNewTemplate: {0}\t  project description: {1}\t  project parent path: {2}\t  project folder: {3}", GetNewTemplate.name, GetNewTemplate.description, GetNewTemplate.parent_path, GetNewTemplate.folder_path);
-            #endregion
-
-            #region Create model from block
-            // string ModelFromBlockUrl = application.new_model_from_block("DlubalBlockModel", "000429");
-            // RfemModelClient blockModel = new RfemModelClient(Binding, new EndpointAddress(ModelFromBlockUrl));
-            // modelInfo ModelInfo = blockModel.get_model_info();
-            // Console.WriteLine("Number of nodes in model: {0}", ModelInfo.property_node_count.ToString());
-            // Console.WriteLine("Number of lines in model: {0}", ModelInfo.property_line_count.ToString());
-            // Console.WriteLine("Number of members in model: {0}", ModelInfo.property_member_count.ToString());
-            // Console.WriteLine("Number of surfaces in model: {0}", ModelInfo.property_surface_count.ToString());
-            // Console.WriteLine("Number of solids in model: {0}", ModelInfo.property_solid_count.ToString());
-            // Console.WriteLine("Weight of model: {0}", ModelInfo.property_weight.ToString());
-            // Console.WriteLine("Number of load cases: {0}", ModelInfo.property_lc_count.ToString());
-            // Console.WriteLine("Number of load cases: {0}", ModelInfo.property_co_count.ToString());
-            // Console.WriteLine("Number of result classes: {0}", ModelInfo.property_rc_count.ToString());
-            // Console.WriteLine("Is model calculated?: {0}", ModelInfo.property_has_results ? "Yes" : "No");
-            // Console.WriteLine("Has model printout report?: {0}", ModelInfo.property_has_printout_report ? "Yes" : "No");
-            // Console.WriteLine("Dimensions: {0} , {1}, {2}", ModelInfo.property_dimensions.x.ToString(), ModelInfo.property_dimensions.y.ToString(), ModelInfo.property_dimensions.z.ToString());
-            // application.close_model(0, false);
-
-            // string ModelFromUserBlockUrl = application.new_model_from_block("UserBlockModel", "23f4a875-551a-47c1-ba8f-093757824f8c");
-            // RfemModelClient userBlockModel = new RfemModelClient(Binding, new EndpointAddress(ModelFromUserBlockUrl));
-            // modelInfo ModelInfoUserBlock = userBlockModel.get_model_info();
-            // Console.WriteLine("Number of nodes in model: {0}", ModelInfoUserBlock.property_node_count.ToString());
-            // Console.WriteLine("Number of lines in model: {0}", ModelInfoUserBlock.property_line_count.ToString());
-            // Console.WriteLine("Number of members in model: {0}", ModelInfoUserBlock.property_member_count.ToString());
-            // Console.WriteLine("Number of surfaces in model: {0}", ModelInfoUserBlock.property_surface_count.ToString());
-            // Console.WriteLine("Number of solids in model: {0}", ModelInfoUserBlock.property_solid_count.ToString());
-            // Console.WriteLine("Weight of model: {0}", ModelInfoUserBlock.property_weight.ToString());
-            // Console.WriteLine("Number of load cases: {0}", ModelInfoUserBlock.property_lc_count.ToString());
-            // Console.WriteLine("Number of load cases: {0}", ModelInfoUserBlock.property_co_count.ToString());
-            // Console.WriteLine("Number of result classes: {0}", ModelInfoUserBlock.property_rc_count.ToString());
-            // Console.WriteLine("Is model calculated?: {0}", ModelInfoUserBlock.property_has_results ? "Yes" : "No");
-            // Console.WriteLine("Has model printout report?: {0}", ModelInfoUserBlock.property_has_printout_report ? "Yes" : "No");
-            // Console.WriteLine("Dimensions: {0} , {1}, {2}", ModelInfoUserBlock.property_dimensions.x.ToString(), ModelInfoUserBlock.property_dimensions.y.ToString(), ModelInfoUserBlock.property_dimensions.z.ToString());
-            // application.close_model(0, false);
-            #endregion
-
-
-            #region Save As
-            // RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrl));
-            // save_operation_settings saveSettings = new save_operation_settings()
-            // {
-            //     save_results = false,
-            //     save_fe_mesh = false,
-            //     save_printouts = false,
-            //     save_preview_from_current_view = false,
-            //     save_as_copy = false,
-            //     save_as_version = false,
-            // };
-            // model.save(ExamplesDirectory + @"\BusStation.rf6", saveSettings);
-
-            #endregion
-
-            #region Save as version
-            // save_operation_settings saveSettingsVersion = new save_operation_settings()
-            // {
-            //     save_results = false,
-            //     save_fe_mesh = false,
-            //     save_printouts = false,
-            //     save_preview_from_current_view = false,
-            //     save_as_copy = false,
-            //     save_as_version = true,
-            // };
-
-            // model.save(ExamplesDirectory + @"\BusStation.rf6", saveSettingsVersion);
-
-            // save_operation_settings saveSettingsAsCopy = new save_operation_settings()
-            // {
-            //     save_results = false,
-            //     save_fe_mesh = false,
-            //     save_printouts = false,
-            //     save_preview_from_current_view = false,
-            //     save_as_copy = true,
-            //     save_as_version = false,
-            // };
-            // model.save(ExamplesDirectory + @"\SaveAsCopy.rf6", saveSettingsAsCopy);
-
-            #endregion
-
-            #region Load version
-            // string MyVersionedModel = application.open_model(ExamplesDirectory + @"\BusStation.rf6");
-            // Console.WriteLine(MyVersionedModel);
-            // RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(MyVersionedModel));
-            // date_time dateTimeVersion = new date_time()
-            // {
-            //     year = 2022,
-            //     month = 01,
-            //     day = 12,
-            //     hour = 15,
-            //     minute = 15,
-            //     second = 11,
-            // };
-            // model.load_versioned_model(dateTimeVersion);// load model version and swich model to the loaded version
-            // nodal_support NodalSupport = model.get_nodal_support(1);
-            // Console.WriteLine(NodalSupport.spring_x.ToString());
-            // Console.WriteLine(NodalSupport.spring_y.ToString());
-            // Console.WriteLine(NodalSupport.spring_z.ToString());
-            // Console.WriteLine(NodalSupport.rotational_restraint_x.ToString());
-            // Console.WriteLine(NodalSupport.rotational_restraint_y.ToString());
-            // Console.WriteLine(NodalSupport.rotational_restraint_z.ToString());
-            #endregion
-
-            // string openedModelOne = application.open_model(ExamplesDirectory + @"\RFEM-Example-04.rf5");
-            // RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelOne));
-            // model.calculate_all(false);
-            // application.close_model(0, true);
-
-        }
-
-        static void ModelCheck()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-            #region RFEM
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-            #region Model check
-            string openedModelUrlModelCheck = application.open_model(ExamplesDirectory + @"\overlap.rf6");
-            Console.WriteLine(openedModelUrlModelCheck);
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrlModelCheck));
-
-            // string[] OutputMessageOverlappingLines = model.model_check__get_object_groups_for_overlapping_lines();
-
-            // if (OutputMessageOverlappingLines != null || OutputMessageOverlappingLines.Length != 0)
-            // {
-            //     foreach (string line in OutputMessageOverlappingLines)
-            //     {
-            //         Console.WriteLine("Overlapping lines: " + line);
-            //     }
-            // }
-            // string[] OutputMessageOverlappingMembers = model.model_check__get_object_groups_for_overlapping_members();
-            // if (OutputMessageOverlappingMembers != null || OutputMessageOverlappingMembers.Length != 0)
-            // {
-            //     foreach (string member in OutputMessageOverlappingMembers)
-            //     {
-            //         Console.WriteLine("Overlapping members: " + member);
-            //     }
-            // }
-
-            // double tolerance = 0.005;
-            // string[] OutputMessagesCrossingLine = model.model_check__get_object_groups_for_crossing_lines(tolerance);
-            // string operationResult = "";
-            // if (OutputMessagesCrossingLine != null || OutputMessagesCrossingLine.Length != 0)
-            // {
-            //     foreach (var item in OutputMessagesCrossingLine)
-            //     {
-            //         Console.WriteLine("Not connected lines: {0}", item);
-            //     }
-            //     string[] connect = new string[]{OutputMessagesCrossingLine.Last<string>()};
-            //     operationResult = model.model_check__process_object_groups_cross_lines_operation(tolerance,connect,false);
-            //     Console.WriteLine(operationResult);
-            // }
-
-            // string[] OutputMessageCrossingMember = model.model_check__get_object_groups_for_crossing_members(tolerance);
-            // if (OutputMessageCrossingMember != null || OutputMessageCrossingMember.Length != 0)
-            // {
-            //     foreach (var item in OutputMessageCrossingMember)
-            //     {
-            //         Console.WriteLine("Not connected members: {0}", item);
-            //     }
-            //     operationResult = model.model_check__process_object_groups_cross_members_operation(tolerance, OutputMessageCrossingMember,true);
-            //     Console.WriteLine(operationResult);
-            // }
-
-            // string[] OutputMessageIdenticalNodes = model.model_check__get_object_groups_for_identical_nodes(tolerance);
-            // if (OutputMessageIdenticalNodes != null || OutputMessageIdenticalNodes.Length != 0)
-            // {
-            //     foreach (var item in OutputMessageIdenticalNodes)
-            //     {
-            //         Console.WriteLine("Identical nodes: {0}", item);
-            //     }
-            //     model.model_check__process_object_groups_unite_nodes_and_delete_unused_nodes_operation(tolerance, OutputMessageIdenticalNodes);
-            // }
-            //application.close_model(0, false);
-            #endregion
-        }
-        static void PlausibilityCheck()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-            #region RFEM
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-            #region Plausibility check
-            //no support
-            string openedModelUrlModelCheck = application.open_model(ExamplesDirectory + @"\PlausibilityCheckOne.rf6");
-            Console.WriteLine(openedModelUrlModelCheck);
-            RfemModelClient modelPL = new RfemModelClient(Binding, new EndpointAddress(openedModelUrlModelCheck));
-            try
-            {
-                plausibility_check_result plausibilityCheck = modelPL.plausibility_check(true);
-                if (!plausibilityCheck.succeeded || plausibilityCheck.messages.Length != 0)
-                {
-                    Console.WriteLine("Plausibility check failed");
-                    // foreach (calculation_message message in plausibilityCheck.messages)
-                    // {
-                    //     Console.WriteLine(message.message_type.ToString());
-                    //     Console.WriteLine(message.message);
-                    // }
-                }
-                else
-                {
-                    Console.WriteLine("Plausibility check succeeded");
-                }
-            }
-            catch (Exception exception)
-            {
-                logger.Error(exception, "Plausibility check:" + exception.Message);
-            }
-            application.close_model(0, false);
-            // no issue
-            openedModelUrlModelCheck = application.open_model(ExamplesDirectory + @"\3DFrame.rf6");
-            Console.WriteLine(openedModelUrlModelCheck);
-            modelPL = new RfemModelClient(Binding, new EndpointAddress(openedModelUrlModelCheck));
-            try
-            {
-                plausibility_check_result plausibilityCheck = modelPL.plausibility_check(false);
-                if (!plausibilityCheck.succeeded || plausibilityCheck.messages.Length != 0)
-                {
-                    Console.WriteLine("Plausibility check failed");
-                    // foreach (calculation_message message in plausibilityCheck.messages)
-                    // {
-                    //     Console.WriteLine(message.message_type.ToString());
-                    //     Console.WriteLine(message.message);
-                    // }
-                }
-                else
-                {
-                    Console.WriteLine("Plausibility check succeeded");
-                }
-            }
-            catch (Exception exception)
-            {
-                logger.Error(exception, "Plausibility check:" + exception.Message);
-            }
-            application.close_model(0, false);
-            // missing material
-            openedModelUrlModelCheck = application.open_model(ExamplesDirectory + @"\PlausibilityCheckTwo.rf6");
-            Console.WriteLine(openedModelUrlModelCheck);
-            modelPL = new RfemModelClient(Binding, new EndpointAddress(openedModelUrlModelCheck));
-            try
-            {
-                plausibility_check_result plausibilityCheck = modelPL.plausibility_check(false);
-                if (!plausibilityCheck.succeeded || plausibilityCheck.messages.Length != 0)
-                {
-                    Console.WriteLine("Plausibility check failed");
-                    // foreach (calculation_message message in plausibilityCheck.messages)
-                    // {
-                    //     Console.WriteLine(message.message_type.ToString());
-                    //     Console.WriteLine("Object {0} input field {1} with {2} {3}", message.@object, message.input_field, message.current_value, message.message);
-                    // }
-                }
-                else
-                {
-                    Console.WriteLine("Plausibility check succeeded");
-                }
-            }
-            catch (Exception exception)
-            {
-                logger.Error(exception, "Plausibility check:" + exception.Message);
-            }
-            application.close_model(0, false);
-            #endregion
-        }
-        static void DesignOverviewExample()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-            #region RFEM
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-
-
-            string openedModelUrl = application.open_model(ExamplesDirectory + @"\BusStation.rf6");
-            Console.WriteLine(openedModelUrl);
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrl));
-
-            addon_list_type addon = model.get_addon_statuses();
-            addon.design_addons.concrete_design_active = true;
-            addon.design_addons.concrete_design_activeSpecified = true;
-            addon.design_addons.steel_design_active = true;
-            addon.design_addons.steel_design_activeSpecified = true;
-
-
-            try
-            {
-                model.begin_modification("Set AddOns");
-                model.set_addon_statuses(addon);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something wrong in setting AddOns\n" + exception.Message + "\n");
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of creation of AddOns\n" + exception.Message + "\n");
-
-                }
-            }
-
-            model.calculate_all(false);
-            #region DesignOverview
-            try
-            {
-                design_overview_row[] designOverview = model.get_design_overview();
-                foreach (var item in designOverview)
-                {
-                    Console.WriteLine("Row main no: {0}\tAddOn: {1}\tobject type:{2}\tobjects:{3}\tlocation:{4}\tDS:{5}\tloading:{6}\tdesign ratio:{7}\tdesign type:{8}\tdescription: {9}\t", item.no, item.row.addon, item.row.object_type.ToString(), item.row.objects_no_string, item.row.location, item.row.design_situation, item.row.loading, item.row.design_ratio, item.row.design_check_type, item.row.description);
-                }
-            }
-            catch (Exception exception)
-            {
-                logger.Error(exception, "Something wrong in get overview table\n" + exception.Message + "\n");
-            }
-            #endregion
-
-
-        }
-        static void DivideLineExample()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-            #region RFEM
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-            // creates new model
-            string modelName = "MyTestModel";
-            string modelUrl = application.new_model(modelName);
-            // string modelUrl = application.get_active_model();
-            // connects to RFEM6 model
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(modelUrl));
-
-            node node1 = new node()
-            {
-                no = 1,
-                coordinates = new vector_3d() { x = -10.000, y = -10.000, z = 0.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node2 = new node()
-            {
-                no = 2,
-                coordinates = new vector_3d() { x = 10.000, y = 10.000, z = 6.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node3 = new node()
-            {
-                no = 3,
-                coordinates = new vector_3d() { x = 10.000, y = -10.000, z = 0.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node4 = new node()
-            {
-                no = 4,
-                coordinates = new vector_3d() { x = -10.000, y = 10.000, z = 6.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            line line1 = new()
-            {
-                no = 1,
-                definition_nodes = new int[] { node1.no, node2.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-            line line2 = new()
-            {
-                no = 2,
-                definition_nodes = new int[] { node3.no, node4.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-
-            node node11 = new node()
-            {
-                no = 11,
-                coordinates = new vector_3d() { x = -10.000, y = -10.000, z = 5.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node12 = new node()
-            {
-                no = 12,
-                coordinates = new vector_3d() { x = 10.000, y = 10.000, z = 5.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node13 = new node()
-            {
-                no = 13,
-                coordinates = new vector_3d() { x = 10.000, y = -10.000, z = 5.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node14 = new node()
-            {
-                no = 14,
-                coordinates = new vector_3d() { x = -10.000, y = 10.000, z = 5.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node21 = new node()
-            {
-                no = 21,
-                coordinates = new vector_3d() { x = 4.000, y = 5.000, z = -1.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node22 = new node()
-            {
-                no = 22,
-                coordinates = new vector_3d() { x = 4.000, y = -6.000, z = -1.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node23 = new node()
-            {
-                no = 23,
-                coordinates = new vector_3d() { x = 4.000, y = -6.000, z = 10.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-            node node24 = new node()
-            {
-                no = 24,
-                coordinates = new vector_3d() { x = 4.000, y = 5.000, z = 10.000 },
-                coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                coordinate_system_typeSpecified = true,
-                type = node_type.TYPE_STANDARD,
-                typeSpecified = true,
-            };
-
-
-
-            line line11 = new()
-            {
-                no = 11,
-                definition_nodes = new int[] { node11.no, node12.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-            line line12 = new()
-            {
-                no = 12,
-                definition_nodes = new int[] { node13.no, node14.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-
-            line line21 = new()
-            {
-                no = 21,
-                definition_nodes = new int[] { node21.no, node22.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-            line line22 = new()
-            {
-                no = 22,
-                definition_nodes = new int[] { node22.no, node23.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-            line line23 = new()
-            {
-                no = 23,
-                definition_nodes = new int[] { node23.no, node24.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-            line line24 = new()
-            {
-                no = 24,
-                definition_nodes = new int[] { node24.no, node21.no },
-                type = line_type.TYPE_POLYLINE,
-            };
-
-            material materialConcrete = new material
-            {
-                no = 2,
-                name = "C20/25",//"C20/25 | EN 1992-1-1:2004/A1:2014",
-                material_type = material_material_type.TYPE_CONCRETE,
-            };
-
-            section sectionRectangle = new section
-            {
-                no = 2,
-                material = materialConcrete.no,
-                materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
-                typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
-                parametrization_typeSpecified = true,
-                name = "R_M1 0.5/1", // width/height as in RFEM
-            };
-            thickness slabThickness = new thickness
-            {
-                no = 1,
-                material = materialConcrete.no,
-                materialSpecified = true,
-                type = thickness_type.TYPE_UNIFORM,
-                typeSpecified = true,
-                uniform_thickness = 0.5,
-                uniform_thicknessSpecified = true,
-            };
-
-            member member11 = new()
-            {
-                no = 11,
-                line = line11.no,
-                lineSpecified = true,
-                section_start = sectionRectangle.no,
-                section_startSpecified = true,
-                section_end = sectionRectangle.no,
-                section_endSpecified = true,
-
-            };
-            member member12 = new()
-            {
-                no = 12,
-                line = line12.no,
-                lineSpecified = true,
-                section_start = sectionRectangle.no,
-                section_startSpecified = true,
-                section_end = sectionRectangle.no,
-                section_endSpecified = true,
-            };
-            surface slab = new()
-            {
-                no = 1,
-                material = materialConcrete.no,
-                materialSpecified = true,
-                thickness = slabThickness.no,
-                boundary_lines = new int[] { line21.no, line22.no, line23.no, line24.no },
-                type = surface_type.TYPE_STANDARD,
-                typeSpecified = true,
-                geometry = surface_geometry.GEOMETRY_PLANE,
-                geometrySpecified = true,
-            };
-
-            try
-            {
-                model.begin_modification("Set geometry model data");
-                model.set_node(node1);
-                model.set_node(node2);
-                model.set_node(node3);
-                model.set_node(node4);
-                model.set_line(line1);
-                model.set_line(line2);
-                model.set_node(node11);
-                model.set_node(node12);
-                model.set_node(node13);
-                model.set_node(node14);
-                model.set_node(node21);
-                model.set_node(node22);
-                model.set_node(node23);
-                model.set_node(node24);
-                model.set_line(line11);
-                model.set_line(line12);
-                model.set_line(line21);
-                model.set_line(line22);
-                model.set_line(line23);
-                model.set_line(line24);
-                model.set_material(materialConcrete);
-                model.set_section(sectionRectangle);
-                model.set_member(member11);
-                model.set_member(member12);
-                model.set_thickness(slabThickness);
-                model.set_surface(slab);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something wrong in creation of geometry\n" + exception.Message + "\n");
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of geometry\n" + exception.Message + "\n");
-
-                }
-            }
-            int[] lines2Divide = new int[] { line1.no, line2.no };
-            int[] members2Divide = new int[] { };
-            int[] surfaces2Divide = new int[] { };
-            // line1 x line2 - new lines
-            model.divide_by_intersections(members2Divide, lines2Divide, surfaces2Divide);
-            Array.Clear(lines2Divide, 0, lines2Divide.Length);
-            Array.Resize(ref members2Divide, 2);
-            Array.Resize(ref lines2Divide, 0);
-            members2Divide[0] = member11.no;
-            members2Divide[1] = member12.no;
-            //member11 x member12 - new member 13 member 14
-            model.divide_by_intersections(members2Divide, lines2Divide, surfaces2Divide);
-            Array.Resize(ref lines2Divide, 1);
-            Array.Clear(lines2Divide, 0, lines2Divide.Length);
-            Array.Resize(ref members2Divide, 1);
-            lines2Divide[0] = 26;
-            members2Divide[0] = 14;
-            //member 14 x line 26
-            model.divide_by_intersections(members2Divide, lines2Divide, surfaces2Divide);
-            lines2Divide[0] = 2;
-            members2Divide[0] = 12;
-            Array.Resize(ref surfaces2Divide, 1);
-            surfaces2Divide[0] = 1;
-            //member 12 and line 2 x surface 1
-            model.divide_by_intersections(members2Divide, lines2Divide, surfaces2Divide);
-        }
-
-        static void SelectionExamples()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-
-            // check if RFEM6 is running
-            // Process[] RFEM6Process = Process.GetProcessesByName("RFEM6");
-            // if (RFEM6Process.Length == 0)
-            // {
-            //     ProcessStartInfo start = new ProcessStartInfo();
-            //     // start.Arguments = arguments;
-            //     start.FileName = @"D:\RFEM-TestingVersions\master\bin\RFEM6.exe";// hardcoded
-            //     start.WindowStyle = ProcessWindowStyle.Hidden;
-            //     start.CreateNoWindow = true;
-            //     int exitCode;
-            //     Process proc = Process.Start(start);
-            // }
-
-            #region RFEM Settings
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-
-            #region Connect to active RFEM6 model
-            string activeModelUrl = application.get_active_model();
-            Console.WriteLine(activeModelUrl);
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(activeModelUrl));
-            #endregion
-
-            object_location[] selection = model.get_all_selected_objects();
-            foreach (var item in selection)
-            {
-                Console.WriteLine("Object no: {0}\t Parent object no:{1}\t Object type:{2}", item.no, item.parent_no, item.type.ToString());
-            }
-
-
-            model.clear_selection();
-
-            try
-            {
-                model.begin_modification("Set selection");
-                model.set_selected_objects(selection);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something wrong in Set selection\n" + exception.Message + "\n");
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of Set selection\n" + exception.Message + "\n");
-
-                }
-            }
-
-        }
-
-        static void Releases()
-        {
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-
-            // check if RFEM6 is running
-            // Process[] RFEM6Process = Process.GetProcessesByName("RFEM6");
-            // if (RFEM6Process.Length == 0)
-            // {
-            //     ProcessStartInfo start = new ProcessStartInfo();
-            //     // start.Arguments = arguments;
-            //     start.FileName = @"D:\RFEM-TestingVersions\master\bin\RFEM6.exe";// hardcoded
-            //     start.WindowStyle = ProcessWindowStyle.Hidden;
-            //     start.CreateNoWindow = true;
-            //     int exitCode;
-            //     Process proc = Process.Start(start);
-            // }
-
-            #region RFEM Settings
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-
-            #region Open existing RFEM6 model
-            string openedModelUrl = application.open_model(ExamplesDirectory + @"\Releases.rf6");
-            Console.WriteLine(openedModelUrl);
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrl));
-            #endregion
-
-            nodal_release_type nodalReleaseType = new nodal_release_type()
-            {
-                no = 1,
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                name = "Scripted --- -** | Local xyz",
-                coordinate_system = "Local",
-                comment = "Scripted release type",
-                axial_release_n = double.PositiveInfinity,
-                axial_release_nSpecified = true,
-                axial_release_vy = double.PositiveInfinity,
-                axial_release_vySpecified = true,
-                axial_release_vz = double.PositiveInfinity,
-                axial_release_vzSpecified = true,
-                moment_release_mt = double.PositiveInfinity,
-                moment_release_mtSpecified = true,
-                moment_release_my = 0,
-                moment_release_mySpecified = true,
-                moment_release_mz = 0,
-                moment_release_mzSpecified = true,
-                axial_release_n_nonlinearity = nodal_release_type_axial_release_n_nonlinearity.NONLINEARITY_TYPE_NONE,
-                axial_release_n_nonlinearitySpecified = true,
-                axial_release_vy_nonlinearity = nodal_release_type_axial_release_vy_nonlinearity.NONLINEARITY_TYPE_NONE,
-                axial_release_vy_nonlinearitySpecified = true,
-                axial_release_vz_nonlinearity = nodal_release_type_axial_release_vz_nonlinearity.NONLINEARITY_TYPE_NONE,
-                axial_release_vz_nonlinearitySpecified = true,
-                moment_release_mt_nonlinearity = nodal_release_type_moment_release_mt_nonlinearity.NONLINEARITY_TYPE_NONE,
-                moment_release_mt_nonlinearitySpecified = true,
-                moment_release_my_nonlinearity = nodal_release_type_moment_release_my_nonlinearity.NONLINEARITY_TYPE_NONE,
-                moment_release_my_nonlinearitySpecified = true,
-                moment_release_mz_nonlinearity = nodal_release_type_moment_release_mz_nonlinearity.NONLINEARITY_TYPE_NONE,
-                moment_release_mz_nonlinearitySpecified = true,
-            };
-
-
-
-
-
-            nodal_release nodalRelease = new nodal_release()
-            {
-                no = 1,
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                name = "scripted nodal release",
-                nodes = new int[] { 5 },
-                nodal_release_type = nodalReleaseType.no,
-                nodal_release_typeSpecified = true,
-                release_location = nodal_release_release_location.RELEASE_LOCATION_ORIGIN,
-                release_locationSpecified = true,
-                released_members = new int[] { 2, 3 },
-                deactivated = false,
-                deactivatedSpecified = true,
-                comment = " generated release",
-            };
-
-
-            line_release_type lineReleaseType = new line_release_type()
-            {
-                comment = "Scripted release type",
-                no = 1,
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                name = "Scripted --* *",
-                translational_release_u_x = double.PositiveInfinity,
-                translational_release_u_xSpecified = true,
-                translational_release_u_y = double.PositiveInfinity,
-                translational_release_u_ySpecified = true,
-                translational_release_u_z = 0,
-                translational_release_u_zSpecified = true,
-                rotational_release_phi_x = 0,
-                rotational_release_phi_xSpecified = true,
-                translational_release_u_x_nonlinearity = line_release_type_translational_release_u_x_nonlinearity.NONLINEARITY_TYPE_NONE,
-                translational_release_u_y_nonlinearity = line_release_type_translational_release_u_y_nonlinearity.NONLINEARITY_TYPE_NONE,
-                translational_release_u_z_nonlinearity = line_release_type_translational_release_u_z_nonlinearity.NONLINEARITY_TYPE_NONE,
-                rotational_release_phi_x_nonlinearity = line_release_type_rotational_release_phi_x_nonlinearity.NONLINEARITY_TYPE_NONE,
-            };
-
-
-            line_release lineRelease = new line_release()
-            {
-                no = 1,
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                name = "scripted line release",
-                lines = new int[] { 6 },
-                line_release_type = lineReleaseType.no,
-                line_release_typeSpecified = true,
-                release_location = line_release_release_location.RELEASE_LOCATION_ORIGIN,
-                release_locationSpecified = true,
-                released_surfaces = new int[] { 1 },
-                deactivated = false,
-                deactivatedSpecified = true,
-                comment = "generated release"
-            };
-
-            surface_release_type surfaceReleaseType = new surface_release_type()
-            {
-                no = 1,
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                name = "Scripted **- ",
-                translation_x = 0,
-                translation_xSpecified = true,
-                translation_y = 0,
-                translation_ySpecified = true,
-                translation_z = double.PositiveInfinity,
-                translation_zSpecified = true,
-                comment = "Scripted release type",
-                local_axis_system_type = surface_release_type_local_axis_system_type.LOCAL_AXIS_SYSTEM_TYPE_REVERSED_TO_ORIGINAL_SURFACE,
-                local_axis_system_typeSpecified = true,
-                nonlinearity_x = surface_release_type_nonlinearity_x.NONLINEARITY_NONE,
-                nonlinearity_xSpecified = true,
-                nonlinearity_y = surface_release_type_nonlinearity_y.NONLINEARITY_NONE,
-                nonlinearity_ySpecified = true,
-            };
-
-            surface_release surfaceRelease = new surface_release()
-            {
-                no = 1,
-                user_defined_name_enabled = true,
-                name = "scripted surface release",
-                surfaces = new int[] { 16 },
-                surface_release_type = surfaceReleaseType.no,
-                surface_release_typeSpecified = true,
-                release_location = surface_release_release_location.RELEASE_LOCATION_ORIGIN,
-                release_locationSpecified = true,
-                deactivated = false,
-                deactivatedSpecified = true,
-                comment = "generated release"
-            };
-
-            try
-            {
-                model.begin_modification("Set releases");
-                model.set_nodal_release_type(nodalReleaseType);
-                model.set_nodal_release(nodalRelease);
-                model.set_line_release_type(lineReleaseType);
-                model.set_line_release(lineRelease);
-                model.set_surface_release_type(surfaceReleaseType);
-                model.set_surface_release(surfaceRelease);
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something wrong in Set releases\n" + exception.Message + "\n");
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in Set releases\n" + exception.Message + "\n");
-
-                }
-            }
-
-            // application.close_model(0, false);
-        }
-        static void DesignAddonsTest()
-        {
-
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
-            var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-
-            // check if RFEM6 is running
-            // Process[] RFEM6Process = Process.GetProcessesByName("RFEM6");
-            // if (RFEM6Process.Length == 0)
-            // {
-            //     ProcessStartInfo start = new ProcessStartInfo();
-            //     // start.Arguments = arguments;
-            //     start.FileName = @"D:\RFEM-TestingVersions\master\bin\RFEM6.exe";// hardcoded
-            //     start.WindowStyle = ProcessWindowStyle.Hidden;
-            //     start.CreateNoWindow = true;
-            //     int exitCode;
-            //     Process proc = Process.Start(start);
-            // }
-
-            #region RFEM Settings
-            application_information RFEMInfo;
-            try
-            {
-                // connects to RFEM6 application
-                application = new RfemApplicationClient(Binding, Address);
-
-            }
-            catch (Exception exception)
-            {
-                if (application != null)
-                {
-                    if (application.State != CommunicationState.Faulted)
-                    {
-                        application.Close();
-                        logger.Error(exception, "Something happen:" + exception.Message);
-                    }
-                    else
-                    {
-                        application.Abort();
-                        logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
-                    }
-
-                    application = null;
-                }
-            }
-            finally
-            {
-                RFEMInfo = application.get_information();
-                logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-            }
-            #endregion
-
-            #region Open existing RFEM6 model
-            string openedModelUrl = application.open_model(ExamplesDirectory + @"\DesignAddOnTesting.rf6");
-            Console.WriteLine(openedModelUrl);
-            RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(openedModelUrl));
-            #endregion
-
-            model.use_detailed_member_results(true);
-            // #region Concrete design addon results
-            // results_for_concrete_design_overview_errors_and_warnings_row[] designOverviewConcrete = model.get_results_for_concrete_design_overview_errors_and_warnings();
-            // foreach (var item in designOverviewConcrete)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.addon, item.row.object_type, item.row.objects_no_string, item.row.loading, item.row.design_situation,
-            //     item.row.loading, item.row.design_ratio, item.row.description);
-            // }
-
-            // results_for_concrete_design_overview_not_valid_deactivated_row[] designOverviewConcreteNotActivated = model.get_results_for_concrete_design_overview_not_valid_deactivated();
-            // foreach (var item in designOverviewConcreteNotActivated)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}", item.row.object_type, item.row.objects_string, item.row.error_type, item.row.description);
-            // }
-
-            // results_for_concrete_design_design_ratios_members_by_location_row[] designRationsConcreteMember = model.get_results_for_concrete_design_design_ratios_members_by_location();
-            // foreach (var item in designRationsConcreteMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value);
-            // }
-            // results_for_concrete_design_governing_internal_forces_by_member_row[] concreteGovInternalForcesByMember = model.get_results_for_concrete_design_governing_internal_forces_by_member();
-            // foreach (var item in concreteGovInternalForcesByMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value,
-            //     item.row.force_n.value, item.row.force_vy.value, item.row.force_vz.value, item.row.moment_mt.value, item.row.moment_my.value, item.row.moment_mz.value);
-            // }
-            // results_for_concrete_design_required_reinforcement_area_on_members_by_section_row[] requiredReinforcement = model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_section();
-            // // foreach (var item in requiredReinforcement)
-            // // {
-            // //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            // // }
-
-            // results_for_concrete_design_governing_internal_forces_by_surface_row[] concreteGovInternalForcesBySurface = model.get_results_for_concrete_design_governing_internal_forces_by_surface();
-            // foreach (var item in concreteGovInternalForcesBySurface)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.surface.value, item.row.mesh_node_or_grid_point_no.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.axial_force_nx.value, item.row.axial_force_ny.value, item.row.axial_force_nxy.value, item.row.shear_force_vx.value, item.row.shear_force_vy.value, item.row.moment_mx.value, item.row.moment_my.value, item.row.moment_mxy.value);
-
-            // }
-            // results_for_concrete_design_design_ratios_surfaces_by_location_row[] designRationsConcreteSurfaces = model.get_results_for_concrete_design_design_ratios_surfaces_by_location();
-            // foreach (var item in designRationsConcreteSurfaces)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.surface.value, item.row.mesh_node_or_grid_point_no.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value);
-
-            // }
-            // // results_for_concrete_design_required_reinforcement_area_on_surfaces_by_location_row[] ReinforcementSurfaces = model.get_results_for_concrete_design_required_reinforcement_area_on_surfaces_by_location();
-            // #endregion
-            // #region steel addon results
-            // results_for_steel_design_overview_errors_and_warnings_row[] designOverviewSteel = model.get_results_for_steel_design_overview_errors_and_warnings();
-            // foreach (var item in designOverviewSteel)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.addon, item.row.object_type, item.row.objects_no_string, item.row.loading, item.row.design_situation,
-            //      item.row.loading, item.row.design_ratio, item.row.description);
-            // }
-
-            // results_for_steel_design_overview_not_valid_deactivated_row[] designOverviewSteelNotActivated = model.get_results_for_steel_design_overview_not_valid_deactivated();
-            // foreach (var item in designOverviewSteelNotActivated)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}", item.row.object_type, item.row.objects_string, item.row.error_type, item.row.description);
-            // }
-            // results_for_steel_design_design_ratios_members_by_location_row[] designRationsSteelMember = model.get_results_for_steel_design_design_ratios_members_by_location();
-            // foreach (var item in designRationsSteelMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value);
-            // }
-            // results_for_steel_design_governing_internal_forces_by_member_row[] steelGovInternalForcesByMember = model.get_results_for_steel_design_governing_internal_forces_by_member();
-            // foreach (var item in steelGovInternalForcesByMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value,
-            //     item.row.force_n.value, item.row.force_vy.value, item.row.force_vz.value, item.row.moment_mt.value, item.row.moment_my.value, item.row.moment_mz.value);
-            // }
-            // #endregion
-            // #region timber addon results
-            // results_for_timber_design_overview_errors_and_warnings_row[] designOverviewTimber = model.get_results_for_timber_design_overview_errors_and_warnings();
-            // foreach (var item in designOverviewTimber)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.addon, item.row.object_type, item.row.objects_no_string, item.row.loading, item.row.design_situation,
-            //       item.row.loading, item.row.design_ratio, item.row.description);
-            // }
-
-            // results_for_timber_design_overview_not_valid_deactivated_row[] designOverviewTimberNotActivated = model.get_results_for_timber_design_overview_not_valid_deactivated();
-            // foreach (var item in designOverviewTimberNotActivated)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}", item.row.object_type, item.row.objects_string, item.row.error_type, item.row.description);
-            // }
-            // results_for_timber_design_design_ratios_members_by_location_row[] designRationsTimberMember = model.get_results_for_timber_design_design_ratios_members_by_location();
-            // foreach (var item in designRationsTimberMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value);
-            // }
-            // results_for_timber_design_governing_internal_forces_by_member_row[] timberGovInternalForcesByMember = model.get_results_for_timber_design_governing_internal_forces_by_member();
-            // foreach (var item in timberGovInternalForcesByMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value,
-            //     item.row.force_n.value, item.row.force_vy.value, item.row.force_vz.value, item.row.moment_mt.value, item.row.moment_my.value, item.row.moment_mz.value);
-            // }
-            // #endregion
-            // #region aluminum addon results
-            // results_for_aluminum_design_overview_errors_and_warnings_row[] designOverviewAluminum = model.get_results_for_aluminum_design_overview_errors_and_warnings();
-            // foreach (var item in designOverviewAluminum)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.addon, item.row.object_type, item.row.objects_no_string, item.row.loading, item.row.design_situation,
-            //      item.row.loading, item.row.design_ratio, item.row.description);
-            // }
-
-            // results_for_aluminum_design_overview_not_valid_deactivated_row[] designOverviewAluminumNotActivated = model.get_results_for_aluminum_design_overview_not_valid_deactivated();
-            // foreach (var item in designOverviewAluminumNotActivated)
-            // {
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}", item.row.object_type, item.row.objects_string, item.row.error_type, item.row.description);
-            // }
-            // results_for_aluminum_design_design_ratios_members_by_location_row[] designRationsAluminumMember = model.get_results_for_aluminum_design_design_ratios_members_by_location();
-            // foreach (var item in designRationsAluminumMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value);
-            // }
-            // results_for_aluminum_design_governing_internal_forces_by_member_row[] aluminumGovInternalForcesByMember = model.get_results_for_aluminum_design_governing_internal_forces_by_member();
-            // foreach (var item in aluminumGovInternalForcesByMember)
-            // {
-            //     Console.WriteLine("Row No: {0}\t Description: {1}", item.no, item.description);
-            //     Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}\t", item.row.member.value, item.row.location.value, item.row.design_situation.value, item.row.loading.value, item.row.design_ratio
-            //     .value, item.row.design_check_type.value, DecodeHtmlString(item.row.design_check_formula.value), item.row.design_check_description.value,
-            //     item.row.force_n.value, item.row.force_vy.value, item.row.force_vz.value, item.row.moment_mt.value, item.row.moment_my.value, item.row.moment_mz.value);
-            // }
-            // #endregion
-
-        }
         static void Main(string[] args)
         {
-
-            switch (args[0])
-            {
-                case "WebServicesExamples":
-                    WebServicesExamples();
-                    break;
-                case "PlausibilityCheck":
-                    PlausibilityCheck();
-                    break;
-                case "ModelCheck":
-                    ModelCheck();
-                    break;
-                case "OpenImportExamples":
-                    OpenImportExamples();
-                    break;
-                case "DesignOverviewExample":
-                    DesignOverviewExample();
-                    break;
-                case "DivideLineExample":
-                    DivideLineExample();
-                    break;
-                case "Selection":
-                    SelectionExamples();
-                    break;
-                case "Releases":
-                    Releases();
-                    break;
-                case "ParallelRunsOfRFEMTest":
-                    ParallelRunsOfRFEMTest();
-                    break;
-                case "DesignAddonsTest":
-                    DesignAddonsTest();
-                    break;
-
-            }
-
+            WebServicesExamples();
         }
     }
 }
