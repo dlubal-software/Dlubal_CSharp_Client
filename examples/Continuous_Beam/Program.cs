@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-#if RFEM
+﻿#if RFEM
 using Dlubal.WS.Rfem6.Application;
 using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 using Dlubal.WS.Rfem6.Model;
@@ -11,21 +9,17 @@ using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
 using Dlubal.WS.Rstab9.Model;
 using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 #endif
-
-using System.Net.Http;
 using NLog;
 using System.ServiceModel;
-using System.Xml.Linq;
+using System.Globalization;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Description;
+using System.Diagnostics;
 
 namespace ContinuousBeam
 {
     class Program
     {
         public static EndpointAddress Address { get; set; } = new EndpointAddress("http://localhost:8081");
-
 
         private static BasicHttpBinding Binding
         {
@@ -44,28 +38,35 @@ namespace ContinuousBeam
         }
 
         private static ApplicationClient application = null;
-        private static nodal_support support1;
-        private static nodal_support support2;
 
         static void Main(string[] args)
         {
             // welcome message
             Console.WriteLine("Welcome to Continuous Beam Application for Dlubal Software");
 
+            int spanNumber = 0;
+
             // get user input
-            Console.Write("Number of fields: ");
-            int fieldNumber = int.Parse(Console.ReadLine());      
-                        
+            Console.Write("Number of spans: ");
+            bool rightInput = int.TryParse(Console.ReadLine(), out spanNumber);
+
+            while (rightInput == false)
+            {
+                Console.WriteLine("Please choose an integer number for the number of spans!");
+                Console.Write("Number of spans:");
+                rightInput = int.TryParse(Console.ReadLine(), out spanNumber);
+            }
+
             Console.Write("Span [m]: ");
-            double span = Convert.ToDouble(Console.ReadLine());
+            double span = Convert.ToDouble(Console.ReadLine().Replace('.', ','), CultureInfo.CurrentCulture);
 
             Console.Write("continuous member load [kN/m]: ");
-            double memberLoad = Convert.ToDouble(Console.ReadLine());
+            double memberLoad = Convert.ToDouble(Console.ReadLine().Replace('.', ','), CultureInfo.CurrentCulture);
 
-            var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            LogManager.Configuration = config;
+            //var config = new NLog.Config.LoggingConfiguration();
+            //var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+            //config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            //LogManager.Configuration = config;
             var logger = LogManager.GetCurrentClassLogger();
             string CurrentDirectory = Directory.GetCurrentDirectory();
             #region Application Settings
@@ -76,7 +77,6 @@ namespace ContinuousBeam
                 {
                     // connect to RFEM6 or RSTAB9 application
                     application = new ApplicationClient(Binding, Address);
-
                 }
                 catch (Exception exception)
                 {
@@ -92,7 +92,6 @@ namespace ContinuousBeam
                             application.Abort();
                             logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
                         }
-
                         application = null;
                     }
                 }
@@ -105,12 +104,30 @@ namespace ContinuousBeam
                 #endregion
 
                 string modelName = "MyTestModel";
-                string modelUrl = application.new_model(modelName);
+                string modelUrl ="";
+                //check if model with same name already opened -> no program crash
 
+                bool noModelOpened = false;
+                do
+                {
+                    try
+                    {
+                        modelUrl = application.new_model(modelName);
+                        noModelOpened = false;
+                    }
+                    catch (FaultException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        noModelOpened = true;
+                        Console.WriteLine("Press any key to try again");
+                        Console.ReadKey();
+                    }
+                }
+                while (noModelOpened);
 
                 #region new model
                 // connect to RFEM6/RSTAB9 model
-                
+
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
                 #endregion
@@ -131,15 +148,17 @@ namespace ContinuousBeam
                     parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
                     // width/height as in RFEM
-                    name = "R_M1 0.5/1.0" 
+                    name = "R_M1 0.5/1.0"
                 };
 
+                //create nodes
+
                 SortedList<int, node> nodes = new SortedList<int, node>();
-                List<int> lineDefinitionNodes = new List<int>();
+                int[] lineDefinitionNodes = new int[spanNumber + 1];
                 int nodeId = 1;
                 double xVector = 0.0;
 
-                for (int i = 0; i < fieldNumber + 1; i++)
+                for (int i = 0; i < spanNumber + 1; i++)
                 {
                     node newNode = new()
                     {
@@ -151,63 +170,96 @@ namespace ContinuousBeam
                     };
 
                     nodes.Add(nodeId, newNode);
-                    Console.WriteLine(nodes[1]);
-                    lineDefinitionNodes.Add(nodeId);
-                    
+                    lineDefinitionNodes[i] = nodeId;
+
                     xVector = xVector + span;
 
                     nodeId++;
+                }
+
+#if RFEM        // create lines
+
+                int lineId = 1;
+                SortedList<int, line> lines = new SortedList<int, line>();
+
+                for (int i = 0; i < spanNumber; i++)
+                {
+                    line newLine = new()
+                    {
+                        no = lineId,
+                        definition_nodes = new int[] { lineDefinitionNodes[i], lineDefinitionNodes[i + 1] },
+                        comment = "lines for beams",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true,
+                    };
+
+                    lines.Add(lineId, newLine);
+                    Debug.WriteLine(lineId);
+                    lineId++;
+
 
                 }
-                
-#if RFEM        // create line
-                line line = new()
-                {
-                    no = 1,
-                    definition_nodes = lineDefinitionNodes.ToArray(),
-                    comment = "lines for beams",
-                    type = line_type.TYPE_POLYLINE,
-                    typeSpecified = true,
-                };
-#endif
-                // create member
-                member member = new()
-                {
-                    no = 1,
-#if RFEM
-                    line = line.no,
-                    lineSpecified = true,
-#elif RSTAB
-                    node_start = lineDefinitionNode[0],
-                    node_startSpecified = true,
-                    node_end = lineDefinitionNode[fieldNumber-1],
-                    node_endSpecified = true,
-#endif
-                    section_start = sectionRectangle.no,
-                    section_startSpecified = true,
-                    section_end = sectionRectangle.no,
-                    section_endSpecified = true,
-                    comment = "concrete beam"
-                };
 
+
+                // create members
+
+                int memberId = 1;
+                SortedList<int, member> members = new SortedList<int, member>();
+
+                foreach (KeyValuePair<int, line> lineItem in lines)
+                {
+                    member newMember = new()
+                    {
+                        no = memberId,
+                        line = lineItem.Key,
+                        lineSpecified = true,
+                        section_start = sectionRectangle.no,
+                        section_startSpecified = true,
+                        section_end = sectionRectangle.no,
+                        section_endSpecified = true,
+                        comment = "concrete beam"
+                    };
+                    memberId++;
+                    members.Add(memberId, newMember);
+                }
+#elif RSTAB
+                for (int i = 0; i < spanNumber + 1; i++)
+			    {
+                     member newMember = new()
+                    {
+                        no = i + 1,
+                        node_start = lineDefinitionNode[i],
+                        node_startSpecified = true,
+                        node_end = lineDefinitionNodes[i + 1],
+                        node_endSpecified = true,
+                        section_start = sectionRectangle.no,
+                        section_startSpecified = true,
+                        section_end = sectionRectangle.no,
+                        section_endSpecified = true,
+                        comment = "concrete beam"
+                    };
+                    members.Add(i + 1, newMember);
+			    }
+#endif
+
+                //remove list
                 List<node> supportedNodes = new();
                 List<nodal_support> nodalSupports = new();
-                int[] nodes2 = new int[10];
-                
+
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
                 {
                     supportedNodes.Add(nodeItem.Value);
                 }
-                              
+
                 // assign nodes to support
-                foreach (var supportNode in supportedNodes)
+                foreach (KeyValuePair<int, node> nodeItem in nodes)
                 {
-                    if (supportNode.no == 1)
+                    if (nodeItem.Key == 1)
                     {
                         nodal_support support1 = new()
                         {
-                            no = supportNode.no,
-                            nodes = new int[] { supportNode.no },
+                            no = nodeItem.Key,
+                            nodes = new int[] { nodeItem.Key },
                             spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
                             rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
                         };
@@ -217,8 +269,8 @@ namespace ContinuousBeam
                     {
                         nodal_support support2 = new()
                         {
-                            no = supportNode.no,
-                            nodes = new int[] { supportNode.no },
+                            no = nodeItem.Key,
+                            nodes = new int[] { nodeItem.Key },
                             spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
                             rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
                         };
@@ -227,7 +279,7 @@ namespace ContinuousBeam
                 }
 
                 // transfer objects to RFEM
-                
+
                 try
                 {
                     model.begin_modification("Geometry");
@@ -238,17 +290,23 @@ namespace ContinuousBeam
                     {
                         model.set_node(nodeItem.Value);
                     }
-                
-                    #if RFEM
-                    model.set_line(line);
+
+#if RFEM
+                    foreach (KeyValuePair<int, line> lineItem in lines)
+                    {
+                        model.set_line(lineItem.Value);
+                    }
+
 #endif
-                    model.set_member(member);
+                    foreach (KeyValuePair<int, member> memberItem in members)
+                    {
+                        model.set_member(memberItem.Value);
+                    }
 
                     foreach (var nodalSupport in nodalSupports)
                     {
                         model.set_nodal_support(nodalSupport);
                     }
-
                 }
                 catch (Exception exception)
                 {
@@ -339,7 +397,6 @@ namespace ContinuousBeam
                         factor = 1.35,
                         factorSpecified = true,
                     }
-
                 };
 
                 load_combination_items_row load_Combination_lcData = new load_combination_items_row()
@@ -352,7 +409,6 @@ namespace ContinuousBeam
                         factor = 1.5,
                         factorSpecified = true,
                     }
-
                 };
                 load_combination_items_row[] loadCombinationItems = new load_combination_items_row[] { load_Combination_SW, load_Combination_lcData };
 
@@ -384,7 +440,6 @@ namespace ContinuousBeam
 
                     model.set_design_situation(design_Situation);
                     model.set_load_combination(load_Combination);
-
                 }
                 catch (Exception exception)
                 {
@@ -407,25 +462,38 @@ namespace ContinuousBeam
 
                 // define member load
 
-                member_load memberLoadonBeam = new()
-                {
-                    no = 1,
-                    members_string = member.no.ToString(),
-                    members = new int[] { member.no },
-                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
-                    load_distributionSpecified = true,
-                    magnitude = memberLoad * 1000,
-                    magnitudeSpecified = true,
-                    load_is_over_total_length = true,
-                    load_is_over_total_lengthSpecified = true,
-                };
+                SortedList<int, member_load> member_loads = new SortedList<int, member_load>();
+                int member_load_id = 1;
 
+                for (int i = 0; i < spanNumber; i++)
+                {
+                    member_load newMemberLoad = new()
+                    {
+                        no = i + 1,
+                        members_string = (i + 1).ToString(),
+                        members = new int[] { i + 1 },
+                        load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                        load_distributionSpecified = true,
+                        magnitude = memberLoad * 1000,
+                        magnitudeSpecified = true,
+                        load_is_over_total_length = true,
+                        load_is_over_total_lengthSpecified = true,
+                    };
+                    member_loads.Add(i + 1, newMemberLoad);
+                    member_load_id++;
+                }   
+                   
                 // transfer loads to RFEM
+                
 
                 try
                 {
                     model.begin_modification("Set loads");
-                    model.set_member_load(lcData.no, memberLoadonBeam);
+                    foreach (KeyValuePair<int, member_load> memberload in member_loads)
+                    {
+                        model.set_member_load(lcData.no, memberload.Value);
+                    }
+
                 }
                 catch (Exception exception)
                 {
@@ -461,8 +529,8 @@ namespace ContinuousBeam
                 #endregion
 #endif
 
-                calculation_message[] calculationMesages = model.calculate_all(true);
-                if (calculationMesages.Length != 0)
+                calculation_message[] calculationMessages = model.calculate_all(true);
+                if (calculationMessages.Length != 0)
                 {
                 }
                 else
@@ -484,8 +552,8 @@ namespace ContinuousBeam
                     Console.WriteLine("Model has no results");
                 }
 
-                bool modelHasLC2Calcuolated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
-                if (modelHasLC2Calcuolated)
+                bool modelHasLC2Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
+                if (modelHasLC2Calculated)
                 {
                     Console.WriteLine("Model has LC2 results");
                 }
@@ -496,52 +564,72 @@ namespace ContinuousBeam
 
                 // activate display of results along the length of the member, by default false -> results just at the beginning and end of the member + extremes
 
-                model.use_detailed_member_results(true); 
+                model.use_detailed_member_results(true);
 
                 // printout internal forces
 
-                members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
-                Console.WriteLine("Internal forces for member");
-                foreach (var item in internalForcesMember1)
-                {
-                    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
-                    Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", item.row.internal_force_n.ToString(), item.row.internal_force_vy.ToString(), item.row.internal_force_vz.ToString(), item.row.internal_force_mt.ToString(), item.row.internal_force_my.ToString(), item.row.internal_force_mz.ToString());
+                List<members_internal_forces_row[]> internalForcesMember_List = new();
 
+
+                foreach (KeyValuePair<int, member> memberItem in members)
+                {
+                    members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, memberItem.Key);
+                    internalForcesMember_List.Add(internalForcesMember);
+                }
+
+                Console.WriteLine("Internal forces for member:");
+
+                foreach (var member in internalForcesMember_List)
+                {
+                    // -> loop over rows
+                    foreach (var row in member)
+                    {
+                        Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
+                        Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", row.row.node_number != null ? row.row.node_number.value : "NAN", row.row.location, row.row.location_flags, row.row.internal_force_label, row.row.specification);
+                        Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", row.row.internal_force_n.ToString(), row.row.internal_force_vy.ToString(), row.row.internal_force_vz.ToString(), row.row.internal_force_mt.ToString(), row.row.internal_force_my.ToString(), row.row.internal_force_mz.ToString());
+                    }
                 }
 
                 // printout member deformations
 
-                Console.WriteLine("Global deformations for member");
-                members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
-                foreach (var item in globalDeformationsMember1)
-                {
-                    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
-                    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
+                Console.WriteLine("Global deformations for member:");
 
+                List<members_global_deformations_row[]> globalDeformationsMember_List = new();
+
+                foreach (KeyValuePair<int, member> memberItem in members)
+                {
+                    members_global_deformations_row[] globalDeformationsMember = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, memberItem.Key);
+                    globalDeformationsMember_List.Add(globalDeformationsMember);
+                }
+
+                foreach (var member in globalDeformationsMember_List)
+                {
+                    foreach (var row in member)
+                    {
+                        Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
+                        Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", row.row.node_number != null ? row.row.node_number.value : "NAN", row.row.location, row.row.location_flags, row.row.deformation_label, row.row.section);
+                        Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", row.row.displacement_x.ToString(), row.row.displacement_y.ToString(), row.row.displacement_z.ToString(), row.row.displacement_absolute.ToString(), row.row.rotation_x.ToString(), row.row.rotation_y.ToString(), row.row.rotation_z.ToString(), row.row.warping.ToString());
+                    }
                 }
 
                 // printout node deformations
 
                 nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                Console.WriteLine("Node deformations");
+                Console.WriteLine("Node deformations:");
                 foreach (var item in nodeDeformations)
                 {
                     Console.WriteLine("Row no {0}\t Description {1} node comment {2}", item.no, item.description, item.row.specification);
                     Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
-
                 }
 
                 // printout support forces
 
                 nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                Console.WriteLine("Node reactions");
+                Console.WriteLine("Node reactions:");
                 foreach (var item in nodeReactions)
                 {
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
                     Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading.ToString(), item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
-
                 }
                 #endregion
 
@@ -552,7 +640,7 @@ namespace ContinuousBeam
                 parts_list_all_by_material_row[] partListByAllMaterial = model.get_parts_list_all_by_material();
                 foreach (var item in partListByAllMaterial)
                 {
-                    if (!item.description.Contains("Total"))
+                    if (!item.description.Contains("Total:"))
                     {
                         Console.WriteLine("Material no: {0}\t Material name: {1}\t object type: {2}\t coating:{3}\t volume: {4}\t mass: {5}", item.description, item.row.material_name, item.row.object_type, item.row.total_coating, item.row.volume, item.row.mass);
                     }
@@ -560,8 +648,8 @@ namespace ContinuousBeam
                     {
                         Console.WriteLine("Material total\t \t \t coating:{0}\t volume: {1}\t mass: {2}", item.row.total_coating, item.row.volume, item.row.mass);
                     }
-
                 }
+
                 Console.WriteLine("Members: ");
                 parts_list_members_by_material_row[] partListMemberByMaterial = model.get_parts_list_members_by_material();
                 foreach (var item in partListMemberByMaterial)
@@ -577,40 +665,12 @@ namespace ContinuousBeam
                                             item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
 
                     }
-
                 }
-                #endregion
-
-                #region Export Result XML / CSV
-                //model.export_result_tables_with_detailed_members_results_to_csv(CurrentDirectory);
-
-
-                //model.export_result_tables_with_detailed_members_results_to_xml(CurrentDirectory + @"\Test.xml");
-
-                //string XMLFile = File.ReadAllText(CurrentDirectory + @"\Test.xml");
-                //XDocument doc = XDocument.Parse(XMLFile);
-
-                //foreach (XElement loadcase in doc.Descendants("load_case"))
-                //{
-
-                //    if (loadcase.Element("no").Value == "1")
-                //    {
-                //        Console.WriteLine("My internal forces from LC 1");
-                //        var internalForces = loadcase.Descendants("E_MODEL_MEMBERS_INTERNAL_FORCES");
-                //        var internalForcesItems = internalForces.Descendants("item");
-                //        foreach (var item in internalForcesItems)
-                //        {
-                //            string My = item.Element("internal_force_my").Value.ToString();
-                //            Console.WriteLine(My);
-                //        }
-
-                //    }
-                //}
                 #endregion
 
                 // close RFEM - model
 
-                application.close_model(0, false);
+                //application.close_model(0, false);
             }
             catch (Exception ex)
             {
@@ -619,5 +679,4 @@ namespace ContinuousBeam
             }
         }
     }
-
 }
