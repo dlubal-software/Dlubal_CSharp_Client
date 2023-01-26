@@ -12,8 +12,6 @@ using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 using NLog;
 using System.ServiceModel;
 using System.Globalization;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace ContinuousBeam
 {
@@ -60,13 +58,9 @@ namespace ContinuousBeam
             Console.Write("Span [m]: ");
             double span = Convert.ToDouble(Console.ReadLine().Replace('.', ','), CultureInfo.CurrentCulture);
 
-            Console.Write("continuous member load [kN/m]: ");
+            Console.Write("Continuous member load [kN/m]: ");
             double memberLoad = Convert.ToDouble(Console.ReadLine().Replace('.', ','), CultureInfo.CurrentCulture);
 
-            //var config = new NLog.Config.LoggingConfiguration();
-            //var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            //config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-            //LogManager.Configuration = config;
             var logger = LogManager.GetCurrentClassLogger();
             string CurrentDirectory = Directory.GetCurrentDirectory();
             #region Application Settings
@@ -105,8 +99,8 @@ namespace ContinuousBeam
 
                 string modelName = "MyTestModel";
                 string modelUrl ="";
-                //check if model with same name already opened -> no program crash
 
+                //check if model with same name already opened -> no program crash
                 bool noModelOpened = false;
                 do
                 {
@@ -127,7 +121,6 @@ namespace ContinuousBeam
 
                 #region new model
                 // connect to RFEM6/RSTAB9 model
-
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
                 #endregion
@@ -152,7 +145,6 @@ namespace ContinuousBeam
                 };
 
                 //create nodes
-
                 SortedList<int, node> nodes = new SortedList<int, node>();
                 int[] lineDefinitionNodes = new int[spanNumber + 1];
                 int nodeId = 1;
@@ -168,17 +160,13 @@ namespace ContinuousBeam
                         coordinate_system_typeSpecified = true,
                         comment = "concrete part"
                     };
-
                     nodes.Add(nodeId, newNode);
                     lineDefinitionNodes[i] = nodeId;
-
                     xVector = xVector + span;
-
                     nodeId++;
                 }
 
 #if RFEM        // create lines
-
                 int lineId = 1;
                 SortedList<int, line> lines = new SortedList<int, line>();
 
@@ -192,20 +180,14 @@ namespace ContinuousBeam
                         type = line_type.TYPE_POLYLINE,
                         typeSpecified = true,
                     };
-
                     lines.Add(lineId, newLine);
-                    Debug.WriteLine(lineId);
                     lineId++;
-
-
                 }
-
-
+#endif
                 // create members
-
                 int memberId = 1;
                 SortedList<int, member> members = new SortedList<int, member>();
-
+#if RFEM
                 foreach (KeyValuePair<int, line> lineItem in lines)
                 {
                     member newMember = new()
@@ -219,16 +201,16 @@ namespace ContinuousBeam
                         section_endSpecified = true,
                         comment = "concrete beam"
                     };
-                    memberId++;
                     members.Add(memberId, newMember);
+                    memberId++;
                 }
 #elif RSTAB
-                for (int i = 0; i < spanNumber + 1; i++)
+                for (int i = 0; i < spanNumber; i++)
 			    {
                      member newMember = new()
                     {
-                        no = i + 1,
-                        node_start = lineDefinitionNode[i],
+                        no = memberId,
+                        node_start = lineDefinitionNodes[i],
                         node_startSpecified = true,
                         node_end = lineDefinitionNodes[i + 1],
                         node_endSpecified = true,
@@ -238,48 +220,50 @@ namespace ContinuousBeam
                         section_endSpecified = true,
                         comment = "concrete beam"
                     };
-                    members.Add(i + 1, newMember);
+                    members.Add(memberId, newMember);
+                    memberId++;
 			    }
-#endif
+#endif                                
+                //contains nodes with nodal support number 1
+                List<int> supportedNodes1 = new();
 
-                //remove list
-                List<node> supportedNodes = new();
+                //contains nodes with nodal support number 2
+                List<int> supportedNodes2 = new();
                 List<nodal_support> nodalSupports = new();
 
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
                 {
-                    supportedNodes.Add(nodeItem.Value);
-                }
-
-                // assign nodes to support
-                foreach (KeyValuePair<int, node> nodeItem in nodes)
-                {
                     if (nodeItem.Key == 1)
                     {
-                        nodal_support support1 = new()
-                        {
-                            no = nodeItem.Key,
-                            nodes = new int[] { nodeItem.Key },
-                            spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                            rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
-                        };
-                        nodalSupports.Add(support1);
+                        supportedNodes1.Add(nodeItem.Key);
                     }
                     else
                     {
-                        nodal_support support2 = new()
-                        {
-                            no = nodeItem.Key,
-                            nodes = new int[] { nodeItem.Key },
-                            spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                            rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
-                        };
-                        nodalSupports.Add(support2);
+                        supportedNodes2.Add(nodeItem.Key);  
                     }
                 }
 
-                // transfer objects to RFEM
+                // create supports
+                nodal_support support1 = new()
+                {
+                    no = 1,
+                    nodes = supportedNodes1.ToArray(),
+                    spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                    rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = 0.0, z = double.PositiveInfinity }
+                };
 
+                nodal_support support2 = new()
+                {
+                    no = 2,
+                    nodes = supportedNodes2.ToArray(),
+                    spring = new vector_3d() { x = 0.0, y = double.PositiveInfinity, z = double.PositiveInfinity },
+                    rotational_restraint = new vector_3d() { x = 0.0, y = 0.0, z = double.PositiveInfinity }
+                };
+
+                nodalSupports.Add(support1);
+                nodalSupports.Add(support2);
+
+                // transfer objects to RFEM
                 try
                 {
                     model.begin_modification("Geometry");
@@ -290,13 +274,11 @@ namespace ContinuousBeam
                     {
                         model.set_node(nodeItem.Value);
                     }
-
 #if RFEM
                     foreach (KeyValuePair<int, line> lineItem in lines)
                     {
                         model.set_line(lineItem.Value);
                     }
-
 #endif
                     foreach (KeyValuePair<int, member> memberItem in members)
                     {
@@ -328,7 +310,6 @@ namespace ContinuousBeam
                 }
 
                 // define static analysis settings
-
                 static_analysis_settings analysis = new()
                 {
                     no = 1,
@@ -337,7 +318,6 @@ namespace ContinuousBeam
                 };
 
                 // define load cases
-
                 load_case selfWeightLC = new()
                 {
                     no = 1,
@@ -371,7 +351,6 @@ namespace ContinuousBeam
                 };
 
                 // define design-situation
-
                 design_situation design_Situation = new design_situation()
                 {
                     no = 1,
@@ -386,7 +365,6 @@ namespace ContinuousBeam
                 };
 
                 // define settings for load combination
-
                 load_combination_items_row load_Combination_SW = new load_combination_items_row()
                 {
                     no = 1,
@@ -413,7 +391,6 @@ namespace ContinuousBeam
                 load_combination_items_row[] loadCombinationItems = new load_combination_items_row[] { load_Combination_SW, load_Combination_lcData };
 
                 // define load combinations
-
                 load_combination load_Combination = new load_combination()
                 {
                     no = 1,
@@ -430,7 +407,6 @@ namespace ContinuousBeam
                 };
 
                 // transfer analysis settings to RFEM
-
                 try
                 {
                     model.begin_modification("Load");
@@ -461,7 +437,6 @@ namespace ContinuousBeam
                 }
 
                 // define member load
-
                 SortedList<int, member_load> member_loads = new SortedList<int, member_load>();
                 int member_load_id = 1;
 
@@ -483,9 +458,7 @@ namespace ContinuousBeam
                     member_load_id++;
                 }   
                    
-                // transfer loads to RFEM
-                
-
+                // transfer loads to RFEM              
                 try
                 {
                     model.begin_modification("Set loads");
@@ -493,7 +466,6 @@ namespace ContinuousBeam
                     {
                         model.set_member_load(lcData.no, memberload.Value);
                     }
-
                 }
                 catch (Exception exception)
                 {
@@ -525,10 +497,8 @@ namespace ContinuousBeam
                 Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
                 Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
                 Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
-
                 #endregion
 #endif
-
                 calculation_message[] calculationMessages = model.calculate_all(true);
                 if (calculationMessages.Length != 0)
                 {
@@ -539,7 +509,6 @@ namespace ContinuousBeam
                 }
 
                 // printout result messages
-
                 #region Results
                 bool modelHasAnyResults = model.has_any_results();
 
@@ -563,13 +532,10 @@ namespace ContinuousBeam
                 }
 
                 // activate display of results along the length of the member, by default false -> results just at the beginning and end of the member + extremes
-
                 model.use_detailed_member_results(true);
 
                 // printout internal forces
-
                 List<members_internal_forces_row[]> internalForcesMember_List = new();
-
 
                 foreach (KeyValuePair<int, member> memberItem in members)
                 {
@@ -581,7 +547,6 @@ namespace ContinuousBeam
 
                 foreach (var member in internalForcesMember_List)
                 {
-                    // -> loop over rows
                     foreach (var row in member)
                     {
                         Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
@@ -591,7 +556,6 @@ namespace ContinuousBeam
                 }
 
                 // printout member deformations
-
                 Console.WriteLine("Global deformations for member:");
 
                 List<members_global_deformations_row[]> globalDeformationsMember_List = new();
@@ -613,7 +577,6 @@ namespace ContinuousBeam
                 }
 
                 // printout node deformations
-
                 nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
                 Console.WriteLine("Node deformations:");
                 foreach (var item in nodeDeformations)
@@ -623,7 +586,6 @@ namespace ContinuousBeam
                 }
 
                 // printout support forces
-
                 nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
                 Console.WriteLine("Node reactions:");
                 foreach (var item in nodeReactions)
@@ -634,7 +596,6 @@ namespace ContinuousBeam
                 #endregion
 
                 // printout parts list
-
                 #region Generate parts list
                 model.generate_parts_lists();
                 parts_list_all_by_material_row[] partListByAllMaterial = model.get_parts_list_all_by_material();
@@ -663,14 +624,13 @@ namespace ContinuousBeam
                     {
                         Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
                                             item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
-
                     }
                 }
                 #endregion
 
-                // close RFEM - model
-
-                //application.close_model(0, false);
+                //save the model before closing
+                model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\testmodel");
+                application.close_model(0, true);
             }
             catch (Exception ex)
             {
