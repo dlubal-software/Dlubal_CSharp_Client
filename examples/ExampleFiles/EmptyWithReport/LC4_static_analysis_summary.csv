@@ -1,0 +1,41 @@
+﻿;;;;
+;Description;Value;Unit;Notes
+;Sum of loads and the sum of support forces;;;
+;Sum of loads in X;0.00;kN;
+;Sum of support forces in X;0.00;kN;
+;Sum of loads in Y;0.00;kN;
+;Sum of support forces in Y;0.00;kN;
+;Sum of loads in Z;0.00;kN;
+;Sum of support forces in Z;0.00;kN;
+;;;;
+;Resultant of reactions;;;
+;Resultant of reactions about X;0.00;kNm;At center of gravity of model (7.553, 2.005, -3.416 m)
+;Resultant of reactions about Y;0.00;kNm;At center of gravity of model
+;Resultant of reactions about Z;0.00;kNm;At center of gravity of model
+;;;;
+;Maximum deformations;;;
+;Maximum displacement in X-direction;0.0;mm;
+;Maximum displacement in Y-direction;0.0;mm;
+;Maximum displacement in Z-direction;0.0;mm;
+;Maximum vectorial displacement;0.0;mm;
+;Maximum rotation about X-axis;0.0;mrad;
+;Maximum rotation about Y-axis;0.0;mrad;
+;Maximum rotation about Z-axis;0.0;mrad;
+;;;;
+;Calculation statistic;;;
+;Number of iterations;2;;
+;Maximum value of element of stiffness matrix on diagonal;8.92e+10;--;
+;Minimum value of element of stiffness matrix on diagonal;309790.00;--;
+;Stiffness matrix determinant;1.77e+16489;--;
+;Infinity Norm;1.93e+11;--;
+;;;;
+;Static Analysis Settings No. 1 - MySettingsSecondOrder;;;
+;Analysis type;Second-order (P-Δ);;
+;Iterative method;Newton-Raphson;;
+;Maximum number of iterations;100;;
+;Number of load increments;1;;
+;Modify loading by multiplier factor;;;
+;Consider favorable effects due to tension forces of members;;;
+;Asymmetric direct solver;;;
+;Method for Equation System;Direct;;
+;Plate bending theory;Mindlin;;

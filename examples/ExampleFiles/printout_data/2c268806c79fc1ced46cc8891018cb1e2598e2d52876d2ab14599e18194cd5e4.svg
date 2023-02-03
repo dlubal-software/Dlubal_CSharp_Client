@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="290px" height="263px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 2900000 2630000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g>
+   <polygon fill="#5A5A6E" fill-opacity="0.650980" points="1355833,1324799 1533347,1221273 1533347,1075731 1182427,1278340 "/>
+   <polygon id="1" fill="none" stroke="#5A5A6E" stroke-width="14998.1" stroke-linecap="round" stroke-linejoin="round" points="1355833,1324799 1533347,1221273 1533347,1075731 1182427,1278340 "/>
+  </g>
+  <g>
+   <polygon fill="#5A5A6E" fill-opacity="0.650980" points="1568556,1653068 2297627,1227869 2297627,1082327 1568556,1503254 "/>
+   <polygon id="1" fill="none" stroke="#5A5A6E" stroke-width="14998.1" stroke-linecap="round" stroke-linejoin="round" points="1568556,1653068 2297627,1227869 2297627,1082327 1568556,1503254 "/>
+  </g>
+  <g>
+   <polygon fill="#5A5A6E" fill-opacity="0.650980" points="625076,1250450 1568556,1503254 1568556,1653068 625076,1393707 "/>
+   <polygon id="1" fill="none" stroke="#5A5A6E" stroke-width="14998.1" stroke-linecap="round" stroke-linejoin="round" points="625076,1250450 1568556,1503254 1568556,1653068 625076,1393707 "/>
+  </g>
+  <g>
+   <path fill="#5A5A6E" fill-opacity="0.211765" d="M2297627 1082327l-581873 -486207 -818189 217043 -272489 437287 943480 252804 729071 -420927zm-396335 91995l-367945 -98591 -350920 202611 367942 98587 350923 -202607z"/>
+   <path id="1" fill="none" stroke="#5A5A6E" stroke-width="14998.1" stroke-linecap="round" stroke-linejoin="round" d="M2297627 1082327l-581873 -486207 -818189 217043 -272489 437287 943480 252804 729071 -420927zm-396335 91995l-367945 -98591 -350920 202611 367942 98587 350923 -202607z"/>
+  </g>
+  <line fill="none" x1="2094496" y1="1467802" x2="2094496" y2= "1643226" />
+  <polyline fill="none" stroke="#5A5A6E" stroke-width="9997.79" stroke-dasharray="49988.954661 49988.954661" points="2297627,1155098 1568556,1578160 625076,1322078 "/>
+  <circle fill="#C83200" cx="2297626" cy="1155098" r="25000"/>
+  <circle fill="#C83200" cx="1568556" cy="1578160" r="25000"/>
+  <circle fill="#C83200" cx="625075" cy="1322078" r="25000"/>
+  <g>
+   <polygon fill="#5A5A6E" fill-opacity="0.650980" points="1533347,1075731 1901290,1174322 1730199,1273104 1533347,1218988 "/>
+   <polygon id="1" fill="none" stroke="#5A5A6E" stroke-width="14998.1" stroke-linecap="round" stroke-linejoin="round" points="1533347,1075731 1901290,1174322 1730199,1273104 1533347,1218988 "/>
+  </g>
+  <polyline fill="none" stroke="#5A5A6E" stroke-width="9997.79" stroke-dasharray="49988.954661 49988.954661" points="1815394,1223914 1533347,1147359 1269427,1301649 "/>
+  <circle fill="#C83200" cx="1533346" cy="1147359" r="25000"/>
+ </g>
+</svg>

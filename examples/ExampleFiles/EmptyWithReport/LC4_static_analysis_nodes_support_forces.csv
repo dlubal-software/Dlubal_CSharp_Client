@@ -1,0 +1,33 @@
+﻿Node No.;;Support Forces [kN];;;Support Moments [kNm];;;
+;;P_x;P_y;P_z;M_x;M_y;M_z;Node Comment
+1;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+4;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+7;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+10;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+13;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+16;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+19;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+22;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+25;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+28;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+31;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+34;;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+;;;;;;;;
+;Total max/min values with corresponding values;;;;;;;
+1;P_x;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;P_x;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;P_y;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;P_y;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;P_z;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;P_z;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;M_x;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;M_x;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;M_y;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;M_y;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;M_z;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+1;M_z;0.00;0.00;0.00;0.00;0.00;0.00;concrete part
+;;;;;;;;
+;Sum of loads and the sum of support forces;;;;;;;
+;;P_X [kN];P_Y [kN];P_Z [kN];;;;
+Σ;;0.00;0.00;0.00;Loads;;;
+Σ;;0.00;0.00;0.00;Support Forces;;;

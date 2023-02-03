@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35.2778mm" height="35.2778mm"
+ viewBox="0 0 100 100"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+<rect x="0" y="0" width="100" height="100"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#6ebeeb" fill-opacity="1" stroke="#464646" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M72.5,5 L72.5,8.825 L56.66,8.825 L56.1307,8.851 L55.6065,8.92876 L55.0925,9.05752 L54.5935,9.23605 L54.1145,9.46263 L53.6599,9.73506 L53.2343,10.0507 L52.8416,10.4066 L52.4857,10.7993 L52.1701,11.2249 L51.8976,11.6795 L51.6711,12.1585 L51.4925,12.6575 L51.3638,13.1715 L51.286,13.6957 L51.26,14.225 L51.26,85.775 L51.286,86.3043 L51.3638,86.8285 L51.4925,87.3425 L51.6711,87.8415 L51.8976,88.3205 L52.1701,88.7751 L52.4857,89.2007 L52.8416,89.5934 L53.2343,89.9493 L53.6599,90.2649 L54.1145,90.5374 L54.5935,90.7639 L55.0925,90.9425 L55.6065,91.0712 L56.1307,91.149 L56.66,91.175 L72.5,91.175 L72.5,95 L27.5,95 L27.5,91.175 L43.34,91.175 L43.8693,91.149 L44.3935,91.0712 L44.9075,90.9425 L45.4065,90.7639 L45.8855,90.5374 L46.3401,90.2649 L46.7657,89.9493 L47.1584,89.5934 L47.5143,89.2007 L47.8299,88.7751 L48.1024,88.3205 L48.3289,87.8415 L48.5075,87.3425 L48.6362,86.8285 L48.714,86.3043 L48.74,85.775 L48.74,14.225 L48.714,13.6957 L48.6362,13.1715 L48.5075,12.6575 L48.3289,12.1585 L48.1024,11.6795 L47.8299,11.2249 L47.5143,10.7993 L47.1584,10.4066 L46.7657,10.0507 L46.3401,9.73506 L45.8855,9.46263 L45.4065,9.23605 L44.9075,9.05752 L44.3935,8.92876 L43.8693,8.851 L43.34,8.825 L27.5,8.825 L27.5,5 L72.5,5"/>
+</g>
+
+<g fill="#ffffff" fill-opacity="1" stroke="#ffffff" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d="M65.3935,91.175 L66.8078,91.175 L62.9828,95 L61.5685,95 L65.3935,91.175"/>
+<path vector-effect="none" fill-rule="evenodd" d="M54.5238,90.731 L54.5935,90.7639 L55.0925,90.9425 L55.5996,91.0695 L51.669,95 L50.2548,95 L54.5238,90.731"/>
+<path vector-effect="none" fill-rule="evenodd" d="M51.26,82.6811 L51.26,84.0953 L48.6553,86.7 L48.714,86.3043 L48.74,85.775 L48.74,85.2011 L51.26,82.6811 M40.3553,95 L38.9411,95 L42.7661,91.175 L43.34,91.175 L43.8693,91.149 L44.265,91.0903 L40.3553,95"/>
+<path vector-effect="none" fill-rule="evenodd" d="M51.26,71.3674 L51.26,72.7816 L48.74,75.3016 L48.74,73.8874 L51.26,71.3674 M29.0416,95 L27.6274,95 L31.4524,91.175 L32.8666,91.175 L29.0416,95"/>
+<path vector-effect="none" fill-rule="evenodd" d="M51.26,60.0537 L51.26,61.4679 L48.74,63.9879 L48.74,62.5737 L51.26,60.0537"/>
+<path vector-effect="none" fill-rule="evenodd" d="M51.26,48.74 L51.26,50.1542 L48.74,52.6742 L48.74,51.26 L51.26,48.74"/>
+<path vector-effect="none" fill-rule="evenodd" d="M51.26,37.4263 L51.26,38.8405 L48.74,41.3605 L48.74,39.9463 L51.26,37.4263"/>
+<path vector-effect="none" fill-rule="evenodd" d="M72.5,5 L72.5,6.2868 L69.9618,8.825 L68.5476,8.825 L72.3726,5 L72.5,5 M51.26,26.1126 L51.26,27.5268 L48.74,30.0468 L48.74,28.6326 L51.26,26.1126"/>
+<path vector-effect="none" fill-rule="evenodd" d="M58.6481,8.825 L57.2339,8.825 L61.0589,5 L62.4731,5 L58.6481,8.825 M51.26,14.7989 L51.26,16.2131 L48.74,18.7331 L48.74,17.3189 L51.26,14.7989"/>
+<path vector-effect="none" fill-rule="evenodd" d="M46.3884,9.77093 L46.3401,9.73506 L45.8855,9.46263 L45.4762,9.269 L49.7452,5 L51.1594,5 L46.3884,9.77093"/>
+<path vector-effect="none" fill-rule="evenodd" d="M36.0207,8.825 L34.6065,8.825 L38.4315,5 L39.8457,5 L36.0207,8.825"/>
+<path vector-effect="none" fill-rule="evenodd" d="M27.5,6.03196 L27.5,5 L28.532,5 L27.5,6.03196"/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+<path vector-effect="none" fill-rule="evenodd" d=""/>
+</g>
+
+<g fill="none" stroke="#464646" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M72.5,5 L72.5,8.825 L56.66,8.825 L56.1307,8.851 L55.6065,8.92876 L55.0925,9.05752 L54.5935,9.23605 L54.1145,9.46263 L53.6599,9.73506 L53.2343,10.0507 L52.8416,10.4066 L52.4857,10.7993 L52.1701,11.2249 L51.8976,11.6795 L51.6711,12.1585 L51.4925,12.6575 L51.3638,13.1715 L51.286,13.6957 L51.26,14.225 L51.26,85.775 L51.286,86.3043 L51.3638,86.8285 L51.4925,87.3425 L51.6711,87.8415 L51.8976,88.3205 L52.1701,88.7751 L52.4857,89.2007 L52.8416,89.5934 L53.2343,89.9493 L53.6599,90.2649 L54.1145,90.5374 L54.5935,90.7639 L55.0925,90.9425 L55.6065,91.0712 L56.1307,91.149 L56.66,91.175 L72.5,91.175 L72.5,95 L27.5,95 L27.5,91.175 L43.34,91.175 L43.8693,91.149 L44.3935,91.0712 L44.9075,90.9425 L45.4065,90.7639 L45.8855,90.5374 L46.3401,90.2649 L46.7657,89.9493 L47.1584,89.5934 L47.5143,89.2007 L47.8299,88.7751 L48.1024,88.3205 L48.3289,87.8415 L48.5075,87.3425 L48.6362,86.8285 L48.714,86.3043 L48.74,85.775 L48.74,14.225 L48.714,13.6957 L48.6362,13.1715 L48.5075,12.6575 L48.3289,12.1585 L48.1024,11.6795 L47.8299,11.2249 L47.5143,10.7993 L47.1584,10.4066 L46.7657,10.0507 L46.3401,9.73506 L45.8855,9.46263 L45.4065,9.23605 L44.9075,9.05752 L44.3935,8.92876 L43.8693,8.851 L43.34,8.825 L27.5,8.825 L27.5,5 L72.5,5"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Segoe UI" font-size="7.8" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>

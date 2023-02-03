@@ -1,0 +1,9 @@
+﻿;Increment;Iteration;Load Factor;;;;
+;No.;No.;[--];Deformation;Status;;Comment
+;Maximum Displacement;;;u_max [mm];;;
+;1;1;1.000;0.0;;;
+;1;2;1.000;0.0;;;
+;;;;;;;
+;Maximum Rotation;;;φ_max [mrad];;;
+;1;1;1.000;0.0;;;
+;1;2;1.000;0.0;;;
