@@ -1,0 +1,84 @@
+﻿Node No.;Displacements [mm];;;;Rotations [mrad];;;
+;|u|;u_X;u_Y;u_Z;φ_X;φ_Y;φ_Z;Node Comment
+1;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+1;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+2;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+2;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+3;0.1;0.1;0.0;0.0;0.0;0.0;0.0;steel top
+3;0.1;-0.1;0.0;0.0;0.0;0.0;0.0;steel top
+4;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+4;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+5;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+5;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+6;0.1;0.1;0.0;0.0;0.0;0.0;0.0;steel top
+6;0.1;-0.1;0.0;0.0;0.0;0.0;0.0;steel top
+7;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+7;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+8;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+8;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+9;0.1;0.1;0.0;0.0;0.0;0.0;0.1;steel top
+9;0.1;-0.1;0.0;0.0;0.0;0.0;-0.1;steel top
+10;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+10;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+11;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+11;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+12;0.2;0.2;0.0;0.0;0.0;0.1;0.1;steel top
+12;0.2;-0.2;0.0;0.0;0.0;-0.1;-0.1;steel top
+13;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+13;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+14;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+14;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+15;0.2;0.2;0.0;0.0;0.0;0.1;0.1;steel top
+15;0.2;-0.2;0.0;0.0;0.0;-0.1;-0.1;steel top
+16;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+16;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+17;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+17;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+18;0.1;0.1;0.0;0.0;0.0;0.0;0.0;steel top
+18;0.1;-0.1;0.0;0.0;0.0;0.0;0.0;steel top
+19;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+19;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+20;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+20;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+21;0.1;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+21;0.1;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+22;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+22;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+23;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+23;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+24;0.1;0.1;0.0;0.0;0.0;0.0;0.0;steel top
+24;0.1;-0.1;0.0;0.0;0.0;0.0;0.0;steel top
+25;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+25;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+26;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+26;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+27;0.4;0.4;0.0;0.0;0.0;0.1;0.1;steel top
+27;0.4;-0.4;0.0;0.0;0.0;-0.1;-0.1;steel top
+28;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+28;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+29;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+29;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+30;0.2;0.2;0.0;0.0;0.0;0.1;0.1;steel top
+30;0.2;-0.2;0.0;0.0;0.0;-0.1;-0.1;steel top
+31;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+31;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+32;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+32;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+33;0.4;0.4;0.0;0.0;0.0;0.1;0.1;steel top
+33;0.4;-0.4;0.0;0.0;0.0;-0.1;-0.1;steel top
+34;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+34;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+35;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+35;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+36;0.1;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+36;0.1;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+37;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+37;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+38;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+38;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+39;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+39;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+40;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+40;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+Total;0.4;0.4;0.0;0.0;0.0;0.1;0.1;
+max/min;0.0;-0.4;0.0;0.0;0.0;-0.1;-0.1;

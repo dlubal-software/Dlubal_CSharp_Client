@@ -1430,6 +1430,20 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_member_openingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_member_openings(Dlubal.WS.Rfem6.Model.get_member_openingsRequest request)
+        {
+            return base.Channel.get_member_openings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.member_openings get_member_openings(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_member_openingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_member_openingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_member_openingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_member_openings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_member_representativeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_member_representative(Dlubal.WS.Rfem6.Model.get_member_representativeRequest request)
         {
             return base.Channel.get_member_representative(request);
@@ -8896,6 +8910,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_member_nonlinearityRequest inValue = new Dlubal.WS.Rfem6.Model.set_member_nonlinearityRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_member_nonlinearityResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_member_nonlinearity(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_member_openingsResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_member_openings(Dlubal.WS.Rfem6.Model.set_member_openingsRequest request)
+        {
+            return base.Channel.set_member_openings(request);
+        }
+        
+        public void set_member_openings(Dlubal.WS.Rfem6.Model.member_openings value)
+        {
+            Dlubal.WS.Rfem6.Model.set_member_openingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_member_openingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_member_openingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_member_openings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

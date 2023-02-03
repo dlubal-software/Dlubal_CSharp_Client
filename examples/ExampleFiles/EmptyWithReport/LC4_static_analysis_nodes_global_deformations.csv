@@ -1,0 +1,44 @@
+﻿Node No.;Displacements [mm];;;;Rotations [mrad];;;
+;|u|;u_X;u_Y;u_Z;φ_X;φ_Y;φ_Z;Node Comment
+1;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+2;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+3;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+4;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+5;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+6;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+7;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+8;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+9;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+10;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+11;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+12;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+13;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+14;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+15;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+16;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+17;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+18;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+19;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+20;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+21;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+22;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+23;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+24;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+25;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+26;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+27;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+28;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+29;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+30;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+31;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+32;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+33;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+34;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete part
+35;0.0;0.0;0.0;0.0;0.0;0.0;0.0;concrete top + steel bottom
+36;0.0;0.0;0.0;0.0;0.0;0.0;0.0;steel top
+37;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+38;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+39;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+40;0.0;0.0;0.0;0.0;0.0;0.0;0.0;opening node
+Total;0.0;0.0;0.0;0.0;0.0;0.0;0.0;
+max/min;0.0;0.0;0.0;0.0;0.0;0.0;0.0;

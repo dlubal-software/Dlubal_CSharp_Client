@@ -1,0 +1,10 @@
+﻿;;;;
+;Description;Value;Unit;Notes
+;Maximum deformations;;;
+;Maximum displacement in X-direction;0.4;mm;Member No. 22, x: 4.000 m
+;Maximum displacement in Y-direction;0.0;mm;Member No. 2, x: 4.000 m
+;Maximum displacement in Z-direction;0.0;mm;Member No. 39, x: 3.333 m
+;Maximum vectorial displacement;0.4;mm;Member No. 22, x: 4.000 m
+;Maximum rotation about X-axis;0.0;mrad;Member No. 39, x: 2.778 m
+;Maximum rotation about Y-axis;0.1;mrad;Member No. 22, x: 4.000 m
+;Maximum rotation about Z-axis;0.1;mrad;Member No. 34, x: 2.000 m

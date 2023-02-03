@@ -74,9 +74,9 @@ namespace Hall
         public static void TestingExample(RfemModelClient model, Logger logger)
         {
             string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
+            string Examples = @"..\..\..\..\ExampleFiles\";
             string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
-
+            
             #region Model type
             model_type modelType = model.get_model_type();
             Console.WriteLine("Model type is : {0}", modelType.ToString());
@@ -119,8 +119,6 @@ namespace Hall
             addon.dynamic_analysis_settings.spectral_activeSpecified = true;
             addon.analysis.structure_stability_active = true;
             addon.analysis.structure_stability_activeSpecified = true;
-            addon.analysis.construction_stages_active = true;
-            addon.analysis.construction_stages_activeSpecified = true;
             addon.design_addons.steel_joints_active = false;
             addon.design_addons.steel_joints_activeSpecified = true;
             addon.design_addons.aluminum_design_active = true;
@@ -3137,92 +3135,6 @@ namespace Hall
             }
             #endregion
 
-            #region Steel 
-
-            steel_member_local_section_reduction_components_row steelMemberLocalReductionDesignParams = new steel_member_local_section_reduction_components_row()
-            {
-                no = 1,
-                row = new steel_member_local_section_reduction_components()
-                {
-                    reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_DESIGN_PARAMETERS,
-                    reduction_typeSpecified = true,
-                    position = 1,
-                    positionSpecified = true,
-                    multiple = false,
-                    multipleSpecified = true,
-                    //note = 
-                    multiple_number = 0,
-                    multiple_numberSpecified = true,
-                    multiple_offset_definition_type = multiple_offset_definition_type.OFFSET_DEFINITION_TYPE_ABSOLUTE,
-                    multiple_offset_definition_typeSpecified = true,
-                    multiple_offset = 0,
-                    multiple_offsetSpecified = true,
-                    fastener_definition_type = fastener_definition_type.DEFINITION_TYPE_RELATIVE,
-                    fastener_definition_typeSpecified = true,
-                    reduction_area_factor = 0.5,
-                    reduction_area_factorSpecified = true,
-
-                }
-            };
-            steel_member_local_section_reduction_components_row steelMemberLocalReductionSecVal = new steel_member_local_section_reduction_components_row()
-            {
-                no = 2,
-                row = new steel_member_local_section_reduction_components()
-                {
-                    reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_DESIGN_PARAMETERS,
-                    reduction_typeSpecified = true,
-                    position = 2.0,
-                    positionSpecified = true,
-                    multiple = false,
-                    multipleSpecified = true,
-                    //note = 
-                    multiple_number = 0,
-                    multiple_numberSpecified = true,
-                    multiple_offset_definition_type = multiple_offset_definition_type.OFFSET_DEFINITION_TYPE_ABSOLUTE,
-                    multiple_offset_definition_typeSpecified = true,
-                    multiple_offset = 0,
-                    multiple_offsetSpecified = true,
-                    fastener_definition_type = fastener_definition_type.DEFINITION_TYPE_RELATIVE,
-                    fastener_definition_typeSpecified = true,
-                    reduction_area_factor = 0.9,
-                    reduction_area_factorSpecified = true,
-                }
-            };
-            steel_member_local_section_reduction steelMemberLocalReductionSection = new steel_member_local_section_reduction()
-            {
-                no = 2,
-                user_defined_name_enabled = true,
-                user_defined_name_enabledSpecified = true,
-                name = "1 Reduction(s) | Section Values (Members : 28)",
-                members = new int[] { 28 },
-                components = new steel_member_local_section_reduction_components_row[] { steelMemberLocalReductionDesignParams, steelMemberLocalReductionSecVal },
-            };
-
-            try
-            {
-                model.begin_modification("Set  steel_member_local_section_reduction");
-                // model.set_steel_member_local_section_reduction(steelMemberLocalReductionSection);
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  steel_member_local_section_reduction: " + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of  steel_member_local_section_reduction\n" + exception.Message + "\n");
-
-                }
-            }
-            #endregion
-
             #region Set member_transverse_stiffener
             member_transverse_stiffener_components_row TransverseStiffenerComponent = new member_transverse_stiffener_components_row()
             {
@@ -4660,191 +4572,6 @@ namespace Hall
             }
             #endregion
 
-            #region Construction phases
-            construction_stage_loading_row[] CSOneLoading = new construction_stage_loading_row[3];
-            CSOneLoading[0] = new construction_stage_loading_row()
-            {
-                no = 1,
-                row = new construction_stage_loading()
-                {
-                    load_case = 1,
-                    load_caseSpecified = true,
-                    status_type = status_type.NONE,
-                    status_typeSpecified = true,
-                    permanent = true,
-                    permanentSpecified = true,
-                    factor = 0,
-                    factorSpecified = true,
-                }
-            };
-            CSOneLoading[1] = new construction_stage_loading_row()
-            {
-                no = 2,
-                row = new construction_stage_loading()
-                {
-                    load_case = 2,
-                    load_caseSpecified = true,
-                    status_type = status_type.NONE,
-                    status_typeSpecified = true,
-                    permanent = true,
-                    permanentSpecified = true,
-                    factor = 0,
-                    factorSpecified = true,
-                }
-            };
-            CSOneLoading[2] = new construction_stage_loading_row()
-            {
-                no = 3,
-                row = new construction_stage_loading()
-                {
-                    load_case = 3,
-                    load_caseSpecified = true,
-                    status_type = status_type.NONE,
-                    status_typeSpecified = true,
-                    permanent = true,
-                    permanentSpecified = true,
-                    factor = 0,
-                    factorSpecified = true,
-                }
-            };
-
-            var ConcreteMembers = from m in members where m.Value.comment == "concrete column" || m.Value.comment == "concrete beam" select m.Value;
-            List<int> phaseOneMembers = new();
-            foreach (var mem in ConcreteMembers)
-            {
-                phaseOneMembers.Add(mem.no);
-            }
-
-            construction_stage CSOne = new construction_stage()
-            {
-                no = 1,
-                user_defined_name_enabled = true,
-                name = "Stage 1",
-                user_defined_name_enabledSpecified = true,
-                to_solve = true,
-                to_solveSpecified = true,
-                continue_on_construction_stage = 0,
-                continue_on_construction_stageSpecified = true,
-                loading = CSOneLoading,
-                generate_combinations = construction_stage_generate_combinations.GENERATE_LOAD_COMBINATIONS,
-                generate_combinationsSpecified = true,
-                create_combinations_according_to_combination_wizard = false,
-                create_combinations_according_to_combination_wizardSpecified = true,
-                static_analysis_settings = 1,
-                static_analysis_settingsSpecified = true,
-                consider_imperfection = false,
-                consider_imperfectionSpecified = true,
-                structure_modification_enabled = false,
-                structure_modification_enabledSpecified = true,
-                comment = "Coded by C#",
-                are_members_enabled_to_modify = true,
-                are_members_enabled_to_modifySpecified = true,
-                are_all_members_active = false,
-                are_all_members_activeSpecified = true,
-                added_members = phaseOneMembers.ToArray(),
-                are_surfaces_enabled_to_modify = true,
-                are_surfaces_enabled_to_modifySpecified = true,
-                are_all_surfaces_active = false,
-                are_all_surfaces_activeSpecified = true,
-                added_surfaces = new int[] { concreteSlab.no },
-                are_solids_enabled_to_modify = false,
-                are_solids_enabled_to_modifySpecified = true,
-                are_nodes_enabled_to_modify = true,
-                are_nodes_enabled_to_modifySpecified = true,
-                are_surface_contacts_enabled_to_modify = false,
-                are_surface_contacts_enabled_to_modifySpecified = true,
-                are_rigid_links_enabled_to_modify = false,
-                are_rigid_links_enabled_to_modifySpecified = true,
-                support_all_nodes_with_support = false,
-                support_all_nodes_with_supportSpecified = true,
-                add_nodes_to_support = nodalSupportsNodes.ToArray(),
-                currently_supported_nodes = nodalSupportsNodes.ToArray(),
-                are_line_supports_enabled_to_modify = false,
-                are_line_supports_enabled_to_modifySpecified = true,
-                support_all_lines_with_support = false,
-                support_all_lines_with_supportSpecified = true,
-                are_line_hinges_enabled_to_modify = false,
-                are_line_hinges_enabled_to_modifySpecified = true,
-                are_line_welded_joints_enabled_to_modify = false,
-                are_line_welded_joints_enabled_to_modifySpecified = true,
-            };
-            construction_stage CSTwo = new construction_stage()
-            {
-                no = 2,
-                user_defined_name_enabled = true,
-                name = "Stage 2",
-                user_defined_name_enabledSpecified = true,
-                to_solve = true,
-                to_solveSpecified = true,
-                continue_on_construction_stage = 1,
-                continue_on_construction_stageSpecified = true,
-                loading = CSOneLoading,
-                generate_combinations = construction_stage_generate_combinations.GENERATE_LOAD_COMBINATIONS,
-                generate_combinationsSpecified = true,
-                create_combinations_according_to_combination_wizard = false,
-                create_combinations_according_to_combination_wizardSpecified = true,
-                static_analysis_settings = 1,
-                static_analysis_settingsSpecified = true,
-                consider_imperfection = false,
-                consider_imperfectionSpecified = true,
-                structure_modification_enabled = false,
-                structure_modification_enabledSpecified = true,
-                comment = "Coded by C#",
-                are_members_enabled_to_modify = true,
-                are_members_enabled_to_modifySpecified = true,
-                are_all_members_active = true,
-                are_all_members_activeSpecified = true,
-                added_members = phaseOneMembers.ToArray(),
-                are_surfaces_enabled_to_modify = true,
-                are_surfaces_enabled_to_modifySpecified = true,
-                are_all_surfaces_active = true,
-                are_all_surfaces_activeSpecified = true,
-                are_solids_enabled_to_modify = false,
-                are_solids_enabled_to_modifySpecified = true,
-                are_nodes_enabled_to_modify = true,
-                are_nodes_enabled_to_modifySpecified = true,
-                are_surface_contacts_enabled_to_modify = false,
-                are_surface_contacts_enabled_to_modifySpecified = true,
-                are_rigid_links_enabled_to_modify = false,
-                are_rigid_links_enabled_to_modifySpecified = true,
-                support_all_nodes_with_support = false,
-                support_all_nodes_with_supportSpecified = true,
-                are_line_supports_enabled_to_modify = false,
-                are_line_supports_enabled_to_modifySpecified = true,
-                support_all_lines_with_support = false,
-                support_all_lines_with_supportSpecified = true,
-                are_line_hinges_enabled_to_modify = false,
-                are_line_hinges_enabled_to_modifySpecified = true,
-                are_line_welded_joints_enabled_to_modify = false,
-                are_line_welded_joints_enabled_to_modifySpecified = true,
-            };
-            try
-            {
-                model.begin_modification("Construction phases");
-                // model.set_construction_stage(CSOne);
-                // model.set_construction_stage(CSTwo);
-
-            }
-            catch (Exception exception)
-            {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of construction phases" + exception.Message);
-                throw;
-            }
-            finally
-            {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of construction phases\n" + exception.Message + "\n");
-
-                }
-            }
-            #endregion
-
             #region Calculation diagrams
             calculation_diagram calcDiagram = new calculation_diagram()
             {
@@ -5427,7 +5154,7 @@ namespace Hall
             #endregion
 
             #region report
-            model.export_printout_report_to_pdf(1, ExamplesDirectory + @"\printout.pdf");
+            //model.export_printout_report_to_pdf(1, ExamplesDirectory + @"printout.pdf");
             // new Process
             // {
             //     StartInfo = new ProcessStartInfo(ExamplesDirectory + @"\printout.pdf")
@@ -5435,7 +5162,7 @@ namespace Hall
             //         UseShellExecute = true
             //     }
             // }.Start();
-            model.export_printout_report_to_html(1, ExamplesDirectory + @"\printout.html");
+            //model.export_printout_report_to_html(1, ExamplesDirectory + @"printout.html");
             // new Process
             // {
             //     StartInfo = new ProcessStartInfo(ExamplesDirectory + @"\printout.html")
@@ -5445,6 +5172,79 @@ namespace Hall
             // }.Start();
             #endregion
 
+
+
+            #region Export Result XML / CSV
+
+            // model.export_result_tables_with_detailed_members_results_to_csv(ExamplesDirectory);
+
+            // model.export_result_tables_with_detailed_members_results_to_xml(ExamplesDirectory + @"\Test.xml");
+
+            #endregion
+
+            #region Exports to files
+            // string export = model.export_to(ExamplesDirectory + @"\Mymodel.gltf");
+            // Console.WriteLine(export);
+            // export = model.export_to(ExamplesDirectory + @"\Mymodel.glb");
+            // Console.WriteLine(export);
+            // export = model.export_to(ExamplesDirectory + @"\Mymodel.vtm");
+            // Console.WriteLine(export);
+            // export = model.export_to(ExamplesDirectory + @"\Mymodel.xml");
+            // Console.WriteLine(export);
+
+            // SafConfiguration safConfiguration = application.get_saf_settings();
+
+            // model.export_to(ExamplesDirectory + @"\Mymodel.saf");
+            // model.export_to(ExamplesDirectory + @"\Mymodel.xlsx");
+            // export_to_ifc_object_location[] ifcLocation = null; // whole model will be exported
+            // export_to_ifc_settings ifcSettings = new export_to_ifc_settings()
+            // {
+            //     axis_rotation_sequence = export_to_ifc_axis_rotation_sequence_type.X_Y_Z,
+            //     mirror_axis_x = false,
+            //     mirror_axis_y = false,
+            //     mirror_axis_z = true,
+            //     origin_coordinate_x = 0.0,
+            //     origin_coordinate_y = 0.0,
+            //     origin_coordinate_z = 0.0,
+            //     export_type = export_to_ifc_export_type.E_EXPORT_IFC4_REFERENCE_VIEW,
+            //     rotation_angle_0 = 0.0,
+            //     rotation_angle_1 = 0.0,
+            //     rotation_angle_2 = 0.0,
+            //     switch_axis_x = export_to_ifc_axis_type.X,
+            //     switch_axis_y = export_to_ifc_axis_type.Y,
+            //     switch_axis_z = export_to_ifc_axis_type.Z,
+            //     remove_accents = false,
+            // };
+            // model.export_to_ifc(ExamplesDirectory + @"\Mymodel.ifc", ifcSettings, ifcLocation);
+
+            //TableExportConfigManager tableConfigManager = model.get_table_export_config_manager();
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_target = TableExportMainConfig_property_export_target_type.E_EXPORT_TARGET_XLSX_FILE;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_rewrite_existing_worksheet = false;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_table_header = true;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_table_to_active_workbook = false;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_table_to_active_worksheet = false;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_as_plain_text = false;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_filled_rows_only = true;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_filled_tables_only = true;
+            // tableConfigManager.configs[0].TableExportConfigBase.TableExportMainConfig.property_export_selected_objects_only = false;
+
+            // var inputTableDef = tableConfigManager.configs[0].TableExportConfigBase.TableExportInputTablesConfig.property_check_state_of_items_input_table;
+            // foreach (var item in inputTableDef)
+            // {
+            //     Console.WriteLine("{0} is {1}", item.first.ToString(), item.second.ToString());
+            //     item.second = false;
+            // }
+            // inputTableDef[0].second = true;// crash because  inputTableDef is null
+            // var resultTableDef = tableConfigManager.configs[0].TableExportConfigBase.TableExportResultTablesConfig.property_export_import_check_state_of_items_result_table;
+            // foreach (var item in resultTableDef)
+            // {
+            //     Console.WriteLine("{0} is {1}", item.first.ToString(), item.second.ToString());
+            //     item.second = false;
+            // }
+            // resultTableDef[5].second = true;
+            //model.set_table_export_config_manager(tableConfigManager);
+            //model.export_to_tables(ExamplesDirectory + @"Mymodel-tables.xlsx");
+            #endregion
             // model.save(@"D:\TEMP\Mymodel.rf6", saveSettingsAsVersion);
             // application.close_model(0, false);
         }
@@ -5458,7 +5258,7 @@ namespace Hall
             LogManager.Configuration = config;
             var logger = LogManager.GetCurrentClassLogger();
             string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"Examples\ExampleFiles\";
+            string Examples = @"..\..\..\..\ExampleFiles\";
             string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
             try
             {
@@ -5515,7 +5315,7 @@ namespace Hall
                 // creates new model
                 // string modelName = "MyTestModel";
                 // string modelUrl = application.new_model(modelName);
-                string modelUrl = application.open_model(ExamplesDirectory + @"\EmptyWithReport.rf6");
+                string modelUrl = application.open_model(ExamplesDirectory + @"EmptyWithReport.rf6");
                 // string modelUrl = application.get_active_model();
                 // connects to RFEM6 model
                 RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(modelUrl));
@@ -5538,54 +5338,6 @@ namespace Hall
             {
                 Console.Error.WriteLine(ex);
                 logger.Error(ex, "Stopped program because of exception :" + ex.Message);
-            }
-        }
-
-        static void ParallelRunsOfRFEMTest()
-        {
-            Process[] RFEM6Process = Process.GetProcessesByName("RFEM6");
-            if (RFEM6Process.Length == 0)
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                // start.Arguments = arguments;
-                startInfo.FileName = @"D:\RFEM-TestingVersions\master\bin\RFEM6.exe";// hardcoded
-                startInfo.Arguments = "--start-soap-server 8081";
-                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo.CreateNoWindow = true;
-                Process procRFEMOne = Process.Start(startInfo);
-
-                startInfo.Arguments = "--start-soap-server 8101";
-                Process procRFEMTwo = Process.Start(startInfo);
-
-                startInfo.Arguments = "--start-soap-server 8201";
-                Process procRFEMThree = Process.Start(startInfo);
-
-                bool stop = false;
-                do
-                {
-                    stop = procRFEMOne.WaitForInputIdle();
-                } while (stop == false);
-
-                Thread.Sleep(10000);
-
-                RfemApplicationClient applicationOne = new RfemApplicationClient(Binding, new EndpointAddress("http://localhost:8081"));
-                RfemApplicationClient applicationTwo = new RfemApplicationClient(Binding, new EndpointAddress("http://localhost:8101"));
-                RfemApplicationClient applicationThree = new RfemApplicationClient(Binding, new EndpointAddress("http://localhost:8201"));
-
-                application_information RFEMInfo = applicationOne.get_information();
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                RFEMInfo = applicationTwo.get_information();
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-                RFEMInfo = applicationThree.get_information();
-                Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", RFEMInfo.name, RFEMInfo.version, RFEMInfo.type, RFEMInfo.language_name);
-
-                string modelUrlOne = applicationOne.new_model("modelNameOne");
-                Console.WriteLine(modelUrlOne);
-                string modelUrlTwo = applicationTwo.new_model("modelNameTwo");
-                Console.WriteLine(modelUrlTwo);
-                string modelUrlThree = applicationThree.new_model("modelNameThree");
-                Console.WriteLine(modelUrlThree);
-
             }
         }
 

@@ -1127,6 +1127,20 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_member_openingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_member_openings(Dlubal.WS.Rstab9.Model.get_member_openingsRequest request)
+        {
+            return base.Channel.get_member_openings(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.member_openings get_member_openings(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_member_openingsRequest inValue = new Dlubal.WS.Rstab9.Model.get_member_openingsRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_member_openingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_member_openings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_member_representativeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_member_representative(Dlubal.WS.Rstab9.Model.get_member_representativeRequest request)
         {
             return base.Channel.get_member_representative(request);
@@ -4048,6 +4062,19 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_member_nonlinearityRequest inValue = new Dlubal.WS.Rstab9.Model.set_member_nonlinearityRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_member_nonlinearityResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_member_nonlinearity(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_member_openingsResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_member_openings(Dlubal.WS.Rstab9.Model.set_member_openingsRequest request)
+        {
+            return base.Channel.set_member_openings(request);
+        }
+        
+        public void set_member_openings(Dlubal.WS.Rstab9.Model.member_openings value)
+        {
+            Dlubal.WS.Rstab9.Model.set_member_openingsRequest inValue = new Dlubal.WS.Rstab9.Model.set_member_openingsRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_member_openingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_member_openings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

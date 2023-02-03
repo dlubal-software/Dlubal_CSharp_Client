@@ -418,6 +418,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_member_nonlinearityResponse get_member_nonlinearity(Dlubal.WS.Rfem6.Model.get_member_nonlinearityRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_openings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_member_openingsResponse get_member_openings(Dlubal.WS.Rfem6.Model.get_member_openingsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_member_representative", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_member_representativeResponse get_member_representative(Dlubal.WS.Rfem6.Model.get_member_representativeRequest request);
@@ -2583,6 +2587,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_nonlinearity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_member_nonlinearityResponse set_member_nonlinearity(Dlubal.WS.Rfem6.Model.set_member_nonlinearityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_openings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_member_openingsResponse set_member_openings(Dlubal.WS.Rfem6.Model.set_member_openingsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_member_representative", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
