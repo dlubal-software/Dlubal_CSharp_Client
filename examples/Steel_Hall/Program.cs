@@ -65,6 +65,48 @@ namespace Steel_Hall
             Console.Write("Distance between frames [m]: ");
             double frameDistance = Convert.ToDouble(Console.ReadLine()!.Replace(".", ","), CultureInfo.CurrentCulture);
 
+            Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
+            string bracingAnswer = Console.ReadLine();
+            bool bracingInput = false;
+
+            if (bracingAnswer == "1" || bracingAnswer == "2" || bracingAnswer == "3")
+            {
+                bracingInput = true;
+            }
+            while (bracingInput == false)
+            {
+                Console.WriteLine("Please enter 1, 2 or 3!");
+                Console.WriteLine("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
+                bracingAnswer = Console.ReadLine();
+
+                if (bracingAnswer == "1" || bracingAnswer == "2" || bracingAnswer == "3")
+                {
+                    bracingInput = true;
+                }
+            }
+
+            bool bracing1 = false;
+            bool bracing2 = false;
+            bool bracing3 = false;
+            int  bracingNumber = 0;
+
+            if (bracingAnswer == "1")
+            {
+                bracing1 = true;
+                bracingNumber = 2 * (frameNumber * 2 - 2);
+
+            }
+            else if (bracingAnswer == "2") 
+            { 
+                bracing2= true;
+                bracingNumber = frameNumber * 2 - 2;
+            }
+            else if (bracingAnswer == "3")
+            {
+                bracing3 = true;
+                bracingNumber = 8;
+            }
+
             Logger logger = LogManager.GetCurrentClassLogger();
             Directory.GetCurrentDirectory();
 
@@ -110,7 +152,7 @@ namespace Steel_Hall
                 material steel = new material
                 {
                     no = 1,
-                    name = "S235"
+                    name = "S235JR"
                 };
 
                 List<section> sections = new List<section>();
@@ -135,26 +177,27 @@ namespace Steel_Hall
                     no = 3,
                     material = steel.no,
                     materialSpecified = true,
-                    name = "RD 16",
+                    name = "RUND 16/H",
                     comment = "bracing section"
                 };
 
                 sections.Add(section1);
                 sections.Add(section2);
-                sections.Add(section3);
+                //sections.Add(section3);
 
 
                 SortedList<int, node> nodes = new SortedList<int, node>();
                 int[] lineDefinitionNodes = new int[frameNumber * 4];
+
                 int nodeId = 1;
                 double xVector = 0.0;
                 double yVector = 0.0;
 
                 for (int k = 0; k < 2; k++)
                 {
-                    for (int l = 0; l < frameNumber; l++)
+                    for (int i = 0; i < frameNumber; i++)
                     {
-                        node bottomNode = new node
+                        node bottomNode = new()
                         {
                             no = nodeId,
                             coordinates = new vector_3d
@@ -166,7 +209,7 @@ namespace Steel_Hall
                             coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
                             coordinate_system_typeSpecified = true
                         };
-                        node topNode = new node
+                        node topNode = new()
                         {
                             no = nodeId + 1,
                             coordinates = new vector_3d
@@ -180,56 +223,133 @@ namespace Steel_Hall
                         };
                         nodes.Add(nodeId, bottomNode);
                         nodes.Add(nodeId + 1, topNode);
-                        lineDefinitionNodes[k] = nodeId;
-                        lineDefinitionNodes[k + 1] = nodeId + 1;
-                        yVector = (0.0 - frameDistance) * (double)l;
+                        lineDefinitionNodes[nodeId - 1] = nodeId;
+                        lineDefinitionNodes[nodeId] = nodeId + 1;
+                        yVector = (0.0 - frameDistance) * (i + 1);
                         nodeId += 2;
                     }
                     xVector += frameSpan;
+                    yVector = 0.0;
                 }
 #if RFEM
                 int lineId = 1;
                 int m = 0;
                 int numberOfLines = frameNumber * 4 + (frameNumber - 2);
+
+                //lines in z-direction
                 SortedList<int, line> zLines = new SortedList<int, line>();
 
-                for (int j = 0; j < frameNumber * 2; j++)
+                for (int j = 0; j < frameNumber * 2; j++) 
                 {
-                    line line = new line();
-                    line.no = lineId;
-                    line.definition_nodes = new int[2]
+                    line newLine = new()
                     {
-                    lineDefinitionNodes[m],
-                    lineDefinitionNodes[m + 1]
+                        no = lineId,
+                        definition_nodes = new int[]{lineDefinitionNodes[m],lineDefinitionNodes[m + 1]},
+                        comment = "lines for beams",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true,
                     };
-                    line.comment = "lines for beams";
-                    line.type = line_type.TYPE_POLYLINE;
-                    line.typeSpecified = true;
-                    line newLine = line;
                     zLines.Add(lineId, newLine);
                     m += 2;
                     lineId++;
-                }
+                };
+
+                //lines in x-direction
+                SortedList<int, line> xLines = new SortedList<int, line>();
+                int nodePositionX = 1;
+
+                for (int k = 0; k < frameNumber; k++)
+                {
+                    line newLine = new()
+                    {
+                        no = lineId,
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionX], lineDefinitionNodes[nodePositionX + (frameNumber * 2)] },
+                        comment = "lines for beams",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true,
+                    };
+                    xLines.Add(lineId, newLine);
+                    nodePositionX += 2;
+                    lineId++;
+                };
+
+                //lines in y - direction
+                SortedList<int, line> yLines = new SortedList<int, line>();
+                int nodePositionY = 1;
+
+                for (int k = 0; k < frameNumber + 1; k++)
+                {
+                    if (k == frameNumber - 1)
+                    {
+                        nodePositionY += 2;
+                    };
+
+                    line newLine = new()
+                    {
+                        no = lineId,
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[nodePositionY + 2] },
+                        comment = "lines for beams",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true,
+                    };
+                    yLines.Add(lineId, newLine);
+                    nodePositionY += 2;
+                    lineId++;
+                };
 #endif
+
+                //lines for bracing
+                //SortedList<int, line> bracingLines = new SortedList<int, line>();
+                //int nodePositionY = 1;
+
+                //for (int k = 0; k < bracingNumber + 1; k++)
+                //{
+                //    if (bracing1 = true)
+                //    {
+                //        line newLine = new()
+                //        {
+                //            no = lineId,
+                //            definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[nodePositionY + 2] },
+                //            comment = "lines for beams",
+                //            type = line_type.TYPE_POLYLINE,
+                //            typeSpecified = true,
+                //        };
+                //    }
+                //    line newLine = new()
+                //    {
+                //        no = lineId,
+                //        definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[nodePositionY + 2] },
+                //        comment = "lines for beams",
+                //        type = line_type.TYPE_POLYLINE,
+                //        typeSpecified = true,
+                //    };
+                //    yLines.Add(lineId, newLine);
+                //    nodePositionY += 2;
+                //    lineId++;
+                //};
+
                 int memberId = 1;
+
+                //members in z-direction
                 SortedList<int, member> zMembers = new SortedList<int, member>();
 #if RFEM
                 foreach (KeyValuePair<int, line> lineItem in zLines)
                 {
-                    member newMember = new member
+                    member newMember = new()
                     {
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_start = section2.no,
+                        section_start = section1.no,
                         section_startSpecified = true,
-                        section_end = section2.no,
+                        section_end = section1.no,
                         section_endSpecified = true,
-                        comment = "concrete beam"
+                        comment = "coloumn"
                     };
                     zMembers.Add(memberId, newMember);
                     memberId++;
                 }
+
 
 #elif RSTAB
                 int j = 0;
@@ -254,17 +374,98 @@ namespace Steel_Hall
                     j += 2;
 			    }
 #endif
+                //members in x-direction
+                SortedList<int, member> xMembers = new SortedList<int, member>();
+#if RFEM
+                foreach (KeyValuePair<int, line> lineItem in xLines)
+                {
+                    member newMember = new()
+                    {
+                        no = memberId,
+                        line = lineItem.Key,
+                        lineSpecified = true,
+                        section_start = section1.no,
+                        section_startSpecified = true,
+                        section_end = section1.no,
+                        section_endSpecified = true,
+                        comment = "bar"
+                    };
+                    xMembers.Add(memberId, newMember);
+                    memberId++;
+                }
+#elif RSTAB
+                for (int i = 0; i < frameNumber; i++)
+			    {
+                     member newMember = new()
+                    {
+                        no = memberId,
+                        node_start = lineDefinitionNodes[nodePositionX],
+                        node_startSpecified = true,
+                        node_end = lineDefinitionNodes[nodePositionX + 2],
+                        node_endSpecified = true,
+                        section_start = section1.no,
+                        section_startSpecified = true,
+                        section_end = section1.no,
+                        section_endSpecified = true,
+                        comment = "concrete beam"
+                    };
+                    zMembers.Add(memberId, newMember);
+                    memberId++;
+                    nodePosition += 4;
+			    }
+#endif
+
+                //members in y - direction
+                SortedList<int, member> yMembers = new SortedList<int, member>();
+#if RFEM
+                foreach (KeyValuePair<int, line> lineItem in yLines)
+                {
+                    member newMember = new()
+                    {
+                        no = memberId,
+                        line = lineItem.Key,
+                        lineSpecified = true,
+                        section_start = section2.no,
+                        section_startSpecified = true,
+                        section_end = section2.no,
+                        section_endSpecified = true,
+                        comment = "side member"
+                    };
+                    yMembers.Add(memberId, newMember);
+                    memberId++;
+                }
+#elif RSTAB
+                for (int i = 0; i < frameNumber; i++)
+			    {
+                     member newMember = new()
+                    {
+                        no = memberId,
+                        node_start = lineDefinitionNodes[nodePositionY],
+                        node_startSpecified = true,
+                        node_end = lineDefinitionNodes[nodePositionY + 2],
+                        node_endSpecified = true,
+                        section_start = section1.no,
+                        section_startSpecified = true,
+                        section_end = section1.no,
+                        section_endSpecified = true,
+                        comment = "concrete beam"
+                    };
+                    zMembers.Add(memberId, newMember);
+                    memberId++;
+                    nodePosition += 2;
+			    }
+#endif
                 List<int> supportedNodes = new List<int>();
 
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
                 {
-                    if (nodeItem.Key % 2 == 0)
+                    if (nodeItem.Key % 2 != 0)
                     {
                         supportedNodes.Add(nodeItem.Key);
                     }
                 }
 
-                nodal_support support = new nodal_support
+                nodal_support support = new()
                 {
                     no = 1,
                     nodes = supportedNodes.ToArray(),
@@ -276,7 +477,7 @@ namespace Steel_Hall
                     },
                     rotational_restraint = new vector_3d
                     {
-                        x = double.PositiveInfinity,
+                        x = 0.0,
                         y = 0.0,
                         z = double.PositiveInfinity
                     }
@@ -286,29 +487,46 @@ namespace Steel_Hall
                 {
                     model.begin_modification("Geometry");
                     model.set_material(steel);
+                    model.set_section(section1);
 
                     foreach (section section in sections)
                     {
                         model.set_section(section);
                     }
-                    foreach (KeyValuePair<int, node> item in nodes)
+                    foreach (KeyValuePair<int, node> nodeItem in nodes)
                     {
-                        model.set_node(item.Value);
+                        model.set_node(nodeItem.Value);
                     }
-                    foreach (KeyValuePair<int, line> item2 in zLines)
+                    foreach (KeyValuePair<int, line> lineItem in zLines)
                     {
-                        model.set_line(item2.Value);
+                        model.set_line(lineItem.Value);
                     }
-                    foreach (KeyValuePair<int, member> item3 in zMembers)
+                    foreach (KeyValuePair<int, line> lineItem in xLines)
                     {
-                        model.set_member(item3.Value);
+                        model.set_line(lineItem.Value);
+                    }
+                    foreach (KeyValuePair<int, line> lineItem in yLines)
+                    {
+                        model.set_line(lineItem.Value);
+                    }
+                    foreach (KeyValuePair<int, member> memberItem in zMembers)
+                    {
+                        model.set_member(memberItem.Value);
+                    }
+                    foreach (KeyValuePair<int, member> memberItem in xMembers)
+                    {
+                        model.set_member(memberItem.Value);
+                    }
+                    foreach (KeyValuePair<int, member> memberItem in yMembers)
+                    {
+                        model.set_member(memberItem.Value);
                     }
                     model.set_nodal_support(support);
                 }
-                catch (Exception exception6)
+                catch (Exception exception)
                 {
                     model.cancel_modification();
-                    logger.Error(exception6, "Something happened while creation of geometry" + exception6.Message);
+                    logger.Error(exception, "Something happened while creation of geometry" + exception.Message);
                     throw;
                 }
                 finally
@@ -317,9 +535,9 @@ namespace Steel_Hall
                     {
                         model.finish_modification();
                     }
-                    catch (Exception exception5)
+                    catch (Exception exception)
                     {
-                        logger.Error(exception5, "Something went wrong while finishing modification of geometry\n" + exception5.Message + "\n");
+                        logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
                         model.reset();
                     }
                 }
@@ -443,17 +661,18 @@ namespace Steel_Hall
 
                 for (int i = 0; i < frameNumber * 2; i++)
                 {
-                    member_load member_load = new member_load();
-                    member_load.no = member_load_id;
-                    member_load.members_string = n.ToString();
-                    member_load.members = new int[1] { i + 1 };
-                    member_load.load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM;
-                    member_load.load_distributionSpecified = true;
-                    member_load.magnitude = 3000.0;
-                    member_load.magnitudeSpecified = true;
-                    member_load.load_is_over_total_length = true;
-                    member_load.load_is_over_total_lengthSpecified = true;
-                    member_load newMemberLoad = member_load;
+                    member_load newMemberLoad = new member_load()
+                    {
+                        no = member_load_id,
+                        members_string = n.ToString(),
+                        members = new int[1] { i + 1 },
+                        load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                        load_distributionSpecified = true,
+                        magnitude = 3000.0,
+                        magnitudeSpecified = true,
+                        load_is_over_total_length = true,
+                        load_is_over_total_lengthSpecified = true,
+                    };
                     member_loads.Add(i + 1, newMemberLoad);
                     member_load_id++;
                     n += 2;
@@ -461,10 +680,9 @@ namespace Steel_Hall
                 try
                 {
                     model.begin_modification("Set loads");
-                    using IEnumerator<KeyValuePair<int, member_load>> enumerator5 = member_loads.GetEnumerator();
-                    while (enumerator5.MoveNext())
+                    foreach (KeyValuePair<int, member_load> memberload in member_loads)
                     {
-                        model.set_member_load(value: enumerator5.Current.Value, load_case_no: lcData.no);
+                        model.set_member_load(lcData.no, memberload.Value);
                     }
                 }
                 catch (Exception exception2)
@@ -485,14 +703,31 @@ namespace Steel_Hall
                         model.reset();
                     }
                 }
-                
+
+#if RFEM
+                #region generate mesh and get mesh statistics
+                calculation_message[] meshGenerationMessage = model.generate_mesh(true);
+                if (meshGenerationMessage.Length != 0)
+                {
+                }
                 mesh_statistics_type mesh_Statistics = model.get_mesh_statistics();
                 Console.WriteLine("Number of mesh nodes: " + mesh_Statistics.node_elements);
                 Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
                 Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
                 Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
+                #endregion
+#endif
+                calculation_message[] calculationMessages = model.calculate_all(true);
+                if (calculationMessages.Length != 0)
+                {
+                }
+                else
+                {
+                    Console.WriteLine("Calculation finished successfully");
+                }
+
                 model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\steelHall");
-                application.close_model(0, save_changes: true);
+                //application.close_model(0, true);
             }
             catch (Exception ex)
             {
