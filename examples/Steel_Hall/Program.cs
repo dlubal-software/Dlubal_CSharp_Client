@@ -89,22 +89,37 @@ namespace Steel_Hall
             bool bracing2 = false;
             bool bracing3 = false;
             int  bracingNumber = 0;
+            int loopCount = 0;
+            int increment = 0;
 
             if (bracingAnswer == "1")
             {
                 bracing1 = true;
                 bracingNumber = 2 * (frameNumber * 2 - 2);
+                loopCount = bracingNumber / 2;
+                increment = 2;
 
             }
             else if (bracingAnswer == "2") 
             { 
                 bracing2= true;
                 bracingNumber = frameNumber * 2 - 2;
+                if (frameNumber % 2 == 0)
+                {
+                    loopCount = bracingNumber / 2 + 1;
+                }
+                else
+                {
+                    loopCount = bracingNumber / 2;
+                }                
+                increment = 4;
             }
             else if (bracingAnswer == "3")
             {
                 bracing3 = true;
                 bracingNumber = 8;
+                loopCount = 4;
+                increment = frameNumber * 2 - 4;
             }
 
             Logger logger = LogManager.GetCurrentClassLogger();
@@ -177,13 +192,13 @@ namespace Steel_Hall
                     no = 3,
                     material = steel.no,
                     materialSpecified = true,
-                    name = "RUND 16/H",
+                    name = "IPE 100",
                     comment = "bracing section"
                 };
 
                 sections.Add(section1);
                 sections.Add(section2);
-                //sections.Add(section3);
+                sections.Add(section3);
 
 
                 SortedList<int, node> nodes = new SortedList<int, node>();
@@ -277,7 +292,7 @@ namespace Steel_Hall
                 SortedList<int, line> yLines = new SortedList<int, line>();
                 int nodePositionY = 1;
 
-                for (int k = 0; k < frameNumber + 1; k++)
+                for (int k = 0; k < frameNumber * 2 - 2; k++)
                 {
                     if (k == frameNumber - 1)
                     {
@@ -299,34 +314,46 @@ namespace Steel_Hall
 #endif
 
                 //lines for bracing
-                //SortedList<int, line> bracingLines = new SortedList<int, line>();
-                //int nodePositionY = 1;
+                SortedList<int, line> bracingLines = new SortedList<int, line>();
+                int nodePositionB = 0;
 
-                //for (int k = 0; k < bracingNumber + 1; k++)
-                //{
-                //    if (bracing1 = true)
-                //    {
-                //        line newLine = new()
-                //        {
-                //            no = lineId,
-                //            definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[nodePositionY + 2] },
-                //            comment = "lines for beams",
-                //            type = line_type.TYPE_POLYLINE,
-                //            typeSpecified = true,
-                //        };
-                //    }
-                //    line newLine = new()
-                //    {
-                //        no = lineId,
-                //        definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[nodePositionY + 2] },
-                //        comment = "lines for beams",
-                //        type = line_type.TYPE_POLYLINE,
-                //        typeSpecified = true,
-                //    };
-                //    yLines.Add(lineId, newLine);
-                //    nodePositionY += 2;
-                //    lineId++;
-                //};
+                for (int k = 0; k < loopCount; k++)
+                {
+                    if ((bracing1 == true || bracing2 == true) && nodePositionB == frameNumber * 2 - 2) 
+                    {
+                        nodePositionB += 2; 
+                    };
+
+                    line newLine = new()
+                    {
+                        no = lineId,
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionB + 1], lineDefinitionNodes[nodePositionB + 2] },
+                        comment = "lines bracing",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true,
+                    };
+
+                    line newLine2 = new()
+                    {
+                        no = lineId + 1,
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionB], lineDefinitionNodes[nodePositionB + 3] },
+                        comment = "lines bracing",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true,
+                    };
+                    bracingLines.Add(lineId, newLine);
+                    bracingLines.Add(lineId + 1, newLine2);
+
+                    if (bracing3 == true && nodePositionB == frameNumber * 2 - 4)
+                    {
+                        nodePositionB += 4;
+                    }
+                    else
+                    {
+                        nodePositionB += increment;
+                    }
+                    lineId += 2;
+                }                
 
                 int memberId = 1;
 
@@ -455,6 +482,48 @@ namespace Steel_Hall
                     nodePosition += 2;
 			    }
 #endif
+                //members for bracing
+                SortedList<int, member> bracingMembers = new SortedList<int, member>();
+#if RFEM
+                foreach (KeyValuePair<int, line> lineItem in bracingLines)
+                {
+                    member newMember = new()
+                    {
+                        no = memberId,
+                        line = lineItem.Key,
+                        lineSpecified = true,
+                        section_start = section3.no,
+                        section_startSpecified = true,
+                        section_end = section3.no,
+                        section_endSpecified = true,
+                        type = member_type.TYPE_TENSION,
+                        typeSpecified= true,
+                        comment = "bracing member"
+                    };
+                    bracingMembers.Add(memberId, newMember);
+                    memberId++;
+                }
+#elif RSTAB
+                for (int i = 0; i < frameNumber; i++)
+			    {
+                     member newMember = new()
+                    {
+                        no = memberId,
+                        node_start = lineDefinitionNodes[nodePositionY],
+                        node_startSpecified = true,
+                        node_end = lineDefinitionNodes[nodePositionY + 2],
+                        node_endSpecified = true,
+                        section_start = section1.no,
+                        section_startSpecified = true,
+                        section_end = section1.no,
+                        section_endSpecified = true,
+                        comment = "concrete beam"
+                    };
+                    zMembers.Add(memberId, newMember);
+                    memberId++;
+                    nodePosition += 2;
+			    }
+#endif
                 List<int> supportedNodes = new List<int>();
 
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
@@ -487,7 +556,7 @@ namespace Steel_Hall
                 {
                     model.begin_modification("Geometry");
                     model.set_material(steel);
-                    model.set_section(section1);
+                    //model.set_section(section1);
 
                     foreach (section section in sections)
                     {
@@ -509,6 +578,10 @@ namespace Steel_Hall
                     {
                         model.set_line(lineItem.Value);
                     }
+                    foreach (KeyValuePair<int, line> lineItem in bracingLines)
+                    {
+                        model.set_line(lineItem.Value);
+                    }
                     foreach (KeyValuePair<int, member> memberItem in zMembers)
                     {
                         model.set_member(memberItem.Value);
@@ -518,6 +591,10 @@ namespace Steel_Hall
                         model.set_member(memberItem.Value);
                     }
                     foreach (KeyValuePair<int, member> memberItem in yMembers)
+                    {
+                        model.set_member(memberItem.Value);
+                    }
+                    foreach (KeyValuePair<int, member> memberItem in bracingMembers)
                     {
                         model.set_member(memberItem.Value);
                     }
