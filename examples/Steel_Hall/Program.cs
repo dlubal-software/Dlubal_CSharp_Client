@@ -192,7 +192,7 @@ namespace Steel_Hall
                     no = 3,
                     material = steel.no,
                     materialSpecified = true,
-                    name = "IPE 100",
+                    name = "ROUND 0.016/H",
                     comment = "bracing section"
                 };
 
@@ -376,8 +376,6 @@ namespace Steel_Hall
                     zMembers.Add(memberId, newMember);
                     memberId++;
                 }
-
-
 #elif RSTAB
                 int j = 0;
 
@@ -441,7 +439,6 @@ namespace Steel_Hall
                     nodePosition += 4;
 			    }
 #endif
-
                 //members in y - direction
                 SortedList<int, member> yMembers = new SortedList<int, member>();
 #if RFEM
@@ -504,24 +501,54 @@ namespace Steel_Hall
                     memberId++;
                 }
 #elif RSTAB
-                for (int i = 0; i < frameNumber; i++)
+                nodePositionB = 0;
+                for (int i = 0; i < bracingNumber; i++)
 			    {
+                    if ((bracing1 == true || bracing2 == true) && nodePositionB == frameNumber * 2 - 2) 
+                    {
+                        nodePositionB += 2; 
+                    };
+
                      member newMember = new()
                     {
                         no = memberId,
-                        node_start = lineDefinitionNodes[nodePositionY],
+                        node_start = lineDefinitionNodes[nodePositionB + 1],
                         node_startSpecified = true,
-                        node_end = lineDefinitionNodes[nodePositionY + 2],
+                        node_end = lineDefinitionNodes[nodePositionB + 2],
                         node_endSpecified = true,
-                        section_start = section1.no,
+                        section_start = section3.no,
                         section_startSpecified = true,
-                        section_end = section1.no,
+                        section_end = section3.no,
                         section_endSpecified = true,
-                        comment = "concrete beam"
+                        type = member_type.TYPE_TENSION,
+                        typeSpecified = true,
+                        comment = "bracing"
                     };
-                    zMembers.Add(memberId, newMember);
-                    memberId++;
-                    nodePosition += 2;
+                    member newMember2 = new()
+                    {
+                        no = memberId + 1,
+                        node_start = lineDefinitionNodes[nodePositionB],
+                        node_startSpecified = true,
+                        node_end = lineDefinitionNodes[nodePositionB + 3],
+                        node_endSpecified = true,
+                        section_start = section3.no,
+                        section_startSpecified = true,
+                        section_end = section3.no,
+                        section_endSpecified = true,
+                        type = member_type.TYPE_TENSION,
+                        typeSpecified = true,
+                        comment = "bracing"
+                    };
+                    bracingMembers.Add(memberId, newMember);
+                    memberId += 2;
+                    if (bracing3 == true && nodePositionB == frameNumber * 2 - 4)
+                    {
+                        nodePositionB += 4;
+                    }
+                    else
+                    {
+                        nodePositionB += increment;
+                    }
 			    }
 #endif
                 List<int> supportedNodes = new List<int>();
@@ -643,18 +670,62 @@ namespace Steel_Hall
                     stability_analysis_settings = analysis.no,
                     stability_analysis_settingsSpecified = true
                 };
-                load_case lcData = new load_case
+                load_case liveLoad = new load_case
                 {
                     no = 2,
-                    name = "My load case",
+                    name = "Live Load",
                     self_weight_active = false,
                     self_weight_activeSpecified = true,
                     static_analysis_settings = analysis.no,
                     static_analysis_settingsSpecified = true,
                     analysis_type = load_case_analysis_type.ANALYSIS_TYPE_STATIC,
                     analysis_typeSpecified = true,
-                    action_category = "ACTION_CATEGORY_PERMANENT_IMPOSED_GQ"
+                    action_category = "ACTION_CATEGORY_IMPOSED_LOADS_CATEGORY_A_DOMESTIC_RESIDENTIAL_AREAS_QI_A"
                 };
+                load_case windX = new load_case
+                {
+                    no = 3,
+                    name = "Wind in X",
+                    self_weight_active = false,
+                    self_weight_activeSpecified = true,
+                    static_analysis_settings = analysis.no,
+                    static_analysis_settingsSpecified = true,
+                    analysis_type = load_case_analysis_type.ANALYSIS_TYPE_STATIC,
+                    analysis_typeSpecified = true,
+                    action_category = "ACTION_CATEGORY_WIND_QW"
+                };
+                load_case windY = new load_case
+                {
+                    no = 4,
+                    name = "Wind in Y",
+                    self_weight_active = false,
+                    self_weight_activeSpecified = true,
+                    static_analysis_settings = analysis.no,
+                    static_analysis_settingsSpecified = true,
+                    analysis_type = load_case_analysis_type.ANALYSIS_TYPE_STATIC,
+                    analysis_typeSpecified = true,
+                    action_category = "ACTION_CATEGORY_WIND_QW"
+                };
+
+                load_case snow = new load_case
+                {
+                    no = 5,
+                    name = "Snow",
+                    self_weight_active = false,
+                    self_weight_activeSpecified = true,
+                    static_analysis_settings = analysis.no,
+                    static_analysis_settingsSpecified = true,
+                    analysis_type = load_case_analysis_type.ANALYSIS_TYPE_STATIC,
+                    analysis_typeSpecified = true,
+                    action_category = "ACTION_CATEGORY_SNOW_ICE_LOADS_H_LESS_OR_EQUAL_TO_1000_M_QS"
+                };
+                List<load_case> loadCases = new List<load_case>();
+                loadCases.Add(selfWeightLC);
+                loadCases.Add(liveLoad);
+                loadCases.Add(windX);
+                loadCases.Add(windY);
+                loadCases.Add(snow);
+
                 design_situation design_Situation = new design_situation
                 {
                     no = 1,
@@ -678,7 +749,7 @@ namespace Steel_Hall
                         factorSpecified = true
                     }
                 };
-                load_combination_items_row load_Combination_lcData = new load_combination_items_row
+                load_combination_items_row load_Combination_liveLoad = new load_combination_items_row
                 {
                     no = 2,
                     row = new load_combination_items
@@ -689,18 +760,67 @@ namespace Steel_Hall
                         factorSpecified = true
                     }
                 };
-                load_combination_items_row[] loadCombinationItems = new load_combination_items_row[2] { load_Combination_SW, load_Combination_lcData };
-                load_combination load_Combination = new load_combination
+                load_combination_items_row load_Combination_windX = new load_combination_items_row
+                {
+                    no = 3,
+                    row = new load_combination_items
+                    {
+                        load_case = 3,
+                        load_caseSpecified = true,
+                        factor = 1.5,
+                        factorSpecified = true
+                    }
+                };
+                load_combination_items_row load_Combination_windY = new load_combination_items_row
+                {
+                    no = 4,
+                    row = new load_combination_items
+                    {
+                        load_case = 4,
+                        load_caseSpecified = true,
+                        factor = 1.5,
+                        factorSpecified = true
+                    }
+                };
+                load_combination_items_row load_Combination_snow = new load_combination_items_row
+                {
+                    no = 5,
+                    row = new load_combination_items
+                    {
+                        load_case = 5,
+                        load_caseSpecified = true,
+                        factor = 1.5,
+                        factorSpecified = true
+                    }
+                };
+                load_combination_items_row[] loadCombinationItems1 = new load_combination_items_row[4] { load_Combination_SW, load_Combination_liveLoad, load_Combination_windX, load_Combination_snow };
+                load_combination_items_row[] loadCombinationItems2 = new load_combination_items_row[4] { load_Combination_SW, load_Combination_liveLoad, load_Combination_windY, load_Combination_snow };
+
+                load_combination load_Combination1 = new load_combination
                 {
                     no = 1,
-                    name = "ScriptedCombination",
+                    name = "Combination 1",
                     user_defined_name_enabled = true,
                     user_defined_name_enabledSpecified = true,
                     to_solve = true,
                     to_solveSpecified = true,
                     analysis_type = load_combination_analysis_type.ANALYSIS_TYPE_STATIC,
                     analysis_typeSpecified = true,
-                    items = loadCombinationItems,
+                    items = loadCombinationItems1,
+                    design_situation = 1,
+                    design_situationSpecified = true
+                };
+                load_combination load_Combination2 = new load_combination
+                {
+                    no = 2,
+                    name = "Combination 2",
+                    user_defined_name_enabled = true,
+                    user_defined_name_enabledSpecified = true,
+                    to_solve = true,
+                    to_solveSpecified = true,
+                    analysis_type = load_combination_analysis_type.ANALYSIS_TYPE_STATIC,
+                    analysis_typeSpecified = true,
+                    items = loadCombinationItems2,
                     design_situation = 1,
                     design_situationSpecified = true
                 };
@@ -708,10 +828,13 @@ namespace Steel_Hall
                 {
                     model.begin_modification("Load");
                     model.set_static_analysis_settings(analysis);
-                    model.set_load_case(selfWeightLC);
-                    model.set_load_case(lcData);
+                    foreach (var loadcase in loadCases)
+                    {
+                        model.set_load_case(loadcase);
+                    }
                     model.set_design_situation(design_Situation);
-                    model.set_load_combination(load_Combination);
+                    model.set_load_combination(load_Combination1);
+                    model.set_load_combination(load_Combination2);
                 }
                 catch (Exception exception4)
                 {
@@ -732,17 +855,18 @@ namespace Steel_Hall
                     }
                 }
 
-                SortedList<int, member_load> member_loads = new SortedList<int, member_load>();
+                SortedList<int, member_load> member_loads_LC2 = new SortedList<int, member_load>();
+                SortedList<int, member_load> member_loads_LC5 = new SortedList<int, member_load>();
                 int member_load_id = 1;
-                int n = 1;
 
-                for (int i = 0; i < frameNumber * 2; i++)
+                //member loads load case 2/5
+                foreach (var memberItem in xMembers)
                 {
                     member_load newMemberLoad = new member_load()
                     {
                         no = member_load_id,
-                        members_string = n.ToString(),
-                        members = new int[1] { i + 1 },
+                        members_string = memberItem.Key.ToString(),
+                        members = new int[1] { memberItem.Key },
                         load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
                         load_distributionSpecified = true,
                         magnitude = 3000.0,
@@ -750,16 +874,135 @@ namespace Steel_Hall
                         load_is_over_total_length = true,
                         load_is_over_total_lengthSpecified = true,
                     };
-                    member_loads.Add(i + 1, newMemberLoad);
+                    member_loads_LC2.Add(member_load_id, newMemberLoad);
                     member_load_id++;
-                    n += 2;
+
+                    member_load newMemberLoad2 = new member_load()
+                    {
+                        no = member_load_id,
+                        members_string = memberItem.Key.ToString(),
+                        members = new int[1] { memberItem.Key },
+                        load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_TRAPEZOIDAL,
+                        load_distributionSpecified = true,
+                        magnitude_1 = 1000.0,
+                        magnitude_1Specified = true,
+                        magnitude_2 = 750.0,
+                        magnitude_2Specified = true,
+                        load_is_over_total_length = true,
+                        load_is_over_total_lengthSpecified = true,
+                    };
+                    member_loads_LC5.Add(member_load_id, newMemberLoad2);
+                    member_load_id++;
                 }
+
+                //member loads load case 3
+                SortedList<int, member_load> member_loads_LC3 = new SortedList<int, member_load>();
+                                
+                foreach (var memberItem in zMembers)
+                {
+                    if (memberItem.Key < frameNumber + 1)
+                    {
+                        member_load newMemberLoad = new member_load()
+                        {
+                            no = member_load_id,
+                            members_string = memberItem.Key.ToString(),
+                            members = new int[1] { memberItem.Key },
+                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                            load_distributionSpecified = true,
+                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_X_OR_USER_DEFINED_U_TRUE,
+                            load_directionSpecified = true,
+                            magnitude = 1500.0,
+                            magnitudeSpecified = true,
+                            load_is_over_total_length = true,
+                            load_is_over_total_lengthSpecified = true,
+                        };
+                        member_loads_LC3.Add(member_load_id, newMemberLoad);
+                        member_load_id++;
+                    }
+                    else
+                    {
+                        member_load newMemberLoad = new member_load()
+                        {
+                            no = member_load_id,
+                            members_string = memberItem.Key.ToString(),
+                            members = new int[1] { memberItem.Key },
+                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                            load_distributionSpecified = true,
+                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_X_OR_USER_DEFINED_U_TRUE,
+                            load_directionSpecified = true,
+                            magnitude = 700.0,
+                            magnitudeSpecified = true,
+                            load_is_over_total_length = true,
+                            load_is_over_total_lengthSpecified = true,
+                        };
+                        member_loads_LC3.Add(member_load_id, newMemberLoad);
+                        member_load_id++;
+                    }
+                }
+
+                //member loads load case 4
+                SortedList<int, member_load> member_loads_LC4 = new SortedList<int, member_load>();
+
+                foreach (var memberItem in zMembers)
+                {
+                    if (memberItem.Key == frameNumber || memberItem.Key == frameNumber * 2)
+                    {
+                        member_load newMemberLoad = new member_load()
+                        {
+                            no = member_load_id,
+                            members_string = memberItem.Key.ToString(),
+                            members = new int[1] { memberItem.Key },
+                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                            load_distributionSpecified = true,
+                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE,
+                            load_directionSpecified = true,
+                            magnitude = 800.0,
+                            magnitudeSpecified = true,
+                            load_is_over_total_length = true,
+                            load_is_over_total_lengthSpecified = true,
+                        };
+                        member_loads_LC4.Add(member_load_id, newMemberLoad);
+                        member_load_id++;
+                    }
+                    else if (memberItem.Key == 1 || memberItem.Key == frameNumber + 1)
+                    {
+                        member_load newMemberLoad = new member_load()
+                        {
+                            no = member_load_id,
+                            members_string = memberItem.Key.ToString(),
+                            members = new int[1] { memberItem.Key },
+                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                            load_distributionSpecified = true,
+                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE,
+                            load_directionSpecified = true,
+                            magnitude = 400.0,
+                            magnitudeSpecified = true,
+                            load_is_over_total_length = true,
+                            load_is_over_total_lengthSpecified = true,
+                        };
+                        member_loads_LC4.Add(member_load_id, newMemberLoad);
+                        member_load_id++;
+                    }
+                }
+
                 try
                 {
                     model.begin_modification("Set loads");
-                    foreach (KeyValuePair<int, member_load> memberload in member_loads)
+                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC2)
                     {
-                        model.set_member_load(lcData.no, memberload.Value);
+                        model.set_member_load(liveLoad.no, memberload.Value);
+                    }
+                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC3)
+                    {
+                        model.set_member_load(windX.no, memberload.Value);
+                    }
+                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC4)
+                    {
+                        model.set_member_load(windY.no, memberload.Value);
+                    }
+                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC5)
+                    {
+                        model.set_member_load(snow.no, memberload.Value);
                     }
                 }
                 catch (Exception exception2)
@@ -780,7 +1023,6 @@ namespace Steel_Hall
                         model.reset();
                     }
                 }
-
 #if RFEM
                 #region generate mesh and get mesh statistics
                 calculation_message[] meshGenerationMessage = model.generate_mesh(true);
@@ -804,7 +1046,7 @@ namespace Steel_Hall
                 }
 
                 model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\steelHall");
-                //application.close_model(0, true);
+                application.close_model(0, true);
             }
             catch (Exception ex)
             {
