@@ -5,11 +5,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Release RFEM;Release RSTAB</Configurations>
   </PropertyGroup>
 
-<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	<DefineConstants>TRACE;RFEM</DefineConstants>
-</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
     <DefineConstants>TRACE;RSTAB</DefineConstants>
@@ -30,7 +31,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
-    <DefineConstants>TRACE;RSTAB</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;RSTAB</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

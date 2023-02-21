@@ -14,6 +14,7 @@ using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 using NLog;
 using System.ServiceModel;
 using System.Globalization;
+using System.Xml.Linq;
 
 namespace Steel_Hall
 {
@@ -37,33 +38,157 @@ namespace Steel_Hall
             }
         }
 
-        private static ApplicationClient application = null;
+        public static bool CheckDouble(string? input)
+        {
+            bool doubleCheck = true;
+            try
+            {
+                if (string.IsNullOrEmpty(input))
+                {
+                    throw new ArgumentNullException(nameof(input));
+                }
+                Convert.ToDouble(input.Replace(".", ","), CultureInfo.CurrentCulture);
+
+                if (input == "0")
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Please input a value!");
+                doubleCheck = false;
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("Please input a number!");
+                doubleCheck = false;               
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Please input a value greater 0!");
+                doubleCheck = false;
+            }
+            return doubleCheck;
+        }
+
+        public static bool CheckInteger(string? input)
+        {
+            bool integerCheck = true;
+            try
+            {
+                if (string.IsNullOrEmpty(input))
+                {
+                    throw new ArgumentNullException(nameof(input));
+                }
+                int.TryParse(input, out int intInput);
+
+                if (intInput < 2)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Please input a value!");
+                integerCheck = false;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please input an integer number!");
+                integerCheck = false;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Please input a frame number greater 1!");
+                integerCheck = false;
+            }
+            return integerCheck;
+        }
+
+        public static double GetDoubleInput(string message)
+        {
+            bool check = false;
+            string inputValue = string.Empty;
+
+            while (check == false)
+            {
+                Console.Write(message);
+                inputValue = Console.ReadLine();
+                check = CheckDouble(inputValue);
+            }
+            double doubleValue = Convert.ToDouble(inputValue.Replace(".", ","), CultureInfo.CurrentCulture);
+            return doubleValue;
+        }
+
+        public static int GetIntegerInput(string message)
+        {
+            bool check = false;
+            string inputValue = string.Empty;
+            while (check == false)
+            {
+                Console.Write(message);
+                inputValue = Console.ReadLine();
+                check = CheckInteger(inputValue);
+            }
+            int integerValue = int.Parse(inputValue);
+            return integerValue;
+        }
+
+        private static ApplicationClient? application = null;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Steel Hall Generator for RFEM6 and RSTAB9");
-            Console.Write("Height of frame [m]: ");
-            double frameHeight = Convert.ToDouble(Console.ReadLine()!.Replace(".", ","), CultureInfo.CurrentCulture);
+            //Console.Write("Height of frame [m]: ");          
+           /* string frameHeightString = string.Empty; */// = Console.ReadLine();
+            ////bool check = CheckDouble(frameHeightString);
+            //bool check = false;
 
-            Console.Write("Frame span [m]: ");
-            double frameSpan = Convert.ToDouble(Console.ReadLine()!.Replace(".", ","), CultureInfo.CurrentCulture);
+            double frameHeight = GetDoubleInput("Height of frame [m]: ");
+            double frameSpan = GetDoubleInput("Frame span [m]: ");
+            double frameDistance = GetDoubleInput("Distance between frames [m]: ");
+            int frameNumber = GetIntegerInput("Number of frames: ");
 
-            int frameNumber = 0;
-            Console.Write("Number of frames: ");
-            bool frameNumberInput = int.TryParse(Console.ReadLine(), out frameNumber);
-            while (!frameNumberInput)
-            {
-                Console.WriteLine("Please choose an integer number for the number of frames!");
-                Console.Write("Number of frames:");
-                frameNumberInput = int.TryParse(Console.ReadLine(), out frameNumber);
-            }
-            if (frameNumber < 1)
-            {
-                Console.WriteLine("Please enter a frame number greater than 1!");
-            }
 
-            Console.Write("Distance between frames [m]: ");
-            double frameDistance = Convert.ToDouble(Console.ReadLine()!.Replace(".", ","), CultureInfo.CurrentCulture);
+
+            //while (check == false)
+            //{
+            //    Console.Write("Height of frame [m]: ");
+            //    frameHeightString = Console.ReadLine();
+            //    check = CheckDouble(frameHeightString);
+            //}
+            //double frameHeight = Convert.ToDouble(frameHeightString.Replace(".", ","), CultureInfo.CurrentCulture);
+
+            //Console.Write("Frame span [m]: ");
+            //string? frameSpanString = Console.ReadLine();
+            //while (CheckDouble(frameSpanString) == false)
+            //{
+            //    Console.Write("Frame span [m]: ");
+            //    frameSpanString = Console.ReadLine();
+            //}
+            //double frameSpan = Convert.ToDouble(frameSpanString.Replace(".", ","), CultureInfo.CurrentCulture);
+
+
+
+            //int frameNumber = 0;
+            //Console.Write("Number of frames: ");
+            //string? frameNumberString = Console.ReadLine();
+
+            //while (CheckInteger(frameNumberString) == false)
+            //{
+            //    Console.Write("Number of frames:");
+            //    frameNumberString = Console.ReadLine();
+            //}
+
+            //Console.Write("Distance between frames [m]: ");
+            //string? frameDistanceString = Console.ReadLine();
+            //while (CheckDouble(frameDistanceString) == false)
+            //{
+            //    Console.Write("Distance between frames [m]: ");
+            //    frameDistanceString = Console.ReadLine();
+            //}
+            //double frameDistance = Convert.ToDouble(frameDistanceString.Replace(".", ","), CultureInfo.CurrentCulture);
 
             Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
             string bracingAnswer = Console.ReadLine();
@@ -102,8 +227,9 @@ namespace Steel_Hall
             }
             else if (bracingAnswer == "2") 
             { 
-                bracing2= true;
+                bracing2 = true;
                 bracingNumber = frameNumber * 2 - 2;
+
                 if (frameNumber % 2 == 0)
                 {
                     loopCount = bracingNumber / 2 + 1;
@@ -130,21 +256,21 @@ namespace Steel_Hall
             {
                 try
                 {
-                    application = new RfemApplicationClient(Binding, Address);
+                    application = new ApplicationClient(Binding, Address);
                 }
-                catch (Exception exception7)
+                catch (Exception exception)
                 {
                     if (application != null)
                     {
                         if (application.State != CommunicationState.Faulted)
                         {
                             application.Close();
-                            logger.Error(exception7, "Something happen:" + exception7.Message);
+                            logger.Error(exception, "Something happened:" + exception.Message);
                         }
                         else
                         {
                             application.Abort();
-                            logger.Error(exception7, "Communication with RFEM faulted:" + exception7.Message);
+                            logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
                         }
                     }
                 }
@@ -160,7 +286,7 @@ namespace Steel_Hall
                 string modelUrl = application.new_model(modelName);
 
                 #region new model
-                RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(modelUrl));
+                ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
                 #endregion
 
@@ -311,7 +437,7 @@ namespace Steel_Hall
                     nodePositionY += 2;
                     lineId++;
                 };
-#endif
+
 
                 //lines for bracing
                 SortedList<int, line> bracingLines = new SortedList<int, line>();
@@ -354,7 +480,7 @@ namespace Steel_Hall
                     }
                     lineId += 2;
                 }                
-
+#endif
                 int memberId = 1;
 
                 //members in z-direction
@@ -419,6 +545,7 @@ namespace Steel_Hall
                     memberId++;
                 }
 #elif RSTAB
+                int nodePositionX = 0;
                 for (int i = 0; i < frameNumber; i++)
 			    {
                      member newMember = new()
@@ -436,7 +563,7 @@ namespace Steel_Hall
                     };
                     zMembers.Add(memberId, newMember);
                     memberId++;
-                    nodePosition += 4;
+                    nodePositionX += 4;
 			    }
 #endif
                 //members in y - direction
@@ -459,6 +586,8 @@ namespace Steel_Hall
                     memberId++;
                 }
 #elif RSTAB
+                int nodePositionY = 0;
+
                 for (int i = 0; i < frameNumber; i++)
 			    {
                      member newMember = new()
@@ -476,7 +605,7 @@ namespace Steel_Hall
                     };
                     zMembers.Add(memberId, newMember);
                     memberId++;
-                    nodePosition += 2;
+                    nodePositionY += 2;
 			    }
 #endif
                 //members for bracing
@@ -501,7 +630,7 @@ namespace Steel_Hall
                     memberId++;
                 }
 #elif RSTAB
-                nodePositionB = 0;
+                int nodePositionB = 0;
                 for (int i = 0; i < bracingNumber; i++)
 			    {
                     if ((bracing1 == true || bracing2 == true) && nodePositionB == frameNumber * 2 - 2) 
@@ -593,6 +722,7 @@ namespace Steel_Hall
                     {
                         model.set_node(nodeItem.Value);
                     }
+#if RFEM
                     foreach (KeyValuePair<int, line> lineItem in zLines)
                     {
                         model.set_line(lineItem.Value);
@@ -609,6 +739,7 @@ namespace Steel_Hall
                     {
                         model.set_line(lineItem.Value);
                     }
+#endif
                     foreach (KeyValuePair<int, member> memberItem in zMembers)
                     {
                         model.set_member(memberItem.Value);
@@ -1024,7 +1155,7 @@ namespace Steel_Hall
                     }
                 }
 #if RFEM
-                #region generate mesh and get mesh statistics
+#region generate mesh and get mesh statistics
                 calculation_message[] meshGenerationMessage = model.generate_mesh(true);
                 if (meshGenerationMessage.Length != 0)
                 {
@@ -1034,7 +1165,7 @@ namespace Steel_Hall
                 Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
                 Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
                 Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
-                #endregion
+#endregion
 #endif
                 calculation_message[] calculationMessages = model.calculate_all(true);
                 if (calculationMessages.Length != 0)
@@ -1045,8 +1176,171 @@ namespace Steel_Hall
                     Console.WriteLine("Calculation finished successfully");
                 }
 
+                // printout result messages
+#region Results
+                bool modelHasAnyResults = model.has_any_results();
+
+                if (modelHasAnyResults)
+                {
+                    Console.WriteLine("Model has results");
+                }
+                else
+                {
+                    Console.WriteLine("Model has no results");
+                }
+
+                bool modelHasLC2Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
+                if (modelHasLC2Calculated)
+                {
+                    Console.WriteLine("Model has LC2 results");
+                }
+                else
+                {
+                    Console.WriteLine("Model has no LC2 results");
+                }
+
+                bool modelHasLC3Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windX.no);
+                if (modelHasLC3Calculated)
+                {
+                    Console.WriteLine("Model has LC3 results");
+                }
+                else
+                {
+                    Console.WriteLine("Model has no LC3 results");
+                }
+
+                bool modelHasLC4Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windY.no);
+                if (modelHasLC4Calculated)
+                {
+                    Console.WriteLine("Model has LC4 results");
+                }
+                else
+                {
+                    Console.WriteLine("Model has no LC4 results");
+                }
+
+                bool modelHasLC5Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, snow.no);
+                if (modelHasLC5Calculated)
+                {
+                    Console.WriteLine("Model has LC5 results");
+                }
+                else
+                {
+                    Console.WriteLine("Model has no LC5 results");
+                }
+
+                // activate display of results along the length of the member, by default false -> results just at the beginning and end of the member + extremes
+                model.use_detailed_member_results(true);
+
+                // printout internal forces for every member and every load case
+                List<members_internal_forces_row[]> internalForcesMember_List = new();
+                foreach (var loadcase in loadCases)
+                {
+                    foreach (KeyValuePair<int, member> memberItem in xMembers)
+                    {
+                        members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, loadcase.no, memberItem.Key);
+                        internalForcesMember_List.Add(internalForcesMember);
+                    }
+
+                    foreach (KeyValuePair<int, member> memberItem in yMembers)
+                    {
+                        members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, loadcase.no, memberItem.Key);
+                        internalForcesMember_List.Add(internalForcesMember);
+                    }
+
+                    foreach (KeyValuePair<int, member> memberItem in zMembers)
+                    {
+                        members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, loadcase.no, memberItem.Key);
+                        internalForcesMember_List.Add(internalForcesMember);
+                    }
+                }
+                
+                Console.WriteLine("Internal forces for member:");
+
+                foreach (var member in internalForcesMember_List)
+                {
+                    foreach (var row in member)
+                    {
+                        Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
+                        Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", row.row.node_number != null ? row.row.node_number.value : "NAN", row.row.location, row.row.location_flags, row.row.internal_force_label, row.row.specification);
+                        Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", row.row.internal_force_n.ToString(), row.row.internal_force_vy.ToString(), row.row.internal_force_vz.ToString(), row.row.internal_force_mt.ToString(), row.row.internal_force_my.ToString(), row.row.internal_force_mz.ToString());
+                    }
+                }
+
+                // printout member deformations
+                //Console.WriteLine("Global deformations for member:");
+
+                //List<members_global_deformations_row[]> globalDeformationsMember_List = new();
+
+                //foreach (KeyValuePair<int, member> memberItem in xMembers)
+                //{
+                //    members_global_deformations_row[] globalDeformationsMember = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no, memberItem.Key);
+                //    globalDeformationsMember_List.Add(globalDeformationsMember);
+                //}
+
+                //foreach (var member in globalDeformationsMember_List)
+                //{
+                //    foreach (var row in member)
+                //    {
+                //        Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
+                //        Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", row.row.node_number != null ? row.row.node_number.value : "NAN", row.row.location, row.row.location_flags, row.row.deformation_label, row.row.section);
+                //        Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", row.row.displacement_x.ToString(), row.row.displacement_y.ToString(), row.row.displacement_z.ToString(), row.row.displacement_absolute.ToString(), row.row.rotation_x.ToString(), row.row.rotation_y.ToString(), row.row.rotation_z.ToString(), row.row.warping.ToString());
+                //    }
+                //}
+
+                //// printout node deformations
+                //nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+                //Console.WriteLine("Node deformations:");
+                //foreach (var item in nodeDeformations)
+                //{
+                //    Console.WriteLine("Row no {0}\t Description {1} node comment {2}", item.no, item.description, item.row.specification);
+                //    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
+                //}
+
+                //// printout support forces
+                //nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+                //Console.WriteLine("Node reactions:");
+                //foreach (var item in nodeReactions)
+                //{
+                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
+                //    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading.ToString(), item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
+                //}
+                //#endregion
+
+                //// printout parts list
+                //#region Generate parts list
+                //model.generate_parts_lists();
+                //parts_list_all_by_material_row[] partListByAllMaterial = model.get_parts_list_all_by_material();
+                //foreach (var item in partListByAllMaterial)
+                //{
+                //    if (!item.description.Contains("Total:"))
+                //    {
+                //        Console.WriteLine("Material no: {0}\t Material name: {1}\t object type: {2}\t coating:{3}\t volume: {4}\t mass: {5}", item.description, item.row.material_name, item.row.object_type, item.row.total_coating, item.row.volume, item.row.mass);
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Material total\t \t \t coating:{0}\t volume: {1}\t mass: {2}", item.row.total_coating, item.row.volume, item.row.mass);
+                //    }
+                //}
+
+                //Console.WriteLine("Members: ");
+                //parts_list_members_by_material_row[] partListMemberByMaterial = model.get_parts_list_members_by_material();
+                //foreach (var item in partListMemberByMaterial)
+                //{
+                //    if (!item.description.Contains("Total"))
+                //    {
+                //        Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
+                //        item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
+                //                            item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                //    }
+                //}
+#endregion
+
                 model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\steelHall");
-                application.close_model(0, true);
             }
             catch (Exception ex)
             {
