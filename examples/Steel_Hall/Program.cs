@@ -15,9 +15,19 @@ using NLog;
 using System.ServiceModel;
 using System.Globalization;
 using System.Xml.Linq;
+using System;
 
 namespace Steel_Hall
 {
+
+    public class Bracing 
+    {
+        public int BracingType { get; set; }
+        public int BracingNumber { get; set; }
+        public int LoopCount { get; set; }
+        public int Increment { get; set; }
+    }
+
     class Program
     {
         public static EndpointAddress Address { get; set; } = new EndpointAddress("http://localhost:8081");
@@ -47,9 +57,9 @@ namespace Steel_Hall
                 {
                     throw new ArgumentNullException(nameof(input));
                 }
-                Convert.ToDouble(input.Replace(".", ","), CultureInfo.CurrentCulture);
+                double doubleValue = Convert.ToDouble(input.Replace(".", ","), CultureInfo.CurrentCulture);
 
-                if (input == "0")
+                if (input == "0" || doubleValue < 0)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -59,14 +69,14 @@ namespace Steel_Hall
                 Console.WriteLine("Please input a value!");
                 doubleCheck = false;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 Console.WriteLine("Please input a number!");
-                doubleCheck = false;               
+                doubleCheck = false;
             }
-            catch(ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Please input a value greater 0!");
+                Console.WriteLine("Please input a value greater than 0!");
                 doubleCheck = false;
             }
             return doubleCheck;
@@ -106,6 +116,105 @@ namespace Steel_Hall
             return integerCheck;
         }
 
+        public static bool CheckBracingInput(string input)
+        {
+            bool bracingCheck = true;
+            try
+            {
+                if (string.IsNullOrEmpty(input))
+                {
+                    throw new ArgumentNullException();
+                }
+                else if (!(input.ToLower() == "y" || input.ToLower() == "n"))
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                input.ToLower();
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Please input Y or N!");
+                bracingCheck = false;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Please input Y or N!");
+                bracingCheck = false;
+            }
+
+            return bracingCheck;
+        }
+
+        public static Bracing GetBracingType(string input, int frameNumber) 
+        {            
+            Bracing bracing = new Bracing();
+            
+            switch (input)
+            {
+                case "1":
+                    bracing.BracingType = 1;
+                    bracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                    bracing.LoopCount = bracing.BracingNumber / 2;
+                    bracing.Increment = 2;
+                    break;
+                case "2":
+                    bracing.BracingType= 2;
+                    bracing.BracingNumber = frameNumber * 2 - 2;
+                    if (frameNumber % 2 == 0)
+                    {
+                        bracing.LoopCount = bracing.BracingNumber / 2 + 1;
+                    }
+                    else
+                    {
+                        bracing.LoopCount = bracing.BracingNumber / 2;
+                    }                    
+                    bracing.Increment = 4;
+                    break;
+                case "3":
+                    bracing.BracingType = 3;
+                    bracing.BracingNumber = 8;
+                    bracing.LoopCount =4;
+                    bracing.Increment = frameNumber * 2 - 4;
+                    break;
+                default:
+                    // value is neither 1 nor 2 nor 3
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            return bracing;
+        }
+        public static Bracing GetBracingInput(string message, int frameNumber)
+        {
+            bool check = false;
+            bool numberCheck = false;
+            string? inputValue = string.Empty;
+            string? inputNumber = string.Empty;
+            Bracing bracing = new Bracing();
+
+            while (check == false)
+            {
+                Console.Write(message);
+                inputValue = Console.ReadLine();
+                check = CheckBracingInput(inputValue);
+            }
+
+            if (inputValue == "y")
+            {
+                while (!numberCheck)
+                {
+                    Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
+                    inputNumber = Console.ReadLine();
+                    numberCheck = (inputNumber == "1" || inputNumber == "2" || inputNumber == "3") ? true : false;
+                    if (!numberCheck)
+                    {
+                        Console.WriteLine("Please input either 1, 2 or 3!");
+                    }
+                }
+                bracing = GetBracingType(inputNumber, frameNumber);                
+            }
+            return bracing;
+        }
+
         public static double GetDoubleInput(string message)
         {
             bool check = false;
@@ -124,7 +233,7 @@ namespace Steel_Hall
         public static int GetIntegerInput(string message)
         {
             bool check = false;
-            string inputValue = string.Empty;
+            string? inputValue = string.Empty;
             while (check == false)
             {
                 Console.Write(message);
@@ -140,114 +249,15 @@ namespace Steel_Hall
         static void Main(string[] args)
         {
             Console.WriteLine("Steel Hall Generator for RFEM6 and RSTAB9");
-            //Console.Write("Height of frame [m]: ");          
-           /* string frameHeightString = string.Empty; */// = Console.ReadLine();
-            ////bool check = CheckDouble(frameHeightString);
-            //bool check = false;
 
+            //get user-input
             double frameHeight = GetDoubleInput("Height of frame [m]: ");
             double frameSpan = GetDoubleInput("Frame span [m]: ");
             double frameDistance = GetDoubleInput("Distance between frames [m]: ");
             int frameNumber = GetIntegerInput("Number of frames: ");
+            Bracing bracing = GetBracingInput("Do you want to include vertical bracing (Y/N): ", frameNumber);
 
-
-
-            //while (check == false)
-            //{
-            //    Console.Write("Height of frame [m]: ");
-            //    frameHeightString = Console.ReadLine();
-            //    check = CheckDouble(frameHeightString);
-            //}
-            //double frameHeight = Convert.ToDouble(frameHeightString.Replace(".", ","), CultureInfo.CurrentCulture);
-
-            //Console.Write("Frame span [m]: ");
-            //string? frameSpanString = Console.ReadLine();
-            //while (CheckDouble(frameSpanString) == false)
-            //{
-            //    Console.Write("Frame span [m]: ");
-            //    frameSpanString = Console.ReadLine();
-            //}
-            //double frameSpan = Convert.ToDouble(frameSpanString.Replace(".", ","), CultureInfo.CurrentCulture);
-
-
-
-            //int frameNumber = 0;
-            //Console.Write("Number of frames: ");
-            //string? frameNumberString = Console.ReadLine();
-
-            //while (CheckInteger(frameNumberString) == false)
-            //{
-            //    Console.Write("Number of frames:");
-            //    frameNumberString = Console.ReadLine();
-            //}
-
-            //Console.Write("Distance between frames [m]: ");
-            //string? frameDistanceString = Console.ReadLine();
-            //while (CheckDouble(frameDistanceString) == false)
-            //{
-            //    Console.Write("Distance between frames [m]: ");
-            //    frameDistanceString = Console.ReadLine();
-            //}
-            //double frameDistance = Convert.ToDouble(frameDistanceString.Replace(".", ","), CultureInfo.CurrentCulture);
-
-            Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
-            string bracingAnswer = Console.ReadLine();
-            bool bracingInput = false;
-
-            if (bracingAnswer == "1" || bracingAnswer == "2" || bracingAnswer == "3")
-            {
-                bracingInput = true;
-            }
-            while (bracingInput == false)
-            {
-                Console.WriteLine("Please enter 1, 2 or 3!");
-                Console.WriteLine("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
-                bracingAnswer = Console.ReadLine();
-
-                if (bracingAnswer == "1" || bracingAnswer == "2" || bracingAnswer == "3")
-                {
-                    bracingInput = true;
-                }
-            }
-
-            bool bracing1 = false;
-            bool bracing2 = false;
-            bool bracing3 = false;
-            int  bracingNumber = 0;
-            int loopCount = 0;
-            int increment = 0;
-
-            if (bracingAnswer == "1")
-            {
-                bracing1 = true;
-                bracingNumber = 2 * (frameNumber * 2 - 2);
-                loopCount = bracingNumber / 2;
-                increment = 2;
-
-            }
-            else if (bracingAnswer == "2") 
-            { 
-                bracing2 = true;
-                bracingNumber = frameNumber * 2 - 2;
-
-                if (frameNumber % 2 == 0)
-                {
-                    loopCount = bracingNumber / 2 + 1;
-                }
-                else
-                {
-                    loopCount = bracingNumber / 2;
-                }                
-                increment = 4;
-            }
-            else if (bracingAnswer == "3")
-            {
-                bracing3 = true;
-                bracingNumber = 8;
-                loopCount = 4;
-                increment = frameNumber * 2 - 4;
-            }
-
+            //connection to RFEM/RSTAB
             Logger logger = LogManager.GetCurrentClassLogger();
             Directory.GetCurrentDirectory();
 
@@ -325,7 +335,6 @@ namespace Steel_Hall
                 sections.Add(section1);
                 sections.Add(section2);
                 sections.Add(section3);
-
 
                 SortedList<int, node> nodes = new SortedList<int, node>();
                 int[] lineDefinitionNodes = new int[frameNumber * 4];
@@ -438,14 +447,13 @@ namespace Steel_Hall
                     lineId++;
                 };
 
-
                 //lines for bracing
                 SortedList<int, line> bracingLines = new SortedList<int, line>();
                 int nodePositionB = 0;
 
-                for (int k = 0; k < loopCount; k++)
+                for (int k = 0; k < bracing.LoopCount; k++)
                 {
-                    if ((bracing1 == true || bracing2 == true) && nodePositionB == frameNumber * 2 - 2) 
+                    if ((bracing.BracingType == 1 || bracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2) 
                     {
                         nodePositionB += 2; 
                     };
@@ -470,13 +478,13 @@ namespace Steel_Hall
                     bracingLines.Add(lineId, newLine);
                     bracingLines.Add(lineId + 1, newLine2);
 
-                    if (bracing3 == true && nodePositionB == frameNumber * 2 - 4)
+                    if (bracing.BracingType == 3 && nodePositionB == frameNumber * 2 - 4)
                     {
                         nodePositionB += 4;
                     }
                     else
                     {
-                        nodePositionB += increment;
+                        nodePositionB += bracing.Increment;
                     }
                     lineId += 2;
                 }                
@@ -1155,7 +1163,7 @@ namespace Steel_Hall
                     }
                 }
 #if RFEM
-#region generate mesh and get mesh statistics
+                #region generate mesh and get mesh statistics
                 calculation_message[] meshGenerationMessage = model.generate_mesh(true);
                 if (meshGenerationMessage.Length != 0)
                 {
@@ -1165,7 +1173,7 @@ namespace Steel_Hall
                 Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
                 Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
                 Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
-#endregion
+                #endregion
 #endif
                 calculation_message[] calculationMessages = model.calculate_all(true);
                 if (calculationMessages.Length != 0)
@@ -1177,7 +1185,7 @@ namespace Steel_Hall
                 }
 
                 // printout result messages
-#region Results
+                #region Results
                 bool modelHasAnyResults = model.has_any_results();
 
                 if (modelHasAnyResults)
@@ -1228,117 +1236,12 @@ namespace Steel_Hall
                 {
                     Console.WriteLine("Model has no LC5 results");
                 }
+                #endregion
 
-                // activate display of results along the length of the member, by default false -> results just at the beginning and end of the member + extremes
-                model.use_detailed_member_results(true);
-
-                // printout internal forces for every member and every load case
-                List<members_internal_forces_row[]> internalForcesMember_List = new();
-                foreach (var loadcase in loadCases)
-                {
-                    foreach (KeyValuePair<int, member> memberItem in xMembers)
-                    {
-                        members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, loadcase.no, memberItem.Key);
-                        internalForcesMember_List.Add(internalForcesMember);
-                    }
-
-                    foreach (KeyValuePair<int, member> memberItem in yMembers)
-                    {
-                        members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, loadcase.no, memberItem.Key);
-                        internalForcesMember_List.Add(internalForcesMember);
-                    }
-
-                    foreach (KeyValuePair<int, member> memberItem in zMembers)
-                    {
-                        members_internal_forces_row[] internalForcesMember = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, loadcase.no, memberItem.Key);
-                        internalForcesMember_List.Add(internalForcesMember);
-                    }
-                }
-                
-                Console.WriteLine("Internal forces for member:");
-
-                foreach (var member in internalForcesMember_List)
-                {
-                    foreach (var row in member)
-                    {
-                        Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
-                        Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", row.row.node_number != null ? row.row.node_number.value : "NAN", row.row.location, row.row.location_flags, row.row.internal_force_label, row.row.specification);
-                        Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", row.row.internal_force_n.ToString(), row.row.internal_force_vy.ToString(), row.row.internal_force_vz.ToString(), row.row.internal_force_mt.ToString(), row.row.internal_force_my.ToString(), row.row.internal_force_mz.ToString());
-                    }
-                }
-
-                // printout member deformations
-                //Console.WriteLine("Global deformations for member:");
-
-                //List<members_global_deformations_row[]> globalDeformationsMember_List = new();
-
-                //foreach (KeyValuePair<int, member> memberItem in xMembers)
-                //{
-                //    members_global_deformations_row[] globalDeformationsMember = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no, memberItem.Key);
-                //    globalDeformationsMember_List.Add(globalDeformationsMember);
-                //}
-
-                //foreach (var member in globalDeformationsMember_List)
-                //{
-                //    foreach (var row in member)
-                //    {
-                //        Console.WriteLine("Row no {0}\t Description {1}", row.no, row.description);
-                //        Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", row.row.node_number != null ? row.row.node_number.value : "NAN", row.row.location, row.row.location_flags, row.row.deformation_label, row.row.section);
-                //        Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", row.row.displacement_x.ToString(), row.row.displacement_y.ToString(), row.row.displacement_z.ToString(), row.row.displacement_absolute.ToString(), row.row.rotation_x.ToString(), row.row.rotation_y.ToString(), row.row.rotation_z.ToString(), row.row.warping.ToString());
-                //    }
-                //}
-
-                //// printout node deformations
-                //nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                //Console.WriteLine("Node deformations:");
-                //foreach (var item in nodeDeformations)
-                //{
-                //    Console.WriteLine("Row no {0}\t Description {1} node comment {2}", item.no, item.description, item.row.specification);
-                //    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
-                //}
-
-                //// printout support forces
-                //nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                //Console.WriteLine("Node reactions:");
-                //foreach (var item in nodeReactions)
-                //{
-                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                //    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading.ToString(), item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
-                //}
-                //#endregion
-
-                //// printout parts list
-                //#region Generate parts list
-                //model.generate_parts_lists();
-                //parts_list_all_by_material_row[] partListByAllMaterial = model.get_parts_list_all_by_material();
-                //foreach (var item in partListByAllMaterial)
-                //{
-                //    if (!item.description.Contains("Total:"))
-                //    {
-                //        Console.WriteLine("Material no: {0}\t Material name: {1}\t object type: {2}\t coating:{3}\t volume: {4}\t mass: {5}", item.description, item.row.material_name, item.row.object_type, item.row.total_coating, item.row.volume, item.row.mass);
-                //    }
-                //    else
-                //    {
-                //        Console.WriteLine("Material total\t \t \t coating:{0}\t volume: {1}\t mass: {2}", item.row.total_coating, item.row.volume, item.row.mass);
-                //    }
-                //}
-
-                //Console.WriteLine("Members: ");
-                //parts_list_members_by_material_row[] partListMemberByMaterial = model.get_parts_list_members_by_material();
-                //foreach (var item in partListMemberByMaterial)
-                //{
-                //    if (!item.description.Contains("Total"))
-                //    {
-                //        Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                //        item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
-                //    }
-                //    else
-                //    {
-                //        Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                //                            item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
-                //    }
-                //}
-#endregion
+                #region export results
+                model.export_result_tables_with_detailed_members_results_to_csv("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV");
+                Console.WriteLine("Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV.");
+                #endregion
 
                 model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\steelHall");
             }
