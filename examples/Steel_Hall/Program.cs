@@ -176,8 +176,7 @@ namespace Steel_Hall
                 default:
                     // value is neither 1 nor 2 nor 3
                     throw new ArgumentOutOfRangeException();
-            }
-            
+            }            
             return bracing;
         }
         public static Bracing GetBracingInput(string message, int frameNumber)
@@ -241,6 +240,32 @@ namespace Steel_Hall
             return integerValue;
         }
 
+        public static string ModelOpenedCheck(string modelName)
+        {
+            bool noModelOpened = false;
+            string modelUrl = string.Empty;
+
+            do
+            {
+                try
+                {
+                    modelUrl = application.new_model(modelName);
+                    noModelOpened = false;
+                }
+                catch (FaultException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    noModelOpened = true;
+                    Console.WriteLine("Close the model and press any key to try again");
+                    Console.ReadKey();
+                    Console.ReadLine();
+                }
+            }
+            while (noModelOpened);
+
+            return modelUrl;
+        }
+
         private static ApplicationClient? application = null;
 
         static void Main(string[] args)
@@ -279,6 +304,7 @@ namespace Steel_Hall
                             application.Abort();
                             logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
                         }
+                        application = null;
                     }
                 }
                 finally
@@ -289,8 +315,9 @@ namespace Steel_Hall
                 }
                 #endregion
 
-                string modelName = "SteelFrame";
-                string modelUrl = application.new_model(modelName);
+                string modelName = "SteelHall";
+                //check if model with same name is already opened
+                string modelUrl = ModelOpenedCheck(modelName);               
 
                 #region new model
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
@@ -333,6 +360,7 @@ namespace Steel_Hall
                 sections.Add(section2);
                 sections.Add(section3);
 
+                //Create nodes
                 SortedList<int, node> nodes = new SortedList<int, node>();
                 int[] lineDefinitionNodes = new int[frameNumber * 4];
 
@@ -378,7 +406,9 @@ namespace Steel_Hall
                     xVector += frameSpan;
                     yVector = 0.0;
                 }
-#if RFEM
+
+                //create lines
+#if RFEM        
                 int lineId = 1;
                 int m = 0;
                 int numberOfLines = frameNumber * 4 + (frameNumber - 2);
@@ -486,6 +516,7 @@ namespace Steel_Hall
                     lineId += 2;
                 }                
 #endif
+                //create members
                 int memberId = 1;
 
                 //members in z-direction
@@ -685,6 +716,7 @@ namespace Steel_Hall
                     }
 			    }
 #endif
+                //create supports
                 List<int> supportedNodes = new List<int>();
 
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
@@ -717,7 +749,6 @@ namespace Steel_Hall
                 {
                     model.begin_modification("Geometry");
                     model.set_material(steel);
-                    //model.set_section(section1);
 
                     foreach (section section in sections)
                     {
@@ -1187,51 +1218,51 @@ namespace Steel_Hall
 
                 if (modelHasAnyResults)
                 {
-                    Console.WriteLine("Model has results");
+                    Console.WriteLine("Model has results.");
                 }
                 else
                 {
-                    Console.WriteLine("Model has no results");
+                    Console.WriteLine("Model has no results.");
                 }
 
                 bool modelHasLC2Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
                 if (modelHasLC2Calculated)
                 {
-                    Console.WriteLine("Model has LC2 results");
+                    Console.WriteLine("Model has LC2 results.");
                 }
                 else
                 {
-                    Console.WriteLine("Model has no LC2 results");
+                    Console.WriteLine("Model has no LC2 results.");
                 }
 
                 bool modelHasLC3Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windX.no);
                 if (modelHasLC3Calculated)
                 {
-                    Console.WriteLine("Model has LC3 results");
+                    Console.WriteLine("Model has LC3 results.");
                 }
                 else
                 {
-                    Console.WriteLine("Model has no LC3 results");
+                    Console.WriteLine("Model has no LC3 results.");
                 }
 
                 bool modelHasLC4Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windY.no);
                 if (modelHasLC4Calculated)
                 {
-                    Console.WriteLine("Model has LC4 results");
+                    Console.WriteLine("Model has LC4 results.");
                 }
                 else
                 {
-                    Console.WriteLine("Model has no LC4 results");
+                    Console.WriteLine("Model has no LC4 results.");
                 }
 
                 bool modelHasLC5Calculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, snow.no);
                 if (modelHasLC5Calculated)
                 {
-                    Console.WriteLine("Model has LC5 results");
+                    Console.WriteLine("Model has LC5 results.");
                 }
                 else
                 {
-                    Console.WriteLine("Model has no LC5 results");
+                    Console.WriteLine("Model has no LC5 results.");
                 }
                 #endregion
 
@@ -1240,7 +1271,14 @@ namespace Steel_Hall
                 Console.WriteLine("Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV.");
                 #endregion
 
-                model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\steelHall");
+                model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall");
+                Console.WriteLine("Model has been saved to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall.");
+
+                Console.Write("Press enter to close the model.");
+                if (Console.ReadKey().Key == ConsoleKey.Enter)
+                {
+                    application.close_model(0, true);
+                }
             }
             catch (Exception ex)
             {
