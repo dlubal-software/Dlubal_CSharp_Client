@@ -14,12 +14,9 @@ using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 using NLog;
 using System.ServiceModel;
 using System.Globalization;
-using System.Xml.Linq;
-using System;
 
 namespace Steel_Hall
 {
-
     public class Bracing 
     {
         public int BracingType { get; set; }
@@ -639,9 +636,9 @@ namespace Steel_Hall
                 }
 #elif RSTAB
                 int nodePositionB = 0;
-                for (int i = 0; i < bracingNumber; i++)
+                for (int i = 0; i < bracing.BracingNumber; i++)
 			    {
-                    if ((bracing1 == true || bracing2 == true) && nodePositionB == frameNumber * 2 - 2) 
+                    if ((bracing.BracingType == 1 || bracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2) 
                     {
                         nodePositionB += 2; 
                     };
@@ -678,13 +675,13 @@ namespace Steel_Hall
                     };
                     bracingMembers.Add(memberId, newMember);
                     memberId += 2;
-                    if (bracing3 == true && nodePositionB == frameNumber * 2 - 4)
+                    if (bracing.BracingType == 3 && nodePositionB == frameNumber * 2 - 4)
                     {
                         nodePositionB += 4;
                     }
                     else
                     {
-                        nodePositionB += increment;
+                        nodePositionB += bracing.Increment;
                     }
 			    }
 #endif
