@@ -510,6 +510,32 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_action(request);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_action_categories_for_actionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_action_categories_for_action(Dlubal.WS.Rfem6.Model.get_action_categories_for_actionRequest request)
+        {
+            return base.Channel.get_action_categories_for_action(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.action_category[] get_action_categories_for_action()
+        {
+            Dlubal.WS.Rfem6.Model.get_action_categories_for_actionRequest inValue = new Dlubal.WS.Rfem6.Model.get_action_categories_for_actionRequest();
+            Dlubal.WS.Rfem6.Model.get_action_categories_for_actionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_action_categories_for_action(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_action_categories_for_load_case(Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseRequest request)
+        {
+            return base.Channel.get_action_categories_for_load_case(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.action_category[] get_action_categories_for_load_case()
+        {
+            Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseRequest inValue = new Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseRequest();
+            Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_action_categories_for_load_case(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.Rfem6.Model.action_combination get_action_combination(int no)
         {
             Dlubal.WS.Rfem6.Model.get_action_combinationRequest inValue = new Dlubal.WS.Rfem6.Model.get_action_combinationRequest();
@@ -842,6 +868,19 @@ namespace Dlubal.WS.Rfem6.Model
         Dlubal.WS.Rfem6.Model.get_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_design_situation(Dlubal.WS.Rfem6.Model.get_design_situationRequest request)
         {
             return base.Channel.get_design_situation(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_design_situation_typesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_design_situation_types(Dlubal.WS.Rfem6.Model.get_design_situation_typesRequest request)
+        {
+            return base.Channel.get_design_situation_types(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.design_situation_type[] get_design_situation_types()
+        {
+            Dlubal.WS.Rfem6.Model.get_design_situation_typesRequest inValue = new Dlubal.WS.Rfem6.Model.get_design_situation_typesRequest();
+            Dlubal.WS.Rfem6.Model.get_design_situation_typesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_design_situation_types(inValue);
+            return retVal.value;
         }
         
         public Dlubal.WS.Rfem6.Model.design_support get_design_support(int no)
@@ -9107,6 +9146,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_model_historyRequest inValue = new Dlubal.WS.Rfem6.Model.set_model_historyRequest();
             inValue.table_values = table_values;
             Dlubal.WS.Rfem6.Model.set_model_historyResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_model_history(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_model_idResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_model_id(Dlubal.WS.Rfem6.Model.set_model_idRequest request)
+        {
+            return base.Channel.set_model_id(request);
+        }
+        
+        public void set_model_id(string id)
+        {
+            Dlubal.WS.Rfem6.Model.set_model_idRequest inValue = new Dlubal.WS.Rfem6.Model.set_model_idRequest();
+            inValue.id = id;
+            Dlubal.WS.Rfem6.Model.set_model_idResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_model_id(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

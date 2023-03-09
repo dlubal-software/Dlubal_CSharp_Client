@@ -508,6 +508,32 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_action(request);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_action_categories_for_actionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_action_categories_for_action(Dlubal.WS.Rstab9.Model.get_action_categories_for_actionRequest request)
+        {
+            return base.Channel.get_action_categories_for_action(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.action_category[] get_action_categories_for_action()
+        {
+            Dlubal.WS.Rstab9.Model.get_action_categories_for_actionRequest inValue = new Dlubal.WS.Rstab9.Model.get_action_categories_for_actionRequest();
+            Dlubal.WS.Rstab9.Model.get_action_categories_for_actionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_action_categories_for_action(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_action_categories_for_load_caseResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_action_categories_for_load_case(Dlubal.WS.Rstab9.Model.get_action_categories_for_load_caseRequest request)
+        {
+            return base.Channel.get_action_categories_for_load_case(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.action_category[] get_action_categories_for_load_case()
+        {
+            Dlubal.WS.Rstab9.Model.get_action_categories_for_load_caseRequest inValue = new Dlubal.WS.Rstab9.Model.get_action_categories_for_load_caseRequest();
+            Dlubal.WS.Rstab9.Model.get_action_categories_for_load_caseResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_action_categories_for_load_case(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.Rstab9.Model.action_combination get_action_combination(int no)
         {
             Dlubal.WS.Rstab9.Model.get_action_combinationRequest inValue = new Dlubal.WS.Rstab9.Model.get_action_combinationRequest();
@@ -798,6 +824,19 @@ namespace Dlubal.WS.Rstab9.Model
         Dlubal.WS.Rstab9.Model.get_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_design_situation(Dlubal.WS.Rstab9.Model.get_design_situationRequest request)
         {
             return base.Channel.get_design_situation(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_design_situation_typesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_design_situation_types(Dlubal.WS.Rstab9.Model.get_design_situation_typesRequest request)
+        {
+            return base.Channel.get_design_situation_types(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.design_situation_type[] get_design_situation_types()
+        {
+            Dlubal.WS.Rstab9.Model.get_design_situation_typesRequest inValue = new Dlubal.WS.Rstab9.Model.get_design_situation_typesRequest();
+            Dlubal.WS.Rstab9.Model.get_design_situation_typesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_design_situation_types(inValue);
+            return retVal.value;
         }
         
         public Dlubal.WS.Rstab9.Model.design_support get_design_support(int no)
@@ -4246,6 +4285,19 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_model_historyRequest inValue = new Dlubal.WS.Rstab9.Model.set_model_historyRequest();
             inValue.table_values = table_values;
             Dlubal.WS.Rstab9.Model.set_model_historyResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_model_history(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_model_idResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_model_id(Dlubal.WS.Rstab9.Model.set_model_idRequest request)
+        {
+            return base.Channel.set_model_id(request);
+        }
+        
+        public void set_model_id(string id)
+        {
+            Dlubal.WS.Rstab9.Model.set_model_idRequest inValue = new Dlubal.WS.Rstab9.Model.set_model_idRequest();
+            inValue.id = id;
+            Dlubal.WS.Rstab9.Model.set_model_idResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_model_id(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

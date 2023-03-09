@@ -158,6 +158,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_actionResponse get_action(Dlubal.WS.Rfem6.Model.get_actionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_action_categories_for_action", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_action_categories_for_actionResponse get_action_categories_for_action(Dlubal.WS.Rfem6.Model.get_action_categories_for_actionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_action_categories_for_load_case", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseResponse get_action_categories_for_load_case(Dlubal.WS.Rfem6.Model.get_action_categories_for_load_caseRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_action_combination", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_action_combinationResponse get_action_combination(Dlubal.WS.Rfem6.Model.get_action_combinationRequest request);
@@ -253,6 +261,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_design_situation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_design_situationResponse get_design_situation(Dlubal.WS.Rfem6.Model.get_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_design_situation_types", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_design_situation_typesResponse get_design_situation_types(Dlubal.WS.Rfem6.Model.get_design_situation_typesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_design_support", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2647,6 +2659,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_history", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_model_historyResponse set_model_history(Dlubal.WS.Rfem6.Model.set_model_historyRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_id", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_model_idResponse set_model_id(Dlubal.WS.Rfem6.Model.set_model_idRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_parameters", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

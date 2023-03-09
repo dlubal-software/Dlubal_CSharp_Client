@@ -18,95 +18,95 @@ namespace Dlubal.WS.RSection1.Application
     public interface IRSectionApplication
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/close_application", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/close_application", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.close_applicationResponse close_application(Dlubal.WS.RSection1.Application.close_applicationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/close_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/close_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.close_modelResponse close_model(Dlubal.WS.RSection1.Application.close_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/delete_project", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/delete_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.delete_projectResponse delete_project(Dlubal.WS.RSection1.Application.delete_projectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_active_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_active_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_active_modelResponse get_active_model(Dlubal.WS.RSection1.Application.get_active_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_current_project", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_current_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_current_projectResponse get_current_project(Dlubal.WS.RSection1.Application.get_current_projectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_detailed_logging", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_detailed_logging", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_detailed_loggingResponse get_detailed_logging(Dlubal.WS.RSection1.Application.get_detailed_loggingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_information", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_information", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_informationResponse get_information(Dlubal.WS.RSection1.Application.get_informationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_list_of_existing_projects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_list_of_existing_projects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_list_of_existing_projectsResponse get_list_of_existing_projects(Dlubal.WS.RSection1.Application.get_list_of_existing_projectsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_modelResponse get_model(Dlubal.WS.RSection1.Application.get_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_model_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_model_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_model_listResponse get_model_list(Dlubal.WS.RSection1.Application.get_model_listRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_project", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_projectResponse get_project(Dlubal.WS.RSection1.Application.get_projectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_session_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_session_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_session_idResponse get_session_id(Dlubal.WS.RSection1.Application.get_session_idRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/get_settings_program_language", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/get_settings_program_language", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_settings_program_languageResponse get_settings_program_language(Dlubal.WS.RSection1.Application.get_settings_program_languageRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/import_from", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/import_from", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.import_fromResponse import_from(Dlubal.WS.RSection1.Application.import_fromRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/new_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/new_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.new_modelResponse new_model(Dlubal.WS.RSection1.Application.new_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/new_model_as_copy", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/new_model_as_copy", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.new_model_as_copyResponse new_model_as_copy(Dlubal.WS.RSection1.Application.new_model_as_copyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/new_model_from_template", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/new_model_from_template", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.new_model_from_templateResponse new_model_from_template(Dlubal.WS.RSection1.Application.new_model_from_templateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/new_project", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/new_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.new_projectResponse new_project(Dlubal.WS.RSection1.Application.new_projectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/open_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/open_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.open_modelResponse open_model(Dlubal.WS.RSection1.Application.open_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/save_model", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/save_model", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.save_modelResponse save_model(Dlubal.WS.RSection1.Application.save_modelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/set_as_current_project", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/set_as_current_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.set_as_current_projectResponse set_as_current_project(Dlubal.WS.RSection1.Application.set_as_current_projectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/set_detailed_logging", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/set_detailed_logging", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.set_detailed_loggingResponse set_detailed_logging(Dlubal.WS.RSection1.Application.set_detailed_loggingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8083/set_settings_program_language", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8101/set_settings_program_language", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.set_settings_program_languageResponse set_settings_program_language(Dlubal.WS.RSection1.Application.set_settings_program_languageRequest request);
     }
