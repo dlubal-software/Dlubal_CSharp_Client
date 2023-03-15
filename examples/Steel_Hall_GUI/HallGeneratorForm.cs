@@ -61,8 +61,6 @@ namespace Steel_Hall_GUI
                 bracing.Increment = (frameNumber * 2) - 4;
             }
 
-            int[] variableListInt = { frameHeight, frameSpan, frameDistance, frameNumber };
-
             hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, bracing);
             labelResults.Text = hallgenerator.CreateResultMessage();
         }
