@@ -280,8 +280,6 @@ namespace Steel_Hall
             int frameNumber = GetIntegerInput("Number of frames: ");
             Bracing bracing = GetBracingInput("Do you want to include vertical bracing (Y/N): ", frameNumber);
 
-            //connection to RFEM/RSTAB
-            //Logger logger = LogManager.GetCurrentClassLogger();
             string currentDirectory = Directory.GetCurrentDirectory();
 
             //#region Application Settings
@@ -298,12 +296,10 @@ namespace Steel_Hall
                         if (application.State != CommunicationState.Faulted)
                         {
                             application.Close();
-                            //logger.Error(exception, "Something happened:" + exception.Message);
                         }
                         else
                         {
                             application.Abort();
-                            //logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
                         }
                         application = null;
                     }
@@ -311,7 +307,6 @@ namespace Steel_Hall
                 finally
                 {
                     application_information ApplicationInfo = application.get_information();
-                    //logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                     Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                 }
                 //    #endregion
@@ -798,7 +793,6 @@ namespace Steel_Hall
                 catch (Exception exception)
                 {
                     model.cancel_modification();
-                    //logger.Error(exception, "Something happened while creation of geometry" + exception.Message);
                     throw;
                 }
                 finally
@@ -809,7 +803,6 @@ namespace Steel_Hall
                     }
                     catch (Exception exception)
                     {
-                        //logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
                         model.reset();
                     }
                 }
@@ -1007,7 +1000,6 @@ namespace Steel_Hall
                 catch (Exception exception4)
                 {
                     model.cancel_modification();
-                    //logger.Error(exception4, "Something happened while creation of analysis settings" + exception4.Message);
                     throw;
                 }
                 finally
@@ -1018,7 +1010,6 @@ namespace Steel_Hall
                     }
                     catch (Exception exception3)
                     {
-                        //logger.Error(exception3, "Something went wrong while finishing creation of analysis settings\n" + exception3.Message + "\n");
                         model.reset();
                     }
                 }
@@ -1042,26 +1033,7 @@ namespace Steel_Hall
                 };
                 member_loads_LC2.Add(member_load_id, memberLoad_LC2);
 
-                //member load loadcase 5
-                member_load memberLoad_LC5 = new member_load()
-                {
-                    no = 1,
-                    members_string = string.Join(",", xMembers.Keys),
-                    members = xMembers.Keys.ToArray(),
-                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_TRAPEZOIDAL,
-                    load_distributionSpecified = true,
-                    magnitude_1 = 1000.0,
-                    magnitude_1Specified = true,
-                    magnitude_2 = 750.0,
-                    magnitude_2Specified = true,
-                    load_is_over_total_length = true,
-                    load_is_over_total_lengthSpecified = true,
-                };
-
                 //member loads load case 3
-                SortedList<int, member_load> member_loads_LC3 = new SortedList<int, member_load>();
-
-
                 member_load memberLoad_LC3_1 = new member_load()
                 {
                     no = 1,
@@ -1092,9 +1064,7 @@ namespace Steel_Hall
                     load_is_over_total_lengthSpecified = true,
                 };
 
-
                 //member loads load case 4
-
                 member_load memberLoad_LC4_1 = new member_load()
                 {
                     no = 1,
@@ -1125,6 +1095,22 @@ namespace Steel_Hall
                     load_is_over_total_lengthSpecified = true,
                 };
 
+                //member load loadcase 5
+                member_load memberLoad_LC5 = new member_load()
+                {
+                    no = 1,
+                    members_string = string.Join(",", xMembers.Keys),
+                    members = xMembers.Keys.ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_TRAPEZOIDAL,
+                    load_distributionSpecified = true,
+                    magnitude_1 = 1000.0,
+                    magnitude_1Specified = true,
+                    magnitude_2 = 750.0,
+                    magnitude_2Specified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
+
                 try
                 {
                     model.begin_modification("Set loads");
@@ -1143,7 +1129,6 @@ namespace Steel_Hall
                 catch (Exception exception2)
                 {
                     model.cancel_modification();
-                    //logger.Error(exception2, "Something happened while load transfer" + exception2.Message);
                     throw;
                 }
                 finally
@@ -1154,7 +1139,6 @@ namespace Steel_Hall
                     }
                     catch (Exception exception)
                     {
-                        //logger.Error(exception, "Something went wrong while finishing load transfer\n" + exception.Message + "\n");
                         model.reset();
                     }
                 }
@@ -1163,6 +1147,7 @@ namespace Steel_Hall
                 calculation_message[] meshGenerationMessage = model.generate_mesh(true);
                 if (meshGenerationMessage.Length != 0)
                 {
+                    Console.WriteLine(meshGenerationMessage);
                 }
                 mesh_statistics_type mesh_Statistics = model.get_mesh_statistics();
                 Console.WriteLine("Number of mesh nodes: " + mesh_Statistics.node_elements);
@@ -1252,7 +1237,6 @@ namespace Steel_Hall
             catch (Exception ex)
             {
                 Console.Error.WriteLine(ex);
-                //logger.Error(ex, "Stopped program because of exception :" + ex.Message);
             }
         }
     }
