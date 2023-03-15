@@ -65,46 +65,6 @@ namespace Steel_Hall_GUI
 
             hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, bracing);
             labelResults.Text = hallgenerator.CreateResultMessage();
-            Console.ReadLine();
-        }
-
-        private void textBoxFrameHeight_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBoxFramSpan_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void textBoxFrameDistance_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        public void textBoxFrameNumber_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        public void checkBoxBracing1_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void checkBoxBracing2_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -114,18 +74,8 @@ namespace Steel_Hall_GUI
 
         private void buttonCsv_Click(object sender, EventArgs e)
         {
-            hallgenerator.ExportCsv();
-            labelExport.Text = "Results have been exported as CSV-files to the current directory.";
-        }
-
-        private void labelExport_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButtonBracing1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            //hallgenerator.ExportCsv();
+            //labelExport.Text = "Results have been exported as CSV-files to the current directory.";
         }
     }
 }

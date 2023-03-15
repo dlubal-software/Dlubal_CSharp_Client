@@ -84,7 +84,6 @@
             this.textBoxFrameHeight.Name = "textBoxFrameHeight";
             this.textBoxFrameHeight.Size = new System.Drawing.Size(100, 23);
             this.textBoxFrameHeight.TabIndex = 3;
-            this.textBoxFrameHeight.TextChanged += new System.EventHandler(this.textBoxFrameHeight_TextChanged);
             // 
             // textBoxFramSpan
             // 
@@ -92,7 +91,6 @@
             this.textBoxFramSpan.Name = "textBoxFramSpan";
             this.textBoxFramSpan.Size = new System.Drawing.Size(100, 23);
             this.textBoxFramSpan.TabIndex = 4;
-            this.textBoxFramSpan.TextChanged += new System.EventHandler(this.textBoxFramSpan_TextChanged);
             // 
             // textBoxFrameDistance
             // 
@@ -100,7 +98,6 @@
             this.textBoxFrameDistance.Name = "textBoxFrameDistance";
             this.textBoxFrameDistance.Size = new System.Drawing.Size(100, 23);
             this.textBoxFrameDistance.TabIndex = 5;
-            this.textBoxFrameDistance.TextChanged += new System.EventHandler(this.textBoxFrameDistance_TextChanged);
             // 
             // textBoxFrameNumber
             // 
@@ -108,7 +105,6 @@
             this.textBoxFrameNumber.Name = "textBoxFrameNumber";
             this.textBoxFrameNumber.Size = new System.Drawing.Size(100, 23);
             this.textBoxFrameNumber.TabIndex = 6;
-            this.textBoxFrameNumber.TextChanged += new System.EventHandler(this.textBoxFrameNumber_TextChanged);
             // 
             // label1
             // 
@@ -118,7 +114,6 @@
             this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 10;
             this.label1.Text = "Frame Height [m]:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -182,7 +177,6 @@
             this.labelExport.Name = "labelExport";
             this.labelExport.Size = new System.Drawing.Size(0, 15);
             this.labelExport.TabIndex = 17;
-            this.labelExport.Click += new System.EventHandler(this.labelExport_Click);
             // 
             // labelResults
             // 
@@ -202,7 +196,6 @@
             this.radioButtonBracing1.TabStop = true;
             this.radioButtonBracing1.Text = "Include bracing in every field";
             this.radioButtonBracing1.UseVisualStyleBackColor = true;
-            this.radioButtonBracing1.CheckedChanged += new System.EventHandler(this.radioButtonBracing1_CheckedChanged);
             // 
             // radioButtonBracing2
             // 
