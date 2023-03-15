@@ -105,7 +105,7 @@ namespace Steel_Hall_GUI
             return integerCheck;
         }
 
-        public static bool CheckBracingInput(string input)
+        public static bool CheckBracingInput(ref string input)
         {
             bool bracingCheck = true;
             try
@@ -142,16 +142,16 @@ namespace Steel_Hall_GUI
             {
                 case "1":
                     bracing.BracingType = 1;
-                    bracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                    bracing.BracingNumber = 2 * ((frameNumber * 2) - 2);
                     bracing.LoopCount = bracing.BracingNumber / 2;
                     bracing.Increment = 2;
                     break;
                 case "2":
                     bracing.BracingType = 2;
-                    bracing.BracingNumber = frameNumber * 2 - 2;
+                    bracing.BracingNumber = (frameNumber * 2) - 2;
                     if (frameNumber % 2 == 0)
                     {
-                        bracing.LoopCount = bracing.BracingNumber / 2 + 1;
+                        bracing.LoopCount = (bracing.BracingNumber / 2) + 1;
                     }
                     else
                     {
@@ -163,7 +163,7 @@ namespace Steel_Hall_GUI
                     bracing.BracingType = 3;
                     bracing.BracingNumber = 8;
                     bracing.LoopCount = 4;
-                    bracing.Increment = frameNumber * 2 - 4;
+                    bracing.Increment = (frameNumber * 2) - 4;
                     break;
                 default:
                     // value is neither 1 nor 2 nor 3
@@ -183,7 +183,7 @@ namespace Steel_Hall_GUI
             {
                 Console.Write(message);
                 inputValue = Console.ReadLine();
-                check = CheckBracingInput(inputValue);
+                check = CheckBracingInput(ref inputValue);
             }
 
             if (inputValue == "y")
@@ -259,7 +259,7 @@ namespace Steel_Hall_GUI
         }
 
         private static ApplicationClient? application = null;
-        //public static ModelClient? model = null;
+        string currentDirectory = Directory.GetCurrentDirectory();
 
         public void GenerateHall(int frameHeight, int frameSpan, int frameDistance, int frameNumber, Bracing bracing)
         {
@@ -273,8 +273,8 @@ namespace Steel_Hall_GUI
             //Bracing bracing = GetBracingInput("Do you want to include vertical bracing (Y/N): ", frameNumber);
 
             //connection to RFEM/RSTAB
-            Logger logger = LogManager.GetCurrentClassLogger();
-            Directory.GetCurrentDirectory();
+            //Logger logger = LogManager.GetCurrentClassLogger();
+            
 
             #region Application Settings
             try
@@ -290,12 +290,12 @@ namespace Steel_Hall_GUI
                         if (application.State != CommunicationState.Faulted)
                         {
                             application.Close();
-                            logger.Error(exception, "Something happened:" + exception.Message);
+                            //logger.Error(exception, "Something happened:" + exception.Message);
                         }
                         else
                         {
                             application.Abort();
-                            logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
+                            //logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
                         }
                         application = null;
                     }
@@ -303,7 +303,7 @@ namespace Steel_Hall_GUI
                 finally
                 {
                     application_information ApplicationInfo = application.get_information();
-                    logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
+                    //logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                     Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                 }
                 #endregion
@@ -526,7 +526,7 @@ namespace Steel_Hall_GUI
                         section_startSpecified = true,
                         section_end = section1.no,
                         section_endSpecified = true,
-                        comment = "coloumn"
+                        comment = "column"
                     };
                     zMembers.Add(memberId, newMember);
                     memberId++;
@@ -790,7 +790,7 @@ namespace Steel_Hall_GUI
                 catch (Exception exception)
                 {
                     this.Model.cancel_modification();
-                    logger.Error(exception, "Something happened while creation of geometry" + exception.Message);
+                    //logger.Error(exception, "Something happened while creation of geometry" + exception.Message);
                     throw;
                 }
                 finally
@@ -801,18 +801,18 @@ namespace Steel_Hall_GUI
                     }
                     catch (Exception exception)
                     {
-                        logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
+                        //logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
                         this.Model.reset();
                     }
                 }
 
-                static_analysis_settings analysis = new static_analysis_settings
+                static_analysis_settings analysis = new static_analysis_settings()
                 {
                     no = 1,
                     analysis_type = static_analysis_settings_analysis_type.GEOMETRICALLY_LINEAR,
                     analysis_typeSpecified = true
                 };
-                load_case selfWeightLC = new load_case
+                load_case selfWeightLC = new load_case()
                 {
                     no = 1,
                     name = "SelfWeight",
@@ -830,7 +830,7 @@ namespace Steel_Hall_GUI
                     stability_analysis_settings = analysis.no,
                     stability_analysis_settingsSpecified = true
                 };
-                load_case liveLoad = new load_case
+                load_case liveLoad = new load_case()
                 {
                     no = 2,
                     name = "Live Load",
@@ -842,7 +842,7 @@ namespace Steel_Hall_GUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_IMPOSED_LOADS_CATEGORY_A_DOMESTIC_RESIDENTIAL_AREAS_QI_A"
                 };
-                load_case windX = new load_case
+                load_case windX = new load_case()
                 {
                     no = 3,
                     name = "Wind in X",
@@ -854,7 +854,7 @@ namespace Steel_Hall_GUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_WIND_QW"
                 };
-                load_case windY = new load_case
+                load_case windY = new load_case()
                 {
                     no = 4,
                     name = "Wind in Y",
@@ -867,7 +867,7 @@ namespace Steel_Hall_GUI
                     action_category = "ACTION_CATEGORY_WIND_QW"
                 };
 
-                load_case snow = new load_case
+                load_case snow = new load_case()
                 {
                     no = 5,
                     name = "Snow",
@@ -886,7 +886,7 @@ namespace Steel_Hall_GUI
                 loadCases.Add(windY);
                 loadCases.Add(snow);
 
-                design_situation design_Situation = new design_situation
+                design_situation design_Situation = new design_situation()
                 {
                     no = 1,
                     name = "ScriptedDS",
@@ -898,7 +898,7 @@ namespace Steel_Hall_GUI
                     consider_inclusive_exclusive_load_cases = true,
                     consider_inclusive_exclusive_load_casesSpecified = true
                 };
-                load_combination_items_row load_Combination_SW = new load_combination_items_row
+                load_combination_items_row load_Combination_SW = new load_combination_items_row()
                 {
                     no = 1,
                     row = new load_combination_items
@@ -909,7 +909,7 @@ namespace Steel_Hall_GUI
                         factorSpecified = true
                     }
                 };
-                load_combination_items_row load_Combination_liveLoad = new load_combination_items_row
+                load_combination_items_row load_Combination_liveLoad = new load_combination_items_row()
                 {
                     no = 2,
                     row = new load_combination_items
@@ -920,7 +920,7 @@ namespace Steel_Hall_GUI
                         factorSpecified = true
                     }
                 };
-                load_combination_items_row load_Combination_windX = new load_combination_items_row
+                load_combination_items_row load_Combination_windX = new load_combination_items_row()
                 {
                     no = 3,
                     row = new load_combination_items
@@ -931,7 +931,7 @@ namespace Steel_Hall_GUI
                         factorSpecified = true
                     }
                 };
-                load_combination_items_row load_Combination_windY = new load_combination_items_row
+                load_combination_items_row load_Combination_windY = new load_combination_items_row()
                 {
                     no = 4,
                     row = new load_combination_items
@@ -942,7 +942,7 @@ namespace Steel_Hall_GUI
                         factorSpecified = true
                     }
                 };
-                load_combination_items_row load_Combination_snow = new load_combination_items_row
+                load_combination_items_row load_Combination_snow = new load_combination_items_row()
                 {
                     no = 5,
                     row = new load_combination_items
@@ -956,7 +956,7 @@ namespace Steel_Hall_GUI
                 load_combination_items_row[] loadCombinationItems1 = new load_combination_items_row[4] { load_Combination_SW, load_Combination_liveLoad, load_Combination_windX, load_Combination_snow };
                 load_combination_items_row[] loadCombinationItems2 = new load_combination_items_row[4] { load_Combination_SW, load_Combination_liveLoad, load_Combination_windY, load_Combination_snow };
 
-                load_combination load_Combination1 = new load_combination
+                load_combination load_Combination1 = new load_combination()
                 {
                     no = 1,
                     name = "Combination 1",
@@ -970,7 +970,7 @@ namespace Steel_Hall_GUI
                     design_situation = 1,
                     design_situationSpecified = true
                 };
-                load_combination load_Combination2 = new load_combination
+                load_combination load_Combination2 = new load_combination()
                 {
                     no = 2,
                     name = "Combination 2",
@@ -999,7 +999,7 @@ namespace Steel_Hall_GUI
                 catch (Exception exception4)
                 {
                     this.Model.cancel_modification();
-                    logger.Error(exception4, "Something happened while creation of analysis settings" + exception4.Message);
+                    //logger.Error(exception4, "Something happened while creation of analysis settings" + exception4.Message);
                     throw;
                 }
                 finally
@@ -1010,7 +1010,7 @@ namespace Steel_Hall_GUI
                     }
                     catch (Exception exception3)
                     {
-                        logger.Error(exception3, "Something went wrong while finishing creation of analysis settings\n" + exception3.Message + "\n");
+                        //logger.Error(exception3, "Something went wrong while finishing creation of analysis settings\n" + exception3.Message + "\n");
                         this.Model.reset();
                     }
                 }
@@ -1168,7 +1168,7 @@ namespace Steel_Hall_GUI
                 catch (Exception exception2)
                 {
                     this.Model.cancel_modification();
-                    logger.Error(exception2, "Something happened while load transfer" + exception2.Message);
+                    //logger.Error(exception2, "Something happened while load transfer" + exception2.Message);
                     throw;
                 }
                 finally
@@ -1179,17 +1179,18 @@ namespace Steel_Hall_GUI
                     }
                     catch (Exception exception)
                     {
-                        logger.Error(exception, "Something went wrong while finishing load transfer\n" + exception.Message + "\n");
+                        //logger.Error(exception, "Something went wrong while finishing load transfer\n" + exception.Message + "\n");
                         this.Model.reset();
                     }
                 }
 #if RFEM
                 #region generate mesh and get mesh statistics
-                calculation_message[] meshGenerationMessage = this.Model.generate_mesh(true);
-                if (meshGenerationMessage.Length != 0)
-                {
-                }
-                mesh_statistics_type mesh_Statistics = this.Model.get_mesh_statistics();
+                //calculation_message[] meshGenerationMessage = this.Model.generate_mesh(true);
+                //if (meshGenerationMessage.Length != 0)
+                //{
+                //    Console.WriteLine(calculationMessage);
+                //}
+                //mesh_statistics_type mesh_Statistics = this.Model.get_mesh_statistics();
                 //Console.WriteLine("Number of mesh nodes: " + mesh_Statistics.node_elements);
                 //Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
                 //Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
@@ -1218,7 +1219,7 @@ namespace Steel_Hall_GUI
                 //    Console.WriteLine("Model has no results.");
                 //}
 
-                bool modelHasLC2Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
+                //bool modelHasLC2Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
                 //if (modelHasLC2Calculated)
                 //{
                 //    Console.WriteLine("Model has LC2 results.");
@@ -1228,7 +1229,7 @@ namespace Steel_Hall_GUI
                 //    Console.WriteLine("Model has no LC2 results.");
                 //}
 
-                bool modelHasLC3Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windX.no);
+                //bool modelHasLC3Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windX.no);
                 //if (modelHasLC3Calculated)
                 //{
                 //    Console.WriteLine("Model has LC3 results.");
@@ -1238,7 +1239,7 @@ namespace Steel_Hall_GUI
                 //    Console.WriteLine("Model has no LC3 results.");
                 //}
 
-                bool modelHasLC4Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windY.no);
+                //bool modelHasLC4Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windY.no);
                 //if (modelHasLC4Calculated)
                 //{
                 //    Console.WriteLine("Model has LC4 results.");
@@ -1248,7 +1249,7 @@ namespace Steel_Hall_GUI
                 //    Console.WriteLine("Model has no LC4 results.");
                 //}
 
-                bool modelHasLC5Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, snow.no);
+                //bool modelHasLC5Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, snow.no);
                 //if (modelHasLC5Calculated)
                 //{
                 //    Console.WriteLine("Model has LC5 results.");
@@ -1264,7 +1265,7 @@ namespace Steel_Hall_GUI
                 //Console.WriteLine("Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV.");
                 #endregion
 
-                this.Model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall");
+                this.Model.save(currentDirectory + @"\testmodels\");
                 //Console.WriteLine("Model has been saved to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall.");
 
                 //Console.Write("Press enter to close the this.Model.");
@@ -1272,12 +1273,11 @@ namespace Steel_Hall_GUI
                 //{
                 //    application.close_model(0, true);
                 //}
-                //return true;
             }
             catch (Exception ex)
             {
                 Console.Error.WriteLine(ex);
-                logger.Error(ex, "Stopped program because of exception :" + ex.Message);                
+                //logger.Error(ex, "Stopped program because of exception :" + ex.Message);                
             }
         }
         
@@ -1288,7 +1288,7 @@ namespace Steel_Hall_GUI
 
         public void ExportCsv()
         {
-            this.Model.export_result_tables_with_detailed_members_results_to_csv("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV");
+            this.Model.export_result_tables_with_detailed_members_results_to_csv(currentDirectory + @"\CSV\");
         }
 
         public string CreateResultMessage()

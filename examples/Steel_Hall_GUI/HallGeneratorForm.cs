@@ -32,14 +32,14 @@ namespace Steel_Hall_GUI
             int frameDistance = int.Parse(textBoxFrameDistance.Text);
             int frameNumber = int.Parse(textBoxFrameNumber.Text);
 
-            if (checkBoxBracing1.Checked == true)
+            if (radioButtonBracing1.Checked == true)
             {
                 bracing.BracingType = 1;
                 bracing.BracingNumber = 2 * (frameNumber * 2 - 2);
                 bracing.LoopCount = bracing.BracingNumber / 2;
                 bracing.Increment = 2;
             }
-            else if (checkBoxBracing2.Checked == true)
+            else if (radioButtonBracing2.Checked == true)
             {
                 bracing.BracingType = 2;
                 bracing.BracingNumber = (frameNumber * 2) - 2;
@@ -53,18 +53,19 @@ namespace Steel_Hall_GUI
                 }
                 bracing.Increment = 4;
             }
-            else if (checkBoxBracing3.Checked == true) 
+            else if (radioButtonBracing3.Checked == true) 
             {
                 bracing.BracingType = 3;
                 bracing.BracingNumber = 8;
                 bracing.LoopCount = 4;
-                bracing.Increment = (frameNumber * 4) - 2;
+                bracing.Increment = (frameNumber * 2) - 4;
             }
 
             int[] variableListInt = { frameHeight, frameSpan, frameDistance, frameNumber };
 
             hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, bracing);
             labelResults.Text = hallgenerator.CreateResultMessage();
+            Console.ReadLine();
         }
 
         private void textBoxFrameHeight_TextChanged(object sender, EventArgs e)
@@ -108,16 +109,21 @@ namespace Steel_Hall_GUI
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            hallgenerator.CloseModel();
+            //hallgenerator.CloseModel();
         }
 
         private void buttonCsv_Click(object sender, EventArgs e)
         {
             hallgenerator.ExportCsv();
-            labelExport.Text = "Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV";
+            labelExport.Text = "Results have been exported as CSV-files to the current directory.";
         }
 
         private void labelExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonBracing1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

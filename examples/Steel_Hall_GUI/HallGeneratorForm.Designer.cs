@@ -35,9 +35,6 @@
             this.textBoxFramSpan = new System.Windows.Forms.TextBox();
             this.textBoxFrameDistance = new System.Windows.Forms.TextBox();
             this.textBoxFrameNumber = new System.Windows.Forms.TextBox();
-            this.checkBoxBracing1 = new System.Windows.Forms.CheckBox();
-            this.checkBoxBracing2 = new System.Windows.Forms.CheckBox();
-            this.checkBoxBracing3 = new System.Windows.Forms.CheckBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +45,9 @@
             this.buttonCsv = new System.Windows.Forms.Button();
             this.labelExport = new System.Windows.Forms.Label();
             this.labelResults = new System.Windows.Forms.Label();
+            this.radioButtonBracing1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonBracing2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonBracing3 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // buttonCalculate
@@ -109,38 +109,6 @@
             this.textBoxFrameNumber.Size = new System.Drawing.Size(100, 23);
             this.textBoxFrameNumber.TabIndex = 6;
             this.textBoxFrameNumber.TextChanged += new System.EventHandler(this.textBoxFrameNumber_TextChanged);
-            // 
-            // checkBoxBracing1
-            // 
-            this.checkBoxBracing1.AutoSize = true;
-            this.checkBoxBracing1.Location = new System.Drawing.Point(499, 41);
-            this.checkBoxBracing1.Name = "checkBoxBracing1";
-            this.checkBoxBracing1.Size = new System.Drawing.Size(178, 19);
-            this.checkBoxBracing1.TabIndex = 7;
-            this.checkBoxBracing1.Text = "Include bracing in every field";
-            this.checkBoxBracing1.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxBracing2
-            // 
-            this.checkBoxBracing2.AutoSize = true;
-            this.checkBoxBracing2.Location = new System.Drawing.Point(499, 66);
-            this.checkBoxBracing2.Name = "checkBoxBracing2";
-            this.checkBoxBracing2.Size = new System.Drawing.Size(219, 19);
-            this.checkBoxBracing2.TabIndex = 8;
-            this.checkBoxBracing2.Text = "Include bracing in every second field";
-            this.checkBoxBracing2.UseVisualStyleBackColor = true;
-            this.checkBoxBracing2.CheckedChanged += new System.EventHandler(this.checkBoxBracing2_CheckedChanged);
-            // 
-            // checkBoxBracing3
-            // 
-            this.checkBoxBracing3.AutoSize = true;
-            this.checkBoxBracing3.Location = new System.Drawing.Point(499, 91);
-            this.checkBoxBracing3.Name = "checkBoxBracing3";
-            this.checkBoxBracing3.Size = new System.Drawing.Size(221, 19);
-            this.checkBoxBracing3.TabIndex = 9;
-            this.checkBoxBracing3.Text = "Include bracing only in the end fields";
-            this.checkBoxBracing3.UseVisualStyleBackColor = true;
-            this.checkBoxBracing3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // label1
             // 
@@ -224,12 +192,49 @@
             this.labelResults.Size = new System.Drawing.Size(0, 15);
             this.labelResults.TabIndex = 18;
             // 
+            // radioButtonBracing1
+            // 
+            this.radioButtonBracing1.AutoSize = true;
+            this.radioButtonBracing1.Location = new System.Drawing.Point(499, 41);
+            this.radioButtonBracing1.Name = "radioButtonBracing1";
+            this.radioButtonBracing1.Size = new System.Drawing.Size(177, 19);
+            this.radioButtonBracing1.TabIndex = 19;
+            this.radioButtonBracing1.TabStop = true;
+            this.radioButtonBracing1.Text = "Include bracing in every field";
+            this.radioButtonBracing1.UseVisualStyleBackColor = true;
+            this.radioButtonBracing1.CheckedChanged += new System.EventHandler(this.radioButtonBracing1_CheckedChanged);
+            // 
+            // radioButtonBracing2
+            // 
+            this.radioButtonBracing2.AutoSize = true;
+            this.radioButtonBracing2.Location = new System.Drawing.Point(499, 70);
+            this.radioButtonBracing2.Name = "radioButtonBracing2";
+            this.radioButtonBracing2.Size = new System.Drawing.Size(218, 19);
+            this.radioButtonBracing2.TabIndex = 20;
+            this.radioButtonBracing2.TabStop = true;
+            this.radioButtonBracing2.Text = "Include bracing in every second field";
+            this.radioButtonBracing2.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonBracing3
+            // 
+            this.radioButtonBracing3.AutoSize = true;
+            this.radioButtonBracing3.Location = new System.Drawing.Point(499, 97);
+            this.radioButtonBracing3.Name = "radioButtonBracing3";
+            this.radioButtonBracing3.Size = new System.Drawing.Size(220, 19);
+            this.radioButtonBracing3.TabIndex = 21;
+            this.radioButtonBracing3.TabStop = true;
+            this.radioButtonBracing3.Text = "Include bracing only in the end fields";
+            this.radioButtonBracing3.UseVisualStyleBackColor = true;
+            // 
             // HallGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(848, 513);
+            this.Controls.Add(this.radioButtonBracing3);
+            this.Controls.Add(this.radioButtonBracing2);
+            this.Controls.Add(this.radioButtonBracing1);
             this.Controls.Add(this.labelResults);
             this.Controls.Add(this.labelExport);
             this.Controls.Add(this.buttonCsv);
@@ -239,9 +244,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBoxBracing3);
-            this.Controls.Add(this.checkBoxBracing2);
-            this.Controls.Add(this.checkBoxBracing1);
             this.Controls.Add(this.textBoxFrameNumber);
             this.Controls.Add(this.textBoxFrameDistance);
             this.Controls.Add(this.textBoxFramSpan);
@@ -265,9 +267,6 @@
         private TextBox textBoxFramSpan;
         private TextBox textBoxFrameDistance;
         private TextBox textBoxFrameNumber;
-        private CheckBox checkBoxBracing1;
-        private CheckBox checkBoxBracing2;
-        private CheckBox checkBoxBracing3;
         private FontDialog fontDialog1;
         private Label label1;
         private Label label2;
@@ -279,5 +278,8 @@
         private Button buttonClose;
         private Button buttonCsv;
         private Label labelResults;
+        private RadioButton radioButtonBracing1;
+        private RadioButton radioButtonBracing2;
+        private RadioButton radioButtonBracing3;
     }
 }

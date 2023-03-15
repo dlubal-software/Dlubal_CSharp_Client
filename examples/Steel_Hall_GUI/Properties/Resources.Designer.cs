@@ -59,15 +59,5 @@ namespace Steel_Hall_GUI.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Einstellung_2D_Modell {
-            get {
-                object obj = ResourceManager.GetObject("Einstellung 2D-Modell", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
