@@ -69,13 +69,18 @@ namespace Steel_Hall_GUI
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            //hallgenerator.CloseModel();
+            hallgenerator.CloseModel();
         }
 
         private void buttonCsv_Click(object sender, EventArgs e)
         {
-            //hallgenerator.ExportCsv();
-            //labelExport.Text = "Results have been exported as CSV-files to the current directory.";
+            hallgenerator.ExportCsv();
+            labelExport.Text = "Results have been exported as CSV-files to the current directory.";
+        }
+
+        private void buttonDisconnect_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

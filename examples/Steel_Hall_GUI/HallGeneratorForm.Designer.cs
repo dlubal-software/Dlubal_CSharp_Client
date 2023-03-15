@@ -48,6 +48,7 @@
             this.radioButtonBracing1 = new System.Windows.Forms.RadioButton();
             this.radioButtonBracing2 = new System.Windows.Forms.RadioButton();
             this.radioButtonBracing3 = new System.Windows.Forms.RadioButton();
+            this.buttonDisconnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCalculate
@@ -62,9 +63,9 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(350, 232);
+            this.buttonClose.Location = new System.Drawing.Point(350, 231);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(144, 27);
+            this.buttonClose.Size = new System.Drawing.Size(144, 29);
             this.buttonClose.TabIndex = 1;
             this.buttonClose.Text = "Close Model";
             this.buttonClose.UseVisualStyleBackColor = true;
@@ -219,12 +220,23 @@
             this.radioButtonBracing3.Text = "Include bracing only in the end fields";
             this.radioButtonBracing3.UseVisualStyleBackColor = true;
             // 
+            // buttonDisconnect
+            // 
+            this.buttonDisconnect.Location = new System.Drawing.Point(499, 231);
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.Size = new System.Drawing.Size(195, 29);
+            this.buttonDisconnect.TabIndex = 22;
+            this.buttonDisconnect.Text = "Close this app and free RFEM";
+            this.buttonDisconnect.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
+            // 
             // HallGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(848, 513);
+            this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.radioButtonBracing3);
             this.Controls.Add(this.radioButtonBracing2);
             this.Controls.Add(this.radioButtonBracing1);
@@ -274,5 +286,6 @@
         private RadioButton radioButtonBracing1;
         private RadioButton radioButtonBracing2;
         private RadioButton radioButtonBracing3;
+        private Button buttonDisconnect;
     }
 }

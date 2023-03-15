@@ -1265,7 +1265,7 @@ namespace Steel_Hall_GUI
                 //Console.WriteLine("Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV.");
                 #endregion
 
-                this.Model.save(currentDirectory + @"\testmodels\");
+                //this.Model.save(currentDirectory + @"\testmodels\");
                 //Console.WriteLine("Model has been saved to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall.");
 
                 //Console.Write("Press enter to close the this.Model.");
