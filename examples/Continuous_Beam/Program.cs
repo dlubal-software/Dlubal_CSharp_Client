@@ -629,7 +629,7 @@ namespace ContinuousBeam
                 #endregion
 
                 //save the model before closing
-                model.save("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\testmodel");
+                model.save(CurrentDirectory + @"\testmodels\");
                 application.close_model(0, true);
             }
             catch (Exception ex)
