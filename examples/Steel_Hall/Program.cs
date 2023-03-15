@@ -14,10 +14,11 @@ using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 using NLog;
 using System.ServiceModel;
 using System.Globalization;
+using System.Security.Policy;
 
 namespace Steel_Hall
 {
-    public class Bracing 
+    public class Bracing
     {
         public int BracingType { get; set; }
         public int BracingNumber { get; set; }
@@ -126,7 +127,7 @@ namespace Steel_Hall
                 {
                     throw new ArgumentOutOfRangeException();
                 }
-                input.ToLower();
+                input = input.ToLower();
             }
             catch (ArgumentNullException)
             {
@@ -142,10 +143,10 @@ namespace Steel_Hall
             return bracingCheck;
         }
 
-        public static Bracing GetBracingType(string input, int frameNumber) 
-        {            
+        public static Bracing GetBracingType(string input, int frameNumber)
+        {
             Bracing bracing = new Bracing();
-            
+
             switch (input)
             {
                 case "1":
@@ -155,7 +156,7 @@ namespace Steel_Hall
                     bracing.Increment = 2;
                     break;
                 case "2":
-                    bracing.BracingType= 2;
+                    bracing.BracingType = 2;
                     bracing.BracingNumber = (frameNumber * 2) - 2;
                     if (frameNumber % 2 == 0)
                     {
@@ -164,19 +165,19 @@ namespace Steel_Hall
                     else
                     {
                         bracing.LoopCount = bracing.BracingNumber / 2;
-                    }                    
+                    }
                     bracing.Increment = 4;
                     break;
                 case "3":
                     bracing.BracingType = 3;
                     bracing.BracingNumber = 8;
-                    bracing.LoopCount =4;
+                    bracing.LoopCount = 4;
                     bracing.Increment = (frameNumber * 2) - 4;
                     break;
                 default:
                     // value is neither 1 nor 2 nor 3
                     throw new ArgumentOutOfRangeException();
-            }            
+            }
             return bracing;
         }
         public static Bracing GetBracingInput(string message, int frameNumber)
@@ -206,7 +207,7 @@ namespace Steel_Hall
                         Console.WriteLine("Please input either 1, 2 or 3!");
                     }
                 }
-                bracing = GetBracingType(inputNumber, frameNumber);                
+                bracing = GetBracingType(inputNumber, frameNumber);
             }
             return bracing;
         }
@@ -317,7 +318,7 @@ namespace Steel_Hall
 
                 string modelName = "SteelHall";
                 //check if model with same name is already opened
-                string modelUrl = ModelOpenedCheck(modelName);               
+                string modelUrl = ModelOpenedCheck(modelName);
 
                 #region new model
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
@@ -416,12 +417,12 @@ namespace Steel_Hall
                 //lines in z-direction
                 SortedList<int, line> zLines = new SortedList<int, line>();
 
-                for (int j = 0; j < frameNumber * 2; j++) 
+                for (int j = 0; j < frameNumber * 2; j++)
                 {
                     line newLine = new()
                     {
                         no = lineId,
-                        definition_nodes = new int[]{lineDefinitionNodes[m],lineDefinitionNodes[m + 1]},
+                        definition_nodes = new int[] { lineDefinitionNodes[m], lineDefinitionNodes[m + 1] },
                         comment = "lines for beams",
                         type = line_type.TYPE_POLYLINE,
                         typeSpecified = true,
@@ -480,9 +481,9 @@ namespace Steel_Hall
 
                 for (int k = 0; k < bracing.LoopCount; k++)
                 {
-                    if ((bracing.BracingType == 1 || bracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2) 
+                    if ((bracing.BracingType == 1 || bracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2)
                     {
-                        nodePositionB += 2; 
+                        nodePositionB += 2;
                     };
 
                     line newLine = new()
@@ -514,7 +515,7 @@ namespace Steel_Hall
                         nodePositionB += bracing.Increment;
                     }
                     lineId += 2;
-                }                
+                }
 #endif
                 //create members
                 int memberId = 1;
@@ -659,7 +660,7 @@ namespace Steel_Hall
                         section_end = section3.no,
                         section_endSpecified = true,
                         type = member_type.TYPE_TENSION,
-                        typeSpecified= true,
+                        typeSpecified = true,
                         comment = "bracing member"
                     };
                     bracingMembers.Add(memberId, newMember);
@@ -1026,151 +1027,118 @@ namespace Steel_Hall
                 SortedList<int, member_load> member_loads_LC5 = new SortedList<int, member_load>();
                 int member_load_id = 1;
 
-                //member loads load case 2/5
-                foreach (var memberItem in xMembers)
+                //member load loadcase 2
+                member_load memberLoad_LC2 = new member_load()
                 {
-                    member_load newMemberLoad = new member_load()
-                    {
-                        no = member_load_id,
-                        members_string = memberItem.Key.ToString(),
-                        members = new int[1] { memberItem.Key },
-                        load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
-                        load_distributionSpecified = true,
-                        magnitude = 3000.0,
-                        magnitudeSpecified = true,
-                        load_is_over_total_length = true,
-                        load_is_over_total_lengthSpecified = true,
-                    };
-                    member_loads_LC2.Add(member_load_id, newMemberLoad);
-                    member_load_id++;
+                    no = 1,
+                    members_string = string.Join(",", xMembers.Keys),
+                    members = xMembers.Keys.ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                    load_distributionSpecified = true,
+                    magnitude = 3000.0,
+                    magnitudeSpecified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
+                member_loads_LC2.Add(member_load_id, memberLoad_LC2);
 
-                    member_load newMemberLoad2 = new member_load()
-                    {
-                        no = member_load_id,
-                        members_string = memberItem.Key.ToString(),
-                        members = new int[1] { memberItem.Key },
-                        load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_TRAPEZOIDAL,
-                        load_distributionSpecified = true,
-                        magnitude_1 = 1000.0,
-                        magnitude_1Specified = true,
-                        magnitude_2 = 750.0,
-                        magnitude_2Specified = true,
-                        load_is_over_total_length = true,
-                        load_is_over_total_lengthSpecified = true,
-                    };
-                    member_loads_LC5.Add(member_load_id, newMemberLoad2);
-                    member_load_id++;
-                }
+                //member load loadcase 5
+                member_load memberLoad_LC5 = new member_load()
+                {
+                    no = 1,
+                    members_string = string.Join(",", xMembers.Keys),
+                    members = xMembers.Keys.ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_TRAPEZOIDAL,
+                    load_distributionSpecified = true,
+                    magnitude_1 = 1000.0,
+                    magnitude_1Specified = true,
+                    magnitude_2 = 750.0,
+                    magnitude_2Specified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
 
                 //member loads load case 3
                 SortedList<int, member_load> member_loads_LC3 = new SortedList<int, member_load>();
-                                
-                foreach (var memberItem in zMembers)
+
+
+                member_load memberLoad_LC3_1 = new member_load()
                 {
-                    if (memberItem.Key < frameNumber + 1)
-                    {
-                        member_load newMemberLoad = new member_load()
-                        {
-                            no = member_load_id,
-                            members_string = memberItem.Key.ToString(),
-                            members = new int[1] { memberItem.Key },
-                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
-                            load_distributionSpecified = true,
-                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_X_OR_USER_DEFINED_U_TRUE,
-                            load_directionSpecified = true,
-                            magnitude = 1500.0,
-                            magnitudeSpecified = true,
-                            load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
-                        };
-                        member_loads_LC3.Add(member_load_id, newMemberLoad);
-                        member_load_id++;
-                    }
-                    else
-                    {
-                        member_load newMemberLoad = new member_load()
-                        {
-                            no = member_load_id,
-                            members_string = memberItem.Key.ToString(),
-                            members = new int[1] { memberItem.Key },
-                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
-                            load_distributionSpecified = true,
-                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_X_OR_USER_DEFINED_U_TRUE,
-                            load_directionSpecified = true,
-                            magnitude = 700.0,
-                            magnitudeSpecified = true,
-                            load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
-                        };
-                        member_loads_LC3.Add(member_load_id, newMemberLoad);
-                        member_load_id++;
-                    }
-                }
+                    no = 1,
+                    members_string = string.Join(",", zMembers.Keys.Where(key => key < frameNumber + 1)),
+                    members = zMembers.Keys.Where(key => key < frameNumber + 1).ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                    load_distributionSpecified = true,
+                    load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_X_OR_USER_DEFINED_U_TRUE,
+                    load_directionSpecified = true,
+                    magnitude = 1500.0,
+                    magnitudeSpecified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
+
+                member_load memberLoad_LC3_2 = new member_load()
+                {
+                    no = 2,
+                    members_string = string.Join(",", zMembers.Keys.Where(key => key > frameNumber)),
+                    members = zMembers.Keys.Where(key => key > frameNumber).ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                    load_distributionSpecified = true,
+                    load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_X_OR_USER_DEFINED_U_TRUE,
+                    load_directionSpecified = true,
+                    magnitude = 700.0,
+                    magnitudeSpecified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
+
 
                 //member loads load case 4
-                SortedList<int, member_load> member_loads_LC4 = new SortedList<int, member_load>();
 
-                foreach (var memberItem in zMembers)
+                member_load memberLoad_LC4_1 = new member_load()
                 {
-                    if (memberItem.Key == frameNumber || memberItem.Key == frameNumber * 2)
-                    {
-                        member_load newMemberLoad = new member_load()
-                        {
-                            no = member_load_id,
-                            members_string = memberItem.Key.ToString(),
-                            members = new int[1] { memberItem.Key },
-                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
-                            load_distributionSpecified = true,
-                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE,
-                            load_directionSpecified = true,
-                            magnitude = 800.0,
-                            magnitudeSpecified = true,
-                            load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
-                        };
-                        member_loads_LC4.Add(member_load_id, newMemberLoad);
-                        member_load_id++;
-                    }
-                    else if (memberItem.Key == 1 || memberItem.Key == frameNumber + 1)
-                    {
-                        member_load newMemberLoad = new member_load()
-                        {
-                            no = member_load_id,
-                            members_string = memberItem.Key.ToString(),
-                            members = new int[1] { memberItem.Key },
-                            load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
-                            load_distributionSpecified = true,
-                            load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE,
-                            load_directionSpecified = true,
-                            magnitude = 400.0,
-                            magnitudeSpecified = true,
-                            load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
-                        };
-                        member_loads_LC4.Add(member_load_id, newMemberLoad);
-                        member_load_id++;
-                    }
-                }
+                    no = 1,
+                    members_string = string.Join(",", zMembers.Keys.Where(key => key == frameNumber || key == frameNumber * 2)),
+                    members = zMembers.Keys.Where(key => key == frameNumber || key == frameNumber * 2).ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                    load_distributionSpecified = true,
+                    load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE,
+                    load_directionSpecified = true,
+                    magnitude = 800.0,
+                    magnitudeSpecified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
+
+                member_load memberLoad_LC4_2 = new member_load()
+                {
+                    no = 2,
+                    members_string = string.Join(",", zMembers.Keys.Where(key => key == 1 || key == frameNumber + 1)),
+                    members = zMembers.Keys.Where(key => key == 1 || key == frameNumber + 1).ToArray(),
+                    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_UNIFORM,
+                    load_distributionSpecified = true,
+                    load_direction = member_load_load_direction.LOAD_DIRECTION_GLOBAL_Y_OR_USER_DEFINED_V_TRUE,
+                    load_directionSpecified = true,
+                    magnitude = 400.0,
+                    magnitudeSpecified = true,
+                    load_is_over_total_length = true,
+                    load_is_over_total_lengthSpecified = true,
+                };
 
                 try
                 {
                     model.begin_modification("Set loads");
-                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC2)
-                    {
-                        model.set_member_load(liveLoad.no, memberload.Value);
-                    }
-                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC3)
-                    {
-                        model.set_member_load(windX.no, memberload.Value);
-                    }
-                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC4)
-                    {
-                        model.set_member_load(windY.no, memberload.Value);
-                    }
-                    foreach (KeyValuePair<int, member_load> memberload in member_loads_LC5)
-                    {
-                        model.set_member_load(snow.no, memberload.Value);
-                    }
+
+                    model.set_member_load(liveLoad.no, memberLoad_LC2);
+
+                    model.set_member_load(windX.no, memberLoad_LC3_1);
+                    model.set_member_load(windX.no, memberLoad_LC3_2);
+
+                    model.set_member_load(windY.no, memberLoad_LC4_1);
+                    model.set_member_load(windY.no, memberLoad_LC4_2);
+
+                    model.set_member_load(snow.no, memberLoad_LC5);
+
                 }
                 catch (Exception exception2)
                 {
