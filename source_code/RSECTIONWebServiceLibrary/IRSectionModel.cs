@@ -18,407 +18,411 @@ namespace Dlubal.WS.RSection1.Model
     public interface IRSectionModel
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/add_section_to_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/add_section_to_my_section_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.add_section_to_my_section_listResponse add_section_to_my_section_list(Dlubal.WS.RSection1.Model.add_section_to_my_section_listRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/begin_modification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/begin_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.begin_modificationResponse begin_modification(Dlubal.WS.RSection1.Model.begin_modificationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/calculate_all", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/calculate_all", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.calculate_allResponse calculate_all(Dlubal.WS.RSection1.Model.calculate_allRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/cancel_modification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/cancel_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.cancel_modificationResponse cancel_modification(Dlubal.WS.RSection1.Model.cancel_modificationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/clear_selection", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/clear_selection", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.clear_selectionResponse clear_selection(Dlubal.WS.RSection1.Model.clear_selectionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/close_connection", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/close_connection", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.close_connectionResponse close_connection(Dlubal.WS.RSection1.Model.close_connectionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/create_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/create_my_section_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.create_my_section_listResponse create_my_section_list(Dlubal.WS.RSection1.Model.create_my_section_listRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/create_section_by_name", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/create_section_by_name", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.create_section_by_nameResponse create_section_by_name(Dlubal.WS.RSection1.Model.create_section_by_nameRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/create_section_from_rsection_file", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/create_section_from_rsection_file", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.create_section_from_rsection_fileResponse create_section_from_rsection_file(Dlubal.WS.RSection1.Model.create_section_from_rsection_fileRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_all", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_all", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_allResponse delete_all(Dlubal.WS.RSection1.Model.delete_allRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_all_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_all_history", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_all_historyResponse delete_all_history(Dlubal.WS.RSection1.Model.delete_all_historyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_all_results", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_all_results", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_all_resultsResponse delete_all_results(Dlubal.WS.RSection1.Model.delete_all_resultsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_my_section_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_my_section_listResponse delete_my_section_list(Dlubal.WS.RSection1.Model.delete_my_section_listRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_object", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_object", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_objectResponse delete_object(Dlubal.WS.RSection1.Model.delete_objectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_printout_reports", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_printout_reports", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_printout_reportsResponse delete_printout_reports(Dlubal.WS.RSection1.Model.delete_printout_reportsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/delete_section_from_my_section_list", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/delete_section_from_my_section_list", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.delete_section_from_my_section_listResponse delete_section_from_my_section_list(Dlubal.WS.RSection1.Model.delete_section_from_my_section_listRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/export_details_of_design_to_csv", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/export_details_of_design_to_csv", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.export_details_of_design_to_csvResponse export_details_of_design_to_csv(Dlubal.WS.RSection1.Model.export_details_of_design_to_csvRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/export_printout_report_to_html", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/export_printout_report_to_html", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.export_printout_report_to_htmlResponse export_printout_report_to_html(Dlubal.WS.RSection1.Model.export_printout_report_to_htmlRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/export_printout_report_to_pdf", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/export_printout_report_to_pdf", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.export_printout_report_to_pdfResponse export_printout_report_to_pdf(Dlubal.WS.RSection1.Model.export_printout_report_to_pdfRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/export_to_tables", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/export_to_tables", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.export_to_tablesResponse export_to_tables(Dlubal.WS.RSection1.Model.export_to_tablesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/finish_modification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/finish_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.finish_modificationResponse finish_modification(Dlubal.WS.RSection1.Model.finish_modificationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/generate_and_validate_xml_solver_input", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/generate_and_validate_xml_solver_input", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.generate_and_validate_xml_solver_inputResponse generate_and_validate_xml_solver_input(Dlubal.WS.RSection1.Model.generate_and_validate_xml_solver_inputRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/generate_mesh", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/generate_mesh", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.generate_meshResponse generate_mesh(Dlubal.WS.RSection1.Model.generate_meshRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_action_categories_for_load_case", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_action_categories_for_load_case", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_action_categories_for_load_caseResponse get_action_categories_for_load_case(Dlubal.WS.RSection1.Model.get_action_categories_for_load_caseRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_all_object_numbers", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_object_numbers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_all_object_numbersResponse get_all_object_numbers(Dlubal.WS.RSection1.Model.get_all_object_numbersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_all_object_numbers_by_type", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_object_numbers_by_type", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_all_object_numbers_by_typeResponse get_all_object_numbers_by_type(Dlubal.WS.RSection1.Model.get_all_object_numbers_by_typeRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_all_selected_objects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_selected_objects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_all_selected_objectsResponse get_all_selected_objects(Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_dimension", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_dimension", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_dimensionResponse get_dimension(Dlubal.WS.RSection1.Model.get_dimensionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_element", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_element", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_elementResponse get_element(Dlubal.WS.RSection1.Model.get_elementRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_first_free_number", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_first_free_number", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_first_free_numberResponse get_first_free_number(Dlubal.WS.RSection1.Model.get_first_free_numberRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_formula", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_formula", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_formulaResponse get_formula(Dlubal.WS.RSection1.Model.get_formulaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_line", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_line", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_lineResponse get_line(Dlubal.WS.RSection1.Model.get_lineRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_list_of_parameters_formula_allowed_for", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_list_of_parameters_formula_allowed_for", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forResponse get_list_of_parameters_formula_allowed_for(Dlubal.WS.RSection1.Model.get_list_of_parameters_formula_allowed_forRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_list_of_printout_reports", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_list_of_printout_reports", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_list_of_printout_reportsResponse get_list_of_printout_reports(Dlubal.WS.RSection1.Model.get_list_of_printout_reportsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_load_case", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_load_case", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_load_caseResponse get_load_case(Dlubal.WS.RSection1.Model.get_load_caseRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_load_cases_and_combinations", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_load_cases_and_combinations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsResponse get_load_cases_and_combinations(Dlubal.WS.RSection1.Model.get_load_cases_and_combinationsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_load_combination", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_load_combination", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_load_combinationResponse get_load_combination(Dlubal.WS.RSection1.Model.get_load_combinationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_material", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_materialResponse get_material(Dlubal.WS.RSection1.Model.get_materialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_mesh_statistics", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_mesh_statistics", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_mesh_statisticsResponse get_mesh_statistics(Dlubal.WS.RSection1.Model.get_mesh_statisticsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_model_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_history", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_model_historyResponse get_model_history(Dlubal.WS.RSection1.Model.get_model_historyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_model_info", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_info", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_model_infoResponse get_model_info(Dlubal.WS.RSection1.Model.get_model_infoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_model_main_parameters", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_main_parameters", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_model_main_parametersResponse get_model_main_parameters(Dlubal.WS.RSection1.Model.get_model_main_parametersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_model_parameters", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_parameters", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_model_parametersResponse get_model_parameters(Dlubal.WS.RSection1.Model.get_model_parametersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_model_parameters_location", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_parameters_location", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_model_parameters_locationResponse get_model_parameters_location(Dlubal.WS.RSection1.Model.get_model_parameters_locationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_model_settings_and_options", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_model_settings_and_options", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_model_settings_and_optionsResponse get_model_settings_and_options(Dlubal.WS.RSection1.Model.get_model_settings_and_optionsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_my_section_lists", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_my_section_lists", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_my_section_listsResponse get_my_section_lists(Dlubal.WS.RSection1.Model.get_my_section_listsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_nth_object_number", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_nth_object_number", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_nth_object_numberResponse get_nth_object_number(Dlubal.WS.RSection1.Model.get_nth_object_numberRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_object_count", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_object_count", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_object_countResponse get_object_count(Dlubal.WS.RSection1.Model.get_object_countRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_object_information", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_object_information", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_object_informationResponse get_object_information(Dlubal.WS.RSection1.Model.get_object_informationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_opening", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_opening", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_openingResponse get_opening(Dlubal.WS.RSection1.Model.get_openingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_optimization_settings", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.get_optimization_settingsResponse get_optimization_settings(Dlubal.WS.RSection1.Model.get_optimization_settingsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_part", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_part", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_partResponse get_part(Dlubal.WS.RSection1.Model.get_partRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_point", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_point", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_pointResponse get_point(Dlubal.WS.RSection1.Model.get_pointRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_effective_widths", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_effective_widths", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_effective_widthsResponse get_results_for_effective_widths(Dlubal.WS.RSection1.Model.get_results_for_effective_widthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_section_classification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_plastic_factor", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_results_for_plastic_factorResponse get_results_for_plastic_factor(Dlubal.WS.RSection1.Model.get_results_for_plastic_factorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_plastic_stresses_all_by_cells", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsResponse get_results_for_plastic_stresses_all_by_cells(Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_plastic_stresses_by_cells", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsResponse get_results_for_plastic_stresses_by_cells(Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_section_classification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_section_classificationResponse get_results_for_section_classification(Dlubal.WS.RSection1.Model.get_results_for_section_classificationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_section_properties", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_section_properties", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_section_propertiesResponse get_results_for_section_properties(Dlubal.WS.RSection1.Model.get_results_for_section_propertiesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_section_properties_effective", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_section_properties_effective", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveResponse get_results_for_section_properties_effective(Dlubal.WS.RSection1.Model.get_results_for_section_properties_effectiveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_statical_moments_and_warping", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_statical_moments_and_warping", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingResponse get_results_for_statical_moments_and_warping(Dlubal.WS.RSection1.Model.get_results_for_statical_moments_and_warpingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_all_by_stress_points", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_all_by_stress_points", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsResponse get_results_for_stresses_all_by_stress_points(Dlubal.WS.RSection1.Model.get_results_for_stresses_all_by_stress_pointsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_loading", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_loading", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingResponse get_results_for_stresses_by_loading(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loadingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_loading_effective", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_loading_effective", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveResponse get_results_for_stresses_by_loading_effective(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_loading_effectiveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_location", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_location", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationResponse get_results_for_stresses_by_location(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_locationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_material", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialResponse get_results_for_stresses_by_material(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_materialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_material_effective", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_material_effective", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveResponse get_results_for_stresses_by_material_effective(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_material_effectiveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_member", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_member", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberResponse get_results_for_stresses_by_member(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_memberRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_stress_points", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_stress_points", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsResponse get_results_for_stresses_by_stress_points(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_pointsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_stresses_by_stress_points_effective", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stresses_by_stress_points_effective", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveResponse get_results_for_stresses_by_stress_points_effective(Dlubal.WS.RSection1.Model.get_results_for_stresses_by_stress_points_effectiveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_unit_stresses", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_unit_stresses", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_unit_stressesResponse get_results_for_unit_stresses(Dlubal.WS.RSection1.Model.get_results_for_unit_stressesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_results_for_unit_stresses_by_material", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_unit_stresses_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse get_results_for_unit_stresses_by_material(Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_section", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_sectionResponse get_section(Dlubal.WS.RSection1.Model.get_sectionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_session_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_session_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_session_idResponse get_session_id(Dlubal.WS.RSection1.Model.get_session_idRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_stress_point", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_stress_point", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_stress_pointResponse get_stress_point(Dlubal.WS.RSection1.Model.get_stress_pointRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_subpanel", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_subpanel", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_subpanelResponse get_subpanel(Dlubal.WS.RSection1.Model.get_subpanelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/get_table_export_config_manager", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_table_export_config_manager", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_table_export_config_managerResponse get_table_export_config_manager(Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/has_any_results", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_any_results", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.has_any_resultsResponse has_any_results(Dlubal.WS.RSection1.Model.has_any_resultsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/print_printout_report", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/print_printout_report", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.print_printout_reportResponse print_printout_report(Dlubal.WS.RSection1.Model.print_printout_reportRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/reset", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/reset", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.resetResponse reset(Dlubal.WS.RSection1.Model.resetRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/run_script", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/run_script", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.run_scriptResponse run_script(Dlubal.WS.RSection1.Model.run_scriptRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/save", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/save", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.saveResponse save(Dlubal.WS.RSection1.Model.saveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_dimension", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_dimension", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_dimensionResponse set_dimension(Dlubal.WS.RSection1.Model.set_dimensionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_element", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_element", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_elementResponse set_element(Dlubal.WS.RSection1.Model.set_elementRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_formula", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_formula", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_formulaResponse set_formula(Dlubal.WS.RSection1.Model.set_formulaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_line", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_line", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_lineResponse set_line(Dlubal.WS.RSection1.Model.set_lineRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_load_case", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_load_case", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_load_caseResponse set_load_case(Dlubal.WS.RSection1.Model.set_load_caseRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_load_cases_and_combinations", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_load_cases_and_combinations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsResponse set_load_cases_and_combinations(Dlubal.WS.RSection1.Model.set_load_cases_and_combinationsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_load_combination", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_load_combination", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_load_combinationResponse set_load_combination(Dlubal.WS.RSection1.Model.set_load_combinationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_material", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_materialResponse set_material(Dlubal.WS.RSection1.Model.set_materialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_history", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_model_historyResponse set_model_history(Dlubal.WS.RSection1.Model.set_model_historyRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_model_idResponse set_model_id(Dlubal.WS.RSection1.Model.set_model_idRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_parameters", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_parameters", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_model_parametersResponse set_model_parameters(Dlubal.WS.RSection1.Model.set_model_parametersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_parameters_location", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_parameters_location", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_model_parameters_locationResponse set_model_parameters_location(Dlubal.WS.RSection1.Model.set_model_parameters_locationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_model_settings_and_options", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_model_settings_and_options", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_model_settings_and_optionsResponse set_model_settings_and_options(Dlubal.WS.RSection1.Model.set_model_settings_and_optionsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_opening", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_opening", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_openingResponse set_opening(Dlubal.WS.RSection1.Model.set_openingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_optimization_settings", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.set_optimization_settingsResponse set_optimization_settings(Dlubal.WS.RSection1.Model.set_optimization_settingsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_part", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_part", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_partResponse set_part(Dlubal.WS.RSection1.Model.set_partRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_point", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_point", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_pointResponse set_point(Dlubal.WS.RSection1.Model.set_pointRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_section", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_sectionResponse set_section(Dlubal.WS.RSection1.Model.set_sectionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_selected_objects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_selected_objects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_selected_objectsResponse set_selected_objects(Dlubal.WS.RSection1.Model.set_selected_objectsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_stress_point", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_stress_point", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_stress_pointResponse set_stress_point(Dlubal.WS.RSection1.Model.set_stress_pointRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_subpanel", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_subpanel", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_subpanelResponse set_subpanel(Dlubal.WS.RSection1.Model.set_subpanelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8102/set_table_export_config_manager", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_table_export_config_manager", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_table_export_config_managerResponse set_table_export_config_manager(Dlubal.WS.RSection1.Model.set_table_export_config_managerRequest request);
     }

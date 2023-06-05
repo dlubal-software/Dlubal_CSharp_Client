@@ -717,19 +717,6 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.get_optimization_settingsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_optimization_settings(Dlubal.WS.RSection1.Model.get_optimization_settingsRequest request)
-        {
-            return base.Channel.get_optimization_settings(request);
-        }
-        
-        public Dlubal.WS.RSection1.Model.optimizationSettingsConfig get_optimization_settings()
-        {
-            Dlubal.WS.RSection1.Model.get_optimization_settingsRequest inValue = new Dlubal.WS.RSection1.Model.get_optimization_settingsRequest();
-            Dlubal.WS.RSection1.Model.get_optimization_settingsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_optimization_settings(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.get_partResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_part(Dlubal.WS.RSection1.Model.get_partRequest request)
         {
             return base.Channel.get_part(request);
@@ -767,6 +754,45 @@ namespace Dlubal.WS.RSection1.Model
         {
             Dlubal.WS.RSection1.Model.get_results_for_effective_widthsRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_effective_widthsRequest();
             Dlubal.WS.RSection1.Model.get_results_for_effective_widthsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_effective_widths(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_plastic_factorResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_plastic_factor(Dlubal.WS.RSection1.Model.get_results_for_plastic_factorRequest request)
+        {
+            return base.Channel.get_results_for_plastic_factor(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_plastic_factor_row[] get_results_for_plastic_factor()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_plastic_factorRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_plastic_factorRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_plastic_factorResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_plastic_factor(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_plastic_stresses_all_by_cells(Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsRequest request)
+        {
+            return base.Channel.get_results_for_plastic_stresses_all_by_cells(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_plastic_stresses_all_by_cells_row[] get_results_for_plastic_stresses_all_by_cells()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_all_by_cellsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_plastic_stresses_all_by_cells(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_plastic_stresses_by_cells(Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsRequest request)
+        {
+            return base.Channel.get_results_for_plastic_stresses_by_cells(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.results_for_plastic_stresses_by_cells_row[] get_results_for_plastic_stresses_by_cells()
+        {
+            Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_plastic_stresses_by_cellsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_plastic_stresses_by_cells(inValue);
             return retVal.value;
         }
         
@@ -1280,19 +1306,6 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.set_openingRequest inValue = new Dlubal.WS.RSection1.Model.set_openingRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_openingResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_opening(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.set_optimization_settingsResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_optimization_settings(Dlubal.WS.RSection1.Model.set_optimization_settingsRequest request)
-        {
-            return base.Channel.set_optimization_settings(request);
-        }
-        
-        public void set_optimization_settings(Dlubal.WS.RSection1.Model.optimizationSettingsConfig value)
-        {
-            Dlubal.WS.RSection1.Model.set_optimization_settingsRequest inValue = new Dlubal.WS.RSection1.Model.set_optimization_settingsRequest();
-            inValue.value = value;
-            Dlubal.WS.RSection1.Model.set_optimization_settingsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_optimization_settings(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

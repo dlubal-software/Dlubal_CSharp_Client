@@ -1616,9 +1616,10 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_optimization_settings(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.optimizationSettingsConfig get_optimization_settings()
+        public Dlubal.WS.Rstab9.Model.optimization_settings get_optimization_settings(int no)
         {
             Dlubal.WS.Rstab9.Model.get_optimization_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.get_optimization_settingsRequest();
+            inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_optimization_settingsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_optimization_settings(inValue);
             return retVal.value;
         }
@@ -1756,6 +1757,22 @@ namespace Dlubal.WS.Rstab9.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_calculation_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.convergence_diagrams_row[] get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_convergence_diagrams(inValue);
             return retVal.value;
         }
         
@@ -2224,6 +2241,22 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_convergence_diagrams_row[] get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_convergence_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_members_contact_forces(request);
@@ -2416,6 +2449,22 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_normalized_lateral_forces(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_normalized_lateral_forces_row[] get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_normalized_lateral_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_summaryResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_pushover_analysis_summary(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_summaryRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_summary(request);
@@ -2427,6 +2476,22 @@ namespace Dlubal.WS.Rstab9.Model
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_summaryResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_summary(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_target_displacement(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_target_displacement_row[] get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_target_displacement(inValue);
             return retVal.value;
         }
         
@@ -2686,6 +2751,22 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_convergence_diagrams_row[] get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_convergence_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest request)
         {
             return base.Channel.get_results_for_stability_incremental_analysis_members_contact_forces(request);
@@ -2920,6 +3001,22 @@ namespace Dlubal.WS.Rstab9.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_calculation_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_convergence_diagrams_row[] get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_convergence_diagrams(inValue);
             return retVal.value;
         }
         
@@ -4450,7 +4547,7 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.set_optimization_settings(request);
         }
         
-        public void set_optimization_settings(Dlubal.WS.Rstab9.Model.optimizationSettingsConfig value)
+        public void set_optimization_settings(Dlubal.WS.Rstab9.Model.optimization_settings value)
         {
             Dlubal.WS.Rstab9.Model.set_optimization_settingsRequest inValue = new Dlubal.WS.Rstab9.Model.set_optimization_settingsRequest();
             inValue.value = value;

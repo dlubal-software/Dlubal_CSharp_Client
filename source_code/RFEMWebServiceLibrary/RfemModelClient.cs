@@ -391,6 +391,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.export_to_asfResponse Dlubal.WS.Rfem6.Model.IRfemModel.export_to_asf(Dlubal.WS.Rfem6.Model.export_to_asfRequest request)
+        {
+            return base.Channel.export_to_asf(request);
+        }
+        
+        public string export_to_asf(string file_path, Dlubal.WS.Rfem6.Model.asf_export_data_type type_of_reinforcement, int[] surfaces)
+        {
+            Dlubal.WS.Rfem6.Model.export_to_asfRequest inValue = new Dlubal.WS.Rfem6.Model.export_to_asfRequest();
+            inValue.file_path = file_path;
+            inValue.type_of_reinforcement = type_of_reinforcement;
+            inValue.surfaces = surfaces;
+            Dlubal.WS.Rfem6.Model.export_to_asfResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).export_to_asf(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.export_to_ifcResponse Dlubal.WS.Rfem6.Model.IRfemModel.export_to_ifc(Dlubal.WS.Rfem6.Model.export_to_ifcRequest request)
         {
             return base.Channel.export_to_ifc(request);
@@ -1975,9 +1991,10 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_optimization_settings(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.optimizationSettingsConfig get_optimization_settings()
+        public Dlubal.WS.Rfem6.Model.optimization_settings get_optimization_settings(int no)
         {
             Dlubal.WS.Rfem6.Model.get_optimization_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.get_optimization_settingsRequest();
+            inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_optimization_settingsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_optimization_settings(inValue);
             return retVal.value;
         }
@@ -2263,6 +2280,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_calculation_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_calculation_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.convergence_diagrams_row[] get_results_for_convergence_diagrams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_convergence_diagrams(inValue);
             return retVal.value;
         }
         
@@ -2971,6 +3004,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_convergence_diagrams_row[] get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_convergence_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_deformationsRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_line_hinges_deformations(request);
@@ -3223,6 +3272,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_nodes_support_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_normalized_lateral_forces(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_normalized_lateral_forces_row[] get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_normalized_lateral_forces(inValue);
             return retVal.value;
         }
         
@@ -3846,6 +3911,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_total_strains(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_target_displacement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_target_displacement_row[] get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_target_displacement(inValue);
             return retVal.value;
         }
         
@@ -4965,6 +5046,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_calculation_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_convergence_diagrams_row[] get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_convergence_diagrams(inValue);
             return retVal.value;
         }
         
@@ -6403,6 +6500,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_calculation_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_calculation_diagrams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_convergence_diagrams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_convergence_diagrams_row[] get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_convergence_diagrams(inValue);
             return retVal.value;
         }
         
@@ -9351,7 +9464,7 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.set_optimization_settings(request);
         }
         
-        public void set_optimization_settings(Dlubal.WS.Rfem6.Model.optimizationSettingsConfig value)
+        public void set_optimization_settings(Dlubal.WS.Rfem6.Model.optimization_settings value)
         {
             Dlubal.WS.Rfem6.Model.set_optimization_settingsRequest inValue = new Dlubal.WS.Rfem6.Model.set_optimization_settingsRequest();
             inValue.value = value;

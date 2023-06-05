@@ -122,6 +122,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.export_toResponse export_to(Dlubal.WS.Rfem6.Model.export_toRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/export_to_asf", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.export_to_asfResponse export_to_asf(Dlubal.WS.Rfem6.Model.export_to_asfRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/export_to_ifc", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.export_to_ifcResponse export_to_ifc(Dlubal.WS.Rfem6.Model.export_to_ifcRequest request);
@@ -658,6 +662,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_calculation_diagramsResponse get_results_for_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_calculation_diagramsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_convergence_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsResponse get_results_for_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_critical_load_factors", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_critical_load_factorsResponse get_results_for_critical_load_factors(Dlubal.WS.Rfem6.Model.get_results_for_critical_load_factorsRequest request);
@@ -841,6 +849,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_calculation_diagramsResponse get_results_for_pushover_analysis_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_calculation_diagramsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_convergence_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsResponse get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_convergence_diagramsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_line_hinges_deformations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_deformationsResponse get_results_for_pushover_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_deformationsRequest request);
@@ -911,6 +923,11 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_nodes_support_forces", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_support_forcesResponse get_results_for_pushover_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodes_support_forcesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_normalized_lateral_forces" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_solids_basic_plastic_stra" +
             "ins", ReplyAction="*")]
@@ -1101,6 +1118,10 @@ namespace Dlubal.WS.Rfem6.Model
             "strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsResponse get_results_for_pushover_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_target_displacement", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementResponse get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_target_displacementRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_solids_basic_plastic_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1424,6 +1445,11 @@ namespace Dlubal.WS.Rfem6.Model
             "diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_convergence_" +
+            "diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_line_hinges_" +
             "deformations", ReplyAction="*")]
@@ -1844,6 +1870,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_calculation_diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_calculation_diagramsResponse get_results_for_time_history_analysis_calculation_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_convergence_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsResponse get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_convergence_diagramsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_line_hinges_deformati" +
             "ons", ReplyAction="*")]

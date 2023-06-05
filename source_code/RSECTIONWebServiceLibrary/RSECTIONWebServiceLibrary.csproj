@@ -7,11 +7,11 @@
     <StartupObject />
     <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.02.54</FileVersion>
-    <AssemblyVersion>1.02.54</AssemblyVersion>
+    <FileVersion>1.02.67</FileVersion>
+    <AssemblyVersion>1.02.67</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
-    <Version>1.02.54</Version>
+    <Version>1.02.67</Version>
     <Company>DlubalSoftware</Company>
     <Product>DlubalSoftware</Product>
     <Description>C# library for development of tools based on RSECTION WebService technology</Description>
@@ -56,10 +56,23 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
-  </ItemGroup>
+	<ItemGroup >
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" Condition = "'$(TargetFramework)' == 'net48'"  />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" Condition = "'$(TargetFramework)' == 'net48'" />
+
+	</ItemGroup>
+
+	<ItemGroup >
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0"  Condition = "'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'"/>
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition = "'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
+
+	</ItemGroup>
+
+	<ItemGroup >
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0"  Condition = "'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'"/>
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition = "'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'"/>
+
+	</ItemGroup>
 
   <ItemGroup>
     <None Update="rsection.png">

@@ -518,6 +518,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse get_results_for_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_convergence_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_critical_load_factors", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsResponse get_results_for_critical_load_factors(Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsRequest request);
@@ -636,6 +640,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_calculation_diagramsResponse get_results_for_pushover_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_calculation_diagramsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_pushover_analysis_convergence_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsResponse get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_pushover_analysis_members_contact_forces", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesResponse get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesRequest request);
@@ -690,9 +698,18 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forcesResponse get_results_for_pushover_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forcesRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_pushover_analysis_normalized_lateral_forces" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_pushover_analysis_summary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_summaryResponse get_results_for_pushover_analysis_summary(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_summaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_pushover_analysis_target_displacement", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementResponse get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_spectral_analysis_members_contact_forces", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -766,6 +783,11 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_stability_incremental_analysis_convergence_" +
+            "diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_stability_incremental_analysis_members_cont" +
             "act_forces", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -837,6 +859,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_time_history_analysis_calculation_diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsResponse get_results_for_time_history_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_time_history_analysis_convergence_diagrams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsResponse get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8092/get_results_for_time_history_analysis_members_contact_force" +
             "s", ReplyAction="*")]

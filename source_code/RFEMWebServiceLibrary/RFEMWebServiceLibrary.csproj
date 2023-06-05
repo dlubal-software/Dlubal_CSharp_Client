@@ -15,12 +15,12 @@
     <RepositoryUrl>https://github.com/Dlubal-Software/Dlubal_CSharp_Client/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>6.02.54</AssemblyVersion>
+    <AssemblyVersion>6.02.67</AssemblyVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <FileVersion>6.02.54</FileVersion>
-    <Version>6.02.54</Version>
+    <FileVersion>6.02.67</FileVersion>
+    <Version>6.02.67</Version>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageId>Dlubal.$(AssemblyName)</PackageId>
     <PackageIcon>rfem.png</PackageIcon>
@@ -58,11 +58,24 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
+  <ItemGroup >
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.0" Condition = "'$(TargetFramework)' == 'net48'"  />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" Condition = "'$(TargetFramework)' == 'net48'" />
+	 
   </ItemGroup>
 
+	<ItemGroup >
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0"  Condition = "'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'"/>
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition = "'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
+
+	</ItemGroup>
+
+	<ItemGroup >
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0"  Condition = "'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'"/>
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition = "'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'"/>
+
+	</ItemGroup>
+	
   <ItemGroup>
     <None Update="rfem.png">
       <Pack>True</Pack>
