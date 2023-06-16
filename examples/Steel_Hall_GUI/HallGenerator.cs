@@ -55,17 +55,17 @@ namespace Steel_Hall_GUI
             }
             catch (ArgumentNullException)
             {
-                Console.WriteLine("Please input a value!");
+                //Console.WriteLine("Please input a value!");
                 doubleCheck = false;
             }
             catch (FormatException)
             {
-                Console.WriteLine("Please input a number!");
+               // Console.WriteLine("Please input a number!");
                 doubleCheck = false;
             }
             catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Please input a value greater than 0!");
+                //Console.WriteLine("Please input a value greater than 0!");
                 doubleCheck = false;
             }
             return doubleCheck;
@@ -89,17 +89,17 @@ namespace Steel_Hall_GUI
             }
             catch (ArgumentNullException)
             {
-                Console.WriteLine("Please input a value!");
+                //Console.WriteLine("Please input a value!");
                 integerCheck = false;
             }
             catch (FormatException)
             {
-                Console.WriteLine("Please input an integer number!");
+                //Console.WriteLine("Please input an integer number!");
                 integerCheck = false;
             }
             catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Please input a frame number greater 1!");
+                //Console.WriteLine("Please input a frame number greater 1!");
                 integerCheck = false;
             }
             return integerCheck;
@@ -203,14 +203,14 @@ namespace Steel_Hall_GUI
             return bracing;
         }
 
-        public static double GetDoubleInput(string message)
+        public static double GetDoubleInput(string inputValue)
         {
             bool check = false;
-            string inputValue = string.Empty;
+            //string inputValue = string.Empty;
 
             while (check == false)
             {
-                Console.Write(message);
+                //Console.Write(message);
                 //inputValue = ;
                 check = CheckDouble(inputValue);
             }
@@ -218,14 +218,14 @@ namespace Steel_Hall_GUI
             return doubleValue;
         }
 
-        public static int GetIntegerInput(string message)
+        public static int GetIntegerInput(string inputValue)
         {
             bool check = false;
-            string? inputValue = string.Empty;
+            //string? inputValue = string.Empty;
             while (check == false)
             {
-                Console.Write(message);
-                inputValue = Console.ReadLine();
+                //Console.Write(message);
+                //inputValue = Console.ReadLine();
                 check = CheckInteger(inputValue);
             }
             int integerValue = int.Parse(inputValue);
@@ -261,7 +261,7 @@ namespace Steel_Hall_GUI
         private static ApplicationClient? application = null;
         string currentDirectory = Directory.GetCurrentDirectory();
 
-        public void GenerateHall(int frameHeight, int frameSpan, int frameDistance, int frameNumber, Bracing bracing)
+        public void GenerateHall(double frameHeight, double frameSpan, double frameDistance, int frameNumber, double roofAngle, Bracing bracing)
         {
             Console.WriteLine("Steel Hall Generator for RFEM6 and RSTAB9");
 
@@ -329,7 +329,7 @@ namespace Steel_Hall_GUI
                     no = 1,
                     material = steel.no,
                     materialSpecified = true,
-                    name = "HEA 200",
+                    name = "HEA 240",
                     comment = "frame section"
                 };
                 section section2 = new section
@@ -348,14 +348,23 @@ namespace Steel_Hall_GUI
                     name = "ROUND 0.016/H",
                     comment = "bracing section"
                 };
+                section section4 = new section
+                {
+                    no = 4,
+                    material = steel.no,
+                    materialSpecified = true,
+                    name = "HEA 400",
+                    comment = "section for tapered member"
+                };
 
                 sections.Add(section1);
                 sections.Add(section2);
                 sections.Add(section3);
+                sections.Add(section4);
 
                 //Create nodes
                 SortedList<int, node> nodes = new SortedList<int, node>();
-                int[] lineDefinitionNodes = new int[frameNumber * 4];
+                int[] lineDefinitionNodes = new int[frameNumber * 5];
 
                 int nodeId = 1;
                 double xVector = 0.0;
@@ -399,6 +408,30 @@ namespace Steel_Hall_GUI
                     xVector += frameSpan;
                     yVector = 0.0;
                 }
+                //middle nodes
+                xVector = 0.5 * frameSpan;
+                yVector = 0.0;
+                double frameHeightRooftop = frameHeight + (Math.Tan(roofAngle) * frameSpan / 2);
+                
+                for (int j = 0; j < frameNumber; j++)
+                {
+                    node middleNode = new()
+                    {
+                        no = nodeId,
+                        coordinates = new vector_3d
+                        {
+                            x = xVector,
+                            y = yVector,
+                            z = 0 - frameHeightRooftop
+                        },
+                        coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
+                        coordinate_system_typeSpecified = true
+                    };                    
+                    yVector -= frameDistance;
+                    nodes.Add(nodeId, middleNode);
+                    lineDefinitionNodes[nodeId - 1] = nodeId;
+                    nodeId++;
+                }
 
                 //create lines
 #if RFEM
@@ -427,43 +460,65 @@ namespace Steel_Hall_GUI
                 //lines in x-direction
                 SortedList<int, line> xLines = new SortedList<int, line>();
                 int nodePositionX = 1;
+                int nodePositionMiddle = nodeId - frameNumber - 1;
 
-                for (int k = 0; k < frameNumber; k++)
+                for (int k = 0; k < frameNumber * 2; k++)
                 {
                     line newLine = new()
                     {
                         no = lineId,
-                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionX], lineDefinitionNodes[nodePositionX + (frameNumber * 2)] },
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionX], lineDefinitionNodes[nodePositionMiddle] },
                         comment = "lines for beams",
                         type = line_type.TYPE_POLYLINE,
                         typeSpecified = true,
                     };
                     xLines.Add(lineId, newLine);
                     nodePositionX += 2;
+                    nodePositionMiddle ++;
+                    if (nodePositionMiddle == nodeId - 1)
+                    {
+                        nodePositionMiddle = nodeId - frameNumber - 1;
+                    }
                     lineId++;
                 };
 
                 //lines in y - direction
                 SortedList<int, line> yLines = new SortedList<int, line>();
                 int nodePositionY = 1;
+                int secondNode = nodePositionY + 2;
 
-                for (int k = 0; k < frameNumber * 2 - 2; k++)
+                for (int k = 0; k < frameNumber * 3 - 3; k++)
                 {
                     if (k == frameNumber - 1)
                     {
                         nodePositionY += 2;
-                    };
+                        secondNode += 2;
+                    }
+                    else if (k == frameNumber * 2 -2)
+                    {
+                        nodePositionY += 1;
+                        //secondNode = nodePositionY + 1;
+                    }
 
                     line newLine = new()
                     {
                         no = lineId,
-                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[nodePositionY + 2] },
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionY], lineDefinitionNodes[secondNode] },
                         comment = "lines for beams",
                         type = line_type.TYPE_POLYLINE,
                         typeSpecified = true,
                     };
                     yLines.Add(lineId, newLine);
-                    nodePositionY += 2;
+                    if (k > frameNumber * 2 - 3)
+                    {
+                        nodePositionY ++;
+                        secondNode++;
+                    }
+                    else
+                    {
+                        nodePositionY += 2;
+                        secondNode += 2;
+                    }                    
                     lineId++;
                 };
 
@@ -564,7 +619,21 @@ namespace Steel_Hall_GUI
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_start = section1.no,
+                        section_distribution_type = member_section_distribution_type.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_START_OF_MEMBER,
+                        section_distribution_typeSpecified = true,
+                        section_distance_from_start_relative = 0.25,
+                        section_distance_from_start_relativeSpecified = true,
+                        section_distance_from_end_relative = 0.75,
+                        section_distance_from_end_relativeSpecified = true,
+                        section_distance_from_start_is_defined_as_relative = true,
+                        section_distance_from_end_is_defined_as_relativeSpecified = true,
+                        section_distance_from_end_is_defined_as_relative = true,
+                        section_distance_from_start_is_defined_as_relativeSpecified = true,
+                        section_alignment = member_section_alignment.SECTION_ALIGNMENT_TOP,
+                        reference_type = member_reference_type.REFERENCE_TYPE_L,
+                        reference_typeSpecified = true,
+                        section_alignmentSpecified = true,
+                        section_start = section4.no,
                         section_startSpecified = true,
                         section_end = section1.no,
                         section_endSpecified = true,
@@ -714,10 +783,13 @@ namespace Steel_Hall_GUI
 
                 foreach (KeyValuePair<int, node> nodeItem in nodes)
                 {
-                    if (nodeItem.Key % 2 != 0)
+                    if (nodeItem.Key < nodeId - frameNumber)
                     {
-                        supportedNodes.Add(nodeItem.Key);
-                    }
+                        if (nodeItem.Key % 2 != 0)
+                        {
+                            supportedNodes.Add(nodeItem.Key);
+                        }
+                    }                    
                 }
 
                 nodal_support support = new()
@@ -1265,7 +1337,7 @@ namespace Steel_Hall_GUI
                 //Console.WriteLine("Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV.");
                 #endregion
 
-                //this.Model.save(currentDirectory + @"\testmodels\");
+                this.Model.save(currentDirectory + @"\testmodels\");
                 //Console.WriteLine("Model has been saved to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall.");
 
                 //Console.Write("Press enter to close the this.Model.");
@@ -1286,9 +1358,10 @@ namespace Steel_Hall_GUI
             application.close_model(0, false);
         }
 
-        public void ExportCsv()
+        public string ExportCsv()
         {
             this.Model.export_result_tables_with_detailed_members_results_to_csv(currentDirectory + @"\CSV\");
+            return (currentDirectory + @"\CSV\");
         }
 
         public string CreateResultMessage()
