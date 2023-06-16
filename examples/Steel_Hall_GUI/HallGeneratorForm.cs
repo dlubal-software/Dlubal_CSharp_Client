@@ -21,7 +21,12 @@ namespace Steel_Hall_GUI
             InitializeComponent();
         }
         public HallGenerator hallgenerator = new HallGenerator();
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            await StartCalculation();
+        }
+
+        public async Task StartCalculation()
         {
             labelCalculation.Text = "Calculation started!";
             //bool doubleCheck = HallGenerator.CheckDouble(frameHeight);
@@ -42,7 +47,7 @@ namespace Steel_Hall_GUI
             double frameDistance = HallGenerator.GetDoubleInput(textBoxFrameDistance.Text);
             //int frameNumber = int.Parse(textBoxFrameNumber.Text);
             int frameNumber = HallGenerator.GetIntegerInput(textBoxFrameNumber.Text);
-            double roofAngle = (double.Parse(textBoxRoofAngle.Text)) * (Math.PI/180);
+            double roofAngle = (double.Parse(textBoxRoofAngle.Text)) * (Math.PI / 180);
 
             if (radioButtonBracing1.Checked == true)
             {
@@ -73,8 +78,9 @@ namespace Steel_Hall_GUI
                 bracing.Increment = (frameNumber * 2) - 4;
             }
 
-            hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, bracing);
-            labelResults.Text = hallgenerator.CreateResultMessage();
+            await Task.Run(() => { hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, bracing); });
+            //hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, bracing);
+            labelCalculation.Text = hallgenerator.CreateResultMessage();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -85,7 +91,7 @@ namespace Steel_Hall_GUI
         private void buttonCsv_Click(object sender, EventArgs e)
         {
             string currentDirectory = hallgenerator.ExportCsv();
-            labelExport.Text = $"Results have been exported as CSV-files to {currentDirectory}.";
+            labelCalculation.Text = $"Results have been exported as CSV-files to \n {currentDirectory}.";
         }
 
         private void buttonDisconnect_Click(object sender, EventArgs e)
@@ -94,6 +100,16 @@ namespace Steel_Hall_GUI
         }
 
         private void Label_RoofAngle(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonBracing1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

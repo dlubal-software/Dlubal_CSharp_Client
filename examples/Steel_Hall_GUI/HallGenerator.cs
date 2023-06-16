@@ -1372,11 +1372,11 @@ namespace Steel_Hall_GUI
             bool modelHasAnyResults = this.Model.has_any_results();
             if (modelHasAnyResults)
             {
-                messageResults = "Model has results.";
+                messageResults = "Model has results!";
             }
             else
             {
-                messageResults = "Model has no results.";
+                messageResults = "Model has no results!";
             }
             //bool modelHasLC1Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, selfWeightLC.no);
             //bool modelHasLC2Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
