@@ -14,7 +14,8 @@ namespace Steel_Hall_GUI
 {
     public partial class HallGeneratorForm : Form
     {
-        Bracing bracing = new Bracing();
+        VerticalBracing verticalBracing = new VerticalBracing();
+        HorizontalBracing horizontalBracing = new HorizontalBracing();
 
         public HallGeneratorForm()
         {
@@ -49,36 +50,81 @@ namespace Steel_Hall_GUI
             int frameNumber = HallGenerator.GetIntegerInput(textBoxFrameNumber.Text);
             double roofAngle = (double.Parse(textBoxRoofAngle.Text)) * (Math.PI / 180);
 
+            //vertical bracing
+
             if (radioButtonBracing1.Checked == true)
             {
-                bracing.BracingType = 1;
-                bracing.BracingNumber = 2 * (frameNumber * 2 - 2);
-                bracing.LoopCount = bracing.BracingNumber / 2;
-                bracing.Increment = 2;
+                verticalBracing.BracingType = 1;
+                verticalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                verticalBracing.LoopCount = verticalBracing.BracingNumber / 2;
+                verticalBracing.Increment = 2;
             }
             else if (radioButtonBracing2.Checked == true)
             {
-                bracing.BracingType = 2;
-                bracing.BracingNumber = (frameNumber * 2) - 2;
+                verticalBracing.BracingType = 2;
+                verticalBracing.BracingNumber = (frameNumber * 2) - 2;
                 if (frameNumber % 2 == 0)
                 {
-                    bracing.LoopCount = (bracing.BracingNumber / 2) + 1;
+                    verticalBracing.LoopCount = (verticalBracing.BracingNumber / 2) + 1;
                 }
                 else
                 {
-                    bracing.LoopCount = bracing.BracingNumber / 2;
+                    verticalBracing.LoopCount = verticalBracing.BracingNumber / 2;
                 }
-                bracing.Increment = 4;
+                verticalBracing.Increment = 4;
             }
             else if (radioButtonBracing3.Checked == true)
             {
-                bracing.BracingType = 3;
-                bracing.BracingNumber = 8;
-                bracing.LoopCount = 4;
-                bracing.Increment = (frameNumber * 2) - 4;
+                verticalBracing.BracingType = 3;
+                verticalBracing.BracingNumber = 8;
+                verticalBracing.LoopCount = 4;
+                verticalBracing.Increment = (frameNumber * 2) - 4;
             }
 
-            await Task.Run(() => { hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, bracing); });
+            //horizontal bracing
+            if (radioButtonBracing4.Checked == true)
+            {
+                horizontalBracing.BracingType = 4;
+                horizontalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
+                horizontalBracing.Increment = 2;
+                horizontalBracing.IncrementMiddleNode = 1;
+            }
+            else if (radioButtonBracing5.Checked == true)
+            {
+                horizontalBracing.BracingType = 5;
+                if (frameNumber % 2 == 0)
+                {
+                    horizontalBracing.BracingNumber = frameNumber * 2;
+                }
+                else
+                {
+                    horizontalBracing.BracingNumber = frameNumber * 2 - 2;
+                }
+                //horizontalBracing.BracingNumber = frameNumber * 2 - 2;
+                //if (frameNumber % 2 == 0)
+                //{
+                //    horizontalBracing.LoopCount = (horizontalBracing.BracingNumber / 2) + 1;
+                //}
+                //else
+                //{
+                //    horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
+                //}
+                horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
+                horizontalBracing.Increment = 4;
+                horizontalBracing.IncrementMiddleNode = 2;
+
+            }
+            else if (radioButtonBracing6.Checked == true)
+            {
+                horizontalBracing.BracingType = 6;
+                horizontalBracing.BracingNumber = 8;
+                horizontalBracing.LoopCount = 4;
+                horizontalBracing.Increment = (frameNumber * 2) - 4;
+                horizontalBracing.IncrementMiddleNode = frameNumber - 2;
+            }
+
+            await Task.Run(() => { hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, verticalBracing, horizontalBracing); });
             //hallgenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, bracing);
             labelCalculation.Text = hallgenerator.CreateResultMessage();
         }
@@ -110,6 +156,11 @@ namespace Steel_Hall_GUI
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonBracing6_CheckedChanged(object sender, EventArgs e)
         {
 
         }

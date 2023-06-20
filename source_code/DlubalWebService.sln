@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTWebServiceLibraries", "UT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hall", "..\examples\Hall\Hall.csproj", "{6CCD9230-2BCF-4B3F-966C-8F69BE5DC880}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steel_Hall_GUI", "..\examples\Steel_Hall_GUI\Steel_Hall_GUI.csproj", "{E303E4B1-70E5-4AED-9BB8-17629047453D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Steel_Hall_GUI", "..\examples\Steel_Hall_GUI\Steel_Hall_GUI.csproj", "{E303E4B1-70E5-4AED-9BB8-17629047453D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

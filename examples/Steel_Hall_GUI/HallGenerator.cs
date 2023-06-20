@@ -105,103 +105,103 @@ namespace Steel_Hall_GUI
             return integerCheck;
         }
 
-        public static bool CheckBracingInput(ref string input)
-        {
-            bool bracingCheck = true;
-            try
-            {
-                if (string.IsNullOrEmpty(input))
-                {
-                    throw new ArgumentNullException();
-                }
-                else if (!(input.ToLower() == "y" || input.ToLower() == "n"))
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                input.ToLower();
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("Please input Y or N!");
-                bracingCheck = false;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("Please input Y or N!");
-                bracingCheck = false;
-            }
+        //public static bool CheckBracingInput(ref string input)
+        //{
+        //    bool bracingCheck = true;
+        //    try
+        //    {
+        //        if (string.IsNullOrEmpty(input))
+        //        {
+        //            throw new ArgumentNullException();
+        //        }
+        //        else if (!(input.ToLower() == "y" || input.ToLower() == "n"))
+        //        {
+        //            throw new ArgumentOutOfRangeException();
+        //        }
+        //        input.ToLower();
+        //    }
+        //    catch (ArgumentNullException)
+        //    {
+        //        Console.WriteLine("Please input Y or N!");
+        //        bracingCheck = false;
+        //    }
+        //    catch (ArgumentOutOfRangeException)
+        //    {
+        //        Console.WriteLine("Please input Y or N!");
+        //        bracingCheck = false;
+        //    }
 
-            return bracingCheck;
-        }
+        //    return bracingCheck;
+        //}
 
-        public static Bracing GetBracingType(string input, int frameNumber)
-        {
-            Bracing bracing = new Bracing();
+        //public static VerticalBracing GetBracingType(string input, int frameNumber)
+        //{
+        //    VerticalBracing bracing = new VerticalBracing();
 
-            switch (input)
-            {
-                case "1":
-                    bracing.BracingType = 1;
-                    bracing.BracingNumber = 2 * ((frameNumber * 2) - 2);
-                    bracing.LoopCount = bracing.BracingNumber / 2;
-                    bracing.Increment = 2;
-                    break;
-                case "2":
-                    bracing.BracingType = 2;
-                    bracing.BracingNumber = (frameNumber * 2) - 2;
-                    if (frameNumber % 2 == 0)
-                    {
-                        bracing.LoopCount = (bracing.BracingNumber / 2) + 1;
-                    }
-                    else
-                    {
-                        bracing.LoopCount = bracing.BracingNumber / 2;
-                    }
-                    bracing.Increment = 4;
-                    break;
-                case "3":
-                    bracing.BracingType = 3;
-                    bracing.BracingNumber = 8;
-                    bracing.LoopCount = 4;
-                    bracing.Increment = (frameNumber * 2) - 4;
-                    break;
-                default:
-                    // value is neither 1 nor 2 nor 3
-                    throw new ArgumentOutOfRangeException();
-            }
-            return bracing;
-        }
-        public static Bracing GetBracingInput(string message, int frameNumber)
-        {
-            bool check = false;
-            bool numberCheck = false;
-            string? inputValue = string.Empty;
-            string? inputNumber = string.Empty;
-            Bracing bracing = new Bracing();
+        //    switch (input)
+        //    {
+        //        case "1":
+        //            bracing.BracingType = 1;
+        //            bracing.BracingNumber = 2 * ((frameNumber * 2) - 2);
+        //            bracing.LoopCount = bracing.BracingNumber / 2;
+        //            bracing.Increment = 2;
+        //            break;
+        //        case "2":
+        //            bracing.BracingType = 2;
+        //            bracing.BracingNumber = (frameNumber * 2) - 2;
+        //            if (frameNumber % 2 == 0)
+        //            {
+        //                bracing.LoopCount = (bracing.BracingNumber / 2) + 1;
+        //            }
+        //            else
+        //            {
+        //                bracing.LoopCount = bracing.BracingNumber / 2;
+        //            }
+        //            bracing.Increment = 4;
+        //            break;
+        //        case "3":
+        //            bracing.BracingType = 3;
+        //            bracing.BracingNumber = 8;
+        //            bracing.LoopCount = 4;
+        //            bracing.Increment = (frameNumber * 2) - 4;
+        //            break;
+        //        default:
+        //            // value is neither 1 nor 2 nor 3
+        //            throw new ArgumentOutOfRangeException();
+        //    }
+        //    return bracing;
+        //}
+        //public static VerticalBracing GetBracingInput(string message, int frameNumber)
+        //{
+        //    bool check = false;
+        //    bool numberCheck = false;
+        //    string? inputValue = string.Empty;
+        //    string? inputNumber = string.Empty;
+        //    VerticalBracing bracing = new VerticalBracing();
 
-            while (check == false)
-            {
-                Console.Write(message);
-                inputValue = Console.ReadLine();
-                check = CheckBracingInput(ref inputValue);
-            }
+        //    while (check == false)
+        //    {
+        //        Console.Write(message);
+        //        inputValue = Console.ReadLine();
+        //        check = CheckBracingInput(ref inputValue);
+        //    }
 
-            if (inputValue == "y")
-            {
-                while (!numberCheck)
-                {
-                    Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
-                    inputNumber = Console.ReadLine();
-                    numberCheck = (inputNumber == "1" || inputNumber == "2" || inputNumber == "3") ? true : false;
-                    if (!numberCheck)
-                    {
-                        Console.WriteLine("Please input either 1, 2 or 3!");
-                    }
-                }
-                bracing = GetBracingType(inputNumber, frameNumber);
-            }
-            return bracing;
-        }
+        //    if (inputValue == "y")
+        //    {
+        //        while (!numberCheck)
+        //        {
+        //            Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
+        //            inputNumber = Console.ReadLine();
+        //            numberCheck = (inputNumber == "1" || inputNumber == "2" || inputNumber == "3") ? true : false;
+        //            if (!numberCheck)
+        //            {
+        //                Console.WriteLine("Please input either 1, 2 or 3!");
+        //            }
+        //        }
+        //        bracing = GetBracingType(inputNumber, frameNumber);
+        //    }
+        //    return bracing;
+        //}
 
         public static double GetDoubleInput(string inputValue)
         {
@@ -261,7 +261,7 @@ namespace Steel_Hall_GUI
         private static ApplicationClient? application = null;
         string currentDirectory = Directory.GetCurrentDirectory();
 
-        public void GenerateHall(double frameHeight, double frameSpan, double frameDistance, int frameNumber, double roofAngle, Bracing bracing)
+        public void GenerateHall(double frameHeight, double frameSpan, double frameDistance, int frameNumber, double roofAngle, VerticalBracing verticalBracing, HorizontalBracing horizontalBracing)
         {
             Console.WriteLine("Steel Hall Generator for RFEM6 and RSTAB9");
 
@@ -316,6 +316,31 @@ namespace Steel_Hall_GUI
                 this.Model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 this.Model.reset();
                 #endregion
+
+                addon_list_type addOn = Model.get_addon_statuses();
+                addOn.design_addons.steel_design_active = true;
+
+                try
+                {
+                    Model.begin_modification("Add-Ons");
+                    Model.set_addon_statuses(addOn);
+                }
+                catch (Exception exception)
+                {
+                    Model.cancel_modification();
+                    throw;
+                }
+                finally
+                {
+                    try
+                    {
+                        Model.finish_modification();
+                    }
+                    catch (Exception exception)
+                    {
+
+                    }
+                }
 
                 material steel = new material
                 {
@@ -522,13 +547,13 @@ namespace Steel_Hall_GUI
                     lineId++;
                 };
 
-                //lines for bracing
-                SortedList<int, line> bracingLines = new SortedList<int, line>();
+                //lines for vertical bracing
+                SortedList<int, line> bracingLinesVertical = new SortedList<int, line>();
                 int nodePositionB = 0;
 
-                for (int k = 0; k < bracing.LoopCount; k++)
+                for (int k = 0; k < verticalBracing.LoopCount; k++)
                 {
-                    if ((bracing.BracingType == 1 || bracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2)
+                    if ((verticalBracing.BracingType == 1 || verticalBracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2)
                     {
                         nodePositionB += 2;
                     };
@@ -537,7 +562,7 @@ namespace Steel_Hall_GUI
                     {
                         no = lineId,
                         definition_nodes = new int[] { lineDefinitionNodes[nodePositionB + 1], lineDefinitionNodes[nodePositionB + 2] },
-                        comment = "lines bracing",
+                        comment = "lines vertical bracing",
                         type = line_type.TYPE_POLYLINE,
                         typeSpecified = true,
                     };
@@ -546,24 +571,82 @@ namespace Steel_Hall_GUI
                     {
                         no = lineId + 1,
                         definition_nodes = new int[] { lineDefinitionNodes[nodePositionB], lineDefinitionNodes[nodePositionB + 3] },
-                        comment = "lines bracing",
+                        comment = "lines vertical bracing",
                         type = line_type.TYPE_POLYLINE,
                         typeSpecified = true,
                     };
-                    bracingLines.Add(lineId, newLine);
-                    bracingLines.Add(lineId + 1, newLine2);
+                    bracingLinesVertical.Add(lineId, newLine);
+                    bracingLinesVertical.Add(lineId + 1, newLine2);
 
-                    if (bracing.BracingType == 3 && nodePositionB == frameNumber * 2 - 4)
+                    if (verticalBracing.BracingType == 3 && nodePositionB == frameNumber * 2 - 4)
                     {
                         nodePositionB += 4;
                     }
                     else
                     {
-                        nodePositionB += bracing.Increment;
+                        nodePositionB += verticalBracing.Increment;
                     }
                     lineId += 2;
                 }
+
+                //lines for horizontal bracing
+                SortedList<int, line> bracingLinesHorizontal = new SortedList<int, line>();
+                int nodePositionBHorizontal1 = 1;
+                int nodePositionBHorizontal2 = nodeId - frameNumber;
+
+                for (int i = 0; i < horizontalBracing.LoopCount; i++)
+                {
+                    //if ((horizontalBracing.BracingType == 4 || horizontalBracing.BracingType == 5) && nodePositionBHorizontal1 == frameNumber * 2 - 1 )
+                    if (nodePositionBHorizontal1 == frameNumber * 2 - 1)
+                    {
+                        nodePositionBHorizontal1 += 2;
+                        nodePositionBHorizontal2 = nodeId - frameNumber;
+                    }
+                    else if (horizontalBracing.BracingType == 5 && nodePositionBHorizontal1 == frameNumber * 2 + 1)
+                    {
+                        nodePositionBHorizontal2 = nodeId - frameNumber;
+                    }
+
+                    line newLine = new()
+                    {
+                        no = lineId,
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionBHorizontal1], lineDefinitionNodes[nodePositionBHorizontal2] },
+                        comment = "lines horizontal bracing",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true
+                    };
+
+                    line newLine2 = new()
+                    {
+                        no = lineId + 1,
+                        definition_nodes = new int[] { lineDefinitionNodes[nodePositionBHorizontal1 + 2], lineDefinitionNodes[nodePositionBHorizontal2 - 1] },
+                        comment = "lines horizontal bracing",
+                        type = line_type.TYPE_POLYLINE,
+                        typeSpecified = true
+                    };
+                    bracingLinesHorizontal.Add(lineId, newLine);
+                    bracingLinesHorizontal.Add(lineId + 1, newLine2);
+
+                    if (horizontalBracing.BracingType == 6 && nodePositionBHorizontal1 == frameNumber * 2 - 3)
+                    {
+                        nodePositionBHorizontal1 += 4;
+                        nodePositionBHorizontal2 = nodeId - frameNumber;
+                    }
+                    else
+                    {
+                        nodePositionBHorizontal1 += horizontalBracing.Increment;
+                        nodePositionBHorizontal2 += horizontalBracing.IncrementMiddleNode;
+                    }
+                    lineId += 2;
+                }
+
 #endif
+                //steel_effective_lengths_nodal_supports_row startNodalSupportSteel = new steel_effective_lengths_nodal_supports_row()
+                //{
+                //    no = 1,
+
+
+                //};
                 //create members
                 int memberId = 1;
 
@@ -684,9 +767,10 @@ namespace Steel_Hall_GUI
                     memberId++;
                 }
 #elif RSTAB
-                int nodePositionY = 0;
+                int nodePositionY = 1;
+                int secondNode = nodePositionY + 2;
 
-                for (int i = 0; i < frameNumber; i++)
+                for (int i = 0; i < frameNumber * 3 - 3; i++)
 			    {
                      member newMember = new()
                     {
@@ -706,10 +790,10 @@ namespace Steel_Hall_GUI
                     nodePositionY += 2;
 			    }
 #endif
-                //members for bracing
-                SortedList<int, member> bracingMembers = new SortedList<int, member>();
+                //members for vertical bracing
+                SortedList<int, member> verticalBracingMembers = new SortedList<int, member>();
 #if RFEM
-                foreach (KeyValuePair<int, line> lineItem in bracingLines)
+                foreach (KeyValuePair<int, line> lineItem in bracingLinesVertical)
                 {
                     member newMember = new()
                     {
@@ -724,7 +808,29 @@ namespace Steel_Hall_GUI
                         typeSpecified = true,
                         comment = "bracing member"
                     };
-                    bracingMembers.Add(memberId, newMember);
+                    verticalBracingMembers.Add(memberId, newMember);
+                    memberId++;
+                }
+
+                //members for horizontal bracing
+                SortedList<int, member> horizontalBracingMembers = new SortedList<int, member>();
+
+                foreach (KeyValuePair<int, line> lineItem in bracingLinesHorizontal)
+                {
+                    member newMember = new()
+                    {
+                        no = memberId,
+                        line = lineItem.Key,
+                        lineSpecified = true,
+                        section_start = section3.no,
+                        section_startSpecified = true,
+                        section_end = section3.no,
+                        section_endSpecified = true,
+                        type = member_type.TYPE_TENSION,
+                        typeSpecified = true,
+                        comment = "bracing member"
+                    };
+                    horizontalBracingMembers.Add(memberId, newMember);
                     memberId++;
                 }
 #elif RSTAB
@@ -836,7 +942,11 @@ namespace Steel_Hall_GUI
                     {
                         this.Model.set_line(lineItem.Value);
                     }
-                    foreach (KeyValuePair<int, line> lineItem in bracingLines)
+                    foreach (KeyValuePair<int, line> lineItem in bracingLinesVertical)
+                    {
+                        this.Model.set_line(lineItem.Value);
+                    }
+                    foreach (KeyValuePair<int,line> lineItem in bracingLinesHorizontal)
                     {
                         this.Model.set_line(lineItem.Value);
                     }
@@ -853,7 +963,11 @@ namespace Steel_Hall_GUI
                     {
                         this.Model.set_member(memberItem.Value);
                     }
-                    foreach (KeyValuePair<int, member> memberItem in bracingMembers)
+                    foreach (KeyValuePair<int, member> memberItem in verticalBracingMembers)
+                    {
+                        this.Model.set_member(memberItem.Value);
+                    }
+                    foreach (KeyValuePair<int,member> memberItem in horizontalBracingMembers)
                     {
                         this.Model.set_member(memberItem.Value);
                     }
@@ -876,7 +990,7 @@ namespace Steel_Hall_GUI
                         //logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
                         this.Model.reset();
                     }
-                }
+                }                
 
                 static_analysis_settings analysis = new static_analysis_settings()
                 {
@@ -1355,7 +1469,7 @@ namespace Steel_Hall_GUI
         
         public void CloseModel()
         {
-            application.close_model(0, false);
+            application.close_model(1, false);
         }
 
         public string ExportCsv()
@@ -1378,8 +1492,6 @@ namespace Steel_Hall_GUI
             {
                 messageResults = "Model has no results!";
             }
-            //bool modelHasLC1Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, selfWeightLC.no);
-            //bool modelHasLC2Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
             resultMessages = messageResults;
 
             return resultMessages;
