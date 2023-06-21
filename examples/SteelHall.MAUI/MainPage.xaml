@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SteelHall.MAUI.MainPage">
+
+    <ScrollView>
+        <!--<VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button
+                x:Name="CounterBtn"
+                Text="Start"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                Grid.Row="10"
+                Grid.Column="1"
+                Grid.ColumnSpan="1"></Button>
+            <Button
+                x:Name="ResultCsvBtn"
+                Text="Export Results to CSV-File"
+                HorizontalOptions="Center"
+                Grid.Row="11"
+                Grid.Column="1"></Button>
+            <Button
+                x:Name="CloseBtn"
+                Text="Close Model"
+                HorizontalOptions="Center"
+                Grid.Row="10"
+                Grid.Column="3"></Button>
+            <Button
+                x:Name="freeRFEMBtn"
+                Text="Close this app and free RFEM"
+                HorizontalOptions="Center"
+                Grid.Row="11"
+                Grid.Column="3"></Button>
+            <Label
+                Text="Steel Hall Generator"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Grid.Row="0"
+                Grid.Column="0"></Label>
+            <Label
+                Text="Geometry"
+                Margin="0,0,0,10"
+                FontSize="18"
+                FontAttributes="Bold" 
+                HorizontalOptions="Center"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"></Label>
+            <Label
+                Text="Vertical Bracing"
+                Margin="0,0,0,10"
+                FontSize="18"
+                FontAttributes="Bold" 
+                HorizontalOptions="Center"
+                Grid.Row="1"
+                Grid.Column="3"></Label>
+            <Label
+                Text="Frame Height [m]:"
+                Margin="0,0,0,10"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Grid.Row="2"
+                Grid.Column="1"></Label>
+            <Entry
+                x:Name="InputHeight"
+                TextChanged="InputHeightTextChanged"
+                Grid.Row="2"
+                Grid.Column="2"
+                HorizontalOptions="Start"></Entry>
+            <Label
+                Text="Frame Span [m]:"
+                Margin="0,0,0,10"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Grid.Row="3"
+                Grid.Column="1"></Label>
+            <Entry
+                x:Name="InputSpan"
+                Grid.Row="3"
+                Grid.Column="2"
+                HorizontalOptions="Start"></Entry>
+            <Label
+                Text="Distance between Frames [m]:"
+                Margin="0,0,0,10"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Grid.Row="4"
+                Grid.Column="1"></Label>
+            <Entry
+                x:Name="InputDistance"
+                Grid.Row="4"
+                Grid.Column="2"
+                HorizontalOptions="Start"></Entry>
+            <Label
+                Text="Number of Frames:"
+                Margin="0,0,0,10"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Grid.Row="5"
+                Grid.Column="1"></Label>
+            <Entry
+                x:Name="InputFrameNumber"
+                Grid.Row="5"
+                Grid.Column="2"
+                HorizontalOptions="Start"></Entry>
+            <Label
+                Text="Roof Pitch Angle [°]:"
+                Margin="0,0,0,10"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Grid.Row="6"
+                Grid.Column="1"></Label>
+            <Entry
+                x:Name="InputAngle"
+                Grid.Row="6"
+                Grid.Column="2"
+                HorizontalOptions="Start"></Entry>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
