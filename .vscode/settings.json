@@ -5,5 +5,8 @@
             "front_matter_title": ""
         }
     },
-    "dotnet.defaultSolution": "source_code\\DlubalWebService.sln"
+    "dotnet.defaultSolution": "source_code\\DlubalWebService.sln",
+    "dotnet-test-explorer.testProjectPath":"source_code/UT*/UT*.@(csproj|vbproj|fsproj)",//  "source_code/UTWebServiceLibraries/UTWebServiceLibraries.csproj",//source_code\\UTWebServiceLibraries\\UTWebServiceLibraries.csproj",
+    "dotnet-test-explorer.testArguments": "",
+    "dotnet-test-explorer.autoExpandTree": true,
 }
