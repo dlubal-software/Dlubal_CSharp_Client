@@ -4,5 +4,6 @@
         "MD025": {
             "front_matter_title": ""
         }
-    }
+    },
+    "dotnet.defaultSolution": "source_code\\DlubalWebService.sln"
 }
