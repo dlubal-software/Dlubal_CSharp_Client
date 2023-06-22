@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SteelHall.MAUI.MainPage">
+             xmlns:mycode="clr-namespace:SteelHall.MAUI" 
+             x:Class="SteelHall.MAUI.MainPage"
+             BackgroundColor="#050552">            
 
     <ScrollView>
         <!--<VerticalStackLayout
@@ -37,7 +39,9 @@
 
         </VerticalStackLayout>-->
         <Grid>
+            
             <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -53,124 +57,253 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button
-                x:Name="CounterBtn"
-                Text="Start"
-                Clicked="OnCounterClicked"
+                x:Name="StartCalculationBtn"
+                Text="Start Calculation"
+                FontAttributes="Bold"
+                Margin="40,0,10,10"
+                Clicked="OnStartCalculationClicked"
                 HorizontalOptions="Center"
-                Grid.Row="10"
-                Grid.Column="1"
-                Grid.ColumnSpan="1"></Button>
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="11"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"></Button>
             <Button
                 x:Name="ResultCsvBtn"
                 Text="Export Results to CSV-File"
+                Margin="40,0,10,10"
                 HorizontalOptions="Center"
-                Grid.Row="11"
-                Grid.Column="1"></Button>
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="12"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"></Button>
             <Button
                 x:Name="CloseBtn"
                 Text="Close Model"
+                Margin="0,0,10,10"
                 HorizontalOptions="Center"
-                Grid.Row="10"
-                Grid.Column="3"></Button>
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="11"
+                Grid.Column="4"></Button>
             <Button
                 x:Name="freeRFEMBtn"
                 Text="Close this app and free RFEM"
+                Margin="0,0,10,10"
                 HorizontalOptions="Center"
-                Grid.Row="11"
-                Grid.Column="3"></Button>
-            <Label
-                Text="Steel Hall Generator"
-                FontSize="24"
-                FontAttributes="Bold"
-                HorizontalOptions="Start"
-                Grid.Row="0"
-                Grid.Column="0"></Label>
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="12"
+                Grid.Column="4"></Button>
             <Label
                 Text="Geometry"
-                Margin="0,0,0,10"
+                TextDecorations="Underline"
                 FontSize="18"
                 FontAttributes="Bold" 
-                HorizontalOptions="Center"
-                Grid.Row="1"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"></Label>
+                HorizontalOptions="End"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="2"
+                Grid.Column="2"
+                Grid.ColumnSpan="1"></Label>
             <Label
                 Text="Vertical Bracing"
+                TextDecorations="Underline"
                 Margin="0,0,0,10"
                 FontSize="18"
                 FontAttributes="Bold" 
                 HorizontalOptions="Center"
-                Grid.Row="1"
-                Grid.Column="3"></Label>
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="2"
+                Grid.Column="4"></Label>
             <Label
                 Text="Frame Height [m]:"
-                Margin="0,0,0,10"
-                FontSize="12"
-                HorizontalOptions="Center"
-                Grid.Row="2"
-                Grid.Column="1"></Label>
+                Margin="0,0,20,10"
+                FontSize="{mycode:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="3"
+                Grid.Column="2"></Label>
             <Entry
                 x:Name="InputHeight"
-                TextChanged="InputHeightTextChanged"
-                Grid.Row="2"
-                Grid.Column="2"
-                HorizontalOptions="Start"></Entry>
+                Margin="0,0,0,5"
+                Grid.Row="3"
+                Grid.Column="3"
+                WidthRequest="20"
+                HeightRequest="5"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
             <Label
                 Text="Frame Span [m]:"
-                Margin="0,0,0,10"
-                FontSize="12"
-                HorizontalOptions="Center"
-                Grid.Row="3"
-                Grid.Column="1"></Label>
+                Margin="0,0,20,10"
+                FontSize="{mycode:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="4"
+                Grid.Column="2"></Label>
             <Entry
                 x:Name="InputSpan"
-                Grid.Row="3"
-                Grid.Column="2"
-                HorizontalOptions="Start"></Entry>
+                Margin="0,0,0,5"
+                Grid.Row="4"
+                Grid.Column="3"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
             <Label
                 Text="Distance between Frames [m]:"
-                Margin="0,0,0,10"
-                FontSize="12"
-                HorizontalOptions="Center"
-                Grid.Row="4"
-                Grid.Column="1"></Label>
+                Margin="0,0,20,10"
+                FontSize="{mycode:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="White"
+                Grid.Row="5"
+                Grid.Column="2"></Label>
             <Entry
                 x:Name="InputDistance"
-                Grid.Row="4"
-                Grid.Column="2"
-                HorizontalOptions="Start"></Entry>
+                Margin="0,0,0,5"
+                Grid.Row="5"
+                Grid.Column="3"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
             <Label
                 Text="Number of Frames:"
-                Margin="0,0,0,10"
-                FontSize="12"
-                HorizontalOptions="Center"
-                Grid.Row="5"
-                Grid.Column="1"></Label>
+                Margin="0,0,20,10"
+                FontSize="{mycode:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="6"
+                Grid.Column="2"></Label>
             <Entry
                 x:Name="InputFrameNumber"
-                Grid.Row="5"
-                Grid.Column="2"
-                HorizontalOptions="Start"></Entry>
+                Margin="0,0,0,5"
+                Grid.Row="6"
+                Grid.Column="3"
+                FontSize="{mycode:GlobalFontSize}"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
             <Label
                 Text="Roof Pitch Angle [°]:"
-                Margin="0,0,0,10"
-                FontSize="12"
-                HorizontalOptions="Center"
-                Grid.Row="6"
-                Grid.Column="1"></Label>
+                Margin="0,0,20,10"
+                FontSize="{mycode:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="7"
+                Grid.Column="2"></Label>
             <Entry
                 x:Name="InputAngle"
-                Grid.Row="6"
+                Margin="0,0,0,5"
+                Grid.Row="7"
+                Grid.Column="3"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
+            <Label
+                Text="Status:"
+                Margin="30,0,0,10"
+                FontSize="16"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="14"
                 Grid.Column="2"
-                HorizontalOptions="Start"></Entry>
+                Grid.ColumnSpan="2"></Label>
+            <Label
+                Text="Calculation has not been started yet!"
+                Margin="100,0,0,10"
+                HorizontalOptions="Start"
+                FontSize="16"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Grid.Row="14"></Label>
+            <RadioButton
+                GroupName="verticalBracing"
+                Content="Include bracing in every field"
+                FontSize="{mycode:GlobalFontSize}"
+                TextColor="{mycode:GlobalTextColor}"
+                CheckedChanged="VerticalBracing1Checked"                
+                Grid.Row="3"
+                Grid.Column="4"
+                HorizontalOptions="Start"></RadioButton>
+            <RadioButton
+                GroupName="verticalBracing"
+                Content="Include bracing in every second field"
+                FontSize="{mycode:GlobalFontSize}"
+                TextColor="{mycode:GlobalTextColor}"
+                CheckedChanged="VerticalBracing2Checked"                
+                Grid.Row="4"
+                Grid.Column="4"
+                HorizontalOptions="Start"></RadioButton>
+            <RadioButton
+                GroupName="verticalBracing"
+                Content="Include bracing only in the end fields"
+                FontSize="{mycode:GlobalFontSize}"
+                TextColor="{mycode:GlobalTextColor}"
+                CheckedChanged="VerticalBracing3Checked"                
+                Grid.Row="5"
+                Grid.Column="4"
+                HorizontalOptions="Start"></RadioButton>
+            <Label
+                Text="Horizontal Bracing"
+                TextDecorations="Underline"
+                Margin="0,0,0,10"
+                FontSize="18"
+                FontAttributes="Bold" 
+                HorizontalOptions="Center"
+                TextColor="{mycode:GlobalTextColor}"
+                Grid.Row="6"
+                Grid.Column="4"></Label>
+            <RadioButton
+                GroupName="horizontalBracing"
+                Content="Include bracing in every field"
+                FontSize="{mycode:GlobalFontSize}"
+                TextColor="{mycode:GlobalTextColor}"
+                CheckedChanged="HorizontalBracing4Checked"                
+                Grid.Row="7"
+                Grid.Column="4"
+                HorizontalOptions="Start"></RadioButton>
+            <RadioButton
+                GroupName="horizontalBracing"
+                Content="Include bracing in every second field"
+                FontSize="{mycode:GlobalFontSize}"                
+                TextColor="{mycode:GlobalTextColor}"
+                CheckedChanged="HorizontalBracing5Checked"
+                Grid.Row="8"
+                Grid.Column="4"
+                HorizontalOptions="Start"></RadioButton>
+            <RadioButton
+                GroupName="horizontalBracing"
+                Content="Include bracing only in the end fields"
+                FontSize="{mycode:GlobalFontSize}"
+                TextColor="{mycode:GlobalTextColor}"
+                CheckedChanged="HorizontalBracing6Checked"                
+                Grid.Row="9"
+                Grid.Column="4"
+                HorizontalOptions="Start"></RadioButton>
+            <Image 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="11"
+                Grid.RowSpan="6"
+                Source="logo_white.png"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="Start"
+                Aspect="AspectFill"
+                VerticalOptions="EndAndExpand"></Image>            
         </Grid>
     </ScrollView>
 
