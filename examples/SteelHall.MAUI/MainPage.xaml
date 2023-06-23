@@ -1,9 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mycode="clr-namespace:SteelHall.MAUI" 
-             x:Class="SteelHall.MAUI.MainPage"
-             BackgroundColor="#050552">            
+             xmlns:local="clr-namespace:SteelHall.MAUI" 
+             x:Class="SteelHall.MAUI.MainPage"             
+             BackgroundColor="#050552">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
+        <!--<ResourceDictionary>
+            <Color x:Key="PageTextColor">White</Color>
+            <Button x:Key="PageButtons"
+                    BackgroundColor="White" 
+                    TextColor="#050552"></Button>
+        </ResourceDictionary>-->
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+ 
+    
 
     <ScrollView>
         <!--<VerticalStackLayout
@@ -72,7 +87,7 @@
                 Text="Start Calculation"
                 FontAttributes="Bold"
                 Margin="40,0,10,10"
-                Clicked="OnStartCalculationClicked"
+                Command="{Binding StartCalculationCommand}"
                 HorizontalOptions="Center"
                 BackgroundColor="White"
                 TextColor="#04046C"
@@ -113,7 +128,7 @@
                 FontSize="18"
                 FontAttributes="Bold" 
                 HorizontalOptions="End"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="2"
                 Grid.Column="2"
                 Grid.ColumnSpan="1"></Label>
@@ -124,21 +139,22 @@
                 FontSize="18"
                 FontAttributes="Bold" 
                 HorizontalOptions="Center"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="2"
                 Grid.Column="4"></Label>
             <Label
                 Text="Frame Height [m]:"
                 Margin="0,0,20,10"
-                FontSize="{mycode:GlobalFontSize}"
+                FontSize="{local:GlobalFontSize}"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="3"
                 Grid.Column="2"></Label>
             <Entry
                 x:Name="InputHeight"
                 Margin="0,0,0,5"
+                Text="{Binding FrameHeight, Mode=OneWayToSource}"
                 Grid.Row="3"
                 Grid.Column="3"
                 WidthRequest="20"
@@ -148,15 +164,16 @@
             <Label
                 Text="Frame Span [m]:"
                 Margin="0,0,20,10"
-                FontSize="{mycode:GlobalFontSize}"
+                FontSize="{local:GlobalFontSize}"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="4"
                 Grid.Column="2"></Label>
             <Entry
                 x:Name="InputSpan"
                 Margin="0,0,0,5"
+                Text="{Binding FrameSpan, Mode=OneWayToSource}"
                 Grid.Row="4"
                 Grid.Column="3"
                 HorizontalOptions="Start"
@@ -164,7 +181,7 @@
             <Label
                 Text="Distance between Frames [m]:"
                 Margin="0,0,20,10"
-                FontSize="{mycode:GlobalFontSize}"
+                FontSize="{local:GlobalFontSize}"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 TextColor="White"
@@ -173,6 +190,7 @@
             <Entry
                 x:Name="InputDistance"
                 Margin="0,0,0,5"
+                Text="{Binding FrameDistance, Mode=OneWayToSource}"
                 Grid.Row="5"
                 Grid.Column="3"
                 HorizontalOptions="Start"
@@ -180,32 +198,34 @@
             <Label
                 Text="Number of Frames:"
                 Margin="0,0,20,10"
-                FontSize="{mycode:GlobalFontSize}"
+                FontSize="{local:GlobalFontSize}"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="6"
                 Grid.Column="2"></Label>
             <Entry
                 x:Name="InputFrameNumber"
                 Margin="0,0,0,5"
+                Text="{Binding FrameNumber, Mode=OneWayToSource}"
                 Grid.Row="6"
                 Grid.Column="3"
-                FontSize="{mycode:GlobalFontSize}"
+                FontSize="{local:GlobalFontSize}"
                 HorizontalOptions="Start"
                 BackgroundColor="White"></Entry>
             <Label
                 Text="Roof Pitch Angle [°]:"
                 Margin="0,0,20,10"
-                FontSize="{mycode:GlobalFontSize}"
+                FontSize="{local:GlobalFontSize}"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="7"
                 Grid.Column="2"></Label>
             <Entry
                 x:Name="InputAngle"
                 Margin="0,0,0,5"
+                Text="{Binding RoofAngle, Mode=OneWayToSource}"
                 Grid.Row="7"
                 Grid.Column="3"
                 HorizontalOptions="Start"
@@ -216,7 +236,7 @@
                 FontSize="16"
                 FontAttributes="Bold"
                 HorizontalOptions="Start"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="14"
                 Grid.Column="2"
                 Grid.ColumnSpan="2"></Label>
@@ -225,34 +245,32 @@
                 Margin="100,0,0,10"
                 HorizontalOptions="Start"
                 FontSize="16"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 Grid.Row="14"></Label>
             <RadioButton
                 GroupName="verticalBracing"
+                
                 Content="Include bracing in every field"
-                FontSize="{mycode:GlobalFontSize}"
-                TextColor="{mycode:GlobalTextColor}"
-                CheckedChanged="VerticalBracing1Checked"                
+                FontSize="{local:GlobalFontSize}"
+                TextColor="{local:GlobalTextColor}"               
                 Grid.Row="3"
                 Grid.Column="4"
                 HorizontalOptions="Start"></RadioButton>
             <RadioButton
                 GroupName="verticalBracing"
                 Content="Include bracing in every second field"
-                FontSize="{mycode:GlobalFontSize}"
-                TextColor="{mycode:GlobalTextColor}"
-                CheckedChanged="VerticalBracing2Checked"                
+                FontSize="{local:GlobalFontSize}"
+                TextColor="{local:GlobalTextColor}"             
                 Grid.Row="4"
                 Grid.Column="4"
                 HorizontalOptions="Start"></RadioButton>
             <RadioButton
                 GroupName="verticalBracing"
                 Content="Include bracing only in the end fields"
-                FontSize="{mycode:GlobalFontSize}"
-                TextColor="{mycode:GlobalTextColor}"
-                CheckedChanged="VerticalBracing3Checked"                
+                FontSize="{local:GlobalFontSize}"
+                TextColor="{local:GlobalTextColor}"              
                 Grid.Row="5"
                 Grid.Column="4"
                 HorizontalOptions="Start"></RadioButton>
@@ -263,33 +281,30 @@
                 FontSize="18"
                 FontAttributes="Bold" 
                 HorizontalOptions="Center"
-                TextColor="{mycode:GlobalTextColor}"
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="6"
                 Grid.Column="4"></Label>
             <RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing in every field"
-                FontSize="{mycode:GlobalFontSize}"
-                TextColor="{mycode:GlobalTextColor}"
-                CheckedChanged="HorizontalBracing4Checked"                
+                FontSize="{local:GlobalFontSize}"
+                TextColor="{local:GlobalTextColor}"               
                 Grid.Row="7"
                 Grid.Column="4"
                 HorizontalOptions="Start"></RadioButton>
             <RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing in every second field"
-                FontSize="{mycode:GlobalFontSize}"                
-                TextColor="{mycode:GlobalTextColor}"
-                CheckedChanged="HorizontalBracing5Checked"
+                FontSize="{local:GlobalFontSize}"                
+                TextColor="{local:GlobalTextColor}"
                 Grid.Row="8"
                 Grid.Column="4"
                 HorizontalOptions="Start"></RadioButton>
             <RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing only in the end fields"
-                FontSize="{mycode:GlobalFontSize}"
-                TextColor="{mycode:GlobalTextColor}"
-                CheckedChanged="HorizontalBracing6Checked"                
+                FontSize="{local:GlobalFontSize}"
+                TextColor="{local:GlobalTextColor}"               
                 Grid.Row="9"
                 Grid.Column="4"
                 HorizontalOptions="Start"></RadioButton>

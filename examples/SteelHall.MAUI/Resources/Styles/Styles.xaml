@@ -221,7 +221,7 @@
     </Style>
 
     <Style TargetType="RadioButton">
-        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Red"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
         <Setter Property="FontSize" Value="14"/>
@@ -238,6 +238,14 @@
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateGroupList>
+        </Setter>
+        <Setter Property="ControlTemplate">
+            <Setter.Value>
+                <Ellipse Stroke="White"
+                         ScaleX="0.5"
+                         ScaleY="0.5">
+                </Ellipse>
+            </Setter.Value>
         </Setter>
     </Style>
 
