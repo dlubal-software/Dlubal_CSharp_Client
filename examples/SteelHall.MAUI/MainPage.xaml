@@ -5,7 +5,45 @@
              x:Class="SteelHall.MAUI.MainPage"             
              BackgroundColor="#050552">
     <ContentPage.Resources>
-        <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
+        <!--<ResourceDictionary Source="Resources/Styles/Colors.xaml" />-->
+        <ResourceDictionary>
+            <ControlTemplate x:Key="RadioButtonTemplate">
+                <Border Stroke="Transparent" BackgroundColor="Transparent">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="0" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid WidthRequest="20" HeightRequest="20" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Ellipse x:Name="border_circle" StrokeThickness="2" Stroke="White" Fill="#050552" WidthRequest="10" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center" />
+                            <Ellipse x:Name="check" Fill="White" WidthRequest="10" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <ContentPresenter Margin="10,0,0,0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+
+            <Style TargetType="RadioButton" x:Key="RadioButtonStyle">
+                <Setter Property="ControlTemplate" Value="{StaticResource RadioButtonTemplate}" />
+            </Style>
+
+        </ResourceDictionary>
         <!--<ResourceDictionary>
             <Color x:Key="PageTextColor">White</Color>
             <Button x:Key="PageButtons"
@@ -86,9 +124,9 @@
                 x:Name="StartCalculationBtn"
                 Text="Start Calculation"
                 FontAttributes="Bold"
-                Margin="40,0,10,10"
+                Margin="130,10,70,10"
                 Command="{Binding StartCalculationCommand}"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
                 Grid.Row="11"
@@ -97,8 +135,8 @@
             <Button
                 x:Name="ResultCsvBtn"
                 Text="Export Results to CSV-File"
-                Margin="40,0,10,10"
-                HorizontalOptions="Center"
+                Margin="130,0,70,10"
+                HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
                 Grid.Row="12"
@@ -107,8 +145,8 @@
             <Button
                 x:Name="CloseBtn"
                 Text="Close Model"
-                Margin="0,0,10,10"
-                HorizontalOptions="Center"
+                Margin="30,15,30,10"
+                HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
                 Grid.Row="11"
@@ -116,8 +154,8 @@
             <Button
                 x:Name="freeRFEMBtn"
                 Text="Close this app and free RFEM"
-                Margin="0,0,10,10"
-                HorizontalOptions="Center"
+                Margin="30,0,30,10"
+                HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
                 Grid.Row="12"
@@ -250,30 +288,35 @@
                 Grid.ColumnSpan="3"
                 Grid.Row="14"></Label>
             <RadioButton
-                GroupName="verticalBracing"
-                
+                GroupName="verticalBracing"                
                 Content="Include bracing in every field"
+                Style="{StaticResource RadioButtonStyle}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"               
                 Grid.Row="3"
                 Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>
+                HorizontalOptions="Start"
+                VerticalOptions="End"></RadioButton>
             <RadioButton
                 GroupName="verticalBracing"
                 Content="Include bracing in every second field"
+                Style="{StaticResource RadioButtonStyle}"
                 FontSize="{local:GlobalFontSize}"
-                TextColor="{local:GlobalTextColor}"             
+                TextColor="{local:GlobalTextColor}"                 
                 Grid.Row="4"
                 Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>
+                HorizontalOptions="Start"
+                VerticalOptions="Center"></RadioButton>
             <RadioButton
                 GroupName="verticalBracing"
                 Content="Include bracing only in the end fields"
+                Style="{StaticResource RadioButtonStyle}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"              
                 Grid.Row="5"
                 Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>
+                HorizontalOptions="Start"
+                VerticalOptions="Start"></RadioButton>
             <Label
                 Text="Horizontal Bracing"
                 TextDecorations="Underline"
@@ -287,14 +330,18 @@
             <RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing in every field"
+                Style="{StaticResource RadioButtonStyle}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"               
                 Grid.Row="7"
                 Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>
+                HorizontalOptions="Start"
+                VerticalOptions="End"></RadioButton>
             <RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing in every second field"
+                Margin="0,7,0,0"
+                Style="{StaticResource RadioButtonStyle}"
                 FontSize="{local:GlobalFontSize}"                
                 TextColor="{local:GlobalTextColor}"
                 Grid.Row="8"
@@ -303,6 +350,8 @@
             <RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing only in the end fields"
+                Margin="0,7,0,0"
+                Style="{StaticResource RadioButtonStyle}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"               
                 Grid.Row="9"

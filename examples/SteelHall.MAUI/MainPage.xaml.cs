@@ -23,6 +23,11 @@
             
         }
 
+        private void RadioButton_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
+
         //private void OnStartCalculationClicked(object sender, EventArgs e)
         //{
         //    //count += 4;
@@ -42,79 +47,79 @@
         //    //verticalBracing.LoopCount = 3;
         //    //verticalBracing.Increment = 2;
         //    hallGenerator.GenerateHall(frameHeight, frameSpan, frameDistance, frameNumber, roofAngle, verticalBracing, horizontalBracing);
-        }
+    }
 
-        //private void VerticalBracing1Checked(object sender, EventArgs e)
-        //{
-        //    verticalBracing.BracingType = 1;
-        //    verticalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
-        //    verticalBracing.LoopCount = verticalBracing.BracingNumber / 2;
-        //    verticalBracing.Increment = 2;
-        //}
-        //private void VerticalBracing2Checked(object sender, EventArgs e)
-        //{
-        //    verticalBracing.BracingType = 2;
-        //    verticalBracing.BracingNumber = (frameNumber * 2) - 2;
-        //    if (frameNumber % 2 == 0)
-        //    {
-        //        verticalBracing.LoopCount = (verticalBracing.BracingNumber / 2) + 1;
-        //    }
-        //    else
-        //    {
-        //        verticalBracing.LoopCount = verticalBracing.BracingNumber / 2;
-        //    }
-        //    verticalBracing.Increment = 4;
-        //}
-        //private void VerticalBracing3Checked(object sender, EventArgs e)
-        //{
-        //    verticalBracing.BracingType = 3;
-        //    verticalBracing.BracingType = 3;
-        //    verticalBracing.BracingNumber = 8;
-        //    verticalBracing.LoopCount = 4;
-        //    verticalBracing.Increment = (frameNumber * 2) - 4;
-        //}
-        //private void HorizontalBracing4Checked(object sender, EventArgs e)
-        //{
-        //    horizontalBracing.BracingType = 4;
-        //    horizontalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
-        //    horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
-        //    horizontalBracing.Increment = 2;
-        //    horizontalBracing.IncrementMiddleNode = 1;
-        //}
-        //private void HorizontalBracing5Checked(object sender, EventArgs e)
-        //{
-        //    horizontalBracing.BracingType = 5;
-
-        //    if (frameNumber % 2 == 0)
-        //    {
-        //        horizontalBracing.BracingNumber = frameNumber * 2;
-        //    }
-        //    else
-        //    {
-        //        horizontalBracing.BracingNumber = frameNumber * 2 - 2;
-        //    }
-
-        //    horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
-        //    horizontalBracing.Increment = 4;
-        //    horizontalBracing.IncrementMiddleNode = 2;
-        //}
-        //private void HorizontalBracing6Checked(object sender, EventArgs e)
-        //{
-        //    horizontalBracing.BracingType = 6;
-        //    horizontalBracing.BracingNumber = 8;
-        //    horizontalBracing.LoopCount = 4;
-        //    horizontalBracing.Increment = (frameNumber * 2) - 4;
-        //    horizontalBracing.IncrementMiddleNode = frameNumber - 2;
-        //}
-
-        //private string ChangedInputHeight(object sender, TextChangedEventArgs e)
-        //{
-        //    return e.NewTextValue;
-        //}
-
-        //double frameHeight = HallGenerator.GetDoubleInput(ChangedInputHeight());
+    //private void VerticalBracing1Checked(object sender, EventArgs e)
+    //{
+    //    verticalBracing.BracingType = 1;
+    //    verticalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+    //    verticalBracing.LoopCount = verticalBracing.BracingNumber / 2;
+    //    verticalBracing.Increment = 2;
     //}
-        
+    //private void VerticalBracing2Checked(object sender, EventArgs e)
+    //{
+    //    verticalBracing.BracingType = 2;
+    //    verticalBracing.BracingNumber = (frameNumber * 2) - 2;
+    //    if (frameNumber % 2 == 0)
+    //    {
+    //        verticalBracing.LoopCount = (verticalBracing.BracingNumber / 2) + 1;
+    //    }
+    //    else
+    //    {
+    //        verticalBracing.LoopCount = verticalBracing.BracingNumber / 2;
+    //    }
+    //    verticalBracing.Increment = 4;
+    //}
+    //private void VerticalBracing3Checked(object sender, EventArgs e)
+    //{
+    //    verticalBracing.BracingType = 3;
+    //    verticalBracing.BracingType = 3;
+    //    verticalBracing.BracingNumber = 8;
+    //    verticalBracing.LoopCount = 4;
+    //    verticalBracing.Increment = (frameNumber * 2) - 4;
+    //}
+    //private void HorizontalBracing4Checked(object sender, EventArgs e)
+    //{
+    //    horizontalBracing.BracingType = 4;
+    //    horizontalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+    //    horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
+    //    horizontalBracing.Increment = 2;
+    //    horizontalBracing.IncrementMiddleNode = 1;
+    //}
+    //private void HorizontalBracing5Checked(object sender, EventArgs e)
+    //{
+    //    horizontalBracing.BracingType = 5;
+
+    //    if (frameNumber % 2 == 0)
+    //    {
+    //        horizontalBracing.BracingNumber = frameNumber * 2;
+    //    }
+    //    else
+    //    {
+    //        horizontalBracing.BracingNumber = frameNumber * 2 - 2;
+    //    }
+
+    //    horizontalBracing.LoopCount = horizontalBracing.BracingNumber / 2;
+    //    horizontalBracing.Increment = 4;
+    //    horizontalBracing.IncrementMiddleNode = 2;
+    //}
+    //private void HorizontalBracing6Checked(object sender, EventArgs e)
+    //{
+    //    horizontalBracing.BracingType = 6;
+    //    horizontalBracing.BracingNumber = 8;
+    //    horizontalBracing.LoopCount = 4;
+    //    horizontalBracing.Increment = (frameNumber * 2) - 4;
+    //    horizontalBracing.IncrementMiddleNode = frameNumber - 2;
+    //}
+
+    //private string ChangedInputHeight(object sender, TextChangedEventArgs e)
+    //{
+    //    return e.NewTextValue;
+    //}
+
+    //double frameHeight = HallGenerator.GetDoubleInput(ChangedInputHeight());
+    //}
+
     public class GlobalFontSizeExtension : IMarkupExtension
     {
         public object ProvideValue(IServiceProvider serviceProvider)
