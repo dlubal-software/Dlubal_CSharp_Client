@@ -55,44 +55,10 @@
     <ContentPage.BindingContext>
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
- 
-    
+
 
     <ScrollView>
-        <!--<VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>-->
         <Grid>
-            
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -124,7 +90,7 @@
                 x:Name="StartCalculationBtn"
                 Text="Start Calculation"
                 FontAttributes="Bold"
-                Margin="130,10,70,10"
+                Margin="130,15,70,10"
                 Command="{Binding StartCalculationCommand}"
                 HorizontalOptions="Fill"
                 BackgroundColor="White"
@@ -136,6 +102,7 @@
                 x:Name="ResultCsvBtn"
                 Text="Export Results to CSV-File"
                 Margin="130,0,70,10"
+                Command="{Binding ExportCsvCommand}"
                 HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
@@ -146,6 +113,7 @@
                 x:Name="CloseBtn"
                 Text="Close Model"
                 Margin="30,15,30,10"
+                Command="{Binding CloseModelCommand}"
                 HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
@@ -155,6 +123,7 @@
                 x:Name="freeRFEMBtn"
                 Text="Close this app and free RFEM"
                 Margin="30,0,30,10"
+                Command="{Binding FreeRfemCommand}"
                 HorizontalOptions="Fill"
                 BackgroundColor="White"
                 TextColor="#04046C"
@@ -192,7 +161,7 @@
             <Entry
                 x:Name="InputHeight"
                 Margin="0,0,0,5"
-                Text="{Binding FrameHeight, Mode=OneWayToSource}"
+                Text="{Binding FrameHeight}"
                 Grid.Row="3"
                 Grid.Column="3"
                 WidthRequest="20"
@@ -287,10 +256,11 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 Grid.Row="14"></Label>
-            <RadioButton
-                GroupName="verticalBracing"                
+            <!--<RadioButton
+                GroupName="verticalBracing"
                 Content="Include bracing in every field"
                 Style="{StaticResource RadioButtonStyle}"
+                IsChecked="{Binding RadioButton1Checked}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"               
                 Grid.Row="3"
@@ -299,8 +269,9 @@
                 VerticalOptions="End"></RadioButton>
             <RadioButton
                 GroupName="verticalBracing"
-                Content="Include bracing in every second field"
+                Content="Include bracing in every second field"                
                 Style="{StaticResource RadioButtonStyle}"
+                IsChecked="{Binding RadioButton2Checked}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"                 
                 Grid.Row="4"
@@ -311,12 +282,76 @@
                 GroupName="verticalBracing"
                 Content="Include bracing only in the end fields"
                 Style="{StaticResource RadioButtonStyle}"
+                IsChecked="{Binding RadioButton3Checked}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"              
                 Grid.Row="5"
                 Grid.Column="4"
                 HorizontalOptions="Start"
-                VerticalOptions="Start"></RadioButton>
+                VerticalOptions="Start"></RadioButton>-->
+            <VerticalStackLayout RadioButtonGroup.GroupName="verticalBracing"
+                         Grid.Row="3"
+                         Grid.RowSpan="3"
+                         Grid.Column="4">
+                <RadioButton                
+                    Content="Include bracing in every field"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButton1Checked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"            
+                    HorizontalOptions="Start"
+                    VerticalOptions="End">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing in every second field" 
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButton2Checked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"         
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing only in the end fields"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButton3Checked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"   
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </RadioButton>
+            </VerticalStackLayout>
+            <VerticalStackLayout RadioButtonGroup.GroupName="horizontalBracing"
+                         Grid.Row="6"
+                         Grid.RowSpan="3"
+                         Grid.Column="4">
+                <RadioButton
+                    Content="Include bracing in every field"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButton4Checked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"      
+                    HorizontalOptions="Start"
+                    VerticalOptions="End">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing in every second field"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButton5Checked}"
+                    FontSize="{local:GlobalFontSize}"                
+                    TextColor="{local:GlobalTextColor}"
+                    HorizontalOptions="Start">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing only in the end fields"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButton6Checked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"     
+                    HorizontalOptions="Start">
+                </RadioButton>
+            </VerticalStackLayout>
+
             <Label
                 Text="Horizontal Bracing"
                 TextDecorations="Underline"
@@ -325,12 +360,13 @@
                 FontAttributes="Bold" 
                 HorizontalOptions="Center"
                 TextColor="{local:GlobalTextColor}"
-                Grid.Row="6"
+                Grid.Row="5"
                 Grid.Column="4"></Label>
-            <RadioButton
+                <!--<RadioButton
                 GroupName="horizontalBracing"
                 Content="Include bracing in every field"
                 Style="{StaticResource RadioButtonStyle}"
+                IsChecked="{Binding RadioButton4Checked}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"               
                 Grid.Row="7"
@@ -342,6 +378,7 @@
                 Content="Include bracing in every second field"
                 Margin="0,7,0,0"
                 Style="{StaticResource RadioButtonStyle}"
+                IsChecked="{Binding RadioButton5Checked}"
                 FontSize="{local:GlobalFontSize}"                
                 TextColor="{local:GlobalTextColor}"
                 Grid.Row="8"
@@ -352,12 +389,14 @@
                 Content="Include bracing only in the end fields"
                 Margin="0,7,0,0"
                 Style="{StaticResource RadioButtonStyle}"
+                IsChecked="{Binding RadioButton6Checked}"
                 FontSize="{local:GlobalFontSize}"
                 TextColor="{local:GlobalTextColor}"               
                 Grid.Row="9"
                 Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>
-            <Image 
+                HorizontalOptions="Start"></RadioButton>-->
+
+                <Image 
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Grid.Row="11"
@@ -367,7 +406,7 @@
                 HeightRequest="200"
                 HorizontalOptions="Start"
                 Aspect="AspectFill"
-                VerticalOptions="EndAndExpand"></Image>            
+                VerticalOptions="EndAndExpand"></Image>
         </Grid>
     </ScrollView>
 

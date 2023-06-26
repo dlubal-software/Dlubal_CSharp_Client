@@ -8,8 +8,8 @@ namespace SteelHall.MAUI
 {
     public partial class App : Application
     {
-        const int WindowWidth = 1150;
-        const int WindowHeight = 730;
+        const int WindowWidth = 950;
+        const int WindowHeight = 525;
         public App()
         {
             InitializeComponent();

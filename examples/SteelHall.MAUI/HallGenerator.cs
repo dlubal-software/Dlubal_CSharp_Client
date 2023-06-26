@@ -932,7 +932,7 @@ namespace SteelHall.MAUI
                     {
                         this.Model.set_node(nodeItem.Value);
                     }
-//#if RFEM
+#if RFEM
                     foreach (KeyValuePair<int, line> lineItem in zLines)
                     {
                         this.Model.set_line(lineItem.Value);
@@ -953,7 +953,7 @@ namespace SteelHall.MAUI
                     {
                         this.Model.set_line(lineItem.Value);
                     }
-//#endif
+#endif
                     foreach (KeyValuePair<int, member> memberItem in zMembers)
                     {
                         this.Model.set_member(memberItem.Value);

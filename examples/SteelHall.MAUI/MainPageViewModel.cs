@@ -12,24 +12,45 @@ namespace SteelHall.MAUI
     {
         public MainPageViewModel()
         {
+
             this.StartCalculationCommand = new DelegateCommand(
                 (o) =>
                 {
-                    this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, new VerticalBracing(), new HorizontalBracing());
+                    this.CheckVerticalBracing();
+                    this.CheckHorizontalBracing();
+                    this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
+                    
                 }
                 );
-            //this.CloseModel = new DelegateCommand(
-            //    (o) =>
-            //    {
-            //        this.HallGenerator.CloseModel();
-            //    }
-            //    );
+
+            this.CloseModelCommand = new DelegateCommand(
+                (o) =>
+                {
+                    this.HallGenerator.CloseModel();
+                }
+                );
+
+            this.ExportCsvCommand = new DelegateCommand(
+                (o) =>
+                {
+                    this.HallGenerator.ExportCsv();
+                }
+                );
+
+            this.FreeRfemCommand = new DelegateCommand(
+                (o) =>
+                {
+                    System.Environment.Exit( 0 );
+                }
+                );
         }
 
         public HallGenerator HallGenerator { get; set; } = new();
-       
+        public VerticalBracing VerticalBracing { get; set; } = new VerticalBracing();
+        public HorizontalBracing HorizontalBracing { get; set; } = new HorizontalBracing();
 
-        private double frameHeight;
+
+        private double frameHeight = 5.0;
         public double FrameHeight
         {
             get => frameHeight;
@@ -92,16 +113,98 @@ namespace SteelHall.MAUI
             {
                 if (roofAngle != value)
                 {
-                    roofAngle = value;
+                    roofAngle = value * (Math.PI / 180);
                     this.RaisePropertyChanged();
                 }
             }        
         }
 
-       
+        public bool RadioButton1Checked { get; set; } = false;
+        public bool RadioButton2Checked { get; set; } = false;
+        public bool RadioButton3Checked { get; set; } = false;
+        public bool RadioButton4Checked { get; set; } = false;
+        public bool RadioButton5Checked { get; set; } = false;
+        public bool RadioButton6Checked { get; set; } = false;
+
+        public VerticalBracing CheckVerticalBracing()
+        {
+            //VerticalBracing VerticalBracing = new VerticalBracing();
+
+            if (RadioButton1Checked)
+            {
+                VerticalBracing.BracingType = 1;
+                VerticalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                VerticalBracing.LoopCount = VerticalBracing.BracingNumber / 2;
+                VerticalBracing.Increment = 2;                
+            }
+            else if (RadioButton2Checked)
+            {
+                VerticalBracing.BracingType = 2;
+                VerticalBracing.BracingNumber = (frameNumber * 2) - 2;
+                if (frameNumber % 2 == 0)
+                {
+                    VerticalBracing.LoopCount = (VerticalBracing.BracingNumber / 2) + 1;
+                }
+                else
+                {
+                    VerticalBracing.LoopCount = VerticalBracing.BracingNumber / 2;
+                }
+                VerticalBracing.Increment = 4;
+            }
+            else if (RadioButton3Checked)
+            {
+                VerticalBracing.BracingType = 3;
+                VerticalBracing.BracingNumber = 8;
+                VerticalBracing.LoopCount = 4;
+                VerticalBracing.Increment = (frameNumber * 2) - 4;
+            }
+
+            return VerticalBracing;
+        }
+
+        public HorizontalBracing CheckHorizontalBracing()
+        {
+            //HorizontalBracing HorizontalBracing = new HorizontalBracing();
+
+            if (RadioButton4Checked)
+            {
+                HorizontalBracing.BracingType = 4;
+                HorizontalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                HorizontalBracing.LoopCount = HorizontalBracing.BracingNumber / 2;
+                HorizontalBracing.Increment = 2;
+                HorizontalBracing.IncrementMiddleNode = 1;
+            }
+            else if (RadioButton5Checked)
+            {
+                HorizontalBracing.BracingType = 5;
+                if (frameNumber % 2 == 0)
+                {
+                    HorizontalBracing.BracingNumber = frameNumber * 2;
+                }
+                else
+                {
+                    HorizontalBracing.BracingNumber = frameNumber * 2 - 2;
+                }
+               
+                HorizontalBracing.LoopCount = HorizontalBracing.BracingNumber / 2;
+                HorizontalBracing.Increment = 4;
+                HorizontalBracing.IncrementMiddleNode = 2;
+            }
+            else if (RadioButton6Checked)
+            {
+                HorizontalBracing.BracingType = 6;
+                HorizontalBracing.BracingNumber = 8;
+                HorizontalBracing.LoopCount = 4;
+                HorizontalBracing.Increment = (frameNumber * 2) - 4;
+                HorizontalBracing.IncrementMiddleNode = frameNumber - 2;
+            }
+            return HorizontalBracing;
+        }
 
         public DelegateCommand StartCalculationCommand { get; set; }
-        public Delegate CloseModel { get; set; }
+        public DelegateCommand CloseModelCommand { get; set; }
+        public DelegateCommand ExportCsvCommand { get; set; }
+        public DelegateCommand FreeRfemCommand { get; set; }
 
         //CallermemberName = if parameter not given -> takes automatically parameter of property where method was called (FrameHeight)
         private void RaisePropertyChanged([CallerMemberName] string propertyName = "")
@@ -113,6 +216,8 @@ namespace SteelHall.MAUI
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        
 
     }
 }
