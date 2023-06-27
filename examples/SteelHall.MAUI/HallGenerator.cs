@@ -6,6 +6,7 @@ using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
 using System.Globalization;
 using System.ServiceModel;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 #elif RSTAB
 using Dlubal.WS.Rstab9.Application;
@@ -149,7 +150,8 @@ namespace SteelHall.MAUI
         }
 
         private static ApplicationClient? application = null;
-        string currentDirectory = Directory.GetCurrentDirectory();
+        //var assemblyLocation = Assembly.GetEntryAssembly().Location;
+        //string currentDirectory = Path.GetDirectoryName(assemblyLocation);
 
         public void GenerateHall(double frameHeight, double frameSpan, double frameDistance, int frameNumber, double roofAngle, VerticalBracing verticalBracing, HorizontalBracing horizontalBracing)
         {
@@ -1450,8 +1452,9 @@ namespace SteelHall.MAUI
                     }
                 }
 
-                calculation_message[] calculationMessages = this.Model.calculate_all(true);                             
-               
+                calculation_message[] calculationMessages = this.Model.calculate_all(true);
+                var assemblyLocation = Assembly.GetEntryAssembly().Location;
+                string currentDirectory = Path.GetDirectoryName(assemblyLocation);
                 this.Model.save(currentDirectory + @"\testmodels\");                
             }
             catch (Exception ex)
@@ -1467,6 +1470,8 @@ namespace SteelHall.MAUI
 
         public string ExportCsv()
         {
+            var assemblyLocation = Assembly.GetEntryAssembly().Location;
+            string currentDirectory = Path.GetDirectoryName(assemblyLocation);
             this.Model.export_result_tables_with_detailed_members_results_to_csv(currentDirectory + @"\CSV\");
             return (currentDirectory + @"\CSV\");
         }
