@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿#if RFEM
 using Dlubal.WS.Rfem6.Application;
 using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 using Dlubal.WS.Rfem6.Model;
 using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
 using System.Globalization;
 using System.ServiceModel;
+using Microsoft.Extensions.Logging;
 
-//using Dlubal.WS.Rstab9.Application;
-//using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
-//using Dlubal.WS.Rstab9.Model;
-//using ModelClient = Dlubal.WS.Rstab9.Model.RfemModelClient;
-//#endif
+#elif RSTAB
+using Dlubal.WS.Rstab9.Application;
+using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
+using Dlubal.WS.Rstab9.Model;
+using ModelClient = Dlubal.WS.Rstab9.Model.RfemModelClient;
+#endif
 
 namespace SteelHall.MAUI
 {
@@ -58,17 +55,14 @@ namespace SteelHall.MAUI
             }
             catch (ArgumentNullException)
             {
-                //Console.WriteLine("Please input a value!");
                 doubleCheck = false;
             }
             catch (FormatException)
             {
-                // Console.WriteLine("Please input a number!");
                 doubleCheck = false;
             }
             catch (ArgumentOutOfRangeException)
             {
-                //Console.WriteLine("Please input a value greater than 0!");
                 doubleCheck = false;
             }
             return doubleCheck;
@@ -92,129 +86,25 @@ namespace SteelHall.MAUI
             }
             catch (ArgumentNullException)
             {
-                //Console.WriteLine("Please input a value!");
                 integerCheck = false;
             }
             catch (FormatException)
             {
-                //Console.WriteLine("Please input an integer number!");
                 integerCheck = false;
             }
             catch (ArgumentOutOfRangeException)
             {
-                //Console.WriteLine("Please input a frame number greater 1!");
                 integerCheck = false;
             }
             return integerCheck;
         }
 
-        //public static bool CheckBracingInput(ref string input)
-        //{
-        //    bool bracingCheck = true;
-        //    try
-        //    {
-        //        if (string.IsNullOrEmpty(input))
-        //        {
-        //            throw new ArgumentNullException();
-        //        }
-        //        else if (!(input.ToLower() == "y" || input.ToLower() == "n"))
-        //        {
-        //            throw new ArgumentOutOfRangeException();
-        //        }
-        //        input.ToLower();
-        //    }
-        //    catch (ArgumentNullException)
-        //    {
-        //        Console.WriteLine("Please input Y or N!");
-        //        bracingCheck = false;
-        //    }
-        //    catch (ArgumentOutOfRangeException)
-        //    {
-        //        Console.WriteLine("Please input Y or N!");
-        //        bracingCheck = false;
-        //    }
-
-        //    return bracingCheck;
-        //}
-
-        //public static VerticalBracing GetBracingType(string input, int frameNumber)
-        //{
-        //    VerticalBracing bracing = new VerticalBracing();
-
-        //    switch (input)
-        //    {
-        //        case "1":
-        //            bracing.BracingType = 1;
-        //            bracing.BracingNumber = 2 * ((frameNumber * 2) - 2);
-        //            bracing.LoopCount = bracing.BracingNumber / 2;
-        //            bracing.Increment = 2;
-        //            break;
-        //        case "2":
-        //            bracing.BracingType = 2;
-        //            bracing.BracingNumber = (frameNumber * 2) - 2;
-        //            if (frameNumber % 2 == 0)
-        //            {
-        //                bracing.LoopCount = (bracing.BracingNumber / 2) + 1;
-        //            }
-        //            else
-        //            {
-        //                bracing.LoopCount = bracing.BracingNumber / 2;
-        //            }
-        //            bracing.Increment = 4;
-        //            break;
-        //        case "3":
-        //            bracing.BracingType = 3;
-        //            bracing.BracingNumber = 8;
-        //            bracing.LoopCount = 4;
-        //            bracing.Increment = (frameNumber * 2) - 4;
-        //            break;
-        //        default:
-        //            // value is neither 1 nor 2 nor 3
-        //            throw new ArgumentOutOfRangeException();
-        //    }
-        //    return bracing;
-        //}
-        //public static VerticalBracing GetBracingInput(string message, int frameNumber)
-        //{
-        //    bool check = false;
-        //    bool numberCheck = false;
-        //    string? inputValue = string.Empty;
-        //    string? inputNumber = string.Empty;
-        //    VerticalBracing bracing = new VerticalBracing();
-
-        //    while (check == false)
-        //    {
-        //        Console.Write(message);
-        //        inputValue = Console.ReadLine();
-        //        check = CheckBracingInput(ref inputValue);
-        //    }
-
-        //    if (inputValue == "y")
-        //    {
-        //        while (!numberCheck)
-        //        {
-        //            Console.Write("Do you want vertical bracings in every field (1), in every second field (2) or only in the end fields (3): ");
-        //            inputNumber = Console.ReadLine();
-        //            numberCheck = (inputNumber == "1" || inputNumber == "2" || inputNumber == "3") ? true : false;
-        //            if (!numberCheck)
-        //            {
-        //                Console.WriteLine("Please input either 1, 2 or 3!");
-        //            }
-        //        }
-        //        bracing = GetBracingType(inputNumber, frameNumber);
-        //    }
-        //    return bracing;
-        //}
-
         public static double GetDoubleInput(string inputValue)
         {
             bool check = false;
-            //string inputValue = string.Empty;
 
             while (check == false)
             {
-                //Console.Write(message);
-                //inputValue = ;
                 check = CheckDouble(inputValue);
             }
             double doubleValue = Convert.ToDouble(inputValue.Replace(".", ","), CultureInfo.CurrentCulture);
@@ -224,11 +114,8 @@ namespace SteelHall.MAUI
         public static int GetIntegerInput(string inputValue)
         {
             bool check = false;
-            //string? inputValue = string.Empty;
             while (check == false)
             {
-                //Console.Write(message);
-                //inputValue = Console.ReadLine();
                 check = CheckInteger(inputValue);
             }
             int integerValue = int.Parse(inputValue);
@@ -251,9 +138,9 @@ namespace SteelHall.MAUI
                 {
                     Console.WriteLine(ex.Message);
                     noModelOpened = true;
-                    Console.WriteLine("Close the model and press any key to try again");
-                    Console.ReadKey();
-                    Console.ReadLine();
+                    //Console.WriteLine("Close the model and press any key to try again");
+                    //Console.ReadKey();
+                    //Console.ReadLine();
                 }
             }
             while (noModelOpened);
@@ -266,19 +153,6 @@ namespace SteelHall.MAUI
 
         public void GenerateHall(double frameHeight, double frameSpan, double frameDistance, int frameNumber, double roofAngle, VerticalBracing verticalBracing, HorizontalBracing horizontalBracing)
         {
-            Console.WriteLine("Steel Hall Generator for RFEM6 and RSTAB9");
-
-            //get user-input
-            //double frameHeight = GetDoubleInput("Height of frame [m]: ");
-            //double frameSpan = GetDoubleInput("Frame span [m]: ");
-            //double frameDistance = GetDoubleInput("Distance between frames [m]: ");
-            //int frameNumber = GetIntegerInput("Number of frames: ");
-            //Bracing bracing = GetBracingInput("Do you want to include vertical bracing (Y/N): ", frameNumber);
-
-            //connection to RFEM/RSTAB
-            //Logger logger = LogManager.GetCurrentClassLogger();
-
-
             #region Application Settings
             try
             {
@@ -293,12 +167,10 @@ namespace SteelHall.MAUI
                         if (application.State != CommunicationState.Faulted)
                         {
                             application.Close();
-                            //logger.Error(exception, "Something happened:" + exception.Message);
                         }
                         else
                         {
                             application.Abort();
-                            //logger.Error(exception, "Communication with RFEM faulted:" + exception.Message);
                         }
                         application = null;
                     }
@@ -306,7 +178,6 @@ namespace SteelHall.MAUI
                 finally
                 {
                     application_information ApplicationInfo = application.get_information();
-                    //logger.Info("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                     Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
                 }
                 #endregion
@@ -599,7 +470,6 @@ namespace SteelHall.MAUI
 
                 for (int i = 0; i < horizontalBracing.LoopCount; i++)
                 {
-                    //if ((horizontalBracing.BracingType == 4 || horizontalBracing.BracingType == 5) && nodePositionBHorizontal1 == frameNumber * 2 - 1 )
                     if (nodePositionBHorizontal1 == frameNumber * 2 - 1)
                     {
                         nodePositionBHorizontal1 += 2;
@@ -643,7 +513,13 @@ namespace SteelHall.MAUI
                     lineId += 2;
                 }
 
-//#endif
+                //#endif
+                steel_effective_lengths effectiveLength = new()
+                {
+                    no = 1,
+
+
+                };
                 //steel_effective_lengths_nodal_supports_row startNodalSupportSteel = new steel_effective_lengths_nodal_supports_row()
                 //{
                 //    no = 1,
@@ -666,7 +542,7 @@ namespace SteelHall.MAUI
                         section_start = section1.no,
                         section_startSpecified = true,
                         section_end = section1.no,
-                        section_endSpecified = true,
+                        section_endSpecified = true,                        
                         comment = "column"
                     };
                     zMembers.Add(memberId, newMember);
@@ -716,9 +592,11 @@ namespace SteelHall.MAUI
                         section_distance_from_end_is_defined_as_relative = true,
                         section_distance_from_start_is_defined_as_relativeSpecified = true,
                         section_alignment = member_section_alignment.SECTION_ALIGNMENT_TOP,
+                        section_alignmentSpecified = true,
                         reference_type = member_reference_type.REFERENCE_TYPE_L,
                         reference_typeSpecified = true,
-                        section_alignmentSpecified = true,
+                        design_properties_via_member = false,
+                        design_properties_via_memberSpecified = true,
                         section_start = section4.no,
                         section_startSpecified = true,
                         section_end = section1.no,
@@ -979,7 +857,6 @@ namespace SteelHall.MAUI
                 catch (Exception exception)
                 {
                     this.Model.cancel_modification();
-                    //logger.Error(exception, "Something happened while creation of geometry" + exception.Message);
                     throw;
                 }
                 finally
@@ -990,8 +867,212 @@ namespace SteelHall.MAUI
                     }
                     catch (Exception exception)
                     {
-                        //logger.Error(exception, "Something went wrong while finishing modification of geometry\n" + exception.Message + "\n");
                         this.Model.reset();
+                    }
+                }
+
+                steel_effective_lengths_nodal_supports_row startSteelEffectiveLengthsNodalSupports = new steel_effective_lengths_nodal_supports_row()
+                {
+                    no = 1,
+                    row = new steel_effective_lengths_nodal_supports()
+                    {
+                        support_type = support_type.SUPPORT_TYPE_FIXED_IN_Z_Y_AND_TORSION,
+                        support_typeSpecified = true,
+                        support_in_z = true,
+                        support_in_zSpecified = true,
+                        support_spring_in_y = 0,
+                        support_spring_in_ySpecified = true,
+                        eccentricity_type = eccentricity_type.ECCENTRICITY_TYPE_NONE,
+                        eccentricity_typeSpecified = true,
+                        eccentricity_ez = 0,
+                        eccentricity_ezSpecified = true,
+                        restraint_spring_about_x = 0,
+                        restraint_spring_about_xSpecified = true,
+                        restraint_spring_about_z = 0,
+                        restraint_spring_about_zSpecified = true,
+                        restraint_spring_warping = 0,
+                        restraint_spring_warpingSpecified = true,
+                        support_in_y_type = support_in_y_type.SUPPORT_STATUS_YES,
+                        support_in_y_typeSpecified = true,
+                        restraint_about_x_type = restraint_about_x_type.SUPPORT_STATUS_YES,
+                        restraint_about_x_typeSpecified = true,
+                        restraint_about_z_type = restraint_about_z_type.SUPPORT_STATUS_NO,
+                        restraint_about_z_typeSpecified = true,
+                        restraint_warping_type = restraint_warping_type.SUPPORT_STATUS_NO,
+                        restraint_warping_typeSpecified = true,
+                        //nodes = new int[] { 2, 5, 8 }
+                    }
+                };
+                steel_effective_lengths_nodal_supports_row endSteelEffectiveLengthsNodalSupports = new steel_effective_lengths_nodal_supports_row()
+                {
+                    no = 2,
+                    row = new steel_effective_lengths_nodal_supports()
+                    {
+                        support_type = support_type.SUPPORT_TYPE_FIXED_IN_Z_Y_AND_TORSION,
+                        support_typeSpecified = true,
+                        support_in_z = true,
+                        support_in_zSpecified = true,
+                        support_spring_in_y = 0,
+                        support_spring_in_ySpecified = true,
+                        eccentricity_type = eccentricity_type.ECCENTRICITY_TYPE_NONE,
+                        eccentricity_typeSpecified = true,
+                        eccentricity_ez = 0,
+                        eccentricity_ezSpecified = true,
+                        restraint_spring_about_x = 0,
+                        restraint_spring_about_xSpecified = true,
+                        restraint_spring_about_z = 0,
+                        restraint_spring_about_zSpecified = true,
+                        restraint_spring_warping = 0,
+                        restraint_spring_warpingSpecified = true,
+                        support_in_y_type = support_in_y_type.SUPPORT_STATUS_YES,
+                        support_in_y_typeSpecified = true,
+                        restraint_about_x_type = restraint_about_x_type.SUPPORT_STATUS_YES,
+                        restraint_about_x_typeSpecified = true,
+                        restraint_about_z_type = restraint_about_z_type.SUPPORT_STATUS_NO,
+                        restraint_about_z_typeSpecified = true,
+                        restraint_warping_type = restraint_warping_type.SUPPORT_STATUS_NO,
+                        restraint_warping_typeSpecified = true,
+                        //nodes = new int[] { 3, 6, 9 }
+                    }
+                };
+
+                steel_effective_lengths_factors_row steelEffectiveLengthsFactors = new steel_effective_lengths_factors_row()
+                {
+                    no = 1,
+                    row = new steel_effective_lengths_factors()
+                    {
+                        flexural_buckling_u = 1,
+                        flexural_buckling_uSpecified = true,
+                        flexural_buckling_v = 1,
+                        flexural_buckling_vSpecified = true,
+                        flexural_buckling_y = 0,
+                        flexural_buckling_ySpecified = true,
+                        flexural_buckling_z = 0,
+                        flexural_buckling_zSpecified = true,
+                        torsional_buckling = 1,
+                        torsional_bucklingSpecified = true,
+                        lateral_torsional_buckling = 0,
+                        lateral_torsional_bucklingSpecified = true,
+                        lateral_torsional_buckling_top = 0,
+                        lateral_torsional_buckling_topSpecified = true,
+                        lateral_torsional_buckling_bottom = 0,
+                        lateral_torsional_buckling_bottomSpecified = true,
+                        twist_restraint = 0,
+                        twist_restraintSpecified = true,
+                        lateral_torsional_restraint = 0,
+                        lateral_torsional_restraintSpecified = true,
+                        critical_moment = 0,
+                        critical_momentSpecified = true,
+                    }
+                };
+                steel_effective_lengths steelEffectiveLengths = new steel_effective_lengths()
+                {
+                    no = 1,
+                    name = "Steel effective lengths",
+                    user_defined_name_enabled = true,
+                    user_defined_name_enabledSpecified = true,
+                    members = zMembers.Keys.ToArray(),
+                    flexural_buckling_about_y = true,
+                    flexural_buckling_about_ySpecified = true,
+                    flexural_buckling_about_z = true,
+                    flexural_buckling_about_zSpecified = true,
+                    torsional_buckling = true,
+                    torsional_bucklingSpecified = true,
+                    lateral_torsional_buckling = true,
+                    lateral_torsional_bucklingSpecified = true,
+                    principal_section_axes = true,
+                    principal_section_axesSpecified = true,
+                    geometric_section_axes = false,
+                    geometric_section_axesSpecified = true,
+                    nodal_supports = new steel_effective_lengths_nodal_supports_row[] { startSteelEffectiveLengthsNodalSupports, endSteelEffectiveLengthsNodalSupports },
+                    factors = new steel_effective_lengths_factors_row[] { steelEffectiveLengthsFactors },
+                    intermediate_nodes = false,
+                    intermediate_nodesSpecified = true,
+                    different_properties = true,
+                    different_propertiesSpecified = true,
+                    factors_definition_absolute = false,
+                    factors_definition_absoluteSpecified = true,
+                    import_from_stability_analysis_enabled = false,
+                    import_from_stability_analysis_enabledSpecified = true,
+                    determination_mcr_europe = steel_effective_lengths_determination_mcr_europe.DETERMINATION_EUROPE_EIGENVALUE,
+                    determination_mcr_europeSpecified = true,
+                };
+
+                try
+                {
+                    this.Model.begin_modification("Set steel effective lengths");
+                    this.Model.set_steel_effective_lengths(steelEffectiveLengths);
+                }
+                catch (Exception exception)
+                {
+                    this.Model.cancel_modification();
+                    throw;
+                }
+                finally
+                {
+                    try
+                    {
+                        this.Model.finish_modification();
+                    }
+                    catch (Exception exception)
+                    {
+
+                    }
+                }
+
+
+                steel_design_uls_configuration steelDesignUlsConfiguration = new steel_design_uls_configuration()
+                {
+                    no = 2,
+                    user_defined_name_enabled = true,
+                    user_defined_name_enabledSpecified = true,
+                    name = "Steel ULS config",
+                    comment = "Scripted configuration",
+                    assigned_to_all_members = true,
+                    assigned_to_all_membersSpecified = true,
+                };
+                steel_design_sls_configuration steelDesignSlsConfiguration = new steel_design_sls_configuration()
+                {
+                    no = 2,
+                    user_defined_name_enabled = true,
+                    user_defined_name_enabledSpecified = true,
+                    name = "Steel SLS config",
+                    comment = "Scripted configuration",
+                    assigned_to_all_members = true,
+                    assigned_to_all_membersSpecified = true,
+                };
+                steel_design_fr_configuration steelDesignFrConfiguration = new steel_design_fr_configuration()
+                {
+                    no = 2,
+                    user_defined_name_enabled = true,
+                    user_defined_name_enabledSpecified = true,
+                    name = "Steel FR config",
+                    comment = "Scripted configuration",
+                    assigned_to_all_members = true,
+                    assigned_to_all_membersSpecified = true,
+                };
+
+                try
+                {
+                    this.Model.begin_modification("Set  steel_member_design configurations");
+                    this.Model.set_steel_design_uls_configuration(steelDesignUlsConfiguration);
+                    this.Model.set_steel_design_sls_configuration(steelDesignSlsConfiguration);
+                    this.Model.set_steel_design_fr_configuration(steelDesignFrConfiguration);
+                }
+                catch (Exception exception)
+                {
+                    this.Model.cancel_modification();
+                    throw;
+                }
+                finally
+                {
+                    try
+                    {
+                        this.Model.finish_modification();
+                    }
+                    catch (Exception exception)
+                    {
+
                     }
                 }
 
@@ -1188,7 +1269,6 @@ namespace SteelHall.MAUI
                 catch (Exception exception4)
                 {
                     this.Model.cancel_modification();
-                    //logger.Error(exception4, "Something happened while creation of analysis settings" + exception4.Message);
                     throw;
                 }
                 finally
@@ -1199,7 +1279,6 @@ namespace SteelHall.MAUI
                     }
                     catch (Exception exception3)
                     {
-                        //logger.Error(exception3, "Something went wrong while finishing creation of analysis settings\n" + exception3.Message + "\n");
                         this.Model.reset();
                     }
                 }
@@ -1357,7 +1436,6 @@ namespace SteelHall.MAUI
                 catch (Exception exception2)
                 {
                     this.Model.cancel_modification();
-                    //logger.Error(exception2, "Something happened while load transfer" + exception2.Message);
                     throw;
                 }
                 finally
@@ -1368,105 +1446,17 @@ namespace SteelHall.MAUI
                     }
                     catch (Exception exception)
                     {
-                        //logger.Error(exception, "Something went wrong while finishing load transfer\n" + exception.Message + "\n");
                         this.Model.reset();
                     }
                 }
-//#if RFEM
-                #region generate mesh and get mesh statistics
-                //calculation_message[] meshGenerationMessage = this.Model.generate_mesh(true);
-                //if (meshGenerationMessage.Length != 0)
-                //{
-                //    Console.WriteLine(calculationMessage);
-                //}
-                //mesh_statistics_type mesh_Statistics = this.Model.get_mesh_statistics();
-                //Console.WriteLine("Number of mesh nodes: " + mesh_Statistics.node_elements);
-                //Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
-                //Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
-                //Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
-                #endregion
-//#endif
-                calculation_message[] calculationMessages = this.Model.calculate_all(true);
-                //if (calculationMessages.Length != 0)
-                //{
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Calculation finished successfully");
-                //}
 
-                // printout result messages
-                #region Results
-                //bool modelHasAnyResults = this.Model.has_any_results();
-
-                //if (modelHasAnyResults)
-                //{
-                //    Console.WriteLine("Model has results.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Model has no results.");
-                //}
-
-                //bool modelHasLC2Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, liveLoad.no);
-                //if (modelHasLC2Calculated)
-                //{
-                //    Console.WriteLine("Model has LC2 results.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Model has no LC2 results.");
-                //}
-
-                //bool modelHasLC3Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windX.no);
-                //if (modelHasLC3Calculated)
-                //{
-                //    Console.WriteLine("Model has LC3 results.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Model has no LC3 results.");
-                //}
-
-                //bool modelHasLC4Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, windY.no);
-                //if (modelHasLC4Calculated)
-                //{
-                //    Console.WriteLine("Model has LC4 results.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Model has no LC4 results.");
-                //}
-
-                //bool modelHasLC5Calculated = this.Model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, snow.no);
-                //if (modelHasLC5Calculated)
-                //{
-                //    Console.WriteLine("Model has LC5 results.");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Model has no LC5 results.");
-                //}
-                #endregion
-
-                #region export results
-                //this.Model.export_result_tables_with_detailed_members_results_to_csv("C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV");
-                //Console.WriteLine("Results have been exported as CSV-files to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\CSV.");
-                #endregion
-
-                this.Model.save(currentDirectory + @"\testmodels\");
-                //Console.WriteLine("Model has been saved to C:\\Users\\GoebelR\\Documents\\Webservices\\testmodels\\SteelHall.");
-
-                //Console.Write("Press enter to close the this.Model.");
-                //if (Console.ReadKey().Key == ConsoleKey.Enter)
-                //{
-                //    application.close_model(0, true);
-                //}
+                calculation_message[] calculationMessages = this.Model.calculate_all(true);                             
+               
+                this.Model.save(currentDirectory + @"\testmodels\");                
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine(ex);
-                //logger.Error(ex, "Stopped program because of exception :" + ex.Message);                
+                Console.Error.WriteLine(ex);          
             }
         }
 

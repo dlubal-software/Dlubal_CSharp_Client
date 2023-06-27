@@ -42,6 +42,8 @@
             <Style TargetType="RadioButton" x:Key="RadioButtonStyle">
                 <Setter Property="ControlTemplate" Value="{StaticResource RadioButtonTemplate}" />
             </Style>
+            <local:StringToDoubleConverter x:Key="stringToDouble"/>
+            <local:StringToIntConverter x:Key="stringToInt"/>
 
         </ResourceDictionary>
         <!--<ResourceDictionary>
@@ -161,7 +163,7 @@
             <Entry
                 x:Name="InputHeight"
                 Margin="0,0,0,5"
-                Text="{Binding FrameHeight}"
+                Text="{Binding FrameHeight, UpdateSourceEventName=Pr, Converter={StaticResource stringToDouble}}"
                 Grid.Row="3"
                 Grid.Column="3"
                 WidthRequest="20"
@@ -180,7 +182,7 @@
             <Entry
                 x:Name="InputSpan"
                 Margin="0,0,0,5"
-                Text="{Binding FrameSpan, Mode=OneWayToSource}"
+                Text="{Binding FrameSpan, Converter={StaticResource stringToDouble}}"
                 Grid.Row="4"
                 Grid.Column="3"
                 HorizontalOptions="Start"
@@ -197,7 +199,7 @@
             <Entry
                 x:Name="InputDistance"
                 Margin="0,0,0,5"
-                Text="{Binding FrameDistance, Mode=OneWayToSource}"
+                Text="{Binding FrameDistance, Converter={StaticResource stringToDouble}}"
                 Grid.Row="5"
                 Grid.Column="3"
                 HorizontalOptions="Start"
@@ -214,7 +216,7 @@
             <Entry
                 x:Name="InputFrameNumber"
                 Margin="0,0,0,5"
-                Text="{Binding FrameNumber, Mode=OneWayToSource}"
+                Text="{Binding FrameNumber, Converter={StaticResource stringToInt}}"
                 Grid.Row="6"
                 Grid.Column="3"
                 FontSize="{local:GlobalFontSize}"
@@ -232,7 +234,7 @@
             <Entry
                 x:Name="InputAngle"
                 Margin="0,0,0,5"
-                Text="{Binding RoofAngle, Mode=OneWayToSource}"
+                Text="{Binding RoofAngle, Mode=OneWayToSource, Converter={StaticResource stringToDouble}}"
                 Grid.Row="7"
                 Grid.Column="3"
                 HorizontalOptions="Start"
@@ -248,7 +250,7 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="2"></Label>
             <Label
-                Text="Calculation has not been started yet!"
+                Text="{Binding StatusText}"
                 Margin="100,0,0,10"
                 HorizontalOptions="Start"
                 FontSize="16"
@@ -256,39 +258,7 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 Grid.Row="14"></Label>
-            <!--<RadioButton
-                GroupName="verticalBracing"
-                Content="Include bracing in every field"
-                Style="{StaticResource RadioButtonStyle}"
-                IsChecked="{Binding RadioButton1Checked}"
-                FontSize="{local:GlobalFontSize}"
-                TextColor="{local:GlobalTextColor}"               
-                Grid.Row="3"
-                Grid.Column="4"
-                HorizontalOptions="Start"
-                VerticalOptions="End"></RadioButton>
-            <RadioButton
-                GroupName="verticalBracing"
-                Content="Include bracing in every second field"                
-                Style="{StaticResource RadioButtonStyle}"
-                IsChecked="{Binding RadioButton2Checked}"
-                FontSize="{local:GlobalFontSize}"
-                TextColor="{local:GlobalTextColor}"                 
-                Grid.Row="4"
-                Grid.Column="4"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"></RadioButton>
-            <RadioButton
-                GroupName="verticalBracing"
-                Content="Include bracing only in the end fields"
-                Style="{StaticResource RadioButtonStyle}"
-                IsChecked="{Binding RadioButton3Checked}"
-                FontSize="{local:GlobalFontSize}"
-                TextColor="{local:GlobalTextColor}"              
-                Grid.Row="5"
-                Grid.Column="4"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"></RadioButton>-->
+            
             <VerticalStackLayout RadioButtonGroup.GroupName="verticalBracing"
                          Grid.Row="3"
                          Grid.RowSpan="3"
@@ -296,7 +266,7 @@
                 <RadioButton                
                     Content="Include bracing in every field"
                     Style="{StaticResource RadioButtonStyle}"
-                    IsChecked="{Binding RadioButton1Checked}"
+                    IsChecked="{Binding RadioButtonVerticalEveryFieldChecked}"
                     FontSize="{local:GlobalFontSize}"
                     TextColor="{local:GlobalTextColor}"            
                     HorizontalOptions="Start"
@@ -305,7 +275,7 @@
                 <RadioButton
                     Content="Include bracing in every second field" 
                     Style="{StaticResource RadioButtonStyle}"
-                    IsChecked="{Binding RadioButton2Checked}"
+                    IsChecked="{Binding RadioButtonVerticalSecondFieldChecked}"
                     FontSize="{local:GlobalFontSize}"
                     TextColor="{local:GlobalTextColor}"         
                     HorizontalOptions="Start"
@@ -314,13 +284,14 @@
                 <RadioButton
                     Content="Include bracing only in the end fields"
                     Style="{StaticResource RadioButtonStyle}"
-                    IsChecked="{Binding RadioButton3Checked}"
+                    IsChecked="{Binding RadioButtonVerticalEndFieldChecked}"
                     FontSize="{local:GlobalFontSize}"
                     TextColor="{local:GlobalTextColor}"   
                     HorizontalOptions="Start"
                     VerticalOptions="Start">
                 </RadioButton>
             </VerticalStackLayout>
+            
             <VerticalStackLayout RadioButtonGroup.GroupName="horizontalBracing"
                          Grid.Row="6"
                          Grid.RowSpan="3"
@@ -328,7 +299,7 @@
                 <RadioButton
                     Content="Include bracing in every field"
                     Style="{StaticResource RadioButtonStyle}"
-                    IsChecked="{Binding RadioButton4Checked}"
+                    IsChecked="{Binding RadioButtonHorizontalEveryFieldChecked}"
                     FontSize="{local:GlobalFontSize}"
                     TextColor="{local:GlobalTextColor}"      
                     HorizontalOptions="Start"
@@ -337,7 +308,7 @@
                 <RadioButton
                     Content="Include bracing in every second field"
                     Style="{StaticResource RadioButtonStyle}"
-                    IsChecked="{Binding RadioButton5Checked}"
+                    IsChecked="{Binding RadioButtonHorizontalSecondFieldChecked}"
                     FontSize="{local:GlobalFontSize}"                
                     TextColor="{local:GlobalTextColor}"
                     HorizontalOptions="Start">
@@ -345,7 +316,7 @@
                 <RadioButton
                     Content="Include bracing only in the end fields"
                     Style="{StaticResource RadioButtonStyle}"
-                    IsChecked="{Binding RadioButton6Checked}"
+                    IsChecked="{Binding RadioButtonHorizontalEndFieldChecked}"
                     FontSize="{local:GlobalFontSize}"
                     TextColor="{local:GlobalTextColor}"     
                     HorizontalOptions="Start">
@@ -361,41 +332,7 @@
                 HorizontalOptions="Center"
                 TextColor="{local:GlobalTextColor}"
                 Grid.Row="5"
-                Grid.Column="4"></Label>
-                <!--<RadioButton
-                GroupName="horizontalBracing"
-                Content="Include bracing in every field"
-                Style="{StaticResource RadioButtonStyle}"
-                IsChecked="{Binding RadioButton4Checked}"
-                FontSize="{local:GlobalFontSize}"
-                TextColor="{local:GlobalTextColor}"               
-                Grid.Row="7"
-                Grid.Column="4"
-                HorizontalOptions="Start"
-                VerticalOptions="End"></RadioButton>
-            <RadioButton
-                GroupName="horizontalBracing"
-                Content="Include bracing in every second field"
-                Margin="0,7,0,0"
-                Style="{StaticResource RadioButtonStyle}"
-                IsChecked="{Binding RadioButton5Checked}"
-                FontSize="{local:GlobalFontSize}"                
-                TextColor="{local:GlobalTextColor}"
-                Grid.Row="8"
-                Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>
-            <RadioButton
-                GroupName="horizontalBracing"
-                Content="Include bracing only in the end fields"
-                Margin="0,7,0,0"
-                Style="{StaticResource RadioButtonStyle}"
-                IsChecked="{Binding RadioButton6Checked}"
-                FontSize="{local:GlobalFontSize}"
-                TextColor="{local:GlobalTextColor}"               
-                Grid.Row="9"
-                Grid.Column="4"
-                HorizontalOptions="Start"></RadioButton>-->
-
+                Grid.Column="4"></Label>                
                 <Image 
                 Grid.Column="0"
                 Grid.ColumnSpan="2"

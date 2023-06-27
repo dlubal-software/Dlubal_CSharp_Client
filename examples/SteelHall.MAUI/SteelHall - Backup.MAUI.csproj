@@ -31,17 +31,17 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
-	</PropertyGroup>
+    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
-		<DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
-		<DefineConstants>TRACE;RSTAB</DefineConstants>
-	</PropertyGroup>
-	
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
+    <DefineConstants>TRACE;RSTAB</DefineConstants>
+  </PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -62,6 +62,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="NLog" Version="5.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>
