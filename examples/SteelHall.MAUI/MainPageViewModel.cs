@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.Globalization;
-using System.Reflection.Metadata.Ecma335;
 
 namespace SteelHall.MAUI
 {
@@ -64,7 +57,7 @@ namespace SteelHall.MAUI
         public VerticalBracing VerticalBracing { get; set; } = new VerticalBracing();
         public HorizontalBracing HorizontalBracing { get; set; } = new HorizontalBracing();
 
-        private string statusText = "Calculation has not been started yet!";
+        private string statusText = "Please use only number input! Otherwise default values will be applied!";
         public string StatusText
         {
             get => statusText;
@@ -75,6 +68,11 @@ namespace SteelHall.MAUI
             }
         }
 
+        public void ChangeStatusText(string message)
+        {
+            StatusText = message;
+        }
+
         private double frameHeight = 5.0;
         public double FrameHeight
         {
@@ -82,12 +80,13 @@ namespace SteelHall.MAUI
             set
             {
                 if (frameHeight != value)
-                {                    
+                {
                     frameHeight = value;
                     this.RaisePropertyChanged();
                 }
             }
         }
+
         private double frameSpan = 10.0;
         public double FrameSpan
         {
@@ -251,7 +250,7 @@ namespace SteelHall.MAUI
             }
             else
             {                
-                return value.ToString();
+                return value;
             }
         }
 
@@ -260,12 +259,14 @@ namespace SteelHall.MAUI
 
             if (value == null)
             {
-                return 5.0;
+                return 5;
             }
+            string stringValue = (string)value;
+
 
             try
             {
-                return double.Parse(((string)value).Replace(".", ","), CultureInfo.CurrentCulture);
+                return double.Parse((stringValue).Replace(".", ","), CultureInfo.CurrentCulture);
             }
             catch (Exception)
             {

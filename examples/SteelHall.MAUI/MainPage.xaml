@@ -154,7 +154,7 @@
             <Entry
                 x:Name="InputHeight"
                 Margin="0,0,0,5"
-                Text="{Binding FrameHeight, UpdateSourceEventName=Pr, Converter={StaticResource stringToDouble}}"
+                Text="{Binding FrameHeight, Converter={StaticResource stringToDouble}}"
                 Grid.Row="3"
                 Grid.Column="3"
                 WidthRequest="20"

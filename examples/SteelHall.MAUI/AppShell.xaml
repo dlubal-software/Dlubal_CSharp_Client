@@ -6,7 +6,9 @@
     xmlns:local="clr-namespace:SteelHall.MAUI"
     Shell.FlyoutBehavior="Disabled"
     BackgroundColor="White"
-    Shell.TitleColor="#050552">
+    Shell.TitleColor="#050552"
+    WidthRequest="950"
+    HeightRequest="525">
 
     <ShellContent
         Title="Steel Hall Generator"

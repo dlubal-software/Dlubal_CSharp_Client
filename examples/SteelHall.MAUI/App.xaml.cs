@@ -36,20 +36,18 @@ namespace SteelHall.MAUI
             //#endif
             //            });
             //        }
+        }
 
-            //protected override Window CreateWindow(IActivationState activationState)
-            //{
-            //    var window = base.CreateWindow(activationState);
-            //    const int newWidth = 950;
-            //    const int newHeight = 650;
-            //    var screen = DeviceDisplay.Current.MainDisplayInfo;
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            var window = base.CreateWindow(activationState);
+            const int newWidth = 950;
+            const int newHeight = 525;
 
-            //    window.Width = Auto;
-            //    window.Height = newHeight;
-            //    window.MinimumWidth = window.MaximumWidth = newWidth;
-            //    window.MaximumHeight = window.MinimumHeight = newHeight;
+            window.MinimumWidth = window.MaximumWidth = newWidth;
+            window.MaximumHeight = window.MinimumHeight = newHeight;
 
-            //    return window;
+            return window;
         }
     }
 }
