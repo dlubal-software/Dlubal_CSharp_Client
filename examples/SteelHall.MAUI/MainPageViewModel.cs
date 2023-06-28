@@ -15,24 +15,11 @@ namespace SteelHall.MAUI
     {
         public MainPageViewModel()
         {
-            //StatusText = "Calculation has not been started yet!";
 
             this.StartCalculationCommand = new DelegateCommand(
                 async (o) =>
                 {
-                    await StartCalculation();
-                    //StatusText = "Calculation started!";
-                    ////await Task.Run(() =>
-                    ////{
-                    ////    this.CheckVerticalBracing();
-                    ////    this.CheckHorizontalBracing();
-                    ////    this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
-                    ////});
-                    //this.CheckVerticalBracing();
-                    //this.CheckHorizontalBracing();
-                    ////StatusText = "Calculation started!";
-                    //this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
-                    //StatusText = HallGenerator.CreateResultMessage();
+                    await StartCalculation();                    
                 }
                 );
 
@@ -85,7 +72,6 @@ namespace SteelHall.MAUI
             {
                 statusText = value;
                 this.RaisePropertyChanged();
-
             }
         }
 
@@ -195,7 +181,6 @@ namespace SteelHall.MAUI
                 VerticalBracing.LoopCount = 4;
                 VerticalBracing.Increment = (frameNumber * 2) - 4;
             }
-
             return VerticalBracing;
         }
 
@@ -241,7 +226,6 @@ namespace SteelHall.MAUI
         public DelegateCommand ExportCsvCommand { get; set; }
         public DelegateCommand FreeRfemCommand { get; set; }
 
-        //CallermemberName = if parameter not given -> takes automatically parameter of property where method was called (FrameHeight)
         private void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
             if (!string.IsNullOrEmpty(propertyName))

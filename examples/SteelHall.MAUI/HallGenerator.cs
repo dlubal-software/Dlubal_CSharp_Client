@@ -71,6 +71,7 @@ namespace SteelHall.MAUI
                 this.Model.reset();
                 #endregion
 
+                // activate steel add-on
                 addon_list_type addOn = Model.get_addon_statuses();
                 addOn.design_addons.steel_design_active = true;
 
@@ -187,6 +188,7 @@ namespace SteelHall.MAUI
                     xVector += frameSpan;
                     yVector = 0.0;
                 }
+
                 //middle nodes
                 xVector = 0.5 * frameSpan;
                 yVector = 0.0;
@@ -213,7 +215,6 @@ namespace SteelHall.MAUI
                 }
 
                 //create lines
-
                 int lineId = 1;
                 int m = 0;
                 int numberOfLines = frameNumber * 4 + (frameNumber - 2);
@@ -548,6 +549,7 @@ namespace SteelHall.MAUI
                     }
                 };
 
+                //transfer basic objects to RFEM
                 try
                 {
                     this.Model.begin_modification("Geometry");
@@ -561,7 +563,6 @@ namespace SteelHall.MAUI
                     {
                         this.Model.set_node(nodeItem.Value);
                     }
-#if RFEM
                     foreach (KeyValuePair<int, line> lineItem in zLines)
                     {
                         this.Model.set_line(lineItem.Value);
@@ -582,7 +583,6 @@ namespace SteelHall.MAUI
                     {
                         this.Model.set_line(lineItem.Value);
                     }
-#endif
                     foreach (KeyValuePair<int, member> memberItem in zMembers)
                     {
                         this.Model.set_member(memberItem.Value);
@@ -622,6 +622,7 @@ namespace SteelHall.MAUI
                     }
                 }
 
+                //define effective length parameters for steel design
                 steel_effective_lengths_nodal_supports_row startSteelEffectiveLengthsNodalSupports = new steel_effective_lengths_nodal_supports_row()
                 {
                     no = 1,
@@ -653,6 +654,7 @@ namespace SteelHall.MAUI
                         restraint_warping_typeSpecified = true
                     }
                 };
+
                 steel_effective_lengths_nodal_supports_row endSteelEffectiveLengthsNodalSupports = new steel_effective_lengths_nodal_supports_row()
                 {
                     no = 2,
@@ -714,6 +716,7 @@ namespace SteelHall.MAUI
                         critical_momentSpecified = true,
                     }
                 };
+
                 steel_effective_lengths steelEffectiveLengths = new steel_effective_lengths()
                 {
                     no = 1,
@@ -769,6 +772,7 @@ namespace SteelHall.MAUI
                     }
                 }
 
+                //define configurations for steel design
                 steel_design_uls_configuration steelDesignUlsConfiguration = new steel_design_uls_configuration()
                 {
                     no = 2,
@@ -824,12 +828,14 @@ namespace SteelHall.MAUI
                     }
                 }
 
+                //define load cases and combinations
                 static_analysis_settings analysis = new static_analysis_settings()
                 {
                     no = 1,
                     analysis_type = static_analysis_settings_analysis_type.GEOMETRICALLY_LINEAR,
                     analysis_typeSpecified = true
                 };
+
                 load_case selfWeightLC = new load_case()
                 {
                     no = 1,
@@ -848,6 +854,7 @@ namespace SteelHall.MAUI
                     stability_analysis_settings = analysis.no,
                     stability_analysis_settingsSpecified = true
                 };
+
                 load_case liveLoad = new load_case()
                 {
                     no = 2,
@@ -860,6 +867,7 @@ namespace SteelHall.MAUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_IMPOSED_LOADS_CATEGORY_A_DOMESTIC_RESIDENTIAL_AREAS_QI_A"
                 };
+
                 load_case windX = new load_case()
                 {
                     no = 3,
@@ -872,6 +880,7 @@ namespace SteelHall.MAUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_WIND_QW"
                 };
+
                 load_case windY = new load_case()
                 {
                     no = 4,
@@ -884,6 +893,7 @@ namespace SteelHall.MAUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_WIND_QW"
                 };
+
                 load_case snow = new load_case()
                 {
                     no = 5,
@@ -896,6 +906,7 @@ namespace SteelHall.MAUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_SNOW_ICE_LOADS_H_LESS_OR_EQUAL_TO_1000_M_QS"
                 };
+
                 List<load_case> loadCases = new List<load_case>();
                 loadCases.Add(selfWeightLC);
                 loadCases.Add(liveLoad);
@@ -915,6 +926,7 @@ namespace SteelHall.MAUI
                     consider_inclusive_exclusive_load_cases = true,
                     consider_inclusive_exclusive_load_casesSpecified = true
                 };
+
                 load_combination_items_row load_Combination_SW = new load_combination_items_row()
                 {
                     no = 1,
@@ -926,6 +938,7 @@ namespace SteelHall.MAUI
                         factorSpecified = true
                     }
                 };
+
                 load_combination_items_row load_Combination_liveLoad = new load_combination_items_row()
                 {
                     no = 2,
@@ -937,6 +950,7 @@ namespace SteelHall.MAUI
                         factorSpecified = true
                     }
                 };
+
                 load_combination_items_row load_Combination_windX = new load_combination_items_row()
                 {
                     no = 3,
@@ -948,6 +962,7 @@ namespace SteelHall.MAUI
                         factorSpecified = true
                     }
                 };
+
                 load_combination_items_row load_Combination_windY = new load_combination_items_row()
                 {
                     no = 4,
@@ -959,6 +974,7 @@ namespace SteelHall.MAUI
                         factorSpecified = true
                     }
                 };
+
                 load_combination_items_row load_Combination_snow = new load_combination_items_row()
                 {
                     no = 5,
@@ -970,6 +986,7 @@ namespace SteelHall.MAUI
                         factorSpecified = true
                     }
                 };
+
                 load_combination_items_row[] loadCombinationItems1 = new load_combination_items_row[4] { load_Combination_SW, load_Combination_liveLoad, load_Combination_windX, load_Combination_snow };
                 load_combination_items_row[] loadCombinationItems2 = new load_combination_items_row[4] { load_Combination_SW, load_Combination_liveLoad, load_Combination_windY, load_Combination_snow };
 
@@ -987,6 +1004,7 @@ namespace SteelHall.MAUI
                     design_situation = 1,
                     design_situationSpecified = true
                 };
+
                 load_combination load_Combination2 = new load_combination()
                 {
                     no = 2,
@@ -1001,6 +1019,8 @@ namespace SteelHall.MAUI
                     design_situation = 1,
                     design_situationSpecified = true
                 };
+
+                //transfer load cases and combinations to RFEM
                 try
                 {
                     this.Model.begin_modification("Load");
@@ -1047,7 +1067,7 @@ namespace SteelHall.MAUI
                         magnitude = 3000.0,
                         magnitudeSpecified = true,
                         load_is_over_total_length = true,
-                        load_is_over_total_lengthSpecified = true,
+                        load_is_over_total_lengthSpecified = true
                     };
                     member_loads_LC2.Add(member_load_id, newMemberLoad);
                     member_load_id++;
@@ -1064,7 +1084,7 @@ namespace SteelHall.MAUI
                         magnitude_2 = 750.0,
                         magnitude_2Specified = true,
                         load_is_over_total_length = true,
-                        load_is_over_total_lengthSpecified = true,
+                        load_is_over_total_lengthSpecified = true
                     };
                     member_loads_LC5.Add(member_load_id, newMemberLoad2);
                     member_load_id++;
@@ -1089,7 +1109,7 @@ namespace SteelHall.MAUI
                             magnitude = 1500.0,
                             magnitudeSpecified = true,
                             load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
+                            load_is_over_total_lengthSpecified = true
                         };
                         member_loads_LC3.Add(member_load_id, newMemberLoad);
                         member_load_id++;
@@ -1108,7 +1128,7 @@ namespace SteelHall.MAUI
                             magnitude = 700.0,
                             magnitudeSpecified = true,
                             load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
+                            load_is_over_total_lengthSpecified = true
                         };
                         member_loads_LC3.Add(member_load_id, newMemberLoad);
                         member_load_id++;
@@ -1134,7 +1154,7 @@ namespace SteelHall.MAUI
                             magnitude = 800.0,
                             magnitudeSpecified = true,
                             load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
+                            load_is_over_total_lengthSpecified = true
                         };
                         member_loads_LC4.Add(member_load_id, newMemberLoad);
                         member_load_id++;
@@ -1153,13 +1173,14 @@ namespace SteelHall.MAUI
                             magnitude = 400.0,
                             magnitudeSpecified = true,
                             load_is_over_total_length = true,
-                            load_is_over_total_lengthSpecified = true,
+                            load_is_over_total_lengthSpecified = true
                         };
                         member_loads_LC4.Add(member_load_id, newMemberLoad);
                         member_load_id++;
                     }
                 }
 
+                //transfer loads to RFEM
                 try
                 {
                     this.Model.begin_modification("Set loads");
@@ -1208,6 +1229,7 @@ namespace SteelHall.MAUI
             }
         }
 
+        //method to close the current RFEM-model after calculation is finished
         public void CloseModel()
         {
             string[] models = application.get_model_list();
@@ -1216,6 +1238,7 @@ namespace SteelHall.MAUI
             application.close_model(modelNumber, false);
         }
 
+        //method to export the results as csv-file
         public string ExportCsv()
         {
             var assemblyLocation = Assembly.GetEntryAssembly().Location;
@@ -1224,6 +1247,7 @@ namespace SteelHall.MAUI
             return (currentDirectory + @"\CSV\");
         }
 
+        //method that checks if calculation was successful
         public string CreateResultMessage()
         {
             string resultMessages = string.Empty;

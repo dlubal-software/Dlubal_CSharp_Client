@@ -5,7 +5,6 @@
              x:Class="SteelHall.MAUI.MainPage"             
              BackgroundColor="#050552">
     <ContentPage.Resources>
-        <!--<ResourceDictionary Source="Resources/Styles/Colors.xaml" />-->
         <ResourceDictionary>
             <ControlTemplate x:Key="RadioButtonTemplate">
                 <Border Stroke="Transparent" BackgroundColor="Transparent">
@@ -44,20 +43,12 @@
             </Style>
             <local:StringToDoubleConverter x:Key="stringToDouble"/>
             <local:StringToIntConverter x:Key="stringToInt"/>
-
         </ResourceDictionary>
-        <!--<ResourceDictionary>
-            <Color x:Key="PageTextColor">White</Color>
-            <Button x:Key="PageButtons"
-                    BackgroundColor="White" 
-                    TextColor="#050552"></Button>
-        </ResourceDictionary>-->
     </ContentPage.Resources>
 
     <ContentPage.BindingContext>
         <local:MainPageViewModel/>
     </ContentPage.BindingContext>
-
 
     <ScrollView>
         <Grid>
@@ -258,7 +249,7 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 Grid.Row="14"></Label>
-            
+
             <VerticalStackLayout RadioButtonGroup.GroupName="verticalBracing"
                          Grid.Row="3"
                          Grid.RowSpan="3"
@@ -291,7 +282,7 @@
                     VerticalOptions="Start">
                 </RadioButton>
             </VerticalStackLayout>
-            
+
             <VerticalStackLayout RadioButtonGroup.GroupName="horizontalBracing"
                          Grid.Row="6"
                          Grid.RowSpan="3"
@@ -332,8 +323,8 @@
                 HorizontalOptions="Center"
                 TextColor="{local:GlobalTextColor}"
                 Grid.Row="5"
-                Grid.Column="4"></Label>                
-                <Image 
+                Grid.Column="4"></Label>
+            <Image 
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Grid.Row="11"
