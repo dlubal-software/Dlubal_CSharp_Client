@@ -83,9 +83,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="20"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button
@@ -234,7 +234,7 @@
             <Entry
                 x:Name="InputAngle"
                 Margin="0,0,0,5"
-                Text="{Binding RoofAngle, Mode=OneWayToSource, Converter={StaticResource stringToDouble}}"
+                Text="{Binding RoofAngle, Converter={StaticResource stringToDouble}}"
                 Grid.Row="7"
                 Grid.Column="3"
                 HorizontalOptions="Start"

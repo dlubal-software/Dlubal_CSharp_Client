@@ -1,19 +1,9 @@
-﻿#if RFEM
-using Dlubal.WS.Rfem6.Application;
+﻿using Dlubal.WS.Rfem6.Application;
 using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 using Dlubal.WS.Rfem6.Model;
 using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
-using System.Globalization;
 using System.ServiceModel;
-using Microsoft.Extensions.Logging;
 using System.Reflection;
-
-#elif RSTAB
-using Dlubal.WS.Rstab9.Application;
-using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
-using Dlubal.WS.Rstab9.Model;
-using ModelClient = Dlubal.WS.Rstab9.Model.RfemModelClient;
-#endif
 
 namespace SteelHall.MAUI
 {
@@ -36,122 +26,9 @@ namespace SteelHall.MAUI
 
                 return binding;
             }
-        }
-
-        public static bool CheckDouble(string? input)
-        {
-            bool doubleCheck = true;
-            try
-            {
-                if (string.IsNullOrEmpty(input))
-                {
-                    throw new ArgumentNullException(nameof(input));
-                }
-                double doubleValue = Convert.ToDouble(input.Replace(".", ","), CultureInfo.CurrentCulture);
-
-                if (input == "0" || doubleValue < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-            catch (ArgumentNullException)
-            {
-                doubleCheck = false;
-            }
-            catch (FormatException)
-            {
-                doubleCheck = false;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                doubleCheck = false;
-            }
-            return doubleCheck;
-        }
-
-        public static bool CheckInteger(string? input)
-        {
-            bool integerCheck = true;
-            try
-            {
-                if (string.IsNullOrEmpty(input))
-                {
-                    throw new ArgumentNullException(nameof(input));
-                }
-                int.TryParse(input, out int intInput);
-
-                if (intInput < 2)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-            catch (ArgumentNullException)
-            {
-                integerCheck = false;
-            }
-            catch (FormatException)
-            {
-                integerCheck = false;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                integerCheck = false;
-            }
-            return integerCheck;
-        }
-
-        public static double GetDoubleInput(string inputValue)
-        {
-            bool check = false;
-
-            while (check == false)
-            {
-                check = CheckDouble(inputValue);
-            }
-            double doubleValue = Convert.ToDouble(inputValue.Replace(".", ","), CultureInfo.CurrentCulture);
-            return doubleValue;
-        }
-
-        public static int GetIntegerInput(string inputValue)
-        {
-            bool check = false;
-            while (check == false)
-            {
-                check = CheckInteger(inputValue);
-            }
-            int integerValue = int.Parse(inputValue);
-            return integerValue;
-        }
-
-        public static string ModelOpenedCheck(string modelName)
-        {
-            bool noModelOpened = false;
-            string modelUrl = string.Empty;
-
-            do
-            {
-                try
-                {
-                    modelUrl = application.new_model(modelName);
-                    noModelOpened = false;
-                }
-                catch (FaultException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    noModelOpened = true;
-                    //Console.WriteLine("Close the model and press any key to try again");
-                    //Console.ReadKey();
-                    //Console.ReadLine();
-                }
-            }
-            while (noModelOpened);
-
-            return modelUrl;
-        }
-
+        }                 
+                      
         private static ApplicationClient? application = null;
-        //var assemblyLocation = Assembly.GetEntryAssembly().Location;
-        //string currentDirectory = Path.GetDirectoryName(assemblyLocation);
 
         public void GenerateHall(double frameHeight, double frameSpan, double frameDistance, int frameNumber, double roofAngle, VerticalBracing verticalBracing, HorizontalBracing horizontalBracing)
         {
@@ -185,8 +62,9 @@ namespace SteelHall.MAUI
                 #endregion
 
                 string modelName = "SteelHall";
-                //check if model with same name is already opened
-                string modelUrl = ModelOpenedCheck(modelName);
+
+                string modelUrl = application.new_model(modelName);
+                roofAngle = roofAngle * (Math.PI / 180);
 
                 #region new model
                 this.Model = new ModelClient(Binding, new EndpointAddress(modelUrl));
@@ -335,7 +213,7 @@ namespace SteelHall.MAUI
                 }
 
                 //create lines
-//#if RFEM
+
                 int lineId = 1;
                 int m = 0;
                 int numberOfLines = frameNumber * 4 + (frameNumber - 2);
@@ -514,26 +392,13 @@ namespace SteelHall.MAUI
                     }
                     lineId += 2;
                 }
-
-                //#endif
-                steel_effective_lengths effectiveLength = new()
-                {
-                    no = 1,
-
-
-                };
-                //steel_effective_lengths_nodal_supports_row startNodalSupportSteel = new steel_effective_lengths_nodal_supports_row()
-                //{
-                //    no = 1,
-
-
-                //};
+                                          
                 //create members
                 int memberId = 1;
 
                 //members in z-direction
                 SortedList<int, member> zMembers = new SortedList<int, member>();
-//#if RFEM
+
                 foreach (KeyValuePair<int, line> lineItem in zLines)
                 {
                     member newMember = new()
@@ -550,32 +415,10 @@ namespace SteelHall.MAUI
                     zMembers.Add(memberId, newMember);
                     memberId++;
                 }
-//#elif RSTAB
-//                int j = 0;
 
-//                for (int i = 0; i < frameNumber; i++)
-//			    {
-//                     member newMember = new()
-//                    {
-//                        no = memberId,
-//                        node_start = lineDefinitionNodes[j],
-//                        node_startSpecified = true,
-//                        node_end = lineDefinitionNodes[j + 1],
-//                        node_endSpecified = true,
-//                        section_start = section1.no,
-//                        section_startSpecified = true,
-//                        section_end = section1.no,
-//                        section_endSpecified = true,
-//                        comment = "concrete beam"
-//                    };
-//                    zMembers.Add(memberId, newMember);
-//                    memberId++;
-//                    j += 2;
-//			    }
-//#endif
                 //members in x-direction
                 SortedList<int, member> xMembers = new SortedList<int, member>();
-//#if RFEM
+
                 foreach (KeyValuePair<int, line> lineItem in xLines)
                 {
                     member newMember = new()
@@ -608,31 +451,10 @@ namespace SteelHall.MAUI
                     xMembers.Add(memberId, newMember);
                     memberId++;
                 }
-//#elif RSTAB
-//                int nodePositionX = 0;
-//                for (int i = 0; i < frameNumber; i++)
-//			    {
-//                     member newMember = new()
-//                    {
-//                        no = memberId,
-//                        node_start = lineDefinitionNodes[nodePositionX],
-//                        node_startSpecified = true,
-//                        node_end = lineDefinitionNodes[nodePositionX + 2],
-//                        node_endSpecified = true,
-//                        section_start = section1.no,
-//                        section_startSpecified = true,
-//                        section_end = section1.no,
-//                        section_endSpecified = true,
-//                        comment = "concrete beam"
-//                    };
-//                    zMembers.Add(memberId, newMember);
-//                    memberId++;
-//                    nodePositionX += 4;
-//			    }
-//#endif
+
                 //members in y - direction
                 SortedList<int, member> yMembers = new SortedList<int, member>();
-//#if RFEM
+
                 foreach (KeyValuePair<int, line> lineItem in yLines)
                 {
                     member newMember = new()
@@ -649,33 +471,10 @@ namespace SteelHall.MAUI
                     yMembers.Add(memberId, newMember);
                     memberId++;
                 }
-//#elif RSTAB
-//                int nodePositionY = 1;
-//                int secondNode = nodePositionY + 2;
 
-//                for (int i = 0; i < frameNumber * 3 - 3; i++)
-//			    {
-//                     member newMember = new()
-//                    {
-//                        no = memberId,
-//                        node_start = lineDefinitionNodes[nodePositionY],
-//                        node_startSpecified = true,
-//                        node_end = lineDefinitionNodes[nodePositionY + 2],
-//                        node_endSpecified = true,
-//                        section_start = section1.no,
-//                        section_startSpecified = true,
-//                        section_end = section1.no,
-//                        section_endSpecified = true,
-//                        comment = "concrete beam"
-//                    };
-//                    zMembers.Add(memberId, newMember);
-//                    memberId++;
-//                    nodePositionY += 2;
-//			    }
-//#endif
                 //members for vertical bracing
                 SortedList<int, member> verticalBracingMembers = new SortedList<int, member>();
-//#if RFEM
+
                 foreach (KeyValuePair<int, line> lineItem in bracingLinesVertical)
                 {
                     member newMember = new()
@@ -716,57 +515,7 @@ namespace SteelHall.MAUI
                     horizontalBracingMembers.Add(memberId, newMember);
                     memberId++;
                 }
-//#elif RSTAB
-//                int nodePositionB = 0;
-//                for (int i = 0; i < bracing.BracingNumber; i++)
-//			    {
-//                    if ((bracing.BracingType == 1 || bracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2) 
-//                    {
-//                        nodePositionB += 2; 
-//                    };
 
-//                     member newMember = new()
-//                    {
-//                        no = memberId,
-//                        node_start = lineDefinitionNodes[nodePositionB + 1],
-//                        node_startSpecified = true,
-//                        node_end = lineDefinitionNodes[nodePositionB + 2],
-//                        node_endSpecified = true,
-//                        section_start = section3.no,
-//                        section_startSpecified = true,
-//                        section_end = section3.no,
-//                        section_endSpecified = true,
-//                        type = member_type.TYPE_TENSION,
-//                        typeSpecified = true,
-//                        comment = "bracing"
-//                    };
-//                    member newMember2 = new()
-//                    {
-//                        no = memberId + 1,
-//                        node_start = lineDefinitionNodes[nodePositionB],
-//                        node_startSpecified = true,
-//                        node_end = lineDefinitionNodes[nodePositionB + 3],
-//                        node_endSpecified = true,
-//                        section_start = section3.no,
-//                        section_startSpecified = true,
-//                        section_end = section3.no,
-//                        section_endSpecified = true,
-//                        type = member_type.TYPE_TENSION,
-//                        typeSpecified = true,
-//                        comment = "bracing"
-//                    };
-//                    bracingMembers.Add(memberId, newMember);
-//                    memberId += 2;
-//                    if (bracing.BracingType == 3 && nodePositionB == frameNumber * 2 - 4)
-//                    {
-//                        nodePositionB += 4;
-//                    }
-//                    else
-//                    {
-//                        nodePositionB += bracing.Increment;
-//                    }
-//			    }
-//#endif
                 //create supports
                 List<int> supportedNodes = new List<int>();
 
@@ -901,8 +650,7 @@ namespace SteelHall.MAUI
                         restraint_about_z_type = restraint_about_z_type.SUPPORT_STATUS_NO,
                         restraint_about_z_typeSpecified = true,
                         restraint_warping_type = restraint_warping_type.SUPPORT_STATUS_NO,
-                        restraint_warping_typeSpecified = true,
-                        //nodes = new int[] { 2, 5, 8 }
+                        restraint_warping_typeSpecified = true
                     }
                 };
                 steel_effective_lengths_nodal_supports_row endSteelEffectiveLengthsNodalSupports = new steel_effective_lengths_nodal_supports_row()
@@ -933,8 +681,7 @@ namespace SteelHall.MAUI
                         restraint_about_z_type = restraint_about_z_type.SUPPORT_STATUS_NO,
                         restraint_about_z_typeSpecified = true,
                         restraint_warping_type = restraint_warping_type.SUPPORT_STATUS_NO,
-                        restraint_warping_typeSpecified = true,
-                        //nodes = new int[] { 3, 6, 9 }
+                        restraint_warping_typeSpecified = true
                     }
                 };
 
@@ -1021,7 +768,6 @@ namespace SteelHall.MAUI
 
                     }
                 }
-
 
                 steel_design_uls_configuration steelDesignUlsConfiguration = new steel_design_uls_configuration()
                 {
@@ -1138,7 +884,6 @@ namespace SteelHall.MAUI
                     analysis_typeSpecified = true,
                     action_category = "ACTION_CATEGORY_WIND_QW"
                 };
-
                 load_case snow = new load_case()
                 {
                     no = 5,
@@ -1465,7 +1210,10 @@ namespace SteelHall.MAUI
 
         public void CloseModel()
         {
-            application.close_model(1, false);
+            string[] models = application.get_model_list();
+            int modelNumber = models.Length - 1;
+            int indexOfModel = Array.IndexOf(models, models.Length);
+            application.close_model(modelNumber, false);
         }
 
         public string ExportCsv()

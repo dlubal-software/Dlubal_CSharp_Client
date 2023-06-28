@@ -18,13 +18,20 @@ namespace SteelHall.MAUI
             //StatusText = "Calculation has not been started yet!";
 
             this.StartCalculationCommand = new DelegateCommand(
-                (o) =>
+                async (o) =>
                 {
-                    
-                    this.CheckVerticalBracing();
-                    this.CheckHorizontalBracing();
+                    await StartCalculation();
                     //StatusText = "Calculation started!";
-                    this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
+                    ////await Task.Run(() =>
+                    ////{
+                    ////    this.CheckVerticalBracing();
+                    ////    this.CheckHorizontalBracing();
+                    ////    this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
+                    ////});
+                    //this.CheckVerticalBracing();
+                    //this.CheckHorizontalBracing();
+                    ////StatusText = "Calculation started!";
+                    //this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
                     //StatusText = HallGenerator.CreateResultMessage();
                 }
                 );
@@ -40,7 +47,7 @@ namespace SteelHall.MAUI
                 (o) =>
                 {
                     this.HallGenerator.ExportCsv();
-                    //StatusText = "Results have been exported as csv-file!";
+                    StatusText = "Results have been exported as csv-file!";
                 }
                 );
 
@@ -52,22 +59,35 @@ namespace SteelHall.MAUI
                 );
         }
 
+        public async Task StartCalculation()
+        {
+            StatusText = "Calculation started!";
+            this.CheckVerticalBracing();
+            this.CheckHorizontalBracing();
+
+            await Task.Run(() =>
+            {
+                this.HallGenerator.GenerateHall(this.FrameHeight, this.FrameSpan, this.FrameDistance, this.FrameNumber, this.RoofAngle, VerticalBracing, HorizontalBracing);
+            });
+
+            StatusText = HallGenerator.CreateResultMessage();
+        }
 
         public HallGenerator HallGenerator { get; set; } = new();
         public VerticalBracing VerticalBracing { get; set; } = new VerticalBracing();
         public HorizontalBracing HorizontalBracing { get; set; } = new HorizontalBracing();
 
-        //private string statusText;
-        //public string StatusText
-        //{
-        //    get => statusText;
-        //    set
-        //    {
-        //        statusText = value;
-        //        this.RaisePropertyChanged();
+        private string statusText = "Calculation has not been started yet!";
+        public string StatusText
+        {
+            get => statusText;
+            set
+            {
+                statusText = value;
+                this.RaisePropertyChanged();
 
-        //    }
-        //}
+            }
+        }
 
         private double frameHeight = 5.0;
         public double FrameHeight
@@ -132,7 +152,7 @@ namespace SteelHall.MAUI
             {
                 if (roofAngle != value)
                 {
-                    roofAngle = value * (Math.PI / 180);
+                    roofAngle = value;
                     this.RaisePropertyChanged();
                 }
             }
@@ -147,8 +167,6 @@ namespace SteelHall.MAUI
 
         public VerticalBracing CheckVerticalBracing()
         {
-            //VerticalBracing VerticalBracing = new VerticalBracing();
-
             if (RadioButtonVerticalEveryFieldChecked)
             {
                 VerticalBracing.BracingType = 1;
@@ -183,8 +201,6 @@ namespace SteelHall.MAUI
 
         public HorizontalBracing CheckHorizontalBracing()
         {
-            //HorizontalBracing HorizontalBracing = new HorizontalBracing();
-
             if (RadioButtonHorizontalEveryFieldChecked)
             {
                 HorizontalBracing.BracingType = 4;
@@ -243,42 +259,36 @@ namespace SteelHall.MAUI
         {
             if (value == null)
             {
-                return 0;
+                return 5;
             }
-            var d = (double)value;
-
-            return d.ToString();
+            else if (double.TryParse(value.ToString(), out double doubleValue) == false)
+            {
+                return 5;
+            }
+            else
+            {                
+                return value.ToString();
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            
+
             if (value == null)
             {
-                return 0;
+                return 5.0;
             }
 
-            //var s = (string)value;
-
-            //if (String.IsNullOrEmpty(s))
-            //{
-            //    s = "5";
-            //}
             try
             {
                 return double.Parse(((string)value).Replace(".", ","), CultureInfo.CurrentCulture);
             }
             catch (Exception)
             {
-                
+                return 5;
             }
-            return 0;
+            
         }
-
-        //public async void DisplayAlert(string message)
-        //{
-        //    await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
-        //}
     }
 
     public class StringToIntConverter : IValueConverter
@@ -286,29 +296,48 @@ namespace SteelHall.MAUI
         //converts data type back to UI value(string)
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value == null)
-            {
-                return 5;
-            }
-            else if (int.TryParse(value.ToString(), out int intValue) == false)
-            {
-                return 5;
-            }
-            return value.ToString();
-        }
-        //Convert Input in UI to data type
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
             if (value == null)
             {
                 return 5;
             }
             else if (int.TryParse(value.ToString(), out int intValue) == false)
             {
+                if (double.TryParse(value.ToString(), out double doubleValue) == true)
+                {
+                    return Math.Round(doubleValue);
+                }
+                else
+                {
+                    return 5;
+                }
+            }
+            return value.ToString();
+        }
+        //Convert Input in UI to data type
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string stringValue = value.ToString();
+
+            if (value == null)
+            {
                 return 5;
+            }
+            else if (int.TryParse(value.ToString(), out int intValue) == false)
+            {
+                if (double.TryParse(stringValue.Replace(".", ","), CultureInfo.CurrentCulture, out double doubleValue) == true && stringValue.Length > 2)
+                {
+                    return Math.Round(doubleValue);
+                }
+                else
+                {
+                    if (stringValue.Length < 3)
+                    {
+                        return stringValue;
+                    }
+                    return 5;
+                }
             }
             return int.Parse(value.ToString(), CultureInfo.CurrentCulture);
         }
     }
-
 }
