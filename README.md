@@ -105,6 +105,10 @@ WS enable you to access your local version of RFEM / RSTAB / RSECTION or remote 
 
 ### Examples
 Examples can be found under [examples](https://github.com/Dlubal-Software/Dlubal_CSharp_Client/tree/main/examples) folder.
+
+## Documentation 📚
+You can find a tutorial for usage on our [![image](https://img.shields.io/badge/GitHub-page-darkblue?logo=github&amp;)](https://dlubal-software.github.io/.github/guide/net/netArticle.html#get-started-with-c-hlf).
+
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
