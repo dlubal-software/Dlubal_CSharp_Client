@@ -93,7 +93,6 @@ namespace SteelHall.MAUI
                     }
                     catch (Exception exception)
                     {
-
                     }
                 }
 
@@ -217,7 +216,7 @@ namespace SteelHall.MAUI
                 //create lines
                 int lineId = 1;
                 int m = 0;
-                int numberOfLines = frameNumber * 4 + (frameNumber - 2);
+                int numberOfLines = (frameNumber * 4) + (frameNumber - 2);
 
                 //lines in z-direction
                 SortedList<int, line> zLines = new SortedList<int, line>();
@@ -235,7 +234,7 @@ namespace SteelHall.MAUI
                     zLines.Add(lineId, newLine);
                     m += 2;
                     lineId++;
-                };
+                }
 
                 //lines in x-direction
                 SortedList<int, line> xLines = new SortedList<int, line>();
@@ -260,21 +259,21 @@ namespace SteelHall.MAUI
                         nodePositionMiddle = nodeId - frameNumber - 1;
                     }
                     lineId++;
-                };
+                }
 
                 //lines in y - direction
                 SortedList<int, line> yLines = new SortedList<int, line>();
                 int nodePositionY = 1;
                 int secondNode = nodePositionY + 2;
 
-                for (int k = 0; k < frameNumber * 3 - 3; k++)
+                for (int k = 0; k < (frameNumber * 3) - 3; k++)
                 {
                     if (k == frameNumber - 1)
                     {
                         nodePositionY += 2;
                         secondNode += 2;
                     }
-                    else if (k == frameNumber * 2 -2)
+                    else if (k == (frameNumber * 2) - 2)
                     {
                         nodePositionY += 1;
                         //secondNode = nodePositionY + 1;
@@ -300,7 +299,7 @@ namespace SteelHall.MAUI
                         secondNode += 2;
                     }                    
                     lineId++;
-                };
+                }
 
                 //lines for vertical bracing
                 SortedList<int, line> bracingLinesVertical = new SortedList<int, line>();
@@ -308,10 +307,10 @@ namespace SteelHall.MAUI
 
                 for (int k = 0; k < verticalBracing.LoopCount; k++)
                 {
-                    if ((verticalBracing.BracingType == 1 || verticalBracing.BracingType == 2) && nodePositionB == frameNumber * 2 - 2)
+                    if ((verticalBracing.BracingType == 1 || verticalBracing.BracingType == 2) && nodePositionB == (frameNumber * 2) - 2)
                     {
                         nodePositionB += 2;
-                    };
+                    }
 
                     line newLine = new()
                     {
@@ -333,7 +332,7 @@ namespace SteelHall.MAUI
                     bracingLinesVertical.Add(lineId, newLine);
                     bracingLinesVertical.Add(lineId + 1, newLine2);
 
-                    if (verticalBracing.BracingType == 3 && nodePositionB == frameNumber * 2 - 4)
+                    if (verticalBracing.BracingType == 3 && nodePositionB == (frameNumber * 2) - 4)
                     {
                         nodePositionB += 4;
                     }
@@ -351,12 +350,12 @@ namespace SteelHall.MAUI
 
                 for (int i = 0; i < horizontalBracing.LoopCount; i++)
                 {
-                    if (nodePositionBHorizontal1 == frameNumber * 2 - 1)
+                    if (nodePositionBHorizontal1 == (frameNumber * 2) - 1)
                     {
                         nodePositionBHorizontal1 += 2;
                         nodePositionBHorizontal2 = nodeId - frameNumber;
                     }
-                    else if (horizontalBracing.BracingType == 5 && nodePositionBHorizontal1 == frameNumber * 2 + 1)
+                    else if (horizontalBracing.BracingType == 5 && nodePositionBHorizontal1 == (frameNumber * 2) + 1)
                     {
                         nodePositionBHorizontal2 = nodeId - frameNumber;
                     }
@@ -381,7 +380,7 @@ namespace SteelHall.MAUI
                     bracingLinesHorizontal.Add(lineId, newLine);
                     bracingLinesHorizontal.Add(lineId + 1, newLine2);
 
-                    if (horizontalBracing.BracingType == 6 && nodePositionBHorizontal1 == frameNumber * 2 - 3)
+                    if (horizontalBracing.BracingType == 6 && nodePositionBHorizontal1 == (frameNumber * 2) - 3)
                     {
                         nodePositionBHorizontal1 += 4;
                         nodePositionBHorizontal2 = nodeId - frameNumber;
@@ -768,7 +767,6 @@ namespace SteelHall.MAUI
                     }
                     catch (Exception exception)
                     {
-
                     }
                 }
 
@@ -824,7 +822,6 @@ namespace SteelHall.MAUI
                     }
                     catch (Exception exception)
                     {
-
                     }
                 }
 
@@ -1267,6 +1264,5 @@ namespace SteelHall.MAUI
             return resultMessages;
         }
     }
-
 }
    

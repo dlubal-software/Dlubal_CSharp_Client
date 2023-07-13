@@ -8,7 +8,6 @@ namespace SteelHall.MAUI
     {
         public MainPageViewModel()
         {
-
             this.StartCalculationCommand = new DelegateCommand(
                 async (o) =>
                 {
@@ -155,7 +154,7 @@ namespace SteelHall.MAUI
             if (RadioButtonVerticalEveryFieldChecked)
             {
                 VerticalBracing.BracingType = 1;
-                VerticalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                VerticalBracing.BracingNumber = 2 * ((frameNumber * 2) - 2);
                 VerticalBracing.LoopCount = VerticalBracing.BracingNumber / 2;
                 VerticalBracing.Increment = 2;
             }
@@ -188,7 +187,7 @@ namespace SteelHall.MAUI
             if (RadioButtonHorizontalEveryFieldChecked)
             {
                 HorizontalBracing.BracingType = 4;
-                HorizontalBracing.BracingNumber = 2 * (frameNumber * 2 - 2);
+                HorizontalBracing.BracingNumber = 2 * ((frameNumber * 2) - 2);
                 HorizontalBracing.LoopCount = HorizontalBracing.BracingNumber / 2;
                 HorizontalBracing.Increment = 2;
                 HorizontalBracing.IncrementMiddleNode = 1;
@@ -202,7 +201,7 @@ namespace SteelHall.MAUI
                 }
                 else
                 {
-                    HorizontalBracing.BracingNumber = frameNumber * 2 - 2;
+                    HorizontalBracing.BracingNumber = (frameNumber * 2) - 2;
                 }
 
                 HorizontalBracing.LoopCount = HorizontalBracing.BracingNumber / 2;
@@ -256,13 +255,11 @@ namespace SteelHall.MAUI
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
             if (value == null)
             {
                 return 5;
             }
             string stringValue = (string)value;
-
 
             try
             {
@@ -271,8 +268,7 @@ namespace SteelHall.MAUI
             catch (Exception)
             {
                 return 5;
-            }
-            
+            }            
         }
     }
 
