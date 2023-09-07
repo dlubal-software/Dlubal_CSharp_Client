@@ -1,9 +1,23 @@
 using System.ServiceModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
+using System;
+
+#if RFEM
 using Dlubal.WS.Rfem6.Application;
 using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
 using Dlubal.WS.Rfem6.Model;
 using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
+#elif RSTAB
+using Dlubal.WS.Rstab9.Application;
+using ApplicationClient = Dlubal.WS.Rstab9.Application.RstabApplicationClient;
+using Dlubal.WS.Rstab9.Model;
+using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
+#elif RSECTION
+using Dlubal.WS.RSection1.Application;
+using ApplicationClient = Dlubal.WS.RSection1.Application.RSectionApplicationClient;
+using Dlubal.WS.RSection1.Model;
+using ModelClient = Dlubal.WS.RSection1.Model.RSectionModelClient;
+#endif
 
 namespace UTWebServiceLibraries
 {
@@ -74,8 +88,5 @@ namespace UTWebServiceLibraries
             }
 
         }
-
-
-
     }
 }
