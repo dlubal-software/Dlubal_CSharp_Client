@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SteelHall.MAUI" 
+             x:Class="SteelHall.MAUI.MainPage"             
+             BackgroundColor="#050552">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="RadioButtonTemplate">
+                <Border Stroke="Transparent" BackgroundColor="Transparent">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="0" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid WidthRequest="20" HeightRequest="20" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Ellipse x:Name="border_circle" StrokeThickness="2" Stroke="White" Fill="#050552" WidthRequest="10" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center" />
+                            <Ellipse x:Name="check" Fill="White" WidthRequest="10" HeightRequest="10" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <ContentPresenter Margin="10,0,0,0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+
+            <Style TargetType="RadioButton" x:Key="RadioButtonStyle">
+                <Setter Property="ControlTemplate" Value="{StaticResource RadioButtonTemplate}" />
+            </Style>
+            <local:StringToDoubleConverter x:Key="stringToDouble"/>
+            <local:StringToIntConverter x:Key="stringToInt"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button
+                x:Name="StartCalculationBtn"
+                Text="Start Calculation"
+                FontAttributes="Bold"
+                Margin="130,15,70,10"
+                Command="{Binding StartCalculationCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="11"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"></Button>
+            <Button
+                x:Name="ResultCsvBtn"
+                Text="Export Results to CSV-File"
+                Margin="130,0,70,10"
+                Command="{Binding ExportCsvCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="12"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"></Button>
+            <Button
+                x:Name="CloseBtn"
+                Text="Close Model"
+                Margin="30,15,30,10"
+                Command="{Binding CloseModelCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="11"
+                Grid.Column="4"></Button>
+            <Button
+                x:Name="freeRFEMBtn"
+                Text="Close this app and free RFEM"
+                Margin="30,0,30,10"
+                Command="{Binding FreeRfemCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="White"
+                TextColor="#04046C"
+                Grid.Row="12"
+                Grid.Column="4"></Button>
+            <Label
+                Text="Geometry"
+                TextDecorations="Underline"
+                FontSize="18"
+                FontAttributes="Bold" 
+                HorizontalOptions="End"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="2"
+                Grid.Column="2"
+                Grid.ColumnSpan="1"></Label>
+            <Label
+                Text="Vertical Bracing"
+                TextDecorations="Underline"
+                Margin="0,0,0,10"
+                FontSize="18"
+                FontAttributes="Bold" 
+                HorizontalOptions="Center"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="2"
+                Grid.Column="4"></Label>
+            <Label
+                Text="Frame Height [m]:"
+                Margin="0,0,20,10"
+                FontSize="{local:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="3"
+                Grid.Column="2"></Label>
+            <Entry
+                x:Name="InputHeight"
+                Margin="0,0,0,5"
+                Text="{Binding FrameHeight, Converter={StaticResource stringToDouble}}"
+                Grid.Row="3"
+                Grid.Column="3"
+                WidthRequest="20"
+                HeightRequest="5"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
+            <Label
+                Text="Frame Span [m]:"
+                Margin="0,0,20,10"
+                FontSize="{local:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="4"
+                Grid.Column="2"></Label>
+            <Entry
+                x:Name="InputSpan"
+                Margin="0,0,0,5"
+                Text="{Binding FrameSpan, Converter={StaticResource stringToDouble}}"
+                Grid.Row="4"
+                Grid.Column="3"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
+            <Label
+                Text="Distance between Frames [m]:"
+                Margin="0,0,20,10"
+                FontSize="{local:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="White"
+                Grid.Row="5"
+                Grid.Column="2"></Label>
+            <Entry
+                x:Name="InputDistance"
+                Margin="0,0,0,5"
+                Text="{Binding FrameDistance, Converter={StaticResource stringToDouble}}"
+                Grid.Row="5"
+                Grid.Column="3"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
+            <Label
+                Text="Number of Frames:"
+                Margin="0,0,20,10"
+                FontSize="{local:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="6"
+                Grid.Column="2"></Label>
+            <Entry
+                x:Name="InputFrameNumber"
+                Margin="0,0,0,5"
+                Text="{Binding FrameNumber, Converter={StaticResource stringToInt}}"
+                Grid.Row="6"
+                Grid.Column="3"
+                FontSize="{local:GlobalFontSize}"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
+            <Label
+                Text="Roof Pitch Angle [°]:"
+                Margin="0,0,20,10"
+                FontSize="{local:GlobalFontSize}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="7"
+                Grid.Column="2"></Label>
+            <Entry
+                x:Name="InputAngle"
+                Margin="0,0,0,5"
+                Text="{Binding RoofAngle, Converter={StaticResource stringToDouble}}"
+                Grid.Row="7"
+                Grid.Column="3"
+                HorizontalOptions="Start"
+                BackgroundColor="White"></Entry>
+            <Label
+                Text="Status:"
+                Margin="30,0,0,10"
+                FontSize="16"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="14"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"></Label>
+            <Label
+                Text="{Binding StatusText}"
+                Margin="100,0,0,10"
+                HorizontalOptions="Start"
+                FontSize="16"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Grid.Row="14"></Label>
+
+            <VerticalStackLayout RadioButtonGroup.GroupName="verticalBracing"
+                         Grid.Row="3"
+                         Grid.RowSpan="3"
+                         Grid.Column="4">
+                <RadioButton                
+                    Content="Include bracing in every field"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButtonVerticalEveryFieldChecked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"            
+                    HorizontalOptions="Start"
+                    VerticalOptions="End">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing in every second field" 
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButtonVerticalSecondFieldChecked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"         
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing only in the end fields"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButtonVerticalEndFieldChecked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"   
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </RadioButton>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout RadioButtonGroup.GroupName="horizontalBracing"
+                         Grid.Row="6"
+                         Grid.RowSpan="3"
+                         Grid.Column="4">
+                <RadioButton
+                    Content="Include bracing in every field"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButtonHorizontalEveryFieldChecked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"      
+                    HorizontalOptions="Start"
+                    VerticalOptions="End">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing in every second field"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButtonHorizontalSecondFieldChecked}"
+                    FontSize="{local:GlobalFontSize}"                
+                    TextColor="{local:GlobalTextColor}"
+                    HorizontalOptions="Start">
+                </RadioButton>
+                <RadioButton
+                    Content="Include bracing only in the end fields"
+                    Style="{StaticResource RadioButtonStyle}"
+                    IsChecked="{Binding RadioButtonHorizontalEndFieldChecked}"
+                    FontSize="{local:GlobalFontSize}"
+                    TextColor="{local:GlobalTextColor}"     
+                    HorizontalOptions="Start">
+                </RadioButton>
+            </VerticalStackLayout>
+
+            <Label
+                Text="Horizontal Bracing"
+                TextDecorations="Underline"
+                Margin="0,0,0,10"
+                FontSize="18"
+                FontAttributes="Bold" 
+                HorizontalOptions="Center"
+                TextColor="{local:GlobalTextColor}"
+                Grid.Row="5"
+                Grid.Column="4"></Label>
+            <Image 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="11"
+                Grid.RowSpan="6"
+                Source="logo_white.png"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="Start"
+                Aspect="AspectFill"
+                VerticalOptions="EndAndExpand"></Image>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

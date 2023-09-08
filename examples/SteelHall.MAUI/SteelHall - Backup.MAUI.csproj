@@ -1,0 +1,49 @@
+﻿<Project>
+
+	<PropertyGroup>		
+		<OutputType>Exe</OutputType>
+		<RootNamespace>SteelHall.MAUI</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>SteelHall.MAUI</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.steelhall.maui</ApplicationId>
+		<ApplicationIdGuid>934a0849-500e-47d3-bcf5-87abbdf68ce5</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+		
+		
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
+    <DefineConstants>TRACE;RSTAB</DefineConstants>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="NLog" Version="5.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\source_code\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
+	  <ProjectReference Include="..\..\source_code\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj" />
+	</ItemGroup>
+
+</Project>
