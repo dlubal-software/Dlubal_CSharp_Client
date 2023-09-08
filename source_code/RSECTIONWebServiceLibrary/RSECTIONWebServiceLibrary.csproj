@@ -5,17 +5,16 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB</Configurations>
+    <Configurations>Debug RSECTION;Release RSECTION</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.02.67</FileVersion>
-    <AssemblyVersion>1.02.67</AssemblyVersion>
+    <FileVersion>1.03.0006</FileVersion>
+    <AssemblyVersion>1.03.0006</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
-    <Version>1.02.67</Version>
-    <Company>DlubalSoftware</Company>
-    <Product>DlubalSoftware</Product>
+    <Version>1.03.0006</Version>
+    <Company>Dlubal Software GmbH</Company>
     <Description>C# library for development of tools based on RSECTION WebService technology</Description>
-    <Copyright>Copyright © Dlubal Software</Copyright>
+    <Copyright>Copyright © Dlubal Software GmbH</Copyright>
     <PackageProjectUrl>https://dlubal-software.github.io/Dlubal_CSharp_Client/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Dlubal-Software/Dlubal_CSharp_Client/</RepositoryUrl>
@@ -23,25 +22,14 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageId>Dlubal.$(AssemblyName)</PackageId>
     <PackageIcon>rsection.png</PackageIcon>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;RSECTION</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
-    <DefineConstants>TRACE;RSECTION</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
-    <DefineConstants>TRACE;RSECTION</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;RSECTION</DefineConstants>
+    <Authors>Dlubal Software GmbH</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSECTION|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSECTION|AnyCPU'">
     <DefineConstants>TRACE;RSECTION</DefineConstants>
   </PropertyGroup>
 
@@ -56,21 +44,21 @@
     </None>
   </ItemGroup>
 
-	<ItemGroup >
-		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" Condition = "'$(TargetFramework)' == 'net48'"  />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" Condition = "'$(TargetFramework)' == 'net48'" />
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Http" Version="4.10.0" Condition="'$(TargetFramework)' == 'net48'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" Condition="'$(TargetFramework)' == 'net48'" />
 
 	</ItemGroup>
 
-	<ItemGroup >
-		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0"  Condition = "'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'"/>
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition = "'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
 
 	</ItemGroup>
 
-	<ItemGroup >
-		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0"  Condition = "'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'"/>
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition = "'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'"/>
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'" />
 
 	</ItemGroup>
 

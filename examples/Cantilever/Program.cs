@@ -12,12 +12,8 @@ using Dlubal.WS.Rstab9.Model;
 using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 #endif
 
-using System.Net.Http;
 using NLog;
 using System.ServiceModel;
-using System.Xml.Linq;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Cantilever
 {

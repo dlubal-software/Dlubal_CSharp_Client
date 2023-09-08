@@ -1,24 +1,43 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+		<Nullable>enable</Nullable>
 
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
+		<IsPackable>false</IsPackable>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
-    <PackageReference Include="coverlet.collector" Version="3.1.2" />
-  </ItemGroup>
+		<Configurations>Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB;Release RSECTION</Configurations>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
-    <ProjectReference Include="..\RSECTIONWebServiceLibrary\RSECTIONWebServiceLibrary.csproj" />
-    <ProjectReference Include="..\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
+		<DefineConstants>$(DefineConstants);RFEM</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RSTAB</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSECTION|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RSECTION</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
+		<PackageReference Include="coverlet.collector" Version="3.1.2" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(DefineConstants.Contains('RFEM'))">
+		<ProjectReference Include="..\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(DefineConstants.Contains('RSECTION'))">
+		<ProjectReference Include="..\RSECTIONWebServiceLibrary\RSECTIONWebServiceLibrary.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(DefineConstants.Contains('RSTAB'))">
+		<ProjectReference Include="..\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj" />
+	</ItemGroup>
 
 </Project>
