@@ -3,43 +3,40 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
 	  <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
-    <Configurations>Debug;Release;Debug RFEM;Debug RSTAB;Release RFEM;Release RSTAB</Configurations>
+    <Configurations>Debug RFEM;Debug RSTAB;Release RFEM;Release RSTAB</Configurations>
     <StartupObject>Cantilever.Program</StartupObject>
     <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;RFEM</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
-    <DefineConstants>TRACE;RSTAB</DefineConstants>
-    <Optimize>True</Optimize>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
-    <DefineConstants>TRACE;RFEM</DefineConstants>
-    <Optimize>True</Optimize>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
-    <DefineConstants>DEBUG;TRACE;RFEM</DefineConstants>
+    <Optimize>False</Optimize>
+    <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
-    <DefineConstants>TRACE;RSTAB</DefineConstants>
+    <Optimize>False</Optimize>
+    <DefineConstants>$(DefineConstants);RSTAB</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
+    <Optimize>True</Optimize>
+    <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
+    <Optimize>True</Optimize>
+    <DefineConstants>$(DefineConstants);RSTAB</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="NLog" Version="5.0.4" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="$(DefineConstants.Contains('RFEM'))">
     <ProjectReference Include="..\..\source_code\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(DefineConstants.Contains('RSTAB'))">
     <ProjectReference Include="..\..\source_code\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj" />
   </ItemGroup>
 
