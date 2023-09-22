@@ -6,19 +6,35 @@
 
 		<IsPackable>false</IsPackable>
 
-		<Configurations>Debug RFEM;Debug RSTAB;Debug RSECTION;Release RFEM;Release RSTAB;Release RSECTION</Configurations>
+		<Configurations>Release RFEM;Debug;Debug RFEM;Debug RSTAB;Release RSTAB;Debug RSECTION;RELEASE RSECTION</Configurations>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
-		<DefineConstants>$(DefineConstants);RFEM</DefineConstants>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
 	  <DefineConstants>$(DefineConstants);RSTAB</DefineConstants>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RSTAB</DefineConstants>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSECTION|AnyCPU'">
 	  <DefineConstants>$(DefineConstants);RSECTION</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE RSECTION|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RSECTION</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>

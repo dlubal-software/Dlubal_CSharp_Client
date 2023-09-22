@@ -3,14 +3,23 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
 	  <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
-    <Configurations>Debug RFEM;Debug RSTAB;Release RFEM;Release RSTAB</Configurations>
+    <Configurations>Debug RFEM;Release RFEM;Debug;Debug RSTAB;Release RSTAB</Configurations>
     <StartupObject>Cantilever.Program</StartupObject>
     <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug AnyCPU'">
+		<Optimize>False</Optimize>
+		<DefineConstants>$(DefineConstants);RFEM;RSTAB</DefineConstants>
+	</PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'">
     <Optimize>False</Optimize>
     <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSECTION|AnyCPU'">
+    <Optimize>False</Optimize>
+    <DefineConstants>$(DefineConstants);RFEM;RSTAB</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
@@ -26,6 +35,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
     <Optimize>True</Optimize>
     <DefineConstants>$(DefineConstants);RSTAB</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+    <DefineConstants>$(DefineConstants);RFEM</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

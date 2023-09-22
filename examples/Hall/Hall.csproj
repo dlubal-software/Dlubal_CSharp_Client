@@ -11,14 +11,32 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
 	  <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
-    <Configurations>Debug RFEM;Release RFEM</Configurations>
+    <Configurations>Release;Debug</Configurations>
     <StartupObject>Hall.Program</StartupObject>
     <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RFEM|AnyCPU'" />
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE RSECTION|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSECTION|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 

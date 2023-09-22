@@ -5,7 +5,7 @@
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
-    <Configurations>Debug RSECTION;Release RSECTION</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <FileVersion>1.03.0007</FileVersion>
     <AssemblyVersion>1.03.0007</AssemblyVersion>
@@ -30,6 +30,26 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSECTION|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RSTAB|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release RFEM|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSECTION|AnyCPU'">
+    <DefineConstants>TRACE;RSECTION</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug RSTAB|AnyCPU'">
     <DefineConstants>TRACE;RSECTION</DefineConstants>
   </PropertyGroup>
 
