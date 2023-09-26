@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"b51ffa49-0d9b-4e21-96c2-ef91a5db8cce,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"9d2aaae5-227f-40f1-b424-76341d871542,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5469,7 +5469,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_STEEL: s = @"TYPE_BUILT_UP_STEEL"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_TIMBER: s = @"TYPE_BUILT_UP_TIMBER"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BARS: s = @"TYPE_PARAMETRIC_BARS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BRIDGES: s = @"TYPE_PARAMETRIC_BRIDGES"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_I: s = @"TYPE_PARAMETRIC_MASSIVE_I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_II: s = @"TYPE_PARAMETRIC_MASSIVE_II"; break;
                 case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_THIN_WALLED: s = @"TYPE_PARAMETRIC_THIN_WALLED"; break;
@@ -8601,14 +8600,15 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_PLASTIC_2D_3D: s = @"MODEL_ISOTROPIC_PLASTIC_2D_3D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D: s = @"MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_PLASTIC_3D: s = @"MODEL_ISOTROPIC_SOIL_PLASTIC_3D"; break;
-                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS: s = @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D: s = @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_2D: s = @"MODEL_ORTHOTROPIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_3D: s = @"MODEL_ORTHOTROPIC_3D"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D: s = @"MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D: s = @"MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_2D: s = @"MODEL_ORTHOTROPIC_PLASTIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_3D: s = @"MODEL_ORTHOTROPIC_PLASTIC_3D"; break;
-                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_WELD_2D: s = @"MODEL_ORTHOTROPIC_PLASTIC_WELD_2D"; break;
-                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES: s = @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D: s = @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_WELD_PLASTIC_2D: s = @"MODEL_ORTHOTROPIC_WELD_PLASTIC_2D"; break;
                 default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.material_material_model");
             }
             return s;
@@ -28602,7 +28602,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"TYPE_BUILT_UP_STEEL": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_STEEL;
                 case @"TYPE_BUILT_UP_TIMBER": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_TIMBER;
                 case @"TYPE_PARAMETRIC_BARS": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BARS;
-                case @"TYPE_PARAMETRIC_BRIDGES": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BRIDGES;
                 case @"TYPE_PARAMETRIC_MASSIVE_I": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_I;
                 case @"TYPE_PARAMETRIC_MASSIVE_II": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_II;
                 case @"TYPE_PARAMETRIC_THIN_WALLED": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_THIN_WALLED;
@@ -37731,14 +37730,15 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"MODEL_ISOTROPIC_PLASTIC_2D_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_PLASTIC_2D_3D;
                 case @"MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D;
                 case @"MODEL_ISOTROPIC_SOIL_PLASTIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_PLASTIC_3D;
-                case @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS;
+                case @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D;
                 case @"MODEL_ORTHOTROPIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_2D;
                 case @"MODEL_ORTHOTROPIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_3D;
+                case @"MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D;
                 case @"MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D;
                 case @"MODEL_ORTHOTROPIC_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_2D;
                 case @"MODEL_ORTHOTROPIC_PLASTIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_3D;
-                case @"MODEL_ORTHOTROPIC_PLASTIC_WELD_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_WELD_2D;
-                case @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES;
+                case @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D;
+                case @"MODEL_ORTHOTROPIC_WELD_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_WELD_PLASTIC_2D;
                 default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.material_material_model));
             }
         }
