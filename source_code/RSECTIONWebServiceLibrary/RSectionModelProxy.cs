@@ -890,13 +890,16 @@ namespace Dlubal.WS.RSection1.Model
         MODEL_ISOTROPIC_SOIL_PLASTIC_3D,
         
         /// <remarks/>
-        MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS,
+        MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D,
         
         /// <remarks/>
         MODEL_ORTHOTROPIC_2D,
         
         /// <remarks/>
         MODEL_ORTHOTROPIC_3D,
+        
+        /// <remarks/>
+        MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D,
         
         /// <remarks/>
         MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D,
@@ -908,10 +911,10 @@ namespace Dlubal.WS.RSection1.Model
         MODEL_ORTHOTROPIC_PLASTIC_3D,
         
         /// <remarks/>
-        MODEL_ORTHOTROPIC_PLASTIC_WELD_2D,
+        MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D,
         
         /// <remarks/>
-        MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES,
+        MODEL_ORTHOTROPIC_WELD_PLASTIC_2D,
     }
     
     /// <remarks/>

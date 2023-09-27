@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"b51ffa49-0d9b-4e21-96c2-ef91a5db8cce,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"aa9e0d65-d220-4310-8b7b-62c3be1c3521,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -8601,14 +8601,15 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_PLASTIC_2D_3D: s = @"MODEL_ISOTROPIC_PLASTIC_2D_3D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D: s = @"MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_PLASTIC_3D: s = @"MODEL_ISOTROPIC_SOIL_PLASTIC_3D"; break;
-                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS: s = @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D: s = @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_2D: s = @"MODEL_ORTHOTROPIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_3D: s = @"MODEL_ORTHOTROPIC_3D"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D: s = @"MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D: s = @"MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_2D: s = @"MODEL_ORTHOTROPIC_PLASTIC_2D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_3D: s = @"MODEL_ORTHOTROPIC_PLASTIC_3D"; break;
-                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_WELD_2D: s = @"MODEL_ORTHOTROPIC_PLASTIC_WELD_2D"; break;
-                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES: s = @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D: s = @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_WELD_PLASTIC_2D: s = @"MODEL_ORTHOTROPIC_WELD_PLASTIC_2D"; break;
                 default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.material_material_model");
             }
             return s;
@@ -37731,14 +37732,15 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"MODEL_ISOTROPIC_PLASTIC_2D_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_PLASTIC_2D_3D;
                 case @"MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_NONLINEAR_ELASTIC_3D;
                 case @"MODEL_ISOTROPIC_SOIL_PLASTIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_SOIL_PLASTIC_3D;
-                case @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_MEMBERS;
+                case @"MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_TIMBER_LINEAR_ELASTIC_1D;
                 case @"MODEL_ORTHOTROPIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_2D;
                 case @"MODEL_ORTHOTROPIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_3D;
+                case @"MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_FABRIC_NONLINEAR_ELASTIC_2D;
                 case @"MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_MASONRY_PLASTIC_2D;
                 case @"MODEL_ORTHOTROPIC_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_2D;
                 case @"MODEL_ORTHOTROPIC_PLASTIC_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_3D;
-                case @"MODEL_ORTHOTROPIC_PLASTIC_WELD_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_PLASTIC_WELD_2D;
-                case @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_SURFACES;
+                case @"MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_TIMBER_LINEAR_ELASTIC_2D;
+                case @"MODEL_ORTHOTROPIC_WELD_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ORTHOTROPIC_WELD_PLASTIC_2D;
                 default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.material_material_model));
             }
         }

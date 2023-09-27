@@ -6871,9 +6871,10 @@ namespace Dlubal.WS.Rstab9.Model
             return retVal.value;
         }
         
-        public Dlubal.WS.Rstab9.Model.plausibility_check_result plausibility_check(bool skip_warnings)
+        public Dlubal.WS.Rstab9.Model.plausibility_check_result plausibility_check(Dlubal.WS.Rstab9.Model.plausibility_check_type type, bool skip_warnings)
         {
             Dlubal.WS.Rstab9.Model.plausibility_checkRequest inValue = new Dlubal.WS.Rstab9.Model.plausibility_checkRequest();
+            inValue.type = type;
             inValue.skip_warnings = skip_warnings;
             Dlubal.WS.Rstab9.Model.plausibility_checkResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).plausibility_check(inValue);
             return retVal.value;

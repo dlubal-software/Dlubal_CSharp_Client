@@ -13470,9 +13470,10 @@ namespace Dlubal.WS.Rfem6.Model
             return retVal.value;
         }
         
-        public Dlubal.WS.Rfem6.Model.plausibility_check_result plausibility_check(bool skip_warnings)
+        public Dlubal.WS.Rfem6.Model.plausibility_check_result plausibility_check(Dlubal.WS.Rfem6.Model.plausibility_check_type type, bool skip_warnings)
         {
             Dlubal.WS.Rfem6.Model.plausibility_checkRequest inValue = new Dlubal.WS.Rfem6.Model.plausibility_checkRequest();
+            inValue.type = type;
             inValue.skip_warnings = skip_warnings;
             Dlubal.WS.Rfem6.Model.plausibility_checkResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).plausibility_check(inValue);
             return retVal.value;
