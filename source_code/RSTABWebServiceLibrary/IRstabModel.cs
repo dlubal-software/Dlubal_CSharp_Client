@@ -482,6 +482,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialResponse get_parts_list_all_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_all_by_materialRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_deep_beams_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialResponse get_parts_list_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_member_representatives_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialResponse get_parts_list_member_representatives_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialRequest request);
@@ -497,6 +501,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_members_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialResponse get_parts_list_members_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_shear_walls_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialResponse get_parts_list_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_relationship_between_load_cases", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

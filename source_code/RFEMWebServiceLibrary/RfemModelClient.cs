@@ -2040,6 +2040,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_deep_beams_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_deep_beams_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_deep_beams_by_material_row[] get_parts_list_deep_beams_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_deep_beams_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_member_representatives_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialRequest request)
         {
             return base.Channel.get_parts_list_member_representatives_by_material(request);
@@ -2088,6 +2101,19 @@ namespace Dlubal.WS.Rfem6.Model
         {
             Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialRequest();
             Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_members_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_parts_list_shear_walls_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_shear_walls_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.parts_list_shear_walls_by_material_row[] get_parts_list_shear_walls_by_material()
+        {
+            Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialRequest();
+            Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_parts_list_shear_walls_by_material(inValue);
             return retVal.value;
         }
         
@@ -2735,6 +2761,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsRequest request)
+        {
+            return base.Channel.get_results_for_building_model_member_forces_in_shear_walls(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.building_model_member_forces_in_shear_walls_row[] get_results_for_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_building_model_member_forces_in_shear_walls(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_building_stories_centres_mass_rigidityResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_centres_mass_rigidityRequest request)
         {
             return base.Channel.get_results_for_building_stories_centres_mass_rigidity(request);
@@ -2751,6 +2793,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsRequest request)
+        {
+            return base.Channel.get_results_for_building_stories_forces_in_deep_beams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.building_stories_forces_in_deep_beams_row[] get_results_for_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_building_stories_forces_in_deep_beams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsRequest request)
         {
             return base.Channel.get_results_for_building_stories_forces_in_shear_walls(request);
@@ -2763,22 +2821,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_building_stories_forces_in_shear_walls(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsRequest request)
-        {
-            return base.Channel.get_results_for_building_stories_forces_in_spandrels(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.building_stories_forces_in_spandrels_row[] get_results_for_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_building_stories_forces_in_spandrels(inValue);
             return retVal.value;
         }
         
@@ -5303,6 +5345,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_building_model_member_forces_in_shear_walls_row[] get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_centres_mass_rigidityResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_centres_mass_rigidityRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_building_stories_centres_mass_rigidity(request);
@@ -5319,6 +5377,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_building_stories_forces_in_deep_beams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_building_stories_forces_in_deep_beams_row[] get_results_for_pushover_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_building_stories_forces_in_deep_beams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_building_stories_forces_in_shear_walls(request);
@@ -5331,22 +5405,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_building_stories_forces_in_shear_walls(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsRequest request)
-        {
-            return base.Channel.get_results_for_pushover_analysis_building_stories_forces_in_spandrels(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_building_stories_forces_in_spandrels_row[] get_results_for_pushover_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_building_stories_forces_in_spandrels(inValue);
             return retVal.value;
         }
         
@@ -6518,6 +6576,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_model_member_forces_in_shear_walls_row[] get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(request);
@@ -6534,6 +6608,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_forces_in_deep_beams_row[] get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(request);
@@ -6546,22 +6636,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsRequest request)
-        {
-            return base.Channel.get_results_for_spectral_analysis_building_stories_forces_in_spandrels(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_forces_in_spandrels_row[] get_results_for_spectral_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_forces_in_spandrels(inValue);
             return retVal.value;
         }
         
@@ -7349,6 +7423,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_walls(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_building_model_member_forces_in_shear_walls_row[] get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_walls(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidityResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidityRequest request)
         {
             return base.Channel.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidity(request);
@@ -7365,6 +7455,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_building_stories_forces_in_deep_beams_row[] get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsRequest request)
         {
             return base.Channel.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_walls(request);
@@ -7377,22 +7483,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_walls(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsRequest request)
-        {
-            return base.Channel.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrels(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_building_stories_forces_in_spandrels_row[] get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrels(inValue);
             return retVal.value;
         }
         
@@ -11631,6 +11721,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_building_model_member_forces_in_shear_walls(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_building_model_member_forces_in_shear_walls_row[] get_results_for_time_history_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_building_model_member_forces_in_shear_walls(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_centres_mass_rigidityResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_centres_mass_rigidityRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_building_stories_centres_mass_rigidity(request);
@@ -11647,6 +11753,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_building_stories_forces_in_deep_beams(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_building_stories_forces_in_deep_beams_row[] get_results_for_time_history_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_building_stories_forces_in_deep_beams(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_building_stories_forces_in_shear_walls(request);
@@ -11659,22 +11781,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_building_stories_forces_in_shear_walls(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsRequest request)
-        {
-            return base.Channel.get_results_for_time_history_analysis_building_stories_forces_in_spandrels(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_building_stories_forces_in_spandrels_row[] get_results_for_time_history_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_building_stories_forces_in_spandrels(inValue);
             return retVal.value;
         }
         
@@ -12834,20 +12940,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.no = no;
             inValue.load_case_no = load_case_no;
             Dlubal.WS.Rfem6.Model.get_solid_set_loadResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_solid_set_load(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_spandrelResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_spandrel(Dlubal.WS.Rfem6.Model.get_spandrelRequest request)
-        {
-            return base.Channel.get_spandrel(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.spandrel get_spandrel(int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_spandrelRequest inValue = new Dlubal.WS.Rfem6.Model.get_spandrelRequest();
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_spandrelResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_spandrel(inValue);
             return retVal.value;
         }
         
@@ -14998,19 +15090,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.load_case_no = load_case_no;
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_solid_set_loadResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_solid_set_load(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_spandrelResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_spandrel(Dlubal.WS.Rfem6.Model.set_spandrelRequest request)
-        {
-            return base.Channel.set_spandrel(request);
-        }
-        
-        public void set_spandrel(Dlubal.WS.Rfem6.Model.spandrel value)
-        {
-            Dlubal.WS.Rfem6.Model.set_spandrelRequest inValue = new Dlubal.WS.Rfem6.Model.set_spandrelRequest();
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_spandrelResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_spandrel(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

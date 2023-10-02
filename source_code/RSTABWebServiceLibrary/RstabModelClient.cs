@@ -1637,6 +1637,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_deep_beams_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_deep_beams_by_material_row[] get_parts_list_deep_beams_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_deep_beams_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_deep_beams_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_member_representatives_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_member_representatives_by_materialRequest request)
         {
             return base.Channel.get_parts_list_member_representatives_by_material(request);
@@ -1685,6 +1698,19 @@ namespace Dlubal.WS.Rstab9.Model
         {
             Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialRequest();
             Dlubal.WS.Rstab9.Model.get_parts_list_members_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_members_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_parts_list_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialRequest request)
+        {
+            return base.Channel.get_parts_list_shear_walls_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.parts_list_shear_walls_by_material_row[] get_parts_list_shear_walls_by_material()
+        {
+            Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialRequest();
+            Dlubal.WS.Rstab9.Model.get_parts_list_shear_walls_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_parts_list_shear_walls_by_material(inValue);
             return retVal.value;
         }
         

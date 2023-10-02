@@ -594,6 +594,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialResponse get_parts_list_all_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_all_by_materialRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_deep_beams_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialResponse get_parts_list_deep_beams_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_deep_beams_by_materialRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_member_representatives_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialResponse get_parts_list_member_representatives_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_member_representatives_by_materialRequest request);
@@ -609,6 +613,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_members_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialResponse get_parts_list_members_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_members_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_shear_walls_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialResponse get_parts_list_shear_walls_by_material(Dlubal.WS.Rfem6.Model.get_parts_list_shear_walls_by_materialRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_parts_list_solids_by_material", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -828,17 +836,22 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_slenderness_by_member_set_representativeResponse get_results_for_aluminum_design_slenderness_by_member_set_representative(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_slenderness_by_member_set_representativeRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_model_member_forces_in_shear_walls" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsResponse get_results_for_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_building_model_member_forces_in_shear_wallsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_centres_mass_rigidity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_building_stories_centres_mass_rigidityResponse get_results_for_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_centres_mass_rigidityRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_forces_in_deep_beams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsResponse get_results_for_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_deep_beamsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_forces_in_shear_walls", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsResponse get_results_for_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_shear_wallsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_forces_in_spandrels", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsResponse get_results_for_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_building_stories_forces_in_spandrelsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_building_stories_interstory_drifts", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1668,20 +1681,25 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_nodes_support_forcesResponse get_results_for_nodes_support_forces(Dlubal.WS.Rfem6.Model.get_results_for_nodes_support_forcesRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_model_member_for" +
+            "ces_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsResponse get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_centres_" +
             "mass_rigidity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_centres_mass_rigidityResponse get_results_for_pushover_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_centres_mass_rigidityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_forces_i" +
+            "n_deep_beams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsResponse get_results_for_pushover_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_deep_beamsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_forces_i" +
             "n_shear_walls", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_pushover_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_shear_wallsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_forces_i" +
-            "n_spandrels", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsResponse get_results_for_pushover_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_stories_forces_in_spandrelsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_building_stories_intersto" +
             "ry_drifts", ReplyAction="*")]
@@ -2019,20 +2037,25 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_total_strainsResponse get_results_for_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_solids_principal_total_strainsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_model_member_for" +
+            "ces_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsResponse get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_centres_" +
             "mass_rigidity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityResponse get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_forces_i" +
+            "n_deep_beams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsResponse get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_forces_i" +
             "n_shear_walls", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_forces_i" +
-            "n_spandrels", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsResponse get_results_for_spectral_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_spandrelsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_intersto" +
             "ry_drifts", ReplyAction="*")]
@@ -2264,20 +2287,25 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsResponse get_results_for_spectral_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_mod" +
+            "el_member_forces_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsResponse get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_model_member_forces_in_shear_wallsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
             "ries_centres_mass_rigidity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidityResponse get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_centres_mass_rigidityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
+            "ries_forces_in_deep_beams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsResponse get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_deep_beamsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
             "ries_forces_in_shear_walls", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_shear_wallsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
-            "ries_forces_in_spandrels", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsResponse get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_building_stories_forces_in_spandrelsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_building_sto" +
             "ries_interstory_drifts", ReplyAction="*")]
@@ -3683,20 +3711,25 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_timber_design_slenderness_by_member_set_representativeResponse get_results_for_timber_design_slenderness_by_member_set_representative(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_slenderness_by_member_set_representativeRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_model_member" +
+            "_forces_in_shear_walls", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsResponse get_results_for_time_history_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_model_member_forces_in_shear_wallsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_cent" +
             "res_mass_rigidity", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_centres_mass_rigidityResponse get_results_for_time_history_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_centres_mass_rigidityRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_forc" +
+            "es_in_deep_beams", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsResponse get_results_for_time_history_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_deep_beamsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_forc" +
             "es_in_shear_walls", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsResponse get_results_for_time_history_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_shear_wallsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_forc" +
-            "es_in_spandrels", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsResponse get_results_for_time_history_analysis_building_stories_forces_in_spandrels(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_building_stories_forces_in_spandrelsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_building_stories_inte" +
             "rstory_drifts", ReplyAction="*")]
@@ -4042,10 +4075,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_solid_set_load", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_solid_set_loadResponse get_solid_set_load(Dlubal.WS.Rfem6.Model.get_solid_set_loadRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_spandrel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_spandrelResponse get_spandrel(Dlubal.WS.Rfem6.Model.get_spandrelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_spectral_analysis_settings", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -4686,10 +4715,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_solid_set_load", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_solid_set_loadResponse set_solid_set_load(Dlubal.WS.Rfem6.Model.set_solid_set_loadRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_spandrel", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.set_spandrelResponse set_spandrel(Dlubal.WS.Rfem6.Model.set_spandrelRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_spectral_analysis_settings", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
