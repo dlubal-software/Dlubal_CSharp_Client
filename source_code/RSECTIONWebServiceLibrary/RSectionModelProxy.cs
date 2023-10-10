@@ -1599,6 +1599,9 @@ namespace Dlubal.WS.RSection1.Model
         REFERENCE_TYPE_POINT_ON_LINE,
         
         /// <remarks/>
+        REFERENCE_TYPE_SNAP_POSITION,
+        
+        /// <remarks/>
         REFERENCE_TYPE_STRESS_POINT,
     }
     

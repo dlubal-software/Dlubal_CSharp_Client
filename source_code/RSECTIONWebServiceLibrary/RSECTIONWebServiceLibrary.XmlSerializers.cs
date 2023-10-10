@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"ef77e112-1d27-45ba-95a7-c6932a545180,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"8b0c6697-bfd4-47dd-ac18-e49ca0a4447c,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -9861,6 +9861,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_LOCATION: s = @"REFERENCE_TYPE_LOCATION"; break;
                 case global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_POINT: s = @"REFERENCE_TYPE_POINT"; break;
                 case global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_POINT_ON_LINE: s = @"REFERENCE_TYPE_POINT_ON_LINE"; break;
+                case global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_SNAP_POSITION: s = @"REFERENCE_TYPE_SNAP_POSITION"; break;
                 case global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_STRESS_POINT: s = @"REFERENCE_TYPE_STRESS_POINT"; break;
                 default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.reference_object_type");
             }
@@ -41518,6 +41519,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"REFERENCE_TYPE_LOCATION": return global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_LOCATION;
                 case @"REFERENCE_TYPE_POINT": return global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_POINT;
                 case @"REFERENCE_TYPE_POINT_ON_LINE": return global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_POINT_ON_LINE;
+                case @"REFERENCE_TYPE_SNAP_POSITION": return global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_SNAP_POSITION;
                 case @"REFERENCE_TYPE_STRESS_POINT": return global::Dlubal.WS.RSection1.Model.reference_object_type.@REFERENCE_TYPE_STRESS_POINT;
                 default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.reference_object_type));
             }
