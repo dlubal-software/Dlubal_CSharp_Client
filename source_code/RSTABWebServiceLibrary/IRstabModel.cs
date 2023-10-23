@@ -214,6 +214,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_calculation_diagramResponse get_calculation_diagram(Dlubal.WS.Rstab9.Model.get_calculation_diagramRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_calculation_errors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_calculation_errorsResponse get_calculation_errors(Dlubal.WS.Rstab9.Model.get_calculation_errorsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_clipping_box", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_clipping_boxResponse get_clipping_box(Dlubal.WS.Rstab9.Model.get_clipping_boxRequest request);
@@ -1088,10 +1092,6 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_eigenvectors_by_node", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeResponse get_results_for_eigenvectors_by_node(Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_errors", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_results_for_errorsResponse get_results_for_errors(Dlubal.WS.Rstab9.Model.get_results_for_errorsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_members_by_eigenvector", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

@@ -12,11 +12,11 @@
     <RepositoryUrl>https://github.com/Dlubal-Software/Dlubal_CSharp_Client/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>6.04.0003</AssemblyVersion>
+    <AssemblyVersion>6.04.0004</AssemblyVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <FileVersion>6.04.0003</FileVersion>
-    <Version>6.04.0003</Version>
+    <FileVersion>6.04.0004</FileVersion>
+    <Version>6.04.0004</Version>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageId>Dlubal.$(AssemblyName)</PackageId>
     <PackageIcon>rfem.png</PackageIcon>
