@@ -1,18 +1,17 @@
-﻿using Dlubal.WS.Rfem6.Application;
-using Dlubal.WS.Rfem6.Model;
-using System;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.ServiceModel;
-using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
-using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
-
-namespace Cantilever
+﻿namespace Cantilever
 {
+    using System;
+    using System.IO;
+    using System.Runtime.CompilerServices;
+    using System.ServiceModel;
+    using Dlubal.WS.Rfem6.Application;
+    using Dlubal.WS.Rfem6.Model;
+    using ApplicationClient = Dlubal.WS.Rfem6.Application.RfemApplicationClient;
+    using ModelClient = Dlubal.WS.Rfem6.Model.RfemModelClient;
+
     internal class Program
     {
         public static EndpointAddress Address { get; set; } = new EndpointAddress("http://localhost:8081");
-
 
         private static BasicHttpBinding Binding
         {
@@ -20,22 +19,20 @@ namespace Cantilever
             {
                 BasicHttpBinding binding = new BasicHttpBinding
                 {
-                    // Send timeout is set to 180 seconds.
                     SendTimeout = new TimeSpan(0, 0, 180),
                     UseDefaultWebProxy = true,
+                    MaxReceivedMessageSize = 1000000,
                 };
 
                 return binding;
             }
         }
 
-        //private static RfemApplicationClient application = null;
         private static ApplicationClient application = null;
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
-            string CurrentDirectory = Directory.GetCurrentDirectory();
+            string currentDirectory = Directory.GetCurrentDirectory();
             #region Application Settings
             try
             {
@@ -44,7 +41,6 @@ namespace Cantilever
                 {
                     // connects to RFEM6 or RSTAB9 application
                     application = new ApplicationClient(Binding, Address);
-
                 }
                 catch (Exception exception)
                 {
@@ -73,17 +69,27 @@ namespace Cantilever
                 string modelName = "MyConcreteModel";
                 string modelUrl = application.new_model(modelName);
 
-
                 #region new model
+
                 // connects to RFEM6/RSTAB9 model
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
                 #endregion
 
+                addon_list_type addon = model.get_addon_statuses();
+
+                addon.design_addons.concrete_design_active = true;
+
                 material materialConcrete = new material
                 {
                     no = 1,
-                    name = "C35/45 | EN 1992-1-1:2004/A1:2014"
+                    name = "C35/45 | EN 1992-1-1:2004/A1:2014",
+                };
+
+                material materialReinforcement = new material()
+                {
+                    no = 2,
+                    name = "B500S(B)",
                 };
 
                 thickness surfaceThickness = new thickness()
@@ -106,7 +112,6 @@ namespace Cantilever
                     typeSpecified = true,
                     parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
-                    //name = "R_M1 0.5/1.0", // width/height as in RFEM
                     b = 0.3,
                     bSpecified = true,
                     h = 0.4,
@@ -129,7 +134,7 @@ namespace Cantilever
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 0.0, y = 0.0, z = zCoordinate },
                         coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
-                        coordinate_system_typeSpecified = true
+                        coordinate_system_typeSpecified = true,
                     };
                     nodes.Add(cornerNode1);
                     lineDefinitionNodes.Add(nodeNumber);
@@ -141,7 +146,6 @@ namespace Cantilever
                         coordinates = new vector_3d() { x = 15.0, y = 0.0, z = zCoordinate },
                         coordinate_system_type = node_coordinate_system_type.COORDINATE_SYSTEM_CARTESIAN,
                         coordinate_system_typeSpecified = true,
-                        comment = "concrete part"
                     };
 
                     nodes.Add(cornerNode2);
@@ -174,7 +178,7 @@ namespace Cantilever
                     zCoordinate = -5.5;
                 }
 
-                //nodes on line
+                // nodes on line
                 zCoordinate = 0.0;
                 int referenceLineNumber = 1;
 
@@ -274,6 +278,7 @@ namespace Cantilever
 
                         lines.Add(newLine);
                     }
+
                     lineNumber++;
                 }
 
@@ -306,6 +311,7 @@ namespace Cantilever
                     boundary_lines = new int[] { 1, 2, 3, 4 },
                     type = surface_type.TYPE_STANDARD,
                     typeSpecified = true,
+                    surface_reinforcements = new int[] { 1 },
                     thickness = 1,
                     thicknessSpecified = true,
                 };
@@ -323,8 +329,7 @@ namespace Cantilever
                 surfaces.Add(surfaceBottom);
                 surfaces.Add(surfaceTop);
 
-                //create columns
-
+                // create columns
                 for (int i = 0; i < 8; i++)
                 {
                     member newMember = new()
@@ -347,27 +352,6 @@ namespace Cantilever
                     members.Add(newMember);
                 }
 
-                //create member
-                //member member = new()
-                //{
-                //    no = 1,
-                //    line = 1,
-                //    lineSpecified = true,
-                //    section_start = sectionRectangle.no,
-                //    section_startSpecified = true,
-                //    section_end = sectionRectangle.no,
-                //    section_endSpecified = true,
-                //    comment = "concrete beam"
-                //};
-
-                //nodal_support support = new()
-                //{
-                //    no = 1,
-                //    nodes = new int[] { n1.no },
-                //    spring = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity },
-                //    rotational_restraint = new vector_3d() { x = double.PositiveInfinity, y = double.PositiveInfinity, z = double.PositiveInfinity }
-                //};
-
                 surface_support support = new()
                 {
                     no = 1,
@@ -383,8 +367,10 @@ namespace Cantilever
                 {
                     model.begin_modification("Geometry");
                     model.set_material(materialConcrete);
+                    model.set_material(materialReinforcement);
                     model.set_thickness(surfaceThickness);
                     model.set_section(sectionRectangle);
+                    model.set_addon_statuses(addon);
                     foreach (var node in nodes)
                     {
                         model.set_node(node);
@@ -427,6 +413,135 @@ namespace Cantilever
                     }
                 }
 
+                #region concrete design
+                member_concrete_longitudinal_reinforcement_items_row longitudinalReeinforcementMember = new member_concrete_longitudinal_reinforcement_items_row()
+                {
+                    no = 1,
+                    row = new member_concrete_longitudinal_reinforcement_items()
+                    {
+                        rebar_type = rebar_type.REBAR_TYPE_SYMMETRICAL,
+                        rebar_typeSpecified = true,
+                        material = materialReinforcement.no,
+                        materialSpecified = true,
+                        bar_count_symmetrical = 4,
+                        bar_count_symmetricalSpecified = true,
+                        bar_diameter_symmetrical = 0.01,
+                        bar_diameter_symmetricalSpecified = true,
+                        span_position_reference_type = member_concrete_longitudinal_reinforcement_items_span_position_reference_type.LONGITUDINAL_REINFORCEMENT_ITEM_REFERENCE_START,
+                        span_position_reference_typeSpecified = true,
+                        span_position_definition_format_type = member_concrete_longitudinal_reinforcement_items_span_position_definition_format_type.LONGITUDINAL_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
+                        span_position_definition_format_typeSpecified = true,
+                        span_start_relative = 0.0,
+                        span_start_relativeSpecified = true,
+                        span_end_relative = 1.0,
+                        span_end_relativeSpecified = true,
+                        anchorage_start_anchor_type = anchorage_start_anchor_type.ANCHORAGE_TYPE_NONE,
+                        anchorage_end_anchor_type = anchorage_end_anchor_type.ANCHORAGE_TYPE_NONE,
+                    },
+                };
+
+                member_concrete_shear_reinforcement_spans_row shearReinforcement = new member_concrete_shear_reinforcement_spans_row()
+                {
+                    no = 1,
+                    row = new member_concrete_shear_reinforcement_spans()
+                    {
+                        material = materialReinforcement.no,
+                        stirrup_type = stirrup_type.STIRRUP_TYPE_FOUR_LEGGED_CLOSED_HOOK_135,
+                        stirrup_distances = 0.3,
+                        stirrup_diameter = 0.01,
+                        span_start_relative = 0.0,
+                        span_start_relativeSpecified = true,
+                        span_end_relative = 1.0,
+                        span_end_relativeSpecified = true,
+                        span_position_reference_type = span_position_reference_type.SHEAR_REINFORCEMENT_SPAN_REFERENCE_START,
+                        span_position_reference_typeSpecified = true,
+                        span_position_definition_format_type = span_position_definition_format_type.SHEAR_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
+                        span_position_definition_format_typeSpecified = true,
+                    },
+                };
+                concrete_durability concreteDurability = new concrete_durability()
+                {
+                    no = 1,
+                    members = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 },
+                    surfaces = new int[] { 1, 2 },
+                    corrosion_induced_by_carbonation_enabled = true,
+                    corrosion_induced_by_carbonation_enabledSpecified = true,
+                    corrosion_induced_by_carbonation = concrete_durability_corrosion_induced_by_carbonation.CORROSION_INDUCED_BY_CARBONATION_TYPE_DRY_OR_PERMANENTLY_WET,
+                    corrosion_induced_by_carbonationSpecified = true,
+                    structural_class_type = concrete_durability_structural_class_type.STANDARD,
+                    increase_design_working_life_from_50_to_100_years_enabled = false,
+                    increase_design_working_life_from_50_to_100_years_enabledSpecified = true,
+                    position_of_reinforcement_not_affected_by_construction_process_enabled = false,
+                    position_of_reinforcement_not_affected_by_construction_process_enabledSpecified = true,
+                    special_quality_control_of_production_enabled = false,
+                    special_quality_control_of_production_enabledSpecified = true,
+                    air_entrainment_of_more_than_4_percent_enabled = false,
+                    air_entrainment_of_more_than_4_percent_enabledSpecified = true,
+                    additional_protection_enabled = false,
+                    additional_protection_enabledSpecified = true,
+                    allowance_of_deviation_type = concrete_durability_allowance_of_deviation_type.STANDARD,
+                    allowance_of_deviation_typeSpecified = true,
+                };
+
+                reinforcement_direction reinforcementDirection = new reinforcement_direction()
+                {
+                    no = 1,
+                    reinforcement_direction_type = reinforcement_direction_reinforcement_direction_type.REINFORCEMENT_DIRECTION_TYPE_FIRST_REINFORCEMENT_IN_X,
+                    reinforcement_direction_typeSpecified = true,
+                    surfaces = new int[] { 1, 2 },
+                };
+
+                surface_reinforcement surfaceReinforcement = new surface_reinforcement()
+                {
+                    no = 1,
+                    location_type = surface_reinforcement_location_type.LOCATION_TYPE_ON_SURFACE,
+                    location_typeSpecified = true,
+                    surfaces = new[] { 1, 2 },
+                    material = materialReinforcement.no,
+                    materialSpecified = true,
+                    reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
+                    reinforcement_typeSpecified = true,
+                    mesh_name = "Q424A",
+                    mesh_product_range = surface_reinforcement_mesh_product_range.MESHSTANDARD_GERMANY_2008_01_01,
+                    mesh_shape = surface_reinforcement_mesh_shape.MESHSHAPE_Q_MESH,
+                    additional_offset_to_concrete_cover_top = 0.0,
+                    additional_offset_to_concrete_cover_topSpecified = true,
+                    additional_offset_to_concrete_cover_bottom = 0.0,
+                    additional_offset_to_concrete_cover_bottomSpecified = true,
+                    alignment_bottom_enabled = false,
+                    alignment_bottom_enabledSpecified = true,
+                    alignment_top_enabled = true,
+                    alignment_top_enabledSpecified = true,
+                    reinforcement_direction_type = surface_reinforcement_reinforcement_direction_type.REINFORCEMENT_DIRECTION_TYPE_IN_DESIGN_REINFORCEMENT_DIRECTION,
+                    reinforcement_direction_typeSpecified = true,
+                    design_reinforcement_direction = surface_reinforcement_design_reinforcement_direction.DESIGN_REINFORCEMENT_DIRECTION_A_S_1,
+                    design_reinforcement_directionSpecified = true,
+                };
+
+                try
+                {
+                    model.begin_modification("Set concrete design input data");
+                    model.set_concrete_durability(concreteDurability);
+
+                    model.set_reinforcement_direction(reinforcementDirection);
+                    model.set_surface_reinforcement(surfaceReinforcement);
+                }
+                catch (Exception exception)
+                {
+                    model.cancel_modification();
+                    throw;
+                }
+                finally
+                {
+                    try
+                    {
+                        model.finish_modification();
+                    }
+                    catch (Exception exception)
+                    {
+                    }
+                }
+                #endregion
 
                 static_analysis_settings analysis = new()
                 {
@@ -434,7 +549,6 @@ namespace Cantilever
                     analysis_type = static_analysis_settings_analysis_type.GEOMETRICALLY_LINEAR,
                     analysis_typeSpecified = true,
                 };
-
 
                 load_case selfWeightLC = new()
                 {
@@ -481,8 +595,6 @@ namespace Cantilever
                     consider_inclusive_exclusive_load_casesSpecified = true,
                 };
 
-
-
                 load_combination_items_row load_Combination_SW = new load_combination_items_row()
                 {
                     no = 1,
@@ -492,8 +604,7 @@ namespace Cantilever
                         load_caseSpecified = true,
                         factor = 1.35,
                         factorSpecified = true,
-                    }
-
+                    },
                 };
 
                 load_combination_items_row load_Combination_lcData = new load_combination_items_row()
@@ -505,12 +616,9 @@ namespace Cantilever
                         load_caseSpecified = true,
                         factor = 1.5,
                         factorSpecified = true,
-                    }
-
+                    },
                 };
                 load_combination_items_row[] loadCombinationItems = new load_combination_items_row[] { load_Combination_SW, load_Combination_lcData };
-
-
 
                 load_combination load_Combination = new load_combination()
                 {
@@ -556,67 +664,12 @@ namespace Cantilever
                     }
                 }
 
-                //member_load memberLoadonBeam = new()
-                //{
-                //    no = 1,
-                //    members_string = member.no.ToString(),
-                //    members = new int[] { member.no },
-                //    load_distribution = member_load_load_distribution.LOAD_DISTRIBUTION_TRAPEZOIDAL,
-                //    load_distributionSpecified = true,
-                //    magnitude = 30000,
-                //    magnitudeSpecified = true,
-                //    magnitude_1 = 10000,
-                //    magnitude_1Specified = true,
-                //    magnitude_2 = 20000,
-                //    magnitude_2Specified = true,
-                //    load_is_over_total_length = true,
-                //    load_is_over_total_lengthSpecified = true,
-                //};
-                //try
-                //{
-                //    model.begin_modification("Set loads");
-                //    model.set_member_load(lcData.no, memberLoadonBeam);
-                //}
-                //catch (Exception exception)
-                //{
-                //    model.cancel_modification();
-                //    Console.WriteLine("Something happen when creation of load" + exception.Message);
-                //    throw;
-                //}
-                //finally
-                //{
-                //    try
-                //    {
-                //        model.finish_modification();
-                //    }
-                //    catch (Exception exception)
-                //    {
-                //        Console.WriteLine("Something wrong in finish modification of load\n" + exception.Message + "\n");
-                //        model.reset();
-                //    }
-                //}
-
                 #region generate mesh and get mesh statistics
                 calculation_message[] meshGenerationMessage = model.generate_mesh(true);
-                if (meshGenerationMessage.Length != 0)
-                {
-                }
-                mesh_statistics_type mesh_Statistics = model.get_mesh_statistics();
-                Console.WriteLine("Number of mesh nodes: " + mesh_Statistics.node_elements);
-                Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
-                Console.WriteLine("Number of surface element: " + mesh_Statistics.surface_2D_finite_elements);
-                Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
 
                 #endregion
 
-                calculation_message[] calculationMesages = model.calculate_all(true);
-                if (calculationMesages.Length != 0)
-                {
-                }
-                else
-                {
-                    Console.WriteLine("Calculation finished successfully");
-                }
+                model.calculate_all(true);
 
                 #region Results
                 bool modelHasAnyResults = model.has_any_results();
@@ -640,81 +693,33 @@ namespace Cantilever
                     Console.WriteLine("Model has no LC2 results");
                 }
 
-                //model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
+                object_location[] object_locations = new object_location[2];
 
-                //members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
-                //Console.WriteLine("Internal forces for member");
-                //foreach (var item in internalForcesMember1)
-                //{
-                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                //    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
-                //    Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", item.row.internal_force_n.ToString(), item.row.internal_force_vy.ToString(), item.row.internal_force_vz.ToString(), item.row.internal_force_mt.ToString(), item.row.internal_force_my.ToString(), item.row.internal_force_mz.ToString());
+                foreach (var surface in surfaces)
+                {
+                    object_location object_location = new object_location()
+                    {
+                        type = object_types.E_OBJECT_TYPE_SURFACE,
+                        no = surface.no,
+                        parent_no = 0,
+                    };
 
-                //}
+                    object_locations.Append(object_location);
+                }
 
-                //Console.WriteLine("Global deformations for member");
-                //members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
-                //foreach (var item in globalDeformationsMember1)
-                //{
-                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                //    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
-                //    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
+                results_for_concrete_design_design_ratios_surfaces_by_surface_row[] designRatioResults = model.get_results_for_concrete_design_design_ratios_surfaces_by_surface(object_locations);
 
-                //}
+                Console.WriteLine($"Design Ratios by Surface: ");
 
-                //nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                //Console.WriteLine("Node deformations");
-                //foreach (var item in nodeDeformations)
-                //{
-                //    Console.WriteLine("Row no {0}\t Description {1} node comment {2}", item.no, item.description, item.row.specification);
-                //    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
+                foreach (var item in designRatioResults.Skip(1))
+                {
+                    Console.WriteLine($"Row no.: {item.no}, Description: {item.description}");
+                    Console.WriteLine($"Surface: {item.row.surface.value}\t Mesh Point: {item.row.mesh_node_or_grid_point_no.value}\t design ratio: {item.row.design_ratio.value}\t design check type: {item.row.design_check_type.value}\t design check formula: {item.row.design_check_formula.value}\t design check description: {item.row.design_check_description.value}");
+                }
 
-                //}
-                //nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                //Console.WriteLine("Node reactions");
-                //foreach (var item in nodeReactions)
-                //{
-                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                //    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading.ToString(), item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
-
-                //}
                 #endregion
 
-                #region Generate part list
-                model.generate_parts_lists();
-                parts_list_all_by_material_row[] partListByAllMaterial = model.get_parts_list_all_by_material();
-                foreach (var item in partListByAllMaterial)
-                {
-                    if (!item.description.Contains("Total"))
-                    {//material no
-                        Console.WriteLine("Material no: {0}\t Material name: {1}\t object type: {2}\t coating:{3}\t volume: {4}\t mass: {5}", item.description, item.row.material_name, item.row.object_type, item.row.total_coating, item.row.volume, item.row.mass);
-                    }
-                    else
-                    {//material no total
-                        Console.WriteLine("Material total\t \t \t coating:{0}\t volume: {1}\t mass: {2}", item.row.total_coating, item.row.volume, item.row.mass);
-                    }
-
-                }
-                Console.WriteLine("Members: ");
-                parts_list_members_by_material_row[] partListMemberByMaterial = model.get_parts_list_members_by_material();
-                foreach (var item in partListMemberByMaterial)
-                {
-                    if (!item.description.Contains("Total"))
-                    {
-                        Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                        item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                                            item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
-
-                    }
-
-                }
-                #endregion
-                application.close_model(0, false);//close model
-                                                  //  application.close_application();
+                /* application.close_model(0, false);*/// close model
             }
             catch (Exception ex)
             {
@@ -723,5 +728,4 @@ namespace Cantilever
             }
         }
     }
-
 }
