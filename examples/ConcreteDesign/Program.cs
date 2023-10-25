@@ -65,11 +65,11 @@
                 }
                 #endregion
 
+                #region new model
+
                 // creates new model
                 string modelName = "MyConcreteModel";
                 string modelUrl = application.new_model(modelName);
-
-                #region new model
 
                 // connects to RFEM6/RSTAB9 model
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
@@ -129,7 +129,7 @@
 
                 for (int i = 0; i < 2; i++)
                 {
-                    node cornerNode1 = new()
+                    node cornerNode1 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 0.0, y = 0.0, z = zCoordinate },
@@ -140,7 +140,7 @@
                     lineDefinitionNodes.Add(nodeNumber);
                     nodeNumber++;
 
-                    node cornerNode2 = new()
+                    node cornerNode2 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 15.0, y = 0.0, z = zCoordinate },
@@ -152,7 +152,7 @@
                     lineDefinitionNodes.Add(nodeNumber);
                     nodeNumber++;
 
-                    node cornerNode3 = new()
+                    node cornerNode3 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 15.0, y = 15.0, z = zCoordinate },
@@ -164,7 +164,7 @@
                     lineDefinitionNodes.Add(nodeNumber);
                     nodeNumber++;
 
-                    node cornerNode4 = new()
+                    node cornerNode4 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 0.0, y = 15.0, z = zCoordinate },
@@ -184,7 +184,7 @@
 
                 for (int i = 0; i < 2; i++)
                 {
-                    node lineNode1 = new()
+                    node lineNode1 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 7.5, y = 0.0, z = zCoordinate },
@@ -200,7 +200,7 @@
                     nodeNumber++;
                     referenceLineNumber++;
 
-                    node lineNode2 = new()
+                    node lineNode2 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 15.0, y = 7.5, z = zCoordinate },
@@ -216,7 +216,7 @@
                     nodeNumber++;
                     referenceLineNumber++;
 
-                    node lineNode3 = new()
+                    node lineNode3 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 7.5, y = 15.0, z = zCoordinate },
@@ -232,7 +232,7 @@
                     nodeNumber++;
                     referenceLineNumber++;
 
-                    node lineNode4 = new()
+                    node lineNode4 = new ()
                     {
                         no = nodeNumber,
                         coordinates = new vector_3d() { x = 0, y = 7.5, z = zCoordinate },
@@ -256,7 +256,7 @@
                 {
                     if (i == 3 || i == 7)
                     {
-                        line newLine = new()
+                        line newLine = new ()
                         {
                             no = lineNumber,
                             definition_nodes = new int[] { nodes[i].no, nodes[i - 3].no },
@@ -268,7 +268,7 @@
                     }
                     else
                     {
-                        line newLine = new()
+                        line newLine = new ()
                         {
                             no = lineNumber,
                             definition_nodes = new int[] { nodes[i].no, nodes[i + 1].no },
@@ -292,7 +292,7 @@
                         nodePosition = 8;
                     }
 
-                    line newLine = new()
+                    line newLine = new ()
                     {
                         no = lineNumber,
                         definition_nodes = new int[] { nodes[nodePosition].no, nodes[nodePosition + 4].no },
@@ -305,7 +305,7 @@
                     lines.Add(newLine);
                 }
 
-                surface surfaceBottom = new()
+                surface surfaceBottom = new ()
                 {
                     no = 1,
                     boundary_lines = new int[] { 1, 2, 3, 4 },
@@ -316,7 +316,7 @@
                     thicknessSpecified = true,
                 };
 
-                surface surfaceTop = new()
+                surface surfaceTop = new ()
                 {
                     no = 2,
                     boundary_lines = new int[] { 5, 6, 7, 8 },
@@ -332,7 +332,7 @@
                 // create columns
                 for (int i = 0; i < 8; i++)
                 {
-                    member newMember = new()
+                    member newMember = new ()
                     {
                         no = i + 1,
                         line = lines[i + 8].no,
@@ -352,7 +352,7 @@
                     members.Add(newMember);
                 }
 
-                surface_support support = new()
+                surface_support support = new ()
                 {
                     no = 1,
                     surfaces = new int[] { 1 },
@@ -414,51 +414,53 @@
                 }
 
                 #region concrete design
-                member_concrete_longitudinal_reinforcement_items_row longitudinalReeinforcementMember = new member_concrete_longitudinal_reinforcement_items_row()
-                {
-                    no = 1,
-                    row = new member_concrete_longitudinal_reinforcement_items()
-                    {
-                        rebar_type = rebar_type.REBAR_TYPE_SYMMETRICAL,
-                        rebar_typeSpecified = true,
-                        material = materialReinforcement.no,
-                        materialSpecified = true,
-                        bar_count_symmetrical = 4,
-                        bar_count_symmetricalSpecified = true,
-                        bar_diameter_symmetrical = 0.01,
-                        bar_diameter_symmetricalSpecified = true,
-                        span_position_reference_type = member_concrete_longitudinal_reinforcement_items_span_position_reference_type.LONGITUDINAL_REINFORCEMENT_ITEM_REFERENCE_START,
-                        span_position_reference_typeSpecified = true,
-                        span_position_definition_format_type = member_concrete_longitudinal_reinforcement_items_span_position_definition_format_type.LONGITUDINAL_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
-                        span_position_definition_format_typeSpecified = true,
-                        span_start_relative = 0.0,
-                        span_start_relativeSpecified = true,
-                        span_end_relative = 1.0,
-                        span_end_relativeSpecified = true,
-                        anchorage_start_anchor_type = anchorage_start_anchor_type.ANCHORAGE_TYPE_NONE,
-                        anchorage_end_anchor_type = anchorage_end_anchor_type.ANCHORAGE_TYPE_NONE,
-                    },
-                };
+                //member_concrete_longitudinal_reinforcement_items_row longitudinalReeinforcementMember = new member_concrete_longitudinal_reinforcement_items_row()
+                //{
+                //    no = 1,
+                //    row = new member_concrete_longitudinal_reinforcement_items()
+                //    {
+                //        rebar_type = rebar_type.REBAR_TYPE_SYMMETRICAL,
+                //        rebar_typeSpecified = true,
+                //        material = materialReinforcement.no,
+                //        materialSpecified = true,
+                //        bar_count_symmetrical = 4,
+                //        bar_count_symmetricalSpecified = true,
+                //        bar_diameter_symmetrical = 0.01,
+                //        bar_diameter_symmetricalSpecified = true,
+                //        span_position_reference_type = member_concrete_longitudinal_reinforcement_items_span_position_reference_type.LONGITUDINAL_REINFORCEMENT_ITEM_REFERENCE_START,
+                //        span_position_reference_typeSpecified = true,
+                //        span_position_definition_format_type = member_concrete_longitudinal_reinforcement_items_span_position_definition_format_type.LONGITUDINAL_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
+                //        span_position_definition_format_typeSpecified = true,
+                //        span_start_relative = 0.0,
+                //        span_start_relativeSpecified = true,
+                //        span_end_relative = 1.0,
+                //        span_end_relativeSpecified = true,
+                //        anchorage_start_anchor_type = anchorage_start_anchor_type.ANCHORAGE_TYPE_NONE,
+                //        anchorage_end_anchor_type = anchorage_end_anchor_type.ANCHORAGE_TYPE_NONE,
+                //    },
+                //};
 
-                member_concrete_shear_reinforcement_spans_row shearReinforcement = new member_concrete_shear_reinforcement_spans_row()
-                {
-                    no = 1,
-                    row = new member_concrete_shear_reinforcement_spans()
-                    {
-                        material = materialReinforcement.no,
-                        stirrup_type = stirrup_type.STIRRUP_TYPE_FOUR_LEGGED_CLOSED_HOOK_135,
-                        stirrup_distances = 0.3,
-                        stirrup_diameter = 0.01,
-                        span_start_relative = 0.0,
-                        span_start_relativeSpecified = true,
-                        span_end_relative = 1.0,
-                        span_end_relativeSpecified = true,
-                        span_position_reference_type = span_position_reference_type.SHEAR_REINFORCEMENT_SPAN_REFERENCE_START,
-                        span_position_reference_typeSpecified = true,
-                        span_position_definition_format_type = span_position_definition_format_type.SHEAR_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
-                        span_position_definition_format_typeSpecified = true,
-                    },
-                };
+                //member_concrete_shear_reinforcement_spans_row shearReinforcement = new member_concrete_shear_reinforcement_spans_row()
+                //{
+                //    no = 1,
+                //    row = new member_concrete_shear_reinforcement_spans()
+                //    {
+                //        material = materialReinforcement.no,
+                //        stirrup_type = stirrup_type.STIRRUP_TYPE_FOUR_LEGGED_CLOSED_HOOK_135,
+                //        stirrup_distances = 0.3,
+                //        stirrup_diameter = 0.01,
+                //        span_start_relative = 0.0,
+                //        span_start_relativeSpecified = true,
+                //        span_end_relative = 1.0,
+                //        span_end_relativeSpecified = true,
+                //        span_position_reference_type = span_position_reference_type.SHEAR_REINFORCEMENT_SPAN_REFERENCE_START,
+                //        span_position_reference_typeSpecified = true,
+                //        span_position_definition_format_type = span_position_definition_format_type.SHEAR_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
+                //        span_position_definition_format_typeSpecified = true,
+                //    },
+                //};
+
+                // define boundary conditions for concrete design
                 concrete_durability concreteDurability = new concrete_durability()
                 {
                     no = 1,
@@ -543,14 +545,15 @@
                 }
                 #endregion
 
-                static_analysis_settings analysis = new()
+                // create load cases
+                static_analysis_settings analysis = new ()
                 {
                     no = 1,
                     analysis_type = static_analysis_settings_analysis_type.GEOMETRICALLY_LINEAR,
                     analysis_typeSpecified = true,
                 };
 
-                load_case selfWeightLC = new()
+                load_case selfWeightLC = new ()
                 {
                     no = 1,
                     name = "SelfWeight",
@@ -569,7 +572,7 @@
                     stability_analysis_settingsSpecified = true,
                 };
 
-                load_case lcData = new()
+                load_case lcData = new ()
                 {
                     no = 2,
                     name = "My load case",
@@ -672,27 +675,8 @@
                 model.calculate_all(true);
 
                 #region Results
-                bool modelHasAnyResults = model.has_any_results();
 
-                if (modelHasAnyResults)
-                {
-                    Console.WriteLine("Model has results");
-                }
-                else
-                {
-                    Console.WriteLine("Model has no results");
-                }
-
-                bool modelHasLC2Calcuolated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
-                if (modelHasLC2Calcuolated)
-                {
-                    Console.WriteLine("Model has LC2 results");
-                }
-                else
-                {
-                    Console.WriteLine("Model has no LC2 results");
-                }
-
+                // create object locations for surfaces
                 object_location[] object_locations = new object_location[2];
 
                 foreach (var surface in surfaces)
@@ -707,19 +691,25 @@
                     object_locations.Append(object_location);
                 }
 
+                // get results for concrete design
                 results_for_concrete_design_design_ratios_surfaces_by_surface_row[] designRatioResults = model.get_results_for_concrete_design_design_ratios_surfaces_by_surface(object_locations);
 
+                // print results to console
                 Console.WriteLine($"Design Ratios by Surface: ");
+                int counter = 1;
 
                 foreach (var item in designRatioResults.Skip(1))
                 {
+                    if (item.row.surface == null)
+                    {
+                        continue;
+                    }
+
                     Console.WriteLine($"Row no.: {item.no}, Description: {item.description}");
                     Console.WriteLine($"Surface: {item.row.surface.value}\t Mesh Point: {item.row.mesh_node_or_grid_point_no.value}\t design ratio: {item.row.design_ratio.value}\t design check type: {item.row.design_check_type.value}\t design check formula: {item.row.design_check_formula.value}\t design check description: {item.row.design_check_description.value}");
                 }
 
                 #endregion
-
-                /* application.close_model(0, false);*/// close model
             }
             catch (Exception ex)
             {
