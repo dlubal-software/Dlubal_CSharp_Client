@@ -28,21 +28,22 @@
             }
         }
 
-        private static ApplicationClient application = null;
+        private static ApplicationClient? application = null;
 
         public static void Main(string[] args)
         {
+            // Application settings
             string currentDirectory = Directory.GetCurrentDirectory();
-            #region Application Settings
+
             try
             {
-                application_information ApplicationInfo;
+                application_information applicationInfo;
                 try
                 {
                     // connects to RFEM6 or RSTAB9 application
                     application = new ApplicationClient(Binding, Address);
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     if (application != null)
                     {
@@ -60,21 +61,25 @@
                 }
                 finally
                 {
-                    ApplicationInfo = application.get_information();
-                    Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", ApplicationInfo.name, ApplicationInfo.version, ApplicationInfo.type, ApplicationInfo.language_name);
+                    if (application != null)
+                    {
+                        applicationInfo = application.get_information();
+                        Console.WriteLine("Name: {0}, Version:{1}, Type: {2}, language: {3} ", applicationInfo.name, applicationInfo.version, applicationInfo.type, applicationInfo.language_name);
+                    }
                 }
-                #endregion
 
-                #region new model
-
-                // creates new model
+                // create new model
                 string modelName = "MyConcreteModel";
-                string modelUrl = application.new_model(modelName);
+                string modelUrl = string.Empty;
+
+                if (application != null)
+                {
+                    modelUrl = application.new_model(modelName);
+                }
 
                 // connects to RFEM6/RSTAB9 model
                 ModelClient model = new ModelClient(Binding, new EndpointAddress(modelUrl));
                 model.reset();
-                #endregion
 
                 addon_list_type addon = model.get_addon_statuses();
 
@@ -413,53 +418,6 @@
                     }
                 }
 
-                #region concrete design
-                //member_concrete_longitudinal_reinforcement_items_row longitudinalReeinforcementMember = new member_concrete_longitudinal_reinforcement_items_row()
-                //{
-                //    no = 1,
-                //    row = new member_concrete_longitudinal_reinforcement_items()
-                //    {
-                //        rebar_type = rebar_type.REBAR_TYPE_SYMMETRICAL,
-                //        rebar_typeSpecified = true,
-                //        material = materialReinforcement.no,
-                //        materialSpecified = true,
-                //        bar_count_symmetrical = 4,
-                //        bar_count_symmetricalSpecified = true,
-                //        bar_diameter_symmetrical = 0.01,
-                //        bar_diameter_symmetricalSpecified = true,
-                //        span_position_reference_type = member_concrete_longitudinal_reinforcement_items_span_position_reference_type.LONGITUDINAL_REINFORCEMENT_ITEM_REFERENCE_START,
-                //        span_position_reference_typeSpecified = true,
-                //        span_position_definition_format_type = member_concrete_longitudinal_reinforcement_items_span_position_definition_format_type.LONGITUDINAL_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
-                //        span_position_definition_format_typeSpecified = true,
-                //        span_start_relative = 0.0,
-                //        span_start_relativeSpecified = true,
-                //        span_end_relative = 1.0,
-                //        span_end_relativeSpecified = true,
-                //        anchorage_start_anchor_type = anchorage_start_anchor_type.ANCHORAGE_TYPE_NONE,
-                //        anchorage_end_anchor_type = anchorage_end_anchor_type.ANCHORAGE_TYPE_NONE,
-                //    },
-                //};
-
-                //member_concrete_shear_reinforcement_spans_row shearReinforcement = new member_concrete_shear_reinforcement_spans_row()
-                //{
-                //    no = 1,
-                //    row = new member_concrete_shear_reinforcement_spans()
-                //    {
-                //        material = materialReinforcement.no,
-                //        stirrup_type = stirrup_type.STIRRUP_TYPE_FOUR_LEGGED_CLOSED_HOOK_135,
-                //        stirrup_distances = 0.3,
-                //        stirrup_diameter = 0.01,
-                //        span_start_relative = 0.0,
-                //        span_start_relativeSpecified = true,
-                //        span_end_relative = 1.0,
-                //        span_end_relativeSpecified = true,
-                //        span_position_reference_type = span_position_reference_type.SHEAR_REINFORCEMENT_SPAN_REFERENCE_START,
-                //        span_position_reference_typeSpecified = true,
-                //        span_position_definition_format_type = span_position_definition_format_type.SHEAR_REINFORCEMENT_SPAN_DEFINITION_FORMAT_RELATIVE,
-                //        span_position_definition_format_typeSpecified = true,
-                //    },
-                //};
-
                 // define boundary conditions for concrete design
                 concrete_durability concreteDurability = new concrete_durability()
                 {
@@ -528,7 +486,7 @@
                     model.set_reinforcement_direction(reinforcementDirection);
                     model.set_surface_reinforcement(surfaceReinforcement);
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     model.cancel_modification();
                     throw;
@@ -539,11 +497,10 @@
                     {
                         model.finish_modification();
                     }
-                    catch (Exception exception)
+                    catch (Exception)
                     {
                     }
                 }
-                #endregion
 
                 // create load cases
                 static_analysis_settings analysis = new ()
@@ -646,7 +603,6 @@
 
                     model.set_design_situation(design_Situation);
                     model.set_load_combination(load_Combination);
-
                 }
                 catch (Exception exception)
                 {
@@ -667,15 +623,12 @@
                     }
                 }
 
-                #region generate mesh and get mesh statistics
+                // generate mesh
                 calculation_message[] meshGenerationMessage = model.generate_mesh(true);
-
-                #endregion
 
                 model.calculate_all(true);
 
-                #region Results
-
+                // results
                 // create object locations for surfaces
                 object_location[] object_locations = new object_location[2];
 
@@ -696,7 +649,6 @@
 
                 // print results to console
                 Console.WriteLine($"Design Ratios by Surface: ");
-                int counter = 1;
 
                 foreach (var item in designRatioResults.Skip(1))
                 {
@@ -708,8 +660,6 @@
                     Console.WriteLine($"Row no.: {item.no}, Description: {item.description}");
                     Console.WriteLine($"Surface: {item.row.surface.value}\t Mesh Point: {item.row.mesh_node_or_grid_point_no.value}\t design ratio: {item.row.design_ratio.value}\t design check type: {item.row.design_check_type.value}\t design check formula: {item.row.design_check_formula.value}\t design check description: {item.row.design_check_description.value}");
                 }
-
-                #endregion
             }
             catch (Exception ex)
             {
