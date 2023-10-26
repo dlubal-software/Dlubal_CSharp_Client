@@ -648,7 +648,7 @@
                 results_for_concrete_design_design_ratios_surfaces_by_surface_row[] designRatioResults = model.get_results_for_concrete_design_design_ratios_surfaces_by_surface(object_locations);
 
                 // print results to console
-                Console.WriteLine($"Design Ratios by Surface: ");
+                Console.WriteLine("Design Ratios by Surface: ");
 
                 foreach (var item in designRatioResults.Skip(1))
                 {
