@@ -14,6 +14,7 @@ using ModelClient = Dlubal.WS.Rstab9.Model.RstabModelClient;
 
 using NLog;
 using System.ServiceModel;
+using System.Linq;
 
 namespace Cantilever
 {
@@ -614,13 +615,33 @@ namespace Cantilever
                 #endregion
 #endif
 
-                calculation_message[] calculationMesages = model.calculate_all(true);
-                if (calculationMesages.Length != 0)
+                calculation_result calculationResult = model.calculate_all(true);
+                if (!calculationResult.succeeded || !String.IsNullOrEmpty(calculationResult.messages) || calculationResult.errors_and_warnings.Any())
                 {
-                }
-                else
-                {
-                    Console.WriteLine("Calculation finished successfully");
+                    Console.Write("Calculation is not finished successfully");
+                    if (!String.IsNullOrEmpty(calculationResult.messages))
+                    {
+                        Console.Write(calculationResult.messages);
+                    }
+                    if (calculationResult.errors_and_warnings.Any())
+                    {
+                        foreach (calculation_message message in calculationResult.errors_and_warnings)
+                        {
+                            Console.Write($"{message.message_type.ToString()}  {message.message} {(message.input_field != null ? message.input_field : "")} {(message.@object != null ? message.@object : "")} {(message.current_value != null ? message.current_value : "")} {message.result.ToString()}");
+                        }
+
+                    }
+                    if (!String.IsNullOrEmpty(calculationResult.messages) && !calculationResult.errors_and_warnings.Any())
+                    {
+                        errors_row[] errors = model.get_calculation_errors();
+                        if (errors.Any())
+                        {
+                            foreach (errors_row error in errors)
+                            {
+                                Console.Write($"{error.no} {error.description}  {error.row.analysis_type} {error.row.description} {error.row.error_or_warning_number} {error.row.@object}");
+                            }
+                        }
+                    }
                 }
 
                 #region Results
@@ -680,7 +701,7 @@ namespace Cantilever
                 foreach (var item in nodeReactions)
                 {
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading.ToString(), item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
+                    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading?.ToString(), item.row.support_force_p_x?.value.ToString(), item.row.support_force_p_y?.value.ToString(), item.row.support_force_p_z?.value.ToString(), item.row.support_moment_m_x?.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
 
                 }
                 #endregion

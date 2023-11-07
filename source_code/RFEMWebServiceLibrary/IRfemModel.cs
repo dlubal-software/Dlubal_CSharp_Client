@@ -1527,6 +1527,26 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_surface_reinforcementResponse get_results_for_concrete_design_surface_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_surface_reinforcementRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_construction_stage", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_construction_stageResponse get_results_for_concrete_foundations_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_construction_stageRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_situationResponse get_results_for_concrete_foundations_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_foundation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundationResponse get_results_for_concrete_foundations_foundation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_loading", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_loadingResponse get_results_for_concrete_foundations_loading(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_nodeResponse get_results_for_concrete_foundations_node(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_nodeRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_convergence_diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsResponse get_results_for_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsRequest request);
