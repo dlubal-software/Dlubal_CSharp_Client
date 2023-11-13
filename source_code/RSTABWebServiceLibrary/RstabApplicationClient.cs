@@ -198,6 +198,19 @@ namespace Dlubal.WS.Rstab9.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Application.get_model_list_with_indexesResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_model_list_with_indexes(Dlubal.WS.Rstab9.Application.get_model_list_with_indexesRequest request)
+        {
+            return base.Channel.get_model_list_with_indexes(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Application.model_name_and_index[] get_model_list_with_indexes()
+        {
+            Dlubal.WS.Rstab9.Application.get_model_list_with_indexesRequest inValue = new Dlubal.WS.Rstab9.Application.get_model_list_with_indexesRequest();
+            Dlubal.WS.Rstab9.Application.get_model_list_with_indexesResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).get_model_list_with_indexes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Application.get_projectResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_project(Dlubal.WS.Rstab9.Application.get_projectRequest request)
         {
             return base.Channel.get_project(request);

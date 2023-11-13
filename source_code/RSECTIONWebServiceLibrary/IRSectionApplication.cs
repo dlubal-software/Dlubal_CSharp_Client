@@ -58,6 +58,10 @@ namespace Dlubal.WS.RSection1.Application
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_model_listResponse get_model_list(Dlubal.WS.RSection1.Application.get_model_listRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_model_list_with_indexes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Application.get_model_list_with_indexesResponse get_model_list_with_indexes(Dlubal.WS.RSection1.Application.get_model_list_with_indexesRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_projectResponse get_project(Dlubal.WS.RSection1.Application.get_projectRequest request);

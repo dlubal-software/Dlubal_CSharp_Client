@@ -198,6 +198,19 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_model_list_with_indexesResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_model_list_with_indexes(Dlubal.WS.Rfem6.Application.get_model_list_with_indexesRequest request)
+        {
+            return base.Channel.get_model_list_with_indexes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.model_name_and_index[] get_model_list_with_indexes()
+        {
+            Dlubal.WS.Rfem6.Application.get_model_list_with_indexesRequest inValue = new Dlubal.WS.Rfem6.Application.get_model_list_with_indexesRequest();
+            Dlubal.WS.Rfem6.Application.get_model_list_with_indexesResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_model_list_with_indexes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Application.get_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_project(Dlubal.WS.Rfem6.Application.get_projectRequest request)
         {
             return base.Channel.get_project(request);
