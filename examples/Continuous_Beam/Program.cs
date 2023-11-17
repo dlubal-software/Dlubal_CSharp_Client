@@ -499,8 +499,9 @@ namespace ContinuousBeam
                 Console.WriteLine("Number of volume elements: " + mesh_Statistics.solid_3D_finite_elements);
                 #endregion
 #endif
-                calculation_message[] calculationMessages = model.calculate_all(true);
-                if (calculationMessages.Length != 0)
+                calculation_result calculationResult = model.calculate_all(true);
+
+                if (calculationResult.succeeded == false)
                 {
                 }
                 else
