@@ -73,11 +73,12 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.calculate_all(request);
         }
         
-        public void calculate_all(bool generateXmlSolverInput)
+        public Dlubal.WS.RSection1.Model.calculation_result calculate_all(bool skip_warnings)
         {
             Dlubal.WS.RSection1.Model.calculate_allRequest inValue = new Dlubal.WS.RSection1.Model.calculate_allRequest();
-            inValue.generateXmlSolverInput = generateXmlSolverInput;
+            inValue.skip_warnings = skip_warnings;
             Dlubal.WS.RSection1.Model.calculate_allResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).calculate_all(inValue);
+            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

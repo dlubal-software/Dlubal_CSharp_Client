@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Dlubal.RFEMWebServiceLibrary</id>
-        <version>6.0.2</version>
+        <version>$version$</version>
         <title>C# shared library for RFEM Web Services</title>
         <authors>Team 9</authors>
         <owners>Dlubal Software</owners>

@@ -226,6 +226,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_calculation_diagramResponse get_calculation_diagram(Dlubal.WS.Rfem6.Model.get_calculation_diagramRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_calculation_errors", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_calculation_errorsResponse get_calculation_errors(Dlubal.WS.Rfem6.Model.get_calculation_errorsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_clipping_box", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_clipping_boxResponse get_clipping_box(Dlubal.WS.Rfem6.Model.get_clipping_boxRequest request);
@@ -1557,10 +1561,6 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_surfaceResponse get_results_for_eigenvectors_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_surfaceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_errors", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rfem6.Model.get_results_for_errorsResponse get_results_for_errors(Dlubal.WS.Rfem6.Model.get_results_for_errorsRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_line_hinges_deformations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_line_hinges_deformationsResponse get_results_for_line_hinges_deformations(Dlubal.WS.Rfem6.Model.get_results_for_line_hinges_deformationsRequest request);
@@ -2839,6 +2839,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_steel_joints_design_ratios_by_node", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeResponse get_results_for_steel_joints_design_ratios_by_node(Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_steel_joints_stiffness_analysis_results", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsResponse get_results_for_steel_joints_stiffness_analysis_results(Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_steel_joints_stiffness_classification", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationResponse get_results_for_steel_joints_stiffness_classification(Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stress_analysis_governing_internal_forces_b" +
             "y_member", ReplyAction="*")]

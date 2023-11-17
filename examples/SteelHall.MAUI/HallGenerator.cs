@@ -1215,7 +1215,7 @@ namespace SteelHall.MAUI
                     }
                 }
 
-                calculation_message[] calculationMessages = this.Model.calculate_all(true);
+                calculation_result calculationMessages = this.Model.calculate_all(true);
                 var assemblyLocation = Assembly.GetEntryAssembly().Location;
                 string currentDirectory = Path.GetDirectoryName(assemblyLocation);
                 this.Model.save(currentDirectory + @"\testmodels\");                

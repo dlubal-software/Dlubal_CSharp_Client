@@ -73,10 +73,10 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.calculate_all(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.calculation_message[] calculate_all(bool generateXmlSolverInput)
+        public Dlubal.WS.Rfem6.Model.calculation_result calculate_all(bool skip_warnings)
         {
             Dlubal.WS.Rfem6.Model.calculate_allRequest inValue = new Dlubal.WS.Rfem6.Model.calculate_allRequest();
-            inValue.generateXmlSolverInput = generateXmlSolverInput;
+            inValue.skip_warnings = skip_warnings;
             Dlubal.WS.Rfem6.Model.calculate_allResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).calculate_all(inValue);
             return retVal.value;
         }
@@ -87,7 +87,7 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.calculate_specific(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.calculation_message[] calculate_specific(Dlubal.WS.Rfem6.Model.calculate_specific_loading[] loadings, bool skip_warnings)
+        public Dlubal.WS.Rfem6.Model.calculation_result calculate_specific(Dlubal.WS.Rfem6.Model.calculate_specific_loading[] loadings, bool skip_warnings)
         {
             Dlubal.WS.Rfem6.Model.calculate_specificRequest inValue = new Dlubal.WS.Rfem6.Model.calculate_specificRequest();
             inValue.loadings = loadings;
@@ -745,6 +745,19 @@ namespace Dlubal.WS.Rfem6.Model
         Dlubal.WS.Rfem6.Model.get_calculation_diagramResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_calculation_diagram(Dlubal.WS.Rfem6.Model.get_calculation_diagramRequest request)
         {
             return base.Channel.get_calculation_diagram(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_calculation_errorsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_calculation_errors(Dlubal.WS.Rfem6.Model.get_calculation_errorsRequest request)
+        {
+            return base.Channel.get_calculation_errors(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.errors_row[] get_calculation_errors()
+        {
+            Dlubal.WS.Rfem6.Model.get_calculation_errorsRequest inValue = new Dlubal.WS.Rfem6.Model.get_calculation_errorsRequest();
+            Dlubal.WS.Rfem6.Model.get_calculation_errorsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_calculation_errors(inValue);
+            return retVal.value;
         }
         
         public Dlubal.WS.Rfem6.Model.clipping_box get_clipping_box(int no)
@@ -4845,22 +4858,6 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_eigenvectors_by_surface(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_errorsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_errors(Dlubal.WS.Rfem6.Model.get_results_for_errorsRequest request)
-        {
-            return base.Channel.get_results_for_errors(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.errors_row[] get_results_for_errors(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_results_for_errorsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_errorsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_results_for_errorsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_errors(inValue);
             return retVal.value;
         }
         
@@ -9126,6 +9123,34 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_joints_design_ratios_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_joints_stiffness_analysis_results(Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsRequest request)
+        {
+            return base.Channel.get_results_for_steel_joints_stiffness_analysis_results(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_joints_stiffness_analysis_results_row[] get_results_for_steel_joints_stiffness_analysis_results(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_analysis_resultsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_joints_stiffness_analysis_results(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_joints_stiffness_classification(Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationRequest request)
+        {
+            return base.Channel.get_results_for_steel_joints_stiffness_classification(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_joints_stiffness_classification_row[] get_results_for_steel_joints_stiffness_classification(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_stiffness_classificationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_joints_stiffness_classification(inValue);
             return retVal.value;
         }
         

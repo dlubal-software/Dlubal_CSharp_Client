@@ -73,10 +73,10 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.calculate_all(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.calculation_message[] calculate_all(bool generateXmlSolverInput)
+        public Dlubal.WS.Rstab9.Model.calculation_result calculate_all(bool skip_warnings)
         {
             Dlubal.WS.Rstab9.Model.calculate_allRequest inValue = new Dlubal.WS.Rstab9.Model.calculate_allRequest();
-            inValue.generateXmlSolverInput = generateXmlSolverInput;
+            inValue.skip_warnings = skip_warnings;
             Dlubal.WS.Rstab9.Model.calculate_allResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).calculate_all(inValue);
             return retVal.value;
         }
@@ -87,7 +87,7 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.calculate_specific(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.calculation_message[] calculate_specific(Dlubal.WS.Rstab9.Model.calculate_specific_loading[] loadings, bool skip_warnings)
+        public Dlubal.WS.Rstab9.Model.calculation_result calculate_specific(Dlubal.WS.Rstab9.Model.calculate_specific_loading[] loadings, bool skip_warnings)
         {
             Dlubal.WS.Rstab9.Model.calculate_specificRequest inValue = new Dlubal.WS.Rstab9.Model.calculate_specificRequest();
             inValue.loadings = loadings;
@@ -699,6 +699,19 @@ namespace Dlubal.WS.Rstab9.Model
         Dlubal.WS.Rstab9.Model.get_calculation_diagramResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_calculation_diagram(Dlubal.WS.Rstab9.Model.get_calculation_diagramRequest request)
         {
             return base.Channel.get_calculation_diagram(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_calculation_errorsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_calculation_errors(Dlubal.WS.Rstab9.Model.get_calculation_errorsRequest request)
+        {
+            return base.Channel.get_calculation_errors(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.errors_row[] get_calculation_errors()
+        {
+            Dlubal.WS.Rstab9.Model.get_calculation_errorsRequest inValue = new Dlubal.WS.Rstab9.Model.get_calculation_errorsRequest();
+            Dlubal.WS.Rstab9.Model.get_calculation_errorsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_calculation_errors(inValue);
+            return retVal.value;
         }
         
         public Dlubal.WS.Rstab9.Model.clipping_box get_clipping_box(int no)
@@ -3392,22 +3405,6 @@ namespace Dlubal.WS.Rstab9.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_eigenvectors_by_node(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_results_for_errorsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_errors(Dlubal.WS.Rstab9.Model.get_results_for_errorsRequest request)
-        {
-            return base.Channel.get_results_for_errors(request);
-        }
-        
-        public Dlubal.WS.Rstab9.Model.errors_row[] get_results_for_errors(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
-        {
-            Dlubal.WS.Rstab9.Model.get_results_for_errorsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_errorsRequest();
-            inValue.loading_type = loading_type;
-            inValue.loading_no = loading_no;
-            inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_results_for_errorsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_errors(inValue);
             return retVal.value;
         }
         

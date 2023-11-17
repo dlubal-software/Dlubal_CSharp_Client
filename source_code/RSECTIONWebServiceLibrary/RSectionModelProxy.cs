@@ -3815,15 +3815,15 @@ namespace Dlubal.WS.RSection1.Model
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool generateXmlSolverInput;
+        public bool skip_warnings;
         
         public calculate_allRequest()
         {
         }
         
-        public calculate_allRequest(bool generateXmlSolverInput)
+        public calculate_allRequest(bool skip_warnings)
         {
-            this.generateXmlSolverInput = generateXmlSolverInput;
+            this.skip_warnings = skip_warnings;
         }
     }
     
@@ -3834,8 +3834,17 @@ namespace Dlubal.WS.RSection1.Model
     public partial class calculate_allResponse
     {
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.calculation_result value;
+        
         public calculate_allResponse()
         {
+        }
+        
+        public calculate_allResponse(Dlubal.WS.RSection1.Model.calculation_result value)
+        {
+            this.value = value;
         }
     }
     
@@ -3964,6 +3973,79 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.resultFieldSpecified = value;
                 this.RaisePropertyChanged("resultSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class calculation_result : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private bool succeededField;
+        
+        private bool succeededFieldSpecified;
+        
+        private calculation_message[] errors_and_warningsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public bool succeeded
+        {
+            get
+            {
+                return this.succeededField;
+            }
+            set
+            {
+                this.succeededField = value;
+                this.RaisePropertyChanged("succeeded");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool succeededSpecified
+        {
+            get
+            {
+                return this.succeededFieldSpecified;
+            }
+            set
+            {
+                this.succeededFieldSpecified = value;
+                this.RaisePropertyChanged("succeededSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("message", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public calculation_message[] errors_and_warnings
+        {
+            get
+            {
+                return this.errors_and_warningsField;
+            }
+            set
+            {
+                this.errors_and_warningsField = value;
+                this.RaisePropertyChanged("errors_and_warnings");
             }
         }
         
