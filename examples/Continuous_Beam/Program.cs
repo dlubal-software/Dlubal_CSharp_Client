@@ -591,8 +591,12 @@ namespace ContinuousBeam
                 Console.WriteLine("Node reactions:");
                 foreach (var item in nodeReactions)
                 {
+                    if (item.no == 6 | item.no == 20)
+                    {
+                        continue;
+                    }
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading.ToString(), item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
+                    Console.WriteLine("node corresponding loading \t px {0}\t py {1}\t pz {2}\t mx {3}\t my {4}\t mz {5}\t label \t",item.row.support_force_p_x.value.ToString(), item.row.support_force_p_y.value.ToString(), item.row.support_force_p_z.value.ToString(), item.row.support_moment_m_x.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString());
                 }
                 #endregion
 
@@ -631,7 +635,7 @@ namespace ContinuousBeam
 
                 //save the model before closing
                 model.save(CurrentDirectory + @"\testmodels\");
-                application.close_model(0, true);
+                application.close_model(0, false);
             }
             catch (Exception ex)
             {
