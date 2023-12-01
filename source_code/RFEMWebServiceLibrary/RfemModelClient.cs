@@ -82,6 +82,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.calculate_all_in_cloudResponse Dlubal.WS.Rfem6.Model.IRfemModel.calculate_all_in_cloud(Dlubal.WS.Rfem6.Model.calculate_all_in_cloudRequest request)
+        {
+            return base.Channel.calculate_all_in_cloud(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.calculation_in_cloud_result calculate_all_in_cloud(string machine_id, bool run_plausibility_check, bool calculate_despite_warnings_or_errors, bool email_notification)
+        {
+            Dlubal.WS.Rfem6.Model.calculate_all_in_cloudRequest inValue = new Dlubal.WS.Rfem6.Model.calculate_all_in_cloudRequest();
+            inValue.machine_id = machine_id;
+            inValue.run_plausibility_check = run_plausibility_check;
+            inValue.calculate_despite_warnings_or_errors = calculate_despite_warnings_or_errors;
+            inValue.email_notification = email_notification;
+            Dlubal.WS.Rfem6.Model.calculate_all_in_cloudResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).calculate_all_in_cloud(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.calculate_specificResponse Dlubal.WS.Rfem6.Model.IRfemModel.calculate_specific(Dlubal.WS.Rfem6.Model.calculate_specificRequest request)
         {
             return base.Channel.calculate_specific(request);
@@ -577,6 +594,19 @@ namespace Dlubal.WS.Rfem6.Model
         Dlubal.WS.Rfem6.Model.get_addon_statusesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_addon_statuses(Dlubal.WS.Rfem6.Model.get_addon_statusesRequest request)
         {
             return base.Channel.get_addon_statuses(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_available_machines_in_cloud(Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudRequest request)
+        {
+            return base.Channel.get_all_available_machines_in_cloud(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.cloud_machine_info[] get_all_available_machines_in_cloud()
+        {
+            Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudRequest inValue = new Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudRequest();
+            Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_all_available_machines_in_cloud(inValue);
+            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6649,6 +6679,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_interstory_drifts(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_sensitivity_coefficients_row[] get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(inValue);
             return retVal.value;
         }
         

@@ -30,6 +30,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.calculate_allResponse calculate_all(Dlubal.WS.Rfem6.Model.calculate_allRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/calculate_all_in_cloud", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.calculate_all_in_cloudResponse calculate_all_in_cloud(Dlubal.WS.Rfem6.Model.calculate_all_in_cloudRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/calculate_specific", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.calculate_specificResponse calculate_specific(Dlubal.WS.Rfem6.Model.calculate_specificRequest request);
@@ -177,6 +181,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_addon_statuses", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_addon_statusesResponse get_addon_statuses(Dlubal.WS.Rfem6.Model.get_addon_statusesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_available_machines_in_cloud", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudResponse get_all_available_machines_in_cloud(Dlubal.WS.Rfem6.Model.get_all_available_machines_in_cloudRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_object_numbers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2061,6 +2069,11 @@ namespace Dlubal.WS.Rfem6.Model
             "ry_drifts", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsResponse get_results_for_spectral_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_sensitiv" +
+            "ity_coefficients", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsResponse get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_building_stories_story_ac" +
             "tions", ReplyAction="*")]

@@ -1613,6 +1613,9 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         /// <remarks/>
+        BUILT_UP_NG_2HB,
+        
+        /// <remarks/>
         BUILT_UP_NG_2I,
         
         /// <remarks/>
@@ -1683,6 +1686,12 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         BUILT_UP_NG_2LSHLO_A,
+        
+        /// <remarks/>
+        BUILT_UP_NG_2RB,
+        
+        /// <remarks/>
+        BUILT_UP_NG_2SB,
         
         /// <remarks/>
         BUILT_UP_NG_2UF,
@@ -1815,6 +1824,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU,
+        
+        /// <remarks/>
+        BUILT_UP_STEEL__DOUBLE_BARS__DB_BU,
         
         /// <remarks/>
         BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU,
@@ -32513,10 +32525,6 @@ namespace Dlubal.WS.RSection1.Model
         
         private bool typeFieldSpecified;
         
-        private section_manufacturing_type manufacturing_typeField;
-        
-        private bool manufacturing_typeFieldSpecified;
-        
         private string nameField;
         
         private bool shear_stiffness_deactivatedField;
@@ -32646,6 +32654,10 @@ namespace Dlubal.WS.RSection1.Model
         private section_parametrization_type parametrization_typeField;
         
         private bool parametrization_typeFieldSpecified;
+        
+        private section_manufacturing_type manufacturing_typeField;
+        
+        private bool manufacturing_typeFieldSpecified;
         
         private section_combination_type combination_typeField;
         
@@ -34530,36 +34542,6 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public section_manufacturing_type manufacturing_type
-        {
-            get
-            {
-                return this.manufacturing_typeField;
-            }
-            set
-            {
-                this.manufacturing_typeField = value;
-                this.RaisePropertyChanged("manufacturing_type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool manufacturing_typeSpecified
-        {
-            get
-            {
-                return this.manufacturing_typeFieldSpecified;
-            }
-            set
-            {
-                this.manufacturing_typeFieldSpecified = value;
-                this.RaisePropertyChanged("manufacturing_typeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string name
         {
             get
@@ -34574,7 +34556,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public bool shear_stiffness_deactivated
         {
             get
@@ -34604,7 +34586,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public bool warping_stiffness_deactivated
         {
             get
@@ -34634,7 +34616,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public bool thin_walled_model
         {
             get
@@ -34664,7 +34646,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public bool us_spelling_of_properties
         {
             get
@@ -34694,7 +34676,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public bool stress_smoothing_to_avoid_singularities
         {
             get
@@ -34724,7 +34706,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public double area_axial
         {
             get
@@ -34754,7 +34736,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public double area_shear_y
         {
             get
@@ -34784,7 +34766,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public double area_shear_z
         {
             get
@@ -34814,7 +34796,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public double inclination_principal_axes
         {
             get
@@ -34844,7 +34826,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public double rotation_angle
         {
             get
@@ -34874,7 +34856,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public bool mirrored_axis_y
         {
             get
@@ -34904,7 +34886,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public bool mirrored_axis_z
         {
             get
@@ -34934,7 +34916,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public double moment_of_inertia_bending_y
         {
             get
@@ -34964,7 +34946,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
         public double moment_of_inertia_bending_z
         {
             get
@@ -34994,7 +34976,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
         public double moment_of_inertia_torsion
         {
             get
@@ -35024,7 +35006,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
         public double warping
         {
             get
@@ -35054,7 +35036,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public double depth_temperature_load
         {
             get
@@ -35084,7 +35066,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public double width_temperature_load
         {
             get
@@ -35114,7 +35096,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
         public int material
         {
             get
@@ -35144,7 +35126,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
         public int reference_material
         {
             get
@@ -35174,7 +35156,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
         public int material_part_1
         {
             get
@@ -35204,7 +35186,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
         public int material_part_2
         {
             get
@@ -35234,7 +35216,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
         public int material_part_3
         {
             get
@@ -35264,7 +35246,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
         public int material_part_4
         {
             get
@@ -35294,7 +35276,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
         public int material_part_5
         {
             get
@@ -35324,7 +35306,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
         public int material_part_6
         {
             get
@@ -35354,7 +35336,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
         public int material_part_7
         {
             get
@@ -35384,7 +35366,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
         public int material_part_8
         {
             get
@@ -35414,7 +35396,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
         public int material_part_9
         {
             get
@@ -35444,7 +35426,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
         public int material_part_10
         {
             get
@@ -35474,7 +35456,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
         public bool hybrid_active
         {
             get
@@ -35504,7 +35486,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=34)]
         public section_parametrization_type parametrization_type
         {
             get
@@ -35530,6 +35512,36 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.parametrization_typeFieldSpecified = value;
                 this.RaisePropertyChanged("parametrization_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=35)]
+        public section_manufacturing_type manufacturing_type
+        {
+            get
+            {
+                return this.manufacturing_typeField;
+            }
+            set
+            {
+                this.manufacturing_typeField = value;
+                this.RaisePropertyChanged("manufacturing_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool manufacturing_typeSpecified
+        {
+            get
+            {
+                return this.manufacturing_typeFieldSpecified;
+            }
+            set
+            {
+                this.manufacturing_typeFieldSpecified = value;
+                this.RaisePropertyChanged("manufacturing_typeSpecified");
             }
         }
         

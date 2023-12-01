@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"d1fb829f-4967-4810-93be-aef5895d688c,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"727a9bf5-2bbc-4120-b3fe-70a4701761e4,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -3805,9 +3805,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             if (o.@typeSpecified) {
                 WriteElementString(@"type", @"", Write101_section_type(((global::Dlubal.WS.RSection1.Model.section_type)o.@type)));
             }
-            if (o.@manufacturing_typeSpecified) {
-                WriteElementString(@"manufacturing_type", @"", Write102_section_manufacturing_type(((global::Dlubal.WS.RSection1.Model.section_manufacturing_type)o.@manufacturing_type)));
-            }
             WriteElementString(@"name", @"", ((global::System.String)o.@name));
             if (o.@shear_stiffness_deactivatedSpecified) {
                 WriteElementStringRaw(@"shear_stiffness_deactivated", @"", System.Xml.XmlConvert.ToString((global::System.Boolean)((global::System.Boolean)o.@shear_stiffness_deactivated)));
@@ -3903,7 +3900,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 WriteElementStringRaw(@"hybrid_active", @"", System.Xml.XmlConvert.ToString((global::System.Boolean)((global::System.Boolean)o.@hybrid_active)));
             }
             if (o.@parametrization_typeSpecified) {
-                WriteElementString(@"parametrization_type", @"", Write103_section_parametrization_type(((global::Dlubal.WS.RSection1.Model.section_parametrization_type)o.@parametrization_type)));
+                WriteElementString(@"parametrization_type", @"", Write102_section_parametrization_type(((global::Dlubal.WS.RSection1.Model.section_parametrization_type)o.@parametrization_type)));
+            }
+            if (o.@manufacturing_typeSpecified) {
+                WriteElementString(@"manufacturing_type", @"", Write103_section_manufacturing_type(((global::Dlubal.WS.RSection1.Model.section_manufacturing_type)o.@manufacturing_type)));
             }
             if (o.@combination_typeSpecified) {
                 WriteElementString(@"combination_type", @"", Write104_section_combination_type(((global::Dlubal.WS.RSection1.Model.section_combination_type)o.@combination_type)));
@@ -5281,6 +5281,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string Write104_section_combination_type(global::Dlubal.WS.RSection1.Model.section_combination_type v) {
             string s = null;
             switch (v) {
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HB: s = @"BUILT_UP_NG_2HB"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I: s = @"BUILT_UP_NG_2I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I_A: s = @"BUILT_UP_NG_2I_A"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI: s = @"BUILT_UP_NG_2LCLI"; break;
@@ -5305,6 +5306,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLI_A: s = @"BUILT_UP_NG_2LSHLI_A"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO: s = @"BUILT_UP_NG_2LSHLO"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO_A: s = @"BUILT_UP_NG_2LSHLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2RB: s = @"BUILT_UP_NG_2RB"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2SB: s = @"BUILT_UP_NG_2SB"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UF: s = @"BUILT_UP_NG_2UF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI: s = @"BUILT_UP_NG_2UI"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI_A: s = @"BUILT_UP_NG_2UI_A"; break;
@@ -5339,12 +5342,27 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             return s;
         }
 
-        string Write103_section_parametrization_type(global::Dlubal.WS.RSection1.Model.section_parametrization_type v) {
+        string Write103_section_manufacturing_type(global::Dlubal.WS.RSection1.Model.section_manufacturing_type v) {
+            string s = null;
+            switch (v) {
+                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED: s = @"MANUFACTURING_TYPE_COLD_FORMED"; break;
+                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM: s = @"MANUFACTURING_TYPE_GLULAM"; break;
+                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED: s = @"MANUFACTURING_TYPE_HOT_ROLLED"; break;
+                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_NONE: s = @"MANUFACTURING_TYPE_NONE"; break;
+                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_SAWN: s = @"MANUFACTURING_TYPE_SAWN"; break;
+                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_WELDED: s = @"MANUFACTURING_TYPE_WELDED"; break;
+                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_manufacturing_type");
+            }
+            return s;
+        }
+
+        string Write102_section_parametrization_type(global::Dlubal.WS.RSection1.Model.section_parametrization_type v) {
             string s = null;
             switch (v) {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CHANNELS__U_BU: s = @"BUILT_UP_STEEL__CHANNELS__U_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU: s = @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU: s = @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__DOUBLE_BARS__DB_BU: s = @"BUILT_UP_STEEL__DOUBLE_BARS__DB_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU: s = @"BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU"; break;
@@ -5498,20 +5516,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S: s = @"STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S: s = @"STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S"; break;
                 default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_parametrization_type");
-            }
-            return s;
-        }
-
-        string Write102_section_manufacturing_type(global::Dlubal.WS.RSection1.Model.section_manufacturing_type v) {
-            string s = null;
-            switch (v) {
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED: s = @"MANUFACTURING_TYPE_COLD_FORMED"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM: s = @"MANUFACTURING_TYPE_GLULAM"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED: s = @"MANUFACTURING_TYPE_HOT_ROLLED"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_NONE: s = @"MANUFACTURING_TYPE_NONE"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_SAWN: s = @"MANUFACTURING_TYPE_SAWN"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_WELDED: s = @"MANUFACTURING_TYPE_WELDED"; break;
-                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_manufacturing_type");
             }
             return s;
         }
@@ -24127,306 +24131,306 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id443_manufacturing_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
-                            o.@manufacturing_typeSpecified = true;
-                            {
-                                o.@manufacturing_type = Read102_section_manufacturing_type(Reader.ReadElementString());
-                            }
-                        }
-                        state = 3;
-                        break;
-                    case 3:
                         if (((object) Reader.LocalName == (object)id80_name && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@name = Reader.ReadElementString();
                             }
                         }
-                        state = 4;
+                        state = 3;
                         break;
-                    case 4:
-                        if (((object) Reader.LocalName == (object)id444_shear_stiffness_deactivated && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 3:
+                        if (((object) Reader.LocalName == (object)id443_shear_stiffness_deactivated && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@shear_stiffness_deactivatedSpecified = true;
                             {
                                 o.@shear_stiffness_deactivated = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 5;
+                        state = 4;
                         break;
-                    case 5:
-                        if (((object) Reader.LocalName == (object)id445_warping_stiffness_deactivated && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 4:
+                        if (((object) Reader.LocalName == (object)id444_warping_stiffness_deactivated && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@warping_stiffness_deactivatedSpecified = true;
                             {
                                 o.@warping_stiffness_deactivated = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 6;
+                        state = 5;
                         break;
-                    case 6:
-                        if (((object) Reader.LocalName == (object)id446_thin_walled_model && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 5:
+                        if (((object) Reader.LocalName == (object)id445_thin_walled_model && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@thin_walled_modelSpecified = true;
                             {
                                 o.@thin_walled_model = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 7;
+                        state = 6;
                         break;
-                    case 7:
-                        if (((object) Reader.LocalName == (object)id447_us_spelling_of_properties && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 6:
+                        if (((object) Reader.LocalName == (object)id446_us_spelling_of_properties && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@us_spelling_of_propertiesSpecified = true;
                             {
                                 o.@us_spelling_of_properties = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 8;
+                        state = 7;
                         break;
-                    case 8:
-                        if (((object) Reader.LocalName == (object)id448_Item && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 7:
+                        if (((object) Reader.LocalName == (object)id447_Item && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@stress_smoothing_to_avoid_singularitiesSpecified = true;
                             {
                                 o.@stress_smoothing_to_avoid_singularities = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 9;
+                        state = 8;
                         break;
-                    case 9:
-                        if (((object) Reader.LocalName == (object)id449_area_axial && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 8:
+                        if (((object) Reader.LocalName == (object)id448_area_axial && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@area_axialSpecified = true;
                             {
                                 o.@area_axial = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 10;
+                        state = 9;
                         break;
-                    case 10:
-                        if (((object) Reader.LocalName == (object)id450_area_shear_y && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 9:
+                        if (((object) Reader.LocalName == (object)id449_area_shear_y && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@area_shear_ySpecified = true;
                             {
                                 o.@area_shear_y = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 11;
+                        state = 10;
                         break;
-                    case 11:
-                        if (((object) Reader.LocalName == (object)id451_area_shear_z && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 10:
+                        if (((object) Reader.LocalName == (object)id450_area_shear_z && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@area_shear_zSpecified = true;
                             {
                                 o.@area_shear_z = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 12;
+                        state = 11;
                         break;
-                    case 12:
-                        if (((object) Reader.LocalName == (object)id452_inclination_principal_axes && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 11:
+                        if (((object) Reader.LocalName == (object)id451_inclination_principal_axes && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@inclination_principal_axesSpecified = true;
                             {
                                 o.@inclination_principal_axes = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 13;
+                        state = 12;
                         break;
-                    case 13:
-                        if (((object) Reader.LocalName == (object)id453_rotation_angle && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 12:
+                        if (((object) Reader.LocalName == (object)id452_rotation_angle && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@rotation_angleSpecified = true;
                             {
                                 o.@rotation_angle = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 14;
+                        state = 13;
                         break;
-                    case 14:
-                        if (((object) Reader.LocalName == (object)id454_mirrored_axis_y && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 13:
+                        if (((object) Reader.LocalName == (object)id453_mirrored_axis_y && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@mirrored_axis_ySpecified = true;
                             {
                                 o.@mirrored_axis_y = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 15;
+                        state = 14;
                         break;
-                    case 15:
-                        if (((object) Reader.LocalName == (object)id455_mirrored_axis_z && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 14:
+                        if (((object) Reader.LocalName == (object)id454_mirrored_axis_z && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@mirrored_axis_zSpecified = true;
                             {
                                 o.@mirrored_axis_z = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
-                        state = 16;
+                        state = 15;
                         break;
-                    case 16:
-                        if (((object) Reader.LocalName == (object)id456_moment_of_inertia_bending_y && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 15:
+                        if (((object) Reader.LocalName == (object)id455_moment_of_inertia_bending_y && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@moment_of_inertia_bending_ySpecified = true;
                             {
                                 o.@moment_of_inertia_bending_y = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 17;
+                        state = 16;
                         break;
-                    case 17:
-                        if (((object) Reader.LocalName == (object)id457_moment_of_inertia_bending_z && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 16:
+                        if (((object) Reader.LocalName == (object)id456_moment_of_inertia_bending_z && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@moment_of_inertia_bending_zSpecified = true;
                             {
                                 o.@moment_of_inertia_bending_z = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 18;
+                        state = 17;
                         break;
-                    case 18:
-                        if (((object) Reader.LocalName == (object)id458_moment_of_inertia_torsion && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 17:
+                        if (((object) Reader.LocalName == (object)id457_moment_of_inertia_torsion && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@moment_of_inertia_torsionSpecified = true;
                             {
                                 o.@moment_of_inertia_torsion = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 19;
+                        state = 18;
                         break;
-                    case 19:
-                        if (((object) Reader.LocalName == (object)id459_warping && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 18:
+                        if (((object) Reader.LocalName == (object)id458_warping && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@warpingSpecified = true;
                             {
                                 o.@warping = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 20;
+                        state = 19;
                         break;
-                    case 20:
-                        if (((object) Reader.LocalName == (object)id460_depth_temperature_load && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 19:
+                        if (((object) Reader.LocalName == (object)id459_depth_temperature_load && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@depth_temperature_loadSpecified = true;
                             {
                                 o.@depth_temperature_load = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 21;
+                        state = 20;
                         break;
-                    case 21:
-                        if (((object) Reader.LocalName == (object)id461_width_temperature_load && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 20:
+                        if (((object) Reader.LocalName == (object)id460_width_temperature_load && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@width_temperature_loadSpecified = true;
                             {
                                 o.@width_temperature_load = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
-                        state = 22;
+                        state = 21;
                         break;
-                    case 22:
+                    case 21:
                         if (((object) Reader.LocalName == (object)id340_material && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@materialSpecified = true;
                             {
                                 o.@material = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 23;
+                        state = 22;
                         break;
-                    case 23:
-                        if (((object) Reader.LocalName == (object)id462_reference_material && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 22:
+                        if (((object) Reader.LocalName == (object)id461_reference_material && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@reference_materialSpecified = true;
                             {
                                 o.@reference_material = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 24;
+                        state = 23;
                         break;
-                    case 24:
-                        if (((object) Reader.LocalName == (object)id463_material_part_1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 23:
+                        if (((object) Reader.LocalName == (object)id462_material_part_1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_1Specified = true;
                             {
                                 o.@material_part_1 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 25;
+                        state = 24;
                         break;
-                    case 25:
-                        if (((object) Reader.LocalName == (object)id464_material_part_2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 24:
+                        if (((object) Reader.LocalName == (object)id463_material_part_2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_2Specified = true;
                             {
                                 o.@material_part_2 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 26;
+                        state = 25;
                         break;
-                    case 26:
-                        if (((object) Reader.LocalName == (object)id465_material_part_3 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 25:
+                        if (((object) Reader.LocalName == (object)id464_material_part_3 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_3Specified = true;
                             {
                                 o.@material_part_3 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 27;
+                        state = 26;
                         break;
-                    case 27:
-                        if (((object) Reader.LocalName == (object)id466_material_part_4 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 26:
+                        if (((object) Reader.LocalName == (object)id465_material_part_4 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_4Specified = true;
                             {
                                 o.@material_part_4 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 28;
+                        state = 27;
                         break;
-                    case 28:
-                        if (((object) Reader.LocalName == (object)id467_material_part_5 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 27:
+                        if (((object) Reader.LocalName == (object)id466_material_part_5 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_5Specified = true;
                             {
                                 o.@material_part_5 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 29;
+                        state = 28;
                         break;
-                    case 29:
-                        if (((object) Reader.LocalName == (object)id468_material_part_6 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 28:
+                        if (((object) Reader.LocalName == (object)id467_material_part_6 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_6Specified = true;
                             {
                                 o.@material_part_6 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 30;
+                        state = 29;
                         break;
-                    case 30:
-                        if (((object) Reader.LocalName == (object)id469_material_part_7 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 29:
+                        if (((object) Reader.LocalName == (object)id468_material_part_7 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_7Specified = true;
                             {
                                 o.@material_part_7 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 31;
+                        state = 30;
                         break;
-                    case 31:
-                        if (((object) Reader.LocalName == (object)id470_material_part_8 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 30:
+                        if (((object) Reader.LocalName == (object)id469_material_part_8 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_8Specified = true;
                             {
                                 o.@material_part_8 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 32;
+                        state = 31;
                         break;
-                    case 32:
-                        if (((object) Reader.LocalName == (object)id471_material_part_9 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 31:
+                        if (((object) Reader.LocalName == (object)id470_material_part_9 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_9Specified = true;
                             {
                                 o.@material_part_9 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 33;
+                        state = 32;
                         break;
-                    case 33:
-                        if (((object) Reader.LocalName == (object)id472_material_part_10 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 32:
+                        if (((object) Reader.LocalName == (object)id471_material_part_10 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_part_10Specified = true;
                             {
                                 o.@material_part_10 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 34;
+                        state = 33;
                         break;
-                    case 34:
-                        if (((object) Reader.LocalName == (object)id473_hybrid_active && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                    case 33:
+                        if (((object) Reader.LocalName == (object)id472_hybrid_active && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@hybrid_activeSpecified = true;
                             {
                                 o.@hybrid_active = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
                         }
+                        state = 34;
+                        break;
+                    case 34:
+                        if (((object) Reader.LocalName == (object)id473_parametrization_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                            o.@parametrization_typeSpecified = true;
+                            {
+                                o.@parametrization_type = Read102_section_parametrization_type(Reader.ReadElementString());
+                            }
+                        }
                         state = 35;
                         break;
                     case 35:
-                        if (((object) Reader.LocalName == (object)id474_parametrization_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
-                            o.@parametrization_typeSpecified = true;
+                        if (((object) Reader.LocalName == (object)id474_manufacturing_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                            o.@manufacturing_typeSpecified = true;
                             {
-                                o.@parametrization_type = Read103_section_parametrization_type(Reader.ReadElementString());
+                                o.@manufacturing_type = Read103_section_manufacturing_type(Reader.ReadElementString());
                             }
                         }
                         state = 36;
@@ -28628,6 +28632,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
         global::Dlubal.WS.RSection1.Model.section_combination_type Read104_section_combination_type(string s) {
             switch (s) {
+                case @"BUILT_UP_NG_2HB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HB;
                 case @"BUILT_UP_NG_2I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I;
                 case @"BUILT_UP_NG_2I_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I_A;
                 case @"BUILT_UP_NG_2LCLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI;
@@ -28652,6 +28657,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"BUILT_UP_NG_2LSHLI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLI_A;
                 case @"BUILT_UP_NG_2LSHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO;
                 case @"BUILT_UP_NG_2LSHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO_A;
+                case @"BUILT_UP_NG_2RB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2RB;
+                case @"BUILT_UP_NG_2SB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2SB;
                 case @"BUILT_UP_NG_2UF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UF;
                 case @"BUILT_UP_NG_2UI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI;
                 case @"BUILT_UP_NG_2UI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI_A;
@@ -28685,11 +28692,24 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             }
         }
 
-        global::Dlubal.WS.RSection1.Model.section_parametrization_type Read103_section_parametrization_type(string s) {
+        global::Dlubal.WS.RSection1.Model.section_manufacturing_type Read103_section_manufacturing_type(string s) {
+            switch (s) {
+                case @"MANUFACTURING_TYPE_COLD_FORMED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED;
+                case @"MANUFACTURING_TYPE_GLULAM": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM;
+                case @"MANUFACTURING_TYPE_HOT_ROLLED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED;
+                case @"MANUFACTURING_TYPE_NONE": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_NONE;
+                case @"MANUFACTURING_TYPE_SAWN": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_SAWN;
+                case @"MANUFACTURING_TYPE_WELDED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_WELDED;
+                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_manufacturing_type));
+            }
+        }
+
+        global::Dlubal.WS.RSection1.Model.section_parametrization_type Read102_section_parametrization_type(string s) {
             switch (s) {
                 case @"BUILT_UP_STEEL__CHANNELS__U_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CHANNELS__U_BU;
                 case @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU;
                 case @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU;
+                case @"BUILT_UP_STEEL__DOUBLE_BARS__DB_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__DOUBLE_BARS__DB_BU;
                 case @"BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU;
                 case @"BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU;
                 case @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU;
@@ -28843,18 +28863,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S;
                 case @"STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S;
                 default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_parametrization_type));
-            }
-        }
-
-        global::Dlubal.WS.RSection1.Model.section_manufacturing_type Read102_section_manufacturing_type(string s) {
-            switch (s) {
-                case @"MANUFACTURING_TYPE_COLD_FORMED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED;
-                case @"MANUFACTURING_TYPE_GLULAM": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM;
-                case @"MANUFACTURING_TYPE_HOT_ROLLED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED;
-                case @"MANUFACTURING_TYPE_NONE": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_NONE;
-                case @"MANUFACTURING_TYPE_SAWN": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_SAWN;
-                case @"MANUFACTURING_TYPE_WELDED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_WELDED;
-                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_manufacturing_type));
             }
         }
 
@@ -42769,7 +42777,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id854_h_ss;
         string id763_b_i;
         string id950_unit_sigma_n;
-        string id466_material_part_4;
+        string id465_material_part_4;
         string id676_a_1_M;
         string id1261_emissions_members_surface_unit;
         string id1419_line_nurbs_control_points;
@@ -42804,9 +42812,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1283_Item;
         string id766_b_l;
         string id191_Item;
-        string id460_depth_temperature_load;
+        string id459_depth_temperature_load;
         string id760_b_fb;
-        string id472_material_part_10;
+        string id471_material_part_10;
         string id268_close_application;
         string id1106_property_results_version;
         string id1230_solids_weight_unit_cost;
@@ -42857,7 +42865,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1037_offset_in_local_direction;
         string id1071_local_axes_orientation;
         string id355_multi_variable_bar_count;
-        string id455_mirrored_axis_z;
+        string id454_mirrored_axis_z;
         string id771_b_t_l;
         string id694_a_7_z;
         string id693_a_7_y;
@@ -42876,10 +42884,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1472_Item;
         string id557_I_p_SC;
         string id1483_slope_position_relative;
-        string id467_material_part_5;
-        string id459_warping;
+        string id466_material_part_5;
+        string id458_warping;
         string id680_a_2_M;
-        string id458_moment_of_inertia_torsion;
+        string id457_moment_of_inertia_torsion;
         string id495_A_v_y_EC9;
         string id743_b_c_b_M;
         string id824_h_c_t_l_M;
@@ -42913,7 +42921,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id333_version;
         string id522_BC_IS800_y;
         string id1252_Item;
-        string id451_area_shear_z;
+        string id450_area_shear_z;
         string id180_get_object_count;
         string id1397_circle_center_coordinate_z;
         string id266_set_bar;
@@ -42982,7 +42990,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id665_W_y_min_cat;
         string id419_coordinate_1;
         string id254_Item;
-        string id468_material_part_6;
+        string id467_material_part_6;
         string id251_get_subpanel;
         string id177_get_nth_object_number;
         string id232_Item;
@@ -43012,12 +43020,12 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id911_u_SC;
         string id917_v_SC;
         string id320_settings_program_language;
-        string id463_material_part_1;
+        string id462_material_part_1;
         string id269_close_applicationResponse;
         string id1416_Item;
         string id1007_grid_y;
         string id561_I_t_StVen;
-        string id443_manufacturing_type;
+        string id474_manufacturing_type;
         string id1320_maximum_thickness;
         string id206_Item;
         string id702_a_weld_b;
@@ -43090,7 +43098,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id230_results_for_stresses_by_member;
         string id1402_ellipse_control_point;
         string id524_BC_SIA263_y;
-        string id446_thin_walled_model;
+        string id445_thin_walled_model;
         string id172_get_model_settings_and_options;
         string id914_u_pl;
         string id630_Tr_z_ef;
@@ -43113,7 +43121,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id935_z_t_1_2_kruh;
         string id818_h_c_T;
         string id1227_surfaces_bottom_face_quantity;
-        string id464_material_part_2;
+        string id463_material_part_2;
         string id187_get_partResponse;
         string id817_h_c_M;
         string id1285_Item;
@@ -43153,11 +43161,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id13_set_layer;
         string id1308_Item;
         string id992_child_items;
-        string id444_shear_stiffness_deactivated;
+        string id443_shear_stiffness_deactivated;
         string id942_coordinate_v;
         string id1337_strain_hardening_modulus;
         string id637_V_pl_y_S235;
-        string id454_mirrored_axis_y;
+        string id453_mirrored_axis_y;
         string id1299_emissions_solids_area_active;
         string id1431_calculated_value;
         string id1313_Item;
@@ -43169,7 +43177,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id167_Item;
         string id49_set_selected_objects;
         string id718_alpha_pl_v_pure;
-        string id470_material_part_8;
+        string id469_material_part_8;
         string id1484_slope_position_is_relative;
         string id1415_nurbs_order;
         string id372_Item;
@@ -43203,7 +43211,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1018_bending_moment_m_u;
         string id825_h_c_t_r_M;
         string id1152_property_modal_analysis;
-        string id465_material_part_3;
+        string id464_material_part_3;
         string id1296_emissions_solids_volume_unit;
         string id23_set_material;
         string id318_set_detailed_loggingResponse;
@@ -43230,7 +43238,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id188_get_point;
         string id1133_property_addon_aluminum_design;
         string id151_printout_report_info;
-        string id457_moment_of_inertia_bending_z;
+        string id456_moment_of_inertia_bending_z;
         string id92_delete_my_section_list;
         string id351_offset;
         string id584_M_u_y_S235;
@@ -43269,7 +43277,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id613_Tr_b_R_x;
         string id45_set_point;
         string id904_r_z_SC;
-        string id471_material_part_9;
+        string id470_material_part_9;
         string id670_W_z_min;
         string id533_Cr_h1;
         string id535_Cr_h3;
@@ -43328,7 +43336,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1088_model_comment;
         string id1154_Item;
         string id1074_Item;
-        string id462_reference_material;
+        string id461_reference_material;
         string id1209_surfaces_volume_active;
         string id623_Tr_perm_F_t_280;
         string id133_get_bar;
@@ -43338,7 +43346,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id139_get_first_free_number;
         string id580_M_pl_y;
         string id1135_property_addon_tower_design;
-        string id473_hybrid_active;
+        string id472_hybrid_active;
         string id2_Item;
         string id1253_Item;
         string id150_Item;
@@ -43382,7 +43390,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id709_a_weld_ss_f;
         string id621_Tr_perm_F_t_130;
         string id1057_plural_name;
-        string id456_moment_of_inertia_bending_y;
+        string id455_moment_of_inertia_bending_y;
         string id744_b_c_b_l_M;
         string id1335_thickness_range_size;
         string id1186_temperature;
@@ -43424,7 +43432,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id759_b_f_t_r_M;
         string id329_end_point;
         string id280_get_current_projectResponse;
-        string id452_inclination_principal_axes;
+        string id451_inclination_principal_axes;
         string id1055_object_information;
         string id570_I_z_1;
         string id175_get_my_section_listsResponse;
@@ -43529,7 +43537,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id778_b_w_i_M;
         string id327_folder_path;
         string id1146_Item;
-        string id450_area_shear_y;
+        string id449_area_shear_y;
         string id1185_temperature_properties_sorted;
         string id1035_Item;
         string id1097_property_member_count;
@@ -43601,7 +43609,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1183_has_emissions_estimation;
         string id1459_Item;
         string id603_Tr_K_2;
-        string id448_Item;
+        string id447_Item;
         string id44_set_partResponse;
         string id793_d_0_2_L;
         string id792_d_0_1_L;
@@ -43685,12 +43693,12 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1257_Item;
         string id1443_dimension;
         string id349_info_distance_of_bars;
-        string id461_width_temperature_load;
+        string id460_width_temperature_load;
         string id989_absolute_distance;
         string id96_no;
         string id983_Item;
         string id72_clear_selection;
-        string id453_rotation_angle;
+        string id452_rotation_angle;
         string id1101_property_cs_count;
         string id229_Item;
         string id1331_shear_modulus_z;
@@ -43724,9 +43732,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1332_yield_strength;
         string id617_Tr_j_ef;
         string id136_get_dimensionResponse;
-        string id445_warping_stiffness_deactivated;
+        string id444_warping_stiffness_deactivated;
         string id440_reinforcement_area;
-        string id449_area_axial;
+        string id448_area_axial;
         string id363_distance_from_end_relative;
         string id1334_yield_strength_for_tension;
         string id396_Item;
@@ -43810,7 +43818,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id829_h_f_b_i_M;
         string id606_Tr_K_3_7;
         string id1344_load_combination_items;
-        string id469_material_part_7;
+        string id468_material_part_7;
         string id425_reference_stress_point;
         string id1289_emissions_solids_weight_active;
         string id499_A_v_z;
@@ -43902,7 +43910,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id42_set_openingResponse;
         string id1433_element_nurbs_control_points;
         string id672_Z_b_k;
-        string id474_parametrization_type;
+        string id473_parametrization_type;
         string id614_Tr_b_b;
         string id1119_Item;
         string id1014_shear_force_v_u;
@@ -43919,7 +43927,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1123_Item;
         string id1420_nurbs_knots;
         string id1082_model_parameters_row;
-        string id447_us_spelling_of_properties;
+        string id446_us_spelling_of_properties;
         string id51_set_selected_objectsResponse;
         string id593_S_z_max;
         string id863_j_p;
@@ -44276,7 +44284,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id854_h_ss = Reader.NameTable.Add(@"h_ss");
             id763_b_i = Reader.NameTable.Add(@"b_i");
             id950_unit_sigma_n = Reader.NameTable.Add(@"unit_sigma_n");
-            id466_material_part_4 = Reader.NameTable.Add(@"material_part_4");
+            id465_material_part_4 = Reader.NameTable.Add(@"material_part_4");
             id676_a_1_M = Reader.NameTable.Add(@"a_1_M");
             id1261_emissions_members_surface_unit = Reader.NameTable.Add(@"emissions_members_surface_unit");
             id1419_line_nurbs_control_points = Reader.NameTable.Add(@"line_nurbs_control_points");
@@ -44311,9 +44319,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1283_Item = Reader.NameTable.Add(@"emissions_surfaces_area_emission");
             id766_b_l = Reader.NameTable.Add(@"b_l");
             id191_Item = Reader.NameTable.Add(@"get_results_for_effective_widthsResponse");
-            id460_depth_temperature_load = Reader.NameTable.Add(@"depth_temperature_load");
+            id459_depth_temperature_load = Reader.NameTable.Add(@"depth_temperature_load");
             id760_b_fb = Reader.NameTable.Add(@"b_fb");
-            id472_material_part_10 = Reader.NameTable.Add(@"material_part_10");
+            id471_material_part_10 = Reader.NameTable.Add(@"material_part_10");
             id268_close_application = Reader.NameTable.Add(@"close_application");
             id1106_property_results_version = Reader.NameTable.Add(@"property_results_version");
             id1230_solids_weight_unit_cost = Reader.NameTable.Add(@"solids_weight_unit_cost");
@@ -44364,7 +44372,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1037_offset_in_local_direction = Reader.NameTable.Add(@"offset_in_local_direction");
             id1071_local_axes_orientation = Reader.NameTable.Add(@"local_axes_orientation");
             id355_multi_variable_bar_count = Reader.NameTable.Add(@"multi_variable_bar_count");
-            id455_mirrored_axis_z = Reader.NameTable.Add(@"mirrored_axis_z");
+            id454_mirrored_axis_z = Reader.NameTable.Add(@"mirrored_axis_z");
             id771_b_t_l = Reader.NameTable.Add(@"b_t_l");
             id694_a_7_z = Reader.NameTable.Add(@"a_7_z");
             id693_a_7_y = Reader.NameTable.Add(@"a_7_y");
@@ -44383,10 +44391,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1472_Item = Reader.NameTable.Add(@"radius_diameter_is_target_point");
             id557_I_p_SC = Reader.NameTable.Add(@"I_p_SC");
             id1483_slope_position_relative = Reader.NameTable.Add(@"slope_position_relative");
-            id467_material_part_5 = Reader.NameTable.Add(@"material_part_5");
-            id459_warping = Reader.NameTable.Add(@"warping");
+            id466_material_part_5 = Reader.NameTable.Add(@"material_part_5");
+            id458_warping = Reader.NameTable.Add(@"warping");
             id680_a_2_M = Reader.NameTable.Add(@"a_2_M");
-            id458_moment_of_inertia_torsion = Reader.NameTable.Add(@"moment_of_inertia_torsion");
+            id457_moment_of_inertia_torsion = Reader.NameTable.Add(@"moment_of_inertia_torsion");
             id495_A_v_y_EC9 = Reader.NameTable.Add(@"A_v_y_EC9");
             id743_b_c_b_M = Reader.NameTable.Add(@"b_c_b_M");
             id824_h_c_t_l_M = Reader.NameTable.Add(@"h_c_t_l_M");
@@ -44420,7 +44428,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id333_version = Reader.NameTable.Add(@"version");
             id522_BC_IS800_y = Reader.NameTable.Add(@"BC_IS800_y");
             id1252_Item = Reader.NameTable.Add(@"emissions_members_weight_quantity");
-            id451_area_shear_z = Reader.NameTable.Add(@"area_shear_z");
+            id450_area_shear_z = Reader.NameTable.Add(@"area_shear_z");
             id180_get_object_count = Reader.NameTable.Add(@"get_object_count");
             id1397_circle_center_coordinate_z = Reader.NameTable.Add(@"circle_center_coordinate_z");
             id266_set_bar = Reader.NameTable.Add(@"set_bar");
@@ -44489,7 +44497,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id665_W_y_min_cat = Reader.NameTable.Add(@"W_y_min_cat");
             id419_coordinate_1 = Reader.NameTable.Add(@"coordinate_1");
             id254_Item = Reader.NameTable.Add(@"get_table_export_config_managerResponse");
-            id468_material_part_6 = Reader.NameTable.Add(@"material_part_6");
+            id467_material_part_6 = Reader.NameTable.Add(@"material_part_6");
             id251_get_subpanel = Reader.NameTable.Add(@"get_subpanel");
             id177_get_nth_object_number = Reader.NameTable.Add(@"get_nth_object_number");
             id232_Item = Reader.NameTable.Add(@"get_results_for_stresses_by_stress_pointsResponse");
@@ -44519,12 +44527,12 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id911_u_SC = Reader.NameTable.Add(@"u_SC");
             id917_v_SC = Reader.NameTable.Add(@"v_SC");
             id320_settings_program_language = Reader.NameTable.Add(@"settings_program_language");
-            id463_material_part_1 = Reader.NameTable.Add(@"material_part_1");
+            id462_material_part_1 = Reader.NameTable.Add(@"material_part_1");
             id269_close_applicationResponse = Reader.NameTable.Add(@"close_applicationResponse");
             id1416_Item = Reader.NameTable.Add(@"nurbs_control_points_by_components");
             id1007_grid_y = Reader.NameTable.Add(@"grid_y");
             id561_I_t_StVen = Reader.NameTable.Add(@"I_t_StVen");
-            id443_manufacturing_type = Reader.NameTable.Add(@"manufacturing_type");
+            id474_manufacturing_type = Reader.NameTable.Add(@"manufacturing_type");
             id1320_maximum_thickness = Reader.NameTable.Add(@"maximum_thickness");
             id206_Item = Reader.NameTable.Add(@"get_results_for_section_properties_effectiveResponse");
             id702_a_weld_b = Reader.NameTable.Add(@"a_weld_b");
@@ -44597,7 +44605,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id230_results_for_stresses_by_member = Reader.NameTable.Add(@"results_for_stresses_by_member");
             id1402_ellipse_control_point = Reader.NameTable.Add(@"ellipse_control_point");
             id524_BC_SIA263_y = Reader.NameTable.Add(@"BC_SIA263_y");
-            id446_thin_walled_model = Reader.NameTable.Add(@"thin_walled_model");
+            id445_thin_walled_model = Reader.NameTable.Add(@"thin_walled_model");
             id172_get_model_settings_and_options = Reader.NameTable.Add(@"get_model_settings_and_options");
             id914_u_pl = Reader.NameTable.Add(@"u_pl");
             id630_Tr_z_ef = Reader.NameTable.Add(@"Tr_z_ef");
@@ -44620,7 +44628,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id935_z_t_1_2_kruh = Reader.NameTable.Add(@"z_t_1_2_kruh");
             id818_h_c_T = Reader.NameTable.Add(@"h_c_T");
             id1227_surfaces_bottom_face_quantity = Reader.NameTable.Add(@"surfaces_bottom_face_quantity");
-            id464_material_part_2 = Reader.NameTable.Add(@"material_part_2");
+            id463_material_part_2 = Reader.NameTable.Add(@"material_part_2");
             id187_get_partResponse = Reader.NameTable.Add(@"get_partResponse");
             id817_h_c_M = Reader.NameTable.Add(@"h_c_M");
             id1285_Item = Reader.NameTable.Add(@"emissions_surfaces_bottom_face_unit_emission");
@@ -44660,11 +44668,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id13_set_layer = Reader.NameTable.Add(@"set_layer");
             id1308_Item = Reader.NameTable.Add(@"use_of_material_model_alignment");
             id992_child_items = Reader.NameTable.Add(@"child_items");
-            id444_shear_stiffness_deactivated = Reader.NameTable.Add(@"shear_stiffness_deactivated");
+            id443_shear_stiffness_deactivated = Reader.NameTable.Add(@"shear_stiffness_deactivated");
             id942_coordinate_v = Reader.NameTable.Add(@"coordinate_v");
             id1337_strain_hardening_modulus = Reader.NameTable.Add(@"strain_hardening_modulus");
             id637_V_pl_y_S235 = Reader.NameTable.Add(@"V_pl_y_S235");
-            id454_mirrored_axis_y = Reader.NameTable.Add(@"mirrored_axis_y");
+            id453_mirrored_axis_y = Reader.NameTable.Add(@"mirrored_axis_y");
             id1299_emissions_solids_area_active = Reader.NameTable.Add(@"emissions_solids_area_active");
             id1431_calculated_value = Reader.NameTable.Add(@"calculated_value");
             id1313_Item = Reader.NameTable.Add(@"stress_strain_diagram_symmetric");
@@ -44676,7 +44684,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id167_Item = Reader.NameTable.Add(@"get_model_main_parametersResponse");
             id49_set_selected_objects = Reader.NameTable.Add(@"set_selected_objects");
             id718_alpha_pl_v_pure = Reader.NameTable.Add(@"alpha_pl_v_pure");
-            id470_material_part_8 = Reader.NameTable.Add(@"material_part_8");
+            id469_material_part_8 = Reader.NameTable.Add(@"material_part_8");
             id1484_slope_position_is_relative = Reader.NameTable.Add(@"slope_position_is_relative");
             id1415_nurbs_order = Reader.NameTable.Add(@"nurbs_order");
             id372_Item = Reader.NameTable.Add(@"property_default_config_string_key");
@@ -44710,7 +44718,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1018_bending_moment_m_u = Reader.NameTable.Add(@"bending_moment_m_u");
             id825_h_c_t_r_M = Reader.NameTable.Add(@"h_c_t_r_M");
             id1152_property_modal_analysis = Reader.NameTable.Add(@"property_modal_analysis");
-            id465_material_part_3 = Reader.NameTable.Add(@"material_part_3");
+            id464_material_part_3 = Reader.NameTable.Add(@"material_part_3");
             id1296_emissions_solids_volume_unit = Reader.NameTable.Add(@"emissions_solids_volume_unit");
             id23_set_material = Reader.NameTable.Add(@"set_material");
             id318_set_detailed_loggingResponse = Reader.NameTable.Add(@"set_detailed_loggingResponse");
@@ -44737,7 +44745,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id188_get_point = Reader.NameTable.Add(@"get_point");
             id1133_property_addon_aluminum_design = Reader.NameTable.Add(@"property_addon_aluminum_design");
             id151_printout_report_info = Reader.NameTable.Add(@"printout_report_info");
-            id457_moment_of_inertia_bending_z = Reader.NameTable.Add(@"moment_of_inertia_bending_z");
+            id456_moment_of_inertia_bending_z = Reader.NameTable.Add(@"moment_of_inertia_bending_z");
             id92_delete_my_section_list = Reader.NameTable.Add(@"delete_my_section_list");
             id351_offset = Reader.NameTable.Add(@"offset");
             id584_M_u_y_S235 = Reader.NameTable.Add(@"M_u_y_S235");
@@ -44776,7 +44784,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id613_Tr_b_R_x = Reader.NameTable.Add(@"Tr_b_R_x");
             id45_set_point = Reader.NameTable.Add(@"set_point");
             id904_r_z_SC = Reader.NameTable.Add(@"r_z_SC");
-            id471_material_part_9 = Reader.NameTable.Add(@"material_part_9");
+            id470_material_part_9 = Reader.NameTable.Add(@"material_part_9");
             id670_W_z_min = Reader.NameTable.Add(@"W_z_min");
             id533_Cr_h1 = Reader.NameTable.Add(@"Cr_h1");
             id535_Cr_h3 = Reader.NameTable.Add(@"Cr_h3");
@@ -44835,7 +44843,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1088_model_comment = Reader.NameTable.Add(@"model_comment");
             id1154_Item = Reader.NameTable.Add(@"property_response_spectrum_analysis");
             id1074_Item = Reader.NameTable.Add(@"tolerance_for_surfaces_and_planes");
-            id462_reference_material = Reader.NameTable.Add(@"reference_material");
+            id461_reference_material = Reader.NameTable.Add(@"reference_material");
             id1209_surfaces_volume_active = Reader.NameTable.Add(@"surfaces_volume_active");
             id623_Tr_perm_F_t_280 = Reader.NameTable.Add(@"Tr_perm_F_t_280");
             id133_get_bar = Reader.NameTable.Add(@"get_bar");
@@ -44845,7 +44853,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id139_get_first_free_number = Reader.NameTable.Add(@"get_first_free_number");
             id580_M_pl_y = Reader.NameTable.Add(@"M_pl_y");
             id1135_property_addon_tower_design = Reader.NameTable.Add(@"property_addon_tower_design");
-            id473_hybrid_active = Reader.NameTable.Add(@"hybrid_active");
+            id472_hybrid_active = Reader.NameTable.Add(@"hybrid_active");
             id2_Item = Reader.NameTable.Add(@"http://www.dlubal.com/rsection.xsd");
             id1253_Item = Reader.NameTable.Add(@"emissions_members_weight_emission");
             id150_Item = Reader.NameTable.Add(@"get_list_of_printout_reportsResponse");
@@ -44889,7 +44897,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id709_a_weld_ss_f = Reader.NameTable.Add(@"a_weld_ss_f");
             id621_Tr_perm_F_t_130 = Reader.NameTable.Add(@"Tr_perm_F_t_130");
             id1057_plural_name = Reader.NameTable.Add(@"plural_name");
-            id456_moment_of_inertia_bending_y = Reader.NameTable.Add(@"moment_of_inertia_bending_y");
+            id455_moment_of_inertia_bending_y = Reader.NameTable.Add(@"moment_of_inertia_bending_y");
             id744_b_c_b_l_M = Reader.NameTable.Add(@"b_c_b_l_M");
             id1335_thickness_range_size = Reader.NameTable.Add(@"thickness_range_size");
             id1186_temperature = Reader.NameTable.Add(@"temperature");
@@ -44931,7 +44939,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id759_b_f_t_r_M = Reader.NameTable.Add(@"b_f_t_r_M");
             id329_end_point = Reader.NameTable.Add(@"end_point");
             id280_get_current_projectResponse = Reader.NameTable.Add(@"get_current_projectResponse");
-            id452_inclination_principal_axes = Reader.NameTable.Add(@"inclination_principal_axes");
+            id451_inclination_principal_axes = Reader.NameTable.Add(@"inclination_principal_axes");
             id1055_object_information = Reader.NameTable.Add(@"object_information");
             id570_I_z_1 = Reader.NameTable.Add(@"I_z_1");
             id175_get_my_section_listsResponse = Reader.NameTable.Add(@"get_my_section_listsResponse");
@@ -45036,7 +45044,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id778_b_w_i_M = Reader.NameTable.Add(@"b_w_i_M");
             id327_folder_path = Reader.NameTable.Add(@"folder_path");
             id1146_Item = Reader.NameTable.Add(@"property_membrane_cut_patterns_wizard");
-            id450_area_shear_y = Reader.NameTable.Add(@"area_shear_y");
+            id449_area_shear_y = Reader.NameTable.Add(@"area_shear_y");
             id1185_temperature_properties_sorted = Reader.NameTable.Add(@"temperature_properties_sorted");
             id1035_Item = Reader.NameTable.Add(@"between_two_locations_end_point_coordinate_1");
             id1097_property_member_count = Reader.NameTable.Add(@"property_member_count");
@@ -45108,7 +45116,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1183_has_emissions_estimation = Reader.NameTable.Add(@"has_emissions_estimation");
             id1459_Item = Reader.NameTable.Add(@"is_global_dimension_line_offset");
             id603_Tr_K_2 = Reader.NameTable.Add(@"Tr_K_2");
-            id448_Item = Reader.NameTable.Add(@"stress_smoothing_to_avoid_singularities");
+            id447_Item = Reader.NameTable.Add(@"stress_smoothing_to_avoid_singularities");
             id44_set_partResponse = Reader.NameTable.Add(@"set_partResponse");
             id793_d_0_2_L = Reader.NameTable.Add(@"d_0_2_L");
             id792_d_0_1_L = Reader.NameTable.Add(@"d_0_1_L");
@@ -45192,12 +45200,12 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1257_Item = Reader.NameTable.Add(@"emissions_members_volume_quantity");
             id1443_dimension = Reader.NameTable.Add(@"dimension");
             id349_info_distance_of_bars = Reader.NameTable.Add(@"info_distance_of_bars");
-            id461_width_temperature_load = Reader.NameTable.Add(@"width_temperature_load");
+            id460_width_temperature_load = Reader.NameTable.Add(@"width_temperature_load");
             id989_absolute_distance = Reader.NameTable.Add(@"absolute_distance");
             id96_no = Reader.NameTable.Add(@"no");
             id983_Item = Reader.NameTable.Add(@"results_for_stresses_by_location_row");
             id72_clear_selection = Reader.NameTable.Add(@"clear_selection");
-            id453_rotation_angle = Reader.NameTable.Add(@"rotation_angle");
+            id452_rotation_angle = Reader.NameTable.Add(@"rotation_angle");
             id1101_property_cs_count = Reader.NameTable.Add(@"property_cs_count");
             id229_Item = Reader.NameTable.Add(@"get_results_for_stresses_by_memberResponse");
             id1331_shear_modulus_z = Reader.NameTable.Add(@"shear_modulus_z");
@@ -45231,9 +45239,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1332_yield_strength = Reader.NameTable.Add(@"yield_strength");
             id617_Tr_j_ef = Reader.NameTable.Add(@"Tr_j_ef");
             id136_get_dimensionResponse = Reader.NameTable.Add(@"get_dimensionResponse");
-            id445_warping_stiffness_deactivated = Reader.NameTable.Add(@"warping_stiffness_deactivated");
+            id444_warping_stiffness_deactivated = Reader.NameTable.Add(@"warping_stiffness_deactivated");
             id440_reinforcement_area = Reader.NameTable.Add(@"reinforcement_area");
-            id449_area_axial = Reader.NameTable.Add(@"area_axial");
+            id448_area_axial = Reader.NameTable.Add(@"area_axial");
             id363_distance_from_end_relative = Reader.NameTable.Add(@"distance_from_end_relative");
             id1334_yield_strength_for_tension = Reader.NameTable.Add(@"yield_strength_for_tension");
             id396_Item = Reader.NameTable.Add(@"property_export_filled_rows_only");
@@ -45317,7 +45325,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id829_h_f_b_i_M = Reader.NameTable.Add(@"h_f_b_i_M");
             id606_Tr_K_3_7 = Reader.NameTable.Add(@"Tr_K_3_7");
             id1344_load_combination_items = Reader.NameTable.Add(@"load_combination_items");
-            id469_material_part_7 = Reader.NameTable.Add(@"material_part_7");
+            id468_material_part_7 = Reader.NameTable.Add(@"material_part_7");
             id425_reference_stress_point = Reader.NameTable.Add(@"reference_stress_point");
             id1289_emissions_solids_weight_active = Reader.NameTable.Add(@"emissions_solids_weight_active");
             id499_A_v_z = Reader.NameTable.Add(@"A_v_z");
@@ -45409,7 +45417,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id42_set_openingResponse = Reader.NameTable.Add(@"set_openingResponse");
             id1433_element_nurbs_control_points = Reader.NameTable.Add(@"element_nurbs_control_points");
             id672_Z_b_k = Reader.NameTable.Add(@"Z_b_k");
-            id474_parametrization_type = Reader.NameTable.Add(@"parametrization_type");
+            id473_parametrization_type = Reader.NameTable.Add(@"parametrization_type");
             id614_Tr_b_b = Reader.NameTable.Add(@"Tr_b_b");
             id1119_Item = Reader.NameTable.Add(@"property_rsection_product_licenses");
             id1014_shear_force_v_u = Reader.NameTable.Add(@"shear_force_v_u");
@@ -45426,7 +45434,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1123_Item = Reader.NameTable.Add(@"modelInfo_property_supported_lines_type");
             id1420_nurbs_knots = Reader.NameTable.Add(@"nurbs_knots");
             id1082_model_parameters_row = Reader.NameTable.Add(@"model_parameters_row");
-            id447_us_spelling_of_properties = Reader.NameTable.Add(@"us_spelling_of_properties");
+            id446_us_spelling_of_properties = Reader.NameTable.Add(@"us_spelling_of_properties");
             id51_set_selected_objectsResponse = Reader.NameTable.Add(@"set_selected_objectsResponse");
             id593_S_z_max = Reader.NameTable.Add(@"S_z_max");
             id863_j_p = Reader.NameTable.Add(@"j_p");
