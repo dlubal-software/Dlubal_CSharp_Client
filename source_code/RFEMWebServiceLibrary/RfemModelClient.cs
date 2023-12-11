@@ -610,6 +610,58 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_all_FE_1D_elementsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_FE_1D_elements(Dlubal.WS.Rfem6.Model.get_all_FE_1D_elementsRequest request)
+        {
+            return base.Channel.get_all_FE_1D_elements(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_1D_elements_row[] get_all_FE_1D_elements()
+        {
+            Dlubal.WS.Rfem6.Model.get_all_FE_1D_elementsRequest inValue = new Dlubal.WS.Rfem6.Model.get_all_FE_1D_elementsRequest();
+            Dlubal.WS.Rfem6.Model.get_all_FE_1D_elementsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_all_FE_1D_elements(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_all_FE_2D_elementsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_FE_2D_elements(Dlubal.WS.Rfem6.Model.get_all_FE_2D_elementsRequest request)
+        {
+            return base.Channel.get_all_FE_2D_elements(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_2D_elements_row[] get_all_FE_2D_elements()
+        {
+            Dlubal.WS.Rfem6.Model.get_all_FE_2D_elementsRequest inValue = new Dlubal.WS.Rfem6.Model.get_all_FE_2D_elementsRequest();
+            Dlubal.WS.Rfem6.Model.get_all_FE_2D_elementsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_all_FE_2D_elements(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_all_FE_3D_elementsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_FE_3D_elements(Dlubal.WS.Rfem6.Model.get_all_FE_3D_elementsRequest request)
+        {
+            return base.Channel.get_all_FE_3D_elements(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_3D_elements_row[] get_all_FE_3D_elements()
+        {
+            Dlubal.WS.Rfem6.Model.get_all_FE_3D_elementsRequest inValue = new Dlubal.WS.Rfem6.Model.get_all_FE_3D_elementsRequest();
+            Dlubal.WS.Rfem6.Model.get_all_FE_3D_elementsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_all_FE_3D_elements(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_all_FE_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_FE_nodes(Dlubal.WS.Rfem6.Model.get_all_FE_nodesRequest request)
+        {
+            return base.Channel.get_all_FE_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_nodes_row[] get_all_FE_nodes()
+        {
+            Dlubal.WS.Rfem6.Model.get_all_FE_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_all_FE_nodesRequest();
+            Dlubal.WS.Rfem6.Model.get_all_FE_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_all_FE_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_all_object_numbersResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_object_numbers(Dlubal.WS.Rfem6.Model.get_all_object_numbersRequest request)
         {
             return base.Channel.get_all_object_numbers(request);
@@ -1011,6 +1063,76 @@ namespace Dlubal.WS.Rfem6.Model
         Dlubal.WS.Rfem6.Model.get_Dxf_model_objectResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_Dxf_model_object(Dlubal.WS.Rfem6.Model.get_Dxf_model_objectRequest request)
         {
             return base.Channel.get_Dxf_model_object(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_1D_element get_FE_1D_element(int FE_element_no)
+        {
+            Dlubal.WS.Rfem6.Model.get_FE_1D_elementRequest inValue = new Dlubal.WS.Rfem6.Model.get_FE_1D_elementRequest();
+            inValue.FE_element_no = FE_element_no;
+            Dlubal.WS.Rfem6.Model.get_FE_1D_elementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_FE_1D_element(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_FE_1D_elementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_FE_1D_element(Dlubal.WS.Rfem6.Model.get_FE_1D_elementRequest request)
+        {
+            return base.Channel.get_FE_1D_element(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_2D_element get_FE_2D_element(int FE_element_no)
+        {
+            Dlubal.WS.Rfem6.Model.get_FE_2D_elementRequest inValue = new Dlubal.WS.Rfem6.Model.get_FE_2D_elementRequest();
+            inValue.FE_element_no = FE_element_no;
+            Dlubal.WS.Rfem6.Model.get_FE_2D_elementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_FE_2D_element(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_FE_2D_elementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_FE_2D_element(Dlubal.WS.Rfem6.Model.get_FE_2D_elementRequest request)
+        {
+            return base.Channel.get_FE_2D_element(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_3D_element get_FE_3D_element(int FE_element_no)
+        {
+            Dlubal.WS.Rfem6.Model.get_FE_3D_elementRequest inValue = new Dlubal.WS.Rfem6.Model.get_FE_3D_elementRequest();
+            inValue.FE_element_no = FE_element_no;
+            Dlubal.WS.Rfem6.Model.get_FE_3D_elementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_FE_3D_element(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_FE_3D_elementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_FE_3D_element(Dlubal.WS.Rfem6.Model.get_FE_3D_elementRequest request)
+        {
+            return base.Channel.get_FE_3D_element(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_FE_mesh_indicesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_FE_mesh_indices(Dlubal.WS.Rfem6.Model.get_FE_mesh_indicesRequest request)
+        {
+            return base.Channel.get_FE_mesh_indices(request);
+        }
+        
+        public int[] get_FE_mesh_indices(Dlubal.WS.Rfem6.Model.mesh_element_type mesh_element_type)
+        {
+            Dlubal.WS.Rfem6.Model.get_FE_mesh_indicesRequest inValue = new Dlubal.WS.Rfem6.Model.get_FE_mesh_indicesRequest();
+            inValue.mesh_element_type = mesh_element_type;
+            Dlubal.WS.Rfem6.Model.get_FE_mesh_indicesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_FE_mesh_indices(inValue);
+            return retVal.value;
+        }
+        
+        public Dlubal.WS.Rfem6.Model.FE_node get_FE_node(int FE_node_no)
+        {
+            Dlubal.WS.Rfem6.Model.get_FE_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_FE_nodeRequest();
+            inValue.FE_node_no = FE_node_no;
+            Dlubal.WS.Rfem6.Model.get_FE_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_FE_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_FE_nodeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_FE_node(Dlubal.WS.Rfem6.Model.get_FE_nodeRequest request)
+        {
+            return base.Channel.get_FE_node(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4924,6 +5046,38 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_line_releases_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_line_releases_deformations(Dlubal.WS.Rfem6.Model.get_results_for_line_releases_deformationsRequest request)
+        {
+            return base.Channel.get_results_for_line_releases_deformations(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.line_releases_deformations_row[] get_results_for_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_line_releases_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_line_releases_deformationsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_line_releases_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_line_releases_deformations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_line_releases_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_line_releases_forces(Dlubal.WS.Rfem6.Model.get_results_for_line_releases_forcesRequest request)
+        {
+            return base.Channel.get_results_for_line_releases_forces(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.line_releases_forces_row[] get_results_for_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_line_releases_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_line_releases_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_line_releases_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_line_releases_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_lines_slab_wall_connectionsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_lines_slab_wall_connectionsRequest request)
         {
             return base.Channel.get_results_for_lines_slab_wall_connections(request);
@@ -5528,6 +5682,38 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_hinges_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_line_hinges_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_deformationsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_line_releases_deformations(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_line_releases_deformations_row[] get_results_for_pushover_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_deformationsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_line_releases_deformations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_forcesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_line_releases_forces(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_line_releases_forces_row[] get_results_for_pushover_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_line_releases_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_line_releases_forces(inValue);
             return retVal.value;
         }
         
@@ -6747,6 +6933,38 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_line_releases_deformations(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_releases_deformations_row[] get_results_for_spectral_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_line_releases_deformations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_line_releases_forces(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_releases_forces_row[] get_results_for_spectral_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_line_releases_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_lines_slab_wall_connections(request);
@@ -7622,6 +7840,38 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_hinges_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_line_hinges_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_deformationsRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_line_releases_deformations(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_line_releases_deformations_row[] get_results_for_stability_incremental_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_deformationsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_line_releases_deformations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_forcesRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_line_releases_forces(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_line_releases_forces_row[] get_results_for_stability_incremental_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_line_releases_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_line_releases_forces(inValue);
             return retVal.value;
         }
         
@@ -11948,6 +12198,38 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_hinges_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_line_hinges_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_deformationsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_line_releases_deformations(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_line_releases_deformations_row[] get_results_for_time_history_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_deformationsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_line_releases_deformations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_forcesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_line_releases_forces(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_line_releases_forces_row[] get_results_for_time_history_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_forcesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_line_releases_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_line_releases_forces(inValue);
             return retVal.value;
         }
         
