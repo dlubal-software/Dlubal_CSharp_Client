@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"56ede779-a549-4d4d-830b-7694bc3932d2,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"15d28cac-e0e8-4cf8-8405-cf38f66e96a9,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5464,7 +5464,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS: s = @"PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL: s = @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE: s = @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SFB: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SFB"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION__I: s = @"PARAMETRIC_THIN_WALLED__I_SECTION__I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA: s = @"PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA"; break;
@@ -5476,9 +5476,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS: s = @"PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA: s = @"PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2FB: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2FB"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FBW: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FBW"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS"; break;
@@ -28811,7 +28811,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS;
                 case @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL;
                 case @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE;
-                case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SFB": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SFB;
+                case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF;
                 case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT;
                 case @"PARAMETRIC_THIN_WALLED__I_SECTION__I": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION__I;
                 case @"PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA;
@@ -28823,9 +28823,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS;
                 case @"PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS;
                 case @"PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2FB": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2FB;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F;
                 case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FBW": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FBW;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW;
                 case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT;
                 case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES;
                 case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS;

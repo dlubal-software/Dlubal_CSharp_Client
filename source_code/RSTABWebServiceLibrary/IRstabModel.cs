@@ -693,6 +693,36 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse get_results_for_calculation_diagrams(Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_deep_beams_by" +
+            "_deep_beam", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamResponse get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_deep_beams_by" +
+            "_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationResponse get_results_for_concrete_design_design_ratios_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_deep_beams_by" +
+            "_loading", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingResponse get_results_for_concrete_design_design_ratios_deep_beams_by_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_deep_beams_by" +
+            "_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationResponse get_results_for_concrete_design_design_ratios_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_deep_beams_by" +
+            "_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialResponse get_results_for_concrete_design_design_ratios_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_deep_beams_by" +
+            "_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionResponse get_results_for_concrete_design_design_ratios_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_member_repres" +
             "entatives_by_design_situation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -788,6 +818,46 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_members_by_sectionResponse get_results_for_concrete_design_design_ratios_members_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_members_by_sectionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_shear_walls_b" +
+            "y_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationResponse get_results_for_concrete_design_design_ratios_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_shear_walls_b" +
+            "y_loading", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingResponse get_results_for_concrete_design_design_ratios_shear_walls_by_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_shear_walls_b" +
+            "y_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationResponse get_results_for_concrete_design_design_ratios_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_shear_walls_b" +
+            "y_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialResponse get_results_for_concrete_design_design_ratios_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_shear_walls_b" +
+            "y_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionResponse get_results_for_concrete_design_design_ratios_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_design_ratios_shear_walls_b" +
+            "y_shear_wall", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallResponse get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_internal_forces_b" +
+            "y_deep_beam", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamResponse get_results_for_concrete_design_governing_internal_forces_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_internal_forces_b" +
+            "y_deep_beam_ends", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsResponse get_results_for_concrete_design_governing_internal_forces_by_deep_beam_ends(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_internal_forces_b" +
             "y_member", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -828,9 +898,44 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_member_set_representative_endsResponse get_results_for_concrete_design_governing_internal_forces_by_member_set_representative_ends(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_member_set_representative_endsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_internal_forces_b" +
+            "y_shear_wall", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallResponse get_results_for_concrete_design_governing_internal_forces_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_internal_forces_b" +
+            "y_shear_wall_ends", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsResponse get_results_for_concrete_design_governing_internal_forces_by_shear_wall_ends(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_loading", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingResponse get_results_for_concrete_design_governing_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_deep_beams_by_deep_beam", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_deep_beams_by_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_deep_beams_by_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_deep_beams_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_deep_beams_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
             "rea_on_member_representatives_by_design_situation", ReplyAction="*")]
@@ -912,6 +1017,31 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_members_by_sectionResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_members_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_members_by_sectionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_shear_walls_by_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_shear_walls_by_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_shear_walls_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_shear_walls_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
+            "rea_on_shear_walls_by_shear_wall", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallResponse get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_overview_errors_and_warning" +
             "s", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -921,6 +1051,26 @@ namespace Dlubal.WS.Rstab9.Model
             "ted", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_not_valid_deactivatedResponse get_results_for_concrete_design_overview_not_valid_deactivated(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_not_valid_deactivatedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_deep_beams_by_deep_beam", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamResponse get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_deep_beams_by_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationResponse get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_deep_beams_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialResponse get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_deep_beams_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionResponse get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
             "_on_member_representatives_by_location", ReplyAction="*")]
@@ -986,6 +1136,51 @@ namespace Dlubal.WS.Rstab9.Model
             "_on_members_by_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_members_by_sectionResponse get_results_for_concrete_design_provided_reinforcement_area_on_members_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_members_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_shear_walls_by_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationResponse get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_shear_walls_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialResponse get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_shear_walls_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionResponse get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_provided_reinforcement_area" +
+            "_on_shear_walls_by_shear_wall", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallResponse get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_deep_beams_by_deep_beam", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamResponse get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_deep_beams_by_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationResponse get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_deep_beams_by_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationResponse get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_deep_beams_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialResponse get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_deep_beams_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionResponse get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
             "_on_member_representatives_by_design_situation", ReplyAction="*")]
@@ -1066,6 +1261,31 @@ namespace Dlubal.WS.Rstab9.Model
             "_on_members_by_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionResponse get_results_for_concrete_design_required_reinforcement_area_on_members_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_shear_walls_by_design_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationResponse get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_shear_walls_by_location", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationResponse get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_shear_walls_by_material", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialResponse get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_shear_walls_by_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionResponse get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_required_reinforcement_area" +
+            "_on_shear_walls_by_shear_wall", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallResponse get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_convergence_diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
