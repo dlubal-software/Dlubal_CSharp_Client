@@ -2263,6 +2263,90 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beam(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_deep_beams_by_deep_beam_row[] get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beamResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_deep_beam(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_deep_beams_by_design_situation_row[] get_results_for_concrete_design_design_ratios_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_deep_beams_by_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_deep_beams_by_loading_row[] get_results_for_concrete_design_design_ratios_deep_beams_by_loading(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_loadingResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_deep_beams_by_location_row[] get_results_for_concrete_design_design_ratios_deep_beams_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_deep_beams_by_material_row[] get_results_for_concrete_design_design_ratios_deep_beams_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_deep_beams_by_section_row[] get_results_for_concrete_design_design_ratios_deep_beams_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_member_representatives_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_member_representatives_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_member_representatives_by_design_situationRequest request)
         {
             return base.Channel.get_results_for_concrete_design_design_ratios_member_representatives_by_design_situation(request);
@@ -2529,6 +2613,118 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_shear_walls_by_design_situation_row[] get_results_for_concrete_design_design_ratios_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_shear_walls_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_shear_walls_by_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_shear_walls_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_shear_walls_by_loading_row[] get_results_for_concrete_design_design_ratios_shear_walls_by_loading(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_loadingResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_shear_walls_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_shear_walls_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_shear_walls_by_location_row[] get_results_for_concrete_design_design_ratios_shear_walls_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_shear_walls_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_shear_walls_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_shear_walls_by_material_row[] get_results_for_concrete_design_design_ratios_shear_walls_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_shear_walls_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_shear_walls_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_shear_walls_by_section_row[] get_results_for_concrete_design_design_ratios_shear_walls_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_shear_walls_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wall(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_design_ratios_shear_walls_by_shear_wall_row[] get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wallResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_design_ratios_shear_walls_by_shear_wall(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_governing_internal_forces_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_deep_beam(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_governing_internal_forces_by_deep_beam_row[] get_results_for_concrete_design_governing_internal_forces_by_deep_beam(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_deep_beam(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_ends(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_ends(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_governing_internal_forces_by_deep_beam_ends_row[] get_results_for_concrete_design_governing_internal_forces_by_deep_beam_ends(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_deep_beam_ends(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_memberResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_governing_internal_forces_by_member(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_memberRequest request)
         {
             return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_member(request);
@@ -2641,6 +2837,34 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_governing_internal_forces_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_shear_wall(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_governing_internal_forces_by_shear_wall_row[] get_results_for_concrete_design_governing_internal_forces_by_shear_wall(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wallResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_shear_wall(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_ends(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_ends(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_governing_internal_forces_by_shear_wall_ends_row[] get_results_for_concrete_design_governing_internal_forces_by_shear_wall_ends(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_internal_forces_by_shear_wall_endsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_shear_wall_ends(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_governing_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingRequest request)
         {
             return base.Channel.get_results_for_concrete_design_governing_loading(request);
@@ -2651,6 +2875,76 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_governing_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beam(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beam_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beamResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_deep_beam(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situation_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_location_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_material_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section(inValue);
             return retVal.value;
         }
         
@@ -2879,6 +3173,76 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situation_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_location_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_material_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_section_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wall(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wall_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wallResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_shear_walls_by_shear_wall(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_errors_and_warningsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_overview_errors_and_warnings(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_errors_and_warningsRequest request)
         {
             return base.Channel.get_results_for_concrete_design_overview_errors_and_warnings(request);
@@ -2903,6 +3267,62 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_not_valid_deactivatedRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_not_valid_deactivatedRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_overview_not_valid_deactivatedResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_overview_not_valid_deactivated(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beam(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beam_row[] get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beamResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_deep_beam(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_location_row[] get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_material_row[] get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_section_row[] get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_deep_beams_by_section(inValue);
             return retVal.value;
         }
         
@@ -3085,6 +3505,132 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_members_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_members_by_sectionRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_members_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_members_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_location_row[] get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_material_row[] get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_section_row[] get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wall(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wall_row[] get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wallResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_shear_walls_by_shear_wall(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beam(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beam_row[] get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beam(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beamResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_deep_beam(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situation_row[] get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_location_row[] get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_material_row[] get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section_row[] get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section(inValue);
             return retVal.value;
         }
         
@@ -3309,6 +3855,76 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_members_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situation_row[] get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_location(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_location_row[] get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_location(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_locationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_material(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_material_row[] get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_material(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_materialResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_section(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_section_row[] get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_section(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wall(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wall_row[] get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wall(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wallResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_shear_walls_by_shear_wall(inValue);
             return retVal.value;
         }
         
