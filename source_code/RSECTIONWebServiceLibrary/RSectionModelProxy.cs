@@ -1780,6 +1780,12 @@ namespace Dlubal.WS.RSection1.Model
         BUILT_UP_NG_IWT,
         
         /// <remarks/>
+        BUILT_UP_NG_P2BF,
+        
+        /// <remarks/>
+        BUILT_UP_NG_PBF,
+        
+        /// <remarks/>
         BUILT_UP_NG_UF,
     }
     
@@ -1842,6 +1848,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         BUILT_UP_STEEL__I_SECTIONS__I_BU,
+        
+        /// <remarks/>
+        BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU,
         
         /// <remarks/>
         BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU,

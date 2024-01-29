@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"9a663228-90d9-4489-9a42-8524f21bba71,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"6a92afc7-0b63-43aa-ba3a-a5349309d4b8,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5336,6 +5336,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUU: s = @"BUILT_UP_NG_IUU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IVF: s = @"BUILT_UP_NG_IVF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IWT: s = @"BUILT_UP_NG_IWT"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2BF: s = @"BUILT_UP_NG_P2BF"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PBF: s = @"BUILT_UP_NG_PBF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_UF: s = @"BUILT_UP_NG_UF"; break;
                 default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_combination_type");
             }
@@ -5368,6 +5370,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS__I_BU: s = @"BUILT_UP_STEEL__I_SECTIONS__I_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU: s = @"BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU: s = @"BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_TIMBER__RECTANGLES__R_BU: s = @"BUILT_UP_TIMBER__RECTANGLES__R_BU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__FLAT_BAR__FLAT: s = @"PARAMETRIC_BARS__FLAT_BAR__FLAT"; break;
@@ -28687,6 +28690,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"BUILT_UP_NG_IUU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUU;
                 case @"BUILT_UP_NG_IVF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IVF;
                 case @"BUILT_UP_NG_IWT": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IWT;
+                case @"BUILT_UP_NG_P2BF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2BF;
+                case @"BUILT_UP_NG_PBF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PBF;
                 case @"BUILT_UP_NG_UF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_UF;
                 default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_combination_type));
             }
@@ -28715,6 +28720,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU;
                 case @"BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU;
                 case @"BUILT_UP_STEEL__I_SECTIONS__I_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS__I_BU;
+                case @"BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU;
                 case @"BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU;
                 case @"BUILT_UP_TIMBER__RECTANGLES__R_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_TIMBER__RECTANGLES__R_BU;
                 case @"PARAMETRIC_BARS__FLAT_BAR__FLAT": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__FLAT_BAR__FLAT;
