@@ -331,18 +331,18 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.generate_and_validate_xml_solver_input(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.generate_meshResponse Dlubal.WS.RSection1.Model.IRSectionModel.generate_mesh(Dlubal.WS.RSection1.Model.generate_meshRequest request)
-        {
-            return base.Channel.generate_mesh(request);
-        }
-        
-        public Dlubal.WS.RSection1.Model.calculation_message[] generate_mesh(bool skip_warnings)
+        public Dlubal.WS.RSection1.Model.calculation_result generate_mesh(bool skip_warnings)
         {
             Dlubal.WS.RSection1.Model.generate_meshRequest inValue = new Dlubal.WS.RSection1.Model.generate_meshRequest();
             inValue.skip_warnings = skip_warnings;
             Dlubal.WS.RSection1.Model.generate_meshResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).generate_mesh(inValue);
             return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.generate_meshResponse Dlubal.WS.RSection1.Model.IRSectionModel.generate_mesh(Dlubal.WS.RSection1.Model.generate_meshRequest request)
+        {
+            return base.Channel.generate_mesh(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

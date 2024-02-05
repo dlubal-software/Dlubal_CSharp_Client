@@ -454,18 +454,18 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.generate_load_cases_and_combinationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).generate_load_cases_and_combinations(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.generate_meshResponse Dlubal.WS.Rstab9.Model.IRstabModel.generate_mesh(Dlubal.WS.Rstab9.Model.generate_meshRequest request)
-        {
-            return base.Channel.generate_mesh(request);
-        }
-        
-        public Dlubal.WS.Rstab9.Model.calculation_message[] generate_mesh(bool skip_warnings)
+        public Dlubal.WS.Rstab9.Model.calculation_result generate_mesh(bool skip_warnings)
         {
             Dlubal.WS.Rstab9.Model.generate_meshRequest inValue = new Dlubal.WS.Rstab9.Model.generate_meshRequest();
             inValue.skip_warnings = skip_warnings;
             Dlubal.WS.Rstab9.Model.generate_meshResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).generate_mesh(inValue);
             return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.generate_meshResponse Dlubal.WS.Rstab9.Model.IRstabModel.generate_mesh(Dlubal.WS.Rstab9.Model.generate_meshRequest request)
+        {
+            return base.Channel.generate_mesh(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7510,7 +7510,7 @@ namespace Dlubal.WS.Rstab9.Model
             return retVal.value;
         }
         
-        public Dlubal.WS.Rstab9.Model.plausibility_check_result plausibility_check(Dlubal.WS.Rstab9.Model.plausibility_check_type type, bool skip_warnings)
+        public Dlubal.WS.Rstab9.Model.calculation_result plausibility_check(Dlubal.WS.Rstab9.Model.plausibility_check_type type, bool skip_warnings)
         {
             Dlubal.WS.Rstab9.Model.plausibility_checkRequest inValue = new Dlubal.WS.Rstab9.Model.plausibility_checkRequest();
             inValue.type = type;

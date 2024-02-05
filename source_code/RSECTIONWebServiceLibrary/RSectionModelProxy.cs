@@ -9252,15 +9252,14 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("message", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public Dlubal.WS.RSection1.Model.calculation_message[] value;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.calculation_result value;
         
         public generate_meshResponse()
         {
         }
         
-        public generate_meshResponse(Dlubal.WS.RSection1.Model.calculation_message[] value)
+        public generate_meshResponse(Dlubal.WS.RSection1.Model.calculation_result value)
         {
             this.value = value;
         }

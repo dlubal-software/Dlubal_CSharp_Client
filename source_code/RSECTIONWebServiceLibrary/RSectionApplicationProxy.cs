@@ -19,6 +19,9 @@ namespace Dlubal.WS.RSection1.Application
     {
         
         /// <remarks/>
+        CRASH_REPORTER,
+        
+        /// <remarks/>
         DLUBAL_CENTER,
         
         /// <remarks/>

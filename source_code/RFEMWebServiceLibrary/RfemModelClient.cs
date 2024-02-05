@@ -489,18 +489,18 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.generate_load_cases_and_combinationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).generate_load_cases_and_combinations(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.generate_meshResponse Dlubal.WS.Rfem6.Model.IRfemModel.generate_mesh(Dlubal.WS.Rfem6.Model.generate_meshRequest request)
-        {
-            return base.Channel.generate_mesh(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.calculation_message[] generate_mesh(bool skip_warnings)
+        public Dlubal.WS.Rfem6.Model.calculation_result generate_mesh(bool skip_warnings)
         {
             Dlubal.WS.Rfem6.Model.generate_meshRequest inValue = new Dlubal.WS.Rfem6.Model.generate_meshRequest();
             inValue.skip_warnings = skip_warnings;
             Dlubal.WS.Rfem6.Model.generate_meshResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).generate_mesh(inValue);
             return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.generate_meshResponse Dlubal.WS.Rfem6.Model.IRfemModel.generate_mesh(Dlubal.WS.Rfem6.Model.generate_meshRequest request)
+        {
+            return base.Channel.generate_mesh(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -14615,7 +14615,7 @@ namespace Dlubal.WS.Rfem6.Model
             return retVal.value;
         }
         
-        public Dlubal.WS.Rfem6.Model.plausibility_check_result plausibility_check(Dlubal.WS.Rfem6.Model.plausibility_check_type type, bool skip_warnings)
+        public Dlubal.WS.Rfem6.Model.calculation_result plausibility_check(Dlubal.WS.Rfem6.Model.plausibility_check_type type, bool skip_warnings)
         {
             Dlubal.WS.Rfem6.Model.plausibility_checkRequest inValue = new Dlubal.WS.Rfem6.Model.plausibility_checkRequest();
             inValue.type = type;
