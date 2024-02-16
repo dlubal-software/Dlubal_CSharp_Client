@@ -35,12 +35,8 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="Dlubal.RFEMWebServiceLibrary" Version="6.4.8" />
     <PackageReference Include="NLog" Version="5.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\source_code\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
-    <ProjectReference Include="..\..\source_code\RSTABWebServiceLibrary\RSTABWebServiceLibrary.csproj" />
   </ItemGroup>
 
 </Project>
