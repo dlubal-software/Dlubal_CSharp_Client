@@ -602,8 +602,8 @@ namespace Cantilever
 
 #if RFEM
                 #region generate mesh and get mesh statistics
-                calculation_message[] meshGenerationMessage = model.generate_mesh(true);
-                if (meshGenerationMessage.Length != 0)
+                calculation_result meshGenerationResult = model.generate_mesh(true);
+                if (!meshGenerationResult.succeeded || !String.IsNullOrEmpty(meshGenerationResult.messages) || meshGenerationResult.errors_and_warnings.Any())
                 {
                 }
                 mesh_statistics_type mesh_Statistics = model.get_mesh_statistics();
