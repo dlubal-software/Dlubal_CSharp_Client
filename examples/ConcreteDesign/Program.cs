@@ -624,7 +624,7 @@
                 }
 
                 // generate mesh
-                calculation_message[] meshGenerationMessage = model.generate_mesh(true);
+                calculation_result meshGenerationResult = model.generate_mesh(true);
 
                 model.calculate_all(true);
 
