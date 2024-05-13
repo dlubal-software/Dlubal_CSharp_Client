@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rfem6.Application
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.dlubal.com", ConfigurationName="Dlubal.WS.Rfem6.Application.IRfemApplication")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.06.0007", ConfigurationName="Dlubal.WS.Rfem6.Application.IRfemApplication")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRfemApplication
     {
@@ -69,6 +69,14 @@ namespace Dlubal.WS.Rfem6.Application
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_model_list_with_indexes", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Application.get_model_list_with_indexesResponse get_model_list_with_indexes(Dlubal.WS.Rfem6.Application.get_model_list_with_indexesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_program_options", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Application.get_program_optionsResponse get_program_options(Dlubal.WS.Rfem6.Application.get_program_optionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_program_settings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Application.get_program_settingsResponse get_program_settings(Dlubal.WS.Rfem6.Application.get_program_settingsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -133,6 +141,14 @@ namespace Dlubal.WS.Rfem6.Application
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_detailed_logging", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Application.set_detailed_loggingResponse set_detailed_logging(Dlubal.WS.Rfem6.Application.set_detailed_loggingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_program_options", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Application.set_program_optionsResponse set_program_options(Dlubal.WS.Rfem6.Application.set_program_optionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_program_settings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Application.set_program_settingsResponse set_program_settings(Dlubal.WS.Rfem6.Application.set_program_settingsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_saf_settings", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

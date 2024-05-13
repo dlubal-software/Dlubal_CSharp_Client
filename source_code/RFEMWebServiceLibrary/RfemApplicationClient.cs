@@ -211,6 +211,32 @@ namespace Dlubal.WS.Rfem6.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_program_optionsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_program_options(Dlubal.WS.Rfem6.Application.get_program_optionsRequest request)
+        {
+            return base.Channel.get_program_options(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.settings_program_options get_program_options()
+        {
+            Dlubal.WS.Rfem6.Application.get_program_optionsRequest inValue = new Dlubal.WS.Rfem6.Application.get_program_optionsRequest();
+            Dlubal.WS.Rfem6.Application.get_program_optionsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_program_options(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.get_program_settingsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_program_settings(Dlubal.WS.Rfem6.Application.get_program_settingsRequest request)
+        {
+            return base.Channel.get_program_settings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Application.program_settings get_program_settings()
+        {
+            Dlubal.WS.Rfem6.Application.get_program_settingsRequest inValue = new Dlubal.WS.Rfem6.Application.get_program_settingsRequest();
+            Dlubal.WS.Rfem6.Application.get_program_settingsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).get_program_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Application.get_projectResponse Dlubal.WS.Rfem6.Application.IRfemApplication.get_project(Dlubal.WS.Rfem6.Application.get_projectRequest request)
         {
             return base.Channel.get_project(request);
@@ -425,6 +451,33 @@ namespace Dlubal.WS.Rfem6.Application
             Dlubal.WS.Rfem6.Application.set_detailed_loggingRequest inValue = new Dlubal.WS.Rfem6.Application.set_detailed_loggingRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Application.set_detailed_loggingResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_detailed_logging(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_program_optionsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_program_options(Dlubal.WS.Rfem6.Application.set_program_optionsRequest request)
+        {
+            return base.Channel.set_program_options(request);
+        }
+        
+        public void set_program_options(Dlubal.WS.Rfem6.Application.settings_program_options program_options)
+        {
+            Dlubal.WS.Rfem6.Application.set_program_optionsRequest inValue = new Dlubal.WS.Rfem6.Application.set_program_optionsRequest();
+            inValue.program_options = program_options;
+            Dlubal.WS.Rfem6.Application.set_program_optionsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_program_options(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Application.set_program_settingsResponse Dlubal.WS.Rfem6.Application.IRfemApplication.set_program_settings(Dlubal.WS.Rfem6.Application.set_program_settingsRequest request)
+        {
+            return base.Channel.set_program_settings(request);
+        }
+        
+        public string set_program_settings(Dlubal.WS.Rfem6.Application.program_settings program_settings)
+        {
+            Dlubal.WS.Rfem6.Application.set_program_settingsRequest inValue = new Dlubal.WS.Rfem6.Application.set_program_settingsRequest();
+            inValue.program_settings = program_settings;
+            Dlubal.WS.Rfem6.Application.set_program_settingsResponse retVal = ((Dlubal.WS.Rfem6.Application.IRfemApplication)(this)).set_program_settings(inValue);
+            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

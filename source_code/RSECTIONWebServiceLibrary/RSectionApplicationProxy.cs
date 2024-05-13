@@ -12,7 +12,7 @@ namespace Dlubal.WS.RSection1.Application
 {
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public enum application_types
@@ -41,7 +41,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public enum program_language_name_type
@@ -85,7 +85,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public enum region_type
@@ -114,7 +114,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public enum unit_system_type
@@ -128,7 +128,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -658,6 +658,72 @@ namespace Dlubal.WS.RSection1.Application
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_program_options", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_program_optionsRequest
+    {
+        
+        public get_program_optionsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_program_optionsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_program_optionsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Application.settings_program_options value;
+        
+        public get_program_optionsResponse()
+        {
+        }
+        
+        public get_program_optionsResponse(Dlubal.WS.RSection1.Application.settings_program_options value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_program_settings", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_program_settingsRequest
+    {
+        
+        public get_program_settingsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_program_settingsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_program_settingsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Application.program_settings value;
+        
+        public get_program_settingsResponse()
+        {
+        }
+        
+        public get_program_settingsResponse(Dlubal.WS.RSection1.Application.program_settings value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_project", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_projectRequest
     {
@@ -764,7 +830,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -861,7 +927,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1144,7 +1210,181 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class program_settings : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private int max_number_of_recent_filesField;
+        
+        private bool max_number_of_recent_filesFieldSpecified;
+        
+        private int max_number_of_recent_templatesField;
+        
+        private bool max_number_of_recent_templatesFieldSpecified;
+        
+        private int max_number_of_undo_stepsField;
+        
+        private bool max_number_of_undo_stepsFieldSpecified;
+        
+        private double formula_evaluation_time_limitField;
+        
+        private bool formula_evaluation_time_limitFieldSpecified;
+        
+        private string date_formatField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int max_number_of_recent_files
+        {
+            get
+            {
+                return this.max_number_of_recent_filesField;
+            }
+            set
+            {
+                this.max_number_of_recent_filesField = value;
+                this.RaisePropertyChanged("max_number_of_recent_files");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool max_number_of_recent_filesSpecified
+        {
+            get
+            {
+                return this.max_number_of_recent_filesFieldSpecified;
+            }
+            set
+            {
+                this.max_number_of_recent_filesFieldSpecified = value;
+                this.RaisePropertyChanged("max_number_of_recent_filesSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int max_number_of_recent_templates
+        {
+            get
+            {
+                return this.max_number_of_recent_templatesField;
+            }
+            set
+            {
+                this.max_number_of_recent_templatesField = value;
+                this.RaisePropertyChanged("max_number_of_recent_templates");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool max_number_of_recent_templatesSpecified
+        {
+            get
+            {
+                return this.max_number_of_recent_templatesFieldSpecified;
+            }
+            set
+            {
+                this.max_number_of_recent_templatesFieldSpecified = value;
+                this.RaisePropertyChanged("max_number_of_recent_templatesSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int max_number_of_undo_steps
+        {
+            get
+            {
+                return this.max_number_of_undo_stepsField;
+            }
+            set
+            {
+                this.max_number_of_undo_stepsField = value;
+                this.RaisePropertyChanged("max_number_of_undo_steps");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool max_number_of_undo_stepsSpecified
+        {
+            get
+            {
+                return this.max_number_of_undo_stepsFieldSpecified;
+            }
+            set
+            {
+                this.max_number_of_undo_stepsFieldSpecified = value;
+                this.RaisePropertyChanged("max_number_of_undo_stepsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public double formula_evaluation_time_limit
+        {
+            get
+            {
+                return this.formula_evaluation_time_limitField;
+            }
+            set
+            {
+                this.formula_evaluation_time_limitField = value;
+                this.RaisePropertyChanged("formula_evaluation_time_limit");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool formula_evaluation_time_limitSpecified
+        {
+            get
+            {
+                return this.formula_evaluation_time_limitFieldSpecified;
+            }
+            set
+            {
+                this.formula_evaluation_time_limitFieldSpecified = value;
+                this.RaisePropertyChanged("formula_evaluation_time_limitSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string date_format
+        {
+            get
+            {
+                return this.date_formatField;
+            }
+            set
+            {
+                this.date_formatField = value;
+                this.RaisePropertyChanged("date_format");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1334,6 +1574,81 @@ namespace Dlubal.WS.RSection1.Application
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_program_options", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_program_optionsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Application.settings_program_options program_options;
+        
+        public set_program_optionsRequest()
+        {
+        }
+        
+        public set_program_optionsRequest(Dlubal.WS.RSection1.Application.settings_program_options program_options)
+        {
+            this.program_options = program_options;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_program_optionsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_program_optionsResponse
+    {
+        
+        public set_program_optionsResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_program_settings", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_program_settingsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Application.program_settings program_settings;
+        
+        public set_program_settingsRequest()
+        {
+        }
+        
+        public set_program_settingsRequest(Dlubal.WS.RSection1.Application.program_settings program_settings)
+        {
+            this.program_settings = program_settings;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_program_settingsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_program_settingsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string value;
+        
+        public set_program_settingsResponse()
+        {
+        }
+        
+        public set_program_settingsResponse(string value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="set_settings_program_language", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class set_settings_program_languageRequest
     {
@@ -1374,7 +1689,7 @@ namespace Dlubal.WS.RSection1.Application
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.7.3062.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1481,6 +1796,401 @@ namespace Dlubal.WS.RSection1.Application
             {
                 this.unit_systemFieldSpecified = value;
                 this.RaisePropertyChanged("unit_systemSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class settings_program_options : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private bool multisamplingField;
+        
+        private bool multisamplingFieldSpecified;
+        
+        private bool animate_view_changesField;
+        
+        private bool animate_view_changesFieldSpecified;
+        
+        private bool auto_connect_lines_and_elementsField;
+        
+        private bool auto_connect_lines_and_elementsFieldSpecified;
+        
+        private bool by_internal_points_on_lineField;
+        
+        private bool by_internal_points_on_lineFieldSpecified;
+        
+        private bool load_last_opened_models_when_program_restartsField;
+        
+        private bool load_last_opened_models_when_program_restartsFieldSpecified;
+        
+        private bool delete_useless_points_during_importField;
+        
+        private bool delete_useless_points_during_importFieldSpecified;
+        
+        private bool load_last_saved_basic_objects_in_a_new_modelField;
+        
+        private bool load_last_saved_basic_objects_in_a_new_modelFieldSpecified;
+        
+        private bool validate_objects_when_selecting_in_graphicsField;
+        
+        private bool validate_objects_when_selecting_in_graphicsFieldSpecified;
+        
+        private bool automatic_save_to_backup_copyField;
+        
+        private bool automatic_save_to_backup_copyFieldSpecified;
+        
+        private bool save_after_calculationField;
+        
+        private bool save_after_calculationFieldSpecified;
+        
+        private int automatically_save_afterField;
+        
+        private bool automatically_save_afterFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public bool multisampling
+        {
+            get
+            {
+                return this.multisamplingField;
+            }
+            set
+            {
+                this.multisamplingField = value;
+                this.RaisePropertyChanged("multisampling");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool multisamplingSpecified
+        {
+            get
+            {
+                return this.multisamplingFieldSpecified;
+            }
+            set
+            {
+                this.multisamplingFieldSpecified = value;
+                this.RaisePropertyChanged("multisamplingSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public bool animate_view_changes
+        {
+            get
+            {
+                return this.animate_view_changesField;
+            }
+            set
+            {
+                this.animate_view_changesField = value;
+                this.RaisePropertyChanged("animate_view_changes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool animate_view_changesSpecified
+        {
+            get
+            {
+                return this.animate_view_changesFieldSpecified;
+            }
+            set
+            {
+                this.animate_view_changesFieldSpecified = value;
+                this.RaisePropertyChanged("animate_view_changesSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public bool auto_connect_lines_and_elements
+        {
+            get
+            {
+                return this.auto_connect_lines_and_elementsField;
+            }
+            set
+            {
+                this.auto_connect_lines_and_elementsField = value;
+                this.RaisePropertyChanged("auto_connect_lines_and_elements");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool auto_connect_lines_and_elementsSpecified
+        {
+            get
+            {
+                return this.auto_connect_lines_and_elementsFieldSpecified;
+            }
+            set
+            {
+                this.auto_connect_lines_and_elementsFieldSpecified = value;
+                this.RaisePropertyChanged("auto_connect_lines_and_elementsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public bool by_internal_points_on_line
+        {
+            get
+            {
+                return this.by_internal_points_on_lineField;
+            }
+            set
+            {
+                this.by_internal_points_on_lineField = value;
+                this.RaisePropertyChanged("by_internal_points_on_line");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool by_internal_points_on_lineSpecified
+        {
+            get
+            {
+                return this.by_internal_points_on_lineFieldSpecified;
+            }
+            set
+            {
+                this.by_internal_points_on_lineFieldSpecified = value;
+                this.RaisePropertyChanged("by_internal_points_on_lineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public bool load_last_opened_models_when_program_restarts
+        {
+            get
+            {
+                return this.load_last_opened_models_when_program_restartsField;
+            }
+            set
+            {
+                this.load_last_opened_models_when_program_restartsField = value;
+                this.RaisePropertyChanged("load_last_opened_models_when_program_restarts");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool load_last_opened_models_when_program_restartsSpecified
+        {
+            get
+            {
+                return this.load_last_opened_models_when_program_restartsFieldSpecified;
+            }
+            set
+            {
+                this.load_last_opened_models_when_program_restartsFieldSpecified = value;
+                this.RaisePropertyChanged("load_last_opened_models_when_program_restartsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public bool delete_useless_points_during_import
+        {
+            get
+            {
+                return this.delete_useless_points_during_importField;
+            }
+            set
+            {
+                this.delete_useless_points_during_importField = value;
+                this.RaisePropertyChanged("delete_useless_points_during_import");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool delete_useless_points_during_importSpecified
+        {
+            get
+            {
+                return this.delete_useless_points_during_importFieldSpecified;
+            }
+            set
+            {
+                this.delete_useless_points_during_importFieldSpecified = value;
+                this.RaisePropertyChanged("delete_useless_points_during_importSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public bool load_last_saved_basic_objects_in_a_new_model
+        {
+            get
+            {
+                return this.load_last_saved_basic_objects_in_a_new_modelField;
+            }
+            set
+            {
+                this.load_last_saved_basic_objects_in_a_new_modelField = value;
+                this.RaisePropertyChanged("load_last_saved_basic_objects_in_a_new_model");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool load_last_saved_basic_objects_in_a_new_modelSpecified
+        {
+            get
+            {
+                return this.load_last_saved_basic_objects_in_a_new_modelFieldSpecified;
+            }
+            set
+            {
+                this.load_last_saved_basic_objects_in_a_new_modelFieldSpecified = value;
+                this.RaisePropertyChanged("load_last_saved_basic_objects_in_a_new_modelSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public bool validate_objects_when_selecting_in_graphics
+        {
+            get
+            {
+                return this.validate_objects_when_selecting_in_graphicsField;
+            }
+            set
+            {
+                this.validate_objects_when_selecting_in_graphicsField = value;
+                this.RaisePropertyChanged("validate_objects_when_selecting_in_graphics");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool validate_objects_when_selecting_in_graphicsSpecified
+        {
+            get
+            {
+                return this.validate_objects_when_selecting_in_graphicsFieldSpecified;
+            }
+            set
+            {
+                this.validate_objects_when_selecting_in_graphicsFieldSpecified = value;
+                this.RaisePropertyChanged("validate_objects_when_selecting_in_graphicsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public bool automatic_save_to_backup_copy
+        {
+            get
+            {
+                return this.automatic_save_to_backup_copyField;
+            }
+            set
+            {
+                this.automatic_save_to_backup_copyField = value;
+                this.RaisePropertyChanged("automatic_save_to_backup_copy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool automatic_save_to_backup_copySpecified
+        {
+            get
+            {
+                return this.automatic_save_to_backup_copyFieldSpecified;
+            }
+            set
+            {
+                this.automatic_save_to_backup_copyFieldSpecified = value;
+                this.RaisePropertyChanged("automatic_save_to_backup_copySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public bool save_after_calculation
+        {
+            get
+            {
+                return this.save_after_calculationField;
+            }
+            set
+            {
+                this.save_after_calculationField = value;
+                this.RaisePropertyChanged("save_after_calculation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool save_after_calculationSpecified
+        {
+            get
+            {
+                return this.save_after_calculationFieldSpecified;
+            }
+            set
+            {
+                this.save_after_calculationFieldSpecified = value;
+                this.RaisePropertyChanged("save_after_calculationSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public int automatically_save_after
+        {
+            get
+            {
+                return this.automatically_save_afterField;
+            }
+            set
+            {
+                this.automatically_save_afterField = value;
+                this.RaisePropertyChanged("automatically_save_after");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool automatically_save_afterSpecified
+        {
+            get
+            {
+                return this.automatically_save_afterFieldSpecified;
+            }
+            set
+            {
+                this.automatically_save_afterFieldSpecified = value;
+                this.RaisePropertyChanged("automatically_save_afterSpecified");
             }
         }
         

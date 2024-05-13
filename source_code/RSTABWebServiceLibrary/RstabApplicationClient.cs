@@ -211,6 +211,32 @@ namespace Dlubal.WS.Rstab9.Application
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Application.get_program_optionsResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_program_options(Dlubal.WS.Rstab9.Application.get_program_optionsRequest request)
+        {
+            return base.Channel.get_program_options(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Application.settings_program_options get_program_options()
+        {
+            Dlubal.WS.Rstab9.Application.get_program_optionsRequest inValue = new Dlubal.WS.Rstab9.Application.get_program_optionsRequest();
+            Dlubal.WS.Rstab9.Application.get_program_optionsResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).get_program_options(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Application.get_program_settingsResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_program_settings(Dlubal.WS.Rstab9.Application.get_program_settingsRequest request)
+        {
+            return base.Channel.get_program_settings(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Application.program_settings get_program_settings()
+        {
+            Dlubal.WS.Rstab9.Application.get_program_settingsRequest inValue = new Dlubal.WS.Rstab9.Application.get_program_settingsRequest();
+            Dlubal.WS.Rstab9.Application.get_program_settingsResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).get_program_settings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Application.get_projectResponse Dlubal.WS.Rstab9.Application.IRstabApplication.get_project(Dlubal.WS.Rstab9.Application.get_projectRequest request)
         {
             return base.Channel.get_project(request);
@@ -425,6 +451,33 @@ namespace Dlubal.WS.Rstab9.Application
             Dlubal.WS.Rstab9.Application.set_detailed_loggingRequest inValue = new Dlubal.WS.Rstab9.Application.set_detailed_loggingRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Application.set_detailed_loggingResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).set_detailed_logging(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Application.set_program_optionsResponse Dlubal.WS.Rstab9.Application.IRstabApplication.set_program_options(Dlubal.WS.Rstab9.Application.set_program_optionsRequest request)
+        {
+            return base.Channel.set_program_options(request);
+        }
+        
+        public void set_program_options(Dlubal.WS.Rstab9.Application.settings_program_options program_options)
+        {
+            Dlubal.WS.Rstab9.Application.set_program_optionsRequest inValue = new Dlubal.WS.Rstab9.Application.set_program_optionsRequest();
+            inValue.program_options = program_options;
+            Dlubal.WS.Rstab9.Application.set_program_optionsResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).set_program_options(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Application.set_program_settingsResponse Dlubal.WS.Rstab9.Application.IRstabApplication.set_program_settings(Dlubal.WS.Rstab9.Application.set_program_settingsRequest request)
+        {
+            return base.Channel.set_program_settings(request);
+        }
+        
+        public string set_program_settings(Dlubal.WS.Rstab9.Application.program_settings program_settings)
+        {
+            Dlubal.WS.Rstab9.Application.set_program_settingsRequest inValue = new Dlubal.WS.Rstab9.Application.set_program_settingsRequest();
+            inValue.program_settings = program_settings;
+            Dlubal.WS.Rstab9.Application.set_program_settingsResponse retVal = ((Dlubal.WS.Rstab9.Application.IRstabApplication)(this)).set_program_settings(inValue);
+            return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

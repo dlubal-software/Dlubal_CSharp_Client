@@ -13,7 +13,7 @@ namespace Dlubal.WS.RSection1.Application
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.dlubal.com", ConfigurationName="Dlubal.WS.RSection1.Application.IRSectionApplication")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.06.0007", ConfigurationName="Dlubal.WS.RSection1.Application.IRSectionApplication")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRSectionApplication
     {
@@ -62,6 +62,14 @@ namespace Dlubal.WS.RSection1.Application
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_model_list_with_indexesResponse get_model_list_with_indexes(Dlubal.WS.RSection1.Application.get_model_list_with_indexesRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_program_options", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Application.get_program_optionsResponse get_program_options(Dlubal.WS.RSection1.Application.get_program_optionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_program_settings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Application.get_program_settingsResponse get_program_settings(Dlubal.WS.RSection1.Application.get_program_settingsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/get_project", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.get_projectResponse get_project(Dlubal.WS.RSection1.Application.get_projectRequest request);
@@ -109,6 +117,14 @@ namespace Dlubal.WS.RSection1.Application
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_detailed_logging", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Application.set_detailed_loggingResponse set_detailed_logging(Dlubal.WS.RSection1.Application.set_detailed_loggingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_program_options", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Application.set_program_optionsResponse set_program_options(Dlubal.WS.RSection1.Application.set_program_optionsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_program_settings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Application.set_program_settingsResponse set_program_settings(Dlubal.WS.RSection1.Application.set_program_settingsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8081/set_settings_program_language", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
