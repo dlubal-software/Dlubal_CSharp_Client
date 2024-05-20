@@ -7,11 +7,11 @@
     <StartupObject />
     <Configurations>Debug;Release</Configurations>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.06.0007</FileVersion>
-    <AssemblyVersion>1.06.0007</AssemblyVersion>
+    <FileVersion>1.06.0008</FileVersion>
+    <AssemblyVersion>1.06.0008</AssemblyVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
-    <Version>1.06.0007</Version>
+    <Version>1.06.0008</Version>
     <Company>Dlubal Software GmbH</Company>
     <Description>C# library for development of tools based on RSECTION WebService technology</Description>
     <Copyright>Copyright © Dlubal Software GmbH</Copyright>
