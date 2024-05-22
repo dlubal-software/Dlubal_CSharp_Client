@@ -43,11 +43,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dlubal.RFEMWebServiceLibrary" Version="6.5.5" />
     <PackageReference Include="NLog" Version="5.0.4" />
-  </ItemGroup>
-
-  <ItemGroup Condition="$(DefineConstants.Contains('RFEM'))">
-    <ProjectReference Include="..\..\source_code\RFEMWebServiceLibrary\RFEMWebServiceLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="$(DefineConstants.Contains('RSTAB'))">
