@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"e6a77d00-ef28-4a85-bdd0-f628243da1b8,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"c89a78cb-5b30-426d-8b5b-a6fe458c0227,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5554,6 +5554,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1"; break;
@@ -29357,6 +29358,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1;
                 case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1;
                 case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1;
                 case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1;
                 case @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1;
                 case @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1;

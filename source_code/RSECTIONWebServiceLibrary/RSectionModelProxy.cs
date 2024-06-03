@@ -2108,6 +2108,9 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1,
         
         /// <remarks/>
+        PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1,
+        
+        /// <remarks/>
         PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1,
         
         /// <remarks/>

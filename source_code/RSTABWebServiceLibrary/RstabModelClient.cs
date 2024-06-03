@@ -2293,12 +2293,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_calculation_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.calculation_diagrams_row[] get_results_for_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.calculation_diagrams_row[] get_results_for_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_calculation_diagrams(inValue);
             return retVal.value;
         }
@@ -3359,12 +3359,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_convergence_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.convergence_diagrams_row[] get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.convergence_diagrams_row[] get_results_for_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_convergence_diagrams(inValue);
             return retVal.value;
         }
@@ -3375,12 +3375,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_critical_load_factors(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.critical_load_factors_row[] get_results_for_critical_load_factors(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.critical_load_factors_row[] get_results_for_critical_load_factors(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_critical_load_factorsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_critical_load_factors(inValue);
             return retVal.value;
         }
@@ -3391,12 +3391,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_effective_lengths_and_critical_loads_by_eigenvector(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.effective_lengths_and_critical_loads_by_eigenvector_row[] get_results_for_effective_lengths_and_critical_loads_by_eigenvector(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.effective_lengths_and_critical_loads_by_eigenvector_row[] get_results_for_effective_lengths_and_critical_loads_by_eigenvector(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_effective_lengths_and_critical_loads_by_eigenvectorRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_effective_lengths_and_critical_loads_by_eigenvectorRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_effective_lengths_and_critical_loads_by_eigenvectorResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_effective_lengths_and_critical_loads_by_eigenvector(inValue);
             return retVal.value;
         }
@@ -3407,12 +3407,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_effective_lengths_and_critical_loads_by_member(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.effective_lengths_and_critical_loads_by_member_row[] get_results_for_effective_lengths_and_critical_loads_by_member(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.effective_lengths_and_critical_loads_by_member_row[] get_results_for_effective_lengths_and_critical_loads_by_member(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_effective_lengths_and_critical_loads_by_memberRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_effective_lengths_and_critical_loads_by_memberRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_effective_lengths_and_critical_loads_by_memberResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_effective_lengths_and_critical_loads_by_member(inValue);
             return retVal.value;
         }
@@ -3423,12 +3423,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_eigenvectors_by_member(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.eigenvectors_by_member_row[] get_results_for_eigenvectors_by_member(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.eigenvectors_by_member_row[] get_results_for_eigenvectors_by_member(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_memberRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_memberRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_memberResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_eigenvectors_by_member(inValue);
             return retVal.value;
         }
@@ -3439,12 +3439,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_eigenvectors_by_node(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.eigenvectors_by_node_row[] get_results_for_eigenvectors_by_node(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.eigenvectors_by_node_row[] get_results_for_eigenvectors_by_node(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_eigenvectors_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_eigenvectors_by_node(inValue);
             return retVal.value;
         }
@@ -3455,12 +3455,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_by_eigenvector(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_by_eigenvector_row[] get_results_for_members_by_eigenvector(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_by_eigenvector_row[] get_results_for_members_by_eigenvector(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_by_eigenvectorRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_by_eigenvectorRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_by_eigenvectorResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_by_eigenvector(inValue);
             return retVal.value;
         }
@@ -3471,12 +3471,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_contact_forces_row[] get_results_for_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_contact_forces_row[] get_results_for_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -3487,12 +3487,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_global_deformations_row[] get_results_for_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_global_deformations_row[] get_results_for_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_global_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_global_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -3503,12 +3503,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_hinge_deformations_row[] get_results_for_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_hinge_deformations_row[] get_results_for_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -3519,12 +3519,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_hinge_forces_row[] get_results_for_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_hinge_forces_row[] get_results_for_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -3535,12 +3535,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_internal_forces_row[] get_results_for_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_internal_forces_row[] get_results_for_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -3551,12 +3551,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_member_set_row[] get_results_for_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_member_set_row[] get_results_for_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -3567,12 +3567,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_section_row[] get_results_for_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_section_row[] get_results_for_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -3583,12 +3583,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_local_deformations_row[] get_results_for_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_local_deformations_row[] get_results_for_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -3599,12 +3599,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_local_plastic_deformation_ratios_row[] get_results_for_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_local_plastic_deformation_ratios_row[] get_results_for_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -3615,12 +3615,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_strains_row[] get_results_for_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.members_strains_row[] get_results_for_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_strains(inValue);
             return retVal.value;
         }
@@ -3631,12 +3631,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_effective_modal_masses(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_effective_modal_masses_row[] get_results_for_modal_analysis_effective_modal_masses(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_effective_modal_masses_row[] get_results_for_modal_analysis_effective_modal_masses(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_effective_modal_massesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_effective_modal_massesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_effective_modal_massesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_effective_modal_masses(inValue);
             return retVal.value;
         }
@@ -3647,12 +3647,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_masses_in_locations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_masses_in_locations_row[] get_results_for_modal_analysis_masses_in_locations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_masses_in_locations_row[] get_results_for_modal_analysis_masses_in_locations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_masses_in_locationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_masses_in_locationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_masses_in_locationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_masses_in_locations(inValue);
             return retVal.value;
         }
@@ -3663,12 +3663,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_members_by_mode_shape(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_members_by_mode_shape_row[] get_results_for_modal_analysis_members_by_mode_shape(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_members_by_mode_shape_row[] get_results_for_modal_analysis_members_by_mode_shape(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_members_by_mode_shapeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_members_by_mode_shapeRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_members_by_mode_shapeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_members_by_mode_shape(inValue);
             return retVal.value;
         }
@@ -3679,12 +3679,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_mode_shapes_by_member(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_mode_shapes_by_member_row[] get_results_for_modal_analysis_mode_shapes_by_member(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_mode_shapes_by_member_row[] get_results_for_modal_analysis_mode_shapes_by_member(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_memberRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_memberRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_memberResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_mode_shapes_by_member(inValue);
             return retVal.value;
         }
@@ -3695,12 +3695,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_mode_shapes_by_node(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_mode_shapes_by_node_row[] get_results_for_modal_analysis_mode_shapes_by_node(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_mode_shapes_by_node_row[] get_results_for_modal_analysis_mode_shapes_by_node(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_nodeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_nodeRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_mode_shapes_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_mode_shapes_by_node(inValue);
             return retVal.value;
         }
@@ -3711,12 +3711,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_natural_frequencies(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_natural_frequencies_row[] get_results_for_modal_analysis_natural_frequencies(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_natural_frequencies_row[] get_results_for_modal_analysis_natural_frequencies(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_natural_frequenciesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_natural_frequenciesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_natural_frequenciesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_natural_frequencies(inValue);
             return retVal.value;
         }
@@ -3727,12 +3727,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_nodes_by_mode_shape(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_nodes_by_mode_shape_row[] get_results_for_modal_analysis_nodes_by_mode_shape(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_nodes_by_mode_shape_row[] get_results_for_modal_analysis_nodes_by_mode_shape(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_nodes_by_mode_shapeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_nodes_by_mode_shapeRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_nodes_by_mode_shapeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_nodes_by_mode_shape(inValue);
             return retVal.value;
         }
@@ -3743,12 +3743,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_modal_analysis_participation_factors(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.modal_analysis_participation_factors_row[] get_results_for_modal_analysis_participation_factors(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.modal_analysis_participation_factors_row[] get_results_for_modal_analysis_participation_factors(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_participation_factorsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_participation_factorsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_modal_analysis_participation_factorsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_modal_analysis_participation_factors(inValue);
             return retVal.value;
         }
@@ -3759,12 +3759,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_nodes_by_eigenvector(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.nodes_by_eigenvector_row[] get_results_for_nodes_by_eigenvector(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.nodes_by_eigenvector_row[] get_results_for_nodes_by_eigenvector(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_by_eigenvectorRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_nodes_by_eigenvectorRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_by_eigenvectorResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_nodes_by_eigenvector(inValue);
             return retVal.value;
         }
@@ -3775,12 +3775,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.nodes_deformations_row[] get_results_for_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.nodes_deformations_row[] get_results_for_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -3791,12 +3791,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.nodes_support_forces_row[] get_results_for_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.nodes_support_forces_row[] get_results_for_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -3807,12 +3807,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_nodes_support_forces_with_foundation_load(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.nodes_support_forces_with_foundation_load_row[] get_results_for_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.nodes_support_forces_with_foundation_load_row[] get_results_for_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forces_with_foundation_loadRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forces_with_foundation_loadRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_nodes_support_forces_with_foundation_loadResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_nodes_support_forces_with_foundation_load(inValue);
             return retVal.value;
         }
@@ -3823,12 +3823,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_calculation_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_calculation_diagrams_row[] get_results_for_pushover_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_calculation_diagrams_row[] get_results_for_pushover_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_calculation_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_calculation_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_calculation_diagrams(inValue);
             return retVal.value;
         }
@@ -3839,12 +3839,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_convergence_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_convergence_diagrams_row[] get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_convergence_diagrams_row[] get_results_for_pushover_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_convergence_diagrams(inValue);
             return retVal.value;
         }
@@ -3855,12 +3855,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_contact_forces_row[] get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_contact_forces_row[] get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -3871,12 +3871,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_global_deformations_row[] get_results_for_pushover_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_global_deformations_row[] get_results_for_pushover_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_global_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_global_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -3887,12 +3887,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_hinge_deformations_row[] get_results_for_pushover_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_hinge_deformations_row[] get_results_for_pushover_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -3903,12 +3903,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_hinge_forces_row[] get_results_for_pushover_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_hinge_forces_row[] get_results_for_pushover_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_hinge_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -3919,12 +3919,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_row[] get_results_for_pushover_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_row[] get_results_for_pushover_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -3935,12 +3935,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_member_set_row[] get_results_for_pushover_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_member_set_row[] get_results_for_pushover_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -3951,12 +3951,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_section_row[] get_results_for_pushover_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_section_row[] get_results_for_pushover_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -3967,12 +3967,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_local_deformations_row[] get_results_for_pushover_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_local_deformations_row[] get_results_for_pushover_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -3983,12 +3983,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_pushover_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_pushover_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -3999,12 +3999,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_strains_row[] get_results_for_pushover_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_strains_row[] get_results_for_pushover_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -4015,12 +4015,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_nodes_deformations_row[] get_results_for_pushover_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_nodes_deformations_row[] get_results_for_pushover_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -4031,12 +4031,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_nodes_support_forces_row[] get_results_for_pushover_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_nodes_support_forces_row[] get_results_for_pushover_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -4047,12 +4047,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_nodes_support_forces_with_foundation_load(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_nodes_support_forces_with_foundation_load_row[] get_results_for_pushover_analysis_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_nodes_support_forces_with_foundation_load_row[] get_results_for_pushover_analysis_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forces_with_foundation_loadRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forces_with_foundation_loadRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_nodes_support_forces_with_foundation_loadResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_nodes_support_forces_with_foundation_load(inValue);
             return retVal.value;
         }
@@ -4063,12 +4063,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_normalized_lateral_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_normalized_lateral_forces_row[] get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_normalized_lateral_forces_row[] get_results_for_pushover_analysis_normalized_lateral_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_normalized_lateral_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_normalized_lateral_forces(inValue);
             return retVal.value;
         }
@@ -4094,12 +4094,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_target_displacement(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_target_displacement_row[] get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_target_displacement_row[] get_results_for_pushover_analysis_target_displacement(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_target_displacementResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_target_displacement(inValue);
             return retVal.value;
         }
@@ -4110,12 +4110,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_contact_forces_row[] get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_contact_forces_row[] get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -4126,12 +4126,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_global_deformations_row[] get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_global_deformations_row[] get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -4142,12 +4142,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_deformations_row[] get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_deformations_row[] get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -4158,12 +4158,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_forces_row[] get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_forces_row[] get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -4174,12 +4174,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_row[] get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_row[] get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -4190,12 +4190,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_member_set_row[] get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_member_set_row[] get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -4206,12 +4206,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_section_row[] get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_section_row[] get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -4222,12 +4222,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_deformations_row[] get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_deformations_row[] get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -4238,12 +4238,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -4254,12 +4254,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_strains_row[] get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_strains_row[] get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -4270,12 +4270,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_deformations_row[] get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_deformations_row[] get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -4286,12 +4286,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_pseudo_accelerations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_accelerations_row[] get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_accelerations_row[] get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_pseudo_accelerations(inValue);
             return retVal.value;
         }
@@ -4302,12 +4302,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_pseudo_velocities(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_velocities_row[] get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_velocities_row[] get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_pseudo_velocities(inValue);
             return retVal.value;
         }
@@ -4318,12 +4318,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_support_forces_row[] get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_support_forces_row[] get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -4349,12 +4349,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_calculation_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_calculation_diagrams_row[] get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_calculation_diagrams_row[] get_results_for_stability_incremental_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_calculation_diagrams(inValue);
             return retVal.value;
         }
@@ -4365,12 +4365,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_convergence_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_convergence_diagrams_row[] get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_convergence_diagrams_row[] get_results_for_stability_incremental_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_convergence_diagrams(inValue);
             return retVal.value;
         }
@@ -4381,12 +4381,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_contact_forces_row[] get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_contact_forces_row[] get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -4397,12 +4397,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_global_deformations_row[] get_results_for_stability_incremental_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_global_deformations_row[] get_results_for_stability_incremental_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_global_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_global_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -4413,12 +4413,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_hinge_deformations_row[] get_results_for_stability_incremental_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_hinge_deformations_row[] get_results_for_stability_incremental_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -4429,12 +4429,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_hinge_forces_row[] get_results_for_stability_incremental_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_hinge_forces_row[] get_results_for_stability_incremental_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -4445,12 +4445,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_row[] get_results_for_stability_incremental_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_row[] get_results_for_stability_incremental_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -4461,12 +4461,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_member_set_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_member_set_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -4477,12 +4477,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_section_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_section_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -4493,12 +4493,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_local_deformations_row[] get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_local_deformations_row[] get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -4509,12 +4509,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -4525,12 +4525,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_strains_row[] get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_strains_row[] get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -4541,12 +4541,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_nodes_deformations_row[] get_results_for_stability_incremental_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_nodes_deformations_row[] get_results_for_stability_incremental_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -4557,12 +4557,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_nodes_support_forces_row[] get_results_for_stability_incremental_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_nodes_support_forces_row[] get_results_for_stability_incremental_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -4573,12 +4573,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_load(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_nodes_support_forces_with_foundation_load_row[] get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_nodes_support_forces_with_foundation_load_row[] get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_loadRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_loadRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_loadResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_nodes_support_forces_with_foundation_load(inValue);
             return retVal.value;
         }
@@ -6383,12 +6383,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_calculation_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_calculation_diagrams_row[] get_results_for_time_history_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_calculation_diagrams_row[] get_results_for_time_history_analysis_calculation_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_calculation_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_calculation_diagrams(inValue);
             return retVal.value;
         }
@@ -6399,12 +6399,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_convergence_diagrams(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_convergence_diagrams_row[] get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_convergence_diagrams_row[] get_results_for_time_history_analysis_convergence_diagrams(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_convergence_diagramsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_convergence_diagrams(inValue);
             return retVal.value;
         }
@@ -6415,12 +6415,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_contact_forces_row[] get_results_for_time_history_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_contact_forces_row[] get_results_for_time_history_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -6431,12 +6431,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_global_deformations_row[] get_results_for_time_history_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_global_deformations_row[] get_results_for_time_history_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_global_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_global_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -6447,12 +6447,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_hinge_deformations_row[] get_results_for_time_history_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_hinge_deformations_row[] get_results_for_time_history_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -6463,12 +6463,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_hinge_forces_row[] get_results_for_time_history_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_hinge_forces_row[] get_results_for_time_history_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -6479,12 +6479,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_row[] get_results_for_time_history_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_row[] get_results_for_time_history_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -6495,12 +6495,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_member_set_row[] get_results_for_time_history_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_member_set_row[] get_results_for_time_history_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -6511,12 +6511,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_section_row[] get_results_for_time_history_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_section_row[] get_results_for_time_history_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -6527,12 +6527,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_local_deformations_row[] get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_local_deformations_row[] get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -6543,12 +6543,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_time_history_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_time_history_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -6559,12 +6559,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_strains_row[] get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_strains_row[] get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -6575,12 +6575,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_nodes_accelerations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_accelerations_row[] get_results_for_time_history_analysis_nodes_accelerations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_accelerations_row[] get_results_for_time_history_analysis_nodes_accelerations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_accelerationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_accelerationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_accelerationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_nodes_accelerations(inValue);
             return retVal.value;
         }
@@ -6591,12 +6591,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_deformations_row[] get_results_for_time_history_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_deformations_row[] get_results_for_time_history_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -6607,12 +6607,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_support_forces_row[] get_results_for_time_history_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_support_forces_row[] get_results_for_time_history_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -6623,12 +6623,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_nodes_support_forces_with_foundation_load(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_support_forces_with_foundation_load_row[] get_results_for_time_history_analysis_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_support_forces_with_foundation_load_row[] get_results_for_time_history_analysis_nodes_support_forces_with_foundation_load(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forces_with_foundation_loadRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forces_with_foundation_loadRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_support_forces_with_foundation_loadResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_nodes_support_forces_with_foundation_load(inValue);
             return retVal.value;
         }
@@ -6639,12 +6639,12 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_nodes_velocities(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_velocities_row[] get_results_for_time_history_analysis_nodes_velocities(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, int no)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_nodes_velocities_row[] get_results_for_time_history_analysis_nodes_velocities(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_velocitiesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_velocitiesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
-            inValue.no = no;
+            inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_nodes_velocitiesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_nodes_velocities(inValue);
             return retVal.value;
         }
