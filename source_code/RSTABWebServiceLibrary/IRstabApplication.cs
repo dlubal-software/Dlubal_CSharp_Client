@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rstab9.Application
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.06.0010", ConfigurationName="Dlubal.WS.Rstab9.Application.IRstabApplication")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.06.0011", ConfigurationName="Dlubal.WS.Rstab9.Application.IRstabApplication")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRstabApplication
     {

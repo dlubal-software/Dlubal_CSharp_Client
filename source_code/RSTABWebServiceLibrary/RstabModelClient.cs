@@ -3471,12 +3471,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_contact_forces_row[] get_results_for_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.members_contact_forces_row[] get_results_for_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -3535,12 +3536,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_internal_forces_row[] get_results_for_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.members_internal_forces_row[] get_results_for_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -3551,12 +3553,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_member_set_row[] get_results_for_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_member_set_row[] get_results_for_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -3567,12 +3570,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_section_row[] get_results_for_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.members_internal_forces_by_section_row[] get_results_for_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -3583,12 +3587,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_local_deformations_row[] get_results_for_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.members_local_deformations_row[] get_results_for_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -3615,12 +3620,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.members_strains_row[] get_results_for_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.members_strains_row[] get_results_for_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_members_strains(inValue);
             return retVal.value;
         }
@@ -3855,12 +3861,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_contact_forces_row[] get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_contact_forces_row[] get_results_for_pushover_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -3919,12 +3926,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_row[] get_results_for_pushover_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_row[] get_results_for_pushover_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -3935,12 +3943,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_member_set_row[] get_results_for_pushover_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_member_set_row[] get_results_for_pushover_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -3951,12 +3960,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_section_row[] get_results_for_pushover_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_internal_forces_by_section_row[] get_results_for_pushover_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -3967,12 +3977,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_local_deformations_row[] get_results_for_pushover_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_local_deformations_row[] get_results_for_pushover_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -3999,12 +4010,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_pushover_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_strains_row[] get_results_for_pushover_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.pushover_analysis_members_strains_row[] get_results_for_pushover_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_pushover_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_pushover_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -4110,12 +4122,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_contact_forces_row[] get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_contact_forces_row[] get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -4174,12 +4187,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_row[] get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_row[] get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -4190,12 +4204,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_member_set_row[] get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_member_set_row[] get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -4206,12 +4221,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_section_row[] get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_internal_forces_by_section_row[] get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -4222,12 +4238,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_deformations_row[] get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_deformations_row[] get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -4254,12 +4271,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_strains_row[] get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_strains_row[] get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -4381,12 +4399,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_contact_forces_row[] get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_contact_forces_row[] get_results_for_stability_incremental_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -4445,12 +4464,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_row[] get_results_for_stability_incremental_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_row[] get_results_for_stability_incremental_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -4461,12 +4481,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_member_set_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_member_set_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -4477,12 +4498,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_section_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_internal_forces_by_section_row[] get_results_for_stability_incremental_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -4493,12 +4515,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_local_deformations_row[] get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_local_deformations_row[] get_results_for_stability_incremental_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -4525,12 +4548,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_stability_incremental_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_strains_row[] get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.stability_incremental_analysis_members_strains_row[] get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_stability_incremental_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_stability_incremental_analysis_members_strains(inValue);
             return retVal.value;
         }
@@ -6415,12 +6439,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_contact_forces_row[] get_results_for_time_history_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_contact_forces_row[] get_results_for_time_history_analysis_members_contact_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -6479,12 +6504,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_row[] get_results_for_time_history_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_row[] get_results_for_time_history_analysis_members_internal_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -6495,12 +6521,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_member_set_row[] get_results_for_time_history_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_member_set_row[] get_results_for_time_history_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -6511,12 +6538,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_section_row[] get_results_for_time_history_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_internal_forces_by_section_row[] get_results_for_time_history_analysis_members_internal_forces_by_section(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -6527,12 +6555,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_local_deformations_row[] get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_local_deformations_row[] get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -6559,12 +6588,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_time_history_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_strains_row[] get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.time_history_analysis_members_strains_row[] get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.axes_type member_result_coordinate_system_type)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rstab9.Model.get_results_for_time_history_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_time_history_analysis_members_strains(inValue);
             return retVal.value;
         }
