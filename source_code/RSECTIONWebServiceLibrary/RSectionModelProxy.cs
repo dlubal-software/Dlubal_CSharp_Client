@@ -31293,6 +31293,8 @@ namespace Dlubal.WS.RSection1.Model
         
         private string unit_tau_z_mxsecField;
         
+        private string temperatureField;
+        
         private string noteField;
         
         /// <remarks/>
@@ -31777,6 +31779,21 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        public string temperature
+        {
+            get
+            {
+                return this.temperatureField;
+            }
+            set
+            {
+                this.temperatureField = value;
+                this.RaisePropertyChanged("temperature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
         public string note
         {
             get
@@ -31872,6 +31889,8 @@ namespace Dlubal.WS.RSection1.Model
         private string unit_tau_y_mxsecField;
         
         private string unit_tau_z_mxsecField;
+        
+        private string temperatureField;
         
         private string noteField;
         
@@ -32346,6 +32365,21 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        public string temperature
+        {
+            get
+            {
+                return this.temperatureField;
+            }
+            set
+            {
+                this.temperatureField = value;
+                this.RaisePropertyChanged("temperature");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
         public string note
         {
             get
@@ -32360,7 +32394,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
         public int material_no
         {
             get

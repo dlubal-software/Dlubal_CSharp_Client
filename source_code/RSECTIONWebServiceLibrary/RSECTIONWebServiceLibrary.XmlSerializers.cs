@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"13cae87a-3c6b-48c9-bda0-fc6a8d238350,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"33a86694-998b-4026-8693-c8c5f3595839,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -8757,6 +8757,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteElementString(@"unit_tau_z_mxpri", @"", ((global::System.String)o.@unit_tau_z_mxpri));
             WriteElementString(@"unit_tau_y_mxsec", @"", ((global::System.String)o.@unit_tau_y_mxsec));
             WriteElementString(@"unit_tau_z_mxsec", @"", ((global::System.String)o.@unit_tau_z_mxsec));
+            WriteElementString(@"temperature", @"", ((global::System.String)o.@temperature));
             WriteElementString(@"note", @"", ((global::System.String)o.@note));
             if (o.@material_noSpecified) {
                 WriteElementStringRaw(@"material_no", @"", System.Xml.XmlConvert.ToString((global::System.Int32)((global::System.Int32)o.@material_no)));
@@ -8833,6 +8834,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteElementString(@"unit_tau_z_mxpri", @"", ((global::System.String)o.@unit_tau_z_mxpri));
             WriteElementString(@"unit_tau_y_mxsec", @"", ((global::System.String)o.@unit_tau_y_mxsec));
             WriteElementString(@"unit_tau_z_mxsec", @"", ((global::System.String)o.@unit_tau_z_mxsec));
+            WriteElementString(@"temperature", @"", ((global::System.String)o.@temperature));
             WriteElementString(@"note", @"", ((global::System.String)o.@note));
             WriteEndElement(o);
         }
@@ -37377,7 +37379,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             if (isNull) return null;
             global::Dlubal.WS.RSection1.Model.results_for_unit_stresses_by_material o;
             o = new global::Dlubal.WS.RSection1.Model.results_for_unit_stresses_by_material();
-            bool[] paramsRead = new bool[33];
+            bool[] paramsRead = new bool[34];
             while (Reader.MoveToNextAttribute()) {
                 if (!IsXmlnsAttribute(Reader.Name)) {
                     UnknownNode((object)o);
@@ -37645,21 +37647,29 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 31;
                         break;
                     case 31:
-                        if (((object) Reader.LocalName == (object)id1152_note && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1018_temperature && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
-                                o.@note = Reader.ReadElementString();
+                                o.@temperature = Reader.ReadElementString();
                             }
                         }
                         state = 32;
                         break;
                     case 32:
+                        if (((object) Reader.LocalName == (object)id1152_note && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                            {
+                                o.@note = Reader.ReadElementString();
+                            }
+                        }
+                        state = 33;
+                        break;
+                    case 33:
                         if (((object) Reader.LocalName == (object)id1370_material_no && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@material_noSpecified = true;
                             {
                                 o.@material_no = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
                         }
-                        state = 33;
+                        state = 34;
                         break;
                     default:
                         UnknownNode((object)o, null);
@@ -37758,7 +37768,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             if (isNull) return null;
             global::Dlubal.WS.RSection1.Model.results_for_unit_stresses o;
             o = new global::Dlubal.WS.RSection1.Model.results_for_unit_stresses();
-            bool[] paramsRead = new bool[32];
+            bool[] paramsRead = new bool[33];
             while (Reader.MoveToNextAttribute()) {
                 if (!IsXmlnsAttribute(Reader.Name)) {
                     UnknownNode((object)o);
@@ -38027,12 +38037,20 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 31;
                         break;
                     case 31:
+                        if (((object) Reader.LocalName == (object)id1018_temperature && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                            {
+                                o.@temperature = Reader.ReadElementString();
+                            }
+                        }
+                        state = 32;
+                        break;
+                    case 32:
                         if (((object) Reader.LocalName == (object)id1152_note && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@note = Reader.ReadElementString();
                             }
                         }
-                        state = 32;
+                        state = 33;
                         break;
                     default:
                         UnknownNode((object)o, null);
