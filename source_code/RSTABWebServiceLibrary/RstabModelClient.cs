@@ -673,6 +673,20 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_aluminum_member_transverse_weld(request);
         }
         
+        public Dlubal.WS.Rstab9.Model.block_info get_block_info(string block_id)
+        {
+            Dlubal.WS.Rstab9.Model.get_block_infoRequest inValue = new Dlubal.WS.Rstab9.Model.get_block_infoRequest();
+            inValue.block_id = block_id;
+            Dlubal.WS.Rstab9.Model.get_block_infoResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_block_info(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_block_infoResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_block_info(Dlubal.WS.Rstab9.Model.get_block_infoRequest request)
+        {
+            return base.Channel.get_block_info(request);
+        }
+        
         public Dlubal.WS.Rstab9.Model.building_grid get_building_grid(int no)
         {
             Dlubal.WS.Rstab9.Model.get_building_gridRequest inValue = new Dlubal.WS.Rstab9.Model.get_building_gridRequest();
@@ -7068,6 +7082,20 @@ namespace Dlubal.WS.Rstab9.Model
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             Dlubal.WS.Rstab9.Model.has_resultsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).has_results(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.import_blockResponse Dlubal.WS.Rstab9.Model.IRstabModel.import_block(Dlubal.WS.Rstab9.Model.import_blockRequest request)
+        {
+            return base.Channel.import_block(request);
+        }
+        
+        public int import_block(string block_id)
+        {
+            Dlubal.WS.Rstab9.Model.import_blockRequest inValue = new Dlubal.WS.Rstab9.Model.import_blockRequest();
+            inValue.block_id = block_id;
+            Dlubal.WS.Rstab9.Model.import_blockResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).import_block(inValue);
             return retVal.value;
         }
         

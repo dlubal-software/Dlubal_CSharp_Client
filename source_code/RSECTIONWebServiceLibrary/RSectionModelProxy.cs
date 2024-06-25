@@ -69,6 +69,111 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum block_model_type
+    {
+        
+        /// <remarks/>
+        INVALID,
+        
+        /// <remarks/>
+        MODEL_1D,
+        
+        /// <remarks/>
+        MODEL_1D_X_3D,
+        
+        /// <remarks/>
+        MODEL_2D_XY_3D,
+        
+        /// <remarks/>
+        MODEL_2D_XY_PLATE,
+        
+        /// <remarks/>
+        MODEL_2D_XZ_3D,
+        
+        /// <remarks/>
+        MODEL_2D_XZ_PLANE_STRAIN,
+        
+        /// <remarks/>
+        MODEL_2D_XZ_PLANE_STRESS,
+        
+        /// <remarks/>
+        MODEL_3D,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum block_object_type
+    {
+        
+        /// <remarks/>
+        INVALID,
+        
+        /// <remarks/>
+        MEMBERS,
+        
+        /// <remarks/>
+        MEMBERS_SURFACES,
+        
+        /// <remarks/>
+        MEMBERS_SURFACES_SOLIDS,
+        
+        /// <remarks/>
+        SOLIDS,
+        
+        /// <remarks/>
+        SURFACES,
+        
+        /// <remarks/>
+        SURFACES_SOLIDS,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public enum block_product_file_type
+    {
+        
+        /// <remarks/>
+        INVALID,
+        
+        /// <remarks/>
+        RFEM_5,
+        
+        /// <remarks/>
+        RFEM_6,
+        
+        /// <remarks/>
+        RSECTION_1,
+        
+        /// <remarks/>
+        RSTAB_8,
+        
+        /// <remarks/>
+        RSTAB_9,
+        
+        /// <remarks/>
+        RWIND_2,
+        
+        /// <remarks/>
+        RWIND_SIMULATION_1,
+        
+        /// <remarks/>
+        SHAPE_MASSIVE_6,
+        
+        /// <remarks/>
+        SHAPE_THIN_8,
+        
+        /// <remarks/>
+        SHAPE_THIN_9,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
     public enum calculation_message_type
     {
         
@@ -3857,6 +3962,367 @@ namespace Dlubal.WS.RSection1.Model
         
         public begin_modificationResponse()
         {
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
+    public partial class block_info : object, System.ComponentModel.INotifyPropertyChanged
+    {
+        
+        private string block_idField;
+        
+        private string nameField;
+        
+        private block_product_file_type product_file_typeField;
+        
+        private bool product_file_typeFieldSpecified;
+        
+        private block_model_type model_typeField;
+        
+        private bool model_typeFieldSpecified;
+        
+        private block_object_type object_typeField;
+        
+        private bool object_typeFieldSpecified;
+        
+        private string model_category_1Field;
+        
+        private string model_subcategory_1Field;
+        
+        private string model_category_2Field;
+        
+        private string model_subcategory_2Field;
+        
+        private string block_category1Field;
+        
+        private string block_category2Field;
+        
+        private string block_category3Field;
+        
+        private string block_category4Field;
+        
+        private string block_category5Field;
+        
+        private int sequenceField;
+        
+        private bool sequenceFieldSpecified;
+        
+        private string file_pathField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string block_id
+        {
+            get
+            {
+                return this.block_idField;
+            }
+            set
+            {
+                this.block_idField = value;
+                this.RaisePropertyChanged("block_id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public block_product_file_type product_file_type
+        {
+            get
+            {
+                return this.product_file_typeField;
+            }
+            set
+            {
+                this.product_file_typeField = value;
+                this.RaisePropertyChanged("product_file_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool product_file_typeSpecified
+        {
+            get
+            {
+                return this.product_file_typeFieldSpecified;
+            }
+            set
+            {
+                this.product_file_typeFieldSpecified = value;
+                this.RaisePropertyChanged("product_file_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public block_model_type model_type
+        {
+            get
+            {
+                return this.model_typeField;
+            }
+            set
+            {
+                this.model_typeField = value;
+                this.RaisePropertyChanged("model_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool model_typeSpecified
+        {
+            get
+            {
+                return this.model_typeFieldSpecified;
+            }
+            set
+            {
+                this.model_typeFieldSpecified = value;
+                this.RaisePropertyChanged("model_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public block_object_type object_type
+        {
+            get
+            {
+                return this.object_typeField;
+            }
+            set
+            {
+                this.object_typeField = value;
+                this.RaisePropertyChanged("object_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool object_typeSpecified
+        {
+            get
+            {
+                return this.object_typeFieldSpecified;
+            }
+            set
+            {
+                this.object_typeFieldSpecified = value;
+                this.RaisePropertyChanged("object_typeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string model_category_1
+        {
+            get
+            {
+                return this.model_category_1Field;
+            }
+            set
+            {
+                this.model_category_1Field = value;
+                this.RaisePropertyChanged("model_category_1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string model_subcategory_1
+        {
+            get
+            {
+                return this.model_subcategory_1Field;
+            }
+            set
+            {
+                this.model_subcategory_1Field = value;
+                this.RaisePropertyChanged("model_subcategory_1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string model_category_2
+        {
+            get
+            {
+                return this.model_category_2Field;
+            }
+            set
+            {
+                this.model_category_2Field = value;
+                this.RaisePropertyChanged("model_category_2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string model_subcategory_2
+        {
+            get
+            {
+                return this.model_subcategory_2Field;
+            }
+            set
+            {
+                this.model_subcategory_2Field = value;
+                this.RaisePropertyChanged("model_subcategory_2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string block_category1
+        {
+            get
+            {
+                return this.block_category1Field;
+            }
+            set
+            {
+                this.block_category1Field = value;
+                this.RaisePropertyChanged("block_category1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string block_category2
+        {
+            get
+            {
+                return this.block_category2Field;
+            }
+            set
+            {
+                this.block_category2Field = value;
+                this.RaisePropertyChanged("block_category2");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string block_category3
+        {
+            get
+            {
+                return this.block_category3Field;
+            }
+            set
+            {
+                this.block_category3Field = value;
+                this.RaisePropertyChanged("block_category3");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string block_category4
+        {
+            get
+            {
+                return this.block_category4Field;
+            }
+            set
+            {
+                this.block_category4Field = value;
+                this.RaisePropertyChanged("block_category4");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        public string block_category5
+        {
+            get
+            {
+                return this.block_category5Field;
+            }
+            set
+            {
+                this.block_category5Field = value;
+                this.RaisePropertyChanged("block_category5");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        public int sequence
+        {
+            get
+            {
+                return this.sequenceField;
+            }
+            set
+            {
+                this.sequenceField = value;
+                this.RaisePropertyChanged("sequence");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sequenceSpecified
+        {
+            get
+            {
+                return this.sequenceFieldSpecified;
+            }
+            set
+            {
+                this.sequenceFieldSpecified = value;
+                this.RaisePropertyChanged("sequenceSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        public string file_path
+        {
+            get
+            {
+                return this.file_pathField;
+            }
+            set
+            {
+                this.file_pathField = value;
+                this.RaisePropertyChanged("file_path");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null))
+            {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -9536,6 +10002,48 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_block_info", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_block_infoRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string block_id;
+        
+        public get_block_infoRequest()
+        {
+        }
+        
+        public get_block_infoRequest(string block_id)
+        {
+            this.block_id = block_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_block_infoResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_block_infoResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Dlubal.WS.RSection1.Model.block_info value;
+        
+        public get_block_infoResponse()
+        {
+        }
+        
+        public get_block_infoResponse(Dlubal.WS.RSection1.Model.block_info value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_dimension", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_dimensionRequest
     {
@@ -11530,6 +12038,48 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         public has_any_resultsResponse(bool value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="import_block", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class import_blockRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string block_id;
+        
+        public import_blockRequest()
+        {
+        }
+        
+        public import_blockRequest(string block_id)
+        {
+            this.block_id = block_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="import_blockResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class import_blockResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int value;
+        
+        public import_blockResponse()
+        {
+        }
+        
+        public import_blockResponse(int value)
         {
             this.value = value;
         }

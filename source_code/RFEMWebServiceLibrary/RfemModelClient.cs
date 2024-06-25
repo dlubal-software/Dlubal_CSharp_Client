@@ -801,6 +801,34 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_aluminum_member_transverse_weld(request);
         }
         
+        public Dlubal.WS.Rfem6.Model.block get_block(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_blockRequest inValue = new Dlubal.WS.Rfem6.Model.get_blockRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_blockResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_block(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_blockResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_block(Dlubal.WS.Rfem6.Model.get_blockRequest request)
+        {
+            return base.Channel.get_block(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.block_info get_block_info(string block_id)
+        {
+            Dlubal.WS.Rfem6.Model.get_block_infoRequest inValue = new Dlubal.WS.Rfem6.Model.get_block_infoRequest();
+            inValue.block_id = block_id;
+            Dlubal.WS.Rfem6.Model.get_block_infoResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_block_info(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_block_infoResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_block_info(Dlubal.WS.Rfem6.Model.get_block_infoRequest request)
+        {
+            return base.Channel.get_block_info(request);
+        }
+        
         public Dlubal.WS.Rfem6.Model.borehole get_borehole(int no)
         {
             Dlubal.WS.Rfem6.Model.get_boreholeRequest inValue = new Dlubal.WS.Rfem6.Model.get_boreholeRequest();
@@ -16097,6 +16125,20 @@ namespace Dlubal.WS.Rfem6.Model
             return retVal.value;
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.import_blockResponse Dlubal.WS.Rfem6.Model.IRfemModel.import_block(Dlubal.WS.Rfem6.Model.import_blockRequest request)
+        {
+            return base.Channel.import_block(request);
+        }
+        
+        public int import_block(string block_id)
+        {
+            Dlubal.WS.Rfem6.Model.import_blockRequest inValue = new Dlubal.WS.Rfem6.Model.import_blockRequest();
+            inValue.block_id = block_id;
+            Dlubal.WS.Rfem6.Model.import_blockResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).import_block(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.Rfem6.Model.calculation_result plausibility_check(Dlubal.WS.Rfem6.Model.plausibility_check_type type, bool skip_warnings)
         {
             Dlubal.WS.Rfem6.Model.plausibility_checkRequest inValue = new Dlubal.WS.Rfem6.Model.plausibility_checkRequest();
@@ -16279,6 +16321,19 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldRequest inValue = new Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_aluminum_member_transverse_weld(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_blockResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_block(Dlubal.WS.Rfem6.Model.set_blockRequest request)
+        {
+            return base.Channel.set_block(request);
+        }
+        
+        public void set_block(Dlubal.WS.Rfem6.Model.block value)
+        {
+            Dlubal.WS.Rfem6.Model.set_blockRequest inValue = new Dlubal.WS.Rfem6.Model.set_blockRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_blockResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_block(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

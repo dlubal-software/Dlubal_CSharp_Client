@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rfem6.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.06.0012", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.06.0013", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRfemModel
     {
@@ -241,6 +241,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_aluminum_member_transverse_weldResponse get_aluminum_member_transverse_weld(Dlubal.WS.Rfem6.Model.get_aluminum_member_transverse_weldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_block", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_blockResponse get_block(Dlubal.WS.Rfem6.Model.get_blockRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_block_info", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_block_infoResponse get_block_info(Dlubal.WS.Rfem6.Model.get_block_infoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_borehole", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -5111,6 +5119,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.has_resultsResponse has_results(Dlubal.WS.Rfem6.Model.has_resultsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/import_block", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.import_blockResponse import_block(Dlubal.WS.Rfem6.Model.import_blockRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/plausibility_check", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.plausibility_checkResponse plausibility_check(Dlubal.WS.Rfem6.Model.plausibility_checkRequest request);
@@ -5166,6 +5178,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldResponse set_aluminum_member_transverse_weld(Dlubal.WS.Rfem6.Model.set_aluminum_member_transverse_weldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_block", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.set_blockResponse set_block(Dlubal.WS.Rfem6.Model.set_blockRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_borehole", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

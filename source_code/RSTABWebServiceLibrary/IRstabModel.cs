@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rstab9.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.06.0012", ConfigurationName="Dlubal.WS.Rstab9.Model.IRstabModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.06.0013", ConfigurationName="Dlubal.WS.Rstab9.Model.IRstabModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRstabModel
     {
@@ -205,6 +205,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_aluminum_member_transverse_weldResponse get_aluminum_member_transverse_weld(Dlubal.WS.Rstab9.Model.get_aluminum_member_transverse_weldRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_block_info", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_block_infoResponse get_block_info(Dlubal.WS.Rstab9.Model.get_block_infoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_building_grid", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2234,6 +2238,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_results", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.has_resultsResponse has_results(Dlubal.WS.Rstab9.Model.has_resultsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/import_block", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.import_blockResponse import_block(Dlubal.WS.Rstab9.Model.import_blockRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/plausibility_check", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

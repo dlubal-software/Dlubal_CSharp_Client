@@ -13,7 +13,7 @@ namespace Dlubal.WS.RSection1.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.06.0012", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.06.0013", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRSectionModel
     {
@@ -129,6 +129,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_bar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_barResponse get_bar(Dlubal.WS.RSection1.Model.get_barRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_block_info", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_block_infoResponse get_block_info(Dlubal.WS.RSection1.Model.get_block_infoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_dimension", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -337,6 +341,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_any_results", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.has_any_resultsResponse has_any_results(Dlubal.WS.RSection1.Model.has_any_resultsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/import_block", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.import_blockResponse import_block(Dlubal.WS.RSection1.Model.import_blockRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/print_printout_report", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

@@ -414,6 +414,20 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.get_bar(request);
         }
         
+        public Dlubal.WS.RSection1.Model.block_info get_block_info(string block_id)
+        {
+            Dlubal.WS.RSection1.Model.get_block_infoRequest inValue = new Dlubal.WS.RSection1.Model.get_block_infoRequest();
+            inValue.block_id = block_id;
+            Dlubal.WS.RSection1.Model.get_block_infoResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_block_info(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_block_infoResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_block_info(Dlubal.WS.RSection1.Model.get_block_infoRequest request)
+        {
+            return base.Channel.get_block_info(request);
+        }
+        
         public Dlubal.WS.RSection1.Model.dimension get_dimension(int no)
         {
             Dlubal.WS.RSection1.Model.get_dimensionRequest inValue = new Dlubal.WS.RSection1.Model.get_dimensionRequest();
@@ -1112,6 +1126,20 @@ namespace Dlubal.WS.RSection1.Model
         {
             Dlubal.WS.RSection1.Model.has_any_resultsRequest inValue = new Dlubal.WS.RSection1.Model.has_any_resultsRequest();
             Dlubal.WS.RSection1.Model.has_any_resultsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).has_any_results(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.import_blockResponse Dlubal.WS.RSection1.Model.IRSectionModel.import_block(Dlubal.WS.RSection1.Model.import_blockRequest request)
+        {
+            return base.Channel.import_block(request);
+        }
+        
+        public int import_block(string block_id)
+        {
+            Dlubal.WS.RSection1.Model.import_blockRequest inValue = new Dlubal.WS.RSection1.Model.import_blockRequest();
+            inValue.block_id = block_id;
+            Dlubal.WS.RSection1.Model.import_blockResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).import_block(inValue);
             return retVal.value;
         }
         
