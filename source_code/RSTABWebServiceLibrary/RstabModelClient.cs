@@ -4153,12 +4153,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_global_deformations_row[] get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_global_deformations_row[] get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_global_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -4169,12 +4170,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_deformations_row[] get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_deformations_row[] get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -4185,12 +4187,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_forces_row[] get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_hinge_forces_row[] get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -4269,12 +4272,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -4302,12 +4306,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_deformations_row[] get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_deformations_row[] get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_deformationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -4318,12 +4323,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_pseudo_accelerations(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_accelerations_row[] get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_accelerations_row[] get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_pseudo_accelerations(inValue);
             return retVal.value;
         }
@@ -4334,12 +4340,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_pseudo_velocities(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_velocities_row[] get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_pseudo_velocities_row[] get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_pseudo_velocities(inValue);
             return retVal.value;
         }
@@ -4350,12 +4357,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_support_forces_row[] get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_nodes_support_forces_row[] get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -4366,11 +4374,13 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_results_for_spectral_analysis_summary(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.spectral_analysis_summary_row[] get_results_for_spectral_analysis_summary(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no)
+        public Dlubal.WS.Rstab9.Model.spectral_analysis_summary_row[] get_results_for_spectral_analysis_summary(Dlubal.WS.Rstab9.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rstab9.Model.object_location[] object_locations, Dlubal.WS.Rstab9.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_summaryRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_summaryRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rstab9.Model.get_results_for_spectral_analysis_summaryResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_spectral_analysis_summary(inValue);
             return retVal.value;
         }

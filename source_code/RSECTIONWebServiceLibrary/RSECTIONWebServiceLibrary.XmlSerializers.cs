@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"edc33d37-c153-47c6-9e5a-da3e8e6ae3c7,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"7a7040b0-5e0f-45d0-8e27-2674029cf66a,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -7236,6 +7236,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string Write61_material_material_model(global::Dlubal.WS.RSection1.Model.material_material_model v) {
             string s = null;
             switch (v) {
+                case global::Dlubal.WS.RSection1.Model.material_material_model.@E_MATERIAL_MODEL_ISOTROPIC_SOIL_PLASTIC_MODIFIED_HARDENING_SOIL_3D: s = @"E_MATERIAL_MODEL_ISOTROPIC_SOIL_PLASTIC_MODIFIED_HARDENING_SOIL_3D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_DAMAGE_2D_3D: s = @"MODEL_ISOTROPIC_DAMAGE_2D_3D"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_LINEAR_ELASTIC: s = @"MODEL_ISOTROPIC_LINEAR_ELASTIC"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_MASONRY_PLASTIC_2D: s = @"MODEL_ISOTROPIC_MASONRY_PLASTIC_2D"; break;
@@ -33290,6 +33291,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
         global::Dlubal.WS.RSection1.Model.material_material_model Read61_material_material_model(string s) {
             switch (s) {
+                case @"E_MATERIAL_MODEL_ISOTROPIC_SOIL_PLASTIC_MODIFIED_HARDENING_SOIL_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@E_MATERIAL_MODEL_ISOTROPIC_SOIL_PLASTIC_MODIFIED_HARDENING_SOIL_3D;
                 case @"MODEL_ISOTROPIC_DAMAGE_2D_3D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_DAMAGE_2D_3D;
                 case @"MODEL_ISOTROPIC_LINEAR_ELASTIC": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_LINEAR_ELASTIC;
                 case @"MODEL_ISOTROPIC_MASONRY_PLASTIC_2D": return global::Dlubal.WS.RSection1.Model.material_material_model.@MODEL_ISOTROPIC_MASONRY_PLASTIC_2D;

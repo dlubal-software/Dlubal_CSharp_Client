@@ -968,6 +968,9 @@ namespace Dlubal.WS.RSection1.Model
     {
         
         /// <remarks/>
+        E_MATERIAL_MODEL_ISOTROPIC_SOIL_PLASTIC_MODIFIED_HARDENING_SOIL_3D,
+        
+        /// <remarks/>
         MODEL_ISOTROPIC_DAMAGE_2D_3D,
         
         /// <remarks/>

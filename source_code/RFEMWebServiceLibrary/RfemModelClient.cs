@@ -7918,12 +7918,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_model_member_forces_in_shear_walls_row[] get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_model_member_forces_in_shear_walls_row[] get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_model_member_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_model_member_forces_in_shear_walls(inValue);
             return retVal.value;
         }
@@ -7934,12 +7935,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_centres_mass_rigidity_row[] get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_centres_mass_rigidity_row[] get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_centres_mass_rigidityResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_centres_mass_rigidity(inValue);
             return retVal.value;
         }
@@ -7950,12 +7952,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_forces_in_deep_beams_row[] get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_forces_in_deep_beams_row[] get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_deep_beamsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_forces_in_deep_beams(inValue);
             return retVal.value;
         }
@@ -7966,12 +7969,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_forces_in_shear_walls_row[] get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_forces_in_shear_walls_row[] get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_forces_in_shear_wallsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_forces_in_shear_walls(inValue);
             return retVal.value;
         }
@@ -7982,12 +7986,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_stories_interstory_drifts(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_interstory_drifts_row[] get_results_for_spectral_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_interstory_drifts_row[] get_results_for_spectral_analysis_building_stories_interstory_drifts(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_interstory_driftsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_interstory_drifts(inValue);
             return retVal.value;
         }
@@ -7998,12 +8003,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_sensitivity_coefficients_row[] get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_sensitivity_coefficients_row[] get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_sensitivity_coefficientsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_sensitivity_coefficients(inValue);
             return retVal.value;
         }
@@ -8014,12 +8020,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_building_stories_story_actions(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_story_actions_row[] get_results_for_spectral_analysis_building_stories_story_actions(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_building_stories_story_actions_row[] get_results_for_spectral_analysis_building_stories_story_actions(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_story_actionsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_story_actionsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_building_stories_story_actionsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_building_stories_story_actions(inValue);
             return retVal.value;
         }
@@ -8030,12 +8037,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_line_hinges_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_hinges_deformations_row[] get_results_for_spectral_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_hinges_deformations_row[] get_results_for_spectral_analysis_line_hinges_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_line_hinges_deformations(inValue);
             return retVal.value;
         }
@@ -8046,12 +8054,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_line_hinges_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_hinges_forces_row[] get_results_for_spectral_analysis_line_hinges_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_hinges_forces_row[] get_results_for_spectral_analysis_line_hinges_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_hinges_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_line_hinges_forces(inValue);
             return retVal.value;
         }
@@ -8062,12 +8071,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_line_releases_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_releases_deformations_row[] get_results_for_spectral_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_releases_deformations_row[] get_results_for_spectral_analysis_line_releases_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_line_releases_deformations(inValue);
             return retVal.value;
         }
@@ -8078,12 +8088,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_line_releases_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_releases_forces_row[] get_results_for_spectral_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_line_releases_forces_row[] get_results_for_spectral_analysis_line_releases_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_line_releases_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_line_releases_forces(inValue);
             return retVal.value;
         }
@@ -8094,12 +8105,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_lines_slab_wall_connections(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_lines_slab_wall_connections_row[] get_results_for_spectral_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_lines_slab_wall_connections_row[] get_results_for_spectral_analysis_lines_slab_wall_connections(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_slab_wall_connectionsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_lines_slab_wall_connections(inValue);
             return retVal.value;
         }
@@ -8110,12 +8122,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_lines_support_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_lines_support_forces_row[] get_results_for_spectral_analysis_lines_support_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_lines_support_forces_row[] get_results_for_spectral_analysis_lines_support_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_support_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_lines_support_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_lines_support_forces(inValue);
             return retVal.value;
         }
@@ -8143,12 +8156,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_global_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_global_deformations_row[] get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_global_deformations_row[] get_results_for_spectral_analysis_members_global_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_global_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_global_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_global_deformations(inValue);
             return retVal.value;
         }
@@ -8159,12 +8173,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_hinge_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_hinge_deformations_row[] get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_hinge_deformations_row[] get_results_for_spectral_analysis_members_hinge_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_hinge_deformations(inValue);
             return retVal.value;
         }
@@ -8175,12 +8190,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_hinge_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_hinge_forces_row[] get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_hinge_forces_row[] get_results_for_spectral_analysis_members_hinge_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_hinge_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_hinge_forces(inValue);
             return retVal.value;
         }
@@ -8259,12 +8275,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_local_plastic_deformation_ratios_row[] get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_plastic_deformation_ratiosResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_local_plastic_deformation_ratios(inValue);
             return retVal.value;
         }
@@ -8292,12 +8309,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_deformations_row[] get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_deformations_row[] get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_nodes_deformations(inValue);
             return retVal.value;
         }
@@ -8308,12 +8326,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_pseudo_accelerations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_pseudo_accelerations_row[] get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_pseudo_accelerations_row[] get_results_for_spectral_analysis_nodes_pseudo_accelerations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_accelerationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_nodes_pseudo_accelerations(inValue);
             return retVal.value;
         }
@@ -8324,12 +8343,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_pseudo_velocities(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_pseudo_velocities_row[] get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_pseudo_velocities_row[] get_results_for_spectral_analysis_nodes_pseudo_velocities(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_pseudo_velocitiesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_nodes_pseudo_velocities(inValue);
             return retVal.value;
         }
@@ -8340,12 +8360,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_nodes_support_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_support_forces_row[] get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_nodes_support_forces_row[] get_results_for_spectral_analysis_nodes_support_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_support_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_support_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_nodes_support_forces(inValue);
             return retVal.value;
         }
@@ -8356,12 +8377,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_basic_stresses(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_basic_stresses_row[] get_results_for_spectral_analysis_solids_basic_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_basic_stresses_row[] get_results_for_spectral_analysis_solids_basic_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_stressesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_basic_stresses(inValue);
             return retVal.value;
         }
@@ -8372,12 +8394,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_basic_total_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_basic_total_strains_row[] get_results_for_spectral_analysis_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_basic_total_strains_row[] get_results_for_spectral_analysis_solids_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_total_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_basic_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_basic_total_strains(inValue);
             return retVal.value;
         }
@@ -8388,12 +8411,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_deformations_row[] get_results_for_spectral_analysis_solids_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_deformations_row[] get_results_for_spectral_analysis_solids_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_deformations(inValue);
             return retVal.value;
         }
@@ -8404,12 +8428,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_equivalent_stresses(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_equivalent_stresses_row[] get_results_for_spectral_analysis_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_equivalent_stresses_row[] get_results_for_spectral_analysis_solids_equivalent_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_stressesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_equivalent_stresses(inValue);
             return retVal.value;
         }
@@ -8420,12 +8445,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_equivalent_total_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_equivalent_total_strains_row[] get_results_for_spectral_analysis_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_equivalent_total_strains_row[] get_results_for_spectral_analysis_solids_equivalent_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_total_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_equivalent_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_equivalent_total_strains(inValue);
             return retVal.value;
         }
@@ -8436,12 +8462,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_gas_quantities(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_gas_quantities_row[] get_results_for_spectral_analysis_solids_gas_quantities(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_gas_quantities_row[] get_results_for_spectral_analysis_solids_gas_quantities(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_gas_quantitiesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_gas_quantitiesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_gas_quantitiesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_gas_quantities(inValue);
             return retVal.value;
         }
@@ -8452,12 +8479,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_principal_stresses(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_principal_stresses_row[] get_results_for_spectral_analysis_solids_principal_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_principal_stresses_row[] get_results_for_spectral_analysis_solids_principal_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_stressesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_principal_stresses(inValue);
             return retVal.value;
         }
@@ -8468,12 +8496,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_solids_principal_total_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_principal_total_strains_row[] get_results_for_spectral_analysis_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_solids_principal_total_strains_row[] get_results_for_spectral_analysis_solids_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_total_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_solids_principal_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_solids_principal_total_strains(inValue);
             return retVal.value;
         }
@@ -8484,11 +8513,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_summary(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_summary_row[] get_results_for_spectral_analysis_summary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_summary_row[] get_results_for_spectral_analysis_summary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_summaryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_summaryRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_summaryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_summary(inValue);
             return retVal.value;
         }
@@ -8499,12 +8530,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_basic_internal_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_internal_forces_row[] get_results_for_spectral_analysis_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_internal_forces_row[] get_results_for_spectral_analysis_surfaces_basic_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_internal_forces(inValue);
             return retVal.value;
         }
@@ -8515,12 +8547,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_basic_stresses(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_stresses_row[] get_results_for_spectral_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_stresses_row[] get_results_for_spectral_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_stresses(inValue);
             return retVal.value;
         }
@@ -8531,12 +8564,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_basic_total_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_total_strains_row[] get_results_for_spectral_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_total_strains_row[] get_results_for_spectral_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_total_strains(inValue);
             return retVal.value;
         }
@@ -8547,12 +8581,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_contact_stresses(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_contact_stresses_row[] get_results_for_spectral_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_contact_stresses_row[] get_results_for_spectral_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_contact_stresses(inValue);
             return retVal.value;
         }
@@ -8563,12 +8598,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_design_internal_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_design_internal_forces_row[] get_results_for_spectral_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_design_internal_forces_row[] get_results_for_spectral_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_design_internal_forces(inValue);
             return retVal.value;
         }
@@ -8579,12 +8615,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_elastic_stress_components(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_elastic_stress_components_row[] get_results_for_spectral_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_elastic_stress_components_row[] get_results_for_spectral_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_elastic_stress_components(inValue);
             return retVal.value;
         }
@@ -8595,12 +8632,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_bach_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_bach_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bachRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach(inValue);
             return retVal.value;
         }
@@ -8611,12 +8649,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_mises_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_mises_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(inValue);
             return retVal.value;
         }
@@ -8627,12 +8666,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_rankine_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_rankine_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankineRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine(inValue);
             return retVal.value;
         }
@@ -8643,12 +8683,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_tresca_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_tresca_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(inValue);
             return retVal.value;
         }
@@ -8659,12 +8700,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_bach_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_bach_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(inValue);
             return retVal.value;
         }
@@ -8675,12 +8717,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_mises_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_mises_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(inValue);
             return retVal.value;
         }
@@ -8691,12 +8734,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_rankine_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_rankine_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(inValue);
             return retVal.value;
         }
@@ -8707,12 +8751,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_tresca_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_tresca_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(inValue);
             return retVal.value;
         }
@@ -8723,12 +8768,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_global_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_global_deformations_row[] get_results_for_spectral_analysis_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_global_deformations_row[] get_results_for_spectral_analysis_surfaces_global_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_global_deformations(inValue);
             return retVal.value;
         }
@@ -8739,12 +8785,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_local_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_local_deformations_row[] get_results_for_spectral_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_local_deformations_row[] get_results_for_spectral_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_local_deformations(inValue);
             return retVal.value;
         }
@@ -8755,12 +8802,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_maximum_total_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_maximum_total_strains_row[] get_results_for_spectral_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_maximum_total_strains_row[] get_results_for_spectral_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_maximum_total_strains(inValue);
             return retVal.value;
         }
@@ -8771,12 +8819,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_principal_internal_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_internal_forces_row[] get_results_for_spectral_analysis_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_internal_forces_row[] get_results_for_spectral_analysis_surfaces_principal_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_internal_forces(inValue);
             return retVal.value;
         }
@@ -8787,12 +8836,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_principal_stresses(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_stresses_row[] get_results_for_spectral_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_stresses_row[] get_results_for_spectral_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_stresses(inValue);
             return retVal.value;
         }
@@ -8803,12 +8853,13 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_surfaces_principal_total_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_total_strains_row[] get_results_for_spectral_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_total_strains_row[] get_results_for_spectral_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_total_strains(inValue);
             return retVal.value;
         }
