@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"7a7040b0-5e0f-45d0-8e27-2674029cf66a,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"95938bc9-0976-4d09-af61-894de56e3f61,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -10246,6 +10246,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteElementString(@"property_concrete_foundation_design", @"", ((global::System.String)o.@property_concrete_foundation_design));
             WriteElementString(@"property_geotechnical_analysis", @"", ((global::System.String)o.@property_geotechnical_analysis));
             WriteElementStringRaw(@"property_model_type", @"", System.Xml.XmlConvert.ToString((global::System.Int32)((global::System.Int32)o.@property_model_type)));
+            WriteElementString(@"property_tendons", @"", ((global::System.String)o.@property_tendons));
             WriteEndElement(o);
         }
 
@@ -42445,7 +42446,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             int ca_26 = 0;
             global::Dlubal.WS.RSection1.Model.modelInfo_property_supported_lines[] a_28 = null;
             int ca_28 = 0;
-            bool[] paramsRead = new bool[66];
+            bool[] paramsRead = new bool[67];
             while (Reader.MoveToNextAttribute()) {
                 if (!IsXmlnsAttribute(Reader.Name)) {
                     UnknownNode((object)o);
@@ -43050,6 +43051,14 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         }
                         state = 66;
                         break;
+                    case 66:
+                        if (((object) Reader.LocalName == (object)id1522_property_tendons && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                            {
+                                o.@property_tendons = Reader.ReadElementString();
+                            }
+                        }
+                        state = 67;
+                        break;
                     default:
                         UnknownNode((object)o, null);
                         break;
@@ -43106,7 +43115,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1522_value0 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1523_value0 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@value0 = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
@@ -43114,7 +43123,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1523_value1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1524_value1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@value1 = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
@@ -43141,7 +43150,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1524_mesh_statistics_type && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1525_mesh_statistics_type && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43169,7 +43178,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
                     switch (state) {
                     case 0:
-                        if (((object) Reader.LocalName == (object)id1525_member_1D_finite_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1526_member_1D_finite_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@member_1D_finite_elements = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
@@ -43177,7 +43186,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1526_surface_2D_finite_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1527_surface_2D_finite_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@surface_2D_finite_elements = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
@@ -43185,7 +43194,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1527_solid_3D_finite_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1528_solid_3D_finite_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@solid_3D_finite_elements = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
@@ -43193,7 +43202,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 3;
                         break;
                     case 3:
-                        if (((object) Reader.LocalName == (object)id1528_node_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1529_node_elements && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@node_elements = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
                             }
@@ -43264,7 +43273,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1529_root_directory && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1530_root_directory && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@root_directory = Reader.ReadElementString();
                             }
@@ -43291,7 +43300,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1530_formula_data && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1531_formula_data && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43327,7 +43336,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1531_is_valid && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1532_is_valid && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@is_valid = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
                             }
@@ -43335,7 +43344,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1532_error_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1533_error_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@error_message = Reader.ReadElementString();
                             }
@@ -43343,7 +43352,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 3;
                         break;
                     case 3:
-                        if (((object) Reader.LocalName == (object)id1533_calculated_value && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1534_calculated_value && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@calculated_valueSpecified = true;
                             {
                                 o.@calculated_value = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
@@ -43371,7 +43380,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1534_block_info && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1535_block_info && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43415,7 +43424,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1535_product_file_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1536_product_file_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@product_file_typeSpecified = true;
                             {
                                 o.@product_file_type = Read13_block_product_file_type(Reader.ReadElementString());
@@ -43424,7 +43433,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 3;
                         break;
                     case 3:
-                        if (((object) Reader.LocalName == (object)id1536_model_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1537_model_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@model_typeSpecified = true;
                             {
                                 o.@model_type = Read14_block_model_type(Reader.ReadElementString());
@@ -43433,7 +43442,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 4;
                         break;
                     case 4:
-                        if (((object) Reader.LocalName == (object)id1537_object_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1538_object_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@object_typeSpecified = true;
                             {
                                 o.@object_type = Read15_block_object_type(Reader.ReadElementString());
@@ -43442,7 +43451,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 5;
                         break;
                     case 5:
-                        if (((object) Reader.LocalName == (object)id1538_model_category_1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1539_model_category_1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@model_category_1 = Reader.ReadElementString();
                             }
@@ -43450,7 +43459,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 6;
                         break;
                     case 6:
-                        if (((object) Reader.LocalName == (object)id1539_model_subcategory_1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1540_model_subcategory_1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@model_subcategory_1 = Reader.ReadElementString();
                             }
@@ -43458,7 +43467,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 7;
                         break;
                     case 7:
-                        if (((object) Reader.LocalName == (object)id1540_model_category_2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1541_model_category_2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@model_category_2 = Reader.ReadElementString();
                             }
@@ -43466,7 +43475,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 8;
                         break;
                     case 8:
-                        if (((object) Reader.LocalName == (object)id1541_model_subcategory_2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1542_model_subcategory_2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@model_subcategory_2 = Reader.ReadElementString();
                             }
@@ -43474,7 +43483,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 9;
                         break;
                     case 9:
-                        if (((object) Reader.LocalName == (object)id1542_block_category1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1543_block_category1 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@block_category1 = Reader.ReadElementString();
                             }
@@ -43482,7 +43491,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 10;
                         break;
                     case 10:
-                        if (((object) Reader.LocalName == (object)id1543_block_category2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1544_block_category2 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@block_category2 = Reader.ReadElementString();
                             }
@@ -43490,7 +43499,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 11;
                         break;
                     case 11:
-                        if (((object) Reader.LocalName == (object)id1544_block_category3 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1545_block_category3 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@block_category3 = Reader.ReadElementString();
                             }
@@ -43498,7 +43507,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 12;
                         break;
                     case 12:
-                        if (((object) Reader.LocalName == (object)id1545_block_category4 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1546_block_category4 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@block_category4 = Reader.ReadElementString();
                             }
@@ -43506,7 +43515,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 13;
                         break;
                     case 13:
-                        if (((object) Reader.LocalName == (object)id1546_block_category5 && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1547_block_category5 && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@block_category5 = Reader.ReadElementString();
                             }
@@ -43514,7 +43523,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 14;
                         break;
                     case 14:
-                        if (((object) Reader.LocalName == (object)id1547_sequence && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1548_sequence && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@sequenceSpecified = true;
                             {
                                 o.@sequence = System.Xml.XmlConvert.ToInt32(Reader.ReadElementString());
@@ -43595,7 +43604,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1548_object_with_children && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1549_object_with_children && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43631,7 +43640,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1549_children && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1550_children && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@children_string = Reader.ReadElementString();
                             }
@@ -43702,7 +43711,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1550_number && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1551_number && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@number = Reader.ReadElementString();
                             }
@@ -43710,7 +43719,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 3;
                         break;
                     case 3:
-                        if (((object) Reader.LocalName == (object)id1551_constant && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1552_constant && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@constant = Reader.ReadElementString();
                             }
@@ -43737,7 +43746,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1552_calculation_result && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1553_calculation_result && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43767,7 +43776,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
                     switch (state) {
                     case 0:
-                        if (((object) Reader.LocalName == (object)id1553_succeeded && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1554_succeeded && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@succeededSpecified = true;
                             {
                                 o.@succeeded = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
@@ -43776,7 +43785,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1554_errors_and_warnings && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1555_errors_and_warnings && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             if (!ReadNull()) {
                                 global::Dlubal.WS.RSection1.Model.calculation_message[] a_1_0 = null;
                                 int ca_1_0 = 0;
@@ -43790,7 +43799,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                                     int readerCount730 = ReaderCount;
                                     while (Reader.NodeType != System.Xml.XmlNodeType.EndElement && Reader.NodeType != System.Xml.XmlNodeType.None) {
                                         if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
-                                            if (((object) Reader.LocalName == (object)id1555_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                                            if (((object) Reader.LocalName == (object)id1556_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
                                                 a_1_0 = (global::Dlubal.WS.RSection1.Model.calculation_message[])EnsureArrayIndex(a_1_0, ca_1_0, typeof(global::Dlubal.WS.RSection1.Model.calculation_message));a_1_0[ca_1_0++] = Read3_calculation_message(false, true);
                                             }
                                             else {
@@ -43832,7 +43841,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1556_calculation_message && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1557_calculation_message && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43860,7 +43869,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
                     switch (state) {
                     case 0:
-                        if (((object) Reader.LocalName == (object)id1557_message_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1558_message_type && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@message_type = Read1_calculation_message_type(Reader.ReadElementString());
                             }
@@ -43868,7 +43877,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1558_object && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1559_object && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@object = Reader.ReadElementString();
                             }
@@ -43876,7 +43885,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1559_input_field && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1560_input_field && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@input_field = Reader.ReadElementString();
                             }
@@ -43884,7 +43893,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 3;
                         break;
                     case 3:
-                        if (((object) Reader.LocalName == (object)id1560_current_value && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1561_current_value && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@current_value = Reader.ReadElementString();
                             }
@@ -43892,7 +43901,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 4;
                         break;
                     case 4:
-                        if (((object) Reader.LocalName == (object)id1555_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1556_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@message = Reader.ReadElementString();
                             }
@@ -43900,7 +43909,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 5;
                         break;
                     case 5:
-                        if (((object) Reader.LocalName == (object)id1561_result && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1562_result && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@resultSpecified = true;
                             {
                                 o.@result = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
@@ -43938,7 +43947,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
             if (checkType) {
-            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1562_Item && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
+            if (xsiType == null || ((object) ((System.Xml.XmlQualifiedName)xsiType).Name == (object)id1563_Item && (object) ((System.Xml.XmlQualifiedName)xsiType).Namespace == (object)id2_Item)) {
             }
             else
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
@@ -43968,7 +43977,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
                     switch (state) {
                     case 0:
-                        if (((object) Reader.LocalName == (object)id1553_succeeded && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1554_succeeded && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             o.@succeededSpecified = true;
                             {
                                 o.@succeeded = System.Xml.XmlConvert.ToBoolean(Reader.ReadElementString());
@@ -43977,7 +43986,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 1;
                         break;
                     case 1:
-                        if (((object) Reader.LocalName == (object)id1561_result && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1562_result && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             {
                                 o.@result = Reader.ReadElementString();
                             }
@@ -43985,7 +43994,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 2;
                         break;
                     case 2:
-                        if (((object) Reader.LocalName == (object)id1563_messages && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                        if (((object) Reader.LocalName == (object)id1564_messages && (object) Reader.NamespaceURI == (object)id4_Item)) {
                             if (!ReadNull()) {
                                 global::Dlubal.WS.RSection1.Model.calculation_message[] a_2_0 = null;
                                 int ca_2_0 = 0;
@@ -43999,7 +44008,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                                     int readerCount733 = ReaderCount;
                                     while (Reader.NodeType != System.Xml.XmlNodeType.EndElement && Reader.NodeType != System.Xml.XmlNodeType.None) {
                                         if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
-                                            if (((object) Reader.LocalName == (object)id1555_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                                            if (((object) Reader.LocalName == (object)id1556_message && (object) Reader.NamespaceURI == (object)id4_Item)) {
                                                 a_2_0 = (global::Dlubal.WS.RSection1.Model.calculation_message[])EnsureArrayIndex(a_2_0, ca_2_0, typeof(global::Dlubal.WS.RSection1.Model.calculation_message));a_2_0[ca_2_0++] = Read3_calculation_message(false, true);
                                             }
                                             else {
@@ -44140,7 +44149,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id266_set_stress_point;
         string id1176_hardening_factor;
         string id1147_Item;
-        string id1537_object_type;
+        string id1538_object_type;
         string id422_coordinate_system_type;
         string id669_W_v_min;
         string id1488_property_combination_wizard;
@@ -44172,7 +44181,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id984_parts;
         string id1305_Item;
         string id476_depth_temperature_load;
-        string id1557_message_type;
+        string id1558_message_type;
         string id58_export_path;
         string id95_get_lineResponse;
         string id1342_distance_of_bars;
@@ -44198,10 +44207,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id287_get_information;
         string id1382_stress_existing;
         string id1274_centroid_y;
-        string id1524_mesh_statistics_type;
+        string id1525_mesh_statistics_type;
         string id1055_surfaces_top_face_cost;
         string id767_b_ef_2;
-        string id1532_error_message;
+        string id1533_error_message;
         string id1241_parabola_control_point_y;
         string id1388_Item;
         string id302_get_program_settingsResponse;
@@ -44213,7 +44222,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1149_Item;
         string id649_V_pl_z;
         string id736_alpha_pl_y;
-        string id1534_block_info;
+        string id1535_block_info;
         string id1374_unit_tau_z_mxsec;
         string id801_b_w_r_M;
         string id174_Item;
@@ -44230,7 +44239,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id313_new_model_as_copyResponse;
         string id607_Slope_w;
         string id1218_arc_control_point;
-        string id1550_number;
+        string id1551_number;
         string id481_material_part_2;
         string id482_material_part_3;
         string id782_b_is;
@@ -44250,7 +44259,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1289_angular_reference_table;
         string id124_get_model_settings_and_options;
         string id170_Item;
-        string id1527_solid_3D_finite_elements;
+        string id1528_solid_3D_finite_elements;
         string id1455_property_line_count;
         string id1283_custom_vertical_position;
         string id938_v_1;
@@ -44289,7 +44298,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id998_model_parameters_location_row;
         string id526_Ac_cp;
         string id20_create_my_section_list;
-        string id1529_root_directory;
+        string id1530_root_directory;
         string id321_save_model;
         string id244_set_model_id;
         string id980_integrated_openings;
@@ -44301,13 +44310,13 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id749_b_R_b;
         string id792_b_t_r;
         string id336_program_language;
-        string id1555_message;
+        string id1556_message;
         string id1217_arc_second_point;
         string id750_b_R_t;
         string id645_V_pl_u;
         string id519_A_w_y_NBR8800;
         string id847_h_c_t_r_M;
-        string id1562_Item;
+        string id1563_Item;
         string id1240_parabola_control_point;
         string id414_ct_ratio;
         string id345_multisampling;
@@ -44457,9 +44466,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id565_I_omega_SC;
         string id423_coordinates;
         string id739_alpha_pl_z_pure;
-        string id1530_formula_data;
+        string id1531_formula_data;
         string id1109_Item;
-        string id1556_calculation_message;
+        string id1557_calculation_message;
         string id150_Item;
         string id1069_solids_weight_quantity;
         string id215_run_script;
@@ -44501,7 +44510,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1267_column_string_id;
         string id968_Item;
         string id219_saveResponse;
-        string id1523_value1;
+        string id1524_value1;
         string id1239_parabola_second_point;
         string id7_begin_modification;
         string id6_Item;
@@ -44577,7 +44586,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id841_h_c_b_M;
         string id3_list_name;
         string id805_c_b_Z;
-        string id1533_calculated_value;
+        string id1534_calculated_value;
         string id334_settings_program_language;
         string id712_a_weld;
         string id781_b_i_M;
@@ -44601,7 +44610,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id991_tolerance_for_nodes;
         string id759_b_c_M;
         string id285_get_detailed_logging;
-        string id1522_value0;
+        string id1523_value0;
         string id1244_parabola_alpha;
         string id967_Item;
         string id879_h_tri;
@@ -44653,13 +44662,13 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1184_factor;
         string id807_c_t_Z;
         string id956_z_p;
-        string id1552_calculation_result;
+        string id1553_calculation_result;
         string id449_cover_points;
         string id958_z_t_1_2_kruh;
         string id405_subpanel;
         string id438_global_coordinate_1;
         string id439_global_coordinate_2;
-        string id1554_errors_and_warnings;
+        string id1555_errors_and_warnings;
         string id456_section;
         string id659_W_pl_y;
         string id300_get_program_optionsResponse;
@@ -44691,11 +44700,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id301_get_program_settings;
         string id33_delete_all_historyResponse;
         string id299_get_program_options;
-        string id1548_object_with_children;
+        string id1549_object_with_children;
         string id442_element;
-        string id1525_member_1D_finite_elements;
+        string id1526_member_1D_finite_elements;
         string id401_property_export_select_loading;
-        string id1535_product_file_type;
+        string id1536_product_file_type;
         string id1422_torsional_moment_m_xs;
         string id344_settings_program_options;
         string id1074_solids_volume_quantity;
@@ -44720,9 +44729,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1460_property_co_count;
         string id430_Item;
         string id433_distance_from_end_relative;
-        string id1543_block_category2;
+        string id1544_block_category2;
         string id131_get_nth_object_numberResponse;
-        string id1542_block_category1;
+        string id1543_block_category1;
         string id722_a_weld_s_b;
         string id1502_Item;
         string id1047_surfaces_volume_unit_cost;
@@ -44841,7 +44850,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id730_alpha;
         string id542_Cr_f2;
         string id1198_k_f;
-        string id1528_node_elements;
+        string id1529_node_elements;
         string id588_M_pl_xp_S235;
         string id933_u_3;
         string id932_u_2;
@@ -44897,7 +44906,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id242_table_values;
         string id77_object_location;
         string id461_warping_stiffness_deactivated;
-        string id1547_sequence;
+        string id1548_sequence;
         string id1432_object_information;
         string id857_h_f_h_t_M;
         string id836_h_R;
@@ -44967,10 +44976,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id753_b_b;
         string id758_b_c;
         string id772_b_f;
-        string id1545_block_category4;
-        string id1546_block_category5;
+        string id1546_block_category4;
+        string id1547_block_category5;
         string id1006_time;
-        string id1544_block_category3;
+        string id1545_block_category3;
         string id1017_is_dynamic_increase_factor;
         string id295_get_model_listResponse;
         string id541_Cr_f1;
@@ -44992,7 +45001,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id225_set_elementResponse;
         string id184_Item;
         string id540_Cr_b3;
-        string id1553_succeeded;
+        string id1554_succeeded;
         string id355_automatically_save_after;
         string id226_set_formula;
         string id733_alpha_pl_u_pure;
@@ -45003,7 +45012,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id119_get_model_parametersResponse;
         string id289_get_list_of_existing_projects;
         string id1120_Item;
-        string id1559_input_field;
+        string id1560_input_field;
         string id690_a_2;
         string id686_a_1;
         string id473_moment_of_inertia_bending_z;
@@ -45022,7 +45031,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1145_Item;
         string id1332_distance_between_i_and_j;
         string id1309_Item;
-        string id1531_is_valid;
+        string id1532_is_valid;
         string id395_Item;
         string id1299_Item;
         string id1300_Item;
@@ -45044,7 +45053,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1106_Item;
         string id1227_arc_alpha_adjustment_target;
         string id596_N_pl;
-        string id1536_model_type;
+        string id1537_model_type;
         string id376_property_config_id;
         string id1111_Item;
         string id1060_surfaces_area_cost;
@@ -45069,7 +45078,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id362_application_information;
         string id811_d_0;
         string id815_d_1;
-        string id1549_children;
+        string id1550_children;
         string id1138_emissions_solids_area_unit;
         string id1510_property_wind_simulation;
         string id168_Item;
@@ -45134,7 +45143,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1038_members_surface_unit;
         string id1165_division_multiplication_factor;
         string id162_Item;
-        string id1538_model_category_1;
+        string id1539_model_category_1;
         string id330_set_program_settings;
         string id165_Item;
         string id1231_circle_rotation;
@@ -45166,7 +45175,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1159_elasticity_modulus_global;
         string id860_h_f_o_M;
         string id507_A_v_y_IS800;
-        string id1563_messages;
+        string id1564_messages;
         string id403_property_custom_list_separator;
         string id503_A_v_y;
         string id510_A_v_z;
@@ -45277,6 +45286,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id966_Item;
         string id1115_Item;
         string id908_r_2_b;
+        string id1522_property_tendons;
         string id314_new_model_from_template;
         string id1281_dimension_line_offset;
         string id1029_members_weight_quantity;
@@ -45332,7 +45342,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id1026_members_weight_active;
         string id406_elements;
         string id1161_poisson_ratio_global;
-        string id1539_model_subcategory_1;
+        string id1540_model_subcategory_1;
         string id2_Item;
         string id1211_time_slip;
         string id129_get_nth_object_number;
@@ -45344,7 +45354,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id146_results_for_plastic_factor;
         string id112_get_model_historyResponse;
         string id637_Tr_perm_T_1_7;
-        string id1560_current_value;
+        string id1561_current_value;
         string id1475_property_rsection_part_count;
         string id1436_attribute_information;
         string id611_Tr_I_ef_plus;
@@ -45443,10 +45453,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id10_calculate_all;
         string id296_get_model_list_with_indexes;
         string id1433_singular_name;
-        string id1551_constant;
+        string id1552_constant;
         string id92_get_layer;
         string id561_G1;
-        string id1541_model_subcategory_2;
+        string id1542_model_subcategory_2;
         string id882_h_w_b;
         string id145_Item;
         string id721_a_weld_s;
@@ -45458,11 +45468,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id883_h_w_t;
         string id784_b_nom;
         string id435_definition_type;
-        string id1540_model_category_2;
+        string id1541_model_category_2;
         string id1304_Item;
         string id267_set_stress_pointResponse;
         string id1425_bimoment_m_omega;
-        string id1561_result;
+        string id1562_result;
         string id234_set_load_caseResponse;
         string id1139_emissions_solids_area_quantity;
         string id1250_Item;
@@ -45554,7 +45564,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id578_I_y_1_2_kruh;
         string id312_new_model_as_copy;
         string id1135_Item;
-        string id1558_object;
+        string id1559_object;
         string id118_get_model_parameters;
         string id1421_torsional_moment_m_xp;
         string id716_a_weld_fb_b;
@@ -45580,7 +45590,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id213_reset;
         string id221_set_barResponse;
         string id1202_gamma_l_1;
-        string id1526_surface_2D_finite_elements;
+        string id1527_surface_2D_finite_elements;
         string id101_get_load_case;
         string id309_new_model;
         string id416_generating_object_info;
@@ -45705,7 +45715,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id266_set_stress_point = Reader.NameTable.Add(@"set_stress_point");
             id1176_hardening_factor = Reader.NameTable.Add(@"hardening_factor");
             id1147_Item = Reader.NameTable.Add(@"poisson_ratio_editable_group_type");
-            id1537_object_type = Reader.NameTable.Add(@"object_type");
+            id1538_object_type = Reader.NameTable.Add(@"object_type");
             id422_coordinate_system_type = Reader.NameTable.Add(@"coordinate_system_type");
             id669_W_v_min = Reader.NameTable.Add(@"W_v_min");
             id1488_property_combination_wizard = Reader.NameTable.Add(@"property_combination_wizard");
@@ -45737,7 +45747,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id984_parts = Reader.NameTable.Add(@"parts");
             id1305_Item = Reader.NameTable.Add(@"arc_length_angle_greater_than_180");
             id476_depth_temperature_load = Reader.NameTable.Add(@"depth_temperature_load");
-            id1557_message_type = Reader.NameTable.Add(@"message_type");
+            id1558_message_type = Reader.NameTable.Add(@"message_type");
             id58_export_path = Reader.NameTable.Add(@"export_path");
             id95_get_lineResponse = Reader.NameTable.Add(@"get_lineResponse");
             id1342_distance_of_bars = Reader.NameTable.Add(@"distance_of_bars");
@@ -45763,10 +45773,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id287_get_information = Reader.NameTable.Add(@"get_information");
             id1382_stress_existing = Reader.NameTable.Add(@"stress_existing");
             id1274_centroid_y = Reader.NameTable.Add(@"centroid_y");
-            id1524_mesh_statistics_type = Reader.NameTable.Add(@"mesh_statistics_type");
+            id1525_mesh_statistics_type = Reader.NameTable.Add(@"mesh_statistics_type");
             id1055_surfaces_top_face_cost = Reader.NameTable.Add(@"surfaces_top_face_cost");
             id767_b_ef_2 = Reader.NameTable.Add(@"b_ef_2");
-            id1532_error_message = Reader.NameTable.Add(@"error_message");
+            id1533_error_message = Reader.NameTable.Add(@"error_message");
             id1241_parabola_control_point_y = Reader.NameTable.Add(@"parabola_control_point_y");
             id1388_Item = Reader.NameTable.Add(@"results_for_stresses_by_material_row");
             id302_get_program_settingsResponse = Reader.NameTable.Add(@"get_program_settingsResponse");
@@ -45778,7 +45788,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1149_Item = Reader.NameTable.Add(@"poisson_ratio_editable_group_platte_type");
             id649_V_pl_z = Reader.NameTable.Add(@"V_pl_z");
             id736_alpha_pl_y = Reader.NameTable.Add(@"alpha_pl_y");
-            id1534_block_info = Reader.NameTable.Add(@"block_info");
+            id1535_block_info = Reader.NameTable.Add(@"block_info");
             id1374_unit_tau_z_mxsec = Reader.NameTable.Add(@"unit_tau_z_mxsec");
             id801_b_w_r_M = Reader.NameTable.Add(@"b_w_r_M");
             id174_Item = Reader.NameTable.Add(@"get_results_for_stresses_by_material");
@@ -45795,7 +45805,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id313_new_model_as_copyResponse = Reader.NameTable.Add(@"new_model_as_copyResponse");
             id607_Slope_w = Reader.NameTable.Add(@"Slope_w");
             id1218_arc_control_point = Reader.NameTable.Add(@"arc_control_point");
-            id1550_number = Reader.NameTable.Add(@"number");
+            id1551_number = Reader.NameTable.Add(@"number");
             id481_material_part_2 = Reader.NameTable.Add(@"material_part_2");
             id482_material_part_3 = Reader.NameTable.Add(@"material_part_3");
             id782_b_is = Reader.NameTable.Add(@"b_is");
@@ -45815,7 +45825,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1289_angular_reference_table = Reader.NameTable.Add(@"angular_reference_table");
             id124_get_model_settings_and_options = Reader.NameTable.Add(@"get_model_settings_and_options");
             id170_Item = Reader.NameTable.Add(@"results_for_stresses_by_loading_effective");
-            id1527_solid_3D_finite_elements = Reader.NameTable.Add(@"solid_3D_finite_elements");
+            id1528_solid_3D_finite_elements = Reader.NameTable.Add(@"solid_3D_finite_elements");
             id1455_property_line_count = Reader.NameTable.Add(@"property_line_count");
             id1283_custom_vertical_position = Reader.NameTable.Add(@"custom_vertical_position");
             id938_v_1 = Reader.NameTable.Add(@"v_1");
@@ -45854,7 +45864,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id998_model_parameters_location_row = Reader.NameTable.Add(@"model_parameters_location_row");
             id526_Ac_cp = Reader.NameTable.Add(@"Ac_cp");
             id20_create_my_section_list = Reader.NameTable.Add(@"create_my_section_list");
-            id1529_root_directory = Reader.NameTable.Add(@"root_directory");
+            id1530_root_directory = Reader.NameTable.Add(@"root_directory");
             id321_save_model = Reader.NameTable.Add(@"save_model");
             id244_set_model_id = Reader.NameTable.Add(@"set_model_id");
             id980_integrated_openings = Reader.NameTable.Add(@"integrated_openings");
@@ -45866,13 +45876,13 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id749_b_R_b = Reader.NameTable.Add(@"b_R_b");
             id792_b_t_r = Reader.NameTable.Add(@"b_t_r");
             id336_program_language = Reader.NameTable.Add(@"program_language");
-            id1555_message = Reader.NameTable.Add(@"message");
+            id1556_message = Reader.NameTable.Add(@"message");
             id1217_arc_second_point = Reader.NameTable.Add(@"arc_second_point");
             id750_b_R_t = Reader.NameTable.Add(@"b_R_t");
             id645_V_pl_u = Reader.NameTable.Add(@"V_pl_u");
             id519_A_w_y_NBR8800 = Reader.NameTable.Add(@"A_w_y_NBR8800");
             id847_h_c_t_r_M = Reader.NameTable.Add(@"h_c_t_r_M");
-            id1562_Item = Reader.NameTable.Add(@"generate_and_validate_xml_solver_input_result");
+            id1563_Item = Reader.NameTable.Add(@"generate_and_validate_xml_solver_input_result");
             id1240_parabola_control_point = Reader.NameTable.Add(@"parabola_control_point");
             id414_ct_ratio = Reader.NameTable.Add(@"ct_ratio");
             id345_multisampling = Reader.NameTable.Add(@"multisampling");
@@ -46022,9 +46032,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id565_I_omega_SC = Reader.NameTable.Add(@"I_omega_SC");
             id423_coordinates = Reader.NameTable.Add(@"coordinates");
             id739_alpha_pl_z_pure = Reader.NameTable.Add(@"alpha_pl_z_pure");
-            id1530_formula_data = Reader.NameTable.Add(@"formula_data");
+            id1531_formula_data = Reader.NameTable.Add(@"formula_data");
             id1109_Item = Reader.NameTable.Add(@"emissions_surfaces_volume_quantity");
-            id1556_calculation_message = Reader.NameTable.Add(@"calculation_message");
+            id1557_calculation_message = Reader.NameTable.Add(@"calculation_message");
             id150_Item = Reader.NameTable.Add(@"get_results_for_plastic_stresses_by_cells");
             id1069_solids_weight_quantity = Reader.NameTable.Add(@"solids_weight_quantity");
             id215_run_script = Reader.NameTable.Add(@"run_script");
@@ -46066,7 +46076,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1267_column_string_id = Reader.NameTable.Add(@"column_string_id");
             id968_Item = Reader.NameTable.Add(@"between_two_locations_end_point_coordinate_2");
             id219_saveResponse = Reader.NameTable.Add(@"saveResponse");
-            id1523_value1 = Reader.NameTable.Add(@"value1");
+            id1524_value1 = Reader.NameTable.Add(@"value1");
             id1239_parabola_second_point = Reader.NameTable.Add(@"parabola_second_point");
             id7_begin_modification = Reader.NameTable.Add(@"begin_modification");
             id6_Item = Reader.NameTable.Add(@"add_section_to_my_section_listResponse");
@@ -46142,7 +46152,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id841_h_c_b_M = Reader.NameTable.Add(@"h_c_b_M");
             id3_list_name = Reader.NameTable.Add(@"list_name");
             id805_c_b_Z = Reader.NameTable.Add(@"c_b_Z");
-            id1533_calculated_value = Reader.NameTable.Add(@"calculated_value");
+            id1534_calculated_value = Reader.NameTable.Add(@"calculated_value");
             id334_settings_program_language = Reader.NameTable.Add(@"settings_program_language");
             id712_a_weld = Reader.NameTable.Add(@"a_weld");
             id781_b_i_M = Reader.NameTable.Add(@"b_i_M");
@@ -46166,7 +46176,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id991_tolerance_for_nodes = Reader.NameTable.Add(@"tolerance_for_nodes");
             id759_b_c_M = Reader.NameTable.Add(@"b_c_M");
             id285_get_detailed_logging = Reader.NameTable.Add(@"get_detailed_logging");
-            id1522_value0 = Reader.NameTable.Add(@"value0");
+            id1523_value0 = Reader.NameTable.Add(@"value0");
             id1244_parabola_alpha = Reader.NameTable.Add(@"parabola_alpha");
             id967_Item = Reader.NameTable.Add(@"between_two_locations_end_point_coordinate_1");
             id879_h_tri = Reader.NameTable.Add(@"h_tri");
@@ -46218,13 +46228,13 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1184_factor = Reader.NameTable.Add(@"factor");
             id807_c_t_Z = Reader.NameTable.Add(@"c_t_Z");
             id956_z_p = Reader.NameTable.Add(@"z_p");
-            id1552_calculation_result = Reader.NameTable.Add(@"calculation_result");
+            id1553_calculation_result = Reader.NameTable.Add(@"calculation_result");
             id449_cover_points = Reader.NameTable.Add(@"cover_points");
             id958_z_t_1_2_kruh = Reader.NameTable.Add(@"z_t_1_2_kruh");
             id405_subpanel = Reader.NameTable.Add(@"subpanel");
             id438_global_coordinate_1 = Reader.NameTable.Add(@"global_coordinate_1");
             id439_global_coordinate_2 = Reader.NameTable.Add(@"global_coordinate_2");
-            id1554_errors_and_warnings = Reader.NameTable.Add(@"errors_and_warnings");
+            id1555_errors_and_warnings = Reader.NameTable.Add(@"errors_and_warnings");
             id456_section = Reader.NameTable.Add(@"section");
             id659_W_pl_y = Reader.NameTable.Add(@"W_pl_y");
             id300_get_program_optionsResponse = Reader.NameTable.Add(@"get_program_optionsResponse");
@@ -46256,11 +46266,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id301_get_program_settings = Reader.NameTable.Add(@"get_program_settings");
             id33_delete_all_historyResponse = Reader.NameTable.Add(@"delete_all_historyResponse");
             id299_get_program_options = Reader.NameTable.Add(@"get_program_options");
-            id1548_object_with_children = Reader.NameTable.Add(@"object_with_children");
+            id1549_object_with_children = Reader.NameTable.Add(@"object_with_children");
             id442_element = Reader.NameTable.Add(@"element");
-            id1525_member_1D_finite_elements = Reader.NameTable.Add(@"member_1D_finite_elements");
+            id1526_member_1D_finite_elements = Reader.NameTable.Add(@"member_1D_finite_elements");
             id401_property_export_select_loading = Reader.NameTable.Add(@"property_export_select_loading");
-            id1535_product_file_type = Reader.NameTable.Add(@"product_file_type");
+            id1536_product_file_type = Reader.NameTable.Add(@"product_file_type");
             id1422_torsional_moment_m_xs = Reader.NameTable.Add(@"torsional_moment_m_xs");
             id344_settings_program_options = Reader.NameTable.Add(@"settings_program_options");
             id1074_solids_volume_quantity = Reader.NameTable.Add(@"solids_volume_quantity");
@@ -46285,9 +46295,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1460_property_co_count = Reader.NameTable.Add(@"property_co_count");
             id430_Item = Reader.NameTable.Add(@"distance_from_start_is_defined_as_relative");
             id433_distance_from_end_relative = Reader.NameTable.Add(@"distance_from_end_relative");
-            id1543_block_category2 = Reader.NameTable.Add(@"block_category2");
+            id1544_block_category2 = Reader.NameTable.Add(@"block_category2");
             id131_get_nth_object_numberResponse = Reader.NameTable.Add(@"get_nth_object_numberResponse");
-            id1542_block_category1 = Reader.NameTable.Add(@"block_category1");
+            id1543_block_category1 = Reader.NameTable.Add(@"block_category1");
             id722_a_weld_s_b = Reader.NameTable.Add(@"a_weld_s_b");
             id1502_Item = Reader.NameTable.Add(@"property_structure_stability_analysis");
             id1047_surfaces_volume_unit_cost = Reader.NameTable.Add(@"surfaces_volume_unit_cost");
@@ -46406,7 +46416,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id730_alpha = Reader.NameTable.Add(@"alpha");
             id542_Cr_f2 = Reader.NameTable.Add(@"Cr_f2");
             id1198_k_f = Reader.NameTable.Add(@"k_f");
-            id1528_node_elements = Reader.NameTable.Add(@"node_elements");
+            id1529_node_elements = Reader.NameTable.Add(@"node_elements");
             id588_M_pl_xp_S235 = Reader.NameTable.Add(@"M_pl_xp_S235");
             id933_u_3 = Reader.NameTable.Add(@"u_3");
             id932_u_2 = Reader.NameTable.Add(@"u_2");
@@ -46462,7 +46472,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id242_table_values = Reader.NameTable.Add(@"table_values");
             id77_object_location = Reader.NameTable.Add(@"object_location");
             id461_warping_stiffness_deactivated = Reader.NameTable.Add(@"warping_stiffness_deactivated");
-            id1547_sequence = Reader.NameTable.Add(@"sequence");
+            id1548_sequence = Reader.NameTable.Add(@"sequence");
             id1432_object_information = Reader.NameTable.Add(@"object_information");
             id857_h_f_h_t_M = Reader.NameTable.Add(@"h_f_h_t_M");
             id836_h_R = Reader.NameTable.Add(@"h_R");
@@ -46532,10 +46542,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id753_b_b = Reader.NameTable.Add(@"b_b");
             id758_b_c = Reader.NameTable.Add(@"b_c");
             id772_b_f = Reader.NameTable.Add(@"b_f");
-            id1545_block_category4 = Reader.NameTable.Add(@"block_category4");
-            id1546_block_category5 = Reader.NameTable.Add(@"block_category5");
+            id1546_block_category4 = Reader.NameTable.Add(@"block_category4");
+            id1547_block_category5 = Reader.NameTable.Add(@"block_category5");
             id1006_time = Reader.NameTable.Add(@"time");
-            id1544_block_category3 = Reader.NameTable.Add(@"block_category3");
+            id1545_block_category3 = Reader.NameTable.Add(@"block_category3");
             id1017_is_dynamic_increase_factor = Reader.NameTable.Add(@"is_dynamic_increase_factor");
             id295_get_model_listResponse = Reader.NameTable.Add(@"get_model_listResponse");
             id541_Cr_f1 = Reader.NameTable.Add(@"Cr_f1");
@@ -46557,7 +46567,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id225_set_elementResponse = Reader.NameTable.Add(@"set_elementResponse");
             id184_Item = Reader.NameTable.Add(@"get_results_for_stresses_by_stress_pointsResponse");
             id540_Cr_b3 = Reader.NameTable.Add(@"Cr_b3");
-            id1553_succeeded = Reader.NameTable.Add(@"succeeded");
+            id1554_succeeded = Reader.NameTable.Add(@"succeeded");
             id355_automatically_save_after = Reader.NameTable.Add(@"automatically_save_after");
             id226_set_formula = Reader.NameTable.Add(@"set_formula");
             id733_alpha_pl_u_pure = Reader.NameTable.Add(@"alpha_pl_u_pure");
@@ -46568,7 +46578,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id119_get_model_parametersResponse = Reader.NameTable.Add(@"get_model_parametersResponse");
             id289_get_list_of_existing_projects = Reader.NameTable.Add(@"get_list_of_existing_projects");
             id1120_Item = Reader.NameTable.Add(@"emissions_surfaces_area_emission");
-            id1559_input_field = Reader.NameTable.Add(@"input_field");
+            id1560_input_field = Reader.NameTable.Add(@"input_field");
             id690_a_2 = Reader.NameTable.Add(@"a_2");
             id686_a_1 = Reader.NameTable.Add(@"a_1");
             id473_moment_of_inertia_bending_z = Reader.NameTable.Add(@"moment_of_inertia_bending_z");
@@ -46587,7 +46597,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1145_Item = Reader.NameTable.Add(@"use_of_material_model_alignment");
             id1332_distance_between_i_and_j = Reader.NameTable.Add(@"distance_between_i_and_j");
             id1309_Item = Reader.NameTable.Add(@"radius_diameter_is_target_point");
-            id1531_is_valid = Reader.NameTable.Add(@"is_valid");
+            id1532_is_valid = Reader.NameTable.Add(@"is_valid");
             id395_Item = Reader.NameTable.Add(@"property_export_filled_rows_only");
             id1299_Item = Reader.NameTable.Add(@"linear_global_dimension_line_offset_y");
             id1300_Item = Reader.NameTable.Add(@"linear_global_dimension_line_offset_z");
@@ -46609,7 +46619,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1106_Item = Reader.NameTable.Add(@"emissions_surfaces_volume_active");
             id1227_arc_alpha_adjustment_target = Reader.NameTable.Add(@"arc_alpha_adjustment_target");
             id596_N_pl = Reader.NameTable.Add(@"N_pl");
-            id1536_model_type = Reader.NameTable.Add(@"model_type");
+            id1537_model_type = Reader.NameTable.Add(@"model_type");
             id376_property_config_id = Reader.NameTable.Add(@"property_config_id");
             id1111_Item = Reader.NameTable.Add(@"emissions_surfaces_top_face_active");
             id1060_surfaces_area_cost = Reader.NameTable.Add(@"surfaces_area_cost");
@@ -46634,7 +46644,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id362_application_information = Reader.NameTable.Add(@"application_information");
             id811_d_0 = Reader.NameTable.Add(@"d_0");
             id815_d_1 = Reader.NameTable.Add(@"d_1");
-            id1549_children = Reader.NameTable.Add(@"children");
+            id1550_children = Reader.NameTable.Add(@"children");
             id1138_emissions_solids_area_unit = Reader.NameTable.Add(@"emissions_solids_area_unit");
             id1510_property_wind_simulation = Reader.NameTable.Add(@"property_wind_simulation");
             id168_Item = Reader.NameTable.Add(@"get_results_for_stresses_by_loading_effective");
@@ -46699,7 +46709,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1038_members_surface_unit = Reader.NameTable.Add(@"members_surface_unit");
             id1165_division_multiplication_factor = Reader.NameTable.Add(@"division_multiplication_factor");
             id162_Item = Reader.NameTable.Add(@"get_results_for_stresses_all_by_stress_points");
-            id1538_model_category_1 = Reader.NameTable.Add(@"model_category_1");
+            id1539_model_category_1 = Reader.NameTable.Add(@"model_category_1");
             id330_set_program_settings = Reader.NameTable.Add(@"set_program_settings");
             id165_Item = Reader.NameTable.Add(@"get_results_for_stresses_by_loading");
             id1231_circle_rotation = Reader.NameTable.Add(@"circle_rotation");
@@ -46731,7 +46741,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1159_elasticity_modulus_global = Reader.NameTable.Add(@"elasticity_modulus_global");
             id860_h_f_o_M = Reader.NameTable.Add(@"h_f_o_M");
             id507_A_v_y_IS800 = Reader.NameTable.Add(@"A_v_y_IS800");
-            id1563_messages = Reader.NameTable.Add(@"messages");
+            id1564_messages = Reader.NameTable.Add(@"messages");
             id403_property_custom_list_separator = Reader.NameTable.Add(@"property_custom_list_separator");
             id503_A_v_y = Reader.NameTable.Add(@"A_v_y");
             id510_A_v_z = Reader.NameTable.Add(@"A_v_z");
@@ -46842,6 +46852,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id966_Item = Reader.NameTable.Add(@"between_two_locations_end_point_coordinates");
             id1115_Item = Reader.NameTable.Add(@"emissions_surfaces_top_face_emission");
             id908_r_2_b = Reader.NameTable.Add(@"r_2_b");
+            id1522_property_tendons = Reader.NameTable.Add(@"property_tendons");
             id314_new_model_from_template = Reader.NameTable.Add(@"new_model_from_template");
             id1281_dimension_line_offset = Reader.NameTable.Add(@"dimension_line_offset");
             id1029_members_weight_quantity = Reader.NameTable.Add(@"members_weight_quantity");
@@ -46897,7 +46908,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id1026_members_weight_active = Reader.NameTable.Add(@"members_weight_active");
             id406_elements = Reader.NameTable.Add(@"elements");
             id1161_poisson_ratio_global = Reader.NameTable.Add(@"poisson_ratio_global");
-            id1539_model_subcategory_1 = Reader.NameTable.Add(@"model_subcategory_1");
+            id1540_model_subcategory_1 = Reader.NameTable.Add(@"model_subcategory_1");
             id2_Item = Reader.NameTable.Add(@"http://www.dlubal.com/rsection.xsd");
             id1211_time_slip = Reader.NameTable.Add(@"time_slip");
             id129_get_nth_object_number = Reader.NameTable.Add(@"get_nth_object_number");
@@ -46909,7 +46920,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id146_results_for_plastic_factor = Reader.NameTable.Add(@"results_for_plastic_factor");
             id112_get_model_historyResponse = Reader.NameTable.Add(@"get_model_historyResponse");
             id637_Tr_perm_T_1_7 = Reader.NameTable.Add(@"Tr_perm_T_1_7");
-            id1560_current_value = Reader.NameTable.Add(@"current_value");
+            id1561_current_value = Reader.NameTable.Add(@"current_value");
             id1475_property_rsection_part_count = Reader.NameTable.Add(@"property_rsection_part_count");
             id1436_attribute_information = Reader.NameTable.Add(@"attribute_information");
             id611_Tr_I_ef_plus = Reader.NameTable.Add(@"Tr_I_ef_plus");
@@ -47008,10 +47019,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id10_calculate_all = Reader.NameTable.Add(@"calculate_all");
             id296_get_model_list_with_indexes = Reader.NameTable.Add(@"get_model_list_with_indexes");
             id1433_singular_name = Reader.NameTable.Add(@"singular_name");
-            id1551_constant = Reader.NameTable.Add(@"constant");
+            id1552_constant = Reader.NameTable.Add(@"constant");
             id92_get_layer = Reader.NameTable.Add(@"get_layer");
             id561_G1 = Reader.NameTable.Add(@"G1");
-            id1541_model_subcategory_2 = Reader.NameTable.Add(@"model_subcategory_2");
+            id1542_model_subcategory_2 = Reader.NameTable.Add(@"model_subcategory_2");
             id882_h_w_b = Reader.NameTable.Add(@"h_w_b");
             id145_Item = Reader.NameTable.Add(@"get_results_for_plastic_factorResponse");
             id721_a_weld_s = Reader.NameTable.Add(@"a_weld_s");
@@ -47023,11 +47034,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id883_h_w_t = Reader.NameTable.Add(@"h_w_t");
             id784_b_nom = Reader.NameTable.Add(@"b_nom");
             id435_definition_type = Reader.NameTable.Add(@"definition_type");
-            id1540_model_category_2 = Reader.NameTable.Add(@"model_category_2");
+            id1541_model_category_2 = Reader.NameTable.Add(@"model_category_2");
             id1304_Item = Reader.NameTable.Add(@"dimension_arc_length_reference_table");
             id267_set_stress_pointResponse = Reader.NameTable.Add(@"set_stress_pointResponse");
             id1425_bimoment_m_omega = Reader.NameTable.Add(@"bimoment_m_omega");
-            id1561_result = Reader.NameTable.Add(@"result");
+            id1562_result = Reader.NameTable.Add(@"result");
             id234_set_load_caseResponse = Reader.NameTable.Add(@"set_load_caseResponse");
             id1139_emissions_solids_area_quantity = Reader.NameTable.Add(@"emissions_solids_area_quantity");
             id1250_Item = Reader.NameTable.Add(@"line_nurbs_control_points_by_components");
@@ -47119,7 +47130,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id578_I_y_1_2_kruh = Reader.NameTable.Add(@"I_y_1_2_kruh");
             id312_new_model_as_copy = Reader.NameTable.Add(@"new_model_as_copy");
             id1135_Item = Reader.NameTable.Add(@"emissions_solids_volume_emission");
-            id1558_object = Reader.NameTable.Add(@"object");
+            id1559_object = Reader.NameTable.Add(@"object");
             id118_get_model_parameters = Reader.NameTable.Add(@"get_model_parameters");
             id1421_torsional_moment_m_xp = Reader.NameTable.Add(@"torsional_moment_m_xp");
             id716_a_weld_fb_b = Reader.NameTable.Add(@"a_weld_fb_b");
@@ -47145,7 +47156,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id213_reset = Reader.NameTable.Add(@"reset");
             id221_set_barResponse = Reader.NameTable.Add(@"set_barResponse");
             id1202_gamma_l_1 = Reader.NameTable.Add(@"gamma_l_1");
-            id1526_surface_2D_finite_elements = Reader.NameTable.Add(@"surface_2D_finite_elements");
+            id1527_surface_2D_finite_elements = Reader.NameTable.Add(@"surface_2D_finite_elements");
             id101_get_load_case = Reader.NameTable.Add(@"get_load_case");
             id309_new_model = Reader.NameTable.Add(@"new_model");
             id416_generating_object_info = Reader.NameTable.Add(@"generating_object_info");

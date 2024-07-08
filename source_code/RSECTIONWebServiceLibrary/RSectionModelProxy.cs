@@ -22750,6 +22750,8 @@ namespace Dlubal.WS.RSection1.Model
         
         private int property_model_typeField;
         
+        private string property_tendonsField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public int property_node_count
@@ -23739,6 +23741,21 @@ namespace Dlubal.WS.RSection1.Model
             {
                 this.property_model_typeField = value;
                 this.RaisePropertyChanged("property_model_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=66)]
+        public string property_tendons
+        {
+            get
+            {
+                return this.property_tendonsField;
+            }
+            set
+            {
+                this.property_tendonsField = value;
+                this.RaisePropertyChanged("property_tendons");
             }
         }
         
