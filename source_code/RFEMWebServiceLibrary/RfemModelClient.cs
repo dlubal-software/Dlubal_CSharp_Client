@@ -3418,6 +3418,20 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_deep_beam_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_deep_beam_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_deep_beam_reinforcement_row[] get_results_for_concrete_design_deep_beam_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_deep_beam_reinforcement(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_deep_beams_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_construction_stageRequest request)
         {
             return base.Channel.get_results_for_concrete_design_design_ratios_deep_beams_by_construction_stage(request);
@@ -4352,6 +4366,62 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_loadingRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_governing_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_member_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_member_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_member_reinforcement_row[] get_results_for_concrete_design_member_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_member_reinforcement(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_representative_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_member_representative_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_representative_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_member_representative_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_member_representative_reinforcement_row[] get_results_for_concrete_design_member_representative_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_representative_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_representative_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_representative_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_member_representative_reinforcement(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_member_set_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_member_set_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_member_set_reinforcement_row[] get_results_for_concrete_design_member_set_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_member_set_reinforcement(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_representative_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_member_set_representative_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_representative_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_member_set_representative_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_member_set_representative_reinforcement_row[] get_results_for_concrete_design_member_set_representative_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_representative_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_representative_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_member_set_representative_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_member_set_representative_reinforcement(inValue);
             return retVal.value;
         }
         
@@ -5948,6 +6018,20 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_surfaces_by_thicknessRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_surfaces_by_thicknessRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_surfaces_by_thicknessResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_surfaces_by_thickness(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_shear_wall_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_shear_wall_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_shear_wall_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_shear_wall_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_shear_wall_reinforcement_row[] get_results_for_concrete_design_shear_wall_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_shear_wall_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_shear_wall_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_shear_wall_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_shear_wall_reinforcement(inValue);
             return retVal.value;
         }
         
@@ -8139,13 +8223,14 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_contact_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_contact_forces_row[] get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_contact_forces_row[] get_results_for_spectral_analysis_members_contact_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_contact_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_contact_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_contact_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_contact_forces(inValue);
             return retVal.value;
         }
@@ -8207,13 +8292,14 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_row[] get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_row[] get_results_for_spectral_analysis_members_internal_forces(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forcesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forcesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_internal_forces(inValue);
             return retVal.value;
         }
@@ -8224,13 +8310,14 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces_by_member_set(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_by_member_set_row[] get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_by_member_set_row[] get_results_for_spectral_analysis_members_internal_forces_by_member_set(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_member_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_internal_forces_by_member_set(inValue);
             return retVal.value;
         }
@@ -8241,13 +8328,14 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_internal_forces_by_section(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_by_section_row[] get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_by_section_row[] get_results_for_spectral_analysis_members_internal_forces_by_section(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_internal_forces_by_section(inValue);
             return retVal.value;
         }
@@ -8258,13 +8346,14 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_local_deformations(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_local_deformations_row[] get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_local_deformations_row[] get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_local_deformations(inValue);
             return retVal.value;
         }
@@ -8292,13 +8381,14 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_results_for_spectral_analysis_members_strains(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_strains_row[] get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_strains_row[] get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.axes_type member_result_coordinate_system_type, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
+            inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_strains(inValue);
             return retVal.value;
         }

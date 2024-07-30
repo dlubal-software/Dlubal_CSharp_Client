@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rstab9.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.07.0002", ConfigurationName="Dlubal.WS.Rstab9.Model.IRstabModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.07.0005", ConfigurationName="Dlubal.WS.Rstab9.Model.IRstabModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRstabModel
     {
@@ -847,6 +847,24 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_governing_loading", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingResponse get_results_for_concrete_design_governing_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_governing_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_member_reinforcement", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_reinforcementResponse get_results_for_concrete_design_member_reinforcement(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_reinforcementRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_member_representative_reinf" +
+            "orcement", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_representative_reinforcementResponse get_results_for_concrete_design_member_representative_reinforcement(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_representative_reinforcementRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_member_set_reinforcement", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_set_reinforcementResponse get_results_for_concrete_design_member_set_reinforcement(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_set_reinforcementRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_member_set_representative_r" +
+            "einforcement", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_set_representative_reinforcementResponse get_results_for_concrete_design_member_set_representative_reinforcement(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_member_set_representative_reinforcementRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_design_not_covered_reinforcement_a" +
             "rea_on_member_representatives_by_design_situation", ReplyAction="*")]
