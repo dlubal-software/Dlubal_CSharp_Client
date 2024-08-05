@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"86e886ce-04a6-437e-9382-76ceef29f3ec,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"4257e2fa-9a5c-4d7c-a7e2-d3ff8d9dc4c0,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5451,11 +5451,13 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO_A: s = @"BUILT_UP_NG_2LSHLO_A"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2RB: s = @"BUILT_UP_NG_2RB"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2SB: s = @"BUILT_UP_NG_2SB"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UCCC: s = @"BUILT_UP_NG_2UCCC"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UF: s = @"BUILT_UP_NG_2UF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI: s = @"BUILT_UP_NG_2UI"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI_A: s = @"BUILT_UP_NG_2UI_A"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO: s = @"BUILT_UP_NG_2UO"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO_A: s = @"BUILT_UP_NG_2UO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UU: s = @"BUILT_UP_NG_2UU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_3I: s = @"BUILT_UP_NG_3I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO: s = @"BUILT_UP_NG_4LHLO"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO_A: s = @"BUILT_UP_NG_4LHLO_A"; break;
@@ -29588,11 +29590,13 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"BUILT_UP_NG_2LSHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO_A;
                 case @"BUILT_UP_NG_2RB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2RB;
                 case @"BUILT_UP_NG_2SB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2SB;
+                case @"BUILT_UP_NG_2UCCC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UCCC;
                 case @"BUILT_UP_NG_2UF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UF;
                 case @"BUILT_UP_NG_2UI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI;
                 case @"BUILT_UP_NG_2UI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI_A;
                 case @"BUILT_UP_NG_2UO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO;
                 case @"BUILT_UP_NG_2UO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO_A;
+                case @"BUILT_UP_NG_2UU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UU;
                 case @"BUILT_UP_NG_3I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_3I;
                 case @"BUILT_UP_NG_4LHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO;
                 case @"BUILT_UP_NG_4LHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO_A;

@@ -1805,6 +1805,9 @@ namespace Dlubal.WS.RSection1.Model
         BUILT_UP_NG_2SB,
         
         /// <remarks/>
+        BUILT_UP_NG_2UCCC,
+        
+        /// <remarks/>
         BUILT_UP_NG_2UF,
         
         /// <remarks/>
@@ -1818,6 +1821,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         BUILT_UP_NG_2UO_A,
+        
+        /// <remarks/>
+        BUILT_UP_NG_2UU,
         
         /// <remarks/>
         BUILT_UP_NG_3I,
