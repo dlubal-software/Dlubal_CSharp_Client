@@ -13,7 +13,7 @@ namespace Dlubal.WS.RSection1.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.07.0006", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.07.0010", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRSectionModel
     {
@@ -149,10 +149,6 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_formula", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_formulaResponse get_formula(Dlubal.WS.RSection1.Model.get_formulaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_layer", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.get_layerResponse get_layer(Dlubal.WS.RSection1.Model.get_layerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_line", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -377,10 +373,6 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_formula", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_formulaResponse set_formula(Dlubal.WS.RSection1.Model.set_formulaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_layer", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.set_layerResponse set_layer(Dlubal.WS.RSection1.Model.set_layerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_line", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

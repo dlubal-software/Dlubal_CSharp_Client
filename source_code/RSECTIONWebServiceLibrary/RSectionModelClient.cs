@@ -487,20 +487,6 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.get_layerResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_layer(Dlubal.WS.RSection1.Model.get_layerRequest request)
-        {
-            return base.Channel.get_layer(request);
-        }
-        
-        public Dlubal.WS.RSection1.Model.layer get_layer(int no)
-        {
-            Dlubal.WS.RSection1.Model.get_layerRequest inValue = new Dlubal.WS.RSection1.Model.get_layerRequest();
-            inValue.no = no;
-            Dlubal.WS.RSection1.Model.get_layerResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_layer(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.get_lineResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_line(Dlubal.WS.RSection1.Model.get_lineRequest request)
         {
             return base.Channel.get_line(request);
@@ -1247,19 +1233,6 @@ namespace Dlubal.WS.RSection1.Model
             inValue.object_parameter_location = object_parameter_location;
             inValue.formula = formula;
             Dlubal.WS.RSection1.Model.set_formulaResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_formula(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.set_layerResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_layer(Dlubal.WS.RSection1.Model.set_layerRequest request)
-        {
-            return base.Channel.set_layer(request);
-        }
-        
-        public void set_layer(Dlubal.WS.RSection1.Model.layer value)
-        {
-            Dlubal.WS.RSection1.Model.set_layerRequest inValue = new Dlubal.WS.RSection1.Model.set_layerRequest();
-            inValue.value = value;
-            Dlubal.WS.RSection1.Model.set_layerResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_layer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
