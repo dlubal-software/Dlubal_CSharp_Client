@@ -603,6 +603,19 @@ namespace Dlubal.WS.Rstab9.Model
             return retVal.value;
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_all_visible_basic_objectsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_all_visible_basic_objects(Dlubal.WS.Rstab9.Model.get_all_visible_basic_objectsRequest request)
+        {
+            return base.Channel.get_all_visible_basic_objects(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.object_location[] get_all_visible_basic_objects()
+        {
+            Dlubal.WS.Rstab9.Model.get_all_visible_basic_objectsRequest inValue = new Dlubal.WS.Rstab9.Model.get_all_visible_basic_objectsRequest();
+            Dlubal.WS.Rstab9.Model.get_all_visible_basic_objectsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_all_visible_basic_objects(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.Rstab9.Model.aluminum_design_sls_configuration get_aluminum_design_sls_configuration(int no)
         {
             Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationRequest inValue = new Dlubal.WS.Rstab9.Model.get_aluminum_design_sls_configurationRequest();

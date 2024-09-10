@@ -13,7 +13,7 @@ namespace Dlubal.WS.RSection1.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.07.0010", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.07.0011", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRSectionModel
     {
@@ -125,6 +125,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_selected_objects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_all_selected_objectsResponse get_all_selected_objects(Dlubal.WS.RSection1.Model.get_all_selected_objectsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_visible_basic_objects", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsResponse get_all_visible_basic_objects(Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_bar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

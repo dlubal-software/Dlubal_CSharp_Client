@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rfem6.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.07.0010", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.07.0011", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRfemModel
     {
@@ -221,6 +221,10 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_selected_objects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_all_selected_objectsResponse get_all_selected_objects(Dlubal.WS.Rfem6.Model.get_all_selected_objectsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_all_visible_basic_objects", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsResponse get_all_visible_basic_objects(Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_design_sls_configuration", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

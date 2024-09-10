@@ -400,6 +400,19 @@ namespace Dlubal.WS.RSection1.Model
             return retVal.value;
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_all_visible_basic_objects(Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsRequest request)
+        {
+            return base.Channel.get_all_visible_basic_objects(request);
+        }
+        
+        public Dlubal.WS.RSection1.Model.object_location[] get_all_visible_basic_objects()
+        {
+            Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsRequest inValue = new Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsRequest();
+            Dlubal.WS.RSection1.Model.get_all_visible_basic_objectsResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_all_visible_basic_objects(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.RSection1.Model.bar get_bar(int no)
         {
             Dlubal.WS.RSection1.Model.get_barRequest inValue = new Dlubal.WS.RSection1.Model.get_barRequest();

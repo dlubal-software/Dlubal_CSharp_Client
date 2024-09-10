@@ -9966,6 +9966,40 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_all_visible_basic_objects", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_all_visible_basic_objectsRequest
+    {
+        
+        public get_all_visible_basic_objectsRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_all_visible_basic_objectsResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_all_visible_basic_objectsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public Dlubal.WS.RSection1.Model.object_location[] value;
+        
+        public get_all_visible_basic_objectsResponse()
+        {
+        }
+        
+        public get_all_visible_basic_objectsResponse(Dlubal.WS.RSection1.Model.object_location[] value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_bar", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_barRequest
     {

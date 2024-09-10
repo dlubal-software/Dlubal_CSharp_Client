@@ -731,6 +731,19 @@ namespace Dlubal.WS.Rfem6.Model
             return retVal.value;
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_all_visible_basic_objects(Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsRequest request)
+        {
+            return base.Channel.get_all_visible_basic_objects(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.object_location[] get_all_visible_basic_objects()
+        {
+            Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsRequest inValue = new Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsRequest();
+            Dlubal.WS.Rfem6.Model.get_all_visible_basic_objectsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_all_visible_basic_objects(inValue);
+            return retVal.value;
+        }
+        
         public Dlubal.WS.Rfem6.Model.aluminum_design_sls_configuration get_aluminum_design_sls_configuration(int no)
         {
             Dlubal.WS.Rfem6.Model.get_aluminum_design_sls_configurationRequest inValue = new Dlubal.WS.Rfem6.Model.get_aluminum_design_sls_configurationRequest();
