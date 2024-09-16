@@ -1724,6 +1724,9 @@ namespace Dlubal.WS.RSection1.Model
         BUILT_UP_NG_2HB,
         
         /// <remarks/>
+        BUILT_UP_NG_2HF,
+        
+        /// <remarks/>
         BUILT_UP_NG_2I,
         
         /// <remarks/>
@@ -1821,6 +1824,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         BUILT_UP_NG_2UU,
+        
+        /// <remarks/>
+        BUILT_UP_NG_2VF,
         
         /// <remarks/>
         BUILT_UP_NG_3I,
@@ -35018,9 +35024,9 @@ namespace Dlubal.WS.RSection1.Model
         
         private bool rFieldSpecified;
         
-        private double r_0Field;
+        private double r_toeField;
         
-        private bool r_0FieldSpecified;
+        private bool r_toeFieldSpecified;
         
         private double r_1Field;
         
@@ -48628,31 +48634,31 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=453)]
-        public double r_0
+        public double r_toe
         {
             get
             {
-                return this.r_0Field;
+                return this.r_toeField;
             }
             set
             {
-                this.r_0Field = value;
-                this.RaisePropertyChanged("r_0");
+                this.r_toeField = value;
+                this.RaisePropertyChanged("r_toe");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool r_0Specified
+        public bool r_toeSpecified
         {
             get
             {
-                return this.r_0FieldSpecified;
+                return this.r_toeFieldSpecified;
             }
             set
             {
-                this.r_0FieldSpecified = value;
-                this.RaisePropertyChanged("r_0Specified");
+                this.r_toeFieldSpecified = value;
+                this.RaisePropertyChanged("r_toeSpecified");
             }
         }
         

@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"3d8f1531-416c-40ee-aa80-0f673ef3d3b2,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"e675a497-4d3a-4bc5-ae5d-0d551cf62483,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5234,8 +5234,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             if (o.@rSpecified) {
                 WriteElementStringRaw(@"r", @"", System.Xml.XmlConvert.ToString((global::System.Double)((global::System.Double)o.@r)));
             }
-            if (o.@r_0Specified) {
-                WriteElementStringRaw(@"r_0", @"", System.Xml.XmlConvert.ToString((global::System.Double)((global::System.Double)o.@r_0)));
+            if (o.@r_toeSpecified) {
+                WriteElementStringRaw(@"r_toe", @"", System.Xml.XmlConvert.ToString((global::System.Double)((global::System.Double)o.@r_toe)));
             }
             if (o.@r_1Specified) {
                 WriteElementStringRaw(@"r_1", @"", System.Xml.XmlConvert.ToString((global::System.Double)((global::System.Double)o.@r_1)));
@@ -5411,6 +5411,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             string s = null;
             switch (v) {
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HB: s = @"BUILT_UP_NG_2HB"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HF: s = @"BUILT_UP_NG_2HF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I: s = @"BUILT_UP_NG_2I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I_A: s = @"BUILT_UP_NG_2I_A"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI: s = @"BUILT_UP_NG_2LCLI"; break;
@@ -5444,6 +5445,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO: s = @"BUILT_UP_NG_2UO"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO_A: s = @"BUILT_UP_NG_2UO_A"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UU: s = @"BUILT_UP_NG_2UU"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2VF: s = @"BUILT_UP_NG_2VF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_3I: s = @"BUILT_UP_NG_3I"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO: s = @"BUILT_UP_NG_4LHLO"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO_A: s = @"BUILT_UP_NG_4LHLO_A"; break;
@@ -28929,10 +28931,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         state = 453;
                         break;
                     case 453:
-                        if (((object) Reader.LocalName == (object)id901_r_0 && (object) Reader.NamespaceURI == (object)id4_Item)) {
-                            o.@r_0Specified = true;
+                        if (((object) Reader.LocalName == (object)id901_r_toe && (object) Reader.NamespaceURI == (object)id4_Item)) {
+                            o.@r_toeSpecified = true;
                             {
-                                o.@r_0 = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
+                                o.@r_toe = System.Xml.XmlConvert.ToDouble(Reader.ReadElementString());
                             }
                         }
                         state = 454;
@@ -29466,6 +29468,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         global::Dlubal.WS.RSection1.Model.section_combination_type Read173_section_combination_type(string s) {
             switch (s) {
                 case @"BUILT_UP_NG_2HB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HB;
+                case @"BUILT_UP_NG_2HF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HF;
                 case @"BUILT_UP_NG_2I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I;
                 case @"BUILT_UP_NG_2I_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I_A;
                 case @"BUILT_UP_NG_2LCLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI;
@@ -29499,6 +29502,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"BUILT_UP_NG_2UO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO;
                 case @"BUILT_UP_NG_2UO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO_A;
                 case @"BUILT_UP_NG_2UU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UU;
+                case @"BUILT_UP_NG_2VF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2VF;
                 case @"BUILT_UP_NG_3I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_3I;
                 case @"BUILT_UP_NG_4LHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO;
                 case @"BUILT_UP_NG_4LHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO_A;
@@ -45301,6 +45305,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id853_h_f_h_M;
         string id1287_Item;
         string id1429_Item;
+        string id901_r_toe;
         string id1187_xi;
         string id1459_property_cs_count;
         string id551_Cr_r6;
@@ -45632,7 +45637,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         string id735_alpha_pl_y_pure;
         string id1017_optimization;
         string id792_b_ts;
-        string id901_r_0;
         string id576_I_y_1_2_kruh;
         string id310_new_model_as_copy;
         string id1133_Item;
@@ -46871,6 +46875,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id853_h_f_h_M = Reader.NameTable.Add(@"h_f_h_M");
             id1287_Item = Reader.NameTable.Add(@"dimension_angular_reference_table");
             id1429_Item = Reader.NameTable.Add(@"results_for_effective_widths_row");
+            id901_r_toe = Reader.NameTable.Add(@"r_toe");
             id1187_xi = Reader.NameTable.Add(@"xi");
             id1459_property_cs_count = Reader.NameTable.Add(@"property_cs_count");
             id551_Cr_r6 = Reader.NameTable.Add(@"Cr_r6");
@@ -47202,7 +47207,6 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id735_alpha_pl_y_pure = Reader.NameTable.Add(@"alpha_pl_y_pure");
             id1017_optimization = Reader.NameTable.Add(@"optimization");
             id792_b_ts = Reader.NameTable.Add(@"b_ts");
-            id901_r_0 = Reader.NameTable.Add(@"r_0");
             id576_I_y_1_2_kruh = Reader.NameTable.Add(@"I_y_1_2_kruh");
             id310_new_model_as_copy = Reader.NameTable.Add(@"new_model_as_copy");
             id1133_Item = Reader.NameTable.Add(@"emissions_solids_volume_emission");
