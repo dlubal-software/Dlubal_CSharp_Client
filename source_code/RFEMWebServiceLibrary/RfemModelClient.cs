@@ -6063,6 +6063,216 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_design_ratios_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_design_ratios_by_construction_stage_row[] get_results_for_concrete_foundations_design_ratios_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_design_ratios_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_design_ratios_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_design_ratios_by_design_situation_row[] get_results_for_concrete_foundations_design_ratios_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_design_ratios_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_foundationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_design_ratios_by_foundation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_design_ratios_by_foundation_row[] get_results_for_concrete_foundations_design_ratios_by_foundation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_foundationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_design_ratios_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_design_ratios_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_design_ratios_by_loading_row[] get_results_for_concrete_foundations_design_ratios_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_design_ratios_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_nodeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_design_ratios_by_node(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_node(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_design_ratios_by_node_row[] get_results_for_concrete_foundations_design_ratios_by_node(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_design_ratios_by_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_design_ratios_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundations_geometryResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_foundations_geometry(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundations_geometryRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_foundations_geometry(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_foundations_geometry_row[] get_results_for_concrete_foundations_foundations_geometry(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundations_geometryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundations_geometryRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_foundations_geometryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_foundations_geometry(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_governing_loading(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_governing_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_governing_loading_row[] get_results_for_concrete_foundations_governing_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_governing_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_governing_reactions_by_foundations(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_governing_reactions_by_foundations(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_governing_reactions_by_foundations_row[] get_results_for_concrete_foundations_governing_reactions_by_foundations(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_governing_reactions_by_foundations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_governing_reactions_by_nodes(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_governing_reactions_by_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_governing_reactions_by_nodes_row[] get_results_for_concrete_foundations_governing_reactions_by_nodes(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_governing_reactions_by_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_overview_errors_and_warnings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_overview_errors_and_warnings_row[] get_results_for_concrete_foundations_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_overview_errors_and_warnings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_overview_not_valid_deactivated(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_overview_not_valid_deactivated(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_overview_not_valid_deactivated_row[] get_results_for_concrete_foundations_overview_not_valid_deactivated(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_overview_not_valid_deactivated(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_provided_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_provided_reinforcement_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_provided_reinforcement_by_foundation_row[] get_results_for_concrete_foundations_provided_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_provided_reinforcement_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_provided_reinforcement_by_node(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_provided_reinforcement_by_node(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_provided_reinforcement_by_node_row[] get_results_for_concrete_foundations_provided_reinforcement_by_node(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_provided_reinforcement_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_required_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_required_reinforcement_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_required_reinforcement_by_foundation_row[] get_results_for_concrete_foundations_required_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_required_reinforcement_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_required_reinforcement_by_node(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_required_reinforcement_by_node(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_required_reinforcement_by_node_row[] get_results_for_concrete_foundations_required_reinforcement_by_node(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_required_reinforcement_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_convergence_diagrams(Dlubal.WS.Rfem6.Model.get_results_for_convergence_diagramsRequest request)
         {
             return base.Channel.get_results_for_convergence_diagrams(request);

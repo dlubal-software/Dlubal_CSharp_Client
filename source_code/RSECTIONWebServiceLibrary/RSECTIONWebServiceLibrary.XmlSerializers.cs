@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"22bbd347-1a24-49c4-b05f-42243de65f62,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"b98ef00f-3be4-44e9-9ecf-ef0bee5df9cc,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
