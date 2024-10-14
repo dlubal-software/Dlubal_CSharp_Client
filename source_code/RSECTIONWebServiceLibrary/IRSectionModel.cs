@@ -13,7 +13,7 @@ namespace Dlubal.WS.RSection1.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.08.0001", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.08.0002", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRSectionModel
     {
