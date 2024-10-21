@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rfem6.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.08.0002", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.08.0003", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRfemModel
     {
@@ -2018,6 +2018,16 @@ namespace Dlubal.WS.Rfem6.Model
             "_nodes", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesResponse get_results_for_concrete_foundations_governing_reactions_by_nodes(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_not_covered_reinforcem" +
+            "ent_by_foundation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationResponse get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_not_covered_reinforcem" +
+            "ent_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeResponse get_results_for_concrete_foundations_not_covered_reinforcement_by_node(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_overview_errors_and_wa" +
             "rnings", ReplyAction="*")]

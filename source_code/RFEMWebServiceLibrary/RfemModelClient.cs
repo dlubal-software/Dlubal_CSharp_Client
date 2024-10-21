@@ -6189,6 +6189,34 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_not_covered_reinforcement_by_foundation_row[] get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_not_covered_reinforcement_by_node(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_not_covered_reinforcement_by_node(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_foundations_not_covered_reinforcement_by_node_row[] get_results_for_concrete_foundations_not_covered_reinforcement_by_node(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_foundations_not_covered_reinforcement_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_foundations_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest request)
         {
             return base.Channel.get_results_for_concrete_foundations_overview_errors_and_warnings(request);
