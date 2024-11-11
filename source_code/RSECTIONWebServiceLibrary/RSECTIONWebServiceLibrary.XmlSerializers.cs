@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"09a5825a-8935-4fa2-8ae0-6c8d8d811f63,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"05be67b9-3b45-45be-b8a5-480c4661851d,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -5462,8 +5462,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2F: s = @"BUILT_UP_NG_I2F"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2HIC: s = @"BUILT_UP_NG_I2HIC"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2I: s = @"BUILT_UP_NG_I2I"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICIMAX: s = @"BUILT_UP_NG_ICI-MAX"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICIMIN: s = @"BUILT_UP_NG_ICI-MIN"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MAX: s = @"BUILT_UP_NG_ICI_MAX"; break;
+                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MIN: s = @"BUILT_UP_NG_ICI_MIN"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IHF: s = @"BUILT_UP_NG_IHF"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUD: s = @"BUILT_UP_NG_IUD"; break;
                 case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUU: s = @"BUILT_UP_NG_IUU"; break;
@@ -5641,6 +5641,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU"; break;
+                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU"; break;
                 case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU"; break;
@@ -29519,8 +29520,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"BUILT_UP_NG_I2F": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2F;
                 case @"BUILT_UP_NG_I2HIC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2HIC;
                 case @"BUILT_UP_NG_I2I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2I;
-                case @"BUILT_UP_NG_ICI-MAX": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICIMAX;
-                case @"BUILT_UP_NG_ICI-MIN": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICIMIN;
+                case @"BUILT_UP_NG_ICI_MAX": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MAX;
+                case @"BUILT_UP_NG_ICI_MIN": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MIN;
                 case @"BUILT_UP_NG_IHF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IHF;
                 case @"BUILT_UP_NG_IUD": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUD;
                 case @"BUILT_UP_NG_IUU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUU;
@@ -29694,6 +29695,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI;
                 case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO;
                 case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU;
                 case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU;
                 case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU;
                 case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU;

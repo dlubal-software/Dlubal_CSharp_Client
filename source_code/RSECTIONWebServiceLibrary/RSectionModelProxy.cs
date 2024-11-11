@@ -1877,12 +1877,10 @@ namespace Dlubal.WS.RSection1.Model
         BUILT_UP_NG_I2I,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("BUILT_UP_NG_ICI-MAX")]
-        BUILT_UP_NG_ICIMAX,
+        BUILT_UP_NG_ICI_MAX,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("BUILT_UP_NG_ICI-MIN")]
-        BUILT_UP_NG_ICIMIN,
+        BUILT_UP_NG_ICI_MIN,
         
         /// <remarks/>
         BUILT_UP_NG_IHF,
@@ -2382,6 +2380,9 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU,
+        
+        /// <remarks/>
+        PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU,
         
         /// <remarks/>
         PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU,

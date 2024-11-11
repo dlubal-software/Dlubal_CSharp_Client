@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rfem6.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.08.0003", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.08.0006", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRfemModel
     {
