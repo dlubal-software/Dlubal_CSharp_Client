@@ -1066,6 +1066,9 @@ namespace Dlubal.WS.RSection1.Model
         TYPE_METAL,
         
         /// <remarks/>
+        TYPE_PRESTRESSING_STEEL,
+        
+        /// <remarks/>
         TYPE_REINFORCING_STEEL,
         
         /// <remarks/>

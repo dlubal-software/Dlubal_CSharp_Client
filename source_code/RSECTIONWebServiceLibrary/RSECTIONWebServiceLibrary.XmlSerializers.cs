@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"05be67b9-3b45-45be-b8a5-480c4661851d,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"b63f6e89-3c8c-4044-bf49-5bd09f55e062,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -7265,6 +7265,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_GLASS: s = @"TYPE_GLASS"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_MASONRY: s = @"TYPE_MASONRY"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_METAL: s = @"TYPE_METAL"; break;
+                case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_PRESTRESSING_STEEL: s = @"TYPE_PRESTRESSING_STEEL"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_REINFORCING_STEEL: s = @"TYPE_REINFORCING_STEEL"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_SOIL: s = @"TYPE_SOIL"; break;
                 case global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_STEEL: s = @"TYPE_STEEL"; break;
@@ -33301,6 +33302,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"TYPE_GLASS": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_GLASS;
                 case @"TYPE_MASONRY": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_MASONRY;
                 case @"TYPE_METAL": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_METAL;
+                case @"TYPE_PRESTRESSING_STEEL": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_PRESTRESSING_STEEL;
                 case @"TYPE_REINFORCING_STEEL": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_REINFORCING_STEEL;
                 case @"TYPE_SOIL": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_SOIL;
                 case @"TYPE_STEEL": return global::Dlubal.WS.RSection1.Model.material_material_type.@TYPE_STEEL;
