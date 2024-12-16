@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rfem6.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.08.0009", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RFEM_6.08.0011", ConfigurationName="Dlubal.WS.Rfem6.Model.IRfemModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRfemModel
     {
@@ -2209,6 +2209,14 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_surfaces_by_mode_shapeResponse get_results_for_modal_analysis_surfaces_by_mode_shape(Dlubal.WS.Rfem6.Model.get_results_for_modal_analysis_surfaces_by_mode_shapeRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodal_release_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nodal_release_deformationsResponse get_results_for_nodal_release_deformations(Dlubal.WS.Rfem6.Model.get_results_for_nodal_release_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodal_release_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nodal_release_forcesResponse get_results_for_nodal_release_forces(Dlubal.WS.Rfem6.Model.get_results_for_nodal_release_forcesRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_nodes_by_eigenvector", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_nodes_by_eigenvectorResponse get_results_for_nodes_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_nodes_by_eigenvectorRequest request);
@@ -2334,6 +2342,15 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_members_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_strainsResponse get_results_for_pushover_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_nodal_release_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodal_release_deformationsResponse get_results_for_pushover_analysis_nodal_release_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodal_release_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_nodal_release_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodal_release_forcesResponse get_results_for_pushover_analysis_nodal_release_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_nodal_release_forcesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_pushover_analysis_nodes_deformations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2702,6 +2719,15 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsResponse get_results_for_spectral_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_strainsRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodal_release_deformation" +
+            "s", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodal_release_deformationsResponse get_results_for_spectral_analysis_nodal_release_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodal_release_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodal_release_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodal_release_forcesResponse get_results_for_spectral_analysis_nodal_release_forces(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodal_release_forcesRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_spectral_analysis_nodes_deformations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsResponse get_results_for_spectral_analysis_nodes_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_nodes_deformationsRequest request);
@@ -2978,6 +3004,16 @@ namespace Dlubal.WS.Rfem6.Model
             "ins", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_strainsResponse get_results_for_stability_incremental_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodal_releas" +
+            "e_deformations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodal_release_deformationsResponse get_results_for_stability_incremental_analysis_nodal_release_deformations(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodal_release_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodal_releas" +
+            "e_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodal_release_forcesResponse get_results_for_stability_incremental_analysis_nodal_release_forces(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_nodal_release_forcesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_stability_incremental_analysis_nodes_deform" +
             "ations", ReplyAction="*")]
@@ -4788,6 +4824,15 @@ namespace Dlubal.WS.Rfem6.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_members_strains", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_strainsResponse get_results_for_time_history_analysis_members_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_strainsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodal_release_deforma" +
+            "tions", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodal_release_deformationsResponse get_results_for_time_history_analysis_nodal_release_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodal_release_deformationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodal_release_forces", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodal_release_forcesResponse get_results_for_time_history_analysis_nodal_release_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_nodal_release_forcesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_time_history_analysis_nodes_accelerations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

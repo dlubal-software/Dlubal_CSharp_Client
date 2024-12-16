@@ -155,7 +155,7 @@ namespace Dlubal.WS.RSection1.Model
         RSTAB_9,
         
         /// <remarks/>
-        RWIND_2,
+        RWIND,
         
         /// <remarks/>
         RWIND_SIMULATION_1,
@@ -20230,6 +20230,10 @@ namespace Dlubal.WS.RSection1.Model
         
         private bool ultimate_strength_for_thicknessFieldSpecified;
         
+        private double saturated_specific_weightField;
+        
+        private bool saturated_specific_weightFieldSpecified;
+        
         private double yield_strengthField;
         
         private bool yield_strengthFieldSpecified;
@@ -20921,6 +20925,36 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        public double saturated_specific_weight
+        {
+            get
+            {
+                return this.saturated_specific_weightField;
+            }
+            set
+            {
+                this.saturated_specific_weightField = value;
+                this.RaisePropertyChanged("saturated_specific_weight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool saturated_specific_weightSpecified
+        {
+            get
+            {
+                return this.saturated_specific_weightFieldSpecified;
+            }
+            set
+            {
+                this.saturated_specific_weightFieldSpecified = value;
+                this.RaisePropertyChanged("saturated_specific_weightSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
         public double yield_strength
         {
             get
@@ -20950,7 +20984,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
         public double yield_strength_for_compression
         {
             get
@@ -20980,7 +21014,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
         public double yield_strength_for_tension
         {
             get
@@ -21010,7 +21044,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
         public int thickness_range_size
         {
             get
@@ -21040,7 +21074,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
         public double shear_modulus_x
         {
             get
@@ -21070,7 +21104,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
         public double shear_modulus_y
         {
             get
@@ -21100,7 +21134,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
         public double shear_modulus_z
         {
             get
@@ -21130,7 +21164,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
         public double strain_hardening_modulus
         {
             get
@@ -21160,7 +21194,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
         public double hardening_factor
         {
             get
@@ -21190,7 +21224,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
         public double limit_stresses_for_tension_x
         {
             get
@@ -21220,7 +21254,7 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
         public double limit_stresses_for_tension_y
         {
             get
