@@ -38,6 +38,22 @@
   * [License](#license)
   * [Contribute](#contribute) -->
 
+# Important Notice: Webservice Maintenance and Dlubal API Transition
+
+**Dear Users,**
+
+We would like to inform you that, effective **23.05.2025**, we are transitioning our existing Webservice into **maintenance mode**. This means that while the Webservice will continue to be available for existing use, **no new enhancements or functionality** will be added to it going forward.
+
+For **new projects**, we highly recommend using the **[Dlubal API](https://www.dlubal.com/en/solutions/dlubal-api/dlubal-api-ii)**, now based on **gRPC**. The new Dlubal API offers improved performance, scalability, and modern capabilities designed to better support your applications.
+
+### Key Points:
+- **Webservice**: Still available for use, but will **not be enhanced** with new functionality.
+- **[Dlubal API (gRPC)](https://www.dlubal.com/en/solutions/dlubal-api/dlubal-api-ii)**: Recommended for **new projects** as it provides better performance and modern features.
+
+If you have any questions or need assistance with transitioning to the Dlubal API, please feel free to reach out to our support team.
+
+Thank you for your continued support!
+
 ## Description
 
 This C# project is focused on opening [**RFEM 6**](https://www.dlubal.com/en/products/rfem-fea-software/what-is-rfem), [**RSTAB 9**](https://www.dlubal.com/en/products/rstab-beam-structures/what-is-rstab) and [**RSECTION 1**](https://www.dlubal.com/en/products/cross-section-properties-software/rsection) to all our customers, enabling them to interact with our applications on much higher level. If you are looking for tool to help you solve parametric models or optimization tasks, you are on the right place. This project and community will create support for all your projects. The goal is to create easily expandable C# library communicating instructions to RFEM / RSTAB through [Web Services](https://en.wikipedia.org/wiki/Web_service) (WS), [SOAP](https://cs.wikipedia.org/wiki/SOAP) and [WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language) technology.
