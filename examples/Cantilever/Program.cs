@@ -18,10 +18,6 @@ using System.Linq;
 
 namespace Cantilever
 {
-
-
-
-
     class Program
     {
         public static EndpointAddress Address { get; set; } = new EndpointAddress("http://localhost:8081");
@@ -668,27 +664,56 @@ namespace Cantilever
 
                 model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
 
-                members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
+                // create object location of member
+                object_location[] memberLocations = new object_location[1];
+                object_location memberLoc = new object_location
+                {
+                    type = object_types.E_OBJECT_TYPE_MEMBER,
+                    no = member.no,
+                    parent_no = 0
+                };
+
+                members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, memberLocations, axes_type.MEMBER_AXES);
                 Console.WriteLine("Internal forces for member");
                 foreach (var item in internalForcesMember1)
                 {
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
+                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_no != null ? item.row.node_no.ToString() : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
                     Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", item.row.internal_force_n.ToString(), item.row.internal_force_vy.ToString(), item.row.internal_force_vz.ToString(), item.row.internal_force_mt.ToString(), item.row.internal_force_my.ToString(), item.row.internal_force_mz.ToString());
 
                 }
 
+                memberLocations[0] = memberLoc;
+
                 Console.WriteLine("Global deformations for member");
-                members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
+                members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, memberLocations);
                 foreach (var item in globalDeformationsMember1)
                 {
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
-                    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
+                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t", item.row.node_no != null ? item.row.node_no.ToString() : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label);
+                    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {7}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
 
                 }
 
-                nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+                object_location[] nodeLocations = new object_location[2];
+                object_location nodeLoc1 = new object_location
+                {
+                    type = object_types.E_OBJECT_TYPE_NODE,
+                    no = 1,
+                    parent_no = 0
+                };
+
+                object_location nodeLoc2 = new object_location
+                {
+                    type = object_types.E_OBJECT_TYPE_NODE,
+                    no = 2,
+                    parent_no = 0
+                };
+
+                nodeLocations[0] = nodeLoc1;
+                nodeLocations[1] = nodeLoc2;
+
+                nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, nodeLocations);//all nodes -> null
                 Console.WriteLine("Node deformations");
                 foreach (var item in nodeDeformations)
                 {
@@ -696,12 +721,12 @@ namespace Cantilever
                     Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
 
                 }
-                nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+                nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, nodeLocations);//all nodes -> null
                 Console.WriteLine("Node reactions");
                 foreach (var item in nodeReactions)
                 {
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading?.ToString(), item.row.support_force_p_x?.value.ToString(), item.row.support_force_p_y?.value.ToString(), item.row.support_force_p_z?.value.ToString(), item.row.support_moment_m_x?.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
+                    Console.WriteLine("px {0}\t py {1}\t pz {2}\t mx {3}\t my {4}\t mz {5}\t label {6}\t", item.row.support_force_p_x.ToString(), item.row.support_force_p_y.ToString(), item.row.support_force_p_z.ToString(), item.row.support_moment_m_x.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
 
                 }
                 #endregion
@@ -767,15 +792,8 @@ namespace Cantilever
                 //}
                 #endregion
 
-
-
-
-
-
-
-
-                application.close_model(0, false);//close model
-                                                  //  application.close_application();
+                // application.close_model(0, false);//close model
+                //  application.close_application();
             }
             catch (Exception ex)
             {
