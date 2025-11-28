@@ -158,13 +158,13 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         /// This is example of testing method.
         /// Name of testing method has to start with word "Test" followed by group, subgroups and name of test at the end.
         /// Method is placed into the tree according to group and subgroups attached before the name of test.
-        /// Each section of method name is separated by "_". Character \u2040 is used as a "space",
+        /// Each cross_section of method name is separated by "_". Character \u2040 is used as a "space",
         /// because it is not possible to use real space character within the name of method.
         /// </summary>
         /// <returns>Each testing method must have boolean return value which contains result of test.</returns>
         public static bool Test_Group_Sub\u2040Group_Testing()
         {
-            // This opens named section within the log.
+            // This opens named cross_section within the log.
             DataLogger.AddLogStart("Testing something...");
 
             // This initialize ProgressBar parameters (min, max, current).
@@ -203,7 +203,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 DataLogger.ResetProgressBar();
             }
 
-            // This closes the last opened named section within the log.
+            // This closes the last opened named cross_section within the log.
             // It contains one of three results [DONE, FAILED, CANCELED].
             DataLogger.AddLogEnd(DataLogger.LogResultType.DONE);
             return true;

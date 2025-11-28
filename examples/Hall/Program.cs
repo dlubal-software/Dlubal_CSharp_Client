@@ -493,7 +493,7 @@ namespace Hall
             Console.WriteLine("Project description: " + model_Main_Parameters.project_description);
             #endregion
 
-            #region Materials, sections and thicknesses
+            #region Materials, cross_sections and thicknesses
             // create material
             material materialSteel = new material
             {
@@ -537,56 +537,56 @@ namespace Hall
                 material_typeSpecified = true
             };
 
-            // create section
-            section sectionSteelCSBeam = new section
+            // create cross_section
+            cross_section sectionSteelCSBeam = new cross_section
             {
                 no = 1,
                 material = materialSteel.no,
                 materialSpecified = true,
                 name = "IPE 200",
                 typeSpecified = true,
-                type = section_type.TYPE_STANDARDIZED_STEEL,
-                manufacturing_type = section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
+                type = cross_section_type.TYPE_STANDARDIZED_STEEL,
+                manufacturing_type = cross_section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
                 manufacturing_typeSpecified = true,
                 thin_walled_model = true,
                 thin_walled_modelSpecified = true,
             };
 
 
-            section sectionRectangle = new section
+            cross_section sectionRectangle = new cross_section
             {
                 no = 2,
                 material = materialConcrete.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                 parametrization_typeSpecified = true,
                 name = "R_M1 0.5/1.0", // width/height as in RFEM, SI units
             };
 
-            section sectionSquare = new section
+            cross_section sectionSquare = new cross_section
             {
                 no = 3,
                 material = materialConcrete.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
                 parametrization_typeSpecified = true,
                 name = "SQ_M1 0.5", // width as in RFEM
 
             };
 
-            section sectionSteelCSColumn = new section
+            cross_section sectionSteelCSColumn = new cross_section
             {
                 no = 4,
                 material = materialSteel.no,
                 materialSpecified = true,
                 name = "HEB 200",
                 typeSpecified = true,
-                type = section_type.TYPE_STANDARDIZED_STEEL,
-                manufacturing_type = section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
+                type = cross_section_type.TYPE_STANDARDIZED_STEEL,
+                manufacturing_type = cross_section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
                 manufacturing_typeSpecified = true,
                 thin_walled_model = true,
                 thin_walled_modelSpecified = true,
@@ -594,28 +594,28 @@ namespace Hall
                 rotation_angleSpecified = true,
             };
 
-            section sectionSquareTimber = new section
+            cross_section sectionSquareTimber = new cross_section
             {
                 no = 5,
                 material = materialTimber.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
                 parametrization_typeSpecified = true,
                 name = "SQ_M1 0.5", // width as in RFEM
 
             };
-            section sectionAluminium = new section
+            cross_section sectionAluminium = new cross_section
             {
                 no = 6,
                 material = materialAluminum.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_THIN_WALLED,
+                type = cross_section_type.TYPE_PARAMETRIC_THIN_WALLED,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU,
                 parametrization_typeSpecified = true,
-                manufacturing_type = section_manufacturing_type.MANUFACTURING_TYPE_WELDED,
+                manufacturing_type = cross_section_manufacturing_type.MANUFACTURING_TYPE_WELDED,
                 manufacturing_typeSpecified = true,
                 name = "UUESI 0.300/0.150/0.200/0.010/0.014/0.012/0.050/0.025/0.008/0.16/0/0/0/0", // width as in RFEM
             };
@@ -639,18 +639,18 @@ namespace Hall
                 model.set_material(materialReinforcementBars);
                 model.set_material(materialTimber);
                 model.set_material(materialAluminum);
-                model.set_section(sectionSteelCSBeam);
-                model.set_section(sectionRectangle);
-                model.set_section(sectionSquare);
-                model.set_section(sectionSteelCSColumn);
-                model.set_section(sectionSquareTimber);
-                model.set_section(sectionAluminium);
+                model.set_cross_section(sectionSteelCSBeam);
+                model.set_cross_section(sectionRectangle);
+                model.set_cross_section(sectionSquare);
+                model.set_cross_section(sectionSteelCSColumn);
+                model.set_cross_section(sectionSquareTimber);
+                model.set_cross_section(sectionAluminium);
                 model.set_thickness(slabThickness);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something wrong in setting materials and section data\n" + exception.Message + "\n");
+                logger.Error(exception, "Something wrong in setting materials and cross_section data\n" + exception.Message + "\n");
                 throw;
             }
             finally
@@ -661,14 +661,14 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of creation of materials and section data\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of creation of materials and cross_section data\n" + exception.Message + "\n");
 
                 }
             }
             #endregion
 
 
-            #region favorite section list
+            #region favorite cross_section list
             model.create_my_section_list("MyFavoriteList");
             model.add_section_to_my_section_list("MyFavoriteList", sectionSteelCSBeam.name);
             model.add_section_to_my_section_list("MyFavoriteList", sectionRectangle.name);
@@ -678,11 +678,11 @@ namespace Hall
             get_my_section_lists__list[] mySectionsList = model.get_my_section_lists();
             foreach (get_my_section_lists__list mySectionListItem in mySectionsList)
             {
-                string[] sections = mySectionListItem.list;
+                string[] cross_sections = mySectionListItem.list;
                 Console.WriteLine("Favorite list: {0}", mySectionListItem.name);
-                foreach (string section in sections)
+                foreach (string cross_section in cross_sections)
                 {
-                    Console.WriteLine("\tSection: {0}", section);
+                    Console.WriteLine("\tSection: {0}", cross_section);
                 }
             }
             // based on name
@@ -702,7 +702,7 @@ namespace Hall
             }
             catch (Exception exception)
             {
-                logger.Error(exception, "Something wrong in setting materials and section data\n" + exception.Message + "\n");
+                logger.Error(exception, "Something wrong in setting materials and cross_section data\n" + exception.Message + "\n");
                 throw;
             }
             #endregion
@@ -1195,9 +1195,9 @@ namespace Hall
                         no = memberID,
                         line = lineC.no,
                         lineSpecified = true,
-                        section_start = sectionSquare.no,
+                        cross_section_start = sectionSquare.no,
                         section_startSpecified = true,
-                        section_end = sectionSquare.no,
+                        cross_section_end = sectionSquare.no,
                         section_endSpecified = true,
                         comment = "concrete column",
                         concrete_durability = concrete_Durability.no,
@@ -1243,9 +1243,9 @@ namespace Hall
                         no = memberID,
                         line = lineS.no,
                         lineSpecified = true,
-                        section_start = sectionSteelCSColumn.no,
+                        cross_section_start = sectionSteelCSColumn.no,
                         section_startSpecified = true,
-                        section_end = sectionSteelCSColumn.no,
+                        cross_section_end = sectionSteelCSColumn.no,
                         section_endSpecified = true,
                         comment = "steel column",
                     };
@@ -1276,9 +1276,9 @@ namespace Hall
                         no = memberID,
                         line = lineC.no,
                         lineSpecified = true,
-                        section_start = sectionRectangle.no,
+                        cross_section_start = sectionRectangle.no,
                         section_startSpecified = true,
-                        section_end = sectionSquare.no,
+                        cross_section_end = sectionSquare.no,
                         section_endSpecified = true,
                         comment = "concrete beam",
                         concrete_durability = concrete_Durability.no,
@@ -1347,9 +1347,9 @@ namespace Hall
                         no = memberID,
                         line = lineS.no,
                         lineSpecified = true,
-                        section_start = sectionSteelCSBeam.no,
+                        cross_section_start = sectionSteelCSBeam.no,
                         section_startSpecified = true,
-                        section_end = sectionSteelCSBeam.no,
+                        cross_section_end = sectionSteelCSBeam.no,
                         section_endSpecified = true,
                         comment = "steel beam",
 
@@ -1469,13 +1469,13 @@ namespace Hall
             #endregion
 
             #region Timber local reduction
-            timber_member_local_section_reduction_components_row timberSectionReductionComponent = new timber_member_local_section_reduction_components_row()
+            timber_member_local_cross_section_reduction_components_row timberSectionReductionComponent = new timber_member_local_cross_section_reduction_components_row()
             {
                 no = 1,
-                row = new timber_member_local_section_reduction_components()
+                row = new timber_member_local_cross_section_reduction_components()
                 {
                     note = "Scripted local reduction",
-                    reduction_type = timber_member_local_section_reduction_components_reduction_type.REDUCTION_COMPONENT_TYPE_END_NOTCH,
+                    reduction_type = timber_member_local_cross_section_reduction_components_reduction_type.REDUCTION_COMPONENT_TYPE_END_NOTCH,
                     reduction_typeSpecified = true,
                     position = 1.5,
                     positionSpecified = true,
@@ -1491,18 +1491,18 @@ namespace Hall
                     lengthSpecified = true,
                 }
             };
-            timber_member_local_section_reduction timberLocalReduction = new timber_member_local_section_reduction()
+            timber_member_local_cross_section_reduction timberLocalReduction = new timber_member_local_cross_section_reduction()
             {
                 no = 1,
                 name = "Timber local reduction",
                 user_defined_name_enabled = true,
                 user_defined_name_enabledSpecified = true,
-                components = new timber_member_local_section_reduction_components_row[] { timberSectionReductionComponent },
+                components = new timber_member_local_cross_section_reduction_components_row[] { timberSectionReductionComponent },
             };
             try
             {
                 model.begin_modification("Set timber local reduction");
-                model.set_timber_member_local_section_reduction(timberLocalReduction);
+                model.set_timber_member_local_cross_section_reduction(timberLocalReduction);
             }
             catch (Exception exception)
             {
@@ -1725,9 +1725,9 @@ namespace Hall
                 no = memberID,
                 line = lineTimberOne.no,
                 lineSpecified = true,
-                section_start = sectionSquareTimber.no,
+                cross_section_start = sectionSquareTimber.no,
                 section_startSpecified = true,
-                section_end = sectionSquare.no,
+                cross_section_end = sectionSquare.no,
                 section_endSpecified = true,
                 comment = "timber beam",
                 timber_service_class = serviceClass.no,
@@ -1740,9 +1740,9 @@ namespace Hall
                 no = memberID,
                 line = lineTimberTwo.no,
                 lineSpecified = true,
-                section_start = sectionSquareTimber.no,
+                cross_section_start = sectionSquareTimber.no,
                 section_startSpecified = true,
-                section_end = sectionSquare.no,
+                cross_section_end = sectionSquare.no,
                 section_endSpecified = true,
                 comment = "timber beam",
                 timber_service_class = serviceClass.no,
@@ -1756,9 +1756,9 @@ namespace Hall
                 no = memberID,
                 line = lineAluminum.no,
                 lineSpecified = true,
-                section_start = sectionAluminium.no,
+                cross_section_start = sectionAluminium.no,
                 section_startSpecified = true,
-                section_end = sectionSquare.no,
+                cross_section_end = sectionSquare.no,
                 section_endSpecified = true,
                 comment = "Aluminium beam",
             };
@@ -3224,11 +3224,11 @@ namespace Hall
 
             #endregion
 
-            #region Aluminum member local section reduction
-            aluminum_member_local_section_reduction_components_row aluminumReductionComponentDesignParams = new aluminum_member_local_section_reduction_components_row()
+            #region Aluminum member local cross_section reduction
+            aluminum_member_local_cross_section_reduction_components_row aluminumReductionComponentDesignParams = new aluminum_member_local_cross_section_reduction_components_row()
             {
                 no = 2,
-                row = new aluminum_member_local_section_reduction_components()
+                row = new aluminum_member_local_cross_section_reduction_components()
                 {
                     // reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_DESIGN_PARAMETERS,
                     // reduction_typeSpecified = true,
@@ -3254,10 +3254,10 @@ namespace Hall
 
                 }
             };
-            aluminum_member_local_section_reduction_components_row aluminumReductionComponentSection = new aluminum_member_local_section_reduction_components_row()
+            aluminum_member_local_cross_section_reduction_components_row aluminumReductionComponentSection = new aluminum_member_local_cross_section_reduction_components_row()
             {
                 no = 1,
-                row = new aluminum_member_local_section_reduction_components()
+                row = new aluminum_member_local_cross_section_reduction_components()
                 {
                     // reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_SECTION_VALUES,
                     // reduction_typeSpecified = true,
@@ -3283,26 +3283,26 @@ namespace Hall
 
                 }
             };
-            aluminum_member_local_section_reduction aluminumMemberLocalSectionReduction = new aluminum_member_local_section_reduction()
+            aluminum_member_local_cross_section_reduction aluminumMemberLocalCrossSectionReduction = new aluminum_member_local_cross_section_reduction()
             {
                 no = 1,
                 user_defined_name_enabled = false,
                 user_defined_name_enabledSpecified = true,
-                name = "Aluminum member local section reduction",
-                comment = "Aluminum member local section reduction",
+                name = "Aluminum member local cross_section reduction",
+                comment = "Aluminum member local cross_section reduction",
                 members = new int[] { 39 },
-                components = new aluminum_member_local_section_reduction_components_row[] { aluminumReductionComponentSection, aluminumReductionComponentDesignParams },
+                components = new aluminum_member_local_cross_section_reduction_components_row[] { aluminumReductionComponentSection, aluminumReductionComponentDesignParams },
             };
 
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
-                // model.set_aluminum_member_local_section_reduction(aluminumMemberLocalSectionReduction);
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
+                // model.set_aluminum_member_local_cross_section_reduction(aluminumMemberLocalCrossSectionReduction);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3313,7 +3313,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
                 }
             }
             #endregion
@@ -3343,13 +3343,13 @@ namespace Hall
             };
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
                 model.set_member_shear_panel(aluminumShearPanel);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3360,7 +3360,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
                 }
             }
             #endregion
@@ -3392,13 +3392,13 @@ namespace Hall
             };
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
                 model.set_member_rotational_restraint(aluminumMemberRotationalRestraint);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3409,7 +3409,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
                 }
             }
             #endregion
@@ -3473,13 +3473,13 @@ namespace Hall
             };
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
                 model.set_aluminum_member_transverse_weld(aluminumTransverseWeld);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3490,7 +3490,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
 
                 }
             }
@@ -4938,7 +4938,7 @@ namespace Hall
             foreach (var item in globalDeformationsMember1)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
+                Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.cross_section);
                 Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
 
             }
@@ -5096,13 +5096,13 @@ namespace Hall
             {
                 if (!item.description.Contains("Total"))
                 {
-                    Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                    item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                    Console.WriteLine("Material no: {0}\t Material name: {1}\t cross_section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
+                    item.description, item.row.material_name, item.row.cross_section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
                 }
                 else
                 {
                     Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                 item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                 item.description, item.row.material_name, item.row.cross_section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
 
                 }
 

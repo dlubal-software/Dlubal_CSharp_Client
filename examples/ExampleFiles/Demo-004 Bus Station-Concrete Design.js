@@ -51,9 +51,9 @@ createStandardMaterial(4, 'B550M(A) | EN 1992-1-1:2004/A1:2014');
 
 // Section
 createStandardSection(1, 1, 'R_M1 200/400');
-sections[1].shear_stiffness_deactivated = true;
+cross_sections[1].shear_stiffness_deactivated = true;
 createStandardSection(2, 1, 'R_M1 200/200');
-sections[1].shear_stiffness_deactivated = true;
+cross_sections[1].shear_stiffness_deactivated = true;
 
 // Thicknesses
 createStandardThickness(1, 2, t);
@@ -129,15 +129,15 @@ createLine( 23, '21,19');
 
 if (RFEM)
 {
-    createMember2(1, '18', {section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
-    createMember2(2, '3', {section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
-    createMember2(3, '19', {section_start:2});
+    createMember2(1, '18', {cross_section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
+    createMember2(2, '3', {cross_section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
+    createMember2(3, '19', {cross_section_start:2});
 }
 else
 {
-    createMember(1, '4,12', {section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
-    createMember(2, '12,3', {section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
-    createMember(3, '12,16', {section_start:2});
+    createMember(1, '4,12', {cross_section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
+    createMember(2, '12,3', {cross_section_start:1, member_eccentricity_start:1, member_eccentricity_end:1});
+    createMember(3, '12,16', {cross_section_start:2});
 }
 
 createSurface( 1, '4,13,22,21,12,11', {thickness:1});
@@ -154,7 +154,7 @@ createOpening(5, '7-10');
 createNodalSupport( 1, '16', ["inf", "inf", "inf", 0, 0, "inf"]);
 createLineSupport( 1, '2,12,16,22', ["inf", "inf", "inf", 0, 0, "inf"]);
 
-createMemberEccentricity(1, [0,0,0],{specification_type:member_eccentricities.TYPE_RELATIVE_AND_ABSOLUTE, vertical_section_alignment: member_eccentricities.ALIGN_TOP, horizontal_section_alignment: member_eccentricities.ALIGN_MIDDLE})
+createMemberEccentricity(1, [0,0,0],{specification_type:member_eccentricities.TYPE_RELATIVE_AND_ABSOLUTE, vertical_cross_section_alignment: member_eccentricities.ALIGN_TOP, horizontal_cross_section_alignment: member_eccentricities.ALIGN_MIDDLE})
 
 //GENERATE LOADING
 createSurfaceLoad( 1, 2, '4', 0.75kN/m^2);

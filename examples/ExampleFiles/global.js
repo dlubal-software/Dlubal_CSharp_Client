@@ -134,7 +134,7 @@ function createMember(index, nodes, options)
     Example:
         createMember(int, str);
         createMember( 1, '1,2');
-        createMember(6, '1,5',{section_start: 2, member_hinge_start: 1});
+        createMember(6, '1,5',{cross_section_start: 2, member_hinge_start: 1});
     */
     var member =  members.create(index);
     if (nodes!="") {
@@ -155,7 +155,7 @@ function createMember(index, nodes, options)
     {
         //Default settings
         member.type = members.TYPE_BEAM;
-        member.section_start = 1;
+        member.cross_section_start = 1;
     }
     else
     {
@@ -176,7 +176,7 @@ function createMember2(index, lines, options)
     Example:
         createMember(int, str);
         createMember( 1, '1,2');
-        createMember(6, '1,5',{section_start: 2, member_hinge_start: 1});
+        createMember(6, '1,5',{cross_section_start: 2, member_hinge_start: 1});
     */
     var member =  members.create(index);
     members[index].line = lines;
@@ -184,7 +184,7 @@ function createMember2(index, lines, options)
     {
         //Default settings
         members[index].type = members.TYPE_BEAM;
-        members[index].section_start = 1;
+        members[index].cross_section_start = 1;
     }
     else
     {
@@ -865,11 +865,11 @@ function createStandardSection(index, material, databaseName)
         createStandardSection(int, int, str);
         createStandardSection(1, 1, 'IPE 80');
     */
-    var section = sections.create(index);
-    sections[index].material = material;
-    sections[index].name = databaseName;
+    var cross_section = cross_sections.create(index);
+    cross_sections[index].material = material;
+    cross_sections[index].name = databaseName;
 
-    return section;
+    return cross_section;
 }
 
 function createStandardThickness(index, material, uniformThickness)
@@ -891,10 +891,10 @@ function createStandardThickness(index, material, uniformThickness)
     return thickness;
 }
 
-function createStandardMember(index, nodes, section)
+function createStandardMember(index, nodes, cross_section)
 {
     /*
-    Create standard member with section and (also with line)
+    Create standard member with cross_section and (also with line)
     Example:
         createStandardMember(int, str, str);
         createStandardMember( 1, '1,2', '1');
@@ -915,7 +915,7 @@ function createStandardMember(index, nodes, section)
         members[index].node_start = nodes[0];
         members[index].node_end = nodes[1];
     }
-    members[index].section_start = section;
+    members[index].cross_section_start = cross_section;
 
     return {
         line: line,
@@ -1084,7 +1084,7 @@ function copyMember(index, vector, options)
     Create Copy of member (with line, nodes)
     Examples:
         copyMember(2, [1,0,0]);
-        copyMember(1, [0,-1,0],{section_start:1});
+        copyMember(1, [0,-1,0],{cross_section_start:1});
      */
     if (RFEM)
     {

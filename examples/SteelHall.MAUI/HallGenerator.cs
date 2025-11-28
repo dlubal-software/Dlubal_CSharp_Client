@@ -102,44 +102,44 @@ namespace SteelHall.MAUI
                     name = "S235JR"
                 };
 
-                List<section> sections = new List<section>();
-                section section1 = new section
+                List<cross_section> cross_sections = new List<cross_section>();
+                cross_section section1 = new cross_section
                 {
                     no = 1,
                     material = steel.no,
                     materialSpecified = true,
                     name = "HEA 240",
-                    comment = "frame section"
+                    comment = "frame cross_section"
                 };
-                section section2 = new section
+                cross_section section2 = new cross_section
                 {
                     no = 2,
                     material = steel.no,
                     materialSpecified = true,
                     name = "IPE 200",
-                    comment = "side member section"
+                    comment = "side member cross_section"
                 };
-                section section3 = new section
+                cross_section section3 = new cross_section
                 {
                     no = 3,
                     material = steel.no,
                     materialSpecified = true,
                     name = "ROUND 0.016/H",
-                    comment = "bracing section"
+                    comment = "bracing cross_section"
                 };
-                section section4 = new section
+                cross_section section4 = new cross_section
                 {
                     no = 4,
                     material = steel.no,
                     materialSpecified = true,
                     name = "HEA 400",
-                    comment = "section for tapered member"
+                    comment = "cross_section for tapered member"
                 };
 
-                sections.Add(section1);
-                sections.Add(section2);
-                sections.Add(section3);
-                sections.Add(section4);
+                cross_sections.Add(section1);
+                cross_sections.Add(section2);
+                cross_sections.Add(section3);
+                cross_sections.Add(section4);
 
                 //Create nodes
                 SortedList<int, node> nodes = new SortedList<int, node>();
@@ -406,9 +406,9 @@ namespace SteelHall.MAUI
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_start = section1.no,
+                        cross_section_start = section1.no,
                         section_startSpecified = true,
-                        section_end = section1.no,
+                        cross_section_end = section1.no,
                         section_endSpecified = true,                        
                         comment = "column"
                     };
@@ -426,25 +426,25 @@ namespace SteelHall.MAUI
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_distribution_type = member_section_distribution_type.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_START_OF_MEMBER,
+                        cross_section_distribution_type = member_cross_section_distribution_type.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_START_OF_MEMBER,
                         section_distribution_typeSpecified = true,
                         section_distance_from_start_relative = 0.25,
                         section_distance_from_start_relativeSpecified = true,
-                        section_distance_from_end_relative = 0.75,
+                        cross_section_distance_from_end_relative = 0.75,
                         section_distance_from_end_relativeSpecified = true,
-                        section_distance_from_start_is_defined_as_relative = true,
+                        cross_section_distance_from_start_is_defined_as_relative = true,
                         section_distance_from_end_is_defined_as_relativeSpecified = true,
-                        section_distance_from_end_is_defined_as_relative = true,
+                        cross_section_distance_from_end_is_defined_as_relative = true,
                         section_distance_from_start_is_defined_as_relativeSpecified = true,
-                        section_alignment = member_section_alignment.SECTION_ALIGNMENT_TOP,
+                        cross_section_alignment = member_cross_section_alignment.SECTION_ALIGNMENT_TOP,
                         section_alignmentSpecified = true,
                         reference_type = member_reference_type.REFERENCE_TYPE_L,
                         reference_typeSpecified = true,
                         design_properties_via_member = false,
                         design_properties_via_memberSpecified = true,
-                        section_start = section4.no,
+                        cross_section_start = section4.no,
                         section_startSpecified = true,
-                        section_end = section1.no,
+                        cross_section_end = section1.no,
                         section_endSpecified = true,
                         comment = "bar"
                     };
@@ -462,9 +462,9 @@ namespace SteelHall.MAUI
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_start = section2.no,
+                        cross_section_start = section2.no,
                         section_startSpecified = true,
-                        section_end = section2.no,
+                        cross_section_end = section2.no,
                         section_endSpecified = true,
                         comment = "side member"
                     };
@@ -482,9 +482,9 @@ namespace SteelHall.MAUI
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_start = section3.no,
+                        cross_section_start = section3.no,
                         section_startSpecified = true,
-                        section_end = section3.no,
+                        cross_section_end = section3.no,
                         section_endSpecified = true,
                         type = member_type.TYPE_TENSION,
                         typeSpecified = true,
@@ -504,9 +504,9 @@ namespace SteelHall.MAUI
                         no = memberId,
                         line = lineItem.Key,
                         lineSpecified = true,
-                        section_start = section3.no,
+                        cross_section_start = section3.no,
                         section_startSpecified = true,
-                        section_end = section3.no,
+                        cross_section_end = section3.no,
                         section_endSpecified = true,
                         type = member_type.TYPE_TENSION,
                         typeSpecified = true,
@@ -554,9 +554,9 @@ namespace SteelHall.MAUI
                     this.Model.begin_modification("Geometry");
                     this.Model.set_material(steel);
 
-                    foreach (section section in sections)
+                    foreach (cross_section cross_section in cross_sections)
                     {
-                        this.Model.set_section(section);
+                        this.Model.set_cross_section(cross_section);
                     }
                     foreach (KeyValuePair<int, node> nodeItem in nodes)
                     {

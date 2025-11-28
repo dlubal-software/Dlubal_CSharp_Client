@@ -296,14 +296,14 @@ namespace RSECTION_ConsoleExample
 
             };
 
-            section sectionRectangle = new section
+            cross_section sectionRectangle = new cross_section
             {
                 no = 2,
                 material = 1,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                 parametrization_typeSpecified = true,
                 name = "R_M1 0.5/1.0", // width/height as in RFEM, SI units
                 location_of_centroidal_axis_y = 0.25,
@@ -336,7 +336,7 @@ namespace RSECTION_ConsoleExample
                 modelRsection.set_opening(openingOne);
                 modelRsection.set_material(concrete);
                 modelRsection.set_part(concretePart);
-                modelRsection.set_section(sectionRectangle);
+                modelRsection.set_cross_section(sectionRectangle);
             }
             catch (Exception exception)
             {

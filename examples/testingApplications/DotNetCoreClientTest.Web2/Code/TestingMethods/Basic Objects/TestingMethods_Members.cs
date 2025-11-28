@@ -18,7 +18,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
         /// <param name="memberNo">Member No.</param>
         /// <param name="nodeOffsetX">Offset for coordinate in axis x.</param>
         /// <param name="materialNo">Material No. If not set then default material number is used.</param>
-        /// <param name="sectionNo">Section No. If not set then default section number is used.</param>
+        /// <param name="sectionNo">Section No. If not set then default cross_section number is used.</param>
         /// <param name="coordinateSystemNo">Coordinate system No. If not sed then global coordinate system is used.</param>
         private static void SetDefaultMember(int memberNo, double nodeOffsetX = 0.0, int materialNo = 0, int sectionNo = 0, int coordinateSystemNo = 0)
         {
@@ -36,15 +36,15 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             };
             SoapModelClient.set_material(material);
 
-            // section
-            section section = new section
+            // cross_section
+            cross_section cross_section = new cross_section
             {
                 no = sectionNo > 0 ? sectionNo : SECTION_NO,
                 name = SECTION_I,
                 material = material.no,
                 materialSpecified = true
             };
-            SoapModelClient.set_section(section);
+            SoapModelClient.set_cross_section(cross_section);
 
             // coordinate system
             if (coordinateSystemNo > 0)
@@ -88,7 +88,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #elif RSTAB
                 nodes = new int[] { nodes[0].no, nodes[1].no },
 #endif
-                section_start = section.no,
+                cross_section_start = cross_section.no,
                 section_startSpecified = true
             };
             SoapModelClient.set_member(member);
@@ -127,16 +127,16 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.SetProgressBarValue(10);
 
-                // create section
-                DataLogger.AddText($"Creating section (ID = {SECTION_ID}, Name = {SECTION_I}).");
-                section section = new section
+                // create cross_section
+                DataLogger.AddText($"Creating cross_section (ID = {SECTION_ID}, Name = {SECTION_I}).");
+                cross_section cross_section = new cross_section
                 {
                     no = SECTION_ID,
                     name = SECTION_I,
                     material = MATERIAL_ID,
                     materialSpecified = true
                 };
-                SoapModelClient.set_section(section);
+                SoapModelClient.set_cross_section(cross_section);
 
                 DataLogger.SetProgressBarValue(20);
 
@@ -183,7 +183,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #elif RSTAB
                     nodes = new int[] { NODE_1_ID, NODE_2_ID },
 #endif
-                    section_start = SECTION_ID,
+                    cross_section_start = SECTION_ID,
                     section_startSpecified = true
                 };
                 SoapModelClient.set_member(member);

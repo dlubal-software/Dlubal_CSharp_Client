@@ -46,11 +46,11 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.add_section_to_my_section_list(request);
         }
         
-        public void add_section_to_my_section_list(string list_name, string section_name)
+        public void add_section_to_my_section_list(string list_name, string cross_section_name)
         {
             Dlubal.WS.Rstab9.Model.add_section_to_my_section_listRequest inValue = new Dlubal.WS.Rstab9.Model.add_section_to_my_section_listRequest();
             inValue.list_name = list_name;
-            inValue.section_name = section_name;
+            inValue.cross_section_name = cross_section_name;
             Dlubal.WS.Rstab9.Model.add_section_to_my_section_listResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).add_section_to_my_section_list(inValue);
         }
         
@@ -258,11 +258,11 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.delete_section_from_my_section_list(request);
         }
         
-        public void delete_section_from_my_section_list(string list_name, string section_name)
+        public void delete_section_from_my_section_list(string list_name, string cross_section_name)
         {
             Dlubal.WS.Rstab9.Model.delete_section_from_my_section_listRequest inValue = new Dlubal.WS.Rstab9.Model.delete_section_from_my_section_listRequest();
             inValue.list_name = list_name;
-            inValue.section_name = section_name;
+            inValue.cross_section_name = cross_section_name;
             Dlubal.WS.Rstab9.Model.delete_section_from_my_section_listResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).delete_section_from_my_section_list(inValue);
         }
         
@@ -658,18 +658,18 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_aluminum_effective_lengths(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.aluminum_member_local_section_reduction get_aluminum_member_local_section_reduction(int no)
+        public Dlubal.WS.Rstab9.Model.aluminum_member_local_cross_section_reduction get_aluminum_member_local_cross_section_reduction(int no)
         {
             Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_aluminum_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_aluminum_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest request)
         {
-            return base.Channel.get_aluminum_member_local_section_reduction(request);
+            return base.Channel.get_aluminum_member_local_cross_section_reduction(request);
         }
         
         public Dlubal.WS.Rstab9.Model.aluminum_member_transverse_weld get_aluminum_member_transverse_weld(int no)
@@ -6809,16 +6809,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_section(Dlubal.WS.Rstab9.Model.get_sectionRequest request)
+        Dlubal.WS.Rstab9.Model.get_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_cross_section(Dlubal.WS.Rstab9.Model.get_sectionRequest request)
         {
-            return base.Channel.get_section(request);
+            return base.Channel.get_cross_section(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.section get_section(int no)
+        public Dlubal.WS.Rstab9.Model.cross_section get_cross_section(int no)
         {
             Dlubal.WS.Rstab9.Model.get_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_sectionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_section(inValue);
+            Dlubal.WS.Rstab9.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_cross_section(inValue);
             return retVal.value;
         }
         
@@ -6962,16 +6962,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest request)
         {
-            return base.Channel.get_steel_member_local_section_reduction(request);
+            return base.Channel.get_steel_member_local_cross_section_reduction(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.steel_member_local_section_reduction get_steel_member_local_section_reduction(int no)
+        public Dlubal.WS.Rstab9.Model.steel_member_local_cross_section_reduction get_steel_member_local_cross_section_reduction(int no)
         {
             Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
@@ -7073,16 +7073,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest request)
         {
-            return base.Channel.get_timber_member_local_section_reduction(request);
+            return base.Channel.get_timber_member_local_cross_section_reduction(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.timber_member_local_section_reduction get_timber_member_local_section_reduction(int no)
+        public Dlubal.WS.Rstab9.Model.timber_member_local_cross_section_reduction get_timber_member_local_cross_section_reduction(int no)
         {
             Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
@@ -7343,16 +7343,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest request)
         {
-            return base.Channel.set_aluminum_member_local_section_reduction(request);
+            return base.Channel.set_aluminum_member_local_cross_section_reduction(request);
         }
         
-        public void set_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.aluminum_member_local_section_reduction value)
+        public void set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.aluminum_member_local_cross_section_reduction value)
         {
             Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_aluminum_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_aluminum_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8171,16 +8171,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_section(Dlubal.WS.Rstab9.Model.set_sectionRequest request)
+        Dlubal.WS.Rstab9.Model.set_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_cross_section(Dlubal.WS.Rstab9.Model.set_sectionRequest request)
         {
-            return base.Channel.set_section(request);
+            return base.Channel.set_cross_section(request);
         }
         
-        public void set_section(Dlubal.WS.Rstab9.Model.section value)
+        public void set_cross_section(Dlubal.WS.Rstab9.Model.cross_section value)
         {
             Dlubal.WS.Rstab9.Model.set_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.set_sectionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_section(inValue);
+            Dlubal.WS.Rstab9.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_cross_section(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8314,16 +8314,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest request)
         {
-            return base.Channel.set_steel_member_local_section_reduction(request);
+            return base.Channel.set_steel_member_local_cross_section_reduction(request);
         }
         
-        public void set_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.steel_member_local_section_reduction value)
+        public void set_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.steel_member_local_cross_section_reduction value)
         {
             Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8418,16 +8418,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest request)
         {
-            return base.Channel.set_timber_member_local_section_reduction(request);
+            return base.Channel.set_timber_member_local_cross_section_reduction(request);
         }
         
-        public void set_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.timber_member_local_section_reduction value)
+        public void set_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.timber_member_local_cross_section_reduction value)
         {
             Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

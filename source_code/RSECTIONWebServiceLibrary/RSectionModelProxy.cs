@@ -1568,7 +1568,7 @@ namespace Dlubal.WS.RSection1.Model
         E_OBJECT_TYPE_POINT,
         
         /// <remarks/>
-        E_OBJECT_TYPE_SECTION,
+        E_OBJECT_TYPE_CROSS_SECTION,
         
         /// <remarks/>
         E_OBJECT_TYPE_STIRRUP,
@@ -1720,7 +1720,7 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public enum section_combination_type
+    public enum cross_section_combination_type
     {
         
         /// <remarks/>
@@ -1944,7 +1944,7 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public enum section_manufacturing_type
+    public enum cross_section_manufacturing_type
     {
         
         /// <remarks/>
@@ -1970,7 +1970,7 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public enum section_parametrization_type
+    public enum cross_section_parametrization_type
     {
         
         /// <remarks/>
@@ -2455,7 +2455,7 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public enum section_type
+    public enum cross_section_type
     {
         
         /// <remarks/>
@@ -2776,16 +2776,16 @@ namespace Dlubal.WS.RSection1.Model
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string section_name;
+        public string cross_section_name;
         
         public add_section_to_my_section_listRequest()
         {
         }
         
-        public add_section_to_my_section_listRequest(string list_name, string section_name)
+        public add_section_to_my_section_listRequest(string list_name, string cross_section_name)
         {
             this.list_name = list_name;
-            this.section_name = section_name;
+            this.cross_section_name = cross_section_name;
         }
     }
     
@@ -5021,16 +5021,16 @@ namespace Dlubal.WS.RSection1.Model
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string section_name;
+        public string cross_section_name;
         
         public delete_section_from_my_section_listRequest()
         {
         }
         
-        public delete_section_from_my_section_listRequest(string list_name, string section_name)
+        public delete_section_from_my_section_listRequest(string list_name, string cross_section_name)
         {
             this.list_name = list_name;
-            this.section_name = section_name;
+            this.cross_section_name = cross_section_name;
         }
     }
     
@@ -10811,7 +10811,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("section_name", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("cross_section_name", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
         public string[] list
         {
             get
@@ -11787,7 +11787,7 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="get_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_cross_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class get_sectionRequest
     {
         
@@ -11808,19 +11808,19 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="get_sectionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
-    public partial class get_sectionResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="get_cross_sectionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class get_cross_sectionResponse
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Dlubal.WS.RSection1.Model.section value;
+        public Dlubal.WS.RSection1.Model.cross_section value;
         
-        public get_sectionResponse()
+        public get_cross_sectionResponse()
         {
         }
         
-        public get_sectionResponse(Dlubal.WS.RSection1.Model.section value)
+        public get_cross_sectionResponse(Dlubal.WS.RSection1.Model.cross_section value)
         {
             this.value = value;
         }
@@ -33275,24 +33275,24 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.dlubal.com/rsection.xsd")]
-    public partial class section : object, System.ComponentModel.INotifyPropertyChanged
+    public partial class cross_section : object, System.ComponentModel.INotifyPropertyChanged
     {
         
         private int noField;
         
-        private section_type typeField;
+        private cross_section_type typeField;
         
         private bool typeFieldSpecified;
         
-        private section_parametrization_type parametrization_typeField;
+        private cross_section_parametrization_type parametrization_typeField;
         
         private bool parametrization_typeFieldSpecified;
         
-        private section_manufacturing_type manufacturing_typeField;
+        private cross_section_manufacturing_type manufacturing_typeField;
         
         private bool manufacturing_typeFieldSpecified;
         
-        private section_combination_type combination_typeField;
+        private cross_section_combination_type combination_typeField;
         
         private bool combination_typeFieldSpecified;
         
@@ -35307,7 +35307,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public section_type type
+        public cross_section_type type
         {
             get
             {
@@ -35337,7 +35337,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public section_parametrization_type parametrization_type
+        public cross_section_parametrization_type parametrization_type
         {
             get
             {
@@ -35367,7 +35367,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public section_manufacturing_type manufacturing_type
+        public cross_section_manufacturing_type manufacturing_type
         {
             get
             {
@@ -35397,7 +35397,7 @@ namespace Dlubal.WS.RSection1.Model
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public section_combination_type combination_type
+        public cross_section_combination_type combination_type
         {
             get
             {
@@ -50969,19 +50969,19 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="set_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_cross_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
     public partial class set_sectionRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Dlubal.WS.RSection1.Model.section value;
+        public Dlubal.WS.RSection1.Model.cross_section value;
         
         public set_sectionRequest()
         {
         }
         
-        public set_sectionRequest(Dlubal.WS.RSection1.Model.section value)
+        public set_sectionRequest(Dlubal.WS.RSection1.Model.cross_section value)
         {
             this.value = value;
         }
@@ -50990,11 +50990,11 @@ namespace Dlubal.WS.RSection1.Model
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="set_sectionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
-    public partial class set_sectionResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="set_cross_sectionResponse", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
+    public partial class set_cross_sectionResponse
     {
         
-        public set_sectionResponse()
+        public set_cross_sectionResponse()
         {
         }
     }

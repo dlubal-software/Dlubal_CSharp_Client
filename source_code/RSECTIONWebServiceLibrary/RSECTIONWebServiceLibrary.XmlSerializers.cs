@@ -17,7 +17,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 WriteElementString(@"list_name", @"", ((global::System.String)p[0]));
             }
             if (pLength > 1) {
-                WriteElementString(@"section_name", @"", ((global::System.String)p[1]));
+                WriteElementString(@"cross_section_name", @"", ((global::System.String)p[1]));
             }
             WriteEndElement();
         }
@@ -308,7 +308,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 WriteElementString(@"list_name", @"", ((global::System.String)p[0]));
             }
             if (pLength > 1) {
-                WriteElementString(@"section_name", @"", ((global::System.String)p[1]));
+                WriteElementString(@"cross_section_name", @"", ((global::System.String)p[1]));
             }
             WriteEndElement();
         }
@@ -1772,7 +1772,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteStartDocument();
             TopLevelElement();
             int pLength = p.Length;
-            WriteStartElement(@"get_section", @"http://www.dlubal.com/rsection.xsd", null, false);
+            WriteStartElement(@"get_cross_section", @"http://www.dlubal.com/rsection.xsd", null, false);
             if (pLength > 0) {
                 WriteElementStringRaw(@"no", @"", System.Xml.XmlConvert.ToString((global::System.Int32)((global::System.Int32)p[0])));
             }
@@ -1783,9 +1783,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteStartDocument();
             TopLevelElement();
             int pLength = p.Length;
-            WriteStartElement(@"get_sectionResponse", @"http://www.dlubal.com/rsection.xsd", null, false);
+            WriteStartElement(@"get_cross_sectionResponse", @"http://www.dlubal.com/rsection.xsd", null, false);
             if (pLength > 0) {
-                Write174_section(@"value", @"", ((global::Dlubal.WS.RSection1.Model.section)p[0]), false, false);
+                Write174_section(@"value", @"", ((global::Dlubal.WS.RSection1.Model.cross_section)p[0]), false, false);
             }
             WriteEndElement();
         }
@@ -2371,9 +2371,9 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteStartDocument();
             TopLevelElement();
             int pLength = p.Length;
-            WriteStartElement(@"set_section", @"http://www.dlubal.com/rsection.xsd", null, false);
+            WriteStartElement(@"set_cross_section", @"http://www.dlubal.com/rsection.xsd", null, false);
             if (pLength > 0) {
-                Write174_section(@"value", @"", ((global::Dlubal.WS.RSection1.Model.section)p[0]), false, false);
+                Write174_section(@"value", @"", ((global::Dlubal.WS.RSection1.Model.cross_section)p[0]), false, false);
             }
             WriteEndElement();
         }
@@ -2382,7 +2382,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteStartDocument();
             TopLevelElement();
             int pLength = p.Length;
-            WriteStartElement(@"set_sectionResponse", @"http://www.dlubal.com/rsection.xsd", null, false);
+            WriteStartElement(@"set_cross_sectionResponse", @"http://www.dlubal.com/rsection.xsd", null, false);
             WriteEndElement();
         }
 
@@ -3879,7 +3879,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_OPENING: s = @"E_OBJECT_TYPE_OPENING"; break;
                 case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_PART: s = @"E_OBJECT_TYPE_PART"; break;
                 case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_POINT: s = @"E_OBJECT_TYPE_POINT"; break;
-                case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_SECTION: s = @"E_OBJECT_TYPE_SECTION"; break;
+                case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_CROSS_SECTION: s = @"E_OBJECT_TYPE_CROSS_SECTION"; break;
                 case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_STIRRUP: s = @"E_OBJECT_TYPE_STIRRUP"; break;
                 case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_STRESS_POINT: s = @"E_OBJECT_TYPE_STRESS_POINT"; break;
                 case global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_SUBPANEL: s = @"E_OBJECT_TYPE_SUBPANEL"; break;
@@ -3888,33 +3888,33 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             return s;
         }
 
-        void Write174_section(string n, string ns, global::Dlubal.WS.RSection1.Model.section o, bool isNullable, bool needType) {
+        void Write174_section(string n, string ns, global::Dlubal.WS.RSection1.Model.cross_section o, bool isNullable, bool needType) {
             if ((object)o == null) {
                 if (isNullable) WriteNullTagLiteral(n, ns);
                 return;
             }
             if (!needType) {
                 System.Type t = o.GetType();
-                if (t == typeof(global::Dlubal.WS.RSection1.Model.section)) {
+                if (t == typeof(global::Dlubal.WS.RSection1.Model.cross_section)) {
                 }
                 else {
                     throw CreateUnknownTypeException(o);
                 }
             }
             WriteStartElement(n, ns, o, false, null);
-            if (needType) WriteXsiType(@"section", @"http://www.dlubal.com/rsection.xsd");
+            if (needType) WriteXsiType(@"cross_section", @"http://www.dlubal.com/rsection.xsd");
             WriteElementStringRaw(@"no", @"", System.Xml.XmlConvert.ToString((global::System.Int32)((global::System.Int32)o.@no)));
             if (o.@typeSpecified) {
-                WriteElementString(@"type", @"", Write170_section_type(((global::Dlubal.WS.RSection1.Model.section_type)o.@type)));
+                WriteElementString(@"type", @"", Write170_section_type(((global::Dlubal.WS.RSection1.Model.cross_section_type)o.@type)));
             }
             if (o.@parametrization_typeSpecified) {
-                WriteElementString(@"parametrization_type", @"", Write171_section_parametrization_type(((global::Dlubal.WS.RSection1.Model.section_parametrization_type)o.@parametrization_type)));
+                WriteElementString(@"parametrization_type", @"", Write171_section_parametrization_type(((global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type)o.@parametrization_type)));
             }
             if (o.@manufacturing_typeSpecified) {
-                WriteElementString(@"manufacturing_type", @"", Write172_section_manufacturing_type(((global::Dlubal.WS.RSection1.Model.section_manufacturing_type)o.@manufacturing_type)));
+                WriteElementString(@"manufacturing_type", @"", Write172_section_manufacturing_type(((global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type)o.@manufacturing_type)));
             }
             if (o.@combination_typeSpecified) {
-                WriteElementString(@"combination_type", @"", Write173_section_combination_type(((global::Dlubal.WS.RSection1.Model.section_combination_type)o.@combination_type)));
+                WriteElementString(@"combination_type", @"", Write173_section_combination_type(((global::Dlubal.WS.RSection1.Model.cross_section_combination_type)o.@combination_type)));
             }
             WriteElementString(@"name", @"", ((global::System.String)o.@name));
             if (o.@shear_stiffness_deactivatedSpecified) {
@@ -5407,279 +5407,279 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteEndElement(o);
         }
 
-        string Write173_section_combination_type(global::Dlubal.WS.RSection1.Model.section_combination_type v) {
+        string Write173_section_combination_type(global::Dlubal.WS.RSection1.Model.cross_section_combination_type v) {
             string s = null;
             switch (v) {
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HB: s = @"BUILT_UP_NG_2HB"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HF: s = @"BUILT_UP_NG_2HF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I: s = @"BUILT_UP_NG_2I"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I_A: s = @"BUILT_UP_NG_2I_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI: s = @"BUILT_UP_NG_2LCLI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLIR: s = @"BUILT_UP_NG_2LCLIR"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLIR_A: s = @"BUILT_UP_NG_2LCLIR_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI_A: s = @"BUILT_UP_NG_2LCLI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLO: s = @"BUILT_UP_NG_2LCLO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOC: s = @"BUILT_UP_NG_2LCLOC"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOC_A: s = @"BUILT_UP_NG_2LCLOC_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOR: s = @"BUILT_UP_NG_2LCLOR"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOR_A: s = @"BUILT_UP_NG_2LCLOR_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLO_A: s = @"BUILT_UP_NG_2LCLO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLI: s = @"BUILT_UP_NG_2LHLI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLI_A: s = @"BUILT_UP_NG_2LHLI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLO: s = @"BUILT_UP_NG_2LHLO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLO_A: s = @"BUILT_UP_NG_2LHLO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLI: s = @"BUILT_UP_NG_2LLHLI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLI_A: s = @"BUILT_UP_NG_2LLHLI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLO: s = @"BUILT_UP_NG_2LLHLO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLO_A: s = @"BUILT_UP_NG_2LLHLO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLI: s = @"BUILT_UP_NG_2LSHLI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLI_A: s = @"BUILT_UP_NG_2LSHLI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO: s = @"BUILT_UP_NG_2LSHLO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO_A: s = @"BUILT_UP_NG_2LSHLO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2RB: s = @"BUILT_UP_NG_2RB"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2SB: s = @"BUILT_UP_NG_2SB"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UCCC: s = @"BUILT_UP_NG_2UCCC"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UF: s = @"BUILT_UP_NG_2UF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI: s = @"BUILT_UP_NG_2UI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI_A: s = @"BUILT_UP_NG_2UI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO: s = @"BUILT_UP_NG_2UO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO_A: s = @"BUILT_UP_NG_2UO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UU: s = @"BUILT_UP_NG_2UU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2VF: s = @"BUILT_UP_NG_2VF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_3I: s = @"BUILT_UP_NG_3I"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO: s = @"BUILT_UP_NG_4LHLO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO_A: s = @"BUILT_UP_NG_4LHLO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLI: s = @"BUILT_UP_NG_4LLI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLI_A: s = @"BUILT_UP_NG_4LLI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLO: s = @"BUILT_UP_NG_4LLO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLO_A: s = @"BUILT_UP_NG_4LLO_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_CIHF: s = @"BUILT_UP_NG_CIHF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_CIMD: s = @"BUILT_UP_NG_CIMD"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_HNBH: s = @"BUILT_UP_NG_HNBH"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I1F: s = @"BUILT_UP_NG_I1F"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I1HIC: s = @"BUILT_UP_NG_I1HIC"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I1IC: s = @"BUILT_UP_NG_I1IC"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2F: s = @"BUILT_UP_NG_I2F"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2HIC: s = @"BUILT_UP_NG_I2HIC"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2I: s = @"BUILT_UP_NG_I2I"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MAX: s = @"BUILT_UP_NG_ICI_MAX"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MIN: s = @"BUILT_UP_NG_ICI_MIN"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IHF: s = @"BUILT_UP_NG_IHF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUD: s = @"BUILT_UP_NG_IUD"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUU: s = @"BUILT_UP_NG_IUU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IVF: s = @"BUILT_UP_NG_IVF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IWT: s = @"BUILT_UP_NG_IWT"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2BF: s = @"BUILT_UP_NG_P2BF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2L: s = @"BUILT_UP_NG_P2L"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2LLL: s = @"BUILT_UP_NG_P2LLL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2LSL: s = @"BUILT_UP_NG_P2LSL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2T: s = @"BUILT_UP_NG_P2T"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2U: s = @"BUILT_UP_NG_P2U"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PBF: s = @"BUILT_UP_NG_PBF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PL: s = @"BUILT_UP_NG_PL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PLLL: s = @"BUILT_UP_NG_PLLL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PLSL: s = @"BUILT_UP_NG_PLSL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PT: s = @"BUILT_UP_NG_PT"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PU: s = @"BUILT_UP_NG_PU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_UF: s = @"BUILT_UP_NG_UF"; break;
-                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_combination_type");
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2HB: s = @"BUILT_UP_NG_2HB"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2HF: s = @"BUILT_UP_NG_2HF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2I: s = @"BUILT_UP_NG_2I"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2I_A: s = @"BUILT_UP_NG_2I_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLI: s = @"BUILT_UP_NG_2LCLI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLIR: s = @"BUILT_UP_NG_2LCLIR"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLIR_A: s = @"BUILT_UP_NG_2LCLIR_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLI_A: s = @"BUILT_UP_NG_2LCLI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLO: s = @"BUILT_UP_NG_2LCLO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOC: s = @"BUILT_UP_NG_2LCLOC"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOC_A: s = @"BUILT_UP_NG_2LCLOC_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOR: s = @"BUILT_UP_NG_2LCLOR"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOR_A: s = @"BUILT_UP_NG_2LCLOR_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLO_A: s = @"BUILT_UP_NG_2LCLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLI: s = @"BUILT_UP_NG_2LHLI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLI_A: s = @"BUILT_UP_NG_2LHLI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLO: s = @"BUILT_UP_NG_2LHLO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLO_A: s = @"BUILT_UP_NG_2LHLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLI: s = @"BUILT_UP_NG_2LLHLI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLI_A: s = @"BUILT_UP_NG_2LLHLI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLO: s = @"BUILT_UP_NG_2LLHLO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLO_A: s = @"BUILT_UP_NG_2LLHLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLI: s = @"BUILT_UP_NG_2LSHLI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLI_A: s = @"BUILT_UP_NG_2LSHLI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLO: s = @"BUILT_UP_NG_2LSHLO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLO_A: s = @"BUILT_UP_NG_2LSHLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2RB: s = @"BUILT_UP_NG_2RB"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2SB: s = @"BUILT_UP_NG_2SB"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UCCC: s = @"BUILT_UP_NG_2UCCC"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UF: s = @"BUILT_UP_NG_2UF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UI: s = @"BUILT_UP_NG_2UI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UI_A: s = @"BUILT_UP_NG_2UI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UO: s = @"BUILT_UP_NG_2UO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UO_A: s = @"BUILT_UP_NG_2UO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UU: s = @"BUILT_UP_NG_2UU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2VF: s = @"BUILT_UP_NG_2VF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_3I: s = @"BUILT_UP_NG_3I"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LHLO: s = @"BUILT_UP_NG_4LHLO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LHLO_A: s = @"BUILT_UP_NG_4LHLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLI: s = @"BUILT_UP_NG_4LLI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLI_A: s = @"BUILT_UP_NG_4LLI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLO: s = @"BUILT_UP_NG_4LLO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLO_A: s = @"BUILT_UP_NG_4LLO_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_CIHF: s = @"BUILT_UP_NG_CIHF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_CIMD: s = @"BUILT_UP_NG_CIMD"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_HNBH: s = @"BUILT_UP_NG_HNBH"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I1F: s = @"BUILT_UP_NG_I1F"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I1HIC: s = @"BUILT_UP_NG_I1HIC"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I1IC: s = @"BUILT_UP_NG_I1IC"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I2F: s = @"BUILT_UP_NG_I2F"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I2HIC: s = @"BUILT_UP_NG_I2HIC"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I2I: s = @"BUILT_UP_NG_I2I"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_ICI_MAX: s = @"BUILT_UP_NG_ICI_MAX"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_ICI_MIN: s = @"BUILT_UP_NG_ICI_MIN"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IHF: s = @"BUILT_UP_NG_IHF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IUD: s = @"BUILT_UP_NG_IUD"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IUU: s = @"BUILT_UP_NG_IUU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IVF: s = @"BUILT_UP_NG_IVF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IWT: s = @"BUILT_UP_NG_IWT"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2BF: s = @"BUILT_UP_NG_P2BF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2L: s = @"BUILT_UP_NG_P2L"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2LLL: s = @"BUILT_UP_NG_P2LLL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2LSL: s = @"BUILT_UP_NG_P2LSL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2T: s = @"BUILT_UP_NG_P2T"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2U: s = @"BUILT_UP_NG_P2U"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PBF: s = @"BUILT_UP_NG_PBF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PL: s = @"BUILT_UP_NG_PL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PLLL: s = @"BUILT_UP_NG_PLLL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PLSL: s = @"BUILT_UP_NG_PLSL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PT: s = @"BUILT_UP_NG_PT"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PU: s = @"BUILT_UP_NG_PU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_UF: s = @"BUILT_UP_NG_UF"; break;
+                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.cross_section_combination_type");
             }
             return s;
         }
 
-        string Write172_section_manufacturing_type(global::Dlubal.WS.RSection1.Model.section_manufacturing_type v) {
+        string Write172_section_manufacturing_type(global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type v) {
             string s = null;
             switch (v) {
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED: s = @"MANUFACTURING_TYPE_COLD_FORMED"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM: s = @"MANUFACTURING_TYPE_GLULAM"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED: s = @"MANUFACTURING_TYPE_HOT_ROLLED"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_NONE: s = @"MANUFACTURING_TYPE_NONE"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_SAWN: s = @"MANUFACTURING_TYPE_SAWN"; break;
-                case global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_WELDED: s = @"MANUFACTURING_TYPE_WELDED"; break;
-                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_manufacturing_type");
+                case global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED: s = @"MANUFACTURING_TYPE_COLD_FORMED"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM: s = @"MANUFACTURING_TYPE_GLULAM"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED: s = @"MANUFACTURING_TYPE_HOT_ROLLED"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_NONE: s = @"MANUFACTURING_TYPE_NONE"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_SAWN: s = @"MANUFACTURING_TYPE_SAWN"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_WELDED: s = @"MANUFACTURING_TYPE_WELDED"; break;
+                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.cross_section_manufacturing_type");
             }
             return s;
         }
 
-        string Write171_section_parametrization_type(global::Dlubal.WS.RSection1.Model.section_parametrization_type v) {
+        string Write171_section_parametrization_type(global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type v) {
             string s = null;
             switch (v) {
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CHANNELS__U_BU: s = @"BUILT_UP_STEEL__CHANNELS__U_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU: s = @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU: s = @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__DOUBLE_BARS__DB_BU: s = @"BUILT_UP_STEEL__DOUBLE_BARS__DB_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU: s = @"BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS__I_BU: s = @"BUILT_UP_STEEL__I_SECTIONS__I_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU: s = @"BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU: s = @"BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_TIMBER__RECTANGLES__R_BU: s = @"BUILT_UP_TIMBER__RECTANGLES__R_BU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__FLAT_BAR__FLAT: s = @"PARAMETRIC_BARS__FLAT_BAR__FLAT"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL: s = @"PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND: s = @"PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON: s = @"PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR: s = @"PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON: s = @"PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__ROUND_BAR__ROUND: s = @"PARAMETRIC_BARS__ROUND_BAR__ROUND"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER: s = @"PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES: s = @"PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B: s = @"PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2: s = @"PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2: s = @"PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2: s = @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2: s = @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2: s = @"PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2: s = @"PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CHANNELS__2U: s = @"PARAMETRIC_THIN_WALLED__2_CHANNELS__2U"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL: s = @"PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C: s = @"PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB: s = @"PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB: s = @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB: s = @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CHANNEL__U: s = @"PARAMETRIC_THIN_WALLED__CHANNEL__U"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS: s = @"PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CL_SECTION__CL: s = @"PARAMETRIC_THIN_WALLED__CL_SECTION__CL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS: s = @"PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__C_SECTION__C: s = @"PARAMETRIC_THIN_WALLED__C_SECTION__C"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS: s = @"PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL: s = @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE: s = @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION__I: s = @"PARAMETRIC_THIN_WALLED__I_SECTION__I"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA: s = @"PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A: s = @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B: s = @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS: s = @"PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS: s = @"PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA: s = @"PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS: s = @"PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS: s = @"PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__T_SECTION__T: s = @"PARAMETRIC_THIN_WALLED__T_SECTION__T"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU: s = @"PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL: s = @"PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION__Z: s = @"PARAMETRIC_THIN_WALLED__Z_SECTION__Z"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S: s = @"STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S: s = @"STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S: s = @"STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S: s = @"STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S: s = @"STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S: s = @"STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S: s = @"STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S: s = @"STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__SHEETS__SHEET_S: s = @"STANDARDIZED_STEEL__SHEETS__SHEET_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S: s = @"STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S: s = @"STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S: s = @"STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S: s = @"STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S: s = @"STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S: s = @"STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S"; break;
-                case global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S: s = @"STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S"; break;
-                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_parametrization_type");
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__CHANNELS__U_BU: s = @"BUILT_UP_STEEL__CHANNELS__U_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU: s = @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU: s = @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__DOUBLE_BARS__DB_BU: s = @"BUILT_UP_STEEL__DOUBLE_BARS__DB_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU: s = @"BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU: s = @"BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS__I_BU: s = @"BUILT_UP_STEEL__I_SECTIONS__I_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU: s = @"BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU: s = @"BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_TIMBER__RECTANGLES__R_BU: s = @"BUILT_UP_TIMBER__RECTANGLES__R_BU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__FLAT_BAR__FLAT: s = @"PARAMETRIC_BARS__FLAT_BAR__FLAT"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL: s = @"PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND: s = @"PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON: s = @"PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR: s = @"PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON: s = @"PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__ROUND_BAR__ROUND: s = @"PARAMETRIC_BARS__ROUND_BAR__ROUND"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER: s = @"PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES: s = @"PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B: s = @"PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2: s = @"PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2: s = @"PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2: s = @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2: s = @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2: s = @"PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2: s = @"PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2: s = @"PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1: s = @"PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CHANNELS__2U: s = @"PARAMETRIC_THIN_WALLED__2_CHANNELS__2U"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL: s = @"PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C: s = @"PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB: s = @"PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB: s = @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB: s = @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CHANNEL__U: s = @"PARAMETRIC_THIN_WALLED__CHANNEL__U"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS: s = @"PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CL_SECTION__CL: s = @"PARAMETRIC_THIN_WALLED__CL_SECTION__CL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS: s = @"PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__C_SECTION__C: s = @"PARAMETRIC_THIN_WALLED__C_SECTION__C"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS: s = @"PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL: s = @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE: s = @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT: s = @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION__I: s = @"PARAMETRIC_THIN_WALLED__I_SECTION__I"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA: s = @"PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A: s = @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B: s = @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS: s = @"PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS: s = @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS: s = @"PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA: s = @"PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS: s = @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS: s = @"PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF: s = @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS: s = @"PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__T_SECTION__T: s = @"PARAMETRIC_THIN_WALLED__T_SECTION__T"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU: s = @"PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU: s = @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL: s = @"PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION__Z: s = @"PARAMETRIC_THIN_WALLED__Z_SECTION__Z"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S: s = @"STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S: s = @"STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S: s = @"STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S: s = @"STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S: s = @"STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S: s = @"STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S: s = @"STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S: s = @"STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__SHEETS__SHEET_S: s = @"STANDARDIZED_STEEL__SHEETS__SHEET_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S: s = @"STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S: s = @"STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S: s = @"STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S: s = @"STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S: s = @"STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S: s = @"STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S: s = @"STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S"; break;
+                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.cross_section_parametrization_type");
             }
             return s;
         }
 
-        string Write170_section_type(global::Dlubal.WS.RSection1.Model.section_type v) {
+        string Write170_section_type(global::Dlubal.WS.RSection1.Model.cross_section_type v) {
             string s = null;
             switch (v) {
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_STEEL: s = @"TYPE_BUILT_UP_STEEL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_TIMBER: s = @"TYPE_BUILT_UP_TIMBER"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BARS: s = @"TYPE_PARAMETRIC_BARS"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_I: s = @"TYPE_PARAMETRIC_MASSIVE_I"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_II: s = @"TYPE_PARAMETRIC_MASSIVE_II"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_THIN_WALLED: s = @"TYPE_PARAMETRIC_THIN_WALLED"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_STANDARDIZED_STEEL: s = @"TYPE_STANDARDIZED_STEEL"; break;
-                case global::Dlubal.WS.RSection1.Model.section_type.@TYPE_STANDARDIZED_TIMBER: s = @"TYPE_STANDARDIZED_TIMBER"; break;
-                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.section_type");
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_BUILT_UP_STEEL: s = @"TYPE_BUILT_UP_STEEL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_BUILT_UP_TIMBER: s = @"TYPE_BUILT_UP_TIMBER"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_BARS: s = @"TYPE_PARAMETRIC_BARS"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_MASSIVE_I: s = @"TYPE_PARAMETRIC_MASSIVE_I"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_MASSIVE_II: s = @"TYPE_PARAMETRIC_MASSIVE_II"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_THIN_WALLED: s = @"TYPE_PARAMETRIC_THIN_WALLED"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_STANDARDIZED_STEEL: s = @"TYPE_STANDARDIZED_STEEL"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_STANDARDIZED_TIMBER: s = @"TYPE_STANDARDIZED_TIMBER"; break;
+                default: throw CreateInvalidEnumValueException(((System.Int64)v).ToString(System.Globalization.CultureInfo.InvariantCulture), @"Dlubal.WS.RSection1.Model.cross_section_type");
             }
             return s;
         }
@@ -10080,7 +10080,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 if (a != null){
                     WriteStartElement(@"list", @"", null, false);
                     for (int ia = 0; ia < a.Length; ia++) {
-                        WriteElementString(@"section_name", @"", ((global::System.String)a[ia]));
+                        WriteElementString(@"cross_section_name", @"", ((global::System.String)a[ia]));
                     }
                     WriteEndElement();
                 }
@@ -10638,11 +10638,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                                 paramsRead[1] = true;
                             }
                             else {
-                                UnknownNode((object)p, @":list_name, :section_name");
+                                UnknownNode((object)p, @":list_name, :cross_section_name");
                             }
                         }
                         else {
-                            UnknownNode((object)p, @":list_name, :section_name");
+                            UnknownNode((object)p, @":list_name, :cross_section_name");
                         }
                         Reader.MoveToContent();
                         CheckReaderCount(ref whileIterations1, ref readerCount1);
@@ -11818,11 +11818,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                                 paramsRead[1] = true;
                             }
                             else {
-                                UnknownNode((object)p, @":list_name, :section_name");
+                                UnknownNode((object)p, @":list_name, :cross_section_name");
                             }
                         }
                         else {
-                            UnknownNode((object)p, @":list_name, :section_name");
+                            UnknownNode((object)p, @":list_name, :cross_section_name");
                         }
                         Reader.MoveToContent();
                         CheckReaderCount(ref whileIterations61, ref readerCount61);
@@ -17405,7 +17405,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     ReadEndElement();
                 }
                 else {
-                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:get_section");
+                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:get_cross_section");
                 }
                 Reader.MoveToContent();
                 CheckReaderCount(ref whileIterations325, ref readerCount325);
@@ -17446,7 +17446,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     ReadEndElement();
                 }
                 else {
-                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:get_sectionResponse");
+                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:get_cross_sectionResponse");
                 }
                 Reader.MoveToContent();
                 CheckReaderCount(ref whileIterations327, ref readerCount327);
@@ -19767,7 +19767,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     ReadEndElement();
                 }
                 else {
-                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:set_section");
+                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:set_cross_section");
                 }
                 Reader.MoveToContent();
                 CheckReaderCount(ref whileIterations444, ref readerCount444);
@@ -19802,7 +19802,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     ReadEndElement();
                 }
                 else {
-                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:set_sectionResponse");
+                    UnknownNode(null, @"http://www.dlubal.com/rsection.xsd:set_cross_sectionResponse");
                 }
                 Reader.MoveToContent();
                 CheckReaderCount(ref whileIterations446, ref readerCount446);
@@ -24832,7 +24832,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"E_OBJECT_TYPE_OPENING": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_OPENING;
                 case @"E_OBJECT_TYPE_PART": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_PART;
                 case @"E_OBJECT_TYPE_POINT": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_POINT;
-                case @"E_OBJECT_TYPE_SECTION": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_SECTION;
+                case @"E_OBJECT_TYPE_CROSS_SECTION": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_CROSS_SECTION;
                 case @"E_OBJECT_TYPE_STIRRUP": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_STIRRUP;
                 case @"E_OBJECT_TYPE_STRESS_POINT": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_STRESS_POINT;
                 case @"E_OBJECT_TYPE_SUBPANEL": return global::Dlubal.WS.RSection1.Model.object_types.@E_OBJECT_TYPE_SUBPANEL;
@@ -24840,7 +24840,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             }
         }
 
-        global::Dlubal.WS.RSection1.Model.section Read174_section(bool isNullable, bool checkType) {
+        global::Dlubal.WS.RSection1.Model.cross_section Read174_section(bool isNullable, bool checkType) {
             System.Xml.XmlQualifiedName xsiType = checkType ? GetXsiType() : null;
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
@@ -24851,8 +24851,8 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 throw CreateUnknownTypeException((System.Xml.XmlQualifiedName)xsiType);
             }
             if (isNull) return null;
-            global::Dlubal.WS.RSection1.Model.section o;
-            o = new global::Dlubal.WS.RSection1.Model.section();
+            global::Dlubal.WS.RSection1.Model.cross_section o;
+            o = new global::Dlubal.WS.RSection1.Model.cross_section();
             bool[] paramsRead = new bool[511];
             while (Reader.MoveToNextAttribute()) {
                 if (!IsXmlnsAttribute(Reader.Name)) {
@@ -29470,272 +29470,272 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             return o;
         }
 
-        global::Dlubal.WS.RSection1.Model.section_combination_type Read173_section_combination_type(string s) {
+        global::Dlubal.WS.RSection1.Model.cross_section_combination_type Read173_section_combination_type(string s) {
             switch (s) {
-                case @"BUILT_UP_NG_2HB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HB;
-                case @"BUILT_UP_NG_2HF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2HF;
-                case @"BUILT_UP_NG_2I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I;
-                case @"BUILT_UP_NG_2I_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2I_A;
-                case @"BUILT_UP_NG_2LCLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI;
-                case @"BUILT_UP_NG_2LCLIR": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLIR;
-                case @"BUILT_UP_NG_2LCLIR_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLIR_A;
-                case @"BUILT_UP_NG_2LCLI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLI_A;
-                case @"BUILT_UP_NG_2LCLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLO;
-                case @"BUILT_UP_NG_2LCLOC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOC;
-                case @"BUILT_UP_NG_2LCLOC_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOC_A;
-                case @"BUILT_UP_NG_2LCLOR": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOR;
-                case @"BUILT_UP_NG_2LCLOR_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLOR_A;
-                case @"BUILT_UP_NG_2LCLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LCLO_A;
-                case @"BUILT_UP_NG_2LHLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLI;
-                case @"BUILT_UP_NG_2LHLI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLI_A;
-                case @"BUILT_UP_NG_2LHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLO;
-                case @"BUILT_UP_NG_2LHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LHLO_A;
-                case @"BUILT_UP_NG_2LLHLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLI;
-                case @"BUILT_UP_NG_2LLHLI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLI_A;
-                case @"BUILT_UP_NG_2LLHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLO;
-                case @"BUILT_UP_NG_2LLHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LLHLO_A;
-                case @"BUILT_UP_NG_2LSHLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLI;
-                case @"BUILT_UP_NG_2LSHLI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLI_A;
-                case @"BUILT_UP_NG_2LSHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO;
-                case @"BUILT_UP_NG_2LSHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2LSHLO_A;
-                case @"BUILT_UP_NG_2RB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2RB;
-                case @"BUILT_UP_NG_2SB": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2SB;
-                case @"BUILT_UP_NG_2UCCC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UCCC;
-                case @"BUILT_UP_NG_2UF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UF;
-                case @"BUILT_UP_NG_2UI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI;
-                case @"BUILT_UP_NG_2UI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UI_A;
-                case @"BUILT_UP_NG_2UO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO;
-                case @"BUILT_UP_NG_2UO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UO_A;
-                case @"BUILT_UP_NG_2UU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2UU;
-                case @"BUILT_UP_NG_2VF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_2VF;
-                case @"BUILT_UP_NG_3I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_3I;
-                case @"BUILT_UP_NG_4LHLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO;
-                case @"BUILT_UP_NG_4LHLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LHLO_A;
-                case @"BUILT_UP_NG_4LLI": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLI;
-                case @"BUILT_UP_NG_4LLI_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLI_A;
-                case @"BUILT_UP_NG_4LLO": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLO;
-                case @"BUILT_UP_NG_4LLO_A": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_4LLO_A;
-                case @"BUILT_UP_NG_CIHF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_CIHF;
-                case @"BUILT_UP_NG_CIMD": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_CIMD;
-                case @"BUILT_UP_NG_HNBH": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_HNBH;
-                case @"BUILT_UP_NG_I1F": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I1F;
-                case @"BUILT_UP_NG_I1HIC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I1HIC;
-                case @"BUILT_UP_NG_I1IC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I1IC;
-                case @"BUILT_UP_NG_I2F": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2F;
-                case @"BUILT_UP_NG_I2HIC": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2HIC;
-                case @"BUILT_UP_NG_I2I": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_I2I;
-                case @"BUILT_UP_NG_ICI_MAX": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MAX;
-                case @"BUILT_UP_NG_ICI_MIN": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_ICI_MIN;
-                case @"BUILT_UP_NG_IHF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IHF;
-                case @"BUILT_UP_NG_IUD": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUD;
-                case @"BUILT_UP_NG_IUU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IUU;
-                case @"BUILT_UP_NG_IVF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IVF;
-                case @"BUILT_UP_NG_IWT": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_IWT;
-                case @"BUILT_UP_NG_P2BF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2BF;
-                case @"BUILT_UP_NG_P2L": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2L;
-                case @"BUILT_UP_NG_P2LLL": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2LLL;
-                case @"BUILT_UP_NG_P2LSL": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2LSL;
-                case @"BUILT_UP_NG_P2T": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2T;
-                case @"BUILT_UP_NG_P2U": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_P2U;
-                case @"BUILT_UP_NG_PBF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PBF;
-                case @"BUILT_UP_NG_PL": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PL;
-                case @"BUILT_UP_NG_PLLL": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PLLL;
-                case @"BUILT_UP_NG_PLSL": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PLSL;
-                case @"BUILT_UP_NG_PT": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PT;
-                case @"BUILT_UP_NG_PU": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_PU;
-                case @"BUILT_UP_NG_UF": return global::Dlubal.WS.RSection1.Model.section_combination_type.@BUILT_UP_NG_UF;
-                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_combination_type));
+                case @"BUILT_UP_NG_2HB": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2HB;
+                case @"BUILT_UP_NG_2HF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2HF;
+                case @"BUILT_UP_NG_2I": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2I;
+                case @"BUILT_UP_NG_2I_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2I_A;
+                case @"BUILT_UP_NG_2LCLI": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLI;
+                case @"BUILT_UP_NG_2LCLIR": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLIR;
+                case @"BUILT_UP_NG_2LCLIR_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLIR_A;
+                case @"BUILT_UP_NG_2LCLI_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLI_A;
+                case @"BUILT_UP_NG_2LCLO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLO;
+                case @"BUILT_UP_NG_2LCLOC": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOC;
+                case @"BUILT_UP_NG_2LCLOC_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOC_A;
+                case @"BUILT_UP_NG_2LCLOR": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOR;
+                case @"BUILT_UP_NG_2LCLOR_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLOR_A;
+                case @"BUILT_UP_NG_2LCLO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LCLO_A;
+                case @"BUILT_UP_NG_2LHLI": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLI;
+                case @"BUILT_UP_NG_2LHLI_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLI_A;
+                case @"BUILT_UP_NG_2LHLO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLO;
+                case @"BUILT_UP_NG_2LHLO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LHLO_A;
+                case @"BUILT_UP_NG_2LLHLI": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLI;
+                case @"BUILT_UP_NG_2LLHLI_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLI_A;
+                case @"BUILT_UP_NG_2LLHLO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLO;
+                case @"BUILT_UP_NG_2LLHLO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LLHLO_A;
+                case @"BUILT_UP_NG_2LSHLI": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLI;
+                case @"BUILT_UP_NG_2LSHLI_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLI_A;
+                case @"BUILT_UP_NG_2LSHLO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLO;
+                case @"BUILT_UP_NG_2LSHLO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2LSHLO_A;
+                case @"BUILT_UP_NG_2RB": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2RB;
+                case @"BUILT_UP_NG_2SB": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2SB;
+                case @"BUILT_UP_NG_2UCCC": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UCCC;
+                case @"BUILT_UP_NG_2UF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UF;
+                case @"BUILT_UP_NG_2UI": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UI;
+                case @"BUILT_UP_NG_2UI_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UI_A;
+                case @"BUILT_UP_NG_2UO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UO;
+                case @"BUILT_UP_NG_2UO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UO_A;
+                case @"BUILT_UP_NG_2UU": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2UU;
+                case @"BUILT_UP_NG_2VF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_2VF;
+                case @"BUILT_UP_NG_3I": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_3I;
+                case @"BUILT_UP_NG_4LHLO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LHLO;
+                case @"BUILT_UP_NG_4LHLO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LHLO_A;
+                case @"BUILT_UP_NG_4LLI": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLI;
+                case @"BUILT_UP_NG_4LLI_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLI_A;
+                case @"BUILT_UP_NG_4LLO": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLO;
+                case @"BUILT_UP_NG_4LLO_A": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_4LLO_A;
+                case @"BUILT_UP_NG_CIHF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_CIHF;
+                case @"BUILT_UP_NG_CIMD": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_CIMD;
+                case @"BUILT_UP_NG_HNBH": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_HNBH;
+                case @"BUILT_UP_NG_I1F": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I1F;
+                case @"BUILT_UP_NG_I1HIC": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I1HIC;
+                case @"BUILT_UP_NG_I1IC": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I1IC;
+                case @"BUILT_UP_NG_I2F": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I2F;
+                case @"BUILT_UP_NG_I2HIC": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I2HIC;
+                case @"BUILT_UP_NG_I2I": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_I2I;
+                case @"BUILT_UP_NG_ICI_MAX": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_ICI_MAX;
+                case @"BUILT_UP_NG_ICI_MIN": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_ICI_MIN;
+                case @"BUILT_UP_NG_IHF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IHF;
+                case @"BUILT_UP_NG_IUD": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IUD;
+                case @"BUILT_UP_NG_IUU": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IUU;
+                case @"BUILT_UP_NG_IVF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IVF;
+                case @"BUILT_UP_NG_IWT": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_IWT;
+                case @"BUILT_UP_NG_P2BF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2BF;
+                case @"BUILT_UP_NG_P2L": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2L;
+                case @"BUILT_UP_NG_P2LLL": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2LLL;
+                case @"BUILT_UP_NG_P2LSL": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2LSL;
+                case @"BUILT_UP_NG_P2T": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2T;
+                case @"BUILT_UP_NG_P2U": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_P2U;
+                case @"BUILT_UP_NG_PBF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PBF;
+                case @"BUILT_UP_NG_PL": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PL;
+                case @"BUILT_UP_NG_PLLL": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PLLL;
+                case @"BUILT_UP_NG_PLSL": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PLSL;
+                case @"BUILT_UP_NG_PT": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PT;
+                case @"BUILT_UP_NG_PU": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_PU;
+                case @"BUILT_UP_NG_UF": return global::Dlubal.WS.RSection1.Model.cross_section_combination_type.@BUILT_UP_NG_UF;
+                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.cross_section_combination_type));
             }
         }
 
-        global::Dlubal.WS.RSection1.Model.section_manufacturing_type Read172_section_manufacturing_type(string s) {
+        global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type Read172_section_manufacturing_type(string s) {
             switch (s) {
-                case @"MANUFACTURING_TYPE_COLD_FORMED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED;
-                case @"MANUFACTURING_TYPE_GLULAM": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM;
-                case @"MANUFACTURING_TYPE_HOT_ROLLED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED;
-                case @"MANUFACTURING_TYPE_NONE": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_NONE;
-                case @"MANUFACTURING_TYPE_SAWN": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_SAWN;
-                case @"MANUFACTURING_TYPE_WELDED": return global::Dlubal.WS.RSection1.Model.section_manufacturing_type.@MANUFACTURING_TYPE_WELDED;
-                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_manufacturing_type));
+                case @"MANUFACTURING_TYPE_COLD_FORMED": return global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_COLD_FORMED;
+                case @"MANUFACTURING_TYPE_GLULAM": return global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_GLULAM;
+                case @"MANUFACTURING_TYPE_HOT_ROLLED": return global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_HOT_ROLLED;
+                case @"MANUFACTURING_TYPE_NONE": return global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_NONE;
+                case @"MANUFACTURING_TYPE_SAWN": return global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_SAWN;
+                case @"MANUFACTURING_TYPE_WELDED": return global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type.@MANUFACTURING_TYPE_WELDED;
+                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.cross_section_manufacturing_type));
             }
         }
 
-        global::Dlubal.WS.RSection1.Model.section_parametrization_type Read171_section_parametrization_type(string s) {
+        global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type Read171_section_parametrization_type(string s) {
             switch (s) {
-                case @"BUILT_UP_STEEL__CHANNELS__U_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CHANNELS__U_BU;
-                case @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU;
-                case @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU;
-                case @"BUILT_UP_STEEL__DOUBLE_BARS__DB_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__DOUBLE_BARS__DB_BU;
-                case @"BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU;
-                case @"BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU;
-                case @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU;
-                case @"BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU;
-                case @"BUILT_UP_STEEL__I_SECTIONS__I_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS__I_BU;
-                case @"BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU;
-                case @"BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU;
-                case @"BUILT_UP_TIMBER__RECTANGLES__R_BU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@BUILT_UP_TIMBER__RECTANGLES__R_BU;
-                case @"PARAMETRIC_BARS__FLAT_BAR__FLAT": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__FLAT_BAR__FLAT;
-                case @"PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL;
-                case @"PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND;
-                case @"PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON;
-                case @"PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR;
-                case @"PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON;
-                case @"PARAMETRIC_BARS__ROUND_BAR__ROUND": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__ROUND_BAR__ROUND;
-                case @"PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER;
-                case @"PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES;
-                case @"PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B;
-                case @"PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2;
-                case @"PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2;
-                case @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2;
-                case @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2;
-                case @"PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2;
-                case @"PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2;
-                case @"PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1;
-                case @"PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1;
-                case @"PARAMETRIC_THIN_WALLED__2_CHANNELS__2U": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CHANNELS__2U;
-                case @"PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL;
-                case @"PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C;
-                case @"PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB;
-                case @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB;
-                case @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB;
-                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX;
-                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A;
-                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX;
-                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B;
-                case @"PARAMETRIC_THIN_WALLED__CHANNEL__U": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CHANNEL__U;
-                case @"PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS;
-                case @"PARAMETRIC_THIN_WALLED__CL_SECTION__CL": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CL_SECTION__CL;
-                case @"PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS;
-                case @"PARAMETRIC_THIN_WALLED__C_SECTION__C": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__C_SECTION__C;
-                case @"PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS;
-                case @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL;
-                case @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE;
-                case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF;
-                case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT;
-                case @"PARAMETRIC_THIN_WALLED__I_SECTION__I": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION__I;
-                case @"PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA;
-                case @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A;
-                case @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B;
-                case @"PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS;
-                case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI;
-                case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO;
-                case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS;
-                case @"PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS;
-                case @"PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES;
-                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS;
-                case @"PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS;
-                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF;
-                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF;
-                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW;
-                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF;
-                case @"PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS;
-                case @"PARAMETRIC_THIN_WALLED__T_SECTION__T": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__T_SECTION__T;
-                case @"PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU;
-                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU;
-                case @"PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL;
-                case @"PARAMETRIC_THIN_WALLED__Z_SECTION__Z": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION__Z;
-                case @"STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S;
-                case @"STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S;
-                case @"STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S;
-                case @"STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S;
-                case @"STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S;
-                case @"STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S;
-                case @"STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S;
-                case @"STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S;
-                case @"STANDARDIZED_STEEL__SHEETS__SHEET_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__SHEETS__SHEET_S;
-                case @"STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S;
-                case @"STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S;
-                case @"STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S;
-                case @"STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S;
-                case @"STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S;
-                case @"STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S;
-                case @"STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S": return global::Dlubal.WS.RSection1.Model.section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S;
-                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_parametrization_type));
+                case @"BUILT_UP_STEEL__CHANNELS__U_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__CHANNELS__U_BU;
+                case @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_FLAT_BAR__CIF_BU;
+                case @"BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__CUT_I_SECTIONS_WITH_MODIFIED_DEPTH__CIMD_BU;
+                case @"BUILT_UP_STEEL__DOUBLE_BARS__DB_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__DOUBLE_BARS__DB_BU;
+                case @"BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__EQUAL_LEG_ANGLES__LE_BU;
+                case @"BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_OR_CHANNELS_WITH_SIDE_FLAT_BARS__SF_BU;
+                case @"BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_CHANNELS__IU_BU;
+                case @"BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS_WITH_OTHER_SECTION_ON_FLANGE__IOF_BU;
+                case @"BUILT_UP_STEEL__I_SECTIONS__I_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__I_SECTIONS__I_BU;
+                case @"BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__STIFFENED_PLATES__SP_BU;
+                case @"BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_STEEL__UNEQUAL_LEG_ANGLES__LU_BU;
+                case @"BUILT_UP_TIMBER__RECTANGLES__R_BU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@BUILT_UP_TIMBER__RECTANGLES__R_BU;
+                case @"PARAMETRIC_BARS__FLAT_BAR__FLAT": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__FLAT_BAR__FLAT;
+                case @"PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__HALF_OVAL_BAR__HALFOVAL;
+                case @"PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__HALF_ROUND_BAR__HALFROUND;
+                case @"PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__HEXAGON_BAR__HEXAGON;
+                case @"PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__ISOSCELES_RIGHT_TRIANGLE_BAR__TRIANGLEIR;
+                case @"PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__OCTAGON_BAR__OCTAGON;
+                case @"PARAMETRIC_BARS__ROUND_BAR__ROUND": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__ROUND_BAR__ROUND;
+                case @"PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__ROUND_CORNER_SQUARE_BAR__SQUARER;
+                case @"PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BARS__SHARP_CORNER_SQUARE_BAR__SQUARES;
+                case @"PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_BRIDGES__MULTI_PIECE_TAPERED_FLANGE_T_SECTION__TTF_B;
+                case @"PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X2_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X2R_M2;
+                case @"PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2X3_MASSIVE_RECTANGLES_WITH_FULLY_RIGID_CONNECTION__2X3R_M2;
+                case @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES_WITH_CONTINUOUS_PACK_AND_2_SPLICES__2RP2S_M2;
+                case @"PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__2_MASSIVE_RECTANGLES__2R_M2;
+                case @"PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__3_MASSIVE_RECTANGLES__3R_M2;
+                case @"PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__4_MASSIVE_RECTANGLES__4R_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_HORIZONTAL_CONNECTION_LINES__BOXH_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_HORIZONTAL_CONNECTION_LINES__BOXOFH_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_OVERHANGING_FLANGES_AND_VERTICAL_CONNECTION_LINES__BOXOFV_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_BOX_WITH_VERTICAL_CONNECTION_LINES__BOXV_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_FIVE_LAYER_RECTANGLE_WITH_3_DIFFERENT_MATERIALS__5LR_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_OVAL_WITH_VERTICAL_CONNECTION_LINES__OVAL_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_RECTANGLE_WITH_2_CONTINUOUS_SPLICES__R2S_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__ISH_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_THIN_FLANGES_AND_4_REINFORCING_RECTANGLES__IS4R_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_SINGLY_SYMMETRIC_I_SECTION_WITH_VERTICAL_CONNECTION_LINES__ISV_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_THREE_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__3LR_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_HORIZONTAL_CONNECTION_LINES__2BOXH_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_BOX_WITH_VERTICAL_CONNECTION_LINES__2BOXV_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_TWO_LAYER_RECTANGLE_WITH_2_DIFFERENT_MATERIALS__2LR_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_HORIZONTAL_CONNECTION_LINE__TH_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_T_SECTION_WITH_VERTICAL_CONNECTION_LINES__TV_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_HORIZONTAL_CONNECTION_LINES__UH_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_U_SECTION_WITH_VERTICAL_CONNECTION_LINES__UV_M2;
+                case @"PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_II__MASSIVE_V_SECTION_WITH_VERTICAL_CONNECTION_LINE__V_M2;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_CIRCLE__CIRCLE_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__DTC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLE_T_SECTION__DT_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_DOUBLY_SYMMETRIC_I_SECTION__ID_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_OVAL__HALFOVAL_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HALF_ROUND__HALFROUND_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HEXAGON__HEXAGON_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_HOLLOW_CIRCLE__HCIRCLE_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_I_SECTION__I_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_L_SECTION__L_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OCTAGON__OCTAGON_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_OVAL__OVAL_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_PARALLELOGRAM__PAR_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_CHAMFERED_RECTANGULAR_OPENING__RROC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAKS_OUTWARD_AND_INWARD__RPOI_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_INWARD__RPI_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_PEAK_OUTWARD__RPO_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE_WITH_RECTANGULAR_OPENING__RRO_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_RIGHT_ANGLED_TRAPEZOID__TRRA_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_RECTANGLE__RR_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_ROUND_CORNER_SQUARE__SQR_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_DOUBLE_T_SECTION__DTT_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_I_SECTION__ITF_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_FLANGE_T_SECTION__TTF_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_U_SECTION__UT_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TTWC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TAPERED_WEB_T_SECTION__TTW_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_TRAPEZOID__TR_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_CHAMFERED_INNER_CORNERS__TC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_INWARD__TPI_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION_WITH_PEAK_OUTWARD__TPO_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_T_SECTION__T_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION_WITH_CHAMFERED_INNER_CORNERS__IUC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_I_SECTION__IU_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION_WITH_OFFSET_FLANGE__TUOF_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_UNSYMMETRIC_T_SECTION__TU_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION_WITH_CHAMFERED_INNER_CORNERS__UC_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_U_SECTION__U_M1;
+                case @"PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_MASSIVE_I__MASSIVE_Z_SECTION__Z_M1;
+                case @"PARAMETRIC_THIN_WALLED__2_CHANNELS__2U": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CHANNELS__2U;
+                case @"PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_CL_SECTIONS__2CL;
+                case @"PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_C_SECTIONS__2C;
+                case @"PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_EQUAL_LEG_ANGLES_BACK_TO_BACK__2LE_BB;
+                case @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_LONG_LEGS_BACK_TO_BACK__2L_LLBB;
+                case @"PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__2_UNEQUAL_LEG_ANGLES_SHORT_LEGS_BACK_TO_BACK__2L_SLBB;
+                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_AX__BOX_AX;
+                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A;
+                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX;
+                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B;
+                case @"PARAMETRIC_THIN_WALLED__CHANNEL__U": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CHANNEL__U;
+                case @"PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS;
+                case @"PARAMETRIC_THIN_WALLED__CL_SECTION__CL": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CL_SECTION__CL;
+                case @"PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CROSS_SHAPED_SECTION__CROSS;
+                case @"PARAMETRIC_THIN_WALLED__C_SECTION__C": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__C_SECTION__C;
+                case @"PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__ELLIPTICAL_HOLLOW_SECTION__EHS;
+                case @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE_WITH_LIPS__LEL;
+                case @"PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__EQUAL_LEG_ANGLE__LE;
+                case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_2_SIDE_FLAT_BARS__I2SF;
+                case @"PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION_WITH_T_SECTION__IT;
+                case @"PARAMETRIC_THIN_WALLED__I_SECTION__I": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__I_SECTION__I;
+                case @"PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__OMEGA_SECTION__OMEGA;
+                case @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_A__PI_A;
+                case @"PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__PI_SECTION_TYPE_B__PI_B;
+                case @"PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__POLYGONAL_HOLLOW_SECTION__PHS;
+                case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAKS_OUTWARD_AND_INWARD__RHSPOI;
+                case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION_WITH_PEAK_OUTWARD__RHSPO;
+                case @"PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RECTANGULAR_HOLLOW_SECTION__RHS;
+                case @"PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__RIB_HOLLOW_SECTION__RIBHS;
+                case @"PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SIGMA_SECTION__SIGMA;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_FLAT_BARS__IS2F;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_SLOPING_STIFFENERS__IS2SS;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_2_WELDED_FLAT_BARS__IS2FW;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_DOUBLE_WEB_THICKNESS__IS2WT;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION_WITH_EDGE_STIFFENERS_ON_1_FLANGE__IS1FES;
+                case @"PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SINGLY_SYMMETRIC_I_SECTION__IS;
+                case @"PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__SQUARE_HOLLOW_SECTION__SHS;
+                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_CHANNEL__UTF;
+                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_I_SECTION__ITF;
+                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION_WITH_TAPERED_WEB__TTFTW;
+                case @"PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TAPERED_FLANGE_T_SECTION__TTF;
+                case @"PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__TRAPEZOIDAL_HOLLOW_SECTION__THS;
+                case @"PARAMETRIC_THIN_WALLED__T_SECTION__T": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__T_SECTION__T;
+                case @"PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNEQUAL_LEG_ANGLE__LU;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_INWARD__UUESI;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD_AND_INWARD__UUESOI;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL_WITH_EDGE_STIFFENERS_OUTWARD__UUESO;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_C_SECTION__CU;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_I_SECTION__IU;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_RECTANGULAR_HOLLOW_SECTION__RHSU;
+                case @"PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__UNSYMMETRIC_T_SECTION__TU;
+                case @"PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION_WITH_LIPS__ZL;
+                case @"PARAMETRIC_THIN_WALLED__Z_SECTION__Z": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__Z_SECTION__Z;
+                case @"STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__2L_SECTIONS_STEEL_DOUBLE_ANGLES__2L_S;
+                case @"STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__60_DEGREE_ANGLES__L60_S;
+                case @"STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__BAR_SECTIONS__BAR_S;
+                case @"STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__CIRCULAR_HOLLOW_SECTIONS_PIPES__CHS_S;
+                case @"STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__ELLIPTICAL_AND_SEMI_ELLIPTICAL_HOLLOW_SECTIONS__EHS_S;
+                case @"STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__I_BEAMS_H_BEAMS__I_S;
+                case @"STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__L_SECTIONS_STEEL_ANGLES__L_S;
+                case @"STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__RAIL_SECTIONS__RAIL_S;
+                case @"STANDARDIZED_STEEL__SHEETS__SHEET_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__SHEETS__SHEET_S;
+                case @"STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__SQUARE_AND_RECTANGULAR_HOLLOW_SECTIONS__RHS_S;
+                case @"STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__T_SECTIONS_STEEL_TEES__T_S;
+                case @"STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__U_SECTIONS_STEEL_CHANNELS__U_S;
+                case @"STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__VIRTUAL_JOISTS_AND_VIRTUAL_JOIST_GIRDERS__VIRTUAL_S;
+                case @"STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_STEEL__Z_SECTIONS_STEEL_ZEES__Z_S;
+                case @"STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_COMPOSED_SECTIONS__COMP_S;
+                case @"STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@STANDARDIZED_TIMBER__TIMBER_RECTANGLES__RECT_S;
+                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type));
             }
         }
 
-        global::Dlubal.WS.RSection1.Model.section_type Read170_section_type(string s) {
+        global::Dlubal.WS.RSection1.Model.cross_section_type Read170_section_type(string s) {
             switch (s) {
-                case @"TYPE_BUILT_UP_STEEL": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_STEEL;
-                case @"TYPE_BUILT_UP_TIMBER": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_BUILT_UP_TIMBER;
-                case @"TYPE_PARAMETRIC_BARS": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_BARS;
-                case @"TYPE_PARAMETRIC_MASSIVE_I": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_I;
-                case @"TYPE_PARAMETRIC_MASSIVE_II": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_MASSIVE_II;
-                case @"TYPE_PARAMETRIC_THIN_WALLED": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_PARAMETRIC_THIN_WALLED;
-                case @"TYPE_STANDARDIZED_STEEL": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_STANDARDIZED_STEEL;
-                case @"TYPE_STANDARDIZED_TIMBER": return global::Dlubal.WS.RSection1.Model.section_type.@TYPE_STANDARDIZED_TIMBER;
-                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.section_type));
+                case @"TYPE_BUILT_UP_STEEL": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_BUILT_UP_STEEL;
+                case @"TYPE_BUILT_UP_TIMBER": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_BUILT_UP_TIMBER;
+                case @"TYPE_PARAMETRIC_BARS": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_BARS;
+                case @"TYPE_PARAMETRIC_MASSIVE_I": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_MASSIVE_I;
+                case @"TYPE_PARAMETRIC_MASSIVE_II": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_MASSIVE_II;
+                case @"TYPE_PARAMETRIC_THIN_WALLED": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_PARAMETRIC_THIN_WALLED;
+                case @"TYPE_STANDARDIZED_STEEL": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_STANDARDIZED_STEEL;
+                case @"TYPE_STANDARDIZED_TIMBER": return global::Dlubal.WS.RSection1.Model.cross_section_type.@TYPE_STANDARDIZED_TIMBER;
+                default: throw CreateUnknownConstantException(s, typeof(global::Dlubal.WS.RSection1.Model.cross_section_type));
             }
         }
 
@@ -42160,11 +42160,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                                                 }
                                             }
                                             else {
-                                                UnknownNode(null, @":section_name");
+                                                UnknownNode(null, @":cross_section_name");
                                             }
                                         }
                                         else {
-                                            UnknownNode(null, @":section_name");
+                                            UnknownNode(null, @":cross_section_name");
                                         }
                                         Reader.MoveToContent();
                                         CheckReaderCount(ref whileIterations713, ref readerCount713);
@@ -45915,7 +45915,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id273_index = Reader.NameTable.Add(@"index");
             id1007_material_type = Reader.NameTable.Add(@"material_type");
             id256_set_pointResponse = Reader.NameTable.Add(@"set_pointResponse");
-            id195_get_section = Reader.NameTable.Add(@"get_section");
+            id195_get_section = Reader.NameTable.Add(@"get_cross_section");
             id1222_arc_center_z = Reader.NameTable.Add(@"arc_center_z");
             id317_model_path = Reader.NameTable.Add(@"model_path");
             id1287_angular_reference_table = Reader.NameTable.Add(@"angular_reference_table");
@@ -46331,7 +46331,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id426_global_coordinate_1 = Reader.NameTable.Add(@"global_coordinate_1");
             id427_global_coordinate_2 = Reader.NameTable.Add(@"global_coordinate_2");
             id745_b_2_M = Reader.NameTable.Add(@"b_2_M");
-            id454_section = Reader.NameTable.Add(@"section");
+            id454_section = Reader.NameTable.Add(@"cross_section");
             id657_W_pl_y = Reader.NameTable.Add(@"W_pl_y");
             id298_get_program_optionsResponse = Reader.NameTable.Add(@"get_program_optionsResponse");
             id359_report = Reader.NameTable.Add(@"report");
@@ -46439,7 +46439,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id580_LL = Reader.NameTable.Add(@"LL");
             id535_BL = Reader.NameTable.Add(@"BL");
             id789_b_t_l = Reader.NameTable.Add(@"b_t_l");
-            id196_get_sectionResponse = Reader.NameTable.Add(@"get_sectionResponse");
+            id196_get_sectionResponse = Reader.NameTable.Add(@"get_cross_sectionResponse");
             id337_max_number_of_recent_files = Reader.NameTable.Add(@"max_number_of_recent_files");
             id1282_is_custom_horizontal_position = Reader.NameTable.Add(@"is_custom_horizontal_position");
             id83_block_id = Reader.NameTable.Add(@"block_id");
@@ -47029,7 +47029,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id637_Tr_perm_T_2_7 = Reader.NameTable.Add(@"Tr_perm_T_2_7");
             id448_diameter = Reader.NameTable.Add(@"diameter");
             id1487_Item = Reader.NameTable.Add(@"modelInfo_property_supported_lines_coordinates");
-            id5_section_name = Reader.NameTable.Add(@"section_name");
+            id5_section_name = Reader.NameTable.Add(@"cross_section_name");
             id1380_stress_type = Reader.NameTable.Add(@"stress_type");
             id1110_Item = Reader.NameTable.Add(@"emissions_surfaces_top_face_unit_emission");
             id352_save_after_calculation = Reader.NameTable.Add(@"save_after_calculation");
@@ -47091,7 +47091,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id237_set_material = Reader.NameTable.Add(@"set_material");
             id139_get_partResponse = Reader.NameTable.Add(@"get_partResponse");
             id424_coordinate_2 = Reader.NameTable.Add(@"coordinate_2");
-            id257_set_section = Reader.NameTable.Add(@"set_section");
+            id257_set_section = Reader.NameTable.Add(@"set_cross_section");
             id798_b_w_o_M = Reader.NameTable.Add(@"b_w_o_M");
             id1167_yield_strength = Reader.NameTable.Add(@"yield_strength");
             id632_Tr_perm_F_t_280 = Reader.NameTable.Add(@"Tr_perm_F_t_280");
@@ -47276,7 +47276,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             id831_h_1_MB = Reader.NameTable.Add(@"h_1_MB");
             id455_parametrization_type = Reader.NameTable.Add(@"parametrization_type");
             id521_A_w_zz_AISI = Reader.NameTable.Add(@"A_w_zz_AISI");
-            id258_set_sectionResponse = Reader.NameTable.Add(@"set_sectionResponse");
+            id258_set_sectionResponse = Reader.NameTable.Add(@"set_cross_sectionResponse");
         }
     }
 
@@ -49512,7 +49512,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
     public sealed class ArrayOfObjectSerializer148 : XmlSerializer1 {
 
         public override System.Boolean CanDeserialize(System.Xml.XmlReader xmlReader) {
-            return xmlReader.IsStartElement(@"get_section", @"http://www.dlubal.com/rsection.xsd");
+            return xmlReader.IsStartElement(@"get_cross_section", @"http://www.dlubal.com/rsection.xsd");
         }
 
         protected override void Serialize(object objectToSerialize, System.Xml.Serialization.XmlSerializationWriter writer) {
@@ -49527,7 +49527,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
     public sealed class ArrayOfObjectSerializer149 : XmlSerializer1 {
 
         public override System.Boolean CanDeserialize(System.Xml.XmlReader xmlReader) {
-            return xmlReader.IsStartElement(@"get_sectionResponse", @"http://www.dlubal.com/rsection.xsd");
+            return xmlReader.IsStartElement(@"get_cross_sectionResponse", @"http://www.dlubal.com/rsection.xsd");
         }
 
         protected override void Serialize(object objectToSerialize, System.Xml.Serialization.XmlSerializationWriter writer) {
@@ -50382,7 +50382,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
     public sealed class ArrayOfObjectSerializer206 : XmlSerializer1 {
 
         public override System.Boolean CanDeserialize(System.Xml.XmlReader xmlReader) {
-            return xmlReader.IsStartElement(@"set_section", @"http://www.dlubal.com/rsection.xsd");
+            return xmlReader.IsStartElement(@"set_cross_section", @"http://www.dlubal.com/rsection.xsd");
         }
 
         protected override void Serialize(object objectToSerialize, System.Xml.Serialization.XmlSerializationWriter writer) {
@@ -50397,7 +50397,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
     public sealed class ArrayOfObjectSerializer207 : XmlSerializer1 {
 
         public override System.Boolean CanDeserialize(System.Xml.XmlReader xmlReader) {
-            return xmlReader.IsStartElement(@"set_sectionResponse", @"http://www.dlubal.com/rsection.xsd");
+            return xmlReader.IsStartElement(@"set_cross_sectionResponse", @"http://www.dlubal.com/rsection.xsd");
         }
 
         protected override void Serialize(object objectToSerialize, System.Xml.Serialization.XmlSerializationWriter writer) {
@@ -51556,7 +51556,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest:False:False"] = @"Read351_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse:False:False"] = @"Read352_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_sectionRequest:False:False"] = @"Read353_get_section";
-                    _tmp[@"Dlubal.WS.RSection1.Model.get_sectionResponse:False:False"] = @"Read354_get_sectionResponse";
+                    _tmp[@"Dlubal.WS.RSection1.Model.get_cross_sectionResponse:False:False"] = @"Read354_get_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idRequest:False:False"] = @"Read355_get_session_id";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idResponse:False:False"] = @"Read356_get_session_idResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_stirrupRequest:False:False"] = @"Read357_get_stirrup";
@@ -51614,7 +51614,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointRequest:False:False"] = @"Read409_set_point";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointResponse:False:False"] = @"Read410_set_pointResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_sectionRequest:False:False"] = @"Read411_set_section";
-                    _tmp[@"Dlubal.WS.RSection1.Model.set_sectionResponse:False:False"] = @"Read412_set_sectionResponse";
+                    _tmp[@"Dlubal.WS.RSection1.Model.set_cross_sectionResponse:False:False"] = @"Read412_set_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsRequest:False:False"] = @"Read413_set_selected_objects";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsResponse:False:False"] = @"Read414_set_selected_objectsResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_stirrupRequest:False:False"] = @"Read415_set_stirrup";
@@ -51840,7 +51840,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest:False:False"] = @"Write351_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse:False:False"] = @"Write352_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_sectionRequest:False:False"] = @"Write353_get_section";
-                    _tmp[@"Dlubal.WS.RSection1.Model.get_sectionResponse:False:False"] = @"Write354_get_sectionResponse";
+                    _tmp[@"Dlubal.WS.RSection1.Model.get_cross_sectionResponse:False:False"] = @"Write354_get_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idRequest:False:False"] = @"Write355_get_session_id";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idResponse:False:False"] = @"Write356_get_session_idResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_stirrupRequest:False:False"] = @"Write357_get_stirrup";
@@ -51898,7 +51898,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointRequest:False:False"] = @"Write409_set_point";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointResponse:False:False"] = @"Write410_set_pointResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_sectionRequest:False:False"] = @"Write411_set_section";
-                    _tmp[@"Dlubal.WS.RSection1.Model.set_sectionResponse:False:False"] = @"Write412_set_sectionResponse";
+                    _tmp[@"Dlubal.WS.RSection1.Model.set_cross_sectionResponse:False:False"] = @"Write412_set_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsRequest:False:False"] = @"Write413_set_selected_objects";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsResponse:False:False"] = @"Write414_set_selected_objectsResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_stirrupRequest:False:False"] = @"Write415_set_stirrup";
@@ -52007,7 +52007,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.set_stirrupRequest:False:False", new ArrayOfObjectSerializer210());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.resetResponse:False:False", new ArrayOfObjectSerializer167());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.close_connectionRequest:False:False", new ArrayOfObjectSerializer10());
-                    _tmp.Add(@"Dlubal.WS.RSection1.Model.get_sectionResponse:False:False", new ArrayOfObjectSerializer149());
+                    _tmp.Add(@"Dlubal.WS.RSection1.Model.get_cross_sectionResponse:False:False", new ArrayOfObjectSerializer149());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_stress_pointResponse:False:False", new ArrayOfObjectSerializer155());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_subpanelResponse:False:False", new ArrayOfObjectSerializer157());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_action_categories_for_load_caseResponse:False:False", new ArrayOfObjectSerializer47());
@@ -52232,7 +52232,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_model_historyRequest:False:False", new ArrayOfObjectSerializer84());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_model_parameters_locationResponse:False:False", new ArrayOfObjectSerializer93());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_mesh_statisticsResponse:False:False", new ArrayOfObjectSerializer83());
-                    _tmp.Add(@"Dlubal.WS.RSection1.Model.set_sectionResponse:False:False", new ArrayOfObjectSerializer207());
+                    _tmp.Add(@"Dlubal.WS.RSection1.Model.set_cross_sectionResponse:False:False", new ArrayOfObjectSerializer207());
                     _tmp.Add(@"Dlubal.WS.RSection1.Application.new_modelResponse:False:False", new ArrayOfObjectSerializer253());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_session_idResponse:False:False", new ArrayOfObjectSerializer151());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_action_categories_for_load_caseRequest:False:False", new ArrayOfObjectSerializer46());

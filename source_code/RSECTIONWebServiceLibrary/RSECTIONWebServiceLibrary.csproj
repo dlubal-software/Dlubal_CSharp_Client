@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net48;net6.0-windows10.0.22621.0;net7.0-windows10.0.22621.0</TargetFrameworks>
+    <TargetFrameworks>net48;net9.0-windows10.0.22621.0;net9.0-windows10.0.22621.0</TargetFrameworks>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
@@ -71,14 +71,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
 
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
 
 	</ItemGroup>
 

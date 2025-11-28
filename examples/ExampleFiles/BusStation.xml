@@ -143,7 +143,7 @@
                     <is_generated>false</is_generated>
                 </item>
             </material>
-            <section>
+            <cross_section>
                 <item>
                     <no>1</no>
                     <type>TYPE_STANDARDIZED_STEEL</type>
@@ -188,7 +188,7 @@
                     <parametrization_type>PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1</parametrization_type>
                     <is_generated>false</is_generated>
                 </item>
-            </section>
+            </cross_section>
             <thickness>
                 <item>
                     <no>1</no>
@@ -922,7 +922,7 @@
                     <type>TYPE_BEAM</type>
                     <is_deactivated_for_calculation>false</is_deactivated_for_calculation>
                     <line>18</line>
-                    <section_distribution_type>SECTION_DISTRIBUTION_TYPE_UNIFORM</section_distribution_type>
+                    <cross_section_distribution_type>SECTION_DISTRIBUTION_TYPE_UNIFORM</cross_section_distribution_type>
                     <nodes>4,12</nodes>
                     <node_start>4</node_start>
                     <node_end>12</node_end>
@@ -954,10 +954,10 @@
                     <rotation_specification_type>COORDINATE_SYSTEM_ROTATION_VIA_ANGLE</rotation_specification_type>
                     <rotation_angle>0</rotation_angle>
                     <is_rotated>false</is_rotated>
-                    <section_start>1</section_start>
-                    <section_end>1</section_end>
-                    <section_internal>1</section_internal>
-                    <section_material>1</section_material>
+                    <cross_section_start>1</cross_section_start>
+                    <cross_section_end>1</cross_section_end>
+                    <cross_section_internal>1</cross_section_internal>
+                    <cross_section_material>1</cross_section_material>
                     <member_eccentricity_start>1</member_eccentricity_start>
                     <member_eccentricity_end>1</member_eccentricity_end>
                     <end_modifications_member_start_extension>0</end_modifications_member_start_extension>
@@ -974,7 +974,7 @@
                     <type>TYPE_BEAM</type>
                     <is_deactivated_for_calculation>false</is_deactivated_for_calculation>
                     <line>3</line>
-                    <section_distribution_type>SECTION_DISTRIBUTION_TYPE_UNIFORM</section_distribution_type>
+                    <cross_section_distribution_type>SECTION_DISTRIBUTION_TYPE_UNIFORM</cross_section_distribution_type>
                     <nodes>3,12</nodes>
                     <node_start>12</node_start>
                     <node_end>3</node_end>
@@ -1006,10 +1006,10 @@
                     <rotation_specification_type>COORDINATE_SYSTEM_ROTATION_VIA_ANGLE</rotation_specification_type>
                     <rotation_angle>0</rotation_angle>
                     <is_rotated>false</is_rotated>
-                    <section_start>1</section_start>
-                    <section_end>1</section_end>
-                    <section_internal>1</section_internal>
-                    <section_material>1</section_material>
+                    <cross_section_start>1</cross_section_start>
+                    <cross_section_end>1</cross_section_end>
+                    <cross_section_internal>1</cross_section_internal>
+                    <cross_section_material>1</cross_section_material>
                     <member_eccentricity_start>1</member_eccentricity_start>
                     <member_eccentricity_end>1</member_eccentricity_end>
                     <end_modifications_member_start_extension>0</end_modifications_member_start_extension>
@@ -1026,7 +1026,7 @@
                     <type>TYPE_BEAM</type>
                     <is_deactivated_for_calculation>false</is_deactivated_for_calculation>
                     <line>19</line>
-                    <section_distribution_type>SECTION_DISTRIBUTION_TYPE_UNIFORM</section_distribution_type>
+                    <cross_section_distribution_type>SECTION_DISTRIBUTION_TYPE_UNIFORM</cross_section_distribution_type>
                     <nodes>12,16</nodes>
                     <node_start>12</node_start>
                     <node_end>16</node_end>
@@ -1058,10 +1058,10 @@
                     <rotation_specification_type>COORDINATE_SYSTEM_ROTATION_VIA_ANGLE</rotation_specification_type>
                     <rotation_angle>0</rotation_angle>
                     <is_rotated>false</is_rotated>
-                    <section_start>2</section_start>
-                    <section_end>2</section_end>
-                    <section_internal>2</section_internal>
-                    <section_material>2</section_material>
+                    <cross_section_start>2</cross_section_start>
+                    <cross_section_end>2</cross_section_end>
+                    <cross_section_internal>2</cross_section_internal>
+                    <cross_section_material>2</cross_section_material>
                     <end_modifications_member_start_extension>0</end_modifications_member_start_extension>
                     <end_modifications_member_start_slope_y>0</end_modifications_member_start_slope_y>
                     <end_modifications_member_start_slope_z>0</end_modifications_member_start_slope_z>
@@ -1496,8 +1496,8 @@
                     <offset_z>0</offset_z>
                     <axial_offset_active>false</axial_offset_active>
                     <hinge_location_at_node>false</hinge_location_at_node>
-                    <horizontal_section_alignment>ALIGN_MIDDLE</horizontal_section_alignment>
-                    <vertical_section_alignment>ALIGN_TOP</vertical_section_alignment>
+                    <horizontal_cross_section_alignment>ALIGN_MIDDLE</horizontal_cross_section_alignment>
+                    <vertical_cross_section_alignment>ALIGN_TOP</vertical_cross_section_alignment>
                     <transverse_offset_reference_type>TRANSVERSE_OFFSET_TYPE_NONE</transverse_offset_reference_type>
                     <is_generated>false</is_generated>
                 </item>
@@ -1690,7 +1690,7 @@
                             <has_force_eccentricity>false</has_force_eccentricity>
                             <eccentricity_horizontal_alignment>ALIGN_NONE</eccentricity_horizontal_alignment>
                             <eccentricity_vertical_alignment>ALIGN_NONE</eccentricity_vertical_alignment>
-                            <eccentricity_section_middle>LOAD_ECCENTRICITY_SECTION_MIDDLE_CENTER_OF_GRAVITY</eccentricity_section_middle>
+                            <eccentricity_cross_section_middle>LOAD_ECCENTRICITY_SECTION_MIDDLE_CENTER_OF_GRAVITY</eccentricity_cross_section_middle>
                             <is_eccentricity_at_end_different_from_start>false</is_eccentricity_at_end_different_from_start>
                             <eccentricity_y_at_start>0</eccentricity_y_at_start>
                             <eccentricity_z_at_start>0</eccentricity_z_at_start>

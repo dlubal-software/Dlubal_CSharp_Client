@@ -49,16 +49,16 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.SetProgressBarValue(20);
 
-                // section
-                DataLogger.AddText($"Set section (IDs = {SECTION_ID}).");
-                section section = new section
+                // cross_section
+                DataLogger.AddText($"Set cross_section (IDs = {SECTION_ID}).");
+                cross_section cross_section = new cross_section
                 {
                     no = SECTION_ID,
                     name = SECTION_I,
                     material = MATERIAL_ID,
                     materialSpecified = true
                 };
-                SoapModelClient.set_section(section);
+                SoapModelClient.set_cross_section(cross_section);
 
                 DataLogger.SetProgressBarValue(30);
 
@@ -106,7 +106,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #elif RSTAB
                     nodes = new int[] { NODE_1_ID, NODE_2_ID },
 #endif
-                    section_start = SECTION_ID,
+                    cross_section_start = SECTION_ID,
                     section_startSpecified = true
                 };
                 SoapModelClient.set_member(member);
@@ -228,16 +228,16 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.SetProgressBarValue(20);
 
-                // section
-                DataLogger.AddText($"Set section (IDs = {SECTION_ID}).");
-                section section = new section
+                // cross_section
+                DataLogger.AddText($"Set cross_section (IDs = {SECTION_ID}).");
+                cross_section cross_section = new cross_section
                 {
                     no = SECTION_ID,
                     name = SECTION_I,
                     material = MATERIAL_ID,
                     materialSpecified = true
                 };
-                SoapModelClient.set_section(section);
+                SoapModelClient.set_cross_section(cross_section);
 
                 DataLogger.SetProgressBarValue(30);
 
@@ -285,7 +285,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 #elif RSTAB
                     nodes = new int[] { NODE_1_ID, NODE_2_ID },
 #endif
-                    section_start = SECTION_ID,
+                    cross_section_start = SECTION_ID,
                     section_startSpecified = true
                 };
                 SoapModelClient.set_member(member);

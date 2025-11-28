@@ -325,14 +325,14 @@ namespace Cantilever
                 //};
 
 
-                section sectionRectangle = new section
+                cross_section sectionRectangle = new cross_section
                 {
                     no = 1,
                     material = materialConcrete.no,
                     materialSpecified = true,
-                    type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                    type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                     typeSpecified = true,
-                    parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
+                    parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
                     //name = "R_M1 0.5/1.0", // width/height as in RFEM
                     b = 0.5,
@@ -382,9 +382,9 @@ namespace Cantilever
                     node_end = n2.no,
                     node_endSpecified = true,
 #endif
-                    section_start = sectionRectangle.no,
+                    cross_section_start = sectionRectangle.no,
                     section_startSpecified = true,
-                    section_end = sectionRectangle.no,
+                    cross_section_end = sectionRectangle.no,
                     section_endSpecified = true,
                     comment = "concrete beam"
                 };
@@ -403,7 +403,7 @@ namespace Cantilever
                     model.set_material(materialConcrete);
                     //model.set_material(materialUser);
                     //model.set_material(materialUserThermal);
-                    model.set_section(sectionRectangle);
+                    model.set_cross_section(sectionRectangle);
                     model.set_node(n1);
                     model.set_node(n2);
 #if RFEM
@@ -683,7 +683,7 @@ namespace Cantilever
                 foreach (var item in globalDeformationsMember1)
                 {
                     Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
+                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.cross_section);
                     Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
 
                 }
@@ -727,13 +727,13 @@ namespace Cantilever
                 {
                     if (!item.description.Contains("Total"))
                     {
-                        Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                        item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                        Console.WriteLine("Material no: {0}\t Material name: {1}\t cross_section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
+                        item.description, item.row.material_name, item.row.cross_section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
                     }
                     else
                     {
                         Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                                            item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                                            item.description, item.row.material_name, item.row.cross_section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
 
                     }
 

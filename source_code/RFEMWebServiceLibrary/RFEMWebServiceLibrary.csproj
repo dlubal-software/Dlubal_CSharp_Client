@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net48;net6.0-windows10.0.22621.0;net7.0-windows10.0.22621.0</TargetFrameworks>
+    <TargetFrameworks>net48;net9.0-windows10.0.22621.0;net9.0-windows10.0.22621.0</TargetFrameworks>
     <StartupObject />
     <Configurations>Debug;Release</Configurations>
     <Authors>Dlubal Software GmbH</Authors>
@@ -48,51 +48,51 @@
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RFEM|net6.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RFEM|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='RELEASE RSECTION|net6.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='RELEASE RSECTION|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RSTAB|net6.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RSTAB|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSECTION|net6.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSECTION|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSTAB|net6.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSTAB|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RFEM|net7.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RFEM|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='RELEASE RSECTION|net7.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='RELEASE RSECTION|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RSTAB|net7.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release RSTAB|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSECTION|net7.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSECTION|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSTAB|net7.0-windows10.0.22621.0|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug RSTAB|net9.0-windows10.0.22621.0|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
 
@@ -114,14 +114,14 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
 
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net7.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" Condition="'$(TargetFramework)' == 'net9.0-windows10.0.22621.0'" />
 
 	</ItemGroup>
   <ItemGroup>
