@@ -383,9 +383,9 @@ namespace Cantilever
                     node_endSpecified = true,
 #endif
                     cross_section_start = sectionRectangle.no,
-                    section_startSpecified = true,
+                    cross_section_startSpecified = true,
                     cross_section_end = sectionRectangle.no,
-                    section_endSpecified = true,
+                    cross_section_endSpecified = true,
                     comment = "concrete beam"
                 };
 
@@ -728,12 +728,12 @@ namespace Cantilever
                     if (!item.description.Contains("Total"))
                     {
                         Console.WriteLine("Material no: {0}\t Material name: {1}\t cross_section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                        item.description, item.row.material_name, item.row.cross_section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                        item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
                     }
                     else
                     {
                         Console.WriteLine("Total \t \t \t \t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
-                                            item.description, item.row.material_name, item.row.cross_section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
+                                            item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
 
                     }
 

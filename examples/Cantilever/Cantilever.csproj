@@ -43,7 +43,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dlubal.RFEMWebServiceLibrary" Version="6.6.9" />
+    <PackageReference Include="Dlubal.RFEMWebServiceLibrary" Version="6.12.7" />
     <PackageReference Include="NLog" Version="5.0.4" />
   </ItemGroup>
 
