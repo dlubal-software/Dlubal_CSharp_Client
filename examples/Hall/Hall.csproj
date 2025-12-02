@@ -5,8 +5,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dlubal.RFEMWebServiceLibrary" Version="6.6.9" />
     <PackageReference Include="NLog" Version="5.0.4" />
-    <PackageReference Include="CsvHelper" Version="27.0.4" />
+    <PackageReference Include="CsvHelper" Version="27.0.4" /> 
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
