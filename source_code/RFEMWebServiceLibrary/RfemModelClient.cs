@@ -15906,14 +15906,14 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_cross_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_cross_section(Dlubal.WS.Rfem6.Model.get_sectionRequest request)
+        Dlubal.WS.Rfem6.Model.get_cross_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_cross_section(Dlubal.WS.Rfem6.Model.get_cross_sectionRequest request)
         {
             return base.Channel.get_cross_section(request);
         }
         
         public Dlubal.WS.Rfem6.Model.cross_section get_cross_section(int no)
         {
-            Dlubal.WS.Rfem6.Model.get_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_sectionRequest();
+            Dlubal.WS.Rfem6.Model.get_cross_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_cross_sectionRequest();
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_cross_section(inValue);
             return retVal.value;
@@ -18118,14 +18118,14 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_cross_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_cross_section(Dlubal.WS.Rfem6.Model.set_sectionRequest request)
+        Dlubal.WS.Rfem6.Model.set_cross_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_cross_section(Dlubal.WS.Rfem6.Model.set_cross_sectionRequest request)
         {
             return base.Channel.set_cross_section(request);
         }
         
         public void set_cross_section(Dlubal.WS.Rfem6.Model.cross_section value)
         {
-            Dlubal.WS.Rfem6.Model.set_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.set_sectionRequest();
+            Dlubal.WS.Rfem6.Model.set_cross_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.set_cross_sectionRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_cross_section(inValue);
         }

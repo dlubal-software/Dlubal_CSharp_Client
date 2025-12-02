@@ -51555,7 +51555,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stressesResponse:False:False"] = @"Read350_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest:False:False"] = @"Read351_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse:False:False"] = @"Read352_Item";
-                    _tmp[@"Dlubal.WS.RSection1.Model.get_sectionRequest:False:False"] = @"Read353_get_section";
+                    _tmp[@"Dlubal.WS.RSection1.Model.get_cross_sectionRequest:False:False"] = @"Read353_get_section";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_cross_sectionResponse:False:False"] = @"Read354_get_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idRequest:False:False"] = @"Read355_get_session_id";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idResponse:False:False"] = @"Read356_get_session_idResponse";
@@ -51613,7 +51613,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.set_partResponse:False:False"] = @"Read408_set_partResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointRequest:False:False"] = @"Read409_set_point";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointResponse:False:False"] = @"Read410_set_pointResponse";
-                    _tmp[@"Dlubal.WS.RSection1.Model.set_sectionRequest:False:False"] = @"Read411_set_section";
+                    _tmp[@"Dlubal.WS.RSection1.Model.set_cross_sectionRequest:False:False"] = @"Read411_set_section";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_cross_sectionResponse:False:False"] = @"Read412_set_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsRequest:False:False"] = @"Read413_set_selected_objects";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsResponse:False:False"] = @"Read414_set_selected_objectsResponse";
@@ -51839,7 +51839,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stressesResponse:False:False"] = @"Write350_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest:False:False"] = @"Write351_Item";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse:False:False"] = @"Write352_Item";
-                    _tmp[@"Dlubal.WS.RSection1.Model.get_sectionRequest:False:False"] = @"Write353_get_section";
+                    _tmp[@"Dlubal.WS.RSection1.Model.get_cross_sectionRequest:False:False"] = @"Write353_get_section";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_cross_sectionResponse:False:False"] = @"Write354_get_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idRequest:False:False"] = @"Write355_get_session_id";
                     _tmp[@"Dlubal.WS.RSection1.Model.get_session_idResponse:False:False"] = @"Write356_get_session_idResponse";
@@ -51897,7 +51897,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp[@"Dlubal.WS.RSection1.Model.set_partResponse:False:False"] = @"Write408_set_partResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointRequest:False:False"] = @"Write409_set_point";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_pointResponse:False:False"] = @"Write410_set_pointResponse";
-                    _tmp[@"Dlubal.WS.RSection1.Model.set_sectionRequest:False:False"] = @"Write411_set_section";
+                    _tmp[@"Dlubal.WS.RSection1.Model.set_cross_sectionRequest:False:False"] = @"Write411_set_section";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_cross_sectionResponse:False:False"] = @"Write412_set_sectionResponse";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsRequest:False:False"] = @"Write413_set_selected_objects";
                     _tmp[@"Dlubal.WS.RSection1.Model.set_selected_objectsResponse:False:False"] = @"Write414_set_selected_objectsResponse";
@@ -52043,7 +52043,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.clear_selectionRequest:False:False", new ArrayOfObjectSerializer8());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.set_partResponse:False:False", new ArrayOfObjectSerializer203());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.import_blockRequest:False:False", new ArrayOfObjectSerializer162());
-                    _tmp.Add(@"Dlubal.WS.RSection1.Model.set_sectionRequest:False:False", new ArrayOfObjectSerializer206());
+                    _tmp.Add(@"Dlubal.WS.RSection1.Model.set_cross_sectionRequest:False:False", new ArrayOfObjectSerializer206());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.generate_and_validate_xml_solver_inputResponse:False:False", new ArrayOfObjectSerializer43());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_all_object_numbers_by_typeRequest:False:False", new ArrayOfObjectSerializer50());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.set_model_idResponse:False:False", new ArrayOfObjectSerializer193());
@@ -52094,7 +52094,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                     _tmp.Add(@"Dlubal.WS.RSection1.Application.set_settings_program_languageRequest:False:False", new ArrayOfObjectSerializer272());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.set_model_parameters_locationResponse:False:False", new ArrayOfObjectSerializer197());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.export_printout_report_to_htmlResponse:False:False", new ArrayOfObjectSerializer35());
-                    _tmp.Add(@"Dlubal.WS.RSection1.Model.get_sectionRequest:False:False", new ArrayOfObjectSerializer148());
+                    _tmp.Add(@"Dlubal.WS.RSection1.Model.get_cross_sectionRequest:False:False", new ArrayOfObjectSerializer148());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.get_table_export_config_managerResponse:False:False", new ArrayOfObjectSerializer159());
                     _tmp.Add(@"Dlubal.WS.RSection1.Model.set_materialRequest:False:False", new ArrayOfObjectSerializer188());
                     _tmp.Add(@"Dlubal.WS.RSection1.Application.get_detailed_loggingRequest:False:False", new ArrayOfObjectSerializer228());

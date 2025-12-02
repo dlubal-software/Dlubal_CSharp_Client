@@ -1034,14 +1034,14 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.get_cross_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_cross_section(Dlubal.WS.RSection1.Model.get_sectionRequest request)
+        Dlubal.WS.RSection1.Model.get_cross_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_cross_section(Dlubal.WS.RSection1.Model.get_cross_sectionRequest request)
         {
             return base.Channel.get_cross_section(request);
         }
         
         public Dlubal.WS.RSection1.Model.cross_section get_cross_section(int no)
         {
-            Dlubal.WS.RSection1.Model.get_sectionRequest inValue = new Dlubal.WS.RSection1.Model.get_sectionRequest();
+            Dlubal.WS.RSection1.Model.get_cross_sectionRequest inValue = new Dlubal.WS.RSection1.Model.get_cross_sectionRequest();
             inValue.no = no;
             Dlubal.WS.RSection1.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_cross_section(inValue);
             return retVal.value;
@@ -1418,14 +1418,14 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.set_cross_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_cross_section(Dlubal.WS.RSection1.Model.set_sectionRequest request)
+        Dlubal.WS.RSection1.Model.set_cross_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_cross_section(Dlubal.WS.RSection1.Model.set_cross_sectionRequest request)
         {
             return base.Channel.set_cross_section(request);
         }
         
         public void set_cross_section(Dlubal.WS.RSection1.Model.cross_section value)
         {
-            Dlubal.WS.RSection1.Model.set_sectionRequest inValue = new Dlubal.WS.RSection1.Model.set_sectionRequest();
+            Dlubal.WS.RSection1.Model.set_cross_sectionRequest inValue = new Dlubal.WS.RSection1.Model.set_cross_sectionRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_cross_section(inValue);
         }

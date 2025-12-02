@@ -11788,18 +11788,18 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="get_cross_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
-    public partial class get_sectionRequest
+    public partial class get_cross_sectionRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int no;
         
-        public get_sectionRequest()
+        public get_cross_sectionRequest()
         {
         }
         
-        public get_sectionRequest(int no)
+        public get_cross_sectionRequest(int no)
         {
             this.no = no;
         }
@@ -50970,18 +50970,18 @@ namespace Dlubal.WS.RSection1.Model
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="set_cross_section", WrapperNamespace="http://www.dlubal.com/rsection.xsd", IsWrapped=true)]
-    public partial class set_sectionRequest
+    public partial class set_cross_sectionRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.dlubal.com/rsection.xsd", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public Dlubal.WS.RSection1.Model.cross_section value;
         
-        public set_sectionRequest()
+        public set_cross_sectionRequest()
         {
         }
         
-        public set_sectionRequest(Dlubal.WS.RSection1.Model.cross_section value)
+        public set_cross_sectionRequest(Dlubal.WS.RSection1.Model.cross_section value)
         {
             this.value = value;
         }

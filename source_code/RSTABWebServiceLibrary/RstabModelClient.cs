@@ -6809,14 +6809,14 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_cross_section(Dlubal.WS.Rstab9.Model.get_sectionRequest request)
+        Dlubal.WS.Rstab9.Model.get_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_cross_section(Dlubal.WS.Rstab9.Model.get_cross_sectionRequest request)
         {
             return base.Channel.get_cross_section(request);
         }
         
         public Dlubal.WS.Rstab9.Model.cross_section get_cross_section(int no)
         {
-            Dlubal.WS.Rstab9.Model.get_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_sectionRequest();
+            Dlubal.WS.Rstab9.Model.get_cross_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_cross_sectionRequest();
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_cross_section(inValue);
             return retVal.value;
@@ -8171,14 +8171,14 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_cross_section(Dlubal.WS.Rstab9.Model.set_sectionRequest request)
+        Dlubal.WS.Rstab9.Model.set_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_cross_section(Dlubal.WS.Rstab9.Model.set_cross_sectionRequest request)
         {
             return base.Channel.set_cross_section(request);
         }
         
         public void set_cross_section(Dlubal.WS.Rstab9.Model.cross_section value)
         {
-            Dlubal.WS.Rstab9.Model.set_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.set_sectionRequest();
+            Dlubal.WS.Rstab9.Model.set_cross_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.set_cross_sectionRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_cross_section(inValue);
         }
