@@ -345,13 +345,13 @@
                         type = member_type.TYPE_BEAM,
                         typeSpecified = true,
                         cross_section_start = sectionRectangle.no,
-                        section_startSpecified = true,
+                        cross_section_startSpecified = true,
                         cross_section_end = sectionRectangle.no,
-                        section_endSpecified = true,
+                        cross_section_endSpecified = true,
                         cross_section_alignment = member_cross_section_alignment.SECTION_ALIGNMENT_CENTRIC,
-                        section_alignmentSpecified = true,
+                        cross_section_alignmentSpecified = true,
                         cross_section_distribution_type = member_cross_section_distribution_type.SECTION_DISTRIBUTION_TYPE_UNIFORM,
-                        section_distribution_typeSpecified = true,
+                        cross_section_distribution_typeSpecified = true,
                     };
 
                     members.Add(newMember);
@@ -459,8 +459,8 @@
                     surfaces = new[] { 1, 2 },
                     material = materialReinforcement.no,
                     materialSpecified = true,
-                    reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
-                    reinforcement_typeSpecified = true,
+                    //reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
+                    //reinforcement_typeSpecified = true,
                     mesh_name = "Q424A",
                     mesh_product_range = surface_reinforcement_mesh_product_range.MESHSTANDARD_GERMANY_2008_01_01,
                     mesh_shape = surface_reinforcement_mesh_shape.MESHSHAPE_Q_MESH,
