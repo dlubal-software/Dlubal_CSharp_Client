@@ -407,9 +407,9 @@ namespace SteelHall.MAUI
                         line = lineItem.Key,
                         lineSpecified = true,
                         cross_section_start = section1.no,
-                        section_startSpecified = true,
+                        cross_section_startSpecified = true,
                         cross_section_end = section1.no,
-                        section_endSpecified = true,                        
+                        cross_section_endSpecified = true,                        
                         comment = "column"
                     };
                     zMembers.Add(memberId, newMember);
@@ -427,25 +427,25 @@ namespace SteelHall.MAUI
                         line = lineItem.Key,
                         lineSpecified = true,
                         cross_section_distribution_type = member_cross_section_distribution_type.SECTION_DISTRIBUTION_TYPE_TAPERED_AT_START_OF_MEMBER,
-                        section_distribution_typeSpecified = true,
+                        cross_section_distribution_typeSpecified = true,
                         section_distance_from_start_relative = 0.25,
                         section_distance_from_start_relativeSpecified = true,
                         cross_section_distance_from_end_relative = 0.75,
-                        section_distance_from_end_relativeSpecified = true,
+                        cross_section_distance_from_end_relativeSpecified = true,
                         cross_section_distance_from_start_is_defined_as_relative = true,
-                        section_distance_from_end_is_defined_as_relativeSpecified = true,
+                        cross_section_distance_from_end_is_defined_as_relativeSpecified = true,
                         cross_section_distance_from_end_is_defined_as_relative = true,
-                        section_distance_from_start_is_defined_as_relativeSpecified = true,
+                        cross_section_distance_from_start_is_defined_as_relativeSpecified = true,
                         cross_section_alignment = member_cross_section_alignment.SECTION_ALIGNMENT_TOP,
-                        section_alignmentSpecified = true,
+                        cross_section_alignmentSpecified = true,
                         reference_type = member_reference_type.REFERENCE_TYPE_L,
                         reference_typeSpecified = true,
                         design_properties_via_member = false,
                         design_properties_via_memberSpecified = true,
                         cross_section_start = section4.no,
-                        section_startSpecified = true,
+                        cross_section_startSpecified = true,
                         cross_section_end = section1.no,
-                        section_endSpecified = true,
+                        cross_section_endSpecified = true,
                         comment = "bar"
                     };
                     xMembers.Add(memberId, newMember);
@@ -463,9 +463,9 @@ namespace SteelHall.MAUI
                         line = lineItem.Key,
                         lineSpecified = true,
                         cross_section_start = section2.no,
-                        section_startSpecified = true,
+                        cross_section_startSpecified = true,
                         cross_section_end = section2.no,
-                        section_endSpecified = true,
+                        cross_section_endSpecified = true,
                         comment = "side member"
                     };
                     yMembers.Add(memberId, newMember);
@@ -483,9 +483,9 @@ namespace SteelHall.MAUI
                         line = lineItem.Key,
                         lineSpecified = true,
                         cross_section_start = section3.no,
-                        section_startSpecified = true,
+                        cross_section_startSpecified = true,
                         cross_section_end = section3.no,
-                        section_endSpecified = true,
+                        cross_section_endSpecified = true,
                         type = member_type.TYPE_TENSION,
                         typeSpecified = true,
                         comment = "bracing member"
@@ -505,9 +505,9 @@ namespace SteelHall.MAUI
                         line = lineItem.Key,
                         lineSpecified = true,
                         cross_section_start = section3.no,
-                        section_startSpecified = true,
+                        cross_section_startSpecified = true,
                         cross_section_end = section3.no,
-                        section_endSpecified = true,
+                        cross_section_endSpecified = true,
                         type = member_type.TYPE_TENSION,
                         typeSpecified = true,
                         comment = "bracing member"

@@ -194,7 +194,7 @@ namespace DotNetCoreClientTest.Web2.Code.WSconsumer
                     nodes = new int[] { NODE_1_ID, NODE_2_ID },
 #endif
                 cross_section_start = SECTION_ID,
-                section_startSpecified = true
+                cross_section_startSpecified = true
             };
             Session.SoapModelClient.set_member(member);
 

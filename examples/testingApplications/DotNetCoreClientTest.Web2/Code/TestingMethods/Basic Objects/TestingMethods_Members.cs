@@ -89,7 +89,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 nodes = new int[] { nodes[0].no, nodes[1].no },
 #endif
                 cross_section_start = cross_section.no,
-                section_startSpecified = true
+                cross_section_startSpecified = true
             };
             SoapModelClient.set_member(member);
         }
@@ -184,7 +184,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                     nodes = new int[] { NODE_1_ID, NODE_2_ID },
 #endif
                     cross_section_start = SECTION_ID,
-                    section_startSpecified = true
+                    cross_section_startSpecified = true
                 };
                 SoapModelClient.set_member(member);
 

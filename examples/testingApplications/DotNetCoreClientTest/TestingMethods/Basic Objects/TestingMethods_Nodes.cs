@@ -152,7 +152,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
                 {
                     no = MEMBER_NO,
                     cross_section_start = SECTION_NO,
-                    section_startSpecified = true,
+                    cross_section_startSpecified = true,
 #if RFEM
                     line = LINE_NO,
                     lineSpecified = true
