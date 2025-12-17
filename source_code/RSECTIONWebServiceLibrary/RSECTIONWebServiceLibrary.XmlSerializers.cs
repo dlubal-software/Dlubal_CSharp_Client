@@ -3,7 +3,7 @@
 [assembly:System.Security.SecurityTransparent()]
 [assembly:System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif
-[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"dda63de6-5ee9-4273-bc61-b2a712d44364,", Version=@"4.0.0.0")]
+[assembly:System.Xml.Serialization.XmlSerializerVersionAttribute(ParentAssemblyId=@"fbca1e46-46cc-4d4c-aea0-95f0e2295e3c,", Version=@"4.0.0.0")]
 namespace Microsoft.Xml.Serialization.GeneratedAssembly {
 
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
@@ -8278,6 +8278,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A"; break;
                 case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX"; break;
                 case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B"; break;
+                case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_C__BOX_C: s = @"PARAMETRIC_THIN_WALLED__BOX_TYPE_C__BOX_C"; break;
                 case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CHANNEL__U: s = @"PARAMETRIC_THIN_WALLED__CHANNEL__U"; break;
                 case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS: s = @"PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS"; break;
                 case global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CL_SECTION__CL: s = @"PARAMETRIC_THIN_WALLED__CL_SECTION__CL"; break;
@@ -36261,6 +36262,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                 case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_A__BOX_A;
                 case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_BX__BOX_BX;
                 case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B;
+                case @"PARAMETRIC_THIN_WALLED__BOX_TYPE_C__BOX_C": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__BOX_TYPE_C__BOX_C;
                 case @"PARAMETRIC_THIN_WALLED__CHANNEL__U": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CHANNEL__U;
                 case @"PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CIRCULAR_HOLLOW_SECTION__CHS;
                 case @"PARAMETRIC_THIN_WALLED__CL_SECTION__CL": return global::Dlubal.WS.RSection1.Model.cross_section_parametrization_type.@PARAMETRIC_THIN_WALLED__CL_SECTION__CL;

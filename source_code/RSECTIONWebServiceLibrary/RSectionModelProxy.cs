@@ -811,6 +811,9 @@ namespace Dlubal.WS.RSection1.Model
         PARAMETRIC_THIN_WALLED__BOX_TYPE_B__BOX_B,
         
         /// <remarks/>
+        PARAMETRIC_THIN_WALLED__BOX_TYPE_C__BOX_C,
+        
+        /// <remarks/>
         PARAMETRIC_THIN_WALLED__CHANNEL__U,
         
         /// <remarks/>
