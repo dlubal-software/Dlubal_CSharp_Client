@@ -7,6 +7,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
+using System.ComponentModel; 
 
 namespace Hall
 {
@@ -49,16 +50,15 @@ namespace Hall
 
         public static void TestingExample(RfemModelClient model, Logger logger)
         {
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"..\..\..\..\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
+            string CurrentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
+            string ExamplesDirectory = CurrentDirectory + @"\ExampleFiles\";
             
             #region Model type
             model_type modelType = model.get_model_type();
             Console.WriteLine("Model type is : {0}", modelType.ToString());
 
             #endregion
-
+            
             #region AddonList
             addon_list_type addon = model.get_addon_statuses();
             Console.WriteLine("Material nonlinear analysis active?: {0}", addon.analysis.material_nonlinear_analysis_active ? "Yes" : "No");
@@ -321,8 +321,8 @@ namespace Hall
                 {
                     soil_material = sand.no,
                     soil_materialSpecified = true,
-                    thickness = 2.0,
-                    thicknessSpecified = true,
+                    depth = 2.0,
+                    depthSpecified = true,
                     bottom_ordinate = 1.0,
                     bottom_ordinateSpecified = true,
                 }
@@ -334,8 +334,8 @@ namespace Hall
                 {
                     soil_material = gravel.no,
                     soil_materialSpecified = true,
-                    thickness = 3.0,
-                    thicknessSpecified = true,
+                    depth = 3.0,
+                    depthSpecified = true,
                     bottom_ordinate = 2.0,
                     bottom_ordinateSpecified = true,
                 }
@@ -347,8 +347,8 @@ namespace Hall
                 {
                     soil_material = clay.no,
                     soil_materialSpecified = true,
-                    thickness = 1.0,
-                    thicknessSpecified = true,
+                    depth = 1.0,
+                    depthSpecified = true,
                     bottom_ordinate = 3.0,
                     bottom_ordinateSpecified = true,
                 }
@@ -419,7 +419,7 @@ namespace Hall
                 comment = "Scripted massif",
                 topology_type = soil_massif_topology_type.TOPOLOGY_TYPE_RECTANGLE,
                 topology_typeSpecified = true,
-                analysis_type = soil_massif_analysis_type.ANALYSIS_TYPE_NONLINEAR_SOIL_3D,
+                analysis_type = soil_massif_analysis_type.ANALYSIS_TYPE_ADVANCED_HALF_SPACE_METHOD,
                 analysis_typeSpecified = true,
                 assigned_to_boreholes = new int[] { soilSampleModel.no },
                 assigned_to_type = soil_massif_assigned_to_type.ASSIGNED_TO_TYPE_BOREHOLES,
@@ -438,20 +438,20 @@ namespace Hall
                 rotation_about_zSpecified = true,
                 groundwater = true,
                 groundwaterSpecified = true,
-                degree_of_nurbs_surface = 3,
-                degree_of_nurbs_surfaceSpecified = true,
-                degree_of_plate_surface = 3,
-                degree_of_plate_surfaceSpecified = true,
+                //degree_of_nurbs_surface = 3,
+                //degree_of_nurbs_surfaceSpecified = true,
+                //degree_of_plate_surface = 3,
+                //degree_of_plate_surfaceSpecified = true,
                 depth_according_to_boreholes = true,
                 depth_according_to_boreholesSpecified = true,
                 mapped_mesh_under_surfaces = false,
                 mapped_mesh_under_surfacesSpecified = true,
-                max_iterations = 3,
-                max_iterationsSpecified = true,
-                max_pieces = 50,
-                max_piecesSpecified = true,
-                nurbs_surface_geometry_settings_enabled = false,
-                nurbs_surface_geometry_settings_enabledSpecified = true,
+                //max_iterations = 3,
+                //max_iterationsSpecified = true,
+                //max_pieces = 50,
+                //max_piecesSpecified = true,
+                //nurbs_surface_geometry_settings_enabled = false,
+                //nurbs_surface_geometry_settings_enabledSpecified = true,
                 rock_beneath_last_layer = false,
                 rock_beneath_last_layerSpecified = true,
             };
@@ -493,7 +493,7 @@ namespace Hall
             Console.WriteLine("Project description: " + model_Main_Parameters.project_description);
             #endregion
 
-            #region Materials, sections and thicknesses
+            #region Materials, cross_sections and thicknesses
             // create material
             material materialSteel = new material
             {
@@ -537,56 +537,56 @@ namespace Hall
                 material_typeSpecified = true
             };
 
-            // create section
-            section sectionSteelCSBeam = new section
+            // create cross_section
+            cross_section sectionSteelCSBeam = new cross_section
             {
                 no = 1,
                 material = materialSteel.no,
                 materialSpecified = true,
                 name = "IPE 200",
                 typeSpecified = true,
-                type = section_type.TYPE_STANDARDIZED_STEEL,
-                manufacturing_type = section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
+                type = cross_section_type.TYPE_STANDARDIZED_STEEL,
+                manufacturing_type = cross_section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
                 manufacturing_typeSpecified = true,
                 thin_walled_model = true,
                 thin_walled_modelSpecified = true,
             };
 
 
-            section sectionRectangle = new section
+            cross_section sectionRectangle = new cross_section
             {
                 no = 2,
                 material = materialConcrete.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                 parametrization_typeSpecified = true,
                 name = "R_M1 0.5/1.0", // width/height as in RFEM, SI units
             };
 
-            section sectionSquare = new section
+            cross_section sectionSquare = new cross_section
             {
                 no = 3,
                 material = materialConcrete.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
                 parametrization_typeSpecified = true,
                 name = "SQ_M1 0.5", // width as in RFEM
 
             };
 
-            section sectionSteelCSColumn = new section
+            cross_section sectionSteelCSColumn = new cross_section
             {
                 no = 4,
                 material = materialSteel.no,
                 materialSpecified = true,
                 name = "HEB 200",
                 typeSpecified = true,
-                type = section_type.TYPE_STANDARDIZED_STEEL,
-                manufacturing_type = section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
+                type = cross_section_type.TYPE_STANDARDIZED_STEEL,
+                manufacturing_type = cross_section_manufacturing_type.MANUFACTURING_TYPE_HOT_ROLLED,
                 manufacturing_typeSpecified = true,
                 thin_walled_model = true,
                 thin_walled_modelSpecified = true,
@@ -594,28 +594,28 @@ namespace Hall
                 rotation_angleSpecified = true,
             };
 
-            section sectionSquareTimber = new section
+            cross_section sectionSquareTimber = new cross_section
             {
                 no = 5,
                 material = materialTimber.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_SQUARE__SQ_M1,
                 parametrization_typeSpecified = true,
                 name = "SQ_M1 0.5", // width as in RFEM
 
             };
-            section sectionAluminium = new section
+            cross_section sectionAluminium = new cross_section
             {
                 no = 6,
                 material = materialAluminum.no,
                 materialSpecified = true,
-                type = section_type.TYPE_PARAMETRIC_THIN_WALLED,
+                type = cross_section_type.TYPE_PARAMETRIC_THIN_WALLED,
                 typeSpecified = true,
-                parametrization_type = section_parametrization_type.PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU,
+                parametrization_type = cross_section_parametrization_type.PARAMETRIC_THIN_WALLED__UNSYMMETRIC_CHANNEL__UU,
                 parametrization_typeSpecified = true,
-                manufacturing_type = section_manufacturing_type.MANUFACTURING_TYPE_WELDED,
+                manufacturing_type = cross_section_manufacturing_type.MANUFACTURING_TYPE_WELDED,
                 manufacturing_typeSpecified = true,
                 name = "UUESI 0.300/0.150/0.200/0.010/0.014/0.012/0.050/0.025/0.008/0.16/0/0/0/0", // width as in RFEM
             };
@@ -639,18 +639,18 @@ namespace Hall
                 model.set_material(materialReinforcementBars);
                 model.set_material(materialTimber);
                 model.set_material(materialAluminum);
-                model.set_section(sectionSteelCSBeam);
-                model.set_section(sectionRectangle);
-                model.set_section(sectionSquare);
-                model.set_section(sectionSteelCSColumn);
-                model.set_section(sectionSquareTimber);
-                model.set_section(sectionAluminium);
+                model.set_cross_section(sectionSteelCSBeam);
+                model.set_cross_section(sectionRectangle);
+                model.set_cross_section(sectionSquare);
+                model.set_cross_section(sectionSteelCSColumn);
+                model.set_cross_section(sectionSquareTimber);
+                model.set_cross_section(sectionAluminium);
                 model.set_thickness(slabThickness);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something wrong in setting materials and section data\n" + exception.Message + "\n");
+                logger.Error(exception, "Something wrong in setting materials and cross_section data\n" + exception.Message + "\n");
                 throw;
             }
             finally
@@ -661,14 +661,14 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of creation of materials and section data\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of creation of materials and cross_section data\n" + exception.Message + "\n");
 
                 }
             }
             #endregion
 
 
-            #region favorite section list
+            #region favorite cross_section list
             model.create_my_section_list("MyFavoriteList");
             model.add_section_to_my_section_list("MyFavoriteList", sectionSteelCSBeam.name);
             model.add_section_to_my_section_list("MyFavoriteList", sectionRectangle.name);
@@ -678,11 +678,11 @@ namespace Hall
             get_my_section_lists__list[] mySectionsList = model.get_my_section_lists();
             foreach (get_my_section_lists__list mySectionListItem in mySectionsList)
             {
-                string[] sections = mySectionListItem.list;
+                string[] cross_sections = mySectionListItem.list;
                 Console.WriteLine("Favorite list: {0}", mySectionListItem.name);
-                foreach (string section in sections)
+                foreach (string cross_section in cross_sections)
                 {
-                    Console.WriteLine("\tSection: {0}", section);
+                    Console.WriteLine("\tSection: {0}", cross_section);
                 }
             }
             // based on name
@@ -702,7 +702,7 @@ namespace Hall
             }
             catch (Exception exception)
             {
-                logger.Error(exception, "Something wrong in setting materials and section data\n" + exception.Message + "\n");
+                logger.Error(exception, "Something wrong in setting materials and cross_section data\n" + exception.Message + "\n");
                 throw;
             }
             #endregion
@@ -929,14 +929,12 @@ namespace Hall
                 location_typeSpecified = true,
                 material = materialReinforcementBars.no,
                 materialSpecified = true,
-                reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_REBAR,
-                reinforcement_typeSpecified = true,
                 rebar_diameter = 0.01,
                 rebar_diameterSpecified = true,
                 rebar_spacing = 0.15,
                 rebar_spacingSpecified = true,
-                additional_transverse_reinforcement_enabled = false,
-                additional_transverse_reinforcement_enabledSpecified = true,
+                //additional_transverse_reinforcement_enabled = false,
+                //additional_transverse_reinforcement_enabledSpecified = true,
                 additional_offset_to_concrete_cover_top = 0.0,
                 additional_offset_to_concrete_cover_topSpecified = true,
                 additional_offset_to_concrete_cover_bottom = 0.0,
@@ -958,8 +956,8 @@ namespace Hall
                 location_typeSpecified = true,
                 material = materialReinforcementBars.no,
                 materialSpecified = true,
-                reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
-                reinforcement_typeSpecified = true,
+                //reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
+                //reinforcement_typeSpecified = true,
                 mesh_name = "Q188A",
                 mesh_product_range = surface_reinforcement_mesh_product_range.MESHSTANDARD_GERMANY_2008_01_01,
                 mesh_shape = surface_reinforcement_mesh_shape.MESHSHAPE_Q_MESH,
@@ -1041,7 +1039,6 @@ namespace Hall
             }
             catch (Exception exception)
             {
-                model.cancel_modification();
                 logger.Error(exception, "Something wrong in setting concrete design configurations\n" + exception.Message + "\n");
                 throw;
             }
@@ -1130,7 +1127,7 @@ namespace Hall
                 name = "Punching reinforcement",
                 user_defined_name_enabled = true,
                 user_defined_name_enabledSpecified = true,
-                placement_type = punching_reinforcement_placement_type.PLACEMENT_TYPE_DIFFERENT,
+                placement_type = punching_reinforcement_placement_type.PLACEMENT_TYPE_AXIAL,
                 nodes = new int[] { FirstNodeID + 22 },
                 material = materialReinforcementBars.no,
                 materialSpecified = true,
@@ -1195,10 +1192,10 @@ namespace Hall
                         no = memberID,
                         line = lineC.no,
                         lineSpecified = true,
-                        section_start = sectionSquare.no,
-                        section_startSpecified = true,
-                        section_end = sectionSquare.no,
-                        section_endSpecified = true,
+                        cross_section_start = sectionSquare.no,
+                        cross_section_startSpecified = true,
+                        cross_section_end = sectionSquare.no,
+                        cross_section_endSpecified = true,
                         comment = "concrete column",
                         concrete_durability = concrete_Durability.no,
                         concrete_durabilitySpecified = true,
@@ -1206,20 +1203,10 @@ namespace Hall
                         concrete_shear_reinforcement_spans = new member_concrete_shear_reinforcement_spans_row[] { shearReinforcement },
                         concrete_effective_lengths = concrete_Effective_Lengths.no,
                         concrete_effective_lengthsSpecified = true,
-                        member_concrete_design_uls_configuration = 1,
-                        member_concrete_design_uls_configurationSpecified = true,
-                        member_concrete_design_sls_configuration = 1,
-                        member_concrete_design_sls_configurationSpecified = true,
                         deflection_check_direction = member_deflection_check_direction.DEFLECTION_CHECK_DIRECTION_LOCAL_AXIS_Z_AND_Y,
                         deflection_check_directionSpecified = true,
                         deflection_check_displacement_reference = member_deflection_check_displacement_reference.DEFLECTION_CHECK_DISPLACEMENT_REFERENCE_DEFORMED_UNDEFORMED_SYSTEM,
                         deflection_check_displacement_referenceSpecified = true,
-                        // deflection_check_precamber_enabled = false,
-                        // deflection_check_precamber_enabledSpecified = true,
-                        // deflection_check_reference_length_y_definition_type = member_deflection_check_reference_length_y_definition_type.DEFLECTION_CHECK_REFERENCE_LENGTH_DEFINITION_TYPE_BY_MEMBER_OR_MEMBER_SET_LENGTH,
-                        // deflection_check_reference_length_y_definition_typeSpecified = true,
-                        // deflection_check_reference_length_z_definition_type = member_deflection_check_reference_length_z_definition_type.DEFLECTION_CHECK_REFERENCE_LENGTH_DEFINITION_TYPE_BY_MEMBER_OR_MEMBER_SET_LENGTH,
-                        // deflection_check_reference_length_z_definition_typeSpecified = true,
                         design_support_on_member_start = design_Support.no,
                         design_support_on_member_startSpecified = true,
                         design_support_on_member_end = design_Support.no,
@@ -1243,10 +1230,10 @@ namespace Hall
                         no = memberID,
                         line = lineS.no,
                         lineSpecified = true,
-                        section_start = sectionSteelCSColumn.no,
-                        section_startSpecified = true,
-                        section_end = sectionSteelCSColumn.no,
-                        section_endSpecified = true,
+                        cross_section_start = sectionSteelCSColumn.no,
+                        cross_section_startSpecified = true,
+                        cross_section_end = sectionSteelCSColumn.no,
+                        cross_section_endSpecified = true,
                         comment = "steel column",
                     };
                     members.Add(memberID, memberS);
@@ -1276,10 +1263,10 @@ namespace Hall
                         no = memberID,
                         line = lineC.no,
                         lineSpecified = true,
-                        section_start = sectionRectangle.no,
-                        section_startSpecified = true,
-                        section_end = sectionSquare.no,
-                        section_endSpecified = true,
+                        cross_section_start = sectionRectangle.no,
+                        cross_section_startSpecified = true,
+                        cross_section_end = sectionSquare.no,
+                        cross_section_endSpecified = true,
                         comment = "concrete beam",
                         concrete_durability = concrete_Durability.no,
                         concrete_durabilitySpecified = true,
@@ -1287,10 +1274,6 @@ namespace Hall
                         concrete_shear_reinforcement_spans = new member_concrete_shear_reinforcement_spans_row[] { shearReinforcement },
                         concrete_effective_lengths = concrete_Effective_Lengths.no,
                         concrete_effective_lengthsSpecified = true,
-                        member_concrete_design_uls_configuration = 1,
-                        member_concrete_design_uls_configurationSpecified = true,
-                        member_concrete_design_sls_configuration = 1,
-                        member_concrete_design_sls_configurationSpecified = true,
                         deflection_check_direction = member_deflection_check_direction.DEFLECTION_CHECK_DIRECTION_LOCAL_AXIS_Z_AND_Y,
                         deflection_check_directionSpecified = true,
                         deflection_check_displacement_reference = member_deflection_check_displacement_reference.DEFLECTION_CHECK_DISPLACEMENT_REFERENCE_DEFORMED_UNDEFORMED_SYSTEM,
@@ -1347,10 +1330,10 @@ namespace Hall
                         no = memberID,
                         line = lineS.no,
                         lineSpecified = true,
-                        section_start = sectionSteelCSBeam.no,
-                        section_startSpecified = true,
-                        section_end = sectionSteelCSBeam.no,
-                        section_endSpecified = true,
+                        cross_section_start = sectionSteelCSBeam.no,
+                        cross_section_startSpecified = true,
+                        cross_section_end = sectionSteelCSBeam.no,
+                        cross_section_endSpecified = true,
                         comment = "steel beam",
 
 
@@ -1469,13 +1452,13 @@ namespace Hall
             #endregion
 
             #region Timber local reduction
-            timber_member_local_section_reduction_components_row timberSectionReductionComponent = new timber_member_local_section_reduction_components_row()
+            timber_member_local_cross_section_reduction_components_row timberSectionReductionComponent = new timber_member_local_cross_section_reduction_components_row()
             {
                 no = 1,
-                row = new timber_member_local_section_reduction_components()
+                row = new timber_member_local_cross_section_reduction_components()
                 {
                     note = "Scripted local reduction",
-                    reduction_type = timber_member_local_section_reduction_components_reduction_type.REDUCTION_COMPONENT_TYPE_END_NOTCH,
+                    reduction_type = timber_member_local_cross_section_reduction_components_reduction_type.REDUCTION_COMPONENT_TYPE_END_NOTCH,
                     reduction_typeSpecified = true,
                     position = 1.5,
                     positionSpecified = true,
@@ -1491,18 +1474,18 @@ namespace Hall
                     lengthSpecified = true,
                 }
             };
-            timber_member_local_section_reduction timberLocalReduction = new timber_member_local_section_reduction()
+            timber_member_local_cross_section_reduction timberLocalReduction = new timber_member_local_cross_section_reduction()
             {
                 no = 1,
                 name = "Timber local reduction",
                 user_defined_name_enabled = true,
                 user_defined_name_enabledSpecified = true,
-                components = new timber_member_local_section_reduction_components_row[] { timberSectionReductionComponent },
+                components = new timber_member_local_cross_section_reduction_components_row[] { timberSectionReductionComponent },
             };
             try
             {
                 model.begin_modification("Set timber local reduction");
-                model.set_timber_member_local_section_reduction(timberLocalReduction);
+                model.set_timber_member_local_cross_section_reduction(timberLocalReduction);
             }
             catch (Exception exception)
             {
@@ -1725,10 +1708,10 @@ namespace Hall
                 no = memberID,
                 line = lineTimberOne.no,
                 lineSpecified = true,
-                section_start = sectionSquareTimber.no,
-                section_startSpecified = true,
-                section_end = sectionSquare.no,
-                section_endSpecified = true,
+                cross_section_start = sectionSquareTimber.no,
+                cross_section_startSpecified = true,
+                cross_section_end = sectionSquare.no,
+                cross_section_endSpecified = true,
                 comment = "timber beam",
                 timber_service_class = serviceClass.no,
                 timber_service_classSpecified = true,
@@ -1740,10 +1723,10 @@ namespace Hall
                 no = memberID,
                 line = lineTimberTwo.no,
                 lineSpecified = true,
-                section_start = sectionSquareTimber.no,
-                section_startSpecified = true,
-                section_end = sectionSquare.no,
-                section_endSpecified = true,
+                cross_section_start = sectionSquareTimber.no,
+                cross_section_startSpecified = true,
+                cross_section_end = sectionSquare.no,
+                cross_section_endSpecified = true,
                 comment = "timber beam",
                 timber_service_class = serviceClass.no,
                 timber_service_classSpecified = true,
@@ -1756,10 +1739,10 @@ namespace Hall
                 no = memberID,
                 line = lineAluminum.no,
                 lineSpecified = true,
-                section_start = sectionAluminium.no,
-                section_startSpecified = true,
-                section_end = sectionSquare.no,
-                section_endSpecified = true,
+                cross_section_start = sectionAluminium.no,
+                cross_section_startSpecified = true,
+                cross_section_end = sectionSquare.no,
+                cross_section_endSpecified = true,
                 comment = "Aluminium beam",
             };
             members.Add(memberID, memberAluminum);
@@ -1803,10 +1786,10 @@ namespace Hall
                 reinforcement_direction_bottom = Reinforcement_Direction.no,
                 reinforcement_direction_bottomSpecified = true,
                 surface_reinforcements = new int[] { Surface_Reinforcement.no, Surface_ReinforcementMesh.no },
-                surface_concrete_design_sls_configuration = 1,
-                surface_concrete_design_sls_configurationSpecified = true,
-                surface_concrete_design_uls_configuration = 1,
-                surface_concrete_design_uls_configurationSpecified = true,
+                //surface_concrete_design_sls_configuration = 1,
+                //surface_concrete_design_sls_configurationSpecified = true,
+                //surface_concrete_design_uls_configuration = 1,
+                //surface_concrete_design_uls_configurationSpecified = true,
                 deflection_check_surface_type = surface_deflection_check_surface_type.DEFLECTION_CHECK_SURFACE_TYPE_DOUBLE_SUPPORTED,
                 deflection_check_surface_typeSpecified = true,
                 deflection_check_displacement_reference = surface_deflection_check_displacement_reference.DEFLECTION_CHECK_DISPLACEMENT_REFERENCE_DEFORMED_USER_DEFINED_REFERENCE_PLANE,
@@ -1900,7 +1883,6 @@ namespace Hall
                 {
                     model.set_line(lineItem.Value);
                 }
-
                 foreach (KeyValuePair<int, member> memberItem in members)
                 {
                     model.set_member(memberItem.Value);
@@ -1912,7 +1894,7 @@ namespace Hall
             }
             catch (Exception exception)
             {
-                model.cancel_modification();
+                //model.cancel_modification();
                 logger.Error(exception, "Something wrong in creation of geometry\n" + exception.Message + "\n");
                 throw;
             }
@@ -3224,11 +3206,11 @@ namespace Hall
 
             #endregion
 
-            #region Aluminum member local section reduction
-            aluminum_member_local_section_reduction_components_row aluminumReductionComponentDesignParams = new aluminum_member_local_section_reduction_components_row()
+            #region Aluminum member local cross_section reduction
+            aluminum_member_local_cross_section_reduction_components_row aluminumReductionComponentDesignParams = new aluminum_member_local_cross_section_reduction_components_row()
             {
                 no = 2,
-                row = new aluminum_member_local_section_reduction_components()
+                row = new aluminum_member_local_cross_section_reduction_components()
                 {
                     // reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_DESIGN_PARAMETERS,
                     // reduction_typeSpecified = true,
@@ -3254,10 +3236,10 @@ namespace Hall
 
                 }
             };
-            aluminum_member_local_section_reduction_components_row aluminumReductionComponentSection = new aluminum_member_local_section_reduction_components_row()
+            aluminum_member_local_cross_section_reduction_components_row aluminumReductionComponentSection = new aluminum_member_local_cross_section_reduction_components_row()
             {
                 no = 1,
-                row = new aluminum_member_local_section_reduction_components()
+                row = new aluminum_member_local_cross_section_reduction_components()
                 {
                     // reduction_type = reduction_type.REDUCTION_COMPONENT_TYPE_SECTION_VALUES,
                     // reduction_typeSpecified = true,
@@ -3283,26 +3265,26 @@ namespace Hall
 
                 }
             };
-            aluminum_member_local_section_reduction aluminumMemberLocalSectionReduction = new aluminum_member_local_section_reduction()
+            aluminum_member_local_cross_section_reduction aluminumMemberLocalCrossSectionReduction = new aluminum_member_local_cross_section_reduction()
             {
                 no = 1,
                 user_defined_name_enabled = false,
                 user_defined_name_enabledSpecified = true,
-                name = "Aluminum member local section reduction",
-                comment = "Aluminum member local section reduction",
+                name = "Aluminum member local cross_section reduction",
+                comment = "Aluminum member local cross_section reduction",
                 members = new int[] { 39 },
-                components = new aluminum_member_local_section_reduction_components_row[] { aluminumReductionComponentSection, aluminumReductionComponentDesignParams },
+                components = new aluminum_member_local_cross_section_reduction_components_row[] { aluminumReductionComponentSection, aluminumReductionComponentDesignParams },
             };
 
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
-                // model.set_aluminum_member_local_section_reduction(aluminumMemberLocalSectionReduction);
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
+                // model.set_aluminum_member_local_cross_section_reduction(aluminumMemberLocalCrossSectionReduction);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3313,7 +3295,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
                 }
             }
             #endregion
@@ -3343,13 +3325,13 @@ namespace Hall
             };
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
                 model.set_member_shear_panel(aluminumShearPanel);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3360,7 +3342,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
                 }
             }
             #endregion
@@ -3392,13 +3374,13 @@ namespace Hall
             };
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
                 model.set_member_rotational_restraint(aluminumMemberRotationalRestraint);
             }
             catch (Exception exception)
             {
                 model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
@@ -3409,7 +3391,7 @@ namespace Hall
                 }
                 catch (Exception exception)
                 {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
+                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local cross_section reduction\n" + exception.Message + "\n");
                 }
             }
             #endregion
@@ -3431,12 +3413,12 @@ namespace Hall
                     note = " Weld one",
                     size = 0.005,
                     sizeSpecified = true,
-                    method_type = method_type.WELDING_METHOD_TIG,
-                    method_typeSpecified = true,
+                    method_ec_or_adm_type = method_ec_or_adm_type.WELDING_METHOD_TIG,
+                    method_ec_or_adm_typeSpecified = true,
                     number_of_heat_paths = 2,
                     number_of_heat_pathsSpecified = true,
-                    welding_temperature = 2000,
-                    welding_temperatureSpecified = true,
+                    //temperature_of_material_between_welding_cycles = 2000,
+                    //temperature_of_material_between_welding_cyclesSpecified = true,
                 }
             };
             aluminum_member_transverse_weld_components_row filletWeld = new aluminum_member_transverse_weld_components_row()
@@ -3453,12 +3435,12 @@ namespace Hall
                     note = " Weld two",
                     size = 0.005,
                     sizeSpecified = true,
-                    method_type = method_type.WELDING_METHOD_TIG,
-                    method_typeSpecified = true,
+                    method_ec_or_adm_type = method_ec_or_adm_type.WELDING_METHOD_TIG,
+                    method_ec_or_adm_typeSpecified = true,
                     number_of_heat_paths = 2,
                     number_of_heat_pathsSpecified = true,
-                    welding_temperature = 2000,
-                    welding_temperatureSpecified = true,
+                    //temperature_of_material_between_welding_cycles = 2000,
+                    //temperature_of_material_between_welding_cyclesSpecified = true,
                 }
             };
             aluminum_member_transverse_weld aluminumTransverseWeld = new aluminum_member_transverse_weld()
@@ -3473,26 +3455,17 @@ namespace Hall
             };
             try
             {
-                model.begin_modification("Set  Aluminum member local section reduction");
+                model.begin_modification("Set  Aluminum member local cross_section reduction");
                 model.set_aluminum_member_transverse_weld(aluminumTransverseWeld);
             }
             catch (Exception exception)
             {
-                model.cancel_modification();
-                logger.Error(exception, "Something happen when creation of  aluminum member local section reduction: " + exception.Message);
+                logger.Error(exception, "Something happen when creation of  aluminum member local cross_section reduction: " + exception.Message);
                 throw;
             }
             finally
             {
-                try
-                {
-                    model.finish_modification();
-                }
-                catch (Exception exception)
-                {
-                    logger.Error(exception, "Something wrong in finish modification of  aluminum member local section reduction\n" + exception.Message + "\n");
-
-                }
+                model.finish_modification();
             }
             #endregion
 
@@ -4103,8 +4076,6 @@ namespace Hall
                 name = "wind simulation analysis settings",
                 user_defined_name_enabled = true,
                 user_defined_name_enabledSpecified = true,
-                density = 1.25,
-                densitySpecified = true,
                 kinematic_viscosity = 0.000015,
                 kinematic_viscositySpecified = true,
                 numerical_solver = wind_simulation_analysis_settings_numerical_solver.OPEN_FOAM,
@@ -4112,10 +4083,6 @@ namespace Hall
                 finite_volume_mesh_densitySpecified = true,
                 maximum_number_of_iterations = 500,
                 maximum_number_of_iterationsSpecified = true,
-                //target_residue = 0.001,
-                //target_residueSpecified = true,
-                // level_of_detail = 2,
-                // level_of_detailSpecified = true,
                 mesh_refinement_type = wind_simulation_analysis_settings_mesh_refinement_type.DISTANCE_FROM_SURFACE,
                 mesh_refinement_typeSpecified = true,
                 snap_to_model_edges = true,
@@ -4126,12 +4093,8 @@ namespace Hall
                 consider_turbulenceSpecified = true,
                 slip_boundary_condition_on_bottom_boundary = false,
                 slip_boundary_condition_on_bottom_boundarySpecified = true,
-                use_potential_flow_for_initial_condition = true,
-                use_potential_flow_for_initial_conditionSpecified = true,
                 use_second_order_numerical_scheme = false,
                 use_second_order_numerical_schemeSpecified = true,
-                // consider_wall_roughness = false,
-                // consider_wall_roughnessSpecified = true,
                 user_defined_dimensions_of_wind_tunnel = false,
                 user_defined_dimensions_of_wind_tunnelSpecified = true,
                 member_load_distribution = wind_simulation_analysis_settings_member_load_distribution.CONCENTRATED,
@@ -4269,10 +4232,6 @@ namespace Hall
                 combination_rule_for_directional_componentsSpecified = true,
                 use_equivalent_linear_combination = true,
                 use_equivalent_linear_combinationSpecified = true,
-                signed_results_using_dominant_mode = false,
-                signed_results_using_dominant_modeSpecified = true,
-                save_results_of_all_selected_modes = false,
-                save_results_of_all_selected_modesSpecified = true,
                 comment = "My scripted settings"
             };
             try
@@ -4416,10 +4375,6 @@ namespace Hall
                 response_spectrum_is_enabled_in_direction_ySpecified = true,
                 response_spectrum_is_enabled_in_direction_z = true,
                 response_spectrum_is_enabled_in_direction_zSpecified = true,
-                // response_spectrum_in_direction_x = Response_Spectrum_Standard.no,
-                // response_spectrum_in_direction_xSpecified = true,
-                // response_spectrum_in_direction_y = Response_Spectrum_User.no,
-                // response_spectrum_in_direction_ySpecified = true,
                 response_spectrum_in_direction_z = Response_Spectrum_Standard.no,
                 response_spectrum_in_direction_zSpecified = true,
                 response_spectrum_scale_factor_in_direction_x = 1,
@@ -4430,8 +4385,8 @@ namespace Hall
                 response_spectrum_scale_factor_in_direction_zSpecified = true,
                 response_spectrum_rotation_angle = 0,
                 response_spectrum_rotation_angleSpecified = true,
-                response_spectrum_consider_accidental_torsion = false,
-                response_spectrum_consider_accidental_torsionSpecified = true,
+                response_spectrum_and_equivalent_load_consider_accidental_torsion = false,
+                response_spectrum_and_equivalent_load_consider_accidental_torsionSpecified = true,
             };
 
             try
@@ -4500,13 +4455,10 @@ namespace Hall
                 },
                 // always set this:
                 general_target_length_of_fe = 0.5,
-                general_maximum_number_of_mesh_nodes = 500,
                 members_number_of_divisions_for_special_types = 10,
                 members_number_of_divisions_for_result_diagram = 10,
                 members_number_of_divisions_for_min_max_values = 10,
                 members_number_of_divisions_for_concrete_members = 10,
-                members_length_of_fe = 0.5,
-                members_minimum_number_of_divisions = 1,
                 surfaces_maximum_ratio_of_fe = 1.8,
                 solids_maximum_number_of_elements = 200,
                 solids_target_length_of_fe_for_type_soil = 1,
@@ -4779,10 +4731,7 @@ namespace Hall
 
 
             #region generate mesh and get mesh statistics
-            calculation_message[] meshGenerationMessage = model.generate_mesh(true);
-            if (meshGenerationMessage.Length != 0)
-            {
-            }
+            calculation_result meshGenerationMessage = model.generate_mesh(true);
             mesh_statistics_type mesh_Statistics = model.get_mesh_statistics();
             Console.WriteLine("Number of mesh nodes: " + mesh_Statistics.node_elements);
             Console.WriteLine("Number of 1D elements: " + mesh_Statistics.member_1D_finite_elements);
@@ -4899,21 +4848,6 @@ namespace Hall
 
             model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
 
-            // #region DesignOverview
-            // try
-            // {
-            //     design_overview_row[] designOverview = model.get_design_overview();
-            //     foreach (var item in designOverview)
-            //     {
-            //         Console.WriteLine("Row main no: {0}\tAddOn: {1}\tobject type:{2}\tobjects:{3}\tlocation:{4}\tDS:{5}\tloading:{6}\tdesign ratio:{7}\tdesign type:{8}\tdescription: {9}\t", item.no, item.row.addon, item.row.object_type.ToString(), item.row.objects_no_string, item.row.location, item.row.design_situation, item.row.loading, item.row.design_ratio, item.row.design_check_type, item.row.description);
-            //     }
-            // }
-            // catch (Exception exception)
-            // {
-            //     logger.Error(exception, "Something wrong in get overview table\n" + exception.Message + "\n");
-            // }
-            // #endregion
-
 
             summary_row[] staticAnalysisSummary = model.get_results_for_summary(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
             Console.WriteLine("Summary static analysis");
@@ -4922,40 +4856,42 @@ namespace Hall
                 Console.WriteLine("{0}\t{1}\t{2}\t{3}", item.row.description, item.row.value != null ? item.row.value.value : "NAN", item.row.units, item.row.notes);
             }
 
-            members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 1); // 1 is the no of the member
+            var object_location = model.get_all_selected_objects();
+
+            members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, object_location, axes_type.MEMBER_AXES); // 1 is the no of the member
             Console.WriteLine("Internal forces for member");
 
             foreach (var item in internalForcesMember1)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
+                Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_no != 0, item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
                 Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", item.row.internal_force_n.ToString(), item.row.internal_force_vy.ToString(), item.row.internal_force_vz.ToString(), item.row.internal_force_mt.ToString(), item.row.internal_force_my.ToString(), item.row.internal_force_mz.ToString());
 
             }
             Console.WriteLine("Global deformations for member");
-            members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 1); // 1 is the no of the member
+            members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, object_location); // 1 is the no of the member
 
             foreach (var item in globalDeformationsMember1)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
+                Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_no != 0, item.row.location, item.row.location_flags, item.row.deformation_label, item.row.specification);
                 Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
 
             }
 
             Console.WriteLine("Internal forces for surface");
-            surfaces_basic_internal_forces_row[] internalForcesSurface1 = model.get_results_for_surfaces_basic_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 1); // 1 is the no of the surface
+            surfaces_basic_internal_forces_row[] internalForcesSurface1 = model.get_results_for_surfaces_basic_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, object_location); // 1 is the no of the surface
             foreach (var item in internalForcesSurface1)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                Console.WriteLine("Grid point {0}\t Grid point X {1}\t Grid point Y {2}\t  Grid point Z {3}\t layer {4}\t Internal force label {5}\t Specification {6}", item.row.grid_point != null ? item.row.grid_point.value : "NAN",
-                item.row.grid_point_coordinate_x != null ? item.row.grid_point_coordinate_x.value : "NAN", item.row.grid_point_coordinate_y != null ? item.row.grid_point_coordinate_y.value : "NAN",
-                item.row.grid_point_coordinate_z != null ? item.row.grid_point_coordinate_z.value : "NAN", item.row.layer, item.row.basic_internal_force_label, item.row.specification);
-                Console.WriteLine("nx {0}\t ny {1}\t nxy {2}\t  vx {3}\t vy {4}\t mx {5}\t my {6}\t mxy {7}", item.row.axial_force_nx.value, item.row.axial_force_ny.value, item.row.axial_force_nxy.value,
-                item.row.shear_force_vx.value, item.row.shear_force_vy.value, item.row.moment_mx.value, item.row.moment_my.value, item.row.moment_mxy.value);
+                Console.WriteLine("Grid point {0}\t Grid point X {1}\t Grid point Y {2}\t  Grid point Z {3}\t layer {4}\t Internal force label {5}\t Specification {6}", item.row.grid_point != 0,
+                item.row.grid_point_coordinate_x != 0.0, item.row.grid_point_coordinate_y,
+                item.row.grid_point_coordinate_z != 0.0, item.row.layer, item.row.basic_internal_force_label, item.row.specification);
+                Console.WriteLine("nx {0}\t ny {1}\t nxy {2}\t  vx {3}\t vy {4}\t mx {5}\t my {6}\t mxy {7}", item.row.axial_force_nx, item.row.axial_force_ny, item.row.axial_force_nxy,
+                item.row.shear_force_vx, item.row.shear_force_vy, item.row.moment_mx, item.row.moment_my, item.row.moment_mxy);
 
             }
-            nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+            nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, object_location);//all nodes -> 0
             Console.WriteLine("Node deformations");
             foreach (var item in nodeDeformations)
             {
@@ -4963,12 +4899,12 @@ namespace Hall
                 Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
 
             }
-            nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+            nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, object_location); //all nodes -> 0
             Console.WriteLine("Node reactions");
             foreach (var item in nodeReactions)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading?.ToString(), item.row.support_force_p_x?.value.ToString(), item.row.support_force_p_y?.value.ToString(), item.row.support_force_p_z?.value.ToString(), item.row.support_moment_m_x?.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
+                Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_no, item.row.support_force_p_x.ToString(), item.row.support_force_p_y.ToString(), item.row.support_force_p_z.ToString(), item.row.support_moment_m_x.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
 
             }
             #endregion
@@ -4983,27 +4919,27 @@ namespace Hall
             {
                 Console.WriteLine("Model has no modal results");
             }
-            modal_analysis_natural_frequencies_row[] modalFrequencies = model.get_results_for_modal_analysis_natural_frequencies(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);
+            modal_analysis_natural_frequencies_row[] modalFrequencies = model.get_results_for_modal_analysis_natural_frequencies(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);
 
-            modal_analysis_effective_modal_masses_row[] effectiveModalMass = model.get_results_for_modal_analysis_effective_modal_masses(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);
+            modal_analysis_effective_modal_masses_row[] effectiveModalMass = model.get_results_for_modal_analysis_effective_modal_masses(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);
 
-            modal_analysis_participation_factors_row[] participationFactors = model.get_results_for_modal_analysis_participation_factors(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);
+            modal_analysis_participation_factors_row[] participationFactors = model.get_results_for_modal_analysis_participation_factors(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);
 
-            modal_analysis_masses_in_locations_row[] massesInMeshPoints = model.get_results_for_modal_analysis_masses_in_locations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);
+            modal_analysis_masses_in_locations_row[] massesInMeshPoints = model.get_results_for_modal_analysis_masses_in_locations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);
 
-            modal_analysis_mode_shapes_by_node_row[] modalAnalysisModeShapesByNode = model.get_results_for_modal_analysis_mode_shapes_by_node(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);//node number
+            modal_analysis_mode_shapes_by_node_row[] modalAnalysisModeShapesByNode = model.get_results_for_modal_analysis_mode_shapes_by_node(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);//node number
             Console.WriteLine("Mode shapes for nodes");
             foreach (var item in modalAnalysisModeShapesByNode)
             {
-                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}", item.no, item.description, item.row.eigenvector_number, item.row.displacement_x, item.row.displacement_y, item.row.displacement_z, item.row.rotation_x, item.row.rotation_y, item.row.rotation_z, item.row.comment);
+                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}", item.no, item.description, item.row.mode_no, item.row.displacement_x, item.row.displacement_y, item.row.displacement_z, item.row.rotation_x, item.row.rotation_y, item.row.rotation_z, item.row.comment);
             }
-            modal_analysis_nodes_by_mode_shape_row[] modalAnalysisNodesByModalShape = model.get_results_for_modal_analysis_nodes_by_mode_shape(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);//??
+            modal_analysis_nodes_by_mode_shape_row[] modalAnalysisNodesByModalShape = model.get_results_for_modal_analysis_nodes_by_mode_shape(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);//??
             foreach (var item in modalAnalysisNodesByModalShape)
             {
-                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}", item.no, item.description, item.row.node_number, item.row.displacement_x, item.row.displacement_y, item.row.displacement_z, item.row.rotation_x, item.row.rotation_y, item.row.rotation_z, item.row.comment);
+                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}", item.no, item.description, item.row.node_no, item.row.displacement_x, item.row.displacement_y, item.row.displacement_z, item.row.rotation_x, item.row.rotation_y, item.row.rotation_z, item.row.comment);
             }
 
-            modal_analysis_members_by_mode_shape_row[] modalAnalysismembersByModalShape = model.get_results_for_modal_analysis_members_by_mode_shape(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, 0);//??
+            modal_analysis_members_by_mode_shape_row[] modalAnalysismembersByModalShape = model.get_results_for_modal_analysis_members_by_mode_shape(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcModalAnalysis.no, object_location);//??
 
             //spectral analysis
             bool modelHasSpectralCalculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no);
@@ -5016,31 +4952,38 @@ namespace Hall
                 Console.WriteLine("Model has no spectral results");
             }
             Console.WriteLine("Summary spectral analysis");
-            spectral_analysis_summary_row[] spectralAnalysisOverviewSummary = model.get_results_for_spectral_analysis_summary(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no);
+            /*
+            var envelope = new spectral_analysis_envelope
+            {
+                envelope_type = spectral_analysis_envelope_type.SPECTRAL_ANALYSIS_SRSS,
+                envelope_typeSpecified = true,
+            };
+            
+            spectral_analysis_summary_row[] spectralAnalysisOverviewSummary = model.get_results_for_spectral_analysis_summary(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, object_location, envelope);
             foreach (var item in spectralAnalysisOverviewSummary)
             {
                 Console.WriteLine("\t{0}\t{1}\t{2}\t{3}", item.row.description, item.row.value != null ? item.row.value.value : "NAN", item.row.units, item.row.notes);
             }
 
-            spectral_analysis_nodes_deformations_row[] spectralAnalysisDeformations = model.get_results_for_spectral_analysis_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, 0);
+            spectral_analysis_nodes_deformations_row[] spectralAnalysisDeformations = model.get_results_for_spectral_analysis_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, object_location, envelope);
             foreach (var item in spectralAnalysisDeformations)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
                 Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.displacement_x, item.row.displacement_y, item.row.displacement_z, item.row.displacement_absolute, item.row.rotation_x, item.row.rotation_y, item.row.rotation_z, item.row.specification);
             }
-            spectral_analysis_nodes_pseudo_accelerations_row[] spectralAnalysisPseudoAccNodes = model.get_results_for_spectral_analysis_nodes_pseudo_accelerations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, 0);
+            spectral_analysis_nodes_pseudo_accelerations_row[] spectralAnalysisPseudoAccNodes = model.get_results_for_spectral_analysis_nodes_pseudo_accelerations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, object_location, envelope);
             foreach (var item in spectralAnalysisPseudoAccNodes)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
                 Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.acceleration_absolute, item.row.acceleration_x, item.row.acceleration_y, item.row.acceleration_z, item.row.angular_acceleration_x, item.row.angular_acceleration_y, item.row.angular_acceleration_z, item.row.specification);
             }
-            spectral_analysis_nodes_pseudo_velocities_row[] spectralAnalysisPseudoVeloNodes = model.get_results_for_spectral_analysis_nodes_pseudo_velocities(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, 0);
+            spectral_analysis_nodes_pseudo_velocities_row[] spectralAnalysisPseudoVeloNodes = model.get_results_for_spectral_analysis_nodes_pseudo_velocities(case_object_types.E_OBJECT_TYPE_LOAD_CASE, LCSpectral.no, object_location, envelope);
             foreach (var item in spectralAnalysisPseudoVeloNodes)
             {
                 Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
                 Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}", item.row.velocity_absolute, item.row.velocity_x, item.row.velocity_y, item.row.velocity_z, item.row.angular_velocity_x, item.row.angular_velocity_y, item.row.angular_velocity_z, item.row.specification);
             }
-
+            */
             //stability
             bool modelHasStabilityCalculated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcStability.no);
             if (modelHasStabilityCalculated)
@@ -5053,9 +4996,9 @@ namespace Hall
             }
             stability_incremental_analysis_summary_row[] stabilitySummary = model.get_results_for_stability_incremental_analysis_summary(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcStability.no); //??
 
-            critical_load_factors_row[] criticalLoadFactors = model.get_results_for_critical_load_factors(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcStability.no, 1); //??
+            critical_load_factors_row[] criticalLoadFactors = model.get_results_for_critical_load_factors(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcStability.no, object_location); //??
 
-            stability_incremental_analysis_nodes_deformations_row[] stabilityShapes = model.get_results_for_stability_incremental_analysis_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcStability.no, 1);
+            stability_incremental_analysis_nodes_deformations_row[] stabilityShapes = model.get_results_for_stability_incremental_analysis_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcStability.no, object_location);
 
             // stability
 
@@ -5096,7 +5039,7 @@ namespace Hall
             {
                 if (!item.description.Contains("Total"))
                 {
-                    Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
+                    Console.WriteLine("Material no: {0}\t Material name: {1}\t cross_section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
                     item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
                 }
                 else
@@ -5121,7 +5064,7 @@ namespace Hall
             {
                 if (!item.description.Contains("Total"))
                 {
-                    Console.WriteLine("Material no: {0}\t Material: {1}\t thickness: {2}\t surfaces no:{3}\t quantity: {4}\t surface: {5}\t coating: {6}\t volume: {7}\t unit mass: {8}\t surface mass: {9}\t total coating: {10}\t total surface: {11}\t total volume:{12}\t total mass:{13} ",
+                    Console.WriteLine("Material no: {0}\t Material: {1}\t depthField: {2}\t surfaces no:{3}\t quantity: {4}\t surface: {5}\t coating: {6}\t volume: {7}\t unit mass: {8}\t surface mass: {9}\t total coating: {10}\t total surface: {11}\t total volume:{12}\t total mass:{13} ",
                         item.description, item.row.material_name, item.row.thickness_name, item.row.surfaces_no, item.row.quantity, item.row.surface_area, item.row.coating, item.row.volume, item.row.unit_mass, item.row.surface_mass, item.row.total_coating, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
                 }
                 else
@@ -5237,9 +5180,8 @@ namespace Hall
             config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
             LogManager.Configuration = config;
             var logger = LogManager.GetCurrentClassLogger();
-            string CurrentDirectory = Directory.GetCurrentDirectory();
-            string Examples = @"..\..\..\..\ExampleFiles\";
-            string ExamplesDirectory = Path.Combine(CurrentDirectory, Examples);
+            string CurrentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
+            string ExamplesDirectory = CurrentDirectory + @"\ExampleFiles\";
             try
             {
                 // check if RFEM6 is running
@@ -5296,7 +5238,7 @@ namespace Hall
                 // string modelName = "MyTestModel";
                 // string modelUrl = application.new_model(modelName);
                 string modelUrl = application.open_model(ExamplesDirectory + @"EmptyWithReport.rf6");
-                // string modelUrl = application.get_active_model();
+                //string modelUrl = application.get_active_model();
                 // connects to RFEM6 model
                 RfemModelClient model = new RfemModelClient(Binding, new EndpointAddress(modelUrl));
 

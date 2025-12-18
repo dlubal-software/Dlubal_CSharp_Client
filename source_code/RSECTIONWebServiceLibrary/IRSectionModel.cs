@@ -13,7 +13,7 @@ namespace Dlubal.WS.RSection1.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.08.0011", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSECTION_1.12.0011", ConfigurationName="Dlubal.WS.RSection1.Model.IRSectionModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRSectionModel
     {
@@ -137,6 +137,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_block_info", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_block_infoResponse get_block_info(Dlubal.WS.RSection1.Model.get_block_infoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_cross_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.get_cross_sectionResponse get_cross_section(Dlubal.WS.RSection1.Model.get_cross_sectionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_dimension", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -314,9 +318,9 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialResponse get_results_for_unit_stresses_by_material(Dlubal.WS.RSection1.Model.get_results_for_unit_stresses_by_materialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_section", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_welds_stresses", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.get_sectionResponse get_section(Dlubal.WS.RSection1.Model.get_sectionRequest request);
+        Dlubal.WS.RSection1.Model.get_results_for_welds_stressesResponse get_results_for_welds_stresses(Dlubal.WS.RSection1.Model.get_results_for_welds_stressesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_session_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -333,10 +337,6 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_subpanel", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.get_subpanelResponse get_subpanel(Dlubal.WS.RSection1.Model.get_subpanelRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_table_export_config_manager", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.get_table_export_config_managerResponse get_table_export_config_manager(Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/has_any_results", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -365,6 +365,10 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_bar", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_barResponse set_bar(Dlubal.WS.RSection1.Model.set_barRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_cross_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.RSection1.Model.set_cross_sectionResponse set_cross_section(Dlubal.WS.RSection1.Model.set_cross_sectionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_dimension", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -430,10 +434,6 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_pointResponse set_point(Dlubal.WS.RSection1.Model.set_pointRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_section", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.set_sectionResponse set_section(Dlubal.WS.RSection1.Model.set_sectionRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_selected_objects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_selected_objectsResponse set_selected_objects(Dlubal.WS.RSection1.Model.set_selected_objectsRequest request);
@@ -449,10 +449,6 @@ namespace Dlubal.WS.RSection1.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_subpanel", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.RSection1.Model.set_subpanelResponse set_subpanel(Dlubal.WS.RSection1.Model.set_subpanelRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_table_export_config_manager", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.RSection1.Model.set_table_export_config_managerResponse set_table_export_config_manager(Dlubal.WS.RSection1.Model.set_table_export_config_managerRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

@@ -658,18 +658,18 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_aluminum_effective_lengths(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.aluminum_member_local_section_reduction get_aluminum_member_local_section_reduction(int no)
+        public Dlubal.WS.Rstab9.Model.aluminum_member_local_cross_section_reduction get_aluminum_member_local_cross_section_reduction(int no)
         {
-            Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest();
+            Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_aluminum_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_aluminum_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.get_aluminum_member_local_section_reduction(request);
+            return base.Channel.get_aluminum_member_local_cross_section_reduction(request);
         }
         
         public Dlubal.WS.Rstab9.Model.aluminum_member_transverse_weld get_aluminum_member_transverse_weld(int no)
@@ -867,6 +867,20 @@ namespace Dlubal.WS.Rstab9.Model
             return base.Channel.get_coordinate_system(request);
         }
         
+        public Dlubal.WS.Rstab9.Model.cross_section get_cross_section(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_cross_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_cross_sectionRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_cross_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_cross_section(Dlubal.WS.Rstab9.Model.get_cross_sectionRequest request)
+        {
+            return base.Channel.get_cross_section(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_design_overviewResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_design_overview(Dlubal.WS.Rstab9.Model.get_design_overviewRequest request)
         {
@@ -1005,6 +1019,35 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_global_parameterRequest inValue = new Dlubal.WS.Rstab9.Model.get_global_parameterRequest();
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_global_parameterResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_global_parameter(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_ifc_file_model_object(Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectRequest request)
+        {
+            return base.Channel.get_ifc_file_model_object(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.ifc_file_model_object get_ifc_file_model_object(int no)
+        {
+            Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectRequest inValue = new Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectRequest();
+            inValue.no = no;
+            Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_ifc_file_model_object(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_ifc_model_objectResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_ifc_model_object(Dlubal.WS.Rstab9.Model.get_ifc_model_objectRequest request)
+        {
+            return base.Channel.get_ifc_model_object(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.ifc_model_object get_ifc_model_object(int no, int parent_no)
+        {
+            Dlubal.WS.Rstab9.Model.get_ifc_model_objectRequest inValue = new Dlubal.WS.Rstab9.Model.get_ifc_model_objectRequest();
+            inValue.no = no;
+            inValue.parent_no = parent_no;
+            Dlubal.WS.Rstab9.Model.get_ifc_model_objectResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_ifc_model_object(inValue);
             return retVal.value;
         }
         
@@ -3433,6 +3476,230 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_members_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_design_ratios_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_design_ratios_by_design_situation_row[] get_results_for_concrete_foundations_design_ratios_by_design_situation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_design_ratios_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_design_ratios_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_design_ratios_by_foundation_row[] get_results_for_concrete_foundations_design_ratios_by_foundation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_design_ratios_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_design_ratios_by_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_design_ratios_by_loading_row[] get_results_for_concrete_foundations_design_ratios_by_loading(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_design_ratios_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_design_ratios_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_design_ratios_by_node(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_design_ratios_by_node_row[] get_results_for_concrete_foundations_design_ratios_by_node(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_design_ratios_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_foundations_geometry(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_foundations_geometry(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_foundations_geometry_row[] get_results_for_concrete_foundations_foundations_geometry(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_foundations_geometry(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_governing_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_governing_loading(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_governing_loading_row[] get_results_for_concrete_foundations_governing_loading(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_governing_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_governing_reactions_by_foundations(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_governing_reactions_by_foundations(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_governing_reactions_by_foundations_row[] get_results_for_concrete_foundations_governing_reactions_by_foundations(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_governing_reactions_by_foundations(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_governing_reactions_by_nodes(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_governing_reactions_by_nodes(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_governing_reactions_by_nodes_row[] get_results_for_concrete_foundations_governing_reactions_by_nodes(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_governing_reactions_by_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_not_covered_reinforcement_by_foundation_row[] get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_not_covered_reinforcement_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_not_covered_reinforcement_by_node(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_not_covered_reinforcement_by_node_row[] get_results_for_concrete_foundations_not_covered_reinforcement_by_node(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_not_covered_reinforcement_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_overview_errors_and_warnings(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_overview_errors_and_warnings(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_overview_errors_and_warnings_row[] get_results_for_concrete_foundations_overview_errors_and_warnings(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_overview_errors_and_warnings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_overview_not_valid_deactivated(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_overview_not_valid_deactivated(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_overview_not_valid_deactivated_row[] get_results_for_concrete_foundations_overview_not_valid_deactivated(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_overview_not_valid_deactivated(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_provided_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_provided_reinforcement_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_provided_reinforcement_by_foundation_row[] get_results_for_concrete_foundations_provided_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_provided_reinforcement_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_provided_reinforcement_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_provided_reinforcement_by_node(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_provided_reinforcement_by_node_row[] get_results_for_concrete_foundations_provided_reinforcement_by_node(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_provided_reinforcement_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_required_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_required_reinforcement_by_foundation(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_required_reinforcement_by_foundation_row[] get_results_for_concrete_foundations_required_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_required_reinforcement_by_foundation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_results_for_concrete_foundations_required_reinforcement_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest request)
+        {
+            return base.Channel.get_results_for_concrete_foundations_required_reinforcement_by_node(request);
+        }
+        
+        public Dlubal.WS.Rstab9.Model.results_for_concrete_foundations_required_reinforcement_by_node_row[] get_results_for_concrete_foundations_required_reinforcement_by_node(Dlubal.WS.Rstab9.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest inValue = new Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_results_for_concrete_foundations_required_reinforcement_by_node(inValue);
             return retVal.value;
         }
         
@@ -6809,20 +7076,6 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_section(Dlubal.WS.Rstab9.Model.get_sectionRequest request)
-        {
-            return base.Channel.get_section(request);
-        }
-        
-        public Dlubal.WS.Rstab9.Model.section get_section(int no)
-        {
-            Dlubal.WS.Rstab9.Model.get_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.get_sectionRequest();
-            inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_section(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.get_session_idResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_session_id(Dlubal.WS.Rstab9.Model.get_session_idRequest request)
         {
             return base.Channel.get_session_id(request);
@@ -6962,16 +7215,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.get_steel_member_local_section_reduction(request);
+            return base.Channel.get_steel_member_local_cross_section_reduction(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.steel_member_local_section_reduction get_steel_member_local_section_reduction(int no)
+        public Dlubal.WS.Rstab9.Model.steel_member_local_cross_section_reduction get_steel_member_local_cross_section_reduction(int no)
         {
-            Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest();
+            Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_steel_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
@@ -6986,19 +7239,6 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.get_structure_modificationRequest inValue = new Dlubal.WS.Rstab9.Model.get_structure_modificationRequest();
             inValue.no = no;
             Dlubal.WS.Rstab9.Model.get_structure_modificationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_structure_modification(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_table_export_config_managerResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_table_export_config_manager(Dlubal.WS.Rstab9.Model.get_table_export_config_managerRequest request)
-        {
-            return base.Channel.get_table_export_config_manager(request);
-        }
-        
-        public Dlubal.WS.Rstab9.Model.TableExportConfigManager get_table_export_config_manager()
-        {
-            Dlubal.WS.Rstab9.Model.get_table_export_config_managerRequest inValue = new Dlubal.WS.Rstab9.Model.get_table_export_config_managerRequest();
-            Dlubal.WS.Rstab9.Model.get_table_export_config_managerResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_table_export_config_manager(inValue);
             return retVal.value;
         }
         
@@ -7073,16 +7313,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.get_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.get_timber_member_local_section_reduction(request);
+            return base.Channel.get_timber_member_local_cross_section_reduction(request);
         }
         
-        public Dlubal.WS.Rstab9.Model.timber_member_local_section_reduction get_timber_member_local_section_reduction(int no)
+        public Dlubal.WS.Rstab9.Model.timber_member_local_cross_section_reduction get_timber_member_local_cross_section_reduction(int no)
         {
-            Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest();
+            Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).get_timber_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
@@ -7343,16 +7583,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.set_aluminum_member_local_section_reduction(request);
+            return base.Channel.set_aluminum_member_local_cross_section_reduction(request);
         }
         
-        public void set_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.aluminum_member_local_section_reduction value)
+        public void set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.aluminum_member_local_cross_section_reduction value)
         {
-            Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest();
+            Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_aluminum_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_aluminum_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7499,6 +7739,19 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_cross_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_cross_section(Dlubal.WS.Rstab9.Model.set_cross_sectionRequest request)
+        {
+            return base.Channel.set_cross_section(request);
+        }
+        
+        public void set_cross_section(Dlubal.WS.Rstab9.Model.cross_section value)
+        {
+            Dlubal.WS.Rstab9.Model.set_cross_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.set_cross_sectionRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_cross_section(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_design_situationResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_design_situation(Dlubal.WS.Rstab9.Model.set_design_situationRequest request)
         {
             return base.Channel.set_design_situation(request);
@@ -7590,6 +7843,33 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_global_parameterRequest inValue = new Dlubal.WS.Rstab9.Model.set_global_parameterRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_global_parameterResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_global_parameter(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_ifc_file_model_object(Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectRequest request)
+        {
+            return base.Channel.set_ifc_file_model_object(request);
+        }
+        
+        public void set_ifc_file_model_object(Dlubal.WS.Rstab9.Model.ifc_file_model_object value)
+        {
+            Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectRequest inValue = new Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectRequest();
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_ifc_file_model_object(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rstab9.Model.set_ifc_model_objectResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_ifc_model_object(Dlubal.WS.Rstab9.Model.set_ifc_model_objectRequest request)
+        {
+            return base.Channel.set_ifc_model_object(request);
+        }
+        
+        public void set_ifc_model_object(int parent_no, Dlubal.WS.Rstab9.Model.ifc_model_object value)
+        {
+            Dlubal.WS.Rstab9.Model.set_ifc_model_objectRequest inValue = new Dlubal.WS.Rstab9.Model.set_ifc_model_objectRequest();
+            inValue.parent_no = parent_no;
+            inValue.value = value;
+            Dlubal.WS.Rstab9.Model.set_ifc_model_objectResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_ifc_model_object(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8171,19 +8451,6 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_sectionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_section(Dlubal.WS.Rstab9.Model.set_sectionRequest request)
-        {
-            return base.Channel.set_section(request);
-        }
-        
-        public void set_section(Dlubal.WS.Rstab9.Model.section value)
-        {
-            Dlubal.WS.Rstab9.Model.set_sectionRequest inValue = new Dlubal.WS.Rstab9.Model.set_sectionRequest();
-            inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_sectionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_section(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rstab9.Model.set_selected_objectsResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_selected_objects(Dlubal.WS.Rstab9.Model.set_selected_objectsRequest request)
         {
             return base.Channel.set_selected_objects(request);
@@ -8314,16 +8581,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.set_steel_member_local_section_reduction(request);
+            return base.Channel.set_steel_member_local_cross_section_reduction(request);
         }
         
-        public void set_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.steel_member_local_section_reduction value)
+        public void set_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.steel_member_local_cross_section_reduction value)
         {
-            Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest();
+            Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_steel_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8337,19 +8604,6 @@ namespace Dlubal.WS.Rstab9.Model
             Dlubal.WS.Rstab9.Model.set_structure_modificationRequest inValue = new Dlubal.WS.Rstab9.Model.set_structure_modificationRequest();
             inValue.value = value;
             Dlubal.WS.Rstab9.Model.set_structure_modificationResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_structure_modification(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_table_export_config_managerResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_table_export_config_manager(Dlubal.WS.Rstab9.Model.set_table_export_config_managerRequest request)
-        {
-            return base.Channel.set_table_export_config_manager(request);
-        }
-        
-        public void set_table_export_config_manager(Dlubal.WS.Rstab9.Model.TableExportConfigManager value)
-        {
-            Dlubal.WS.Rstab9.Model.set_table_export_config_managerRequest inValue = new Dlubal.WS.Rstab9.Model.set_table_export_config_managerRequest();
-            inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_table_export_config_managerResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_table_export_config_manager(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8418,16 +8672,16 @@ namespace Dlubal.WS.Rstab9.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest request)
+        Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionResponse Dlubal.WS.Rstab9.Model.IRstabModel.set_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.set_timber_member_local_section_reduction(request);
+            return base.Channel.set_timber_member_local_cross_section_reduction(request);
         }
         
-        public void set_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.timber_member_local_section_reduction value)
+        public void set_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.timber_member_local_cross_section_reduction value)
         {
-            Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest();
+            Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_member_local_section_reduction(inValue);
+            Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rstab9.Model.IRstabModel)(this)).set_timber_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

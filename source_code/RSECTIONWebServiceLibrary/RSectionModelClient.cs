@@ -441,6 +441,20 @@ namespace Dlubal.WS.RSection1.Model
             return base.Channel.get_block_info(request);
         }
         
+        public Dlubal.WS.RSection1.Model.cross_section get_cross_section(int no)
+        {
+            Dlubal.WS.RSection1.Model.get_cross_sectionRequest inValue = new Dlubal.WS.RSection1.Model.get_cross_sectionRequest();
+            inValue.no = no;
+            Dlubal.WS.RSection1.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_cross_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.get_cross_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_cross_section(Dlubal.WS.RSection1.Model.get_cross_sectionRequest request)
+        {
+            return base.Channel.get_cross_section(request);
+        }
+        
         public Dlubal.WS.RSection1.Model.dimension get_dimension(int no)
         {
             Dlubal.WS.RSection1.Model.get_dimensionRequest inValue = new Dlubal.WS.RSection1.Model.get_dimensionRequest();
@@ -1034,16 +1048,15 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.get_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_section(Dlubal.WS.RSection1.Model.get_sectionRequest request)
+        Dlubal.WS.RSection1.Model.get_results_for_welds_stressesResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_results_for_welds_stresses(Dlubal.WS.RSection1.Model.get_results_for_welds_stressesRequest request)
         {
-            return base.Channel.get_section(request);
+            return base.Channel.get_results_for_welds_stresses(request);
         }
         
-        public Dlubal.WS.RSection1.Model.section get_section(int no)
+        public Dlubal.WS.RSection1.Model.results_for_welds_stresses_row[] get_results_for_welds_stresses()
         {
-            Dlubal.WS.RSection1.Model.get_sectionRequest inValue = new Dlubal.WS.RSection1.Model.get_sectionRequest();
-            inValue.no = no;
-            Dlubal.WS.RSection1.Model.get_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_section(inValue);
+            Dlubal.WS.RSection1.Model.get_results_for_welds_stressesRequest inValue = new Dlubal.WS.RSection1.Model.get_results_for_welds_stressesRequest();
+            Dlubal.WS.RSection1.Model.get_results_for_welds_stressesResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_results_for_welds_stresses(inValue);
             return retVal.value;
         }
         
@@ -1099,19 +1112,6 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.get_subpanelRequest inValue = new Dlubal.WS.RSection1.Model.get_subpanelRequest();
             inValue.no = no;
             Dlubal.WS.RSection1.Model.get_subpanelResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_subpanel(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.get_table_export_config_managerResponse Dlubal.WS.RSection1.Model.IRSectionModel.get_table_export_config_manager(Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest request)
-        {
-            return base.Channel.get_table_export_config_manager(request);
-        }
-        
-        public Dlubal.WS.RSection1.Model.TableExportConfigManager get_table_export_config_manager()
-        {
-            Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest inValue = new Dlubal.WS.RSection1.Model.get_table_export_config_managerRequest();
-            Dlubal.WS.RSection1.Model.get_table_export_config_managerResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).get_table_export_config_manager(inValue);
             return retVal.value;
         }
         
@@ -1205,6 +1205,19 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.set_barRequest inValue = new Dlubal.WS.RSection1.Model.set_barRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_barResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_bar(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.RSection1.Model.set_cross_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_cross_section(Dlubal.WS.RSection1.Model.set_cross_sectionRequest request)
+        {
+            return base.Channel.set_cross_section(request);
+        }
+        
+        public void set_cross_section(Dlubal.WS.RSection1.Model.cross_section value)
+        {
+            Dlubal.WS.RSection1.Model.set_cross_sectionRequest inValue = new Dlubal.WS.RSection1.Model.set_cross_sectionRequest();
+            inValue.value = value;
+            Dlubal.WS.RSection1.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_cross_section(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1418,19 +1431,6 @@ namespace Dlubal.WS.RSection1.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.set_sectionResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_section(Dlubal.WS.RSection1.Model.set_sectionRequest request)
-        {
-            return base.Channel.set_section(request);
-        }
-        
-        public void set_section(Dlubal.WS.RSection1.Model.section value)
-        {
-            Dlubal.WS.RSection1.Model.set_sectionRequest inValue = new Dlubal.WS.RSection1.Model.set_sectionRequest();
-            inValue.value = value;
-            Dlubal.WS.RSection1.Model.set_sectionResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_section(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.RSection1.Model.set_selected_objectsResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_selected_objects(Dlubal.WS.RSection1.Model.set_selected_objectsRequest request)
         {
             return base.Channel.set_selected_objects(request);
@@ -1480,19 +1480,6 @@ namespace Dlubal.WS.RSection1.Model
             Dlubal.WS.RSection1.Model.set_subpanelRequest inValue = new Dlubal.WS.RSection1.Model.set_subpanelRequest();
             inValue.value = value;
             Dlubal.WS.RSection1.Model.set_subpanelResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_subpanel(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.RSection1.Model.set_table_export_config_managerResponse Dlubal.WS.RSection1.Model.IRSectionModel.set_table_export_config_manager(Dlubal.WS.RSection1.Model.set_table_export_config_managerRequest request)
-        {
-            return base.Channel.set_table_export_config_manager(request);
-        }
-        
-        public void set_table_export_config_manager(Dlubal.WS.RSection1.Model.TableExportConfigManager value)
-        {
-            Dlubal.WS.RSection1.Model.set_table_export_config_managerRequest inValue = new Dlubal.WS.RSection1.Model.set_table_export_config_managerRequest();
-            inValue.value = value;
-            Dlubal.WS.RSection1.Model.set_table_export_config_managerResponse retVal = ((Dlubal.WS.RSection1.Model.IRSectionModel)(this)).set_table_export_config_manager(inValue);
         }
     }
 }

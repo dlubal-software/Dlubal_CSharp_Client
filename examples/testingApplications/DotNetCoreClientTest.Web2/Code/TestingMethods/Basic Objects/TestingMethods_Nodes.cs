@@ -137,22 +137,22 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.SetProgressBarValue(70);
 
-                section section = new section
+                cross_section cross_section = new cross_section
                 {
                     no = SECTION_NO,
                     name = SECTION_I,
                     material = MATERIAL_NO,
                     materialSpecified = true
                 };
-                SoapModelClient.set_section(section);
+                SoapModelClient.set_cross_section(cross_section);
 
                 DataLogger.SetProgressBarValue(80);
 
                 member member = new member
                 {
                     no = MEMBER_NO,
-                    section_start = SECTION_NO,
-                    section_startSpecified = true,
+                    cross_section_start = SECTION_NO,
+                    cross_section_startSpecified = true,
 #if RFEM
                     line = LINE_NO,
                     lineSpecified = true

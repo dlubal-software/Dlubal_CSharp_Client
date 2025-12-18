@@ -786,18 +786,18 @@ namespace Dlubal.WS.Rfem6.Model
             return base.Channel.get_aluminum_effective_lengths(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.aluminum_member_local_section_reduction get_aluminum_member_local_section_reduction(int no)
+        public Dlubal.WS.Rfem6.Model.aluminum_member_local_cross_section_reduction get_aluminum_member_local_cross_section_reduction(int no)
         {
-            Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionRequest();
+            Dlubal.WS.Rfem6.Model.get_aluminum_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.get_aluminum_member_local_cross_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_aluminum_member_local_section_reduction(inValue);
+            Dlubal.WS.Rfem6.Model.get_aluminum_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_aluminum_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_aluminum_member_local_section_reduction(Dlubal.WS.Rfem6.Model.get_aluminum_member_local_section_reductionRequest request)
+        Dlubal.WS.Rfem6.Model.get_aluminum_member_local_cross_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.get_aluminum_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.get_aluminum_member_local_section_reduction(request);
+            return base.Channel.get_aluminum_member_local_cross_section_reduction(request);
         }
         
         public Dlubal.WS.Rfem6.Model.aluminum_member_transverse_weld get_aluminum_member_transverse_weld(int no)
@@ -1049,6 +1049,20 @@ namespace Dlubal.WS.Rfem6.Model
         Dlubal.WS.Rfem6.Model.get_coordinate_systemResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_coordinate_system(Dlubal.WS.Rfem6.Model.get_coordinate_systemRequest request)
         {
             return base.Channel.get_coordinate_system(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.cross_section get_cross_section(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_cross_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_cross_sectionRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_cross_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_cross_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_cross_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_cross_section(Dlubal.WS.Rfem6.Model.get_cross_sectionRequest request)
+        {
+            return base.Channel.get_cross_section(request);
         }
         
         public Dlubal.WS.Rfem6.Model.deep_beam get_deep_beam(int no)
@@ -1392,6 +1406,35 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_global_parameterRequest inValue = new Dlubal.WS.Rfem6.Model.get_global_parameterRequest();
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_global_parameterResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_global_parameter(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_ifc_file_model_objectResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_ifc_file_model_object(Dlubal.WS.Rfem6.Model.get_ifc_file_model_objectRequest request)
+        {
+            return base.Channel.get_ifc_file_model_object(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.ifc_file_model_object get_ifc_file_model_object(int no)
+        {
+            Dlubal.WS.Rfem6.Model.get_ifc_file_model_objectRequest inValue = new Dlubal.WS.Rfem6.Model.get_ifc_file_model_objectRequest();
+            inValue.no = no;
+            Dlubal.WS.Rfem6.Model.get_ifc_file_model_objectResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_ifc_file_model_object(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_ifc_model_objectResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_ifc_model_object(Dlubal.WS.Rfem6.Model.get_ifc_model_objectRequest request)
+        {
+            return base.Channel.get_ifc_model_object(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.ifc_model_object get_ifc_model_object(int no, int parent_no)
+        {
+            Dlubal.WS.Rfem6.Model.get_ifc_model_objectRequest inValue = new Dlubal.WS.Rfem6.Model.get_ifc_model_objectRequest();
+            inValue.no = no;
+            inValue.parent_no = parent_no;
+            Dlubal.WS.Rfem6.Model.get_ifc_model_objectResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_ifc_model_object(inValue);
             return retVal.value;
         }
         
@@ -3053,6 +3096,118 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_construction_stage_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_design_situation_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_loading_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_location(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_location_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_material(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_material_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_surface_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_set(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_setRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_surface_set_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_surface_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_surface_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_surface_set(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_thicknessResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_design_ratios_surfaces_by_thickness(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_thicknessRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_design_ratios_surfaces_by_thickness(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_design_ratios_surfaces_by_thickness_row[] get_results_for_aluminum_design_design_ratios_surfaces_by_thickness(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_thicknessRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_thicknessRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_design_ratios_surfaces_by_thicknessResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_design_ratios_surfaces_by_thickness(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_deep_beamResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_governing_internal_forces_by_deep_beam(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_deep_beamRequest request)
         {
             return base.Channel.get_results_for_aluminum_design_governing_internal_forces_by_deep_beam(request);
@@ -3217,6 +3372,34 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_shear_wall_endsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_shear_wall_endsRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_shear_wall_endsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_governing_internal_forces_by_shear_wall_ends(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_governing_internal_forces_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_governing_internal_forces_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_governing_internal_forces_by_surface_row[] get_results_for_aluminum_design_governing_internal_forces_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_governing_internal_forces_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surface_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_aluminum_design_governing_internal_forces_by_surface_set(Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surface_setRequest request)
+        {
+            return base.Channel.get_results_for_aluminum_design_governing_internal_forces_by_surface_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_aluminum_design_governing_internal_forces_by_surface_set_row[] get_results_for_aluminum_design_governing_internal_forces_by_surface_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surface_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surface_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_aluminum_design_governing_internal_forces_by_surface_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_aluminum_design_governing_internal_forces_by_surface_set(inValue);
             return retVal.value;
         }
         
@@ -3431,6 +3614,230 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_componentResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_component(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_componentRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_component(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_component_row[] get_results_for_component_design_design_ratios_members_by_component(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_componentRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_componentRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_componentResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_component(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_component_seriesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_component_series(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_component_seriesRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_component_series(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_component_series_row[] get_results_for_component_design_design_ratios_members_by_component_series(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_component_seriesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_component_seriesRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_component_seriesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_component_series(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_construction_stage_row[] get_results_for_component_design_design_ratios_members_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_design_situation_row[] get_results_for_component_design_design_ratios_members_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_loading_row[] get_results_for_component_design_design_ratios_members_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_location(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_location_row[] get_results_for_component_design_design_ratios_members_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_memberResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_by_member(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_memberRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_by_member(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_by_member_row[] get_results_for_component_design_design_ratios_members_by_member(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_memberRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_memberRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_by_memberResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_by_member(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_componentResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_start_end_by_component(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_componentRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_start_end_by_component(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_start_end_by_component_row[] get_results_for_component_design_design_ratios_members_start_end_by_component(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_componentRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_componentRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_componentResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_start_end_by_component(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_component_seriesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_start_end_by_component_series(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_component_seriesRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_start_end_by_component_series(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_start_end_by_component_series_row[] get_results_for_component_design_design_ratios_members_start_end_by_component_series(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_component_seriesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_component_seriesRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_component_seriesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_start_end_by_component_series(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_start_end_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_start_end_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_start_end_by_construction_stage_row[] get_results_for_component_design_design_ratios_members_start_end_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_start_end_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_start_end_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_start_end_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_start_end_by_design_situation_row[] get_results_for_component_design_design_ratios_members_start_end_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_start_end_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_start_end_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_start_end_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_start_end_by_loading_row[] get_results_for_component_design_design_ratios_members_start_end_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_start_end_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_memberResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_design_ratios_members_start_end_by_member(Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_memberRequest request)
+        {
+            return base.Channel.get_results_for_component_design_design_ratios_members_start_end_by_member(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_design_ratios_members_start_end_by_member_row[] get_results_for_component_design_design_ratios_members_start_end_by_member(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_memberRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_memberRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_design_ratios_members_start_end_by_memberResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_design_ratios_members_start_end_by_member(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_internal_forces_by_member_endResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_governing_internal_forces_by_member_end(Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_internal_forces_by_member_endRequest request)
+        {
+            return base.Channel.get_results_for_component_design_governing_internal_forces_by_member_end(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_governing_internal_forces_by_member_end_row[] get_results_for_component_design_governing_internal_forces_by_member_end(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_internal_forces_by_member_endRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_internal_forces_by_member_endRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_internal_forces_by_member_endResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_governing_internal_forces_by_member_end(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_governing_loading(Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_loadingRequest request)
+        {
+            return base.Channel.get_results_for_component_design_governing_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_governing_loading_row[] get_results_for_component_design_governing_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_governing_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_governing_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_component_design_overview_errors_and_warningsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_component_design_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.get_results_for_component_design_overview_errors_and_warningsRequest request)
+        {
+            return base.Channel.get_results_for_component_design_overview_errors_and_warnings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_component_design_overview_errors_and_warnings_row[] get_results_for_component_design_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_overview_errors_and_warningsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_component_design_overview_errors_and_warningsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_component_design_overview_errors_and_warningsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_component_design_overview_errors_and_warnings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_deep_beam_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_deep_beam_reinforcementRequest request)
         {
             return base.Channel.get_results_for_concrete_design_deep_beam_reinforcement(request);
@@ -3539,6 +3946,104 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_deep_beams_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_construction_stage_row[] get_results_for_concrete_design_design_ratios_design_strips_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_design_situation_row[] get_results_for_concrete_design_design_ratios_design_strips_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_stripResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_stripRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_design_strip(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_design_strip_row[] get_results_for_concrete_design_design_ratios_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_stripRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_stripRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_design_stripResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_design_strip(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_loading_row[] get_results_for_concrete_design_design_ratios_design_strips_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_location(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_location_row[] get_results_for_concrete_design_design_ratios_design_strips_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_material(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_material_row[] get_results_for_concrete_design_design_ratios_design_strips_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_ratios_design_strips_by_section(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_ratios_design_strips_by_section(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_ratios_design_strips_by_section_row[] get_results_for_concrete_design_design_ratios_design_strips_by_section(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_ratios_design_strips_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_ratios_design_strips_by_section(inValue);
             return retVal.value;
         }
         
@@ -4159,6 +4664,20 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_strip_reinforcementResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_design_strip_reinforcement(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_strip_reinforcementRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_design_strip_reinforcement(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_design_strip_reinforcement_row[] get_results_for_concrete_design_design_strip_reinforcement(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_strip_reinforcementRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_strip_reinforcementRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_design_strip_reinforcementResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_design_strip_reinforcement(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_governing_internal_forces_by_deep_beam(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beamRequest request)
         {
             return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_deep_beam(request);
@@ -4183,6 +4702,34 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_deep_beam_endsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_deep_beam_ends(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_stripResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_governing_internal_forces_by_design_strip(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_stripRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_design_strip(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_governing_internal_forces_by_design_strip_row[] get_results_for_concrete_design_governing_internal_forces_by_design_strip(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_stripRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_stripRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_stripResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_design_strip(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_strip_endsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_governing_internal_forces_by_design_strip_ends(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_strip_endsRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_governing_internal_forces_by_design_strip_ends(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_governing_internal_forces_by_design_strip_ends_row[] get_results_for_concrete_design_governing_internal_forces_by_design_strip_ends(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_strip_endsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_strip_endsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_governing_internal_forces_by_design_strip_endsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_governing_internal_forces_by_design_strip_ends(inValue);
             return retVal.value;
         }
         
@@ -4519,6 +5066,90 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_deep_beams_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stage_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situation_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_stripResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_stripRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_strip(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_strip_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_stripRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_stripRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_stripResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_design_strip(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_location(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_location_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_material(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_material_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_section(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_section(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_section_row[] get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_section(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_not_covered_reinforcement_area_on_design_strips_by_section(inValue);
             return retVal.value;
         }
         
@@ -5055,6 +5686,62 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_stripResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_stripRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_strip(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_strip_row[] get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_stripRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_stripRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_stripResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_design_strip(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_location(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_location_row[] get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_material(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_material_row[] get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_section(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_section(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_section_row[] get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_section(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_provided_reinforcement_area_on_design_strips_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_member_representatives_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_provided_reinforcement_area_on_member_representatives_by_location(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_provided_reinforcement_area_on_member_representatives_by_locationRequest request)
         {
             return base.Channel.get_results_for_concrete_design_provided_reinforcement_area_on_member_representatives_by_location(request);
@@ -5499,6 +6186,90 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_deep_beams_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stage_row[] get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situation_row[] get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_stripResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_stripRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_strip(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_strip_row[] get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_strip(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_stripRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_stripRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_stripResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_design_strip(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_location(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_required_reinforcement_area_on_design_strips_by_location_row[] get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_material(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_required_reinforcement_area_on_design_strips_by_material_row[] get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_section(Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_section(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_concrete_design_required_reinforcement_area_on_design_strips_by_section_row[] get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_section(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_concrete_design_required_reinforcement_area_on_design_strips_by_section(inValue);
             return retVal.value;
         }
         
@@ -6333,6 +7104,54 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinatesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_cutting_pattern_analysis_point_coordinates(Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinatesRequest request)
+        {
+            return base.Channel.get_results_for_cutting_pattern_analysis_point_coordinates(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.cutting_pattern_analysis_point_coordinates_row[] get_results_for_cutting_pattern_analysis_point_coordinates(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinatesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinatesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinatesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_cutting_pattern_analysis_point_coordinates(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowancesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowances(Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowancesRequest request)
+        {
+            return base.Channel.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowances(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.cutting_pattern_analysis_point_coordinates_with_allowances_row[] get_results_for_cutting_pattern_analysis_point_coordinates_with_allowances(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowancesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowancesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_point_coordinates_with_allowancesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_cutting_pattern_analysis_point_coordinates_with_allowances(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_statisticsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_cutting_pattern_analysis_statistics(Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_statisticsRequest request)
+        {
+            return base.Channel.get_results_for_cutting_pattern_analysis_statistics(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.cutting_pattern_analysis_statistics_row[] get_results_for_cutting_pattern_analysis_statistics(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_statisticsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_statisticsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_cutting_pattern_analysis_statisticsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_cutting_pattern_analysis_statistics(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_effective_lengths_and_critical_loads_by_eigenvectorResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_effective_lengths_and_critical_loads_by_eigenvector(Dlubal.WS.Rfem6.Model.get_results_for_effective_lengths_and_critical_loads_by_eigenvectorRequest request)
         {
             return base.Channel.get_results_for_effective_lengths_and_critical_loads_by_eigenvector(request);
@@ -6425,6 +7244,384 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_eigenvectors_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_eigenvectors_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_construction_stage_row[] get_results_for_glass_design_design_ratios_solids_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_design_situation_row[] get_results_for_glass_design_design_ratios_solids_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_loading_row[] get_results_for_glass_design_design_ratios_solids_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_location(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_location_row[] get_results_for_glass_design_design_ratios_solids_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_material(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_material_row[] get_results_for_glass_design_design_ratios_solids_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solidResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_solid(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solidRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_solid(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_solid_row[] get_results_for_glass_design_design_ratios_solids_by_solid(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solidRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solidRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solidResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_solid(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solid_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_solid_set(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solid_setRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_solid_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_solid_set_row[] get_results_for_glass_design_design_ratios_solids_by_solid_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solid_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solid_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_solid_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_solid_set(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_solids_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_solids_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_solids_by_surface_row[] get_results_for_glass_design_design_ratios_solids_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_solids_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_solids_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_construction_stage_row[] get_results_for_glass_design_design_ratios_surfaces_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_design_situation_row[] get_results_for_glass_design_design_ratios_surfaces_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_layerResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_layer(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_layerRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_layer(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_layer_row[] get_results_for_glass_design_design_ratios_surfaces_by_layer(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_layerRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_layerRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_layerResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_layer(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_loading_row[] get_results_for_glass_design_design_ratios_surfaces_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_location(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_location_row[] get_results_for_glass_design_design_ratios_surfaces_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_material(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_material_row[] get_results_for_glass_design_design_ratios_surfaces_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_surface_row[] get_results_for_glass_design_design_ratios_surfaces_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_thicknessResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_by_thickness(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_thicknessRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_by_thickness(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_by_thickness_row[] get_results_for_glass_design_design_ratios_surfaces_by_thickness(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_thicknessRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_thicknessRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_by_thicknessResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_by_thickness(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stage_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situation_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_loading_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_location(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_location_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_material(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_material_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solidResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solid(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solidRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solid(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_solid_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solid(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solidRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solidRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solidResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_solid(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_design_ratios_surfaces_solid_model_by_surface_row[] get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_design_ratios_surfaces_solid_model_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_internal_forces_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_governing_internal_forces_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_internal_forces_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_governing_internal_forces_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_governing_internal_forces_by_surface_row[] get_results_for_glass_design_governing_internal_forces_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_internal_forces_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_internal_forces_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_internal_forces_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_governing_internal_forces_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_governing_loading(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_loadingRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_governing_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_governing_loading_row[] get_results_for_glass_design_governing_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_governing_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_governing_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_errors_and_warningsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_errors_and_warningsRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_overview_errors_and_warnings(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_overview_errors_and_warnings_row[] get_results_for_glass_design_overview_errors_and_warnings(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_errors_and_warningsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_errors_and_warningsRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_errors_and_warningsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_overview_errors_and_warnings(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_not_valid_deactivatedResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_glass_design_overview_not_valid_deactivated(Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_not_valid_deactivatedRequest request)
+        {
+            return base.Channel.get_results_for_glass_design_overview_not_valid_deactivated(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_glass_design_overview_not_valid_deactivated_row[] get_results_for_glass_design_overview_not_valid_deactivated(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_not_valid_deactivatedRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_not_valid_deactivatedRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_glass_design_overview_not_valid_deactivatedResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_glass_design_overview_not_valid_deactivated(inValue);
             return retVal.value;
         }
         
@@ -6653,6 +7850,38 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_members_internal_forces_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_differencesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_differencesRequest request)
+        {
+            return base.Channel.get_results_for_members_internal_forces_differences(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.members_internal_forces_differences_row[] get_results_for_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_differencesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_differencesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_differencesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_members_internal_forces_differences(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_primaryResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_primaryRequest request)
+        {
+            return base.Channel.get_results_for_members_internal_forces_primary(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.members_internal_forces_primary_row[] get_results_for_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_primaryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_primaryRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_members_internal_forces_primaryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_members_internal_forces_primary(inValue);
             return retVal.value;
         }
         
@@ -6995,6 +8224,438 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_basic_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_basic_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_basic_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_basic_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_contact_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_design_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_elastic_stress_components_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_global_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_local_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_maximum_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_maximum_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_principal_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_principal_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_principal_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodes_row[] get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_nonlinear_stability_analysis_surfaces_principal_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_building_model_member_forces_in_shear_wallsRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_building_model_member_forces_in_shear_walls(request);
@@ -7331,6 +8992,38 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_members_internal_forces_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_differencesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_differencesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_members_internal_forces_differences(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_members_internal_forces_differences_row[] get_results_for_pushover_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_differencesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_differencesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_differencesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_members_internal_forces_differences(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_primaryResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_primaryRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_members_internal_forces_primary(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_members_internal_forces_primary_row[] get_results_for_pushover_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_primaryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_primaryRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_members_internal_forces_primaryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_members_internal_forces_primary(inValue);
             return retVal.value;
         }
         
@@ -7688,18 +9381,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_plastic_strains(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_plastic_strains_row[] get_results_for_pushover_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_internal_forces_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_plastic_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_plastic_strains_grid_points_row[] get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_plastic_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_plastic_strains_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_plastic_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -7720,18 +9445,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_total_strains(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_total_strains_row[] get_results_for_pushover_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_stresses_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_total_strains_grid_points_row[] get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_basic_total_strains_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_basic_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -7752,6 +9509,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_contact_stresses_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_contact_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forcesRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_surfaces_design_internal_forces(request);
@@ -7764,6 +9537,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_design_internal_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_design_internal_forces_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_design_internal_forces_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -7784,66 +9573,146 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_bach_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_elastic_stress_components_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_elastic_stress_components_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_mises_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_rankine_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_tresca_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -7864,6 +9733,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_misesRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises(request);
@@ -7876,6 +9761,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -7896,6 +9797,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_trescaRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca(request);
@@ -7912,66 +9829,146 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_bach_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_mises_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_bach_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_grid_points(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_rankine_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_tresca_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_mises_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_points_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -7992,6 +9989,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_global_deformations_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_global_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformationsRequest request)
         {
             return base.Channel.get_results_for_pushover_analysis_surfaces_local_deformations(request);
@@ -8008,34 +10021,82 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_maximum_plastic_strains_row[] get_results_for_pushover_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_local_deformations_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_maximum_plastic_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_local_deformations_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_maximum_total_strains(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_maximum_total_strains_row[] get_results_for_pushover_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_maximum_plastic_strains_grid_points_row[] get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_maximum_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_maximum_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_maximum_total_strains_grid_points_row[] get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_maximum_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_maximum_total_strains_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_maximum_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -8056,18 +10117,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_plastic_strains(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_plastic_strains_row[] get_results_for_pushover_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_internal_forces_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_plastic_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_plastic_strains_grid_points_row[] get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_plastic_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_plastic_strains_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_plastic_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -8088,18 +10181,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_total_strains(request);
+            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_total_strains_row[] get_results_for_pushover_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_stresses_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_total_strains_grid_points_row[] get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.pushover_analysis_surfaces_principal_total_strains_mesh_nodes_row[] get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_pushover_analysis_surfaces_principal_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -8656,6 +10781,40 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_differencesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_differencesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_members_internal_forces_differences(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_differences_row[] get_results_for_spectral_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_differencesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_differencesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_differencesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_internal_forces_differences(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_primaryResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_primaryRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_members_internal_forces_primary(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_members_internal_forces_primary_row[] get_results_for_spectral_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_primaryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_primaryRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_internal_forces_primaryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_members_internal_forces_primary(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_members_local_deformationsRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_members_local_deformations(request);
@@ -8981,6 +11140,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_internal_forces_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_basic_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stressesRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_surfaces_basic_stresses(request);
@@ -8998,36 +11174,87 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_basic_total_strains(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_total_strains_row[] get_results_for_spectral_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_stresses_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_stresses_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_contact_stresses(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_contact_stresses_row[] get_results_for_spectral_analysis_surfaces_contact_stresses(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_total_strains_grid_points_row[] get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stressesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_contact_stresses(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_basic_total_strains_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_basic_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_contact_stresses_grid_points_row[] get_results_for_spectral_analysis_surfaces_contact_stresses_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_contact_stresses_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_contact_stresses_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_contact_stresses_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -9049,6 +11276,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_design_internal_forces_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_design_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_elastic_stress_components(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_surfaces_elastic_stress_components(request);
@@ -9062,6 +11306,23 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_componentsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_elastic_stress_components(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_elastic_stress_components_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_elastic_stress_components_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -9083,6 +11344,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(request);
@@ -9096,6 +11374,23 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
             Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -9117,6 +11412,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_trescaRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca(request);
@@ -9134,70 +11446,155 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_bach_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_mises_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_bach_grid_points_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_grid_points(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_rankine_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_tresca_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_mises_grid_points_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_points_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_points_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -9219,6 +11616,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_global_deformations_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_global_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformationsRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_surfaces_local_deformations(request);
@@ -9236,19 +11650,53 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_maximum_total_strains(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_maximum_total_strains_row[] get_results_for_spectral_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_local_deformations_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_maximum_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_local_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_maximum_total_strains_grid_points_row[] get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_maximum_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_maximum_total_strains_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_maximum_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -9270,6 +11718,23 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_internal_forces_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_principal_stresses(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stressesRequest request)
         {
             return base.Channel.get_results_for_spectral_analysis_surfaces_principal_stresses(request);
@@ -9287,19 +11752,53 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_spectral_analysis_surfaces_principal_total_strains(request);
+            return base.Channel.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_total_strains_row[] get_results_for_spectral_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_stresses_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             inValue.envelope = envelope;
-            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_total_strains_grid_points_row[] get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.spectral_analysis_surfaces_principal_total_strains_mesh_nodes_row[] get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations, Dlubal.WS.Rfem6.Model.spectral_analysis_envelope envelope)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            inValue.envelope = envelope;
+            Dlubal.WS.Rfem6.Model.get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_spectral_analysis_surfaces_principal_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -9640,6 +12139,38 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.object_locations = object_locations;
             inValue.member_result_coordinate_system_type = member_result_coordinate_system_type;
             Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_differencesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_differencesRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces_differences(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_members_internal_forces_differences_row[] get_results_for_stability_incremental_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_differencesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_differencesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_differencesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_differences(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_primaryResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_stability_incremental_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_primaryRequest request)
+        {
+            return base.Channel.get_results_for_stability_incremental_analysis_members_internal_forces_primary(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.stability_incremental_analysis_members_internal_forces_primary_row[] get_results_for_stability_incremental_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_primaryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_primaryRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_stability_incremental_analysis_members_internal_forces_primaryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_stability_incremental_analysis_members_internal_forces_primary(inValue);
             return retVal.value;
         }
         
@@ -10397,6 +12928,438 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_basic_internal_forces_mesh_nodes_row[] get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_basic_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_basic_plastic_strains_mesh_nodes_row[] get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_basic_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_basic_stresses_mesh_nodes_row[] get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_basic_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_basic_total_strains_mesh_nodes_row[] get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_basic_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_contact_stresses_mesh_nodes_row[] get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_contact_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_design_internal_forces_mesh_nodes_row[] get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_design_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_elastic_stress_components_mesh_nodes_row[] get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_elastic_stress_components_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_stresses_bach_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_stresses_mises_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes_row[] get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_global_deformations_mesh_nodes_row[] get_results_for_static_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_global_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_global_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_local_deformations_mesh_nodes_row[] get_results_for_static_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_local_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_local_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_maximum_plastic_strains_mesh_nodes_row[] get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_maximum_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_maximum_total_strains_mesh_nodes_row[] get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_maximum_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_principal_internal_forces_mesh_nodes_row[] get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_principal_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_principal_plastic_strains_mesh_nodes_row[] get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_principal_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_principal_stresses_mesh_nodes_row[] get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_principal_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.static_analysis_surfaces_principal_total_strains_mesh_nodes_row[] get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_static_analysis_surfaces_principal_total_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_steel_design_brace_connection_by_memberResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_brace_connection_by_member(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_brace_connection_by_memberRequest request)
         {
             return base.Channel.get_results_for_steel_design_brace_connection_by_member(request);
@@ -10929,6 +13892,118 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_construction_stage_row[] get_results_for_steel_design_design_ratios_surfaces_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_design_situation_row[] get_results_for_steel_design_design_ratios_surfaces_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_loading_row[] get_results_for_steel_design_design_ratios_surfaces_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_location(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_location_row[] get_results_for_steel_design_design_ratios_surfaces_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_material(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_material_row[] get_results_for_steel_design_design_ratios_surfaces_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_surface_row[] get_results_for_steel_design_design_ratios_surfaces_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surface_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_surface_set(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surface_setRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_surface_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_surface_set_row[] get_results_for_steel_design_design_ratios_surfaces_by_surface_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surface_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surface_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_surface_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_surface_set(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_thicknessResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_design_ratios_surfaces_by_thickness(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_thicknessRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_design_ratios_surfaces_by_thickness(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_design_ratios_surfaces_by_thickness_row[] get_results_for_steel_design_design_ratios_surfaces_by_thickness(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_thicknessRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_thicknessRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_design_ratios_surfaces_by_thicknessResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_design_ratios_surfaces_by_thickness(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_deep_beamResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_governing_internal_forces_by_deep_beam(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_deep_beamRequest request)
         {
             return base.Channel.get_results_for_steel_design_governing_internal_forces_by_deep_beam(request);
@@ -11093,6 +14168,34 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_shear_wall_endsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_shear_wall_endsRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_shear_wall_endsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_governing_internal_forces_by_shear_wall_ends(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_governing_internal_forces_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_governing_internal_forces_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_governing_internal_forces_by_surface_row[] get_results_for_steel_design_governing_internal_forces_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_governing_internal_forces_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surface_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_design_governing_internal_forces_by_surface_set(Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surface_setRequest request)
+        {
+            return base.Channel.get_results_for_steel_design_governing_internal_forces_by_surface_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_design_governing_internal_forces_by_surface_set_row[] get_results_for_steel_design_governing_internal_forces_by_surface_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surface_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surface_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_design_governing_internal_forces_by_surface_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_design_governing_internal_forces_by_surface_set(inValue);
             return retVal.value;
         }
         
@@ -11345,6 +14448,20 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeRequest();
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_design_ratios_by_nodeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_joints_design_ratios_by_node(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_preliminary_designResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_steel_joints_preliminary_design(Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_preliminary_designRequest request)
+        {
+            return base.Channel.get_results_for_steel_joints_preliminary_design(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_steel_joints_preliminary_design_row[] get_results_for_steel_joints_preliminary_design(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_preliminary_designRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_preliminary_designRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_steel_joints_preliminary_designResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_steel_joints_preliminary_design(inValue);
             return retVal.value;
         }
         
@@ -13842,6 +16959,328 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panelResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panel(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panelRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panel(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panel_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panel(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panelRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panelRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panelResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_beam_panel(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stage_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_design_situation_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_loading_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_location(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_location_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_material(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_material_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_memberResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_memberRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_member_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_member(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_memberRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_memberRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_memberResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_member(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_set(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_setRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_member_set_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_member_set(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_section(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_sectionRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_beam_by_section(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_beam_by_section_row[] get_results_for_timber_design_design_ratios_beam_panels_beam_by_section(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_sectionRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_beam_by_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_beam_by_section(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panelResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panel(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panelRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panel(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panel_row[] get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panel(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panelRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panelRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panelResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_connectors_by_beam_panel(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situation_row[] get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_connectors_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_lineResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_line(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_lineRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_line(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_connectors_by_line_row[] get_results_for_timber_design_design_ratios_beam_panels_connectors_by_line(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_lineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_lineRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_lineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_connectors_by_line(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_connectors_by_loading_row[] get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_connectors_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_location(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_connectors_by_location_row[] get_results_for_timber_design_design_ratios_beam_panels_connectors_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_connectors_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_connectors_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panelResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panel(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panelRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panel(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panel_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panel(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panelRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panelRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panelResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_beam_panel(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stageRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stage(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stage_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stage(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stageRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stageRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stageResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_construction_stage(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situation(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situationRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situation(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situation_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situation(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_design_situation(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loadingResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loading(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loadingRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loading(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_loading_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loading(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loadingRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loadingRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loadingResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_loading(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_locationResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_location(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_locationRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_location(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_location_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_location(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_locationRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_locationRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_locationResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_location(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_materialResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_material(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_materialRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_material(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_material_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_material(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_materialRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_materialRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_materialResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_material(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surfaceResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surfaceRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surfaceRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surfaceRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surfaceResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_setResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_set(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_setRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_set(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_set_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_set(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_setRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_setRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_setResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_surface_set(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thicknessResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thickness(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thicknessRequest request)
+        {
+            return base.Channel.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thickness(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.results_for_timber_design_design_ratios_beam_panels_sheathing_by_thickness_row[] get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thickness(Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thicknessRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thicknessRequest();
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thicknessResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_timber_design_design_ratios_beam_panels_sheathing_by_thickness(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_deep_beams_by_construction_stageResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_timber_design_design_ratios_deep_beams_by_construction_stage(Dlubal.WS.Rfem6.Model.get_results_for_timber_design_design_ratios_deep_beams_by_construction_stageRequest request)
         {
             return base.Channel.get_results_for_timber_design_design_ratios_deep_beams_by_construction_stage(request);
@@ -15092,6 +18531,38 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_differencesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_differencesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_members_internal_forces_differences(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_members_internal_forces_differences_row[] get_results_for_time_history_analysis_members_internal_forces_differences(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_differencesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_differencesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_differencesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_members_internal_forces_differences(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_primaryResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_primaryRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_members_internal_forces_primary(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_members_internal_forces_primary_row[] get_results_for_time_history_analysis_members_internal_forces_primary(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_primaryRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_primaryRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_internal_forces_primaryResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_members_internal_forces_primary(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_local_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_members_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_members_local_deformationsRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_members_local_deformations(request);
@@ -15461,18 +18932,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_plastic_strains(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_plastic_strains_row[] get_results_for_time_history_analysis_surfaces_basic_plastic_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_internal_forces_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_plastic_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_plastic_strains_grid_points_row[] get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_plastic_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_plastic_strains_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_plastic_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15493,18 +18996,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_total_strains(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_total_strains_row[] get_results_for_time_history_analysis_surfaces_basic_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_stresses_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_total_strains_grid_points_row[] get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_basic_total_strains_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_basic_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15525,6 +19060,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_contact_stresses_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_contact_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forcesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_design_internal_forces(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forcesRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_surfaces_design_internal_forces(request);
@@ -15537,6 +19088,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forcesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_design_internal_forces(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_design_internal_forces_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_design_internal_forces_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15557,66 +19124,146 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_bach_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_elastic_stress_components_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_elastic_stress_components_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_mises_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_grid_points(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_rankine_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_bach_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_tresca_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_plastic_strains_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15637,6 +19284,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_stresses_bach_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_misesRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises(request);
@@ -15649,6 +19312,22 @@ namespace Dlubal.WS.Rfem6.Model
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
             Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_stresses_mises_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15669,6 +19348,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_stresses_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_trescaRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca(request);
@@ -15685,66 +19380,146 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_bach_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bachResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_stresses_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_mises_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_bach_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_misesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_grid_points(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_rankine_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankineResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_bach_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_tresca_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_mises_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_trescaResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_mises_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_rankine_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_points_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_equivalent_total_strains_tresca_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15765,6 +19540,22 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_global_deformations_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_global_deformations_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformationsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_local_deformations(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformationsRequest request)
         {
             return base.Channel.get_results_for_time_history_analysis_surfaces_local_deformations(request);
@@ -15781,34 +19572,82 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_maximum_plastic_strains_row[] get_results_for_time_history_analysis_surfaces_maximum_plastic_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_local_deformations_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_maximum_plastic_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_local_deformations_mesh_nodes(inValue);
             return retVal.value;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_pointsRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_maximum_total_strains(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_points(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_maximum_total_strains_row[] get_results_for_time_history_analysis_surfaces_maximum_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_maximum_plastic_strains_grid_points_row[] get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_pointsRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_maximum_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_maximum_plastic_strains_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_maximum_total_strains_grid_points_row[] get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_maximum_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_maximum_total_strains_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_maximum_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15829,18 +19668,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_plastic_strains(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_plastic_strains_row[] get_results_for_time_history_analysis_surfaces_principal_plastic_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_internal_forces_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_plastic_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_internal_forces_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_plastic_strains_grid_points_row[] get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_plastic_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_plastic_strains_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_plastic_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15861,18 +19732,50 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsRequest request)
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodesRequest request)
         {
-            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_total_strains(request);
+            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodes(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_total_strains_row[] get_results_for_time_history_analysis_surfaces_principal_total_strains(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_stresses_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
         {
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsRequest();
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodesRequest();
             inValue.loading_type = loading_type;
             inValue.loading_no = loading_no;
             inValue.object_locations = object_locations;
-            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strainsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_total_strains(inValue);
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_stresses_mesh_nodes(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_pointsResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_points(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_pointsRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_points(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_total_strains_grid_points_row[] get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_points(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_pointsRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_pointsRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_pointsResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_total_strains_grid_points(inValue);
+            return retVal.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodesResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodesRequest request)
+        {
+            return base.Channel.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodes(request);
+        }
+        
+        public Dlubal.WS.Rfem6.Model.time_history_analysis_surfaces_principal_total_strains_mesh_nodes_row[] get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodes(Dlubal.WS.Rfem6.Model.case_object_types loading_type, int loading_no, Dlubal.WS.Rfem6.Model.object_location[] object_locations)
+        {
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodesRequest inValue = new Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodesRequest();
+            inValue.loading_type = loading_type;
+            inValue.loading_no = loading_no;
+            inValue.object_locations = object_locations;
+            Dlubal.WS.Rfem6.Model.get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodesResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_results_for_time_history_analysis_surfaces_principal_total_strains_mesh_nodes(inValue);
             return retVal.value;
         }
         
@@ -15902,20 +19805,6 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_rigid_linkRequest inValue = new Dlubal.WS.Rfem6.Model.get_rigid_linkRequest();
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_rigid_linkResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_rigid_link(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_section(Dlubal.WS.Rfem6.Model.get_sectionRequest request)
-        {
-            return base.Channel.get_section(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.section get_section(int no)
-        {
-            Dlubal.WS.Rfem6.Model.get_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_sectionRequest();
-            inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_section(inValue);
             return retVal.value;
         }
         
@@ -16187,16 +20076,16 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_steel_member_local_section_reduction(Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionRequest request)
+        Dlubal.WS.Rfem6.Model.get_steel_member_local_cross_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_steel_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.get_steel_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.get_steel_member_local_section_reduction(request);
+            return base.Channel.get_steel_member_local_cross_section_reduction(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.steel_member_local_section_reduction get_steel_member_local_section_reduction(int no)
+        public Dlubal.WS.Rfem6.Model.steel_member_local_cross_section_reduction get_steel_member_local_cross_section_reduction(int no)
         {
-            Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionRequest();
+            Dlubal.WS.Rfem6.Model.get_steel_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.get_steel_member_local_cross_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_steel_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_steel_member_local_section_reduction(inValue);
+            Dlubal.WS.Rfem6.Model.get_steel_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_steel_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
@@ -16239,21 +20128,6 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_surface_eccentricityRequest inValue = new Dlubal.WS.Rfem6.Model.get_surface_eccentricityRequest();
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_surface_eccentricityResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_surface_eccentricity(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_surface_imperfectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_surface_imperfection(Dlubal.WS.Rfem6.Model.get_surface_imperfectionRequest request)
-        {
-            return base.Channel.get_surface_imperfection(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.surface_imperfection get_surface_imperfection(int no, int imperfection_case_no)
-        {
-            Dlubal.WS.Rfem6.Model.get_surface_imperfectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_surface_imperfectionRequest();
-            inValue.no = no;
-            inValue.imperfection_case_no = imperfection_case_no;
-            Dlubal.WS.Rfem6.Model.get_surface_imperfectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_surface_imperfection(inValue);
             return retVal.value;
         }
         
@@ -16357,21 +20231,6 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_surface_set_imperfectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_surface_set_imperfection(Dlubal.WS.Rfem6.Model.get_surface_set_imperfectionRequest request)
-        {
-            return base.Channel.get_surface_set_imperfection(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.surface_set_imperfection get_surface_set_imperfection(int no, int imperfection_case_no)
-        {
-            Dlubal.WS.Rfem6.Model.get_surface_set_imperfectionRequest inValue = new Dlubal.WS.Rfem6.Model.get_surface_set_imperfectionRequest();
-            inValue.no = no;
-            inValue.imperfection_case_no = imperfection_case_no;
-            Dlubal.WS.Rfem6.Model.get_surface_set_imperfectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_surface_set_imperfection(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.get_surface_set_loadResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_surface_set_load(Dlubal.WS.Rfem6.Model.get_surface_set_loadRequest request)
         {
             return base.Channel.get_surface_set_load(request);
@@ -16439,19 +20298,6 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.get_surfaces_contact_typeRequest inValue = new Dlubal.WS.Rfem6.Model.get_surfaces_contact_typeRequest();
             inValue.no = no;
             Dlubal.WS.Rfem6.Model.get_surfaces_contact_typeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_surfaces_contact_type(inValue);
-            return retVal.value;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_table_export_config_managerResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_table_export_config_manager(Dlubal.WS.Rfem6.Model.get_table_export_config_managerRequest request)
-        {
-            return base.Channel.get_table_export_config_manager(request);
-        }
-        
-        public Dlubal.WS.Rfem6.Model.TableExportConfigManager get_table_export_config_manager()
-        {
-            Dlubal.WS.Rfem6.Model.get_table_export_config_managerRequest inValue = new Dlubal.WS.Rfem6.Model.get_table_export_config_managerRequest();
-            Dlubal.WS.Rfem6.Model.get_table_export_config_managerResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_table_export_config_manager(inValue);
             return retVal.value;
         }
         
@@ -16540,16 +20386,16 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_timber_member_local_section_reduction(Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionRequest request)
+        Dlubal.WS.Rfem6.Model.get_timber_member_local_cross_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.get_timber_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.get_timber_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.get_timber_member_local_section_reduction(request);
+            return base.Channel.get_timber_member_local_cross_section_reduction(request);
         }
         
-        public Dlubal.WS.Rfem6.Model.timber_member_local_section_reduction get_timber_member_local_section_reduction(int no)
+        public Dlubal.WS.Rfem6.Model.timber_member_local_cross_section_reduction get_timber_member_local_cross_section_reduction(int no)
         {
-            Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionRequest();
+            Dlubal.WS.Rfem6.Model.get_timber_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.get_timber_member_local_cross_section_reductionRequest();
             inValue.no = no;
-            Dlubal.WS.Rfem6.Model.get_timber_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_timber_member_local_section_reduction(inValue);
+            Dlubal.WS.Rfem6.Model.get_timber_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).get_timber_member_local_cross_section_reduction(inValue);
             return retVal.value;
         }
         
@@ -16852,16 +20698,16 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_aluminum_member_local_section_reduction(Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionRequest request)
+        Dlubal.WS.Rfem6.Model.set_aluminum_member_local_cross_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.set_aluminum_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.set_aluminum_member_local_section_reduction(request);
+            return base.Channel.set_aluminum_member_local_cross_section_reduction(request);
         }
         
-        public void set_aluminum_member_local_section_reduction(Dlubal.WS.Rfem6.Model.aluminum_member_local_section_reduction value)
+        public void set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.aluminum_member_local_cross_section_reduction value)
         {
-            Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionRequest();
+            Dlubal.WS.Rfem6.Model.set_aluminum_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.set_aluminum_member_local_cross_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_aluminum_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_aluminum_member_local_section_reduction(inValue);
+            Dlubal.WS.Rfem6.Model.set_aluminum_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_aluminum_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -17060,6 +20906,19 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_cross_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_cross_section(Dlubal.WS.Rfem6.Model.set_cross_sectionRequest request)
+        {
+            return base.Channel.set_cross_section(request);
+        }
+        
+        public void set_cross_section(Dlubal.WS.Rfem6.Model.cross_section value)
+        {
+            Dlubal.WS.Rfem6.Model.set_cross_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.set_cross_sectionRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_cross_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_cross_section(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_deep_beamResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_deep_beam(Dlubal.WS.Rfem6.Model.set_deep_beamRequest request)
         {
             return base.Channel.set_deep_beam(request);
@@ -17247,6 +21106,33 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_global_parameterRequest inValue = new Dlubal.WS.Rfem6.Model.set_global_parameterRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_global_parameterResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_global_parameter(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_ifc_file_model_objectResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_ifc_file_model_object(Dlubal.WS.Rfem6.Model.set_ifc_file_model_objectRequest request)
+        {
+            return base.Channel.set_ifc_file_model_object(request);
+        }
+        
+        public void set_ifc_file_model_object(Dlubal.WS.Rfem6.Model.ifc_file_model_object value)
+        {
+            Dlubal.WS.Rfem6.Model.set_ifc_file_model_objectRequest inValue = new Dlubal.WS.Rfem6.Model.set_ifc_file_model_objectRequest();
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_ifc_file_model_objectResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_ifc_file_model_object(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dlubal.WS.Rfem6.Model.set_ifc_model_objectResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_ifc_model_object(Dlubal.WS.Rfem6.Model.set_ifc_model_objectRequest request)
+        {
+            return base.Channel.set_ifc_model_object(request);
+        }
+        
+        public void set_ifc_model_object(int parent_no, Dlubal.WS.Rfem6.Model.ifc_model_object value)
+        {
+            Dlubal.WS.Rfem6.Model.set_ifc_model_objectRequest inValue = new Dlubal.WS.Rfem6.Model.set_ifc_model_objectRequest();
+            inValue.parent_no = parent_no;
+            inValue.value = value;
+            Dlubal.WS.Rfem6.Model.set_ifc_model_objectResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_ifc_model_object(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -18118,19 +22004,6 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_sectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_section(Dlubal.WS.Rfem6.Model.set_sectionRequest request)
-        {
-            return base.Channel.set_section(request);
-        }
-        
-        public void set_section(Dlubal.WS.Rfem6.Model.section value)
-        {
-            Dlubal.WS.Rfem6.Model.set_sectionRequest inValue = new Dlubal.WS.Rfem6.Model.set_sectionRequest();
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_sectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_section(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_selected_objectsResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_selected_objects(Dlubal.WS.Rfem6.Model.set_selected_objectsRequest request)
         {
             return base.Channel.set_selected_objects(request);
@@ -18380,16 +22253,16 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_steel_member_local_section_reduction(Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionRequest request)
+        Dlubal.WS.Rfem6.Model.set_steel_member_local_cross_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_steel_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.set_steel_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.set_steel_member_local_section_reduction(request);
+            return base.Channel.set_steel_member_local_cross_section_reduction(request);
         }
         
-        public void set_steel_member_local_section_reduction(Dlubal.WS.Rfem6.Model.steel_member_local_section_reduction value)
+        public void set_steel_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.steel_member_local_cross_section_reduction value)
         {
-            Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionRequest();
+            Dlubal.WS.Rfem6.Model.set_steel_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.set_steel_member_local_cross_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_steel_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_steel_member_local_section_reduction(inValue);
+            Dlubal.WS.Rfem6.Model.set_steel_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_steel_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -18429,20 +22302,6 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_surface_eccentricityRequest inValue = new Dlubal.WS.Rfem6.Model.set_surface_eccentricityRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_surface_eccentricityResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_surface_eccentricity(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_surface_imperfectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_surface_imperfection(Dlubal.WS.Rfem6.Model.set_surface_imperfectionRequest request)
-        {
-            return base.Channel.set_surface_imperfection(request);
-        }
-        
-        public void set_surface_imperfection(int imperfection_case_no, Dlubal.WS.Rfem6.Model.surface_imperfection value)
-        {
-            Dlubal.WS.Rfem6.Model.set_surface_imperfectionRequest inValue = new Dlubal.WS.Rfem6.Model.set_surface_imperfectionRequest();
-            inValue.imperfection_case_no = imperfection_case_no;
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_surface_imperfectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_surface_imperfection(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -18538,20 +22397,6 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_surface_set_imperfectionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_surface_set_imperfection(Dlubal.WS.Rfem6.Model.set_surface_set_imperfectionRequest request)
-        {
-            return base.Channel.set_surface_set_imperfection(request);
-        }
-        
-        public void set_surface_set_imperfection(int imperfection_case_no, Dlubal.WS.Rfem6.Model.surface_set_imperfection value)
-        {
-            Dlubal.WS.Rfem6.Model.set_surface_set_imperfectionRequest inValue = new Dlubal.WS.Rfem6.Model.set_surface_set_imperfectionRequest();
-            inValue.imperfection_case_no = imperfection_case_no;
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_surface_set_imperfectionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_surface_set_imperfection(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Dlubal.WS.Rfem6.Model.set_surface_set_loadResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_surface_set_load(Dlubal.WS.Rfem6.Model.set_surface_set_loadRequest request)
         {
             return base.Channel.set_surface_set_load(request);
@@ -18615,19 +22460,6 @@ namespace Dlubal.WS.Rfem6.Model
             Dlubal.WS.Rfem6.Model.set_surfaces_contact_typeRequest inValue = new Dlubal.WS.Rfem6.Model.set_surfaces_contact_typeRequest();
             inValue.value = value;
             Dlubal.WS.Rfem6.Model.set_surfaces_contact_typeResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_surfaces_contact_type(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_table_export_config_managerResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_table_export_config_manager(Dlubal.WS.Rfem6.Model.set_table_export_config_managerRequest request)
-        {
-            return base.Channel.set_table_export_config_manager(request);
-        }
-        
-        public void set_table_export_config_manager(Dlubal.WS.Rfem6.Model.TableExportConfigManager value)
-        {
-            Dlubal.WS.Rfem6.Model.set_table_export_config_managerRequest inValue = new Dlubal.WS.Rfem6.Model.set_table_export_config_managerRequest();
-            inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_table_export_config_managerResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_table_export_config_manager(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -18709,16 +22541,16 @@ namespace Dlubal.WS.Rfem6.Model
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_timber_member_local_section_reduction(Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionRequest request)
+        Dlubal.WS.Rfem6.Model.set_timber_member_local_cross_section_reductionResponse Dlubal.WS.Rfem6.Model.IRfemModel.set_timber_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.set_timber_member_local_cross_section_reductionRequest request)
         {
-            return base.Channel.set_timber_member_local_section_reduction(request);
+            return base.Channel.set_timber_member_local_cross_section_reduction(request);
         }
         
-        public void set_timber_member_local_section_reduction(Dlubal.WS.Rfem6.Model.timber_member_local_section_reduction value)
+        public void set_timber_member_local_cross_section_reduction(Dlubal.WS.Rfem6.Model.timber_member_local_cross_section_reduction value)
         {
-            Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionRequest();
+            Dlubal.WS.Rfem6.Model.set_timber_member_local_cross_section_reductionRequest inValue = new Dlubal.WS.Rfem6.Model.set_timber_member_local_cross_section_reductionRequest();
             inValue.value = value;
-            Dlubal.WS.Rfem6.Model.set_timber_member_local_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_timber_member_local_section_reduction(inValue);
+            Dlubal.WS.Rfem6.Model.set_timber_member_local_cross_section_reductionResponse retVal = ((Dlubal.WS.Rfem6.Model.IRfemModel)(this)).set_timber_member_local_cross_section_reduction(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

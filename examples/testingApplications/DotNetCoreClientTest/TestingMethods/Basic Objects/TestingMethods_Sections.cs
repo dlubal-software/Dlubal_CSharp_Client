@@ -16,7 +16,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
             const int MATERIAL_NO = 1;
             const int SECTION_NO = 2;
 
-            DataLogger.AddLogStart("Creating section...");
+            DataLogger.AddLogStart("Creating cross_section...");
             DataLogger.InitializeProgressBar(0, 30, 0);
 
             bool result = Test_General_Delete⁀All();
@@ -30,7 +30,7 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
             try
             {
-                SoapModelClient.begin_modification("set section");
+                SoapModelClient.begin_modification("set cross_section");
 
                 // create material
                 DataLogger.AddText($"Set material No.{MATERIAL_NO}");
@@ -43,16 +43,16 @@ namespace Dlubal.WS.Clients.DotNetClientTest
 
                 DataLogger.SetProgressBarValue(20);
 
-                // create section
+                // create cross_section
                 DataLogger.AddText($"Set material No.{SECTION_NO}");
-                section section = new section
+                cross_section cross_section = new cross_section
                 {
                     no = SECTION_NO,
                     name = SECTION_RECTANGLE,
                     material = MATERIAL_NO,
                     materialSpecified = true
                 };
-                SoapModelClient.set_section(section);
+                SoapModelClient.set_cross_section(cross_section);
 
                 DataLogger.SetProgressBarValue(30);
 

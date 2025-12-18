@@ -325,14 +325,14 @@ namespace Cantilever
                 //};
 
 
-                section sectionRectangle = new section
+                cross_section sectionRectangle = new cross_section
                 {
                     no = 1,
                     material = materialConcrete.no,
                     materialSpecified = true,
-                    type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                    type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                     typeSpecified = true,
-                    parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
+                    parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
                     //name = "R_M1 0.5/1.0", // width/height as in RFEM
                     b = 0.5,
@@ -382,10 +382,10 @@ namespace Cantilever
                     node_end = n2.no,
                     node_endSpecified = true,
 #endif
-                    section_start = sectionRectangle.no,
-                    section_startSpecified = true,
-                    section_end = sectionRectangle.no,
-                    section_endSpecified = true,
+                    cross_section_start = sectionRectangle.no,
+                    cross_section_startSpecified = true,
+                    cross_section_end = sectionRectangle.no,
+                    cross_section_endSpecified = true,
                     comment = "concrete beam"
                 };
 
@@ -403,7 +403,7 @@ namespace Cantilever
                     model.set_material(materialConcrete);
                     //model.set_material(materialUser);
                     //model.set_material(materialUserThermal);
-                    model.set_section(sectionRectangle);
+                    model.set_cross_section(sectionRectangle);
                     model.set_node(n1);
                     model.set_node(n2);
 #if RFEM
@@ -644,67 +644,67 @@ namespace Cantilever
                     }
                 }
 
-                #region Results
-                bool modelHasAnyResults = model.has_any_results();
-
-                if (modelHasAnyResults)
-                {
-                    Console.WriteLine("Model has results");
-                }
-                else
-                {
-                    Console.WriteLine("Model has no results");
-                }
-
-                bool modelHasLC2Calcuolated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
-                if (modelHasLC2Calcuolated)
-                {
-                    Console.WriteLine("Model has LC2 results");
-                }
-                else
-                {
-                    Console.WriteLine("Model has no LC2 results");
-                }
-
-                model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
-
-                members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
-                Console.WriteLine("Internal forces for member");
-                foreach (var item in internalForcesMember1)
-                {
-                    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
-                    Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", item.row.internal_force_n.ToString(), item.row.internal_force_vy.ToString(), item.row.internal_force_vz.ToString(), item.row.internal_force_mt.ToString(), item.row.internal_force_my.ToString(), item.row.internal_force_mz.ToString());
-
-                }
-
-                Console.WriteLine("Global deformations for member");
-                members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
-                foreach (var item in globalDeformationsMember1)
-                {
-                    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.section);
-                    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
-
-                }
-
-                nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                Console.WriteLine("Node deformations");
-                foreach (var item in nodeDeformations)
-                {
-                    Console.WriteLine("Row no {0}\t Description {1} node comment {2}", item.no, item.description, item.row.specification);
-                    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
-
-                }
-                nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
-                Console.WriteLine("Node reactions");
-                foreach (var item in nodeReactions)
-                {
-                    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
-                    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading?.ToString(), item.row.support_force_p_x?.value.ToString(), item.row.support_force_p_y?.value.ToString(), item.row.support_force_p_z?.value.ToString(), item.row.support_moment_m_x?.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
-
-                }
-                #endregion
+                //#region Results
+                //bool modelHasAnyResults = model.has_any_results();
+//
+                //if (modelHasAnyResults)
+                //{
+                //    Console.WriteLine("Model has results");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("Model has no results");
+                //}
+//
+                //bool modelHasLC2Calcuolated = model.has_results(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no);
+                //if (modelHasLC2Calcuolated)
+                //{
+                //    Console.WriteLine("Model has LC2 results");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("Model has no LC2 results");
+                //}
+//
+                //model.use_detailed_member_results(true); // results along the length of the member, by default false -> results just at the begingign and end of the member + exteremes
+//
+                //members_internal_forces_row[] internalForcesMember1 = model.get_results_for_members_internal_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
+                //Console.WriteLine("Internal forces for member");
+                //foreach (var item in internalForcesMember1)
+                //{
+                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
+                //    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Internal force label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.internal_force_label, item.row.specification);
+                //    Console.WriteLine("N {0}\t Vy {1}\t Vz {2}\t Mx {3}\t My {4}\t Mz {5}\t", item.row.internal_force_n.ToString(), item.row.internal_force_vy.ToString(), item.row.internal_force_vz.ToString(), item.row.internal_force_mt.ToString(), item.row.internal_force_my.ToString(), item.row.internal_force_mz.ToString());
+//
+                //}
+//
+                //Console.WriteLine("Global deformations for member");
+                //members_global_deformations_row[] globalDeformationsMember1 = model.get_results_for_members_global_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, member.no);
+                //foreach (var item in globalDeformationsMember1)
+                //{
+                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
+                //    Console.WriteLine("Node {0}\t Location {1}\t Location flags {2}\t Deformation label {3}\t Specification {4}", item.row.node_number != null ? item.row.node_number.value : "NAN", item.row.location, item.row.location_flags, item.row.deformation_label, item.row.cross_section);
+                //    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t warping {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString(), item.row.warping.ToString());
+//
+                //}
+//
+                //nodes_deformations_row[] nodeDeformations = model.get_results_for_nodes_deformations(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+                //Console.WriteLine("Node deformations");
+                //foreach (var item in nodeDeformations)
+                //{
+                //    Console.WriteLine("Row no {0}\t Description {1} node comment {2}", item.no, item.description, item.row.specification);
+                //    Console.WriteLine("ux {0}\t uy {1}\t uz {2}\t utot {3}\t rx {4}\t ry {5}\t rz {6}\t", item.row.displacement_x.ToString(), item.row.displacement_y.ToString(), item.row.displacement_z.ToString(), item.row.displacement_absolute.ToString(), item.row.rotation_x.ToString(), item.row.rotation_y.ToString(), item.row.rotation_z.ToString());
+//
+                //}
+                //nodes_support_forces_row[] nodeReactions = model.get_results_for_nodes_support_forces(case_object_types.E_OBJECT_TYPE_LOAD_CASE, lcData.no, 0);//all nodes -> 0
+                //Console.WriteLine("Node reactions");
+                //foreach (var item in nodeReactions)
+                //{
+                //    Console.WriteLine("Row no {0}\t Description {1}", item.no, item.description);
+                //    Console.WriteLine("note corresponding loading {0}\t px {1}\t py {2}\t pz {3}\t mx {4}\t my {5}\t mz {6}\t label {7}\t", item.row.node_comment_corresponding_loading?.ToString(), item.row.support_force_p_x?.value.ToString(), item.row.support_force_p_y?.value.ToString(), item.row.support_force_p_z?.value.ToString(), item.row.support_moment_m_x?.value.ToString(), item.row.support_moment_m_y.ToString(), item.row.support_moment_m_z.ToString(), item.row.support_forces_label);
+//
+                //}
+                //#endregion
 
                 #region Generate part list
                 model.generate_parts_lists();
@@ -727,7 +727,7 @@ namespace Cantilever
                 {
                     if (!item.description.Contains("Total"))
                     {
-                        Console.WriteLine("Material no: {0}\t Material name: {1}\t section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
+                        Console.WriteLine("Material no: {0}\t Material name: {1}\t cross_section: {2}\t members no:{3}\t quantity: {4}\t length: {5}\t unit surface area: {6}\t volume: {7}\t unit mass: {8}\t member mass: {9}\t total length: {10}\t total surface area: {11}\t total volume:{12}\t total mass:{13}",
                         item.description, item.row.material_name, item.row.section_name, item.row.members_no, item.row.quantity, item.row.length, item.row.unit_surface_area, item.row.volume, item.row.unit_mass, item.row.member_mass, item.row.total_length, item.row.total_surface_area, item.row.total_volume, item.row.total_mass);
                     }
                     else

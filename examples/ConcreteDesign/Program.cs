@@ -108,14 +108,14 @@
                     materialSpecified = true,
                 };
 
-                section sectionRectangle = new section
+                cross_section sectionRectangle = new cross_section
                 {
                     no = 1,
                     material = materialConcrete.no,
                     materialSpecified = true,
-                    type = section_type.TYPE_PARAMETRIC_MASSIVE_I,
+                    type = cross_section_type.TYPE_PARAMETRIC_MASSIVE_I,
                     typeSpecified = true,
-                    parametrization_type = section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
+                    parametrization_type = cross_section_parametrization_type.PARAMETRIC_MASSIVE_I__MASSIVE_RECTANGLE__R_M1,
                     parametrization_typeSpecified = true,
                     b = 0.3,
                     bSpecified = true,
@@ -344,14 +344,14 @@
                         lineSpecified = true,
                         type = member_type.TYPE_BEAM,
                         typeSpecified = true,
-                        section_start = sectionRectangle.no,
-                        section_startSpecified = true,
-                        section_end = sectionRectangle.no,
-                        section_endSpecified = true,
-                        section_alignment = member_section_alignment.SECTION_ALIGNMENT_CENTRIC,
-                        section_alignmentSpecified = true,
-                        section_distribution_type = member_section_distribution_type.SECTION_DISTRIBUTION_TYPE_UNIFORM,
-                        section_distribution_typeSpecified = true,
+                        cross_section_start = sectionRectangle.no,
+                        cross_section_startSpecified = true,
+                        cross_section_end = sectionRectangle.no,
+                        cross_section_endSpecified = true,
+                        cross_section_alignment = member_cross_section_alignment.SECTION_ALIGNMENT_CENTRIC,
+                        cross_section_alignmentSpecified = true,
+                        cross_section_distribution_type = member_cross_section_distribution_type.SECTION_DISTRIBUTION_TYPE_UNIFORM,
+                        cross_section_distribution_typeSpecified = true,
                     };
 
                     members.Add(newMember);
@@ -374,7 +374,7 @@
                     model.set_material(materialConcrete);
                     model.set_material(materialReinforcement);
                     model.set_thickness(surfaceThickness);
-                    model.set_section(sectionRectangle);
+                    model.set_cross_section(sectionRectangle);
                     model.set_addon_statuses(addon);
                     foreach (var node in nodes)
                     {
@@ -459,8 +459,8 @@
                     surfaces = new[] { 1, 2 },
                     material = materialReinforcement.no,
                     materialSpecified = true,
-                    reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
-                    reinforcement_typeSpecified = true,
+                    //reinforcement_type = surface_reinforcement_reinforcement_type.REINFORCEMENT_TYPE_MESH,
+                    //reinforcement_typeSpecified = true,
                     mesh_name = "Q424A",
                     mesh_product_range = surface_reinforcement_mesh_product_range.MESHSTANDARD_GERMANY_2008_01_01,
                     mesh_shape = surface_reinforcement_mesh_shape.MESHSHAPE_Q_MESH,

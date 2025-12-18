@@ -141,16 +141,16 @@ namespace DotNetCoreClientTest.Web2.Code.WSconsumer
             Session.SoapModelClient.set_material(material);
 
 
-            // section
-            model.Messages.Add($"Set section (IDs = {SECTION_ID}).");
-            section section = new section
+            // cross_section
+            model.Messages.Add($"Set cross_section (IDs = {SECTION_ID}).");
+            cross_section cross_section = new cross_section
             {
                 no = SECTION_ID,
                 name = SECTION_I,
                 material = MATERIAL_ID,
                 materialSpecified = true
             };
-            Session.SoapModelClient.set_section(section);
+            Session.SoapModelClient.set_cross_section(cross_section);
 
             // nodes
             model.Messages.Add($"Set 2 nodes (IDs = [{NODE_1_ID}, {NODE_2_ID}]).");
@@ -193,8 +193,8 @@ namespace DotNetCoreClientTest.Web2.Code.WSconsumer
 #elif RSTAB
                     nodes = new int[] { NODE_1_ID, NODE_2_ID },
 #endif
-                section_start = SECTION_ID,
-                section_startSpecified = true
+                cross_section_start = SECTION_ID,
+                cross_section_startSpecified = true
             };
             Session.SoapModelClient.set_member(member);
 

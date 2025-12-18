@@ -13,7 +13,7 @@ namespace Dlubal.WS.Rstab9.Model
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.08.0011", ConfigurationName="Dlubal.WS.Rstab9.Model.IRstabModel")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="RSTAB_9.12.0011", ConfigurationName="Dlubal.WS.Rstab9.Model.IRstabModel")]
     [System.Xml.Serialization.XmlSerializerAssembly]
     public interface IRstabModel
     {
@@ -202,9 +202,9 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_aluminum_effective_lengthsResponse get_aluminum_effective_lengths(Dlubal.WS.Rstab9.Model.get_aluminum_effective_lengthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_local_section_reduction", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_local_cross_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionResponse get_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_aluminum_member_local_section_reductionRequest request);
+        Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionResponse get_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_aluminum_member_local_cross_section_reductionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -262,6 +262,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_coordinate_systemResponse get_coordinate_system(Dlubal.WS.Rstab9.Model.get_coordinate_systemRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_cross_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_cross_sectionResponse get_cross_section(Dlubal.WS.Rstab9.Model.get_cross_sectionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_design_overview", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_design_overviewResponse get_design_overview(Dlubal.WS.Rstab9.Model.get_design_overviewRequest request);
@@ -301,6 +305,14 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_global_parameter", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_global_parameterResponse get_global_parameter(Dlubal.WS.Rstab9.Model.get_global_parameterRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_ifc_file_model_object", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectResponse get_ifc_file_model_object(Dlubal.WS.Rstab9.Model.get_ifc_file_model_objectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_ifc_model_object", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_ifc_model_objectResponse get_ifc_model_object(Dlubal.WS.Rstab9.Model.get_ifc_model_objectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_imperfection_case", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1104,6 +1116,83 @@ namespace Dlubal.WS.Rstab9.Model
             "_on_members_by_section", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionResponse get_results_for_concrete_design_required_reinforcement_area_on_members_by_section(Dlubal.WS.Rstab9.Model.get_results_for_concrete_design_required_reinforcement_area_on_members_by_sectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_design_ratios_by_desig" +
+            "n_situation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationResponse get_results_for_concrete_foundations_design_ratios_by_design_situation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_design_situationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_design_ratios_by_found" +
+            "ation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationResponse get_results_for_concrete_foundations_design_ratios_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_foundationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_design_ratios_by_loadi" +
+            "ng", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingResponse get_results_for_concrete_foundations_design_ratios_by_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_design_ratios_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeResponse get_results_for_concrete_foundations_design_ratios_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_design_ratios_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_foundations_geometry", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryResponse get_results_for_concrete_foundations_foundations_geometry(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_foundations_geometryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_governing_loading", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingResponse get_results_for_concrete_foundations_governing_loading(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_loadingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_governing_reactions_by" +
+            "_foundations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsResponse get_results_for_concrete_foundations_governing_reactions_by_foundations(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_foundationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_governing_reactions_by" +
+            "_nodes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesResponse get_results_for_concrete_foundations_governing_reactions_by_nodes(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_governing_reactions_by_nodesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_not_covered_reinforcem" +
+            "ent_by_foundation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationResponse get_results_for_concrete_foundations_not_covered_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_foundationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_not_covered_reinforcem" +
+            "ent_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeResponse get_results_for_concrete_foundations_not_covered_reinforcement_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_not_covered_reinforcement_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_overview_errors_and_wa" +
+            "rnings", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsResponse get_results_for_concrete_foundations_overview_errors_and_warnings(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_errors_and_warningsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_overview_not_valid_dea" +
+            "ctivated", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedResponse get_results_for_concrete_foundations_overview_not_valid_deactivated(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_overview_not_valid_deactivatedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_provided_reinforcement" +
+            "_by_foundation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationResponse get_results_for_concrete_foundations_provided_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_foundationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_provided_reinforcement" +
+            "_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeResponse get_results_for_concrete_foundations_provided_reinforcement_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_provided_reinforcement_by_nodeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_required_reinforcement" +
+            "_by_foundation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationResponse get_results_for_concrete_foundations_required_reinforcement_by_foundation(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_foundationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_concrete_foundations_required_reinforcement" +
+            "_by_node", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeResponse get_results_for_concrete_foundations_required_reinforcement_by_node(Dlubal.WS.Rstab9.Model.get_results_for_concrete_foundations_required_reinforcement_by_nodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_results_for_convergence_diagrams", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2157,10 +2246,6 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_results_for_wind_simulation_analysis_summaryResponse get_results_for_wind_simulation_analysis_summary(Dlubal.WS.Rstab9.Model.get_results_for_wind_simulation_analysis_summaryRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_section", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_sectionResponse get_section(Dlubal.WS.Rstab9.Model.get_sectionRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_session_id", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_session_idResponse get_session_id(Dlubal.WS.Rstab9.Model.get_session_idRequest request);
@@ -2201,17 +2286,13 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_steel_effective_lengthsResponse get_steel_effective_lengths(Dlubal.WS.Rstab9.Model.get_steel_effective_lengthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_steel_member_local_section_reduction", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_steel_member_local_cross_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionResponse get_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_steel_member_local_section_reductionRequest request);
+        Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionResponse get_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_steel_member_local_cross_section_reductionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_structure_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_structure_modificationResponse get_structure_modification(Dlubal.WS.Rstab9.Model.get_structure_modificationRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_table_export_config_manager", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_table_export_config_managerResponse get_table_export_config_manager(Dlubal.WS.Rstab9.Model.get_table_export_config_managerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_terrain", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2233,9 +2314,9 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.get_timber_effective_lengthsResponse get_timber_effective_lengths(Dlubal.WS.Rstab9.Model.get_timber_effective_lengthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_timber_member_local_section_reduction", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_timber_member_local_cross_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionResponse get_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.get_timber_member_local_section_reductionRequest request);
+        Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionResponse get_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.get_timber_member_local_cross_section_reductionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/get_timber_moisture_class", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2313,9 +2394,9 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_aluminum_effective_lengthsResponse set_aluminum_effective_lengths(Dlubal.WS.Rstab9.Model.set_aluminum_effective_lengthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_local_section_reduction", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_local_cross_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionResponse set_aluminum_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_aluminum_member_local_section_reductionRequest request);
+        Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionResponse set_aluminum_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_aluminum_member_local_cross_section_reductionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_aluminum_member_transverse_weld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2361,6 +2442,10 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_coordinate_systemResponse set_coordinate_system(Dlubal.WS.Rstab9.Model.set_coordinate_systemRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_cross_section", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_cross_sectionResponse set_cross_section(Dlubal.WS.Rstab9.Model.set_cross_sectionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_design_situation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_design_situationResponse set_design_situation(Dlubal.WS.Rstab9.Model.set_design_situationRequest request);
@@ -2388,6 +2473,14 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_global_parameter", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_global_parameterResponse set_global_parameter(Dlubal.WS.Rstab9.Model.set_global_parameterRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_ifc_file_model_object", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectResponse set_ifc_file_model_object(Dlubal.WS.Rstab9.Model.set_ifc_file_model_objectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_ifc_model_object", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Dlubal.WS.Rstab9.Model.set_ifc_model_objectResponse set_ifc_model_object(Dlubal.WS.Rstab9.Model.set_ifc_model_objectRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_imperfection_case", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2565,10 +2658,6 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_result_combinationResponse set_result_combination(Dlubal.WS.Rstab9.Model.set_result_combinationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_section", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.set_sectionResponse set_section(Dlubal.WS.Rstab9.Model.set_sectionRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_selected_objects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_selected_objectsResponse set_selected_objects(Dlubal.WS.Rstab9.Model.set_selected_objectsRequest request);
@@ -2609,17 +2698,13 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_steel_effective_lengthsResponse set_steel_effective_lengths(Dlubal.WS.Rstab9.Model.set_steel_effective_lengthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_steel_member_local_section_reduction", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_steel_member_local_cross_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionResponse set_steel_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_steel_member_local_section_reductionRequest request);
+        Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionResponse set_steel_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_steel_member_local_cross_section_reductionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_structure_modification", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_structure_modificationResponse set_structure_modification(Dlubal.WS.Rstab9.Model.set_structure_modificationRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_table_export_config_manager", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.set_table_export_config_managerResponse set_table_export_config_manager(Dlubal.WS.Rstab9.Model.set_table_export_config_managerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_terrain", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2641,9 +2726,9 @@ namespace Dlubal.WS.Rstab9.Model
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         Dlubal.WS.Rstab9.Model.set_timber_effective_lengthsResponse set_timber_effective_lengths(Dlubal.WS.Rstab9.Model.set_timber_effective_lengthsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_member_local_section_reduction", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_member_local_cross_section_reduction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionResponse set_timber_member_local_section_reduction(Dlubal.WS.Rstab9.Model.set_timber_member_local_section_reductionRequest request);
+        Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionResponse set_timber_member_local_cross_section_reduction(Dlubal.WS.Rstab9.Model.set_timber_member_local_cross_section_reductionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8082/set_timber_moisture_class", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]

@@ -1,7 +1,7 @@
 run("clearAll.js");
 include("global.js");
 
-function create_line_and_member(lineNo, node_a, node_b, section)
+function create_line_and_member(lineNo, node_a, node_b, cross_section)
 {
     if (RFEM)
     {
@@ -9,7 +9,7 @@ function create_line_and_member(lineNo, node_a, node_b, section)
         line.definition_nodes = node_a + "," + node_b;
         var member = members.create(lineNo);
         member.line = lineNo;
-        member.section_start = section;
+        member.cross_section_start = cross_section;
         member.type = members.TYPE_BEAM;
         return {
             line: line,
@@ -23,7 +23,7 @@ function create_line_and_member(lineNo, node_a, node_b, section)
         var member = members.create(memberNo);
         member.node_start = node_a;
         member.node_end = node_b;
-        member.section_start = section;
+        member.cross_section_start = cross_section;
         member.type = members.TYPE_BEAM;
         return {
             member: member
@@ -189,14 +189,14 @@ for (var i = 1; i < numOfFrames+1; ++i)
 {
     var dNoLine = (i-1) * 8;
     var dNo = (i-1) * 9;
-    create_line_and_member(1+dNoLine, 1+dNo, 2+dNo,sections[1]);
-    create_line_and_member(2+dNoLine, 2+dNo, 3+dNo,sections[1]);
-    create_line_and_member(3+dNoLine, 3+dNo, 4+dNo,sections[2]);
-    create_line_and_member(4+dNoLine, 4+dNo, 5+dNo,sections[2]);
-    create_line_and_member(5+dNoLine, 5+dNo, 6+dNo,sections[1]);
-    create_line_and_member(6+dNoLine, 2+dNo, 8+dNo,sections[2]);
-    create_line_and_member(7+dNoLine, 6+dNo, 9+dNo,sections[2]);
-    create_line_and_member(8+dNoLine, 6+dNo, 7+dNo,sections[1]);
+    create_line_and_member(1+dNoLine, 1+dNo, 2+dNo,cross_sections[1]);
+    create_line_and_member(2+dNoLine, 2+dNo, 3+dNo,cross_sections[1]);
+    create_line_and_member(3+dNoLine, 3+dNo, 4+dNo,cross_sections[2]);
+    create_line_and_member(4+dNoLine, 4+dNo, 5+dNo,cross_sections[2]);
+    create_line_and_member(5+dNoLine, 5+dNo, 6+dNo,cross_sections[1]);
+    create_line_and_member(6+dNoLine, 2+dNo, 8+dNo,cross_sections[2]);
+    create_line_and_member(7+dNoLine, 6+dNo, 9+dNo,cross_sections[2]);
+    create_line_and_member(8+dNoLine, 6+dNo, 7+dNo,cross_sections[1]);
 
 
 }
@@ -207,11 +207,11 @@ for (var i = 1; i < numOfFrames; ++i)
     var dNoLine = (i-1) * 5;
     var startLine = numOfFrames * 8 + 1;
     var dNo = (i-1) * 9;
-    create_line_and_member(startLine+dNoLine, 2+dNo, 11+dNo,sections[3]);
-    create_line_and_member(startLine+1+dNoLine, 6+dNo, 15+dNo,sections[3]);
-    create_line_and_member(startLine+2+dNoLine, 4+dNo, 13+dNo,sections[3]);
-    create_line_and_member(startLine+3+dNoLine, 5+dNo, 14+dNo,sections[3]);
-    create_line_and_member(startLine+4+dNoLine, 3+dNo, 12+dNo,sections[3]);
+    create_line_and_member(startLine+dNoLine, 2+dNo, 11+dNo,cross_sections[3]);
+    create_line_and_member(startLine+1+dNoLine, 6+dNo, 15+dNo,cross_sections[3]);
+    create_line_and_member(startLine+2+dNoLine, 4+dNo, 13+dNo,cross_sections[3]);
+    create_line_and_member(startLine+3+dNoLine, 5+dNo, 14+dNo,cross_sections[3]);
+    create_line_and_member(startLine+4+dNoLine, 3+dNo, 12+dNo,cross_sections[3]);
 }
     // bracing system
 for (var i = 1; i < 2; ++i)
@@ -219,14 +219,14 @@ for (var i = 1; i < 2; ++i)
     var dNoLine = (i-1) * 8;
     var startLine = numOfFrames * 8 + 1 + 5 * (numOfFrames-1) -3 ;
     var dNo = (i-1) * 9;
-    create_line_and_member(startLine+3+dNoLine, 7+dNo, 14+dNo,sections[4]);
-    create_line_and_member(startLine+4+dNoLine, 5+dNo, 16+dNo,sections[4]);
-    create_line_and_member(startLine+5+dNoLine, 5+dNo, 13+dNo,sections[4]);
-    create_line_and_member(startLine+6+dNoLine, 14+dNo, 4+dNo,sections[4]);
-    create_line_and_member(startLine+7+dNoLine, 13+dNo, 3+dNo,sections[4]);
-    create_line_and_member(startLine+8+dNoLine, 12+dNo, 4+dNo,sections[4]);
-    create_line_and_member(startLine+9+dNoLine, 1+dNo, 12+dNo,sections[4]);
-    create_line_and_member(startLine+10+dNoLine, 3+dNo, 10+dNo,sections[4]);
+    create_line_and_member(startLine+3+dNoLine, 7+dNo, 14+dNo,cross_sections[4]);
+    create_line_and_member(startLine+4+dNoLine, 5+dNo, 16+dNo,cross_sections[4]);
+    create_line_and_member(startLine+5+dNoLine, 5+dNo, 13+dNo,cross_sections[4]);
+    create_line_and_member(startLine+6+dNoLine, 14+dNo, 4+dNo,cross_sections[4]);
+    create_line_and_member(startLine+7+dNoLine, 13+dNo, 3+dNo,cross_sections[4]);
+    create_line_and_member(startLine+8+dNoLine, 12+dNo, 4+dNo,cross_sections[4]);
+    create_line_and_member(startLine+9+dNoLine, 1+dNo, 12+dNo,cross_sections[4]);
+    create_line_and_member(startLine+10+dNoLine, 3+dNo, 10+dNo,cross_sections[4]);
     members[startLine+3+dNoLine].type = members.TYPE_TENSION;
     members[startLine+4+dNoLine].type = members.TYPE_TENSION;
     members[startLine+5+dNoLine].type = members.TYPE_TENSION;
